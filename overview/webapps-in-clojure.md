@@ -13,8 +13,9 @@
 
 * [Ring](https://github.com/ring-clojure/ring) - a web application library
 * [Compojure](https://github.com/weavejester/compojure) - an simple way to define routes for your ring webapp
-* [Hiccup](https://github.com/weavejester/hiccup) - write html in Clojure
-* [Korma](http://sqlkorma.com/) - database abstraction layer
+* [Hiccup](https://github.com/weavejester/hiccup) or [Selma]- write html in Clojure
+* [Korma](http://sqlkorma.com/), [YesQL](), [hugSql](http://www.hugsql.org) - database abstraction layers
+* [clojure.java.jdbc](https://github.com/clojure/java.jdbc) or [clojure.jdbc](https://github.com/clojure/java.jdbc) - low level SQL libraries
 * [Prismatic Schema](https://github.com/Prismatic/schema) - database schema mapping
 * [Migratus](https://github.com/yogthos/migratus) - database migrations (and all the things)
 
@@ -32,9 +33,9 @@ lein new template-name project-name
 
 There are many great templates to try that provide insight into building webapps in Clojure.
 
-* [compojure](https://github.com/weavejester/compojure-template)
+* [compojure](https://github.com/weavejester/compojure-template) - a simple project with routing
 * [luminus](http://www.luminusweb.net/) - a production ready app template
-* [duct](https://github.com/weavejester/duct) - simple, minimal framework
+* [duct](https://github.com/weavejester/duct) - simple, minimal production-grade framework
 * [pedestal-service](https://github.com/pedestal/pedestal) - an opinionated, extensible & scalable framework
 
 
