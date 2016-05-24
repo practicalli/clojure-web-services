@@ -15,7 +15,8 @@
         "disqus",
         "exercises",
         "quizzes",
-        "codeblock-filename"
+        "codeblock-filename",
+        "ga"
     ],
     "pluginsConfig": {
         "richquotes": {
@@ -23,6 +24,9 @@
         },
         "disqus": {
             "shortName": "clojure-webapps-practicalli"
+        },
+        "ga": {
+            "token": "UA-28030709-8"
         }
     }
 }
