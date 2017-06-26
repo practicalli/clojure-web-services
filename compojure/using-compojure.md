@@ -60,7 +60,7 @@ Lets add a `defroute` function to define routes and their associated handlers.
      {:port (Integer. port-number)}))
 ```
 
-  As we have changed the `-dev-main` and `-main` functions, we need to restart the server again - `Ctrl-c` then `lein new 8000`
+  As we have changed the `-dev-main` and `-main` functions, we need to restart the server again - `Ctrl-c` then `lein run 8000`
   
   Now test out your updated web app by visiting http://localhost:8000 and http://localhost:8000/not-there
   

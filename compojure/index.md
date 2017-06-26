@@ -75,6 +75,6 @@ You can adjust what each parameter matches by supplying a regex:
 
 ## Resources 
 
-* [Learn X in minutes - Compojure](http://learnxinyminutes.com/docs/compojure/)
+* [Learn X in minutes - Compojure](http://learnxinyminutes.com/docs/compojure/) - using httpkit (performance & scalability)
 * [Webapps with Compojure & OM](http://zaiste.net/2014/02/web_applications_in_clojure_all_the_way_with_compojure_and_om/)
 * [StackOverflow - What's the “big idea” behind compojure routes?](http://stackoverflow.com/questions/3488353/whats-the-big-idea-behind-compojure-routes)

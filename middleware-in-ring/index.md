@@ -22,3 +22,18 @@ Here is a list of middleware available in Ring itself:
    * [wrap-lint](https://github.com/mmcgrana/ring/blob/master/ring-devel/src/ring/middleware/lint.clj#L84) (ring.middleware.lint)
    * [wrap-reload](https://github.com/mmcgrana/ring/blob/master/ring-devel/src/ring/middleware/reload.clj#L4) (ring.middleware.reload)
    * [wrap-stacktrace](https://github.com/mmcgrana/ring/blob/master/ring-devel/src/ring/middleware/stacktrace.clj#L75) (ring.middleware.stacktrace)
+
+
+# Leiningent Templates
+
+Templates can be used to create a project with a given set of dependencies as well as Clojure code.
+
+There is a `compojure` template that gives you a basic running web application.  To use this template to create a new project use the following command, substituting your own project-name
+
+```bash
+lein new compojure project-name
+```
+
+This project contains ring and compojure.  The dependency for ring is `ring/site-defaults` which includes some sensible default settings for your application, eg security settings such as anti-forgery.
+
+See the definition of [ring/site-defaults](https://github.com/ring-clojure/ring-defaults/blob/master/src/ring/middleware/defaults.clj) for further information.
