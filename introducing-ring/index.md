@@ -15,9 +15,9 @@ In essence, Ring converts the requests that come from the browser into a Clojure
 
 In the following sections you will get a better understanding of
 
-  - how to represent a handler 
+  - how to represent a handler
   - what do requests and responses look like
-  - how to seperate query parameters from the design of your web app
+  - how to separate query parameters from the design of your web app
 
 
 Ring is the current de facto standard library used to write web applications in Clojure. Higher level frameworks such as Compojure use Ring as a common basis.
