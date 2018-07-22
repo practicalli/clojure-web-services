@@ -42,7 +42,7 @@
 
 --- 
 
-## All put togehter this looks like
+## All put together this looks like
 
 ```clojure
 (def operands {"+" + "-" - "*" * ":" /})
@@ -82,7 +82,7 @@
   Get the complete code so far from the branch `04-compojure`
   
   ```
-  git checkout 04-compjure
+  git checkout 04-compojure
   ```
   
   If you havent got the repo already, get it by 
