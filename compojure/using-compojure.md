@@ -1,12 +1,12 @@
 # Using Compojure in the project
 
-Lets add a `defroute` function to define routes and their associated handlers.
+Let's add a `defroute` function to define routes and their associated handlers.
 
 ![Ring - adding defroutes to manage routes](../images/clojure-ring-adaptor-middleware-route--handler-wrap-reload.png)
 
 ## Add Compojure to the namespace
 
-> **Note** Add the `defroutes` function, `GET` protocol and `notfound` route from Compojure to the namespace
+> **Note** Add the `defroutes` function, `GET` protocol and `not-found` route from Compojure to the namespace
 
 ```clojure
 (ns todo-list.core
@@ -33,7 +33,7 @@ Lets add a `defroute` function to define routes and their associated handlers.
 
 ## Add a defroutes function 
 
-> **Note** Add a defroutes function called `app` to manage our routes.  Add routes for `/` and send all other requests to the Compojure `not-found` function.
+> **Note** Add a `defroutes` function called `app` to manage our routes.  Add routes for `/` and send all other requests to the Compojure `not-found` function.
 
 ```clojure
 (defroutes app
