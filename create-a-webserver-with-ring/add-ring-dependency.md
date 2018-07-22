@@ -18,7 +18,7 @@ Whilst editing the project configuration file, you can also update the `:descrip
                  [ring "1.4.0"]])
 ```
 
-> **Hint** Read the [dependencies secion of the Leiningen documentation](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#dependencies) to learn more about adding libraries.
+> **Hint** Read the [dependencies section of the Leiningen documentation](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#dependencies) to learn more about adding libraries.
 
 ## Looking up Libraries & current versions
 
