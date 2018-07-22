@@ -19,5 +19,5 @@ It may seem inefficient to create a new copy of a data structure each time, espe
 ![Persistent data structures - data sharing](../images/clojure-persistent-data-structures-sharing.png)
 
 
-> **Hint** Clojure manages data internally as a binary tree.  Read the [Polymathica article on Clojure Perisent Vectors](http://hypirion.com/musings/understanding-persistent-vector-pt-1) for more details.
+> **Hint** Clojure manages data internally as a binary tree.  Read the [Polymathica article on Clojure Persistent Vectors](http://hypirion.com/musings/understanding-persistent-vector-pt-1) for more details.
 
