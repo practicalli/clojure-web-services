@@ -14,7 +14,7 @@ lein new todo-list
 
 ## Take a look at the project structure
 
-To see how our project is layed out, change into the `todo-list` directory created by this command and see the project structure that has been created.
+To see how our project is laid out, change into the `todo-list` directory created by this command and see the project structure that has been created.
   
   * `project.clj` - the project definition, written in Clojure 
   * `src` for all the source code
