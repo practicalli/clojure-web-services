@@ -32,7 +32,7 @@ A simple way to affect the behaviour of a web app is to add extra text (elements
 
 ## Theory: Local assignment with Let 
 
-The `let` function creates a name (alias) for some valuable within the scope of the let function.  The name and value are immutable.
+The `let` function creates a name (alias) for some variable within the scope of the `let` function.  The name and value are immutable.
 
 ```clojure 
 (let [name value])
@@ -47,7 +47,7 @@ In our example we are pulling out a value from a map and using the `let` functio
      :headers {}})
 ```
 
-The Ring adaptor creates a map from the browser request, this is called the request map.  This request map is passed to the handler function. 
+The Ring adaptor creates a map from the browser request; this is called the request map.  This request map is passed to the handler function. 
 
 ## Theory: Accessing Maps 
 
@@ -65,7 +65,7 @@ Using the `get` function we can pull out the value for a particular keyword in t
 (get map :keyword)
 ```
 
-You can use `get` with a nested map, however you would need a nested `get` funciton call
+You can use `get` with a nested map, however you would need a nested `get` function call
 
 ```clojure
 (get (get outer-map :outer-keyword) :inner-keyword)
@@ -84,10 +84,10 @@ With many nested maps, the `get` function can lead to code that is harder to rea
 You can also use keywords to extract values from maps when using the keywords as the keys 
 
 ```clojure
-(def response-map {:name "john" :path "/helo"}
+(def response-map {:name "john" :path "/hello"}
 ```
 
-You can get the value from this map using the keywork
+You can get the value from this map using the keyword
 
 ```clojure
 (response-map :name)
