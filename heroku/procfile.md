@@ -12,7 +12,7 @@ web: java $JVM_OPTS -cp target/todo-list.jar clojure.main -m todo-list.core $POR
 
 ## Theory: Running Clojure as a Java application
 
-When you run a Clojure project with Leiningen, two Java virtual machines (JVM's) are started.  One JVM is to run Leiningen and the second JVM is to run your application.  By using Leiningen to run your application in production you are using use extra resources and also risk pulling in unnecessary development libraries & configurationonly needed during development. 
+When you run a Clojure project with Leiningen, two Java virtual machines (JVM's) are started.  One JVM is to run Leiningen and the second JVM is to run your application.  By using Leiningen to run your application in production you are using extra resources and also risk pulling in unnecessary development libraries & configuration only needed during development. 
 
 When you run your application in production you can save resources by only running a JVM for your application.  This is done by running a Clojure application just like a Java application, using the `java` command in the Heroku `Procfile`.
 
@@ -25,7 +25,7 @@ Leiningen can also generate an Uberjar.  The uberjar is a jar file that also inc
 
 By adding an `:uberjar` entry to the `project.clj` then the Leiningen command `lein uberjar` is run during the build and an uberjar is created.
 
-When deploying on Heroku your application is built from your codebase using Leiningen, pulling in all the libraries your application depends on.  When your application is run it is done so as a Java application using the uberjarjust, starting just the one JVM.
+When deploying on Heroku your application is built from your codebase using Leiningen, pulling in all the libraries your application depends on.  When your application is run it is done so as a Java application using only the uberjar, starting just the one JVM.
 
 Further reading: https://devcenter.heroku.com/articles/clojure-support
 
