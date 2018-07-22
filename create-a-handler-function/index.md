@@ -1,6 +1,6 @@
 # Create a handler function
 
-There may be a great many routes in a webapp, so to make the code more readable we create a seperate function.  In Ring terminology, this function is refered to as a handler.
+There may be a great many routes in a webapp, so to make the code more readable we create a separate function.  In Ring terminology, this function is refered to as a handler.
 
 When you send a request to the webapp, the ring adaptor converts this request to a map and sends it to the specified handler.
  
@@ -8,7 +8,7 @@ When you send a request to the webapp, the ring adaptor converts this request to
 
 A handler function takes the request map as its argument and returns a response map.
 
-> **Note** Refactor the code in the `src/todo-list/core.clj` file to create a seperate `welcome` handler function that processes all requests
+> **Note** Refactor the code in the `src/todo-list/core.clj` file to create a separate `welcome` handler function that processes all requests
   
 ```clojure
 (ns todo-list.core
