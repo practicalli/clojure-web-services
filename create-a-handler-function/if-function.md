@@ -2,7 +2,7 @@
 
 Clojure has an `if` function that evaluates an expresssion.  If that expression is true, then the first value is returned, if false then the second argument is returned.
 
-In psudo-code, the `if` function in Clojure works as follows
+In pseudo-code, the `if` function in Clojure works as follows
 
 ```
   If (this expression is true ?)
@@ -10,7 +10,7 @@ In psudo-code, the `if` function in Clojure works as follows
     else return this value
 ```
 
-In our code, if the web address, `:uri`, taken from the request map is equal to `/` then the first response map with the hello message is returned.  If the `:uri` value is not equal to `/` then the second resource map with an error message is returned.
+In our code, if the web address `:uri`, taken from the request map, is equal to `/`, then the first response map with the hello message is returned.  If the `:uri` value is not equal to `/`, then the second resource map with an error message is returned.
 
 
 ```clojure
@@ -30,7 +30,7 @@ In our code, if the web address, `:uri`, taken from the request map is equal to 
 
 ## Advanced if functions with do
 
-Each of the two possible values the `if` function can return can come from evaluating a function.  For example
+Each of the two possible values of the `if` function can return can come from evaluating a function.  For example
 
 ```
 (if (true)
@@ -50,5 +50,5 @@ However, each value can only be defined by one expression.  If you need to have 
 
 The `do` function calls each function evaluation in turn, returning the result of the last function called. 
 
-> **Hint** The if function is a very simplistic way to define routes in our web application.  Soon we will look at Compojure, a library for elegantly managing routing for our Clojure application.
+> **Hint** The `if` function is a very simplistic way to define routes in our web application.  Soon we will look at Compojure, a library for elegantly managing routing for our Clojure application.
 
