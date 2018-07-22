@@ -1,25 +1,25 @@
 # Web Apps in Clojure Overview 
 
-  A typical Web application receives data, does something with it and return a result.  This is the essence of how a function works in Clojure.  So again, its really simple to build web apps with.
+  A typical Web application receives data, does something with it and returns a result.  This is the essence of how a function works in Clojure.  So again, it's really simple to build web apps with.
 
   As Clojure is centered around dynamically typed & immutable data structures, it makes web applications really easy to build and simple to scale through parallelism.  As most of your application will be stateless, it is less complex and less prone to conflicts.
   
 
 ## Libraries over frameworks
 
-  Clojure also takes a very modular approach to building any application and has many great libraries to minimise the work involved.  As Java Interoperability is also very easy in Clojure, its trivial to use Java libraries too.
+  Clojure also takes a very modular approach to building any application and has many great libraries to minimise the work involved.  As Java Interoperability is also very easy in Clojure, it's trivial to use Java libraries too.
 
-  Web apps in Clojure are typically built from a collection of highly focused libraries, that complement each others functions.  Talking a modular approach, you can swap components & libraries easily should there be value in a different approach.  Common libraries for web app development include:
+  Web apps in Clojure are typically built from a collection of highly focused libraries, that complement each other's functions.  Talking a modular approach, you can swap components & libraries easily should there be value in a different approach.  Common libraries for web app development include:
 
 * [Ring](https://github.com/ring-clojure/ring) - a web application library
 * [Compojure](https://github.com/weavejester/compojure) - an simple way to define routes for your ring webapp
-* [Hiccup](https://github.com/weavejester/hiccup) or [Selma]- write html in Clojure
-* [Korma](http://sqlkorma.com/), [YesQL](), [hugSql](http://www.hugsql.org) - database abstraction layers
+* [Hiccup](https://github.com/weavejester/hiccup) or [Selmer](https://github.com/yogthos/Selmer) - write html in Clojure
+* [Korma](http://sqlkorma.com/), [YesQL](https://github.com/krisajenkins/yesql), [hugSql](http://www.hugsql.org) - database abstraction layers
 * [clojure.java.jdbc](https://github.com/clojure/java.jdbc) or [clojure.jdbc](https://github.com/clojure/java.jdbc) - low level SQL libraries
 * [Prismatic Schema](https://github.com/Prismatic/schema) - database schema mapping
 * [Migratus](https://github.com/yogthos/migratus) - database migrations (and all the things)
 
-The closed thing to a framework in Clojure is [Pedistal](https://github.com/pedestal/pedestal).  Frameworks constrain you to a certain approach to building apps and if you can live inside these constraints they can be very powerful.
+The closed thing to a framework in Clojure is [Pedestal](https://github.com/pedestal/pedestal).  Frameworks constrain you to a certain approach to building apps and if you can live inside these constraints they can be very powerful.
 
 ## Project templates
 
