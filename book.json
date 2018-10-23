@@ -1,6 +1,6 @@
 {
-    "gitbook": ">=2.0.0",
-    "title": "Clojure - building a simple web app",
+    "gitbook": ">=3.0.0",
+    "title": "Clojure - building a simple server side web application",
     "styles": {
         "website": "styles/website.css",
         "ebook": "styles/ebook.css",
