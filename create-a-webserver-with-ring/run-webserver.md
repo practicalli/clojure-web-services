@@ -1,6 +1,6 @@
 # Run webserver
 
-> **Note** Run the webserver we use Leiningen, the Clojure build automation tool.  In the root of your Clojure project, the directory that contains `project.clj`
+> ####Note:: Run the webserver we use Leiningen, the Clojure build automation tool.  In the root of your Clojure project, the directory that contains `project.clj`
 
 In a command line terminal, navigate to the root of your project and type the following command
 

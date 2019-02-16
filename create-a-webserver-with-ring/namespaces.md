@@ -1,61 +1,60 @@
-# Theory: Namespace
+# Theory: Namespaces
 
-  A namespace in Clojure is used to manage the logical seperation of code, usually along features of the application, service or library you are developing.  A namespace contains data structures and functions, limiting their scope to that function.
-  
-  Unless otherwise defined, any function can call any other function in the namespace by just the function name.  The same is true for any naed data structures, they can be called from anywhere in the namespace with just their name.
+  A namespace in Clojure is used to manage the logical separation of code, usually along features of the application.  A namespace limits the scope of functions and names of data structures to a specific namespace.
 
-> **Hint** Remember that Clojure is evaluated from top to bottom, so if you are calling a named function or data structure, it must have had its definition evaluated first.
+  The names used with `defn` or `defn-` to define a function can be used anywhere (see hint) in the namespace just by that name.  The same goes for any values defined by `def`.
 
-## Including another namespace 
+  To use a function outside the namespace, you need to use its namespace and its name, for example `clojure.string/reverse`
 
-  `require` or `:require` is used to enable access to the functions & named datastructures in another namespace than the current one.  
-  
-```clojure 
-(ns my-namespace.core 
-  :require [clojure.java.io])
-  
-(defn read-the-file [filename]
-  (line-seq (clojure.java.io/reader filename)))
+> ####Hint:: Remember that Clojure is evaluated from top to bottom, so if you are calling a named function or data structure, it must have had its definition evaluated first.
 
-(read-the-file "project.clj")
+## Include another namespace in the REPL
+
+  The `require` function will provide access functions and names from specific namespaces and an alias for the namespace can also be specified with the `:as` directive.
+
+  A function from that namespace can then be used by prefixing its name with the alias specified in the `require` expression.
+
+  Here is an example of including the `clojure.string` namespace and calling its `reverse` fuction
+
+```
+(require '[clojure.string :as string])
+
+(string/reverse "RedRum")
 ```
 
-  The `reader` funciton can be accessed, however, we still need to include the fully qualified namespace path, `clojure.java.io`.
-  
-  If the namespace has a long name, you can provide an alias (please use names that keep the code readable)
 
-```clojure 
-(ns my-namespace.core 
-  :require [clojure.java.io :as java-io])
-  
-(defn read-the-file [filename]
-  (line-seq (java-io/reader filename)))  
+## Including another namespace in source code
 
-(read-the-file "project.clj")
+  Instead of the `require` function, add the `:require` keyword in the namespace definition, `ns`.
+
+```
+(ns todo-list.core
+ (:require '[clojure.string :as string))
+
+(string/reverse "RedRum")
 ```
 
-Or if you are going to use the function multiple times in the current namespace, you could also include that function directly, no longer requiring any kind of namespace qualifier
+  If a funciton will be used many times in the namespace, you can `:refer` a function so you can call it just by name, as if it had been defined in the current namespace.
 
-```clojure 
-(ns my-namespace.core 
-  :require [clojure.java.io :as [reader]])
-  
-(defn read-the-file [filename]
-  (line-seq (reader filename)))  
+```
+(ns todo-list.core
+ (:require '[clojure.string :refer [reverse]))
 
-(read-the-file "project.clj")
+(reverse "RedRum")
 ```
 
-> **Hint** You may see `use` or `:use` as an alternative approach.  While this will work, it also includes everything from the other namespace into your current one.  This is seen as a bad practice, especially when writing libraries, as you can end up including a great many unused functions into the namespace.  
+  If you are using most functions from another namespace, you could `:refer :all`.  However, use this sparingly as it could lead to functions over-riding each other.
+
+```
+(ns todo-list.core
+ (:require '[clojure.string :refer :all))
+```
+
+> ####Hint:: You may see `use` or `:use` in earlier Clojure code.  Although this still works, it includes everything from the other namespace into your current one.  This is seen as a bad practice, especially when writing libraries, as you can end up including a great many unused functions into the namespace.
 
 > As Clojure is typically composed of many libraries, its prudent to only include the specific things you need from another namespace.  This also helps reduce conflicts when including multiple libraries in your project.
-  
 
-## External libraries 
 
-  To use a library that is not part of your project you also need to include it as a dependency.  You can do this using the `:dependencis` section of the  Leiningen project file.
+## Namespaces outside the project
 
-```clojure
-;; include and example dependency - eg ring, compujure
-```
-
+  To use a namespace from a library that is not part of the project, you also need to include it as a dependency.  We saw in [add ring dependency](add-ring-dependency.html) how to add a library as a `:dependency` in the Leiningen `project.clj` file.
