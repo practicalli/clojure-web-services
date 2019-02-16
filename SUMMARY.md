@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [Introduction](introduction.md)
 * [Theory: Clojure Overview](overview/index.md)
     * [Theory: WebApps in Clojure](overview/webapps-in-clojure.md)
 * [Setup](setup/index.md)
@@ -135,4 +135,3 @@
         * [Leiningen](development-environment/leiningen.md)
         * [LightTable](development-environment/lighttable.md)
         * [Other tools](development-environment/other-tools.md)
-
