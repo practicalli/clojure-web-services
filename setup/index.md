@@ -2,9 +2,9 @@
 
   This workshop requires [Leiningen](http://leiningen.org/) to create, manage and run projects.  Any text editor is fine, preferably with Clojure syntax support.  You also need Java runtime environment, preferably version 1.8 or greater.
 
-## Java 
+## Java
   Check you have a Java runtime on your system path by typing the following in a terminal window:
-  
+
 ```bash
 java -version
 ```
@@ -13,7 +13,7 @@ If Java is not found, please install it from [Oracle](http://www.oracle.com/tech
 
 
 ## Leiningen
-  [Leiningen](http://leiningen.org/) is the most commonly used build automation tool used to manage Clojure projects.  Install by [saving the Leiningen install script](https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein) and running it inside a terminal window  
+  [Leiningen](http://leiningen.org/) is the most commonly used build automation tool used to manage Clojure projects.  Install by [saving the Leiningen install script](https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein) and running it inside a terminal window
 
 * [Install script for Linux & MacOSX](https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein)
 * [Install script for Microsoft Windows](https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein.bat)
@@ -29,7 +29,7 @@ lein
  The first time you run this script it downloads a Java archive file (JAR) of the latest version of Leiningen.  When you run the script again, you have a working Leiningen build tool.
 
 
-## Development tools with Clojure support 
+## Development tools with Clojure support
 
 A tool that understands Clojure will help you write code faster and more accurately.  Here are a few common development tools used for Clojure
 
@@ -39,7 +39,7 @@ A tool that understands Clojure will help you write code faster and more accurat
 * [SublimeText](http://www.sublimetext.com/) - simple editor with basic Clojure awareness, used with `lein repl` on the command line
 
 
-## Clojure 
+## Clojure
 
 There is no specific install for Clojure.  Clojure comes as a library, a JAR file, managed by the build tool Leiningen just like any other dependency.
 
@@ -53,11 +53,11 @@ When you create a project with Leiningen, the configuration is created in a file
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]])
 ```
-  
-> **Hint** The Clojure library is very small (~3.6Mb) and Leiningen caches it and all other libraries locally in the same folder structure that Maven uses, eg Clojure version 1.8.0 would be cached in ` ~/.m2/repository/org/clojure/clojure/1.8.0/`
+
+> ####Hint:: The Clojure library is very small (~3.6Mb) and Leiningen caches it and all other libraries locally in the same folder structure that Maven uses, eg Clojure version 1.8.0 would be cached in ` ~/.m2/repository/org/clojure/clojure/1.8.0/`
 
 
-## Heroku Postgres 
+## Heroku Postgres
 
 The web application will also use a database to persist state.  For this project we are using the [Postgres relational database](http://www.postgresql.org/), an open source and well maintained project with all the features of a modern database you would expect.
 
@@ -65,5 +65,4 @@ To save on installation, we will use [Heroku Posgres](http://postgres.heroku.com
 
 To start with, [create a free account on Heroku](https://heroku.com).  The step to create a database will be covered later on in the workshop.
 
-> **Hint** Alternatively, you can install Posgres database locally on your laptop, however assistance with this is not provided.
-
+> ####Hint:: Alternatively, you can install Posgres database locally on your laptop, however assistance with this is not provided.
