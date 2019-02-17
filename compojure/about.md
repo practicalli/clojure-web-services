@@ -1,6 +1,6 @@
 # About route
 
-> **Note** Write an about route and handler that gives you information about the app.
+> ####Note:: Write an about route and handler that gives you information about the app.
 
 ```clojure
 (defn about
@@ -16,4 +16,3 @@
   (GET "/about" [] about)
   (not-found "<h1>This is not the page you are looking for</h1> <p>Sorry, the page you requested was not found!</p>"))
 ```
-

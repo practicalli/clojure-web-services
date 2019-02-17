@@ -6,7 +6,7 @@ Lets add a `defroute` function to define routes and their associated handlers.
 
 ## Add Compojure to the namespace
 
-> **Note** Add the `defroutes` function, `GET` protocol and `notfound` route from Compojure to the namespace
+> ####Note:: Add the `defroutes` function, `GET` protocol and `notfound` route from Compojure to the namespace
 
 ```clojure
 (ns todo-list.core
@@ -18,33 +18,33 @@ Lets add a `defroute` function to define routes and their associated handlers.
 
 ## Refactor the welcome function to just say Hello
 
-> **Note** The welcome function should just do one simple thing, return a welcome message.
+> ####Note:: The welcome function should just do one simple thing, return a welcome message.
 
-```clojure 
+```clojure
 (defn welcome
   "A ring handler to respond with a simple welcome message"
   [request]
   {:status 200
-     :body "<h1>Hello, Clojure World</h1>  
+     :body "<h1>Hello, Clojure World</h1>
      <p>Welcome to your first Clojure app, I now update automatically</p>"
      <p>I now use defroutes to manage incoming requests</p>
    :headers {}})
 ```
 
-## Add a defroutes function 
+## Add a defroutes function
 
-> **Note** Add a defroutes function called `app` to manage our routes.  Add routes for `/` and send all other requests to the Compojure `not-found` function.
+> ####Note:: Add a defroutes function called `app` to manage our routes.  Add routes for `/` and send all other requests to the Compojure `not-found` function.
 
 ```clojure
 (defroutes app
   (GET "/" [] welcome)
-  (not-found "<h1>This is not the page you are looking for</h1> 
+  (not-found "<h1>This is not the page you are looking for</h1>
               <p>Sorry, the page you requested was not found!</p>"))
 ```
 
-## Update -dev-main and -main functions 
+## Update -dev-main and -main functions
 
- > **Note** Change the `-dev-main` and `-main` functions to call the `app` function, instead of the `welcome` function
+ > ####Note:: Change the `-dev-main` and `-main` functions to call the `app` function, instead of the `welcome` function
 
 ```clojure
 (defn -main
@@ -61,6 +61,5 @@ Lets add a `defroute` function to define routes and their associated handlers.
 ```
 
   As we have changed the `-dev-main` and `-main` functions, we need to restart the server again - `Ctrl-c` then `lein run 8000`
-  
+
   Now test out your updated web app by visiting http://localhost:8000 and http://localhost:8000/not-there
-  

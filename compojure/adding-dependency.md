@@ -1,14 +1,14 @@
 # Adding the Compojure dependency
 
-> **Note** Edit your project configuration `project.clj` and add compojure as a dependency.  
+> ####Note:: Edit your project configuration `project.clj` and add compojure as a dependency.
 
 The current version of Compojure is: **[compojure "1.3.4"]**
-  
-> **Hint** You can look up the version of [Compojure on Clojars.org](https://clojars.org/compojure) or any other Clojure library.  [Clojars.org](https://clojars.org/) is like Maven Central for Clojure.
+
+> ####Hint:: You can look up the version of [Compojure on Clojars.org](https://clojars.org/compojure) or any other Clojure library.  [Clojars.org](https://clojars.org/) is like Maven Central for Clojure.
 
 The `project.clj` file should look as follows:
 
-```clojure 
+```clojure
 (defproject todo-list "0.1.0-SNAPSHOT"
   :description "A simple webapp in Clojure"
   :url "http://example.com/FIXME"

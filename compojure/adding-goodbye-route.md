@@ -1,7 +1,7 @@
 # Adding a goodbye route
 
-> **Note** Add another route to display a goodbye message
-  
+> ####Note:: Add another route to display a goodbye message
+
 ```clojure
 (defroutes app
   (GET "/" [] welcome)
@@ -9,8 +9,8 @@
   (not-found "Sorry, page not found"))
 ```
 
-  
-> **Note** Dont forget to write the handler function for the `goodbye` route
+
+> ####Note:: Dont forget to write the handler function for the `goodbye` route
 
 
 ```clojure
@@ -25,6 +25,5 @@
           <p>Learnt the truth from tears I cried</p>"
    :headers {}})
 ```
-  
-> **Note** Now [test your new route](http://localhost:8000/goodbye).  As we have `wrap-reload` around app then no restart needed
 
+> ####Note:: Now [test your new route](http://localhost:8000/goodbye).  As we have `wrap-reload` around app then no restart needed
