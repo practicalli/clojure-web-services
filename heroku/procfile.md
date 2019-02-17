@@ -1,10 +1,10 @@
 # Add Procfile
 
-We tell Heroku how to run our application once its compiled using a simple text file called `Procfile`.  
+We tell Heroku how to run our application once its compiled using a simple text file called `Procfile`.
 
 Using the `web:` directive, we tell Heroku that our application will listen for web traffic (https).  Heroku sets a value for the port our application can listen to using the `PORT` configuration variable (ports are dynamically assigned).
 
-> **Note** Create a new file called `Procfile` with the following text
+> ####Note:: Create a new file called `Procfile` with the following text
 
 ```
 web: java $JVM_OPTS -cp target/todo-list.jar clojure.main -m todo-list.core $PORT
@@ -12,7 +12,7 @@ web: java $JVM_OPTS -cp target/todo-list.jar clojure.main -m todo-list.core $POR
 
 ## Theory: Running Clojure as a Java application
 
-When you run a Clojure project with Leiningen, two Java virtual machines (JVM's) are started.  One JVM is to run Leiningen and the second JVM is to run your application.  By using Leiningen to run your application in production you are using use extra resources and also risk pulling in unnecessary development libraries & configurationonly needed during development. 
+When you run a Clojure project with Leiningen, two Java virtual machines (JVM's) are started.  One JVM is to run Leiningen and the second JVM is to run your application.  By using Leiningen to run your application in production you are using use extra resources and also risk pulling in unnecessary development libraries & configurationonly needed during development.
 
 When you run your application in production you can save resources by only running a JVM for your application.  This is done by running a Clojure application just like a Java application, using the `java` command in the Heroku `Procfile`.
 
