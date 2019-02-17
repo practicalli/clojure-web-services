@@ -1,11 +1,11 @@
-# Postgres CLI 
+# Postgres CLI
 
-Heroku toolbelt has many commands for viewing information and querying the Heroku Postgres database.  Here is a breakdown of the most commonly used commands. 
+Heroku toolbelt has many commands for viewing information and querying the Heroku Postgres database.  Here is a breakdown of the most commonly used commands.
 
-> **Hint** The Heroku Toolbelt `pg` commands require a working postgres command line client to be installed and available on your operating system path.
+> ####Hint:: The Heroku Toolbelt `pg` commands require a working postgres command line client to be installed and available on your operating system path.
 
 
-## Postgres Information 
+## Postgres Information
 
 To see all PostgreSQL databases provisioned by your application and the identifying characteristics of each (db size, status, number of tables, PG version, creation date etc…) use the `heroku pg:info` command.
 
@@ -30,7 +30,7 @@ watch heroku pg:info
 ```
 
 
-## Running Queries on Postgres 
+## Running Queries on Postgres
 
 psql is the native PostgreSQL interactive terminal and is used to execute queries and issue commands to the connected database.  To establish a psql session with your remote database use heroku pg:psql. You must have PostgreSQL installed on your system to use `heroku pg:psql`.
 
@@ -45,24 +45,24 @@ Type "help" for help.
 
 heroku-app-name::BROWN=> \dt
                List of relations
- Schema |     Name     | Type  |     Owner      
---------+--------------+-------+----------------
+ Schema |     Name     | Type  |     Owner
+--------|--------------|-------|----------------
  public | pl0_programs | table | moiwgreelvvujc
 (1 row)
 
-heroku-app-name::BROWN=> 
+heroku-app-name::BROWN=>
 heroku-app-name::BROWN=> SELECT * FROM pl0_programs;
-  name  |           source            
---------+-----------------------------
+  name  |           source
+--------|-----------------------------
  3m2m1  |                     3-2-1\r+
-        |           
+        |
  ap1tb  | a+1*b\r                    +
-        |           
+        |
  test   |                     a+1*b\r+
         |           \r               +
-        |           
+        |
  lolwut |                     3-2-1\r+
-        |           
+        |
 (4 rows)
 ```
 
@@ -73,7 +73,7 @@ $ heroku pg:psql HEROKU_POSTGRESQL_GRAY
 Connecting to HEROKU_POSTGRESQL_GRAY... done
 ```
 
-## Reset your database 
+## Reset your database
 
 To drop and recreate your database use `heroku pg:reset`
 
@@ -96,4 +96,3 @@ Restarting dynos... done
 ```
 
 There are many more Heroku toolbelt commands you can use for postgres. [TODO: Link to postgres command]
-

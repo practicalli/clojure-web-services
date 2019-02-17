@@ -2,7 +2,7 @@
 
 Heroku Postgres is integrated directly into the Heroku toolbelt and offers several commands that automate many common tasks associated with managing a database-backed application.
 
-> **Hint** Some of these commands require a postgres cleint to be installed on your computer to work.
+> ####Hint:: Some of these commands require a postgres cleint to be installed on your computer to work.
 
 ## pg:info
 
@@ -102,7 +102,7 @@ The pg:ps command queries the pg_stat_statements table in postgres to give a con
 
  heroku pg:ps
  procpid |         source            |   running_for   | waiting |         query
----------+---------------------------+-----------------+---------+-----------------------
+---------|---------------------------|-----------------|---------|-----------------------
    31776 | psql                      | 00:19:08.017088 | f       | <IDLE> in transaction
    31912 | psql                      | 00:18:56.12178  | t       | select * from hello;
    32670 | Heroku Postgres Data Clip | 00:00:25.625609 | f       | BEGIN READ ONLY; select 'hi'

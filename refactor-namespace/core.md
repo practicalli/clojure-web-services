@@ -2,7 +2,7 @@
 
 We can now refactor the core namespace to contain the code that starts up our server and join up all the route handlers.
 
-> **Note** Edit the `src/todo_list/core.clj` file and update the namespace defition to include the new `handlers` namespace, including the whole namespace in `core`.
+> ####Note:: Edit the `src/todo_list/core.clj` file and update the namespace defition to include the new `handlers` namespace, including the whole namespace in `core`.
 
 ```clojure
 (ns todo-list.core
@@ -14,14 +14,14 @@ We can now refactor the core namespace to contain the code that starts up our se
             [ring.adapter.jetty      :as    jetty]))
 ```
 
-> **Note** Change app from a defroutes to a `def` and use the `route` function to merge all the defroutes into one
+> ####Note:: Change app from a defroutes to a `def` and use the `route` function to merge all the defroutes into one
 
 ```clojure
 (def app
   (routes #'play-routes #'base-routes #'task-routes))
 ```
 
-The `routes` function takes the names of all the other defroutes and merges into one list of handlers.  
+The `routes` function takes the names of all the other defroutes and merges into one list of handlers.
 
 `app` is now just a name we give to reference the handlers for all routes.  We can continue to add more defroutes to app as our application grows, along with any middleware we wish to apply to our handlers.
 
@@ -55,4 +55,3 @@ The `routes` function takes the names of all the other defroutes and merges into
   (jetty/run-jetty (wrap-reload #'app)
                    {:port (Integer. port-number)}))
 ```
-

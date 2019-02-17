@@ -1,14 +1,14 @@
 # Base routes
 
 
-> **Note** Create a new file called `src/todo_list/handlers/base-routess.clj` and move all the handler code into this file from `src/todo_list/core`.  Make sure you also move the `hiccup` libraries into the new `handlers` namespace.
+> ####Note:: Create a new file called `src/todo_list/handlers/base-routess.clj` and move all the handler code into this file from `src/todo_list/core`.  Make sure you also move the `hiccup` libraries into the new `handlers` namespace.
 
 
 
 `handlers.clj` should look as follows:
 
 
-```clojure 
+```clojure
 (ns todo-list.handlers
    (:use
      [hiccup.core]
@@ -73,4 +73,3 @@
            [:div [:p "Take a look at the HTML generated in this page, compared to the about page"]]
            [:div [:p "Style-wise there is no difference between the pages as we havent added anything in the stylesheet, however the hiccup page generates a more complete page in terms of HTML"]]]))
 ```
-

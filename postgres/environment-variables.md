@@ -1,13 +1,13 @@
 # Environment Variables
 
   When you add an Heroku Postgres database to your app, it creates a `DATABASE_URL` configuration variable (environment variable manged by Heroku).
-  
-> **Note** Check your Heroku app has a `DATABASE_URL` configuration variable for your database
+
+> ####Note:: Check your Heroku app has a `DATABASE_URL` configuration variable for your database
 
 List all the configuration variables for your app using the command:
 
 ```
-heroku config 
+heroku config
 ```
 
 The `DATABASE_URL` contains your **username** and **password** for the database, as well as the **hostname** and **database name** in the form of:
