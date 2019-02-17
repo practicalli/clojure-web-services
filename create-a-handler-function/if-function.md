@@ -1,4 +1,4 @@
-# Theory: if function 
+# Theory: if function
 
 Clojure has an `if` function that evaluates an expresssion.  If that expression is true, then the first value is returned, if false then the second argument is returned.
 
@@ -26,7 +26,7 @@ In our code, if the web address, `:uri`, taken from the request map is equal to 
 ```
 
 
-> **Hint** In the case where an if expression is defined with only one value and the expression is false, then the value `nil` is returned.
+> ####Hint:: In the case where an if expression is defined with only one value and the expression is false, then the value `nil` is returned.
 
 ## Advanced if functions with do
 
@@ -35,7 +35,7 @@ Each of the two possible values the `if` function can return can come from evalu
 ```
 (if (true)
   (str "I am the truth")
-  (str "I am the path to darkness") 
+  (str "I am the path to darkness")
 ```
 
 However, each value can only be defined by one expression.  If you need to have multiple steps you can use a function called `do`
@@ -48,7 +48,6 @@ However, each value can only be defined by one expression.  If you need to have 
   (else-function))
 ```
 
-The `do` function calls each function evaluation in turn, returning the result of the last function called. 
+The `do` function calls each function evaluation in turn, returning the result of the last function called.
 
-> **Hint** The if function is a very simplistic way to define routes in our web application.  Soon we will look at Compojure, a library for elegantly managing routing for our Clojure application.
-
+> ####Hint:: The if function is a very simplistic way to define routes in our web application.  Soon we will look at Compojure, a library for elegantly managing routing for our Clojure application.

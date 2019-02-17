@@ -2,10 +2,11 @@
 
 So far our app has responded with the same message, regardless of the web address (route) requested in the browser.  The webapp will be more useful if it responds differently to different routes.
 
-> **Note** Change the code to only respond with content when requesting the default route, that is http://localhost:8000/.  Anything else we will return an error.
-  
-Edit the `welcome` function in `src/todo-list/core.clj` and use an `if` function to check if the request is valid or not.
-  
+> ####Note::Add error message to handler
+> Change the code to only respond with content when requesting the default route, that is http://localhost:8000/.  Anything else we will return an error.
+>
+> Edit the `welcome` function in `src/todo-list/core.clj` and use an `if` function to check if the request is valid or not.
+
 ```clojure
 (defn welcome
   "A ring handler to process all requests for the web server.  If a request is for something other than then an error message is returned"
@@ -31,8 +32,8 @@ If the route matches `/` then a response map with the welcome message is returne
 lein run 8000
 ```
 
-  Open http://localhost:8000 in your browser and try out different pages, such at [/hello]( http://localhost:8000/hello),  [/goodbye]( http://localhost:8000/goodbye) or  [/complete-indifference]( http://localhost:8000/complete-indifference).  
-  
+  Open http://localhost:8000 in your browser and try out different pages, such at [/hello]( http://localhost:8000/hello),  [/goodbye]( http://localhost:8000/goodbye) or  [/complete-indifference]( http://localhost:8000/complete-indifference).
+
   Only http://localhost:8000 will return the welcome message, everything else should return the error message.
 
 ![todo-list - bad route error message](../images/todo-list-not-the-page-you-are-looking-for.png)
