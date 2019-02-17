@@ -2,7 +2,7 @@
 
 Adding a redirect is very easy to do with ring, as the ring library provides a function called `redirect` that takes a url as an argument
 
-> **Note** Include the `ring.util.response/redirect` function into the `shorturl-service.handler` namespace so that we can simply call the `redirect` function
+> ####Note:: Include the `ring.util.response/redirect` function into the `shorturl-service.handler` namespace so that we can simply call the `redirect` function
 
 ```clojure
 (ns shorturl-service.handler

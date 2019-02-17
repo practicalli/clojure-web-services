@@ -4,5 +4,4 @@ As we dont have time to build a full web app in this workshop, here is one that 
 
 ![Shouter](../images/shouter-web-ui-example.png)
 
-> **Note** Checkout the [Shouter code from Gitub](https://github.com/jr0cket/shouter) 
-
+> ####Note:: Checkout the [Shouter code from Gitub](https://github.com/jr0cket/shouter)

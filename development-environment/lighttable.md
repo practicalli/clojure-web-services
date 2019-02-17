@@ -8,9 +8,9 @@ This workshop will use LightTable to help you discover Clojure.
 
 ![](../images/lighttable-screens.png)
 
-> **Note** Install Lighttable from [lighttable.com](http://lighttable.com)
+> ####Note:: Install Lighttable from [lighttable.com](http://lighttable.com)
 
-**Linux** 
+**Linux**
   Extract the contents of the downloaded lighttable file to a suitable directory (`/usr/local` or `/opt` or `~/apps`).  Make sure the `LightTable` file in the extracted folder is accessible via the system `$PATH`.
 
 **MacOSX**
@@ -19,7 +19,7 @@ This workshop will use LightTable to help you discover Clojure.
 **Windows**
   Download the windows zip file for LightTable and extract the installer, following the instructions inside the installer.
 
-## Using LightTable 
+## Using LightTable
 
   LightTable has an online tutorial entitled [Getting started with LightTable](http://docs.lighttable.com/tutorials/full/)
 

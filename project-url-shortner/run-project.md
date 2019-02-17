@@ -2,7 +2,7 @@
 
 The compojure template provides a working webserver and simple webapp out of the box.
 
-> **Note** Run the project to start the server and webapp 
+> ####Note:: Run the project to start the server and webapp
 
 ```shell
 lein ring server
@@ -19,4 +19,3 @@ Started server on port 3000
 ```
 
 Your default browswer should also open at http://localhost:3000 with a message saying "Hello World".  If your browser does not open then check for errors in the terminal where you ran the leiningen command.
-

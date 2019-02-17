@@ -6,7 +6,7 @@ Ring provides many low-level functions to manage web requests and responses as w
 
 Compojure provides a simple way to define routes for your application, eg what function is called when a browser requests a specific url.
 
-> **Note** Create a new project using Leiningen and the compojure template, then go into the project created.
+> ####Note:: Create a new project using Leiningen and the compojure template, then go into the project created.
 
 
 ```bash

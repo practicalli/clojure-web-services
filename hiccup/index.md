@@ -100,6 +100,6 @@ If the body of the element is a seq, its contents will be expanded out into the 
 
 The parent tag will still be rendered in the above example, so
 
-> **Hint** Hiccup reference and guides
+> ####Hint:: Hiccup reference and guides
 > * [Hiccup API](https://weavejester.github.io/hiccup/)
 > * [Hiccup Tips - Lisp Cast](https://lispcast.com/hiccup-tips/)

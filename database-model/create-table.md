@@ -3,9 +3,9 @@
 We have our database model for tasks, so lets create write some code that will create a database table in Postgres, assuming that table is not there already.
 
 
-> **Note** Create a new Clojure file `src/todo_list/items.clj` and add the following code
+> ####Note:: Create a new Clojure file `src/todo_list/items.clj` and add the following code
 
-First add a dependency for Clojure.java.jdbc 
+First add a dependency for Clojure.java.jdbc
 
 ```clojure
 [clojure.java.jdbc :as sql]
@@ -18,7 +18,7 @@ You `items.clj` should look like
   (:require [clojure.java.jdbc :as sql]))
 ```
 
-We only want to create the database if it does not already exist, so we can check if the table is already part of the schema 
+We only want to create the database if it does not already exist, so we can check if the table is already part of the schema
 
 ```clojure
 (defn db-schema-migrated?
@@ -43,12 +43,12 @@ Then add a condition to check if the table exists and if not then create the dat
                          [:id :serial "PRIMARY KEY"]
                          [:body :varchar "NOT NULL"]
                          [:created_at :timestamp
-                          "NOT NULL" "DEFAULT CURRENT_TIMESTAMP"])))) 
+                          "NOT NULL" "DEFAULT CURRENT_TIMESTAMP"]))))
 ```
 
 <hr />
 
-## What Heroku does when you create a database 
+## What Heroku does when you create a database
 
 Heroku Postgres users are granted all non-superuser permissions on their database. These include `SELECT, INSERT, UPDATE, DELETE, TRUNCATE, REFERENCES, TRIGGER, CREATE, CONNECT, TEMPORARY, EXECUTE,` and `USAGE`.
 
@@ -64,4 +64,3 @@ REVOKE ALL ON DATABASE database_name FROM PUBLIC;
 GRANT CONNECT ON DATABASE database_name TO database_user;
 GRANT ALL ON DATABASE database_name TO database_user;
 ```
-

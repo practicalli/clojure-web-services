@@ -20,7 +20,7 @@ You could write a function to simply display all the parameters as the body of t
 
 To use the `handle-dump` function, first include the function in the namespace using `(:require [ring.handler.dump :refer [handle-dump]])`
 
-> **Note** Add the `ring.handler.dump/handle-dump` function into the `shorturl-service.handler` namespace along with other require statements
+> ####Note:: Add the `ring.handler.dump/handle-dump` function into the `shorturl-service.handler` namespace along with other require statements
 
 ```clojure
 (ns shorturl-service.handler

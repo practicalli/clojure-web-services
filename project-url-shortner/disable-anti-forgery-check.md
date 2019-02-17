@@ -1,19 +1,19 @@
 # Disable anti-forgery check
 
-The [ring-defaults](https://github.com/ring-clojure/ring-defaults) library provides sensible Ring middleware defaults, especially in terms of security.  The ring-defaults library is included in the 
+The [ring-defaults](https://github.com/ring-clojure/ring-defaults) library provides sensible Ring middleware defaults, especially in terms of security.  The ring-defaults library is included in the
 
 Anyone can send a GET request to a ring webapp, however with ring-defaults included then only pages / URLs from the webapp itself are allowed to POST.
 
 Ring uses an anti-forgery token that needs to be setup in the project, otherwise you get the dreaded "Invalid Anti-forgery token" error message.
 
-To keep things simple we are going to turn off the anti-forgery settings provided by Ring-Defaults so we can make our POST without the CSRF protection. 
+To keep things simple we are going to turn off the anti-forgery settings provided by Ring-Defaults so we can make our POST without the CSRF protection.
 
-> **Note** Edit the definition of `app` in `src/shorturl-service/handler.clj` and replace `site-defaults` with a function to set `:anti-forgery` to false in `site-defaults`.
+> ####Note:: Edit the definition of `app` in `src/shorturl-service/handler.clj` and replace `site-defaults` with a function to set `:anti-forgery` to false in `site-defaults`.
 
 ```clojure
-(def app 
-  (wrap-defaults 
-  app-routes 
+(def app
+  (wrap-defaults
+  app-routes
   (assoc-in site-defaults [:security :anti-forgery] false)))
 ```
 
@@ -58,13 +58,13 @@ For example, here is the `site-defaults` definition
 See more details of [ring middleware defaults](https://crossclj.info/ns/ring/ring-defaults/latest/ring.middleware.defaults.html)
 
 
-## Adding other functions as middleware 
+## Adding other functions as middleware
 
 ring just uses function composition for middleware you can simply wrap your own function calls around the call to wrap defaults, so long as those functions deal with request/response maps appropriately.
 
 ```clojure
-(def app 
-  (my-additional-mieddleware 
+(def app
+  (my-additional-mieddleware
     (wrap-defaults app-routes site-defaults)
   arguments to my additional middleware))
 ```

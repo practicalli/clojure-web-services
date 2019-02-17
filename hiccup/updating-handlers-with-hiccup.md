@@ -1,18 +1,18 @@
 # Updating handlers with hiccup
 
-Instead of including fiddly html code (and having to make sure you close tags), we will write our markup in Clojure syntax using hiccup. 
+Instead of including fiddly html code (and having to make sure you close tags), we will write our markup in Clojure syntax using hiccup.
 
-## Add dependencies 
+## Add dependencies
 
-> **Note** Add hiccup dependencies 
+> ####Note:: Add hiccup dependencies
 
 ```clojure
 [hiccup "1.0.5"]
 ```
 
-## Require hiccup 
+## Require hiccup
 
-> **Note** Add hiccup to your namespace 
+> ####Note:: Add hiccup to your namespace
 
 ```clojure
 [hiccup.core :refer :all]
@@ -32,9 +32,9 @@ Your core.clj file should look like this
             [hiccup.page :refer :all]))
 ```
 
-## Update the welcome handler 
+## Update the welcome handler
 
-> **Note** Change the `welcome` handler to use hiccup rather than html code
+> ####Note:: Change the `welcome` handler to use hiccup rather than html code
 
 ```clojure
 (defn welcome
@@ -47,9 +47,9 @@ Your core.clj file should look like this
 The `html` function create html code based on the keywords used.  However, the html function does not create a full html web page.
 
 
-## Update the goodbye handler 
+## Update the goodbye handler
 
-> **Note** Change the `goodbye` handler to use hiccup rather than html 
+> ####Note:: Change the `goodbye` handler to use hiccup rather than html
 
 ```clojure
 (defn goodbye

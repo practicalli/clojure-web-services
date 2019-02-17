@@ -2,7 +2,7 @@
 
 Our application will use JDBC (Java database connectivity) to connect to the Postgres database. So we need to add the JDBC library along with a a specific JDBC driver for Postgres.
 
-> **Note** Add Dependencies to the project for the Heroku Postgres database 
+> ####Note:: Add Dependencies to the project for the Heroku Postgres database
 
 Edit the project configuration file, `project.clj` and add the following dependencies
 
@@ -30,5 +30,3 @@ The `project.clj` file should now look as follows:
   :auto-clean false
   :profiles {:uberjar {:aot :all}})
 ```
-
-

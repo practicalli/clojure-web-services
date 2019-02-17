@@ -1,6 +1,6 @@
 # Alternative approaches
 
-> **Hint** Here is an alterative approach to the code just created, for comparison purposes only.  There is no need to implement any of the following code (unless you prefer this approach)
+> ####Hint:: Here is an alterative approach to the code just created, for comparison purposes only.  There is no need to implement any of the following code (unless you prefer this approach)
 
 
 
@@ -10,9 +10,9 @@ The UUID-OSSP extension to our Heroku postgres database to autogenerate universa
 
 
 (defn create-table [db]
-  (db/execute!   
+  (db/execute!
    db
-   ["CREATE EXTENSION IF NOT EXISTS \"UUID-OSSP\"" ])  
+   ["CREATE EXTENSION IF NOT EXISTS \"UUID-OSSP\"" ])
   (db/execute!
    db
    ["CREATE TABLE IF NOT EXISTS items
@@ -25,7 +25,7 @@ The UUID-OSSP extension to our Heroku postgres database to autogenerate universa
 > **Fixme** What is the clojure.java.jdbc version of the above ?
 
 
-## Add more database functions 
+## Add more database functions
 
 
 ```clojure

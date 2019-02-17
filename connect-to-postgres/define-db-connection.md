@@ -1,6 +1,6 @@
 # Define a Database Connection
 
-> **Note** View the Database_URL configuration variable for the Heroku Database and define a name to represent that in Clojure 
+> ####Note:: View the Database_URL configuration variable for the Heroku Database and define a name to represent that in Clojure
 
 Use the Heroku Toolbelt to view the configuration variables
 
@@ -10,7 +10,7 @@ heroku config
 
 Edit the file `src/todo_list/core.clj` file and add the following definition towards the top of the file.  Substitute your own database connection values for `:subname`, `user` and `password`.
 
-```clojure 
+```clojure
 (def postgres {:subprotocol "postgresql"
                :subname "//ec2-54-225-134-223.compute-1.amazonaws.com:5432/d9mtan2ol8uhik"
                :user "trhrcgefmyolkw"
@@ -31,7 +31,7 @@ JdBC connection string for Heroku Postgres
 `jdbc:postgresql://[host]:[port]/[database]?user=[user]&password=[password]&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory`.
 
 
-Converting the map back to a JDBC connection string 
+Converting the map back to a JDBC connection string
 
 ```
 (defn remote-heroku-db-spec [host port database username password]
@@ -39,7 +39,7 @@ Converting the map back to a JDBC connection string
 ```
 
 
-## From Heroku 
+## From Heroku
 
 The DATABASE_URL for the Heroku Postgres add-on follows this naming convention:
 
@@ -49,7 +49,4 @@ However the Postgres JDBC driver uses the following convention:
 
 jdbc:postgresql://<host>:<port>/<dbname>?user=<username>&password=<password>
 
-Notice the additional `ql` at the end of `jdbc:postgresql`.  Due to this difference you will need to hardcode the scheme to jdbc:postgresql 
-
-
-
+Notice the additional `ql` at the end of `jdbc:postgresql`.  Due to this difference you will need to hardcode the scheme to jdbc:postgresql
