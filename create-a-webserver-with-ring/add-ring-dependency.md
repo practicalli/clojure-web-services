@@ -16,6 +16,8 @@ Add the ring library as a depencency of the todo-list project.
   :repl-options {:init-ns todo-list.core})
 ```
 
+---
+
 > ####Hint::Dependencies with Leiningen
 Read the [dependencies secion of the Leiningen documentation](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#dependencies) to learn more about adding libraries.
 
