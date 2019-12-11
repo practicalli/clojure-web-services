@@ -3,7 +3,7 @@
 We can see the details of the requests being send to our Clojure webapp by looking at the request object.
 
 > ####Note:: Add a `request-info` route and handler to view the request information
-
+>
 ```clojure
 (defn request-info
   "View the information contained in the request, useful for debugging"
@@ -11,7 +11,8 @@ We can see the details of the requests being send to our Clojure webapp by looki
   {:status 200
    :body (pr-str request)
    :headers {}})
-
+```
+```clojure
 (defroutes app
   (GET "/" [] welcome)
   (GET "/goodbye" [] goodbye)
@@ -19,8 +20,8 @@ We can see the details of the requests being send to our Clojure webapp by looki
   (GET "/request-info" [] request-info)
   (not-found "<h1>This is not the page you are looking for</h1> <p>Sorry, the page you requested was not found!</p>"))
 ```
-
-  Visit http://localhost:8000/request-info to see the results.
+>
+>  Visit http://localhost:8000/request-info to see the results.
 
 ![Output of the request](/images/clojure-webdev-request-info-pr-str-output.png)
 
@@ -30,7 +31,7 @@ We can see the details of the requests being send to our Clojure webapp by looki
   Compojure has a request dump function that gives a much nicer output than our initial `request-info` function.  The `dump` funtion also seperates the default response keys with any additional keys provided by the URL.
 
 > ####Note:: Include `handle-dump` in the namespace
-
+>
 ```clojure
 (ns webdev.core
   (:require [ring.adapter.jetty :as jetty]
@@ -40,8 +41,10 @@ We can see the details of the requests being send to our Clojure webapp by looki
             [ring.handler.dump :refer [handle-dump]]))
 ```
 
-> ####Note:: Delete the `request-info` function we defined previously and update the `/request-info` route to use `handle-dump` as the handler
+---
 
+> ####Note:: Delete the `request-info` function we defined previously and update the `/request-info` route to use `handle-dump` as the handler
+>
 ```clojure
 (defroutes app
   (GET "/" [] welcome)
@@ -50,7 +53,7 @@ We can see the details of the requests being send to our Clojure webapp by looki
   (GET "/request-info" [] handle-dump)
   (not-found "<h1>This is not the page you are looking for</h1> <p>Sorry, the page you requested was not found!</p>"))
 ```
-
-  Now the output is much nicer http://localhost:8000/request-info
+>
+>  Now the output is much nicer http://localhost:8000/request-info
 
 ![](/images/clojure-webdev-compojure-request-dump-output.png)
