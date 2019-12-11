@@ -9,7 +9,8 @@ So far our app has responded with the same message, regardless of the web addres
 
 ```clojure
 (defn welcome
-  "A ring handler to process all requests for the web server.  If a request is for something other than then an error message is returned"
+  "A ring handler to process all requests for the web server.
+  If a request is for something other than `/` then an error message is returned"
   [request]
   (if (= "/" (:uri request))
     {:status 200

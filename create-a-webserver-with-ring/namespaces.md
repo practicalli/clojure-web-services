@@ -2,11 +2,12 @@
 
   A namespace in Clojure is used to manage the logical separation of code, usually along features of the application.  A namespace limits the scope of functions and names of data structures to a specific namespace.
 
-  The names used with `defn` or `defn-` to define a function can be used anywhere (see hint) in the namespace just by that name.  The same goes for any values defined by `def`.
+  The names bound to function definitions using the `defn` function can be used elsewhere in the namespace just by using the name.  The same goes for any values bound to a name using the `def` function.
+
+> ####Hint::Clojure order of evaluation
+> The code in a Clojure namespace is evaluated only once and from top to bottom.  To call a named function or data structure, it must have its definition evaluated first.
 
   To use a function outside the namespace, you need to use its namespace and its name, for example `clojure.string/reverse`
-
-> ####Hint:: Remember that Clojure is evaluated from top to bottom, so if you are calling a named function or data structure, it must have had its definition evaluated first.
 
 ## Include another namespace in the REPL
 
@@ -50,8 +51,11 @@
  (:require '[clojure.string :refer :all))
 ```
 
-> ####Hint:: You may see `use` or `:use` in earlier Clojure code.  Although this still works, it includes everything from the other namespace into your current one.  This is seen as a bad practice, especially when writing libraries, as you can end up including a great many unused functions into the namespace.
-
+> ####Hint::Dependency conflicts - avoid the `use` function
+> The `use` function and `:use` within an `ns` definition are seen as a bad practice and should be avoided.
+>
+> The `use` function includes all the functions as if they had been written in the  including a great many unused functions into the namespace.  It will also pull in all the other namespace functions that each namespace included.
+>
 > As Clojure is typically composed of many libraries, its prudent to only include the specific things you need from another namespace.  This also helps reduce conflicts when including multiple libraries in your project.
 
 

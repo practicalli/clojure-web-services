@@ -26,4 +26,7 @@ Here is an example of what our project looks like using the `tree` command (you 
 ![Clojure project structure - webdev](/images/project-todo-list-tree.png)
 
 
-> ####Hint:: Look closer at the directory hierachy and you will see something has happend to our `todo-list` name.  Unfortunately Java does not like dashes '-' in directory or file names, so Leiningen changes the directory names to `src/todo_list` & `test/todo_list` and the initial test to `src/todo_list/core_test.clj`.
+> ####Hint:: File names and the Java class path
+> The `src` and `test` directories both contain a directory named `todo_list` even though our project is `todo-list`.
+>
+> Unfortunately the Java classpath does not like dashes '-' in directory or file names, so Leiningen changes the directory names to `src/todo_list` & `test/todo_list` and the initial test to `src/todo_list/core_test.clj`.
