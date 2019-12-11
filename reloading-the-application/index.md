@@ -1,39 +1,91 @@
-# Middleware in Ring
+# Automatic reloading with wrap-reload middleware
 
-Middleware in ring is a way to modify the incoming requests or outgoing responses.
+ `wrap-reload` is a ring middleware function that will push all our code changes to the application each time we save.
 
-Middleware can also wrap handlers or other middleware, affecting their behaviour.  For example the `wrap-reload` middleware enables live reloading by detecting file changes and reloading affected functions into their namespace, before the request is passed to the relevant handler function
-
-Here is a list of middleware available in Ring itself:
-
-`ring/ring-core` middleware includes:
-   * [wrap-cookies](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/cookies.clj#L124) (ring.middleware.cookies)
-   * [wrap-file](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/file.clj#L14) (ring.middleware.file)
-   * [wrap-file-info](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/file_info.clj#L89) (ring.middleware.file-info)
-   * [wrap-flash](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/flash.clj#L4) (ring.middleware.flash)
-   * [wrap-keyword-params](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/keyword_params.clj#L15) (ring.middleware.keyword-params)
-   * [wrap-multipart-params](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/multipart_params.clj#L60) (ring.middleware.multipart-params
-   * [wrap-nested-params](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/nested_params.clj#L47) (ring.middleware.nested-params
-   * [wrap-params](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/params.clj#L54) (ring.middleware.params)
-   * [wrap-session](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/session.clj#L6) (ring.middleware.session)
+![Ring - wrap-reload middleware](../images/clojure-ring-adaptor-middleware-handler-wrap-reload.png)
 
 
-`ring/ring-devel` middleware provides:
-   * [wrap-lint](https://github.com/mmcgrana/ring/blob/master/ring-devel/src/ring/middleware/lint.clj#L84) (ring.middleware.lint)
-   * [wrap-reload](https://github.com/mmcgrana/ring/blob/master/ring-devel/src/ring/middleware/reload.clj#L4) (ring.middleware.reload)
-   * [wrap-stacktrace](https://github.com/mmcgrana/ring/blob/master/ring-devel/src/ring/middleware/stacktrace.clj#L75) (ring.middleware.stacktrace)
-
-
-# Leiningent Templates
-
-Templates can be used to create a project with a given set of dependencies as well as Clojure code.
-
-There is a `compojure` template that gives you a basic running web application.  To use this template to create a new project use the following command, substituting your own project-name
-
-```bash
-lein new compojure project-name
+> ####Note::  Include wrap-reload in the namespace of our project
+> Require the `wrap-reload` directly into the namespace
+>
+```clojure
+(ns todo-list.core
+  (:require [ring.adapter.jetty :as jetty]
+            [ring.middleware.reload :refer [wrap-reload]]))
 ```
 
-This project contains ring and compojure.  The dependency for ring is `ring/site-defaults` which includes some sensible default settings for your application, eg security settings such as anti-forgery.
+## Define a function to use wrap-reload
 
-See the definition of [ring/site-defaults](https://github.com/ring-clojure/ring-defaults/blob/master/src/ring/middleware/defaults.clj) for further information.
+  A function called `-dev-main` will run the reloading web server when we are developing, ensuring we only use the `wrap-reload` function during development.
+
+
+> ####Note:: Create a `-dev-main` function
+> The `-dev-main` funciton is the same as `-main`, except we use the `wrap-reload` middleware around the `welcome` function.  Each time you change the `welcome` function definition it will be reloaded.
+>
+> Using the quote reader macro, **#'** in front of the `welcome` function name tells Clojure to skip evaluation of the function and reference the name of the function instead.  This allows the `wrap-reload` middleware to decide when to evaluate the `welcome` function.
+>
+```clojure
+(defn -dev-main
+  "A very simple web server using Ring & Jetty,
+  called via the development profile of Leiningen
+  which reloads code changes using ring middleware wrap-reload"
+  [port-number]
+  (webserver/run-jetty
+    (wrap-reload #'welcome)
+    {:port  (Integer. port-number)
+     :join? false}))
+```
+
+> #### Note::Tweak the `-main` function for production
+> The `-main` function is typically called on the command line when run in production, so we want to be connected to the output of the webserver.
+>
+> Remove the `:join? false` option for the embedded Jetty server, so the output of the server is displayed
+>
+```clojure
+(defn -main
+  "A very simple web server using Ring & Jetty
+  Production mode operation, no reloading."
+  [port-number]
+  (webserver/run-jetty
+    welcome
+    {:port (Integer. port-number)}))
+```
+
+
+## Configure the dev profile in your project
+
+  When you start your Clojure webapp with `lein run` it looks for main class to run in the `:dev` profile first.  So we need to create a `:dev` profile.
+
+
+  `:dev` profile that sets `-dev-main` to be the starting point of our application.  This
+
+> ####Note::Add profile to project configuration
+> Edit the `project.clj` and create a `:dev` profile to define the initial function to call when starting our webapp.
+
+```clojure
+:profiles {:dev
+            {:main todo-list.core/-dev-main}}
+```
+
+
+The `project.clj` file should look like the following:
+
+```clojure
+(defproject todo-list "0.1.0-SNAPSHOT"
+
+  :description "A Todo List server-side webapp using Ring & Compojure"
+  :url "https://github.com/practicalli/clojure-todo-list-example"
+
+  :license {:name "Creative Commons Attribution Share-Alike 4.0 International"
+            :url  "https://creativecommons.org"}
+
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [ring "1.8.0"]]
+
+  :repl-options {:init-ns todo-list.core}
+
+  :main todo-list.core
+
+  :profiles {:dev
+             {:main todo-list.core/-dev-main}})
+```
