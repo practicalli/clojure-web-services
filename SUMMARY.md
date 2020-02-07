@@ -44,11 +44,14 @@
         * [Lisp Calculator](ring-compojure/compojure/lisp-calculator.md)
         * [Code so far](ring-compojure/compojure/code-so-far.md)
 
+## Deployment
 * [Deploying to Heroku](heroku/index.md)
     * [Update the project](heroku/update-project.md)
     * [Add Procfile](heroku/procfile.md)
     * [Deploy to Heroku](heroku/deploy.md)
     * [Code so far](heroku/code-so-far.md)
+
+## Generating HTML and SVG
 * [Hiccup HTML library](hiccup/index.md)
     * [Updating handlers with hiccup](hiccup/updating-handlers-with-hiccup.md)
     * [Create a new handler](hiccup/create-new-handler.md)
@@ -99,12 +102,18 @@
     * [Game Scoreboard UI](server-side-api/projects/game-scoreboard-ui/index.md)
 * [Libraries](libraries/index.md)
 * [Reference](reference.md)
+
+## Reference
+* [Reference](reference/index.md)
+    * [Libraries](libraries/index.md)
     * [Theory: Persistent Data Structures](persistent-data-structures/index.md)
         * [Theory: Lists](persistent-data-structures/lists.md)
         * [Theory: Maps](persistent-data-structures/maps.md)
         * [Theory: Vectors](persistent-data-structures/vectors.md)
         * [Theory: Sets](persistent-data-structures/sets.md)
     * [Compojure defroutes macro](compojure/defroutes.md)
+
+## Hacking on content
 * [Work in Progress](work-in-progress.md)
     * [Using Postgres from Clojure](using-postgres/index.md)
     * [Project: URL Shortner as a Service](project-url-shortner/index.md)
