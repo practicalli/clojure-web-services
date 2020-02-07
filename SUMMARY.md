@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](introduction.md)
+    * [Requirements](requirements.md)
     * [Additional Resources](additional-resources.md)
 * [Theory: Clojure Overview](overview/index.md)
     * [Theory: WebApps in Clojure](overview/webapps-in-clojure.md)
