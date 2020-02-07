@@ -108,8 +108,13 @@
     * [Defining scoreboard](server-side-api/projects/game-scoreboard/defining-scoreboard.md)
     * [Defining Players](server-side-api/projects/game-scoreboard/defining-scores.md)
     * [Game Scoreboard UI](server-side-api/projects/game-scoreboard-ui/index.md)
-* [Libraries](libraries/index.md)
-* [Reference](reference.md)
+
+## Micro-frameworks (TODO)
+
+* [Overview](micro-framework/index.md)
+    * [Luminus](micro-framework/luminus/index.md)
+    * [Pedestal](micro-framework/pedestal/index.md)
+    * [Edge](micro-framework/edge/index.md)
 
 ## Reference
 * [Reference](reference/index.md)
