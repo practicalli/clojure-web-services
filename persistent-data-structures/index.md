@@ -1,6 +1,5 @@
 # Theory: Persistent Data Structures
-
-Clojure has 4 built in data structures:
+Clojure has many built in data structures, although the most commonly used are:
 
 * **list** - simple linked list, the first element is assumed to be a function call
 * **map** - a key value pair with keys often defined using Clojure keywords
@@ -13,10 +12,10 @@ When you run a function over these data structures then a new data structure is 
 
 
 ## Sharing data
-
 It may seem inefficient to create a new copy of a data structure each time, especially when working on very large data structure.  Clojure creates very efficient copies, by sharing elements from the original data structure.
 
 ![Persistent data structures - data sharing](../images/clojure-persistent-data-structures-sharing.png)
 
 
-> ####Hint:: Clojure manages data internally as a binary tree.  Read the [Polymathica article on Clojure Perisent Vectors](http://hypirion.com/musings/understanding-persistent-vector-pt-1) for more details.
+> ####Hint:: Clojure manages data internally as a binary tree.
+> Read the [Polymathica article on Clojure Persistent Vectors](http://hypirion.com/musings/understanding-persistent-vector-pt-1) for more details.
