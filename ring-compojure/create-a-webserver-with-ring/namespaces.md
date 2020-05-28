@@ -14,7 +14,7 @@
 
   A function from that namespace can then be used by prefixing its name with the alias specified in the `require` expression.
 
-  Here is an example of including the `clojure.string` namespace and calling its `reverse` fuction
+  Here is an example of including the `clojure.string` namespace and calling its `reverse` function
 
 ```
 (require '[clojure.string :as string])
