@@ -9,8 +9,8 @@ When you send a request to the webapp, the ring adaptor converts this request to
 
 A handler function takes the request map as its argument and returns a response map.
 
-> ####Note::Add seperate handler function
-> Refactor the code in the `src/todo-list/core.clj` file to create a seperate `welcome` handler function that processes all requests
+> ####Note::Add separate handler function
+> Refactor the code in the `src/todo-list/core.clj` file to create a separate `welcome` handler function that processes all requests
 >
 ```clojure
 (defn welcome
