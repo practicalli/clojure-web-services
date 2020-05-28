@@ -1,4 +1,4 @@
-![Practicalli Clojure Webapps book cover](/images/practicalli-clojure-webapps-book-cover.png)
+![Practicalli Clojure WebApps book banner](/images/practicalli-clojurewebapps-book-banner.png)
 
 > #### Hint::Book refresh in 2020
 > The guides are to be updated to use Clojure CLI and tools.deps for project configuration and depenedency management.

@@ -1,6 +1,8 @@
 # Practicalli Clojure Web Applications
 A repository for the markdown content for the [Practicalli Clojure WebApps](https://practicalli.github.io/clojure-webapps) book.
 
+![Practicalli Clojure WebApps book banner](/images/practicalli-clojurewebapps-book-banner.png)
+
 ## Introduction
 A guide to developing server-side web applications and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts. Libraries are used to provide common features and alternative libraries are discussed.
 
