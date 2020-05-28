@@ -1,5 +1,4 @@
 # Add Ring Dependency
-
 Add the ring library as a depencency of the todo-list project.
 
 > #### Note::Add ring dependency
@@ -22,7 +21,6 @@ Add the ring library as a depencency of the todo-list project.
 Read the [dependencies secion of the Leiningen documentation](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#dependencies) to learn more about adding libraries.
 
 ## Looking up Libraries & current versions
-
   Libraries created by the Clojure community can be found on [Clojars.org](https://clojars.org), an online repository similar to Maven Central.
 
   Use the Clojars.org website to search for the [latest version of Ring](https://clojars.org/search?q=ring).

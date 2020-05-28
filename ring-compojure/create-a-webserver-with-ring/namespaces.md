@@ -1,5 +1,4 @@
 # Theory: Namespaces
-
   A namespace in Clojure is used to manage the logical separation of code, usually along features of the application.  A namespace limits the scope of functions and names of data structures to a specific namespace.
 
   The names bound to function definitions using the `defn` function can be used elsewhere in the namespace just by using the name.  The same goes for any values bound to a name using the `def` function.
@@ -60,5 +59,4 @@
 
 
 ## Namespaces outside the project
-
   To use a namespace from a library that is not part of the project, you also need to include it as a dependency.  We saw in [add ring dependency](add-ring-dependency.html) how to add a library as a `:dependency` in the Leiningen `project.clj` file.

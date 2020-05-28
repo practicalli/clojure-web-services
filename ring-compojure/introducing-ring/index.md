@@ -21,4 +21,3 @@ In the following sections you will get a better understanding of
 
 
 Ring is the current de facto standard library used to write web applications in Clojure. Higher level frameworks such as Compojure use Ring as a common basis.
-

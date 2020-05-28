@@ -1,5 +1,4 @@
 # Create a handler function
-
 So far we have just sent back the same response map.  To make our webapp more useful then we should have functions that return different web pages and resources (like JSON for API's).
 
 In Ring terminology, these functions are referred to as a handler.  They handler a request and return a response.

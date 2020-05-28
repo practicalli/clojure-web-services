@@ -1,5 +1,4 @@
 # Using Compojure in the project
-
 The Compojure `defroute` function provides a syntax for defining routes and associating handlers.
 
 ![Ring - adding defroutes to manage routes](../images/clojure-ring-adaptor-middleware-route--handler-wrap-reload.png)

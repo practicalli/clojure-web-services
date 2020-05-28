@@ -1,5 +1,4 @@
 # Lisp style Calculator
-
   Lets create a very simple lisp based calculator that works with two numbers as another example of using variable path elements.  As its a Lisp calculator, then we will use prefix notation (the 'operator' comes first)
 
 > ####Note::  Create a route for the calculator
@@ -46,7 +45,6 @@
 
 
 ## The namespace with changes made
-
 With all the changes from above, the code should look as follows
 
 ```clojure
