@@ -34,7 +34,7 @@ The Compojure `defroute` function provides a syntax for defining routes and asso
 ---
 
 > ####Note:: Add a defroutes function
-> Add a defroutes function called `app` to manage our routes.  Add routes for `/` and send all other requests to the Compojure `not-found` function.
+> Add a `defroutes` function called `app` to manage our routes.  Add routes for `/` and send all other requests to the Compojure `not-found` function.
 >
 ```clojure
 (defroutes app
