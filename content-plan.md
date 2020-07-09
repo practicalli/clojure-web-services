@@ -5,7 +5,6 @@ Content will also move to using Clojure CLI tools and deps.edn projects, althoug
 
 ## Proposed content topics for the book update
 
-
 | Topics                       | Related projects and implementations                                                   |
 |------------------------------|-----------------------------------------------------------------------------------------|
 | Fundamentals                 | ring and compojure based web applications, covering routing, handlers, middleware, etc. |
@@ -24,5 +23,12 @@ Content will also move to using Clojure CLI tools and deps.edn projects, althoug
 
 
 ## Project ideas
+[Ideas for projects to implement](https://github.com/practicalli/clojure-webapps-content/issues) are most welcome
 
 * Dependency graph using SVG graphics
+* TODO / Kanban application
+* Status monitor (SVG Graphics)
+* User Management website (demonstrating how to make this usable for other projects)
+* Content API for video (targeted searching for finding very specific content on YouTube)
+* Financial services API's - online banking, personal insurance, stock tracking (mock stocks)
+* API's for a mobile application - Scoreboards, chat boards, rewards, profiles, evil chat bots
