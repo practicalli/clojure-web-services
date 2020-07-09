@@ -1,10 +1,5 @@
 ![Practicalli Clojure WebApps book banner](/images/practicalli-clojurewebapps-book-banner.png)
 
-> #### Hint::Book refresh in 2020
-> The guides are to be updated to use Clojure CLI and tools.deps for project configuration and depenedency management.
-> See [Clojure web server from scratch](https://practicalli.github.io/blog/posts/clojure-web-server-cli-tools-deps-edn/)
-> and [Practicalli Clojure WebApps playlist](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiCe9p9tFk24ChNSpGfanUbT) whilst this content is being updated.
-
 ## Introduction
 A guide to developing server-side web applications and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts. Libraries are used to provide common features and alternative libraries are discussed.
 
@@ -17,6 +12,14 @@ Instead, the Clojure community has numerous libraries and blueprints that show h
 
 Micro-frameworks typically have far less libraries that a framework, so are easier to learn.  You can also learn in stage as only a few core libraries and functions are needed to start with.
 
+[![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://practicalli.github.io/spacemacs/)
+
+> #### Hint::Book refresh in 2020
+> The guides are to be updated to use Clojure CLI and tools.deps for project configuration and depenedency management.
+> See [Clojure web server from scratch](https://practicalli.github.io/blog/posts/clojure-web-server-cli-tools-deps-edn/)
+> and [Practicalli Clojure WebApps playlist](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiCe9p9tFk24ChNSpGfanUbT) whilst this content is being updated.
+
+## Discussions and feedback
 [![Join the conversation on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
 
 Get a [free Clojurians slack community account](https://clojurians.net/)
