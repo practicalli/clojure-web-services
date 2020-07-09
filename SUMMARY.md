@@ -9,7 +9,8 @@
 * [Setup](setup/index.md)
 
 ## Simple WebApps
-* [ring & compojure](ring-compojure/create-a-project/index.md)
+
+* [ring & compojure with Leiningen](ring-compojure/create-a-project/index.md)
     * [Create a Project](ring-compojure/create-a-project/index.md)
         * [Update Project details](ring-compojure/create-a-project/update-project-details.md)
         * [Code so far](ring-compojure/create-a-project/code-so-far.md)
@@ -110,76 +111,63 @@
     * [Defining Players](server-side-api/projects/game-scoreboard/defining-scores.md)
     * [Game Scoreboard UI](server-side-api/projects/game-scoreboard-ui/index.md)
 
-## Micro-frameworks (TODO)
+<!-- ## Micro-frameworks (TODO) -->
 
-* [Overview](micro-framework/index.md)
-    * [Luminus](micro-framework/luminus/index.md)
-    * [Pedestal](micro-framework/pedestal/index.md)
-    * [Edge](micro-framework/edge/index.md)
+<!-- * [Overview](micro-framework/index.md) -->
+<!--     * [Luminus](micro-framework/luminus/index.md) -->
+<!--     * [Pedestal](micro-framework/pedestal/index.md) -->
+<!--     * [Edge](micro-framework/edge/index.md) -->
+
 
 ## Reference
-* [Reference](reference/index.md)
-    * [Libraries](libraries/index.md)
-    * [Theory: Persistent Data Structures](persistent-data-structures/index.md)
-        * [Theory: Lists](persistent-data-structures/lists.md)
-        * [Theory: Maps](persistent-data-structures/maps.md)
-        * [Theory: Vectors](persistent-data-structures/vectors.md)
-        * [Theory: Sets](persistent-data-structures/sets.md)
-    * [Compojure defroutes macro](compojure/defroutes.md)
+* [Theory: Persistent Data Structures](persistent-data-structures/index.md)
+    * [Theory: Lists](persistent-data-structures/lists.md)
+    * [Theory: Maps](persistent-data-structures/maps.md)
+    * [Theory: Vectors](persistent-data-structures/vectors.md)
+    * [Theory: Sets](persistent-data-structures/sets.md)
+<!-- * [Compojure defroutes macro](compojure/defroutes.md) -->
 
 ## Hacking on content
-* [Work in Progress](work-in-progress.md)
-    * [Using Postgres from Clojure](using-postgres/index.md)
-    * [Project: URL Shortner as a Service](project-url-shortner/index.md)
-        * [Create project](project-url-shortner/create-project.md)
-        * [Run project](project-url-shortner/run-project.md)
-        * [Test app reloading](project-url-shortner/test-app-reloading.md)
-        * [Compojure Template](project-url-shortner/compojure-template.md)
-        * [Design data structure](project-url-shortner/design-data-structure.md)
-        * [Whats in a request](project-url-shortner/whats-in-a-request.md)
-        * [Redirect to full URL](project-url-shortner/redirect-to-full-url.md)
-        * [Add static resources](project-url-shortner/add-static-resources.md)
-        * [Disable anti-forgery check](project-url-shortner/disable-anti-forgery-check.    md)
-        * [Create HTML Form](project-url-shortner/create-html-form.md)
-        * [Using Ring Redirect](project-url-shortner/using-ring-redirect.md)
-        * [Named alias handler](project-url-shortner/named-alias-handler.md)
-        * [if-let function](project-url-shortner/if-let-function.md)
-        * [Refactor: Hiccup form](project-url-shortner/refacor-hiccup-form.md)
-        * [Alias generator](project-url-shortner/alias-generator.md)
-        * [Persist aliases](project-url-shortner/persist-aliases.md)
-        * [Postgres setup](project-url-shortner/postgres-setup.md)
-        * [Redis setup](project-url-shortner/redis-setup.md)
-        * [create database](project-url-shortner/create-database.md)
-        * [add alias to database](project-url-shortner/add-alias-to-database.md)
-        * [get alias from database](project-url-shortner/get-alias-from-database.md)
-        * [delete alias from database](project-url-shortner/delete-alias-from-database.md)
-    * [Building a full database backed app](full-app/index.md)
-    * [Libraries](libraries/index.html)
-        * [Clojars](libraries/clojars.md)
-        * [om](libraries/om.md)
-        * [edn](libraries/edn.md)
-    * [Testing](testing/index.md)
-        * [Testing](testing/index.md)
-    * [Reference](reference/index.md)
-        * [Basic Syntax](reference/basic-syntax.md)
-        * [Strings](reference/strings.md)
-        * [Maths](reference/maths.md)
-        * [Data Structures](reference/data-structures.md)
-        * [Functions](reference/functions.md)
-        * [Control flow](reference/control-flow.md)
-        * [Local Assignment](reference/local-assignement.md)
-        * [Including Libraries](reference/including-libraries.md)
-    * [Lighttable](lighttable/index.md)
-        * [Configure Keyboard mappings](lighttable/configure-keyboard-mappings.md)
-    * [Projects with Leiningen](leiningen/index.md)
-        * [Create a project](leiningen/create-a-project.md)
-        * [Run the REPL](leiningen/run-the-repl.md)
-        * [Profiles overview](leiningen/profile.md)
-        * [Adding a dev profile](leiningen/adding-a-dev-profile.md)
-        * [Templates](leiningen/templates.md)
-        * [Plugins](leiningen/plugins.md)
-    * [Development Environments](development-environment/index.md)
-        * [Java](development-environment/java.md)
-        * [Leiningen](development-environment/leiningen.md)
-        * [LightTable](development-environment/lighttable.md)
-        * [Other tools](development-environment/other-tools.md)
+<!-- * [Variable tag names](work-in-progress.md) -->
+    <!-- * [Using Postgres from Clojure](using-postgres/index.md) -->
+* [Project: URL Shortner as a Service](project-url-shortner/index.md)
+    * [Create project](project-url-shortner/create-project.md)
+    * [Run project](project-url-shortner/run-project.md)
+    * [Test app reloading](project-url-shortner/test-app-reloading.md)
+    * [Compojure Template](project-url-shortner/compojure-template.md)
+    * [Design data structure](project-url-shortner/design-data-structure.md)
+    * [Whats in a request](project-url-shortner/whats-in-a-request.md)
+    * [Redirect to full URL](project-url-shortner/redirect-to-full-url.md)
+    <!--     * [Add static resources](project-url-shortner/add-static-resources.md) -->
+    <!--     * [Disable anti-forgery check](project-url-shortner/disable-anti-forgery-check.    md) -->
+    <!--     * [Create HTML Form](project-url-shortner/create-html-form.md) -->
+    <!--     * [Using Ring Redirect](project-url-shortner/using-ring-redirect.md) -->
+    <!--     * [Named alias handler](project-url-shortner/named-alias-handler.md) -->
+    <!--     * [if-let function](project-url-shortner/if-let-function.md) -->
+    <!--     * [Refactor: Hiccup form](project-url-shortner/refacor-hiccup-form.md) -->
+    <!--     * [Alias generator](project-url-shortner/alias-generator.md) -->
+    <!--     * [Persist aliases](project-url-shortner/persist-aliases.md) -->
+    <!--     * [Postgres setup](project-url-shortner/postgres-setup.md) -->
+    <!--     * [Redis setup](project-url-shortner/redis-setup.md) -->
+    <!--     * [create database](project-url-shortner/create-database.md) -->
+    <!--     * [add alias to database](project-url-shortner/add-alias-to-database.md) -->
+    <!--     * [get alias from database](project-url-shortner/get-alias-from-database.md) -->
+    <!--     * [delete alias from database](project-url-shortner/delete-alias-from-database.md) -->
+    <!-- * [Building a full database backed app](full-app/index.md) -->
+    <!-- * [Testing](testing/index.md) -->
+    <!--     * [Unit Testing](testing/unit/testing/index.md) -->
+    <!-- * [Reference](reference/index.md) -->
+    <!-- * [Lighttable](lighttable/index.md) -->
+    <!--     * [Configure Keyboard mappings](lighttable/configure-keyboard-mappings.md) -->
+    <!-- * [Projects with Leiningen](leiningen/index.md) -->
+    <!--     * [Create a project](leiningen/create-a-project.md) -->
+    <!--     * [Run the REPL](leiningen/run-the-repl.md) -->
+    <!--     * [Profiles overview](leiningen/profile.md) -->
+    <!--     * [Adding a dev profile](leiningen/adding-a-dev-profile.md) -->
+    <!--     * [Templates](leiningen/templates.md) -->
+    <!--     * [Plugins](leiningen/plugins.md) -->
+    <!-- * [Development Environments](development-environment/index.md) -->
+    <!--     * [Java](development-environment/java.md) -->
+    <!--     * [Leiningen](development-environment/leiningen.md) -->
+    <!--     * [LightTable](development-environment/lighttable.md) -->
+    <!--     * [Other tools](development-environment/other-tools.md) -->
