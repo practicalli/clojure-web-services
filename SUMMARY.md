@@ -47,6 +47,8 @@
         * [Lisp Calculator](ring-compojure/compojure/lisp-calculator.md)
         * [Code so far](ring-compojure/compojure/code-so-far.md)
 
+* [Status Monitor](projects/status-monitor-deps/index.md)
+
 ## Deployment
 * [Deploying to Heroku](heroku/index.md)
     * [Update the project](heroku/update-project.md)
