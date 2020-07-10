@@ -48,6 +48,7 @@
         * [Code so far](ring-compojure/compojure/code-so-far.md)
 
 * [Status Monitor](projects/status-monitor-deps/index.md)
+    * [Application server](projects/status-monitor-deps/application-server.md)
 
 ## Deployment
 * [Deploying to Heroku](heroku/index.md)
