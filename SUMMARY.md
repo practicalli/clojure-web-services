@@ -53,6 +53,7 @@
     * [Unit Test & Mocking](projects/status-monitor-deps/unit-test-mocking-handlers.md)
     * [Defining handlers](projects/status-monitor-deps/refactor-handlers-and-tests.md)
     * [Continuous integration](projects/status-monitor-deps/continuous-integration.md)
+    * [Deployment via CI](projects/status-monitor-deps/deployment-via-ci.md)
 
 ## Deployment
 * [Deploying to Heroku](heroku/index.md)
