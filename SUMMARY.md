@@ -51,6 +51,7 @@
     * [Application server](projects/status-monitor-deps/application-server.md)
     * [Debug requests](projects/status-monitor-deps/debugging-requests.md)
     * [Unit Test & Mocking](projects/status-monitor-deps/unit-test-mocking-handlers.md)
+    * [Defining handlers](projects/status-monitor-deps/refactor-handlers-and-tests.md)
 
 ## Deployment
 * [Deploying to Heroku](heroku/index.md)
