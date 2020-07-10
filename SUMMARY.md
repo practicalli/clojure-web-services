@@ -133,6 +133,8 @@
     * [Theory: Vectors](persistent-data-structures/vectors.md)
     * [Theory: Sets](persistent-data-structures/sets.md)
 <!-- * [Compojure defroutes macro](compojure/defroutes.md) -->
+* [Ring](reference/ring/index.md)
+    * [request map](reference/ring/request-map.md)
 
 ## Hacking on content
 <!-- * [Variable tag names](work-in-progress.md) -->
