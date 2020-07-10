@@ -18,4 +18,4 @@ cp -f images/favicon_io/apple-touch-icon.png _book/gitbook/images/apple-touch-ic
 
 
 # Deploy new build
-cd _book && rm -rf .git && git init && git add . && git commit -m "Publish new version of book" && git branch -m master gh-pages && git remote add practicalli-clojure git@github.com:practicalli/clojure-webapps.git && git push -f practicalli-clojure gh-pages
+cd _book && rm -rf .git && git init && git add . && git commit -m "Publish new version of book" && git branch -m live gh-pages && git remote add practicalli-clojure git@github.com:practicalli/clojure-webapps.git && git push -f practicalli-clojure gh-pages
