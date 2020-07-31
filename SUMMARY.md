@@ -8,7 +8,33 @@
     * [Theory: WebApps in Clojure](overview/webapps-in-clojure.md)
 * [Setup](setup/index.md)
 
-## Simple WebApps
+* [Application servers](app-servers/index.md)
+    * [Basic configuration](app-servers/basic-configuration.md)
+        * [Java Properties](app-servers/java-system-properties.md)
+    * [Logging](app-servers/app-server-logging.md)
+    * [Simple restart](app-servers/simple-restart.md)
+    * [Atom based restart](app-servers/atom-based-restart.md)
+    <!-- * [Ring wrap-reload](app-servers/ring-wrap-reload.md) -->
+    <!-- * [Component lifecycle](app-servers/component-lifecycle/index.md) -->
+    <!--     * [mount](app-servers/component-lifecycle/mount.md) -->
+    <!--     * [component](app-servers/component-lifecycle/component.md) -->
+    <!--     * [integrant](app-servers/component-lifecycle/integrant.md) -->
+
+* [Relational Database & SQL](relational-databases-and-sql/index.md)
+    * [H2 Database](relational-databases-and-sql/h2-database.md)
+    * [PostgreSQL Database](relational-databases-and-sql/postgresql-database.md)
+    * [next.jdbc library](relational-databases-and-sql/next-jdbc-library/index.md)
+
+
+## Projects
+* [Status Monitor - deps](projects/status-monitor-deps/index.md)
+    * [Application server](projects/status-monitor-deps/application-server.md)
+    * [Debug requests](projects/status-monitor-deps/debugging-requests.md)
+    * [Unit Test & Mocking](projects/status-monitor-deps/unit-test-mocking-handlers.md)
+    * [Defining handlers](projects/status-monitor-deps/refactor-handlers-and-tests.md)
+    * [Continuous integration](projects/status-monitor-deps/continuous-integration.md)
+    * [Deployment via CI](projects/status-monitor-deps/deployment-via-ci.md)
+
 * [Banking on Clojure - deps](projects/banking-on-clojure/index.md)
     * [App Server Configuration](projects/banking-on-clojure/application-server-configuration.md)
     * [Refactor handlers](projects/banking-on-clojure/refactor-handler.md)
@@ -57,13 +83,6 @@
         * [Lisp Calculator](ring-compojure/compojure/lisp-calculator.md)
         * [Code so far](ring-compojure/compojure/code-so-far.md)
 
-* [Status Monitor](projects/status-monitor-deps/index.md)
-    * [Application server](projects/status-monitor-deps/application-server.md)
-    * [Debug requests](projects/status-monitor-deps/debugging-requests.md)
-    * [Unit Test & Mocking](projects/status-monitor-deps/unit-test-mocking-handlers.md)
-    * [Defining handlers](projects/status-monitor-deps/refactor-handlers-and-tests.md)
-    * [Continuous integration](projects/status-monitor-deps/continuous-integration.md)
-    * [Deployment via CI](projects/status-monitor-deps/deployment-via-ci.md)
 
 ## Deployment
 * [Deploying to Heroku](heroku/index.md)
