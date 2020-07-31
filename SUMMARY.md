@@ -9,6 +9,16 @@
 * [Setup](setup/index.md)
 
 ## Simple WebApps
+* [Banking on Clojure - deps](projects/banking-on-clojure/index.md)
+    * [App Server Configuration](projects/banking-on-clojure/application-server-configuration.md)
+    * [Refactor handlers](projects/banking-on-clojure/refactor-handler.md)
+    * [Defining handlers](projects/banking-on-clojure/defining-handlers.md)
+    * [Continous Integration](projects/banking-on-clojure/continuous-integration.md)
+    * [Deployment Pipeline](projects/banking-on-clojure/deployment-pipeline.md)
+    * [Deployment via CI to Heroku](projects/banking-on-clojure/deployment-via-ci.md)
+    * [Unit Tests](projects/banking-on-clojure/unit-tests.md)
+    * [Development database](projects/banking-on-clojure/development-database.md)
+
 
 * [ring & compojure with Leiningen](ring-compojure/create-a-project/index.md)
     * [Create a Project](ring-compojure/create-a-project/index.md)
