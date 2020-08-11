@@ -43,6 +43,7 @@
     * [Deployment Pipeline](projects/banking-on-clojure/deployment-pipeline.md)
     * [Deployment via CI to Heroku](projects/banking-on-clojure/deployment-via-ci.md)
     * [Unit Tests](projects/banking-on-clojure/unit-tests.md)
+    * [Specs & Generative testing](projects/banking-on-clojure/spec-generative-testing.md)
     * [Development database](projects/banking-on-clojure/development-database.md)
 
 
