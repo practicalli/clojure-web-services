@@ -4,6 +4,9 @@ A guide to developing server-side web applications and API's from the ground up 
 
 Relevant theory and background reading is included, however, the focus of this guide is for you to build projects and experiment.
 
+## Clojure CLI and deps.edn
+Projects are created and configure using Clojure CLI tools, using `deps.edn` for configuration.  Older content uses Leinigen for project configuration.
+
 ## Component / library approach
 The Clojure community has a diverse set of libraries which focus on a specific need. These libraries are assembled to rapidly develop a tailored solution.  Using a library approach means those libraries are relatively simple to replace with alternatives or your own libraries.
 
