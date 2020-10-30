@@ -15,8 +15,8 @@ Add the compojure library for routing of requests
 ```clojure
  :deps
  {org.clojure/clojure {:mvn/version "1.10.1"}
-  http-kit            {:mvn/version "2.3.0"}
-  compojure           {:mvn/version "1.6.1"}}
+  http-kit            {:mvn/version "2.5.0"}
+  compojure           {:mvn/version "1.6.2"}}
 ```
 
 
@@ -28,7 +28,7 @@ Include the http-kit server namespace and the compojure core namespace as requir
 ```clojure
 (ns practicalli.status-monitor-service
   (:gen-class)
-  (:require [http-kit-server :as app-server]
+  (:require [org.httpkit.server :as app-server]
             [compojure.core :refer [defroutes GET]]))
 ```
 
