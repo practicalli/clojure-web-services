@@ -4,9 +4,7 @@ Middleware in ring is a way to modify the incoming requests or outgoing response
 
 Middleware can also wrap handlers or other middleware, affecting their behaviour.  For example the `wrap-reload` middleware enables live reloading by detecting file changes and reloading affected functions into their namespace, before the request is passed to the relevant handler function
 
-Here is a list of middleware available in Ring itself:
-
-Here is a list of middlewares available in Ring itself:
+Middleware provided by Ring includes:
 
 * In `ring/ring-core`:
    * [wrap-cookies](https://github.com/mmcgrana/ring/blob/master/ring-core/src/ring/middleware/cookies.clj#L124) (ring.middleware.cookies)

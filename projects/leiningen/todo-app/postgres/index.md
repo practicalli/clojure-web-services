@@ -1,7 +1,7 @@
 # Postgres Database
 
 > #### TODO::Content may be a little dated, sorry
-> Content update during the summer of 2020
+> Content update during the Winter of 2020
 
   Postgres is a modern and powerful relational database that also supports storing of json, xml and object relationships.  Postgres has a strong open source community behind it and is actively maintained.  Postgres is also highly scalable database with drivers for all the major programming languages.
 

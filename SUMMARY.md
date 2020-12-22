@@ -66,7 +66,7 @@
 * [TODO WebApp](projects/leiningen/todo-app/index.md)
     * [Create a Project](projects/leiningen/todo-app/create-a-project/index.md)
         * [Update Project details](projects/leiningen/todo-app/create-a-project/update-project-details.md)
-        * [Code so far](projects/leiningen/todo-app/create-a-project/code-so-far.md)
+        <!-- * [Code so far](projects/leiningen/todo-app/create-a-project/code-so-far.md) -->
     * [Create a webserver with Ring](projects/leiningen/todo-app/create-a-webserver-with-ring/index.md)
         * [Add Ring Dependency](projects/leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency.md)
         * [Configure main namespace](projects/leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace.md)
@@ -75,18 +75,18 @@
         * [Add a Jetty webserver](projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.md)
         * [Theory: Coersing Types & java.lang](projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.md)
         * [Run webserver](projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.md)
-        * [Code so far](projects/leiningen/todo-app/create-a-webserver-with-ring/code-so-far.md)
+        <!-- * [Code so far](projects/leiningen/todo-app/create-a-webserver-with-ring/code-so-far.md) -->
     * [Theory: Introducing Ring](projects/leiningen/todo-app/introducing-ring/index.md)
     * [Create a handler function](projects/leiningen/todo-app/create-a-handler-function/index.md)
         * [Add error for bad routes](projects/leiningen/todo-app/create-a-handler-function/add-not-found.md)
         * [Theory: if function](projects/leiningen/todo-app/create-a-handler-function/if-function.md)
         * [Theory: maps and keywords](projects/leiningen/todo-app/create-a-handler-function/maps-and-keywords.md)
-        * [Code so far](projects/leiningen/todo-app/create-a-handler-function/code-so-far.md)
+        <!-- * [Code so far](projects/leiningen/todo-app/create-a-handler-function/code-so-far.md) -->
     * [Unit test handler function](projects/leiningen/todo-app/unit-test-handler-function/index.md)
     * [Reloading the application](projects/leiningen/todo-app/reloading-the-application/index.md)
         * [Test your code reloads](projects/leiningen/todo-app/reloading-the-application/test-your-code-reloads.md)
         * [Middleware in Ring](projects/leiningen/todo-app/reloading-the-application/middleware.md)
-        * [Code so far](projects/leiningen/todo-app/reloading-the-application/code-so-far.md)
+        <!-- * [Code so far](projects/leiningen/todo-app/reloading-the-application/code-so-far.md) -->
     * [Compojure](projects/leiningen/todo-app/compojure/index.md)
         * [Theory: routing](projects/leiningen/todo-app/compojure/theory-routing.md)
         * [Adding dependency](projects/leiningen/todo-app/compojure/adding-dependency.md)
@@ -98,7 +98,7 @@
         * [Theory: local name bindings](projects/leiningen/todo-app/compojure/theory-local-name-bindings.md)
         * [Theory: using Clojure hash-maps](projects/leiningen/todo-app/compojure/theory-using-hash-maps.md)
         * [Lisp Calculator](projects/leiningen/todo-app/compojure/lisp-calculator.md)
-        * [Code so far](projects/leiningen/todo-app/compojure/code-so-far.md)
+        <!-- * [Code so far](projects/leiningen/todo-app/compojure/code-so-far.md) -->
     * [Deploying to Heroku](projects/leiningen/todo-app/heroku/index.md)
         * [Update the project](projects/leiningen/todo-app/heroku/update-project.md)
         * [Add Procfile](projects/leiningen/todo-app/heroku/procfile.md)
@@ -107,7 +107,7 @@
     * [Hiccup HTML library](projects/leiningen/todo-app/hiccup/index.md)
         * [Updating handlers with hiccup](projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.md)
         * [Create a new handler](projects/leiningen/todo-app/hiccup/create-new-handler.md)
-        * [Code so far](projects/leiningen/todo-app/hiccup/code-so-far.md)
+        <!-- * [Code so far](projects/leiningen/todo-app/hiccup/code-so-far.md) -->
     * [Refactor namespace](projects/leiningen/todo-app/refactor-namespace/index.md)
         * [Base routes](projects/leiningen/todo-app/refactor-namespace/base-routes.md)
         <!-- * [Play routes](projects/leiningen/todo-app/refactor-namespace/play-routes.md) -->
