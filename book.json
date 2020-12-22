@@ -1,6 +1,7 @@
 {
     "gitbook": ">=3.0.0",
-    "title": "Clojure - building a simple server side web application",
+    "title": "Practicalli Clojure WebApps",
+    "author": "Practicalli",
     "description": "Server-side applications and APIs in Clojure",
     "structure": {
         "readme": "introduction.md"
@@ -13,15 +14,23 @@
         "epub": "styles/epub.css"
     },
     "plugins": [
+        "anchor-headings-lambda",
         "callouts",
         "codeblock-disable-glossary",
         "disqus",
+        "folding-chapters",
         "ga",
-        "gist",
+        "-glossary",
+        "-highlight",
         "klipse",
-        "heading-anchors",
+        "newtabs",
+        "prism",
         "sectionx",
         "simpletabs",
+        "-sharing",
+        "splitter",
+        "terminull-light",
+        "theme-jr0cket",
         "toggle-chapters",
         "toolbar",
         "youtube",
@@ -38,6 +47,14 @@
         "sectionx": {
             "tag": "b"
         },
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-jr0cket.css"
+            ],
+            "ignore": [
+                "eval-clojure"
+            ]
+        },
         "disqus": {
             "shortName": "clojure-webapps-practicalli"
         },
@@ -48,19 +65,14 @@
            "buttons":
            [
                {
-                   "label": "Gitter Chat",
+                   "label": "Clojurians Slack",
                    "icon": "fa fa-comments-o",
-                   "url": "https://gitter.im/practicalli/chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"
+                   "url": "http://clojurians.slack.com/messages/practicalli"
                },
                {
                    "label": "GitHub",
                    "icon": "fa fa-github",
-                   "url": "https://github.com/practicalli"
-               },
-               {
-                   "label": "Search page title on StackOverflow",
-                   "icon": "fa fa-stack-overflow",
-                   "url": "http://stackoverflow.com/search?q={{title}}"
+                   "url": "https://github.com/practicalli/clojure-webapps-content/issues"
                }
            ]
        }
@@ -88,5 +100,4 @@
 
 
     }
-
 }
