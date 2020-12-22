@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# A quick hack to deploy a generated website onto a Github repository, to be served as static content by github pages.
+## A quick hack to deploy a generated website onto a Github repository, to be served as static content by github pages.  This is an example of a very bad shell script.
 
 # This should only be run from the root of the gitbook project
+# Replace the remote Github URL to use this on a different project
 
 # Trigger a clean and new build
 gitbook build .
@@ -18,4 +19,4 @@ cp -f images/favicon_io/apple-touch-icon.png _book/gitbook/images/apple-touch-ic
 
 
 # Deploy new build
-cd _book && rm -rf .git && git init && git add . && git commit -m "Publish new version of book" && git branch -m live gh-pages && git remote add practicalli-clojure git@github.com:practicalli/clojure-webapps.git && git push -f practicalli-clojure gh-pages
+cd _book && git init && git add . && git commit -m "Publish new version of the book" && git remote add practicalli git@github.com:practicalli/clojure-webapps.git && git push -f practicalli live
