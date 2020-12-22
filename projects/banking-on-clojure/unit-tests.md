@@ -72,7 +72,7 @@ The welcome page (`GET "/"`) content is defined with hiccup code to generate a H
 ```
 
 ## Using Kaocha to run tests
-Kaocha was added as part of the [continuous integration configuration] as a local binary.  This kaocha binary can be called to run the tests and check that all the handlers are returning the right status code.
+[Kaocha](https://practicalli.github.io/clojure/testing/test-runners/kaocha-test-runner.html) was added as part of the [continuous integration configuration](continuous-integration.md) as a local binary.  This kaocha binary can be called to run the tests and check that all the handlers are returning the right status code.
 
 ```shell
 bin/kaocha
