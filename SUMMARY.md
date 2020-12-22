@@ -43,8 +43,22 @@
     * [Deployment Pipeline](projects/banking-on-clojure/deployment-pipeline.md)
     * [Deployment via CI to Heroku](projects/banking-on-clojure/deployment-via-ci.md)
     * [Unit Tests](projects/banking-on-clojure/unit-tests.md)
-    * [Specs & Generative testing](projects/banking-on-clojure/spec-generative-testing.md)
+    * [Clojure Specs](projects/banking-on-clojure/spec-generative-testing.md)
     * [Development database](projects/banking-on-clojure/development-database.md)
+    * [Instrument next.jdbc functions](projects/banking-on-clojure/instrument-next-jdbc-functions.md)
+    * [Database tables](projects/banking-on-clojure/database-tables.md)
+    * [Database queries](projects/banking-on-clojure/database-queries.md)
+        * [Create Records](projects/banking-on-clojure/create-records.md)
+        * [Read Records](projects/banking-on-clojure/read-records.md)
+        * [Update Records](projects/banking-on-clojure/update-records.md)
+        * [Delete Records](projects/banking-on-clojure/delete-records.md)
+    * [Cyclic Load Dependency](projects/banking-on-clojure/cyclic-load-dependency.md)
+    * [Spec: generate database data](projects/banking-on-clojure/clojure-spec-generate-mock-data.md)
+    * [Unit Testing Database](projects/banking-on-clojure/unit-testing-the-database.md)
+    <!-- * [Migratus](projects/banking-on-clojure/migratus.md) -->
+    * [HoneySQL](projects/banking-on-clojure/honeysql.md)
+    * [Nammespace design](projects/banking-on-clojure/namespace-design.md)
+    * [Production database](projects/banking-on-clojure/production-database.md)
 
 
 ## Leiningen Projects
