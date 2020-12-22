@@ -58,7 +58,7 @@ java.runtime.version=11
 ## Heroku configuration
 Login to the Heroku dashboard and create a new application.
 
-In the Heroku dashboard, open the application Settings and add a Config Vars using the name `CLOJURE_CLI_VERSION` with a value of `1.10.1.536`
+In the Heroku dashboard, open the application Settings and add a Config Vars using the name `CLOJURE_CLI_VERSION` with a value of `1.10.1.727`
 
 ![Heroku dashboard - Settings - Config Vars - Clojure CLI version](/images/heroku-dashboard-status-monitor-config-vars-clojure-cli-version.png)
 
@@ -91,7 +91,7 @@ jobs:
   build:
     working_directory: ~/build
     docker:
-      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.536
+      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.727
     environment:
       JVM_OPTS: -Xmx3200m
     steps:

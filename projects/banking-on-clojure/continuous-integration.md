@@ -1,7 +1,7 @@
 # Continuous Integration with CirceCI
 The application infrastructure has been established and now the main body of the development can commence.  Therefore it is very valuable to establish a continuous integration pipleline.
 
-Practicalli Clojure: Continuous Integration with CircleCI](http://practicalli.github.io/clojure/testing/integration-testing/circle-ci/) covers in detail how to use Continuous Integration with Clojure projects (deps.edn and Leiningen).
+[Practicalli Clojure: Continuous Integration with CircleCI](https://practicalli.github.io/clojure/testing/integration-testing/circle-ci/) covers in detail how to use Continuous Integration with Clojure projects (deps.edn and Leiningen).
 
 ## Using kaocha test runner
 [LambdaIsland kaocha test runner](https://github.com/lambdaisland/kaocha) is used as the unit test runner as it will also run generative tests where functions have specifications defined.
@@ -27,7 +27,7 @@ clojure -A:test:runner-kaocha "$@"
 ```
 
 ## Configure CircleCI pipeline
-Configure a pipleine to use a docker image with Java 11 and Clojure CLI tools 1.10.1.536.
+Configure a pipleine to use a docker image with Java 11 and Clojure CLI tools 1.10.1.727.
 
 The configuration uses the Kaocha Orb to simplify the configuration required to use the Kaocha test runner from within CircleCI.
 
@@ -43,7 +43,7 @@ jobs:    # basic units of work in a run
   build: # runs not using Workflows must have a `build` job as entry point
     working_directory: ~/build # directory where steps will run
     docker:                                                      # run the steps with Docker
-      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.536 # image is primary container where `steps` are run
+      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.727 # image is primary container where `steps` are run
     environment:            # environment variables for primary container
       JVM_OPTS: -Xmx3200m   # limit the maximum heap size to prevent out of memory errors
     steps:             # commands that comprise the `build` job
