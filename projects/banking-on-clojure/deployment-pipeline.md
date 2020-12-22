@@ -14,7 +14,7 @@ Using Heroku Pipelines the staging environment is promoted to production rather 
 
 The Heroku dashboard can be used to promote the application into production, once the staging application is signed off.
 
-![Heroku Pipeline banking-on-clojure](/images/heroku-pipeline-banking-on-clojure.png)
+![Heroku Pipeline banking-on-clojure](https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/heroku/heroku-pipeline-banking-on-clojure.png)
 
 
 ## Heroku Build process
