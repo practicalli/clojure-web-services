@@ -15,7 +15,7 @@ A server-side web application using
 Use `clj-new` to create the project (alias defined in practicalli/clojure-deps-edn)
 
 ```shell
-clojure -A:new app practicalli/status-monitor-service
+clojure -M:project/new app practicalli/status-monitor-service
 ```
 
 > #### Hint::Use practicalli/clojure-deps-edn to add common tools
