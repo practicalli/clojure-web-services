@@ -2,8 +2,9 @@
 
 ![Banking on Clojure web application user interface](/images/banking-on-clojure-ui-account-overview.png)
 
-> #### TODO::work in progress, sorry
-> Code so far shared on [practicalli/banking-on-clojure-webapp](https://github.com/practicalli/banking-on-clojure-webapp) GitHub repository
+> #### TODO::Project under construction
+> Project actively being developed as part of the [Practicalli Study group WebApps](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiCe9p9tFk24ChNSpGfanUbT).
+> Code so far is shared on [practicalli/banking-on-clojure-webapp](https://github.com/practicalli/banking-on-clojure-webapp) GitHub repository
 
 Building a Banking application using Clojure, spec, H2 (development) & Postgresql (live) databases and next.jdbc for SQL queries (migratus for db migrations).
 
