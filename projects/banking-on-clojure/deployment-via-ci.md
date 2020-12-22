@@ -46,7 +46,7 @@ jobs:    # basic units of work in a run
       - run: bin/kaocha --reporter kaocha.report/documentation --no-randomize --no-color --plugin kaocha.plugin.alpha/spec-test-check
 ```
 
-## Add depstar to buld an uberjar
+## Add depstar to build an uberjar
 The depstar tool creates a Java archive (jar) package of the application.  The `deps.edn` configuration in the root of the project already contains an `uberjar` alias for this tool.
 
 Check the project builds the uberjar locally:
