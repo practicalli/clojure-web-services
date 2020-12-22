@@ -8,8 +8,9 @@
     * [Theory: WebApps in Clojure](overview/webapps-in-clojure.md)
 <!-- * [Setup](setup/index.md) -->
 
+## Architectural Components
 * [Application servers](app-servers/index.md)
-    * [Basic configuration](app-servers/basic-configuration.md)
+    * [Configuration](app-servers/basic-configuration.md)
         * [Java Properties](app-servers/java-system-properties.md)
     * [Simple restart](app-servers/simple-restart.md)
     * [Atom based restart](app-servers/atom-based-restart.md)
@@ -37,6 +38,8 @@
     * [PostgreSQL Database](relational-databases-and-sql/postgresql-database.md)
     * [next.jdbc library](relational-databases-and-sql/next-jdbc-library/index.md)
 
+* [Clojure databases](clojure-databases/index.md)
+    * [crux](clojure-databases/crux/index.md)
 
 ## Projects
 * [Status Monitor - deps](projects/status-monitor-deps/index.md)
