@@ -30,7 +30,10 @@
 
 
 * [Relational Database & SQL](relational-databases-and-sql/index.md)
-    * [H2 Database](relational-databases-and-sql/h2-database.md)
+    * [Managing Connections](relational-databases-and-sql/managing-connections.md)
+    * [H2 Database](relational-databases-and-sql/h2-database/index.md)
+        * [H2 schema design](relational-databases-and-sql/h2-database/schema-design.md)
+        * [H2 database tools](relational-databases-and-sql/h2-database/database-tools.md)
     * [PostgreSQL Database](relational-databases-and-sql/postgresql-database.md)
     * [next.jdbc library](relational-databases-and-sql/next-jdbc-library/index.md)
 

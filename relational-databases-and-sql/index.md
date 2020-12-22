@@ -5,9 +5,17 @@
 ## Databases
 This guide will use the following relational databases
 
-* H2 database - lightweight in-process database that writes to disk, easily added for a fast and simple dev environment.
-* Postgresql - open source, feature rich and production grade database (defacto production choice)
+* [H2 database](h2-database.md) - lightweight in-process database that writes to disk, easily added for a fast and simple dev environment.
+* [Postgresql](postgres-database.md) - open source, feature rich and production grade database (defacto production choice)
 
+Interesting databases in the Clojure spaces include Datomic and Crux.
+
+Other persistent storage approach include
+* [Amazon RDS](https://aws.amazon.com/rds/)
+* [Redis](https://redislabs.com/)
+* [RocksDB](https://rocksdb.org/) is a high performance embedded persistent key-value store with fast storage writes (fork of Google's LevelDB)
+* [CockroachDB](https://www.cockroachlabs.com/) an elastic, indestructible SQL database for developers building modern applications
+* [yugabyteDB](https://www.yugabyte.com/) open source, cloud native relational DB for powering global, internet-scale apps.
 
 ## Database drivers
 Database drivers for commonly used database
