@@ -1,9 +1,41 @@
 # Java System properties
 System properties can be set on the Java command line using the `-Dpropertyname=value` syntax. They can also be added at Clojure runtime using `(System/getProperties)` will return a Properties object with the system properties for the current REPL.
 
-`java.runtime.version=11` will set the version of Java used in Cloud application platforms.
+Properties are often defined in a `*.properties` file to configure the environment in containerized deployment processes.  For example, the version of Java used in Heroku containers is set by adding `java.runtime.version=11` property to a `system.properties` file.
 
-Example output on an Ubuntu Linux operating system running Java 11 and Spacemacs with CIDER.
+
+## Commonly used Java and operating system properties
+
+| Java Runtime properties | Description                                                                                        |
+|-------------------------|----------------------------------------------------------------------------------------------------|
+| java.home               | JRE home directory                                                                                 |
+| java.library.path       | JRE library search path for search native libraries (usually taken from PATH environment variable) |
+| java.class.path         | JRE classpath e.g., '.' (dot – used for current working directory).                                |
+| java.ext.dirs           | JRE extension library path(s)                                                                      |
+| java.version            | JDK version
+| java.runtime.version    | JRE version
+
+| File system properties | Description                                                                                        |
+|------------------------|----------------------------------------------------------------------------------------------------|
+| file.separator         | symbol for file directory separator ('/' for Unix or '\' for windows)                              |
+| path.separator         | symbol for separating path entries in PATH or CLASSPATH. (':' for Unix or ';' for windows)         |
+| line.separator         | symbol for end-of-line / new line ("\n" for Unix or "\r\n" for windows) or /Mac OS X. |
+
+| User system properties | Description                          |
+|------------------------|--------------------------------------|
+| user.name              | the user’s name.                     |
+| user.home              | the user’s home directory.           |
+| user.dir               | the user’s current working directory |
+
+| Operating System properties | Description                   |
+|-----------------------------|-------------------------------|
+| os.name                     | operating System name         |
+| os.version                  | operating System version      |
+| os.arch                     | operating System architecture |
+
+
+## Examining the system properties
+Evaluating  `(System/getProperties)` on an Ubuntu Linux operating system running Java 11 and Spacemacs with CIDER returned the following properties.
 
 ```
   "sun.desktop" = "gnome"
@@ -61,31 +93,3 @@ Example output on an Ubuntu Linux operating system running Java 11 and Spacemacs
   "apple.awt.UIElement" = "true"
   "java.class.version" = "55.0"
 ```
-
-
-| Java Runtime properties | Description                                                                                        |
-|-------------------------|----------------------------------------------------------------------------------------------------|
-| java.home               | JRE home directory                                                                                 |
-| java.library.path       | JRE library search path for search native libraries (usually taken from PATH environment variable) |
-| java.class.path         | JRE classpath e.g., '.' (dot – used for current working directory).                                |
-| java.ext.dirs           | JRE extension library path(s)                                                                      |
-| java.version            | JDK version
-| java.runtime.version    | JRE version
-
-| File system properties | Description                                                                                        |
-|------------------------|----------------------------------------------------------------------------------------------------|
-| file.separator         | symbol for file directory separator ('/' for Unix or '\' for windows)                              |
-| path.separator         | symbol for separating path entries in PATH or CLASSPATH. (':' for Unix or ';' for windows)         |
-| line.separator         | symbol for end-of-line / new line ("\n" for Unix or "\r\n" for windows) or /Mac OS X. |
-
-| User system properties | Description                          |
-|------------------------|--------------------------------------|
-| user.name              | the user’s name.                     |
-| user.home              | the user’s home directory.           |
-| user.dir               | the user’s current working directory |
-
-| Operating System properties | Description                   |
-|-----------------------------|-------------------------------|
-| os.name                     | operating System name         |
-| os.version                  | operating System version      |
-| os.arch                     | operating System architecture |

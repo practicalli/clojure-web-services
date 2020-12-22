@@ -11,7 +11,6 @@
 * [Application servers](app-servers/index.md)
     * [Basic configuration](app-servers/basic-configuration.md)
         * [Java Properties](app-servers/java-system-properties.md)
-    * [Logging](app-servers/app-server-logging.md)
     * [Simple restart](app-servers/simple-restart.md)
     * [Atom based restart](app-servers/atom-based-restart.md)
     <!-- * [Ring wrap-reload](app-servers/ring-wrap-reload.md) -->
@@ -19,6 +18,16 @@
     <!--     * [mount](app-servers/component-lifecycle/mount.md) -->
     <!--     * [component](app-servers/component-lifecycle/component.md) -->
     <!--     * [integrant](app-servers/component-lifecycle/integrant.md) -->
+    * [Logging](app-servers/app-server-logging.md)
+
+* [Application logic](application-logic/index.md)
+    * [Routing](application-logic/routing.md)
+    <!-- * [Requests](application-logic/requests/index.md) -->
+    <!-- * [Responses](application-logic/responses/index.md) -->
+    <!-- * [handlers](application-logic/handlers/index.md) -->
+    <!-- * [middleware](application-logic/middleware/index.md) -->
+    <!-- * [Serving static content](app-servers/static-content.md) -->
+
 
 * [Relational Database & SQL](relational-databases-and-sql/index.md)
     * [H2 Database](relational-databases-and-sql/h2-database.md)

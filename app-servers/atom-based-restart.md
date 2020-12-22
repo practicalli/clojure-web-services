@@ -1,13 +1,28 @@
 # Atom based restart
 A Clojure atom is used to hold a reference to a running server instance.
 
+An atom is a mutable container that holds any type of value.  The value in the atom is immutable.  The atom is mutable, but only with specific functions, avoiding locking issues often arising with mutable values.
+
+* `swap!` the current value in the atom using a function to create a new value
+* `reset!` the current value in the atom with a specific value
+* `deref` or `@` returns the value contained within the atom
 
 {% tabs jetty="Jetty", httpkit="Http-kit Server" %}
 
 {% content "jetty" %}
-The app-server starts when the application starts, as the `app-server-start` is called from `-main` once the port value has been taken from either an argument to `-main`, an operating system `$PORT` environment variable or the default 8080.
+`(defonce app-server-instance (atom nil))` defines a Clojure atom with the intial value of `nil`.  `defonce` is used instead of `def` to prevent the reference to the app-server being over-written by re-evaluating the namespace.
 
-In REPL driven development, `(def server (-main 8080))` to start the application server and create a symbol pointing to the server instance.  Shut down the server `(.stop server)` will stop the server.
+The `-main` function determines an HTTP port value, from either an argument, an operating system `$PORT` environment variable or using the default 8888 value.
+
+`-main` calls  `app-server-start` which starts the app server and resets the value of the atom with a reference to that instance.
+
+`(.stop @app-server-instance)` uses the instance reference to stop the server.  `app-server-stop` function check to see if a running instance exists and if so, stops the server.
+
+The REPL is still running, so the server can be started by calling `(-main)` or `(app-server-start 8888)`.
+
+`app-server-restart` is a convenience function that stops and starts the application server, meaning the developer only needs to evaluate `(app-server-restart)`
+
+## Code example
 
 ```clojure
 (ns practicalli.example-webapp
@@ -15,56 +30,55 @@ In REPL driven development, `(def server (-main 8080))` to start the application
   (:require [ring.adapter.jetty :as jetty]
             [compojure.core :refer [defroutes GET]]))
 
-
 ;; Routing
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defroutes app
   (GET "/" [] {:status 200 :body "App Server Running"}))
 
 
 ;; System
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Reference to server instance
-(defonce app-server (atom nil))
+(defonce app-server-instance (atom nil))
 
 
 (defn app-server-start
 "Start Jetty Application server, adding instance to global state"
   [port]
-  (reset! app-server
+  (reset! app-server-instance
           (jetty/run-jetty (site #'app) {:port port :join? false})))
 
 
-(defn- app-server-stop []
-  (when @app-server
-    (.stop @server))
-  (reset! server nil))
+(defn app-server-stop
+  "Check for a running app-server instance, shutdown if present"
+  []
+  (when @app-server-instance
+    (.stop @app-server-instance))
+  (reset! app-server-instance nil))
 
 
-(defn- app-server-restart
+(defn app-server-restart
   "Stop and then start the application server, loading in the new code"
   []
   (app-server-stop)
-  (app-server-start))
+  (-main))
 
 
 (defn -main
+  "Determine an HTTP port number and start application server on that port"
   [& [port]]
   (let [port (Integer. (or port
                            (System/getenv "PORT")
-                           8080))]
+                           8888))]
     (app-server-start port)))
 
 
 ;; REPL driven development
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (comment
 
  (app-server-restart)
- (app-server-stop)
+ (-main)
 
 )
 ```
@@ -73,7 +87,9 @@ In REPL driven development, `(def server (-main 8080))` to start the application
 {% content "httpkit" %}
 An atom holds an instance of the running server, which is populated by the `app-server-start` function.  The `app-server-stop` function send a `:timeout 100` value to the running app server instance to gracefully shut down the server.
 
-During REPL driven development, call `app-server-restart`
+During REPL driven development, call `app-server-restart` to stop and start the server.
+
+## Code example
 
 ```clojure
 (ns practicalli.example-webapp
@@ -83,14 +99,12 @@ During REPL driven development, call `app-server-restart`
 
 
 ;; Routing
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defroutes app
   (GET "/" [] {:status 200 :body "App Server Running"}))
 
 
 ;; System
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defonce app-server-instance (atom nil))
 
@@ -127,7 +141,6 @@ During REPL driven development, call `app-server-restart`
 
 
 ;; REPL driven development
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (comment
 
