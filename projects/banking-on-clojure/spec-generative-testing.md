@@ -1,4 +1,5 @@
-# Clojure Specifications and Generative Testing
+![Clojure specifications for next.jdbc](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/spec/clojure-spec-blueprints-industrial.png)
+
 Specifications define the shape of data used for the application.  The specifications are defined across two namespaces, general data specifications in `practicalli.specifications` and banking specific specs in the `practcalli.specifications-banking` namespace.
 
 
