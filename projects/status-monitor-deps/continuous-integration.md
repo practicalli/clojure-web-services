@@ -16,7 +16,7 @@ jobs:
   build:
     working_directory: ~/build
     docker:
-      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.536
+      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.727
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
