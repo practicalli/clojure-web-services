@@ -3,7 +3,7 @@ Key concepts and syntax for designing database schema for the H2 database
 
 
 ## Auto-increment values in H2 database
-The `IDENTITY` type is used for automatically generating an incriminating 64-bit long integer in H2 database.
+The `IDENTITY` type is used for automatically generating an incrementing 64-bit long integer in H2 database.
 
 ```sql
 CREATE TABLE public.account (
