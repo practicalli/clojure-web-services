@@ -56,7 +56,7 @@ Edit the `project.clj` configuration file and add the H2 library to the :dev-dep
 
 
 ## Auto-increment values in H2 database
-The `IDENTITY` type is used for automatically generating an incriminating 64-bit long integer in H2 database.
+The `IDENTITY` type is used for automatically generating an incrementing 64-bit long integer in H2 database.
 
 ```sql
 CREATE TABLE public.account (
