@@ -2,7 +2,30 @@
 [Crux](https://opencrux.com/) is a general purpose database with graph-oriented bitemporal indexes. Datalog, SQL & EQL queries are supported along with Java, HTTP & Clojure APIs.  The Datalog query interface that can be used to express complex joins and recursive graph traversals.
 
 ## Getting Started
-Follow the [Crux Earth Assignment Tutorial](https://juxt.pro/blog/crux-tutorial-setup), in either the self-contained [Next-Journal environment](https://nextjournal.com/crux-tutorial/) or as your own Clojure project. [Install Crux](https://opencrux.com/reference/installation.html) as a library in a Clojure project or use the pre-built dockker image.
+Follow the [Crux Earth Assignment Tutorial](https://juxt.pro/blog/crux-tutorial-setup), in either the self-contained [Next-Journal environment](https://nextjournal.com/crux-tutorial/) or as your own Clojure project.
+
+{% tabs clojure="Clojure CLI tools", lein="Leiningen" %}
+
+{% content "clojure" %}
+Using the Clojure CLI tools and practicalli/clojure-deps-edn configuration, create a new project:
+
+```shell
+clojure -X:project/new :template app :name practicalli/crux-demo
+```
+
+{% content "lein" %}
+Using the Leiningen build tool, create a new project:
+
+```shell
+lein new app practicalli/crux-demo
+```
+
+{% endtabs %}
+
+[Install Crux](https://opencrux.com/reference/installation.html) as a library in a Clojure project or use the pre-built dockker image.
+
+> Note: to have more than one set of tabs in a page, simply create unique id's for the tabs, e.g. practicalli2
+
 
 Experiment with the [Crux-labs workshop project](https://github.com/crux-labs/reclojure-workshop), which contains examples of using Crux.
 
