@@ -32,7 +32,7 @@ Include the http-kit server namespace and the compojure core namespace as requir
 ```clojure
 (ns practicalli.status-monitor-service
   (:gen-class)
-  (:require [http-kit-server :as app-server]
+  (:require [org.httpkit.server :as app-server]
             [compojure.core :refer [defroutes GET]]))
 ```
 
