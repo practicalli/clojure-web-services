@@ -8,40 +8,7 @@
     * [Theory: WebApps in Clojure](overview/webapps-in-clojure.md)
 <!-- * [Setup](setup/index.md) -->
 
-## Architectural Components
-* [Application servers](app-servers/index.md)
-    * [Configuration](app-servers/basic-configuration.md)
-        * [Java Properties](app-servers/java-system-properties.md)
-    * [Simple restart](app-servers/simple-restart.md)
-    * [Atom based restart](app-servers/atom-based-restart.md)
-    <!-- * [Ring wrap-reload](app-servers/ring-wrap-reload.md) -->
-    <!-- * [Component lifecycle](app-servers/component-lifecycle/index.md) -->
-    <!--     * [mount](app-servers/component-lifecycle/mount.md) -->
-    <!--     * [component](app-servers/component-lifecycle/component.md) -->
-    <!--     * [integrant](app-servers/component-lifecycle/integrant.md) -->
-    * [Logging](app-servers/app-server-logging.md)
-
-* [Application logic](application-logic/index.md)
-    * [Routing](application-logic/routing.md)
-    <!-- * [Requests](application-logic/requests/index.md) -->
-    <!-- * [Responses](application-logic/responses/index.md) -->
-    <!-- * [handlers](application-logic/handlers/index.md) -->
-    <!-- * [middleware](application-logic/middleware/index.md) -->
-    <!-- * [Serving static content](app-servers/static-content.md) -->
-
-
-* [Relational Database & SQL](relational-databases-and-sql/index.md)
-    * [Managing Connections](relational-databases-and-sql/managing-connections.md)
-    * [H2 Database](relational-databases-and-sql/h2-database/index.md)
-        * [H2 schema design](relational-databases-and-sql/h2-database/schema-design.md)
-        * [H2 database tools](relational-databases-and-sql/h2-database/database-tools.md)
-    * [PostgreSQL Database](relational-databases-and-sql/postgresql-database.md)
-    * [next.jdbc library](relational-databases-and-sql/next-jdbc-library/index.md)
-
-* [Clojure databases](clojure-databases/index.md)
-    * [crux](clojure-databases/crux/index.md)
-
-## Projects
+## Clojure CLI Projects
 * [Status Monitor - deps](projects/status-monitor-deps/index.md)
     * [Application server](projects/status-monitor-deps/application-server.md)
     * [Debug requests](projects/status-monitor-deps/debugging-requests.md)
@@ -74,6 +41,42 @@
     * [HoneySQL](projects/banking-on-clojure/honeysql.md)
     * [Nammespace design](projects/banking-on-clojure/namespace-design.md)
     * [Production database](projects/banking-on-clojure/production-database.md)
+
+## Architectural Components
+* [Application servers](app-servers/index.md)
+    * [Configuration](app-servers/basic-configuration.md)
+        * [Java Properties](app-servers/java-system-properties.md)
+    * [Simple restart](app-servers/simple-restart.md)
+    * [Atom based restart](app-servers/atom-based-restart.md)
+    <!-- * [Ring wrap-reload](app-servers/ring-wrap-reload.md) -->
+    <!-- * [Component lifecycle](app-servers/component-lifecycle/index.md) -->
+    <!--     * [mount](app-servers/component-lifecycle/mount.md) -->
+    <!--     * [component](app-servers/component-lifecycle/component.md) -->
+    <!--     * [integrant](app-servers/component-lifecycle/integrant.md) -->
+    * [Logging](app-servers/app-server-logging.md)
+
+* [Application logic](application-logic/index.md)
+    * [Routing](application-logic/routing.md)
+    <!-- * [Requests](application-logic/requests/index.md) -->
+    <!-- * [Responses](application-logic/responses/index.md) -->
+    <!-- * [handlers](application-logic/handlers/index.md) -->
+    <!-- * [middleware](application-logic/middleware/index.md) -->
+    <!-- * [Serving static content](app-servers/static-content.md) -->
+
+
+* [Relational Database & SQL](relational-databases-and-sql/index.md)
+    * [next.jdbc library](relational-databases-and-sql/next-jdbc-library/index.md)
+    * [H2 Database](relational-databases-and-sql/h2-database/index.md)
+        * [H2 schema design](relational-databases-and-sql/h2-database/schema-design.md)
+        * [H2 database tools](relational-databases-and-sql/h2-database/database-tools.md)
+    * [PostgreSQL Database](relational-databases-and-sql/postgresql-database.md)
+        * [Managing Connections](relational-databases-and-sql/managing-connections.md)
+
+<!-- * [Clojure databases](clojure-databases/index.md) -->
+<!--     * [crux](clojure-databases/crux/index.md) -->
+
+<!-- * [Key Value Store](key-value-store/index.md) -->
+<!--     * [Redis](key-value-store/redis.md) -->
 
 
 ## Leiningen Projects
