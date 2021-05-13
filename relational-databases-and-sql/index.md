@@ -1,21 +1,32 @@
-# Relational Databases and SQL
-> #### Hint::Under active development - July 2020
-> [Feedback welcome](https://github.com/practicalli/clojure-webapps-content/issues)
+# SQL and Relational Databases
 
-## Databases
+[seancorfield/next.jdbc](https://github.com/seancorfield/next-jdbc) is the defacto Clojure wrapper for SQL queries and managing connections to relational databases.
+
+next.jdbc supports a wide range of databases and automatically pulls in the relevant database drivers.  Abstractions are provided for insert, query, update and delete actions, which define data in a hash map allow the use of [Clojure specifications](http://practicalli.github.io/clojure/clojure-spec/) (clojure.spec or Malli) for validation and generative testing.
+
+
+## Relational Databases
 This guide will use the following relational databases
 
 * [H2 database](h2-database.md) - lightweight in-process database that writes to disk, easily added for a fast and simple dev environment.
 * [Postgresql](postgres-database.md) - open source, feature rich and production grade database (defacto production choice)
 
-Interesting databases in the Clojure spaces include Datomic and Crux.
-
 Other persistent storage approach include
-* [Amazon RDS](https://aws.amazon.com/rds/)
-* [Redis](https://redislabs.com/)
-* [RocksDB](https://rocksdb.org/) is a high performance embedded persistent key-value store with fast storage writes (fork of Google's LevelDB)
+
+* [Amazon RDS](https://aws.amazon.com/rds/) - a postgres-like storage as an AWS service (should work just like postgres)
 * [CockroachDB](https://www.cockroachlabs.com/) an elastic, indestructible SQL database for developers building modern applications
 * [yugabyteDB](https://www.yugabyte.com/) open source, cloud native relational DB for powering global, internet-scale apps.
+
+## Key Value stores
+
+* [Redis](https://redislabs.com/)
+* [RocksDB](https://rocksdb.org/) is a high performance embedded persistent key-value store with fast storage writes (fork of Google's LevelDB)
+* AWS Dynamo - 400k limit per stored value
+
+## Clojure databases
+* [Crux](https://opencrux.com/) - open database with temporal graph query
+* [Datomic](https://www.datomic.com/) - transactional database with a flexible data model, elastic scaling, and rich queries
+Interesting databases in the Clojure spaces include Datomic and Crux.
 
 ## Database drivers
 Database drivers for commonly used database
@@ -54,3 +65,7 @@ Database drivers may require a minimum version of Java, so consider Java 8 as th
 
 <!-- ## datafy / nav -->
 <!-- ? what are these and how do they relate -->
+
+
+
+> [Feedback welcome](https://github.com/practicalli/clojure-webapps-content/issues)
