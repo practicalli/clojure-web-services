@@ -19,6 +19,10 @@ Add the compojure library for routing of requests
   compojure           {:mvn/version "1.6.1"}}
 ```
 
+> ####HINT::Restart REPL after adding dependencies
+> If the REPL is already running when adding new dependencies, restart the REPL after adding new dependencies to ensure they are added to the REPL class path.
+> Or use the [unofficial dependency hotload approach](http://practicalli.github.io/clojure/alternative-tools/clojure-tools/hotload-libraries.html)
+
 
 ## Add code to start the application server
 Edit the `src/practicalli/status_monitor_service.clj` file
