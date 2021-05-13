@@ -1,7 +1,7 @@
 # Add next.jdbc to a project
 Create a new Clojure project using clj-new tool (see [Clojure install for details](http://practicalli.github.io/clojure/clojure-tools/install/install-clojure.html))
 
-```shell
+```bash
 clojure -A:new app practicalli/simple-database
 ```
 
@@ -52,7 +52,7 @@ In the `:deps` hash-map, add next.jdbc and the Postgresql database libraries as 
 
 When developing the project, include the `:dev` or `:database-h2` when running the REPL to include the H2 database library
 
-```shell
+```bash
 clojure -A:database-h2
 ```
 

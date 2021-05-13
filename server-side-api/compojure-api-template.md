@@ -2,7 +2,7 @@
 
 You can quickly create the basics of a server-side webapp with the [compojure-api]() template for Leiningen.
 
-```shell
+```bash
 lein new compojure-api project-name
 ```
 
@@ -13,7 +13,7 @@ This command creates a new Clojure project in a directory called **scoreboard-se
 
 Using either of the `+clojure-test` or `+midge` will add the specific test library to the project created.
 
-```shell
+```bash
 lein new compojure-api project-name +clojure-test
 ```
 

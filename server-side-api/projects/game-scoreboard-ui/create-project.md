@@ -5,7 +5,7 @@ Create a new project using figwheel-main, the newest version of figwheel.
 Include the `reagent` library to make the project a single page app in the style of react.js.
 
 
-```shell
+```bash
 lein new figwheel-main game-scoreboard-ui -- --reagent
 ```
 
@@ -15,7 +15,7 @@ lein new figwheel-main game-scoreboard-ui -- --reagent
 Change into the 'game-scoreboard-ui' directory and run 'lein fig:build'
 
 
-```shell
+```bash
 cd game-scoreboard-ui
 lein fig:build
 ```

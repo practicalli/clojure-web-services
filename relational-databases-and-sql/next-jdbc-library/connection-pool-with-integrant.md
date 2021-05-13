@@ -90,7 +90,7 @@ Start the database server connection pool
 
 [Example code from next.jdbc.connection/component](https://github.com/seancorfield/next-jdbc/blob/develop/src/next/jdbc/connection.clj#L318-L343)
 
-```
+```clojure
 (component/start (connection/component HikariDataSource db-spec))
 ```
 

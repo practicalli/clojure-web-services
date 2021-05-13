@@ -11,7 +11,7 @@ Heroku toolbelt has many commands for viewing information and querying the Herok
 
 To see all PostgreSQL databases provisioned by your application and the identifying characteristics of each (db size, status, number of tables, PG version, creation date etc…) use the `heroku pg:info` command.
 
-```
+```bash
 $ heroku pg:info
 === HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)
 Plan:        Hobby-dev
@@ -27,7 +27,7 @@ Rollback:    Unsupported
 ```
 
 To continuously monitor the status of your database, pass pg:info through the unix watch command:
-```
+```bash
 watch heroku pg:info
 ```
 
@@ -36,7 +36,7 @@ watch heroku pg:info
 
 psql is the native PostgreSQL interactive terminal and is used to execute queries and issue commands to the connected database.  To establish a psql session with your remote database use heroku pg:psql. You must have PostgreSQL installed on your system to use `heroku pg:psql`.
 
-```
+```bash
 $ heroku pg:psql
 ---> Connecting to HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)
 psql (9.2.6, server 9.3.3)
@@ -70,7 +70,7 @@ heroku-app-name::BROWN=> SELECT * FROM pl0_programs;
 
 If you have more than one database, specify the database to connect to as the first argument to the command (the database located at `DATABASE_URL` is used by default).
 
-```
+```bash
 $ heroku pg:psql HEROKU_POSTGRESQL_GRAY
 Connecting to HEROKU_POSTGRESQL_GRAY... done
 ```
@@ -79,7 +79,7 @@ Connecting to HEROKU_POSTGRESQL_GRAY... done
 
 To drop and recreate your database use `heroku pg:reset`
 
-```
+```bash
 $ heroku pg:reset DATABASE
 
  !    WARNING: Destructive Action
@@ -92,7 +92,7 @@ Resetting HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)... done
 
 Then restart the server
 
-```
+```bash
 $ heroku ps:restart
 Restarting dynos... done
 ```

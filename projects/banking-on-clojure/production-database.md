@@ -46,7 +46,7 @@ In the Heroku dashboard, view the **Settings** and  select **Show Config Vars**
 
 Click on the pencil icon to see the full connection string, which takes the following form:
 
-```
+```bash
 postgres://username:password@host:port/database-name
 ```
 
@@ -57,14 +57,14 @@ Use the Heroku CLI tool to get the JDBC connection string for the database.
 
 For the Banking on Clojure app, the following
 
-```shell
+```bash
 heroku run echo \$JDBC_DATABASE_URL --app banking-on-clojure-staging
 ```
 
 This returns the correct JDBC connection string in the form:
 
-```
-jdbc:postgresql://<hostname>:port/<database-name>?user=<username>&password=<password>&sslmode=require
+```clojure
+"jdbc:postgresql://<hostname>:port/<database-name>?user=<username>&password=<password>&sslmode=require"
 ```
 
 This jdbc connection string is generated from the `DATABASE_URL` config var that is added to the heroku app when a database is provisioned.
@@ -136,7 +136,7 @@ For example, to create a table the table namespace should be supplied, in this c
 
 The PostgreSQL syntax for creating tables is:
 
-```
+```sql
   CREATE TABLE [IF NOT EXISTS] table_name (
   column1 datatype(length) column_contraint,
   column2 datatype(length) column_contraint,

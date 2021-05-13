@@ -9,14 +9,14 @@ Follow the [Crux Earth Assignment Tutorial](https://juxt.pro/blog/crux-tutorial-
 {% content "clojure" %}
 Using the Clojure CLI tools and practicalli/clojure-deps-edn configuration, create a new project:
 
-```shell
+```bash
 clojure -X:project/new :template app :name practicalli/crux-demo
 ```
 
 {% content "lein" %}
 Using the Leiningen build tool, create a new project:
 
-```shell
+```bash
 lein new app practicalli/crux-demo
 ```
 

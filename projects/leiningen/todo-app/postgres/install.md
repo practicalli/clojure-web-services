@@ -4,9 +4,9 @@
 
  Using the Heroku app created previously, a Posgres database will be provisioned.
 
+In the root of your Clojure project, run the following Heroku toolbelt command to add a Postgres database to your existing Heroku app
 
-> ####Note:: In to root of your Clojure project, run the following Heroku toolbelt command to add a Postgres database to your existing Heroku app
-```
+```bash
 heroku addons:create heroku-postgresql
 ```
 

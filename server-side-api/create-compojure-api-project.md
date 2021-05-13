@@ -1,7 +1,7 @@
 # Create a compojure-api project
 
 > ####NOTE::Create a project with tests
-```shell
+```bash
 lein new compojure-api my-api +clojure-test
 ```
 

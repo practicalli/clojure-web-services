@@ -6,7 +6,7 @@ Create a new file called `src/practicalli/request-handlers.clj`
 
 <!-- Using `clj-new` command line tool -->
 
-<!-- ```shell -->
+<!-- ```bash -->
 <!-- clojure -R:new -m clj-new.generate ns=practicalli.request-handler -->
 <!-- ``` -->
 

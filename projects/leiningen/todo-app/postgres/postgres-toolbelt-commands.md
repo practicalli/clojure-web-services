@@ -8,7 +8,7 @@ Heroku Postgres is integrated directly into the Heroku toolbelt and offers sever
 
 To see all PostgreSQL databases provisioned by your application and the identifying characteristics of each (db size, status, number of tables, PG version, creation date etc…) use the heroku pg:info command.
 
-```
+```bash
  heroku pg:info
 === HEROKU_POSTGRESQL_RED
 Plan         Standard 0
@@ -21,14 +21,13 @@ Created      2012-02-15 09:58 PDT
 Plan         Standard 2
 Status       available
 Data Size    82.8 GB
-…
 ```
 
 To continuously monitor the status of your database, pass pg:info through the unix watch command:
 
-```
+```bash
  watch heroku pg:info
-``
+```
 
 
 ## pg:psql
@@ -39,6 +38,7 @@ To establish a psql session with your remote database use heroku pg:psql.
 
 You must have PostgreSQL installed on your system to use heroku pg:psql.
 
+```bash
  heroku pg:psql
 Connecting to HEROKU_POSTGRESQL_RED... done
 psql (9.1.3, server 9.1.3)
@@ -51,14 +51,15 @@ If you have more than one database, specify the database to connect to (just the
 
  heroku pg:psql gray
 Connecting to HEROKU_POSTGRESQL_GRAY... done
-...
+```
 
-pg:push and pg:pull
-pg:pull
+## pg:push and pg:pull
 
 pg:pull can be used to pull remote data from a Heroku Postgres database to a database on your local machine. The command looks like this:
 
+```bash
  heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
+```
 
 This command will create a new local database named “mylocaldb” and then pull data from database at DATABASE_URL from the app “sushi”. In order to prevent accidental data overwrites and loss, the local database must not exist. You will be prompted to drop an already existing local database before proceeding.
 
@@ -71,7 +72,9 @@ pg:push
 
 Like pull but in reverse, pg:push will push data from a local database into a remote Heroku Postgres database. The command looks like this:
 
+```bash
  heroku pg:push mylocaldb HEROKU_POSTGRESQL_MAGENTA --app sushi
+```
 
 This command will take the local database “mylocaldb” and push it to the database at DATABASE_URL on the app “sushi”. In order to prevent accidental data overwrites and loss, the remote database must be empty. You will be prompted to pg:reset an already a remote database that is not empty.
 
@@ -80,26 +83,31 @@ Troubleshooting
 
 These commands rely on the pg_dump and pg_restore binaries that are included in a Postgres installation. It is somewhat common, however, for the wrong binaries to be loaded in $PATH. Errors such as
 
+```bash
 !    createdb: could not connect to database postgres: could not connect to server: No such file or directory
 !      Is the server running locally and accepting
 !      connections on Unix domain socket "/var/pgsql_socket/.s.PGSQL.5432"?
 !
 !    Unable to create new local database. Ensure your local Postgres is working and try again.
-
+```
 and
 
+```bash
 pg_dump: server version: 9.3.1; pg_dump version: 9.1.5
 pg_dump: aborting because of server version mismatch
 pg_dump: *** aborted because of error
 pg_restore: [archiver] input file is too short (read 0, expected 5)
+```
 
 are both often a result of this incorrect $PATH problem. This problem is especially common with Postgres.app users, as the post-install step of adding /Applications/Postgres.app/Contents/MacOS/bin to $PATH is easy to forget.
-pg:ps, pg:kill, pg:killall
+
+## pg:ps, pg:kill, pg:killall
 
 These commands give you view and control over currently running queries.
 
 The pg:ps command queries the pg_stat_statements table in postgres to give a concise view into currently running queries.
 
+```bash
  heroku pg:ps
  procpid |         source            |   running_for   | waiting |         query
 ---------|---------------------------|-----------------|---------|-----------------------
@@ -107,9 +115,11 @@ The pg:ps command queries the pg_stat_statements table in postgres to give a con
    31912 | psql                      | 00:18:56.12178  | t       | select * from hello;
    32670 | Heroku Postgres Data Clip | 00:00:25.625609 | f       | BEGIN READ ONLY; select 'hi'
 (3 rows)
+```
 
 The procpid column can then be used to cancel or terminate those queries with pg:kill. Without any arguments pg_cancel_backend is called on the query which will attempt to cancel the query. In some situations that can fail, in which case the --force option can be used to issue pg_terminate_backend which drops the entire connection for that query.
 
+```bash
  heroku pg:kill 31912
  pg_cancel_backend
 -------------------
@@ -121,7 +131,7 @@ The procpid column can then be used to cancel or terminate those queries with pg
 ----------------------
  t
 (1 row)
-
+```
 pg:killall is similar to pg:kill except it will cancel or terminate every query on your database.
 pg:promote
 

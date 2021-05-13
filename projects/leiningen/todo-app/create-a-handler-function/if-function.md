@@ -4,7 +4,7 @@ Clojure has an `if` function that evaluates an expresssion.  If that expression 
 
 In pseudo-code, the `if` function in Clojure works as follows
 
-```
+```basic
   If (this expression is true ?)
     then return this value
     else return this value
@@ -37,7 +37,7 @@ If the `:uri` value is not equal to `/` then the second resource map with an err
 ## Multiple expression if function with do
 Each of the two possible values the `if` function returns can come from only evaluating one expression.  For example
 
-```
+```clojure
 (if (true)
   (str "I am the truth")
   (str "I am the path to darkness")
@@ -45,7 +45,7 @@ Each of the two possible values the `if` function returns can come from only eva
 
 If you need multiple expressions they can be wrapped in the `do` function
 
-```
+```clojure
 (if (true)
   (do (some-function)
       (another-function))

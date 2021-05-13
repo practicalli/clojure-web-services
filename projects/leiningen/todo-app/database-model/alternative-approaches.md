@@ -8,7 +8,7 @@
 
 The UUID-OSSP extension to our Heroku postgres database to autogenerate universal ID's (UUID).  These UUID's are managed by postres and therefore not resistant to braking from code.  The database memory overhead for UUID's is typically less than using text based ID's
 
-
+```clojure
 (defn create-table [db]
   (db/execute!
    db

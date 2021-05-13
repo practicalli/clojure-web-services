@@ -15,7 +15,7 @@ When you provision an Heroku Postgres, the `DATABAE_URL` configuration variable 
 
 To see the value of the `DATABSAE_URL` use the Heroku Toolbelt command `heroku config`, specifying the app name if you created multiple Heroku apps for the current project
 
-```
+```bash
 heroku config
 
 heroku config --app my-app-name

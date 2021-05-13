@@ -129,7 +129,7 @@ Calling the bank-account-media-object function with a map will generate the same
 
 Result of calling the bank-account-media-object with that map:
 
-```
+```clojure
 ;; => [:article {:class "media"} [:figure {:class "media-left"} [:p {:class "image is-64x64"} [:img {:src "https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-bank-coin.png"}]]] [:div {:class "media-content"} [:div {:class "content"} [:h3 {:class "subtitle"} "Current Account : &lambda;" "i1,000,000"] [:p "Account number: " {:account-number {:account-type "Current Account", :account-number "123456789", :account-value "i1,000,000", :account-sort-code "01-02-01"}} " Sort code: " {:account-sort-code {:account-type "Current Account", :account-number "123456789", :account-value "i1,000,000", :account-sort-code "01-02-01"}}]]] [:div {:class "media-right"} [:a {:href #object[java.net.URI 0x3516357f "/transfer"], :class "button is-primary"} ("Transfer")] [:a {:href #object[java.net.URI 0x4cf62d27 "/payment"], :class "button is-info"} ("Payment")]]]
 ```
 

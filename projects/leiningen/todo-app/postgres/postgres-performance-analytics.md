@@ -9,13 +9,13 @@ The leading cause of poor database performance is unoptimized queries. Expensive
 
 If your application/framework emits logs on database access, you will be able to retrieve them through Heroku’s log-stream:
 
-```
+```bash
  heroku logs -t
 ```
 
 To see logs from the database service itself you can also use heroku logs but with the -p postgres flag indicating that you only wish to see the logs from PostgreSQL.
 
-```
+```bash
  heroku logs -p postgres -t
 ```
 
@@ -30,7 +30,7 @@ pg:diagnose performs a number of useful health and diagnostic checks that help a
 
 Before taking any action based on a report, be sure to carefully consider the impact to your database and application.
 
-```
+```bash
  heroku pg:diagnose --app sushi
 Report 1234abc… for sushi::HEROKU_POSTGRESQL_MAROON_URL
 available for one month after creation on 2014-07-03 21:29:40.868968+00

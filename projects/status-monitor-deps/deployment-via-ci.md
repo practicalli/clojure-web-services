@@ -17,7 +17,7 @@ Use the depstar tool to create a Java archive (jar) package of the application. 
 
 To try this on the command line:
 
-```shell
+```bash
 clojure -A:uberjar
 ```
 
@@ -29,7 +29,7 @@ Heroku build scripts use Leiningen by default.  Configure Heroku to build with C
 
 Create a file called `bin/build` script in the root of the project
 
-```shell
+```bash
 #!/usr/bin/env bash
 clojure -A:uberjar
 ```
@@ -42,7 +42,7 @@ Create a `Procfile` file in the root of the project directory containing the com
 
 Use the `$PORT` as an argument to the command.  Heroku automatically asignes a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will recieve requests.
 
-```
+```bash
 web: java -jar status-monitor-service.jar $PORT
 ```
 
@@ -50,7 +50,7 @@ web: java -jar status-monitor-service.jar $PORT
 ## Specifying a Java version
 Create a `system.properties` and specify the Java version to use for the application. Java 1.8 is the default version use on Heroku, however, our development environment is Java 11, so add a property to set the Java runtime to version 11.
 
-```
+```properties
 java.runtime.version=11
 ```
 
@@ -64,13 +64,13 @@ In the Heroku dashboard, open the application Settings and add a Config Vars usi
 
 
 ## CircleCI configuration with Heroku Orb
-Edit the `.circleci/config.xml` file and add the [heroku orb](https://circleci.com/orbs/registry/orb/circleci/heroku) and a workflow to call the orb task.  The workflow has a dependency on the build job, so that will take place first.
+Edit the `.circleci/config.yml` file and add the [heroku orb](https://circleci.com/orbs/registry/orb/circleci/heroku) and a workflow to call the orb task.  The workflow has a dependency on the build job, so that will take place first.
 
 The Heroku workflow will build the application from source code using the `heroku/deploy-via-git`.  Only changes pushed to the `live` branch of the GitHub repository will be used in the Heroku deploy workflow.
 
 > If feature branches are useful to deploy on Heroku, additional Heroku applications can be created and pushed to directly from the local Git repository
 
-```
+```yaml
 version: 2.1
 
 orbs:
@@ -134,7 +134,7 @@ Now visit the deployed Heroku application to see it in action.
 ## Troubleshooting
 If there are issues, then use the Heroku toolbelt to look at the logs.  In a command line terminal, issue the login command which opens a web browser to login to Heroku.  Once logged in, run the heroku logs command to view the latest logs
 
-```shell
+```bash
 heroku login
 
 heroku logs --app status-monitor-service
@@ -142,7 +142,7 @@ heroku logs --app status-monitor-service
 
 The logs can also be viewed live, as the application is being deployed by including the `--tail` option when running the heroku logs command in a terminal
 
-```
+```bash
 heroku logs --app status-monitor-service --tail
 ```
 
@@ -175,6 +175,6 @@ An application can be run for free on Heroku with the monthly free credits provi
 
 Run the following command in the root of the Clojure project.
 
-```shell
+```bash
 heroku ps:stop status-monitor-service
 ```

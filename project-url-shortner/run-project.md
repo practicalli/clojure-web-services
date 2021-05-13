@@ -4,7 +4,7 @@ The compojure template provides a working webserver and simple webapp out of the
 
 > ####Note:: Run the project to start the server and webapp
 
-```shell
+```bash
 lein ring server
 ```
 
@@ -12,7 +12,7 @@ If you have not used Compojure or Ring previously, then it may take a few second
 
 You should see a output after the leiningen command showing you that the server has started
 
-```shell
+```bash
 2016-07-15 13:44:02.242:INFO:oejs.Server:jetty-7.6.13.v20130916
 2016-07-15 13:44:02.313:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
 Started server on port 3000

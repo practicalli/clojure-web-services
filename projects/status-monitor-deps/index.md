@@ -12,9 +12,9 @@ A server-side web application using
 
 
 ## Creating a project
-Use `clj-new` to create the project (alias defined in practicalli/clojure-deps-edn)
+Use `clj-new` to create the project (alias defined in [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdnInstall }}))
 
-```shell
+```bash
 clojure -M:project/new app practicalli/status-monitor-service
 ```
 

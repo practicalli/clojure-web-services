@@ -51,7 +51,7 @@ The depstar tool creates a Java archive (jar) package of the application.  The `
 
 Check the project builds the uberjar locally:
 
-```shell
+```bash
 clojure -A:uberjar
 ```
 
@@ -63,7 +63,7 @@ Heroku build scripts use Leiningen by default.  Configure Heroku to build with C
 
 Create a file called `bin/build` script in the root of the project
 
-```shell
+```bash
 #!/usr/bin/env bash
 clojure -A:uberjar
 ```
@@ -76,7 +76,7 @@ Create a `Procfile` file in the root of the project directory containing the com
 
 Use the `$PORT` as an argument to the command.  Heroku automatically asignes a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will recieve requests.
 
-```
+```bash
 web: java -jar banking-on-clojure.jar $PORT
 ```
 
@@ -84,7 +84,7 @@ web: java -jar banking-on-clojure.jar $PORT
 ## Specifying a Java version
 Create a `system.properties` and specify the Java version to use for the application. Java 1.8 is the default version use on Heroku, however, our development environment is Java 11, so add a property to set the Java runtime to version 11.
 
-```
+```properties
 java.runtime.version=11
 ```
 
@@ -137,7 +137,7 @@ Now visit the deployed Heroku application to see it in action.
 ## Troubleshooting
 If there are issues, then use the Heroku toolbelt to look at the logs.  In a command line terminal, issue the login command which opens a web browser to login to Heroku.  Once logged in, run the heroku logs command to view the latest logs
 
-```shell
+```bash
 heroku login
 
 heroku logs --app banking-on-clojure
@@ -145,7 +145,7 @@ heroku logs --app banking-on-clojure
 
 The logs can also be viewed live, as the application is being deployed by including the `--tail` option when running the heroku logs command in a terminal
 
-```
+```bash
 heroku logs --app banking-on-clojure --tail
 ```
 
@@ -168,7 +168,9 @@ Heroku repository details in heroku dashboard **Settings** under **App Informati
 
 Changes can now be pushed, ideally using `force-with-lease` to Heroku repository.
 
-`git push heroku live:master`
+```bash
+git push heroku live:master
+```
 
 > Heroku only builds from a branch called master, so the above command pushes the local `live` branch to the remote `master` branch on Heroku.
 
@@ -178,6 +180,6 @@ An application can be run for free on Heroku with the monthly free credits provi
 
 Run the following command in the root of the Clojure project.
 
-```shell
+```bash
 heroku ps:stop banking-on-clojure
 ```

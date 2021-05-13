@@ -1,7 +1,7 @@
 # Simple database example
 Create a project called simple database
 
-```shell
+```bash
 clojure -A:new app practicalli/simple-database
 ```
 
@@ -26,7 +26,7 @@ In a terminal window, change to the root directory of the `simple-database` proj
 
 Start a [Rebel REPL](http://practicalli.github.io/clojure/clojure-tools/rebel-repl/) from the root of the new project
 
-```shell
+```bash
 cd simple-project
 
 clojure -A:rebel
@@ -106,7 +106,7 @@ Edit the file `src/practicalli/simple-database.clj` from the `simple-database` p
 
 Update the `practicalli.simple-database` namespace definition with a require statement for next.jdbc
 
-```
+```clojure
 (ns practicalli.simple-database
   (:gen-class)
   (:require [next.jdbc :as jdbc]))

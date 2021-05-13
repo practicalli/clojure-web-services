@@ -38,24 +38,24 @@ Type "help" for help.
 
 pegjspl0::BROWN=> \dt
                List of relations
- Schema |     Name     | Type  |     Owner      
---------+--------------+-------+----------------
+ Schema |     Name     | Type  |     Owner
+--------|--------------|-------|----------------
  public | pl0_programs | table | moiwgreelvvujc
 (1 row)
 
-pegjspl0::BROWN=> 
+pegjspl0::BROWN=>
 pegjspl0::BROWN=> SELECT * FROM pl0_programs;
-  name  |           source            
---------+-----------------------------
+  name  |           source
+--------|-----------------------------
  3m2m1  |                     3-2-1\r+
-        |           
+        |
  ap1tb  | a+1*b\r                    +
-        |           
+        |
  test   |                     a+1*b\r+
         |           \r               +
-        |           
+        |
  lolwut |                     3-2-1\r+
-        |           
+        |
 (4 rows)
 
 If you have more than one database, specify the database to connect to as the first argument to the command (the database located at DATABASE_URL is used by default).
@@ -110,13 +110,13 @@ heroku pg:promote HEROKU_POSTGRESQL_VIOLET --app your-app
 
 
 
-## Monitoring database provisioning 
+## Monitoring database provisioning
 
 When provisioning larger databases, they may take several minutes to become available.  Using the `heroku pg:wait` command you can see when the database provisioning is complete.
 
 You may also want to use heroku pg:wait when putting your applicaiton into maintenenace mod [TODO: expand on this]
 
-```
+```bash
 heroku help pg:wait
 
 
@@ -129,17 +129,17 @@ Usage: heroku pg:wait [DATABASE]
  --wait-interval SECONDS      # how frequently to poll (to avoid rate-limiting)
 ```
 
-## Setting a name for a new database 
+## Setting a name for a new database
 
 Once Heroku Postgres has been added a `HEROKU_POSTGRESQL_COLOR_URL` setting will be available in the app configuration and will contain the URL used to access the newly provisioned Heroku Postgres service. This can be confirmed using the heroku config command.
 
-```
+```bash
  heroku config -s | grep HEROKU_POSTGRESQL
 HEROKU_POSTGRESQL_RED_URL=postgres://user3123:passkja83kd8@ec2-117-21-174-214.compute-1.amazonaws.com:6212/db982398
 ```
 You can choose the alias that the add-on uses on the application using the --as flag. This will affect the name of the variable the add-on adds to the application:
 
-```
+```bash
  heroku addons:create heroku-postgresql:hobby-dev --as USERS_DB
 Adding heroku-postgresql:hobby-dev to sushi... done, v69 (free)
 Attached as USERS_DB
@@ -148,4 +148,3 @@ Database has been created and is available
  heroku config -s | grep USERS_DB
 USERS_DB_URL=postgres://user3123:passkja83kd8@ec2-117-21-174-214.compute-1.amazonaws.com:6212/db982398
 ```
-

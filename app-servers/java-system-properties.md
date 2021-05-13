@@ -37,7 +37,7 @@ Properties are often defined in a `*.properties` file to configure the environme
 ## Examining the system properties
 Evaluating  `(System/getProperties)` on an Ubuntu Linux operating system running Java 11 and Spacemacs with CIDER returned the following properties.
 
-```
+```properties
   "sun.desktop" = "gnome"
   "awt.toolkit" = "sun.awt.X11.XToolkit"
   "java.specification.version" = "11"

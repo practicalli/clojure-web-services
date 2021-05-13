@@ -45,7 +45,7 @@ There is no specific install for Clojure.  Clojure comes as a library, a JAR fil
 
 When you create a project with Leiningen, the configuration is created in a file called `project.clj`.  Inside this `project.clj` is a `:dependencies` entry where the version of clojure is specified along with any other dependencies.  Here is an example of a `project.clj` configuration with just Clojure as a dependency
 
-```
+```clojure
 (defproject project-name "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"

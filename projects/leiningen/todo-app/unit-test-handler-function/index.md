@@ -10,7 +10,7 @@ It is useful to have separate unit and integration tests to quickly narrow down 
 
 The unit tests are placed under `test/full_namespace_path/` and reside in files with the same names as the source code filenames, with `-test` postfixed to the end.
 
-```shell
+```bash
 src/practicalli/simple_webapp/handlers.clj
 test/practicalli/simple_webapp/handlers-test.clj
 ```

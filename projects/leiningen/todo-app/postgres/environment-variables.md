@@ -5,14 +5,14 @@
 > ####Note:: Check your Heroku app has a `DATABASE_URL` configuration variable
 > List all the configuration variables for your app using the command:
 >
-```
+```bash
 heroku config
 ```
 >
 > The `DATABASE_URL` contains your **username** and **password** for the database, as well as the **hostname** and **database name** in the form of:
 >
-```
-postgres://username:password@hostname/database-name
+```clojure
+"postgres://username:password@hostname/database-name"
 ```
 
 
