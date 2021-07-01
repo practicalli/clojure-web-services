@@ -39,7 +39,7 @@
     * [Unit Testing Database](projects/banking-on-clojure/unit-testing-the-database.md)
     <!-- * [Migratus](projects/banking-on-clojure/migratus.md) -->
     * [HoneySQL](projects/banking-on-clojure/honeysql.md)
-    * [Nammespace design](projects/banking-on-clojure/namespace-design.md)
+    * [Namespace design](projects/banking-on-clojure/namespace-design.md)
     * [Production database](projects/banking-on-clojure/production-database.md)
 
 ## Architectural Components
