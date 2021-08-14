@@ -46,7 +46,7 @@ The REPL is still running, so the server can be started by calling `(-main)` or 
 "Start Jetty Application server, adding instance to global state"
   [port]
   (reset! app-server-instance
-          (jetty/run-jetty (site #'app) {:port port :join? false})))
+          (jetty/run-jetty #'app {:port port :join? false})))
 
 
 (defn app-server-stop
@@ -61,11 +61,12 @@ The REPL is still running, so the server can be started by calling `(-main)` or 
   "Stop and then start the application server, loading in the new code"
   []
   (app-server-stop)
-  (-main))
+  (app-server-start (Integer. (or (System/getenv "PORT") 8888))))
 
 
 (defn -main
-  "Determine an HTTP port number and start application server on that port"
+  "Determine an HTTP port number and start application server on that port.
+  A value for port can be passed as the first argument to the command to start the application via the CLI"
   [& [port]]
   (let [port (Integer. (or port
                            (System/getenv "PORT")
