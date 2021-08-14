@@ -42,6 +42,12 @@
     * [Nammespace design](projects/banking-on-clojure/namespace-design.md)
     * [Production database](projects/banking-on-clojure/production-database.md)
 
+## REPL Driven Development
+
+* [Overview](repl-driven-development/index.md)
+* [integrant REPL](repl-driven-development/integrant-repl/index.md)
+<!-- * [Aero Environment Profiles](repl-driven-development/aero-environment-profiles.md) -->
+
 ## Architectural Components
 * [Application servers](app-servers/index.md)
     * [Configuration](app-servers/basic-configuration.md)
