@@ -17,7 +17,7 @@ Add a `:runner-kaocha` alias to the `deps.edn` file in the root of the project
 
 Create the file `bin/kaocha` in the root of the project and make it executable (e.g. `chmod a+x bin/kaocha`)
 
-```
+```bash
 #!/usr/bin/env bash
 
 ## Script to run the kaocha test runner

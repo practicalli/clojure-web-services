@@ -4,7 +4,7 @@ List is a general set of elements with a sequential lookup time.  New elements a
 
 You can use the list function to create a new list (try the following expressions in a REPL)
 
-```
+```clojure
 (list 1 2 3 4)
 (list )    ;; creates an empty list
 (list 1 2 "three" [4] five '(6 7 8 9))
@@ -15,7 +15,7 @@ You can use the list function to create a new list (try the following expression
 
 You can mix types because Clojure is dynamic and it will work it out later, you can even have functions as elements, because a function always returns a value.  In the following example we define a list that includes a function call to the `str` function that joins its parameters into a single string.
 
-```
+```clojure
 (list :cat 1 "fish" 22/7 (str "fish" "n" "chips"))
 ```
 
@@ -23,7 +23,7 @@ You can mix types because Clojure is dynamic and it will work it out later, you 
 
 One unique thing about lists is that the first element is always evaluated as a function call, with the remaining elements as arguments.  So, defining a list just using `()` will cause an error
 
-```
+```clojure
 (1 2 3 4)   ;; failing expression
 ```
 
@@ -31,7 +31,7 @@ The previous list definition fails because there is no function defined with the
 
 We can call any of our own functions or any functions from Clojure using a list
 
-```
+```clojure
 (str "The str function" " " "joins strings together")
 (+ 1 2 3 4 5)  ;; + is a function that adds numbers
 (apply * [2 4 6])  ;; applies the * function to each element in the collection
@@ -41,7 +41,7 @@ We can call any of our own functions or any functions from Clojure using a list
 
 There is a special function called `quote` that tells Clojure to treat all the elements of the list as data.  You can also use the short-hand quote character, **'**
 
-```
+```clojure
 (quote (1 2 3 4))
 
 '(1 2 3 4)
@@ -49,7 +49,7 @@ There is a special function called `quote` that tells Clojure to treat all the e
 
 So using the quote character we can define lists very easily and concisely.
 
-```'
+```clojure
 '(-1 -0.234 0 1.3 8/5 3.1415926)
 '("cat" "dog" "rabit" "fish")
 '(:cat :dog :rabit :fish)
@@ -57,11 +57,11 @@ So using the quote character we can define lists very easily and concisely.
 ```
 
 
-## Duplicate elements in a list 
+## Duplicate elements in a list
 
 A list can contain elements that are the same value.
 
-```
+```clojure
 (list 1 2 3 4 1)
 (list "one" "two" "one")
 (list :fred :barney :fred)
@@ -75,7 +75,7 @@ As we have seen in the introduction to this section, changing a lists values onc
 
 The `cons` function is used to add values to the list
 
-```
+```clojure
 (cons 5 '(1 2 3 4))
 
 ;; => (5 1 2 3 4)
@@ -85,7 +85,6 @@ You will notice that the value 5 is added to the front of the new list that is r
 
 Here is another example with strings
 
-```
+```clojure
 (cons "fish" '("and" "chips"))
 ```
-

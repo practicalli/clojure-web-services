@@ -41,7 +41,7 @@ JdBC connection string for Heroku Postgres
 
 Converting the map back to a JDBC connection string
 
-```
+```clojure
 (defn remote-heroku-db-spec [host port database username password]
   {:connection-uri (str "jdbc:postgresql://" host ":" port "/" database "?user=" username "&password=" password "&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory")})
 ```
@@ -49,7 +49,9 @@ Converting the map back to a JDBC connection string
 
 ## From Heroku
 
-The DATABASE_URL for the Heroku Postgres add-on follows this naming convention:
+`JDBC_DATABASE_URL` environment variable should be used for the Heroku database connection
+
+The `DATABASE_URL` environment variable from the Heroku Postgres add-on follows this naming convention:
 
 postgres://<username>:<password>@<host>/<dbname>
 
@@ -57,4 +59,4 @@ However the Postgres JDBC driver uses the following convention:
 
 jdbc:postgresql://<host>:<port>/<dbname>?user=<username>&password=<password>
 
-Notice the additional `ql` at the end of `jdbc:postgresql`.  Due to this difference you will need to hardcode the scheme to jdbc:postgresql
+Notice the additional `ql` at the end of `jdbc:postgresql`.

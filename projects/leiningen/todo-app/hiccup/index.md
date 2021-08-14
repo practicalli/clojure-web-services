@@ -20,7 +20,7 @@ Hiccup uses vectors to define HTML tags and maps to represent styles and other a
 
 Add the hiccup dependency to your `project.clj` file
 
-```
+```clojure
 [hiccup "1.0.5"]
 ```
 

@@ -19,6 +19,6 @@ git commit -m "meaningful commit message"
 
 Now push the Clojure webapp code to Heroku and wait a few moments for it to deploy
 
-```
+```bash
 git push heroku master
 ```

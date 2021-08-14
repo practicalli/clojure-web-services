@@ -16,7 +16,7 @@
 
   Here is an example of including the `clojure.string` namespace and calling its `reverse` function
 
-```
+```clojure
 (require '[clojure.string :as string])
 
 (string/reverse "RedRum")
@@ -27,27 +27,20 @@
 
   Instead of the `require` function, add the `:require` keyword in the namespace definition, `ns`.
 
-```
+```clojure
 (ns todo-list.core
- (:require '[clojure.string :as string))
+ (:require '[clojure.string :as string])
 
 (string/reverse "RedRum")
 ```
 
   If a funciton will be used many times in the namespace, you can `:refer` a function so you can call it just by name, as if it had been defined in the current namespace.
 
-```
+```clojure
 (ns todo-list.core
- (:require '[clojure.string :refer [reverse]))
+ (:require '[clojure.string :refer [reverse]]))
 
 (reverse "RedRum")
-```
-
-  If you are using most functions from another namespace, you could `:refer :all`.  However, use this sparingly as it could lead to functions over-riding each other.
-
-```
-(ns todo-list.core
- (:require '[clojure.string :refer :all))
 ```
 
 > ####Hint::Dependency conflicts - avoid the `use` function

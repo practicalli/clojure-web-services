@@ -56,7 +56,7 @@ Heroku runs the SQL below to create a user and database for you.
 
 You cannot create or modify databases and roles on Heroku Postgres. The SQL below is for reference only.
 
-```
+```sql
 CREATE ROLE user_name;
 ALTER ROLE user_name WITH LOGIN PASSWORD 'password' NOSUPERUSER NOCREATEDB NOCREATEROLE;
 CREATE DATABASE database_name OWNER user_name;

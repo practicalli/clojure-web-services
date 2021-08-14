@@ -27,7 +27,7 @@ The closed thing to a framework in Clojure is [Pedestal](https://github.com/pede
 
 Project templates are used as follows
 
-```
+```bash
 lein new template-name project-name
 ```
 
