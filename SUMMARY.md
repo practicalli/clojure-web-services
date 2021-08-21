@@ -1,8 +1,6 @@
 # Summary
-## Introduction
 
-* [Introduction](readme.md)
-    <!-- * [Content Plan](content-plan.md) -->
+<!-- * [Content Plan](content-plan.md) -->
 * [Requirements](requirements.md)
     <!-- * [Additional Resources](additional-resources.md) -->
     <!-- * [Theory: Clojure Overview](overview/index.md) -->
