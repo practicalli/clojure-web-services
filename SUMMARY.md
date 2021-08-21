@@ -3,10 +3,10 @@
 
 * [Introduction](readme.md)
     <!-- * [Content Plan](content-plan.md) -->
-    * [Requirements](requirements.md)
+* [Requirements](requirements.md)
     <!-- * [Additional Resources](additional-resources.md) -->
     <!-- * [Theory: Clojure Overview](overview/index.md) -->
-    * [Theory: WebApps in Clojure](overview/webapps-in-clojure.md)
+* [Theory: WebApps in Clojure](overview/webapps-in-clojure.md)
 <!-- * [Setup](setup/index.md) -->
 
 ## Clojure CLI Projects
