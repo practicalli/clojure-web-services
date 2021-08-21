@@ -1,5 +1,5 @@
 {
-    "gitbook": ">=3.0.0",
+    "gitbook": ">=3.2.3",
     "title": "Practicalli Clojure WebApps",
     "author": "Practicalli",
     "description": "Server-side applications and APIs in Clojure",
