@@ -16,3 +16,4 @@ jobs:
         source_branch: live
         publish_commit_message: github.event.head_commit.message
         publish_branch: ghpages
+        publish_nojekyll: true                # add .nojekyll to prevent post deploy processing
