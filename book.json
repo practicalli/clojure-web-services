@@ -47,14 +47,6 @@
         "sectionx": {
             "tag": "b"
         },
-        "prism": {
-            "css": [
-                "prismjs/themes/prism-jr0cket.css"
-            ],
-            "ignore": [
-                "eval-clojure"
-            ]
-        },
         "disqus": {
             "shortName": "clojure-webapps-practicalli"
         },
