@@ -47,6 +47,11 @@
         "sectionx": {
             "tag": "b"
         },
+        "prism": {
+            "ignore": [
+                "eval-clojure"
+            ]
+        },
         "disqus": {
             "shortName": "clojure-webapps-practicalli"
         },
