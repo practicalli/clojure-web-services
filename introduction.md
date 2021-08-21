@@ -1,8 +1,10 @@
 ![Practicalli Clojure WebApps book banner](/images/practicalli-clojurewebapps-book-banner.png)
 
-A guide to developing server-side web applications and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts. Libraries are used to provide common features and alternative libraries are discussed.
+A guide to developing server-side web services and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts.
 
-Relevant theory and background reading is included, however, the focus of this guide is for you to build projects and experiment.
+A REPL Driven development workflow provides a fast feeback loop, showing how the code works as its being written.
+
+Relevant theory and background reading is included whilst keeping the practical focus of this guide on build projects and experimenting with the code.
 
 ## Clojure CLI and deps.edn
 Projects are created and configure using Clojure CLI tools, using `deps.edn` for configuration.  Older content uses Leinigen for project configuration.
@@ -14,12 +16,10 @@ Project templates are used to create projects that include commonly used librari
 
 Clojure does not focus on the classic framework approach like Rails or Spring, for a very good reason. Frameworks are design decisions others have made without knowing the context of the current problem at hand, so there is no guarantee on how many of those decisions are relevant. Frameworks tend to include many features not relevant to the current problem. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution.
 
+---
+
 [![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://practicalli.github.io/spacemacs/)
 
-> #### Hint::Book refresh in 2020
-> The guides are to be updated to use Clojure CLI and tools.deps for project configuration and depenedency management.
-> See [Clojure web server from scratch](https://practicalli.github.io/blog/posts/clojure-web-server-cli-tools-deps-edn/)
-> and [Practicalli Clojure WebApps playlist](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiCe9p9tFk24ChNSpGfanUbT) whilst this content is being updated.
 
 ## Discussions and feedback
 [![Join the conversation on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)

@@ -1,17 +1,17 @@
-# Practicalli Clojure Web Applications
-A repository for the markdown content for the [Practicalli Clojure WebApps](https://practicalli.github.io/clojure-webapps) book.
+# Practicalli Clojure Web Services
+A repository for the markdown content for the [Practicalli Clojure WebApps](https://practical.li/clojure-web-services) book.
 
 ![Practicalli Clojure WebApps book banner](/images/practicalli-clojurewebapps-book-banner.png)
 
 ## Introduction
-A guide to developing server-side web applications and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts. Libraries are used to provide common features and alternative libraries are discussed.
+A guide to developing server-side web services and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts. Libraries are used to provide common features and alternative libraries are discussed.
 
 Relevant theory and background reading is included, however, the focus of this guide is for you to build these projects and experiment.
 
 ## Micro-frameworks approach
-Clojure doesn't have frameworks like Rails or Spring for a very good reason.  There is no framework that is specific you the problem you are trying to solve.
+Clojure doesn't have large frameworks like Rails or Spring for a very good reason.  There is no framework that is specific you the problem you are trying to solve.
 
-Instead, the Clojure community has numerous libraries and blueprints that show how common services can be assembled.  These are often termed micro-frameworks (for want of a better name).  These micro-frameworks are templates with optional libraries, which you can customise to the specific needs of the problem you are solving.  More importantly, those libraries are relatively simple to replace with alternatives or your own libraries, to create an optomised solution.
+Instead, the Clojure community has numerous libraries and templates that show how common services can be assembled.  These are often termed micro-frameworks (for want of a better name).  These micro-frameworks are templates with optional libraries, which you can customise to the specific needs of the problem you are solving.  More importantly, those libraries are relatively simple to replace with alternatives or your own libraries, to create an optomised solution.
 
 Micro-frameworks typically have far less libraries that a framework, so are easier to learn.  You can also learn in stage as only a few core libraries and functions are needed to start with.
 
