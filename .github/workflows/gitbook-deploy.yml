@@ -15,5 +15,4 @@ jobs:
         token: ${{ secrets.GITBOOK_DEPLOY_TOKEN }}  # -> remember add this in settings/secrets as following
         source_branch: live
         publish_commit_message: github.event.head_commit.message
-        publish_branch: live
-        publish_dir: docs
+        publish_branch: ghpages
