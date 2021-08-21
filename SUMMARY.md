@@ -1,6 +1,7 @@
 # Summary
+## Introduction
 
-* [Introduction](introduction.md)
+* [Welcome](welcome.md)
     * [Content Plan](content-plan.md)
     * [Requirements](requirements.md)
     <!-- * [Additional Resources](additional-resources.md) -->
