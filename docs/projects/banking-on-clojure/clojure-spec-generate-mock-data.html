@@ -1,0 +1,2578 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Spec: generate database data · Practicalli Clojure WebApps</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Practicalli">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-folding-chapters/folding-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-newtabs/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-newtabs/tabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-simpletabs/tabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-terminull-light/terminull.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-wide-page/wide.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="unit-testing-the-database.html" />
+    
+    
+    <link rel="prev" href="cyclic-load-dependency.html" />
+    
+
+    </head>
+    <body>
+        
+
+
+<div class="book">
+    <div class="book-summary">
+        
+      <!-- <div class="theme-code-header">
+           <a href="" class="link">
+           <h1 class="title">Practicalli Clojure WebApps</h1>
+           </a>
+           </div> -->
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://practicalli.github.io" target="_blank" class="custom-link">Practical.li</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                  <!--  -->
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../">
+            
+                <a href="../../">
+            
+                  <!--  -->
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../content-plan.html">
+            
+                <a href="../../content-plan.html">
+            
+                  <!--  -->
+                    Content Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../requirements.html">
+            
+                <a href="../../requirements.html">
+            
+                  <!--  -->
+                    Requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../overview/webapps-in-clojure.html">
+            
+                <a href="../../overview/webapps-in-clojure.html">
+            
+                  <!--  -->
+                    Theory: WebApps in Clojure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clojure CLI Projects</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../status-monitor-deps/">
+            
+                <a href="../status-monitor-deps/">
+            
+                  <!--  -->
+                    Status Monitor - deps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../status-monitor-deps/application-server.html">
+            
+                <a href="../status-monitor-deps/application-server.html">
+            
+                  <!--  -->
+                    Application server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../status-monitor-deps/debugging-requests.html">
+            
+                <a href="../status-monitor-deps/debugging-requests.html">
+            
+                  <!--  -->
+                    Debug requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../status-monitor-deps/unit-test-mocking-handlers.html">
+            
+                <a href="../status-monitor-deps/unit-test-mocking-handlers.html">
+            
+                  <!--  -->
+                    Unit Test & Mocking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../status-monitor-deps/refactor-handlers-and-tests.html">
+            
+                <a href="../status-monitor-deps/refactor-handlers-and-tests.html">
+            
+                  <!--  -->
+                    Defining handlers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../status-monitor-deps/continuous-integration.html">
+            
+                <a href="../status-monitor-deps/continuous-integration.html">
+            
+                  <!--  -->
+                    Continuous integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../status-monitor-deps/deployment-via-ci.html">
+            
+                <a href="../status-monitor-deps/deployment-via-ci.html">
+            
+                  <!--  -->
+                    Deployment via CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="./">
+            
+                <a href="./">
+            
+                  <!--  -->
+                    Banking on Clojure - deps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="application-server-configuration.html">
+            
+                <a href="application-server-configuration.html">
+            
+                  <!--  -->
+                    App Server Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="refactor-handler.html">
+            
+                <a href="refactor-handler.html">
+            
+                  <!--  -->
+                    Refactor handlers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="defining-handlers.html">
+            
+                <a href="defining-handlers.html">
+            
+                  <!--  -->
+                    Defining handlers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="continuous-integration.html">
+            
+                <a href="continuous-integration.html">
+            
+                  <!--  -->
+                    Continous Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="deployment-pipeline.html">
+            
+                <a href="deployment-pipeline.html">
+            
+                  <!--  -->
+                    Deployment Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="deployment-via-ci.html">
+            
+                <a href="deployment-via-ci.html">
+            
+                  <!--  -->
+                    Deployment via CI to Heroku
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="unit-tests.html">
+            
+                <a href="unit-tests.html">
+            
+                  <!--  -->
+                    Unit Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="spec-generative-testing.html">
+            
+                <a href="spec-generative-testing.html">
+            
+                  <!--  -->
+                    Clojure Specs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="development-database.html">
+            
+                <a href="development-database.html">
+            
+                  <!--  -->
+                    Development database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="instrument-next-jdbc-functions.html">
+            
+                <a href="instrument-next-jdbc-functions.html">
+            
+                  <!--  -->
+                    Instrument next.jdbc functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="database-tables.html">
+            
+                <a href="database-tables.html">
+            
+                  <!--  -->
+                    Database tables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12" data-path="database-queries.html">
+            
+                <a href="database-queries.html">
+            
+                  <!--  -->
+                    Database queries
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.12.1" data-path="create-records.html">
+            
+                <a href="create-records.html">
+            
+                  <!--  -->
+                    Create Records
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12.2" data-path="read-records.html">
+            
+                <a href="read-records.html">
+            
+                  <!--  -->
+                    Read Records
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12.3" data-path="update-records.html">
+            
+                <a href="update-records.html">
+            
+                  <!--  -->
+                    Update Records
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12.4" data-path="delete-records.html">
+            
+                <a href="delete-records.html">
+            
+                  <!--  -->
+                    Delete Records
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.13" data-path="cyclic-load-dependency.html">
+            
+                <a href="cyclic-load-dependency.html">
+            
+                  <!--  -->
+                    Cyclic Load Dependency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.14" data-path="clojure-spec-generate-mock-data.html">
+            
+                <a href="clojure-spec-generate-mock-data.html">
+            
+                  <!--  -->
+                    Spec: generate database data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.15" data-path="unit-testing-the-database.html">
+            
+                <a href="unit-testing-the-database.html">
+            
+                  <!--  -->
+                    Unit Testing Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.16" data-path="honeysql.html">
+            
+                <a href="honeysql.html">
+            
+                  <!--  -->
+                    HoneySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.17" data-path="namespace-design.html">
+            
+                <a href="namespace-design.html">
+            
+                  <!--  -->
+                    Namespace design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.18" data-path="production-database.html">
+            
+                <a href="production-database.html">
+            
+                  <!--  -->
+                    Production database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">REPL Driven Development</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../repl-driven-development/">
+            
+                <a href="../../repl-driven-development/">
+            
+                  <!--  -->
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../repl-driven-development/integrant-repl/">
+            
+                <a href="../../repl-driven-development/integrant-repl/">
+            
+                  <!--  -->
+                    integrant REPL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Architectural Components</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../app-servers/">
+            
+                <a href="../../app-servers/">
+            
+                  <!--  -->
+                    Application servers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../app-servers/basic-configuration.html">
+            
+                <a href="../../app-servers/basic-configuration.html">
+            
+                  <!--  -->
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1.1" data-path="../../app-servers/java-system-properties.html">
+            
+                <a href="../../app-servers/java-system-properties.html">
+            
+                  <!--  -->
+                    Java Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../app-servers/simple-restart.html">
+            
+                <a href="../../app-servers/simple-restart.html">
+            
+                  <!--  -->
+                    Simple restart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../app-servers/atom-based-restart.html">
+            
+                <a href="../../app-servers/atom-based-restart.html">
+            
+                  <!--  -->
+                    Atom based restart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../app-servers/app-server-logging.html">
+            
+                <a href="../../app-servers/app-server-logging.html">
+            
+                  <!--  -->
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../application-logic/">
+            
+                <a href="../../application-logic/">
+            
+                  <!--  -->
+                    Application logic
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../../application-logic/routing.html">
+            
+                <a href="../../application-logic/routing.html">
+            
+                  <!--  -->
+                    Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../relational-databases-and-sql/">
+            
+                <a href="../../relational-databases-and-sql/">
+            
+                  <!--  -->
+                    Relational Database & SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../relational-databases-and-sql/next-jdbc-library/">
+            
+                <a href="../../relational-databases-and-sql/next-jdbc-library/">
+            
+                  <!--  -->
+                    next.jdbc library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../relational-databases-and-sql/h2-database/">
+            
+                <a href="../../relational-databases-and-sql/h2-database/">
+            
+                  <!--  -->
+                    H2 Database
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.2.1" data-path="../../relational-databases-and-sql/h2-database/schema-design.html">
+            
+                <a href="../../relational-databases-and-sql/h2-database/schema-design.html">
+            
+                  <!--  -->
+                    H2 schema design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2.2" data-path="../../relational-databases-and-sql/h2-database/database-tools.html">
+            
+                <a href="../../relational-databases-and-sql/h2-database/database-tools.html">
+            
+                  <!--  -->
+                    H2 database tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../relational-databases-and-sql/postgresql-database.html">
+            
+                <a href="../../relational-databases-and-sql/postgresql-database.html">
+            
+                  <!--  -->
+                    PostgreSQL Database
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.3.1" data-path="../../relational-databases-and-sql/managing-connections.html">
+            
+                <a href="../../relational-databases-and-sql/managing-connections.html">
+            
+                  <!--  -->
+                    Managing Connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Leiningen Projects</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../leiningen/todo-app/">
+            
+                <a href="../leiningen/todo-app/">
+            
+                  <!--  -->
+                    TODO WebApp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../leiningen/todo-app/create-a-project/">
+            
+                <a href="../leiningen/todo-app/create-a-project/">
+            
+                  <!--  -->
+                    Create a Project
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1.1" data-path="../leiningen/todo-app/create-a-project/update-project-details.html">
+            
+                <a href="../leiningen/todo-app/create-a-project/update-project-details.html">
+            
+                  <!--  -->
+                    Update Project details
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../leiningen/todo-app/create-a-webserver-with-ring/">
+            
+                <a href="../leiningen/todo-app/create-a-webserver-with-ring/">
+            
+                  <!--  -->
+                    Create a webserver with Ring
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.2.1" data-path="../leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency.html">
+            
+                <a href="../leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency.html">
+            
+                  <!--  -->
+                    Add Ring Dependency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2.2" data-path="../leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace.html">
+            
+                <a href="../leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace.html">
+            
+                  <!--  -->
+                    Configure main namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2.3" data-path="../leiningen/todo-app/create-a-webserver-with-ring/namespaces.html">
+            
+                <a href="../leiningen/todo-app/create-a-webserver-with-ring/namespaces.html">
+            
+                  <!--  -->
+                    Theory: namespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2.4" data-path="../leiningen/todo-app/create-a-webserver-with-ring/include-ring-library.html">
+            
+                <a href="../leiningen/todo-app/create-a-webserver-with-ring/include-ring-library.html">
+            
+                  <!--  -->
+                    Include Ring Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2.5" data-path="../leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.html">
+            
+                <a href="../leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.html">
+            
+                  <!--  -->
+                    Add a Jetty webserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2.6" data-path="../leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.html">
+            
+                <a href="../leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.html">
+            
+                  <!--  -->
+                    Theory: Coersing Types & java.lang
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2.7" data-path="../leiningen/todo-app/create-a-webserver-with-ring/run-webserver.html">
+            
+                <a href="../leiningen/todo-app/create-a-webserver-with-ring/run-webserver.html">
+            
+                  <!--  -->
+                    Run webserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../leiningen/todo-app/introducing-ring/">
+            
+                <a href="../leiningen/todo-app/introducing-ring/">
+            
+                  <!--  -->
+                    Theory: Introducing Ring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../leiningen/todo-app/create-a-handler-function/">
+            
+                <a href="../leiningen/todo-app/create-a-handler-function/">
+            
+                  <!--  -->
+                    Create a handler function
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.4.1" data-path="../leiningen/todo-app/create-a-handler-function/add-not-found.html">
+            
+                <a href="../leiningen/todo-app/create-a-handler-function/add-not-found.html">
+            
+                  <!--  -->
+                    Add error for bad routes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4.2" data-path="../leiningen/todo-app/create-a-handler-function/if-function.html">
+            
+                <a href="../leiningen/todo-app/create-a-handler-function/if-function.html">
+            
+                  <!--  -->
+                    Theory: if function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4.3" data-path="../leiningen/todo-app/create-a-handler-function/maps-and-keywords.html">
+            
+                <a href="../leiningen/todo-app/create-a-handler-function/maps-and-keywords.html">
+            
+                  <!--  -->
+                    Theory: maps and keywords
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../leiningen/todo-app/unit-test-handler-function/">
+            
+                <a href="../leiningen/todo-app/unit-test-handler-function/">
+            
+                  <!--  -->
+                    Unit test handler function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.6" data-path="../leiningen/todo-app/reloading-the-application/">
+            
+                <a href="../leiningen/todo-app/reloading-the-application/">
+            
+                  <!--  -->
+                    Reloading the application
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.6.1" data-path="../leiningen/todo-app/reloading-the-application/test-your-code-reloads.html">
+            
+                <a href="../leiningen/todo-app/reloading-the-application/test-your-code-reloads.html">
+            
+                  <!--  -->
+                    Test your code reloads
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.6.2" data-path="../leiningen/todo-app/reloading-the-application/middleware.html">
+            
+                <a href="../leiningen/todo-app/reloading-the-application/middleware.html">
+            
+                  <!--  -->
+                    Middleware in Ring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7" data-path="../leiningen/todo-app/compojure/">
+            
+                <a href="../leiningen/todo-app/compojure/">
+            
+                  <!--  -->
+                    Compojure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.7.1" data-path="../leiningen/todo-app/compojure/theory-routing.html">
+            
+                <a href="../leiningen/todo-app/compojure/theory-routing.html">
+            
+                  <!--  -->
+                    Theory: routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7.2" data-path="../leiningen/todo-app/compojure/adding-dependency.html">
+            
+                <a href="../leiningen/todo-app/compojure/adding-dependency.html">
+            
+                  <!--  -->
+                    Adding dependency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7.3" data-path="../leiningen/todo-app/compojure/using-compojure.html">
+            
+                <a href="../leiningen/todo-app/compojure/using-compojure.html">
+            
+                  <!--  -->
+                    Using Compojure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7.4" data-path="../leiningen/todo-app/compojure/adding-goodbye-route.html">
+            
+                <a href="../leiningen/todo-app/compojure/adding-goodbye-route.html">
+            
+                  <!--  -->
+                    Adding goodbye route
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7.5" data-path="../leiningen/todo-app/compojure/about.html">
+            
+                <a href="../leiningen/todo-app/compojure/about.html">
+            
+                  <!--  -->
+                    About route
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7.6" data-path="../leiningen/todo-app/compojure/show-request-info.html">
+            
+                <a href="../leiningen/todo-app/compojure/show-request-info.html">
+            
+                  <!--  -->
+                    Show request info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7.7" data-path="../leiningen/todo-app/compojure/variable-path-elements.html">
+            
+                <a href="../leiningen/todo-app/compojure/variable-path-elements.html">
+            
+                  <!--  -->
+                    Variable Path Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7.8" data-path="../leiningen/todo-app/compojure/theory-local-name-bindings.html">
+            
+                <a href="../leiningen/todo-app/compojure/theory-local-name-bindings.html">
+            
+                  <!--  -->
+                    Theory: local name bindings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7.9" data-path="../leiningen/todo-app/compojure/theory-using-hash-maps.html">
+            
+                <a href="../leiningen/todo-app/compojure/theory-using-hash-maps.html">
+            
+                  <!--  -->
+                    Theory: using Clojure hash-maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7.10" data-path="../leiningen/todo-app/compojure/lisp-calculator.html">
+            
+                <a href="../leiningen/todo-app/compojure/lisp-calculator.html">
+            
+                  <!--  -->
+                    Lisp Calculator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.8" data-path="../leiningen/todo-app/heroku/">
+            
+                <a href="../leiningen/todo-app/heroku/">
+            
+                  <!--  -->
+                    Deploying to Heroku
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.8.1" data-path="../leiningen/todo-app/heroku/update-project.html">
+            
+                <a href="../leiningen/todo-app/heroku/update-project.html">
+            
+                  <!--  -->
+                    Update the project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.8.2" data-path="../leiningen/todo-app/heroku/procfile.html">
+            
+                <a href="../leiningen/todo-app/heroku/procfile.html">
+            
+                  <!--  -->
+                    Add Procfile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.8.3" data-path="../leiningen/todo-app/heroku/deploy.html">
+            
+                <a href="../leiningen/todo-app/heroku/deploy.html">
+            
+                  <!--  -->
+                    Deploy to Heroku
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.9" data-path="../leiningen/todo-app/hiccup/">
+            
+                <a href="../leiningen/todo-app/hiccup/">
+            
+                  <!--  -->
+                    Hiccup HTML library
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.9.1" data-path="../leiningen/todo-app/hiccup/updating-handlers-with-hiccup.html">
+            
+                <a href="../leiningen/todo-app/hiccup/updating-handlers-with-hiccup.html">
+            
+                  <!--  -->
+                    Updating handlers with hiccup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.9.2" data-path="../leiningen/todo-app/hiccup/create-new-handler.html">
+            
+                <a href="../leiningen/todo-app/hiccup/create-new-handler.html">
+            
+                  <!--  -->
+                    Create a new handler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.10" data-path="../leiningen/todo-app/refactor-namespace/">
+            
+                <a href="../leiningen/todo-app/refactor-namespace/">
+            
+                  <!--  -->
+                    Refactor namespace
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.10.1" data-path="../leiningen/todo-app/refactor-namespace/base-routes.html">
+            
+                <a href="../leiningen/todo-app/refactor-namespace/base-routes.html">
+            
+                  <!--  -->
+                    Base routes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.10.2" data-path="../leiningen/todo-app/refactor-namespace/core.html">
+            
+                <a href="../leiningen/todo-app/refactor-namespace/core.html">
+            
+                  <!--  -->
+                    Refactored Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11" data-path="../leiningen/todo-app/postgres/">
+            
+                <a href="../leiningen/todo-app/postgres/">
+            
+                  <!--  -->
+                    Postgres Database
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.11.1" data-path="../leiningen/todo-app/postgres/install.html">
+            
+                <a href="../leiningen/todo-app/postgres/install.html">
+            
+                  <!--  -->
+                    Postgres install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.2" data-path="../leiningen/todo-app/postgres/environment-variables.html">
+            
+                <a href="../leiningen/todo-app/postgres/environment-variables.html">
+            
+                  <!--  -->
+                    Environment Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.3" data-path="../leiningen/todo-app/postgres/postgres-cli.html">
+            
+                <a href="../leiningen/todo-app/postgres/postgres-cli.html">
+            
+                  <!--  -->
+                    Postgres CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.4" data-path="../leiningen/todo-app/postgres/dataclips.html">
+            
+                <a href="../leiningen/todo-app/postgres/dataclips.html">
+            
+                  <!--  -->
+                    Dataclips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.5" data-path="../leiningen/todo-app/connect-to-postgres/">
+            
+                <a href="../leiningen/todo-app/connect-to-postgres/">
+            
+                  <!--  -->
+                    Connect to Postgres
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.11.5.1" data-path="../leiningen/todo-app/connect-to-postgres/add-database-dependencies.html">
+            
+                <a href="../leiningen/todo-app/connect-to-postgres/add-database-dependencies.html">
+            
+                  <!--  -->
+                    Add Database Dependencies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.5.2" data-path="../leiningen/todo-app/connect-to-postgres/define-db-connection.html">
+            
+                <a href="../leiningen/todo-app/connect-to-postgres/define-db-connection.html">
+            
+                  <!--  -->
+                    Define Database Connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.6" data-path="../leiningen/todo-app/database-model/">
+            
+                <a href="../leiningen/todo-app/database-model/">
+            
+                  <!--  -->
+                    Creating a database model
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.11.6.1" data-path="../leiningen/todo-app/database-model/create-table.html">
+            
+                <a href="../leiningen/todo-app/database-model/create-table.html">
+            
+                  <!--  -->
+                    Create table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.6.2" data-path="../leiningen/todo-app/database-model/create-task.html">
+            
+                <a href="../leiningen/todo-app/database-model/create-task.html">
+            
+                  <!--  -->
+                    Create task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.6.3" data-path="../leiningen/todo-app/database-model/show-all-task.html">
+            
+                <a href="../leiningen/todo-app/database-model/show-all-task.html">
+            
+                  <!--  -->
+                    List tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.6.4" data-path="../leiningen/todo-app/database-model/delete-task.html">
+            
+                <a href="../leiningen/todo-app/database-model/delete-task.html">
+            
+                  <!--  -->
+                    Delete task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.6.5" data-path="../leiningen/todo-app/database-model/alternative-approaches.html">
+            
+                <a href="../leiningen/todo-app/database-model/alternative-approaches.html">
+            
+                  <!--  -->
+                    Alternative approaches
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.7" data-path="../leiningen/todo-app/task-handlers/">
+            
+                <a href="../leiningen/todo-app/task-handlers/">
+            
+                  <!--  -->
+                    Task handlers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.11.7.1" data-path="../leiningen/todo-app/task-handlers/add-a-task.html">
+            
+                <a href="../leiningen/todo-app/task-handlers/add-a-task.html">
+            
+                  <!--  -->
+                    Add a task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.7.2" data-path="../leiningen/todo-app/task-handlers/show-task.html">
+            
+                <a href="../leiningen/todo-app/task-handlers/show-task.html">
+            
+                  <!--  -->
+                    Show tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11.7.3" data-path="../leiningen/todo-app/task-handlers/delete-a-task.html">
+            
+                <a href="../leiningen/todo-app/task-handlers/delete-a-task.html">
+            
+                  <!--  -->
+                    Delete a task
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Building API's</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../server-side-api/">
+            
+                <a href="../../server-side-api/">
+            
+                  <!--  -->
+                    Server-side API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="../../server-side-api/compojure-api-template.html">
+            
+                <a href="../../server-side-api/compojure-api-template.html">
+            
+                  <!--  -->
+                    Compojure-API template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="../../server-side-api/create-compojure-api-project.html">
+            
+                <a href="../../server-side-api/create-compojure-api-project.html">
+            
+                  <!--  -->
+                    Create API project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3" data-path="../../server-side-api/swagger.html">
+            
+                <a href="../../server-side-api/swagger.html">
+            
+                  <!--  -->
+                    Swagger
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.3.1" data-path="../../server-side-api/ring-swagger.html">
+            
+                <a href="../../server-side-api/ring-swagger.html">
+            
+                  <!--  -->
+                    ring-swagger
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4" data-path="../../server-side-api/plumatic-schema.html">
+            
+                <a href="../../server-side-api/plumatic-schema.html">
+            
+                  <!--  -->
+                    Plumatic Schema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.5" data-path="../../server-side-api/json-files.html">
+            
+                <a href="../../server-side-api/json-files.html">
+            
+                  <!--  -->
+                    JSON files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.6" data-path="../../server-side-api/testing-api.html">
+            
+                <a href="../../server-side-api/testing-api.html">
+            
+                  <!--  -->
+                    Testing an API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.6.1" data-path="../../server-side-api/ring-mock.html">
+            
+                <a href="../../server-side-api/ring-mock.html">
+            
+                  <!--  -->
+                    ring-mock library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.6.2" data-path="../../server-side-api/cheshire.html">
+            
+                <a href="../../server-side-api/cheshire.html">
+            
+                  <!--  -->
+                    cheshire library
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.7" data-path="../../server-side-api/end-to-end-testing/">
+            
+                <a href="../../server-side-api/end-to-end-testing/">
+            
+                  <!--  -->
+                    End to End Testing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.7.1" data-path="../../server-side-api/end-to-end-testing/swagger.html">
+            
+                <a href="../../server-side-api/end-to-end-testing/swagger.html">
+            
+                  <!--  -->
+                    Swagger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.7.2" data-path="../../server-side-api/end-to-end-testing/curl.html">
+            
+                <a href="../../server-side-api/end-to-end-testing/curl.html">
+            
+                  <!--  -->
+                    Curl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.7.3" data-path="../../server-side-api/end-to-end-testing/insomnia.html">
+            
+                <a href="../../server-side-api/end-to-end-testing/insomnia.html">
+            
+                  <!--  -->
+                    Insomnia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.7.4" data-path="../../server-side-api/end-to-end-testing/postman.html">
+            
+                <a href="../../server-side-api/end-to-end-testing/postman.html">
+            
+                  <!--  -->
+                    Postman Client
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.8" data-path="../../server-side-api/terminology.html">
+            
+                <a href="../../server-side-api/terminology.html">
+            
+                  <!--  -->
+                    Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../server-side-api/projects/game-scoreboard/">
+            
+                <a href="../../server-side-api/projects/game-scoreboard/">
+            
+                  <!--  -->
+                    Project: Game Scoreboard
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.2.1" data-path="../../server-side-api/projects/game-scoreboard/defining-scoreboard.html">
+            
+                <a href="../../server-side-api/projects/game-scoreboard/defining-scoreboard.html">
+            
+                  <!--  -->
+                    Defining scoreboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.2" data-path="../../server-side-api/projects/game-scoreboard/defining-scores.html">
+            
+                <a href="../../server-side-api/projects/game-scoreboard/defining-scores.html">
+            
+                  <!--  -->
+                    Defining Players
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.3" data-path="../../server-side-api/projects/game-scoreboard-ui/">
+            
+                <a href="../../server-side-api/projects/game-scoreboard-ui/">
+            
+                  <!--  -->
+                    Game Scoreboard UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Reference</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../../persistent-data-structures/">
+            
+                <a href="../../persistent-data-structures/">
+            
+                  <!--  -->
+                    Theory: Persistent Data Structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../../persistent-data-structures/lists.html">
+            
+                <a href="../../persistent-data-structures/lists.html">
+            
+                  <!--  -->
+                    Theory: Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../../persistent-data-structures/maps.html">
+            
+                <a href="../../persistent-data-structures/maps.html">
+            
+                  <!--  -->
+                    Theory: Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.3" data-path="../../persistent-data-structures/vectors.html">
+            
+                <a href="../../persistent-data-structures/vectors.html">
+            
+                  <!--  -->
+                    Theory: Vectors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.4" data-path="../../persistent-data-structures/sets.html">
+            
+                <a href="../../persistent-data-structures/sets.html">
+            
+                  <!--  -->
+                    Theory: Sets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../reference/ring/">
+            
+                <a href="../../reference/ring/">
+            
+                  <!--  -->
+                    Ring
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.2.1" data-path="../../reference/ring/request-map.html">
+            
+                <a href="../../reference/ring/request-map.html">
+            
+                  <!--  -->
+                    request map
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Hacking on content</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../../project-url-shortner/">
+            
+                <a href="../../project-url-shortner/">
+            
+                  <!--  -->
+                    Project: URL Shortner as a Service
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../../project-url-shortner/create-project.html">
+            
+                <a href="../../project-url-shortner/create-project.html">
+            
+                  <!--  -->
+                    Create project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../../project-url-shortner/run-project.html">
+            
+                <a href="../../project-url-shortner/run-project.html">
+            
+                  <!--  -->
+                    Run project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" data-path="../../project-url-shortner/test-app-reloading.html">
+            
+                <a href="../../project-url-shortner/test-app-reloading.html">
+            
+                  <!--  -->
+                    Test app reloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.4" data-path="../../project-url-shortner/compojure-template.html">
+            
+                <a href="../../project-url-shortner/compojure-template.html">
+            
+                  <!--  -->
+                    Compojure Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.5" data-path="../../project-url-shortner/design-data-structure.html">
+            
+                <a href="../../project-url-shortner/design-data-structure.html">
+            
+                  <!--  -->
+                    Design data structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.6" data-path="../../project-url-shortner/whats-in-a-request.html">
+            
+                <a href="../../project-url-shortner/whats-in-a-request.html">
+            
+                  <!--  -->
+                    Whats in a request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.7" data-path="../../project-url-shortner/redirect-to-full-url.html">
+            
+                <a href="../../project-url-shortner/redirect-to-full-url.html">
+            
+                  <!--  -->
+                    Redirect to full URL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="" target="_blank" class="gitbook-link">
+            Author: Practicalli
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Spec: generate database data</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/spec/clojure-spec-blueprints-industrial.png" alt="Clojure specifications for next.jdbc"></p>
+<h1 id="generate-database-record-data-from-clojure-specifications">Generate database record data from Clojure Specifications</h1>
+<p>The Clojure specifications developed for the banking-on-clojure application can be used to generate random data that can be used to test the database schema and CRUD functions.</p>
+<p>In the database schema design page the <code>next.jdbc.sql</code> functions were used to define a generic function for inserting records into a database</p>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">defn</span> insert-record
+  <span class="token punctuation">[</span>table record-data <span class="token number">db</span>-spec<span class="token punctuation">]</span>
+  <span class="token punctuation">(</span><span class="token keyword">with-open</span> <span class="token punctuation">[</span>connection <span class="token punctuation">(</span>jdbc/get-connection <span class="token number">db</span>-spec<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token punctuation">(</span>jdbc-sql/insert! connection table record-data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>The call to this function uses a value for <code>record-data</code> that is almost identical to the value generated from the <code>practicalli.banking-on-clojure/account-holder</code> specification.  The only difference is the key name styles.</p>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span>create-record <span class="token number">db</span>-specification-dev
+                 <span class="token operator">:public</span>.account_holders
+                 <span class="token punctuation">{</span><span class="token operator">:account_holder_id</span>      <span class="token punctuation">(</span>java.util.UUID/randomUUID<span class="token punctuation">)</span>
+                  <span class="token operator">:first_name</span>             <span class="token string">&quot;Rachel&quot;</span>
+                  <span class="token operator">:last_name</span>              <span class="token string">&quot;Rocketpack&quot;</span>
+                  <span class="token operator">:email_address</span>          <span class="token string">&quot;rach@rocketpack.org&quot;</span>
+                  <span class="token operator">:residential_address</span>    <span class="token string">&quot;1 Ultimate Question Lane, Altar IV&quot;</span>
+                  <span class="token operator">:social_security_number</span> <span class="token string">&quot;BB104312D&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="generating-data-from-clojure-specifications">Generating data from Clojure Specifications</h2>
+<p><code>clojure.spec.alpha/gen</code> takes a spec and returns a reference to a generator for that specification.</p>
+<p><code>clojure.spec.gen.alpha/generate</code> returns a random value using the spec generator.</p>
+<p>Generate a value from the <code>account-holder</code> specification</p>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span>spec-gen/generate <span class="token punctuation">(</span>spec/gen <span class="token operator">::account-holder</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Create a simple helper function in <code>practicalli/specifications-banking.clj</code> to generating mock data from the specifications relevant to the database.</p>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">defn</span> mock-data-account-holder
+  <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">(</span>spec-gen/generate <span class="token punctuation">(</span>spec/gen <span class="token operator">::account-holder</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>The <code>practicalli.database-access/create-record</code> function can now be passed a generated record-data argument using <code>(practicalli.specifications-banking/mock-data-account-holder)</code></p>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span>create-record
+  <span class="token number">db</span>-specification-dev
+  <span class="token operator">:public</span>.account_holders
+  <span class="token punctuation">(</span>practicalli.specifications-banking/mock-data-account-holder<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="clojure-and-database-naming-disparity">Clojure and database naming disparity</h2>
+<p>When calling <code>create-record</code> with a specification there is a disparity between the names of the keys from the clojure specification and the names of the columns in database.</p>
+<ul>
+<li>Clojure uses <code>kebab-case</code></li>
+<li>Database uses <code>snake_case</code></li>
+</ul>
+<p><img src="../../images/clojure-webapps-database-testing-keywords-in-kebab-case.png" alt="keyword disparity"></p>
+<p>Most relational databases will not accept column names in <code>kebab-case</code>.</p>
+<p>Do we have to compromise the Clojure style kebab-case just for the database?  Do we have to create our own generators or transform code to convert the specs generated?</p>
+<h2 id="automatically-converting-key-names">Automatically converting key names</h2>
+<p>Clojure uses <a href="https://practicalli.github.io/clojure/reference/kebab-case.html" target="_blank">kebab-case</a> for key names in Clojure specs (and all names in general).</p>
+<p>Relational databases use snake_case for table and column names and most databases will not support kebab-case.</p>
+<p>It is simple to convert between the two cases, as its simply a string replacement for <code>-</code> with <code>_</code>.  <a href="https://clj-commons.org/camel-snake-kebab/" target="_blank">clj-commons/camel-snake-kebab</a> is a library that converts between each of the naming styles.</p>
+<p><code>camel-snake-kebab.core/-&gt;snake_case</code> takes a name and returns it in snake_case</p>
+<p>next.jdbc support conversion between camel-case names when <a href="https://clj-commons.org/camel-snake-kebab/" target="_blank">clj-commons/camel-snake-kebab</a> is added to the project dependencies.</p>
+<p>The next.jdbc.sql CRUD functions take an optional configuration hash-map as the fourth argument.  When ,,, is on the class path, next.jdbc has two hash-maps available that will define functions to use from the ,,, library to do the name conversions.</p>
+<ul>
+<li><code>next.jdbc/snake-kebab-opts</code> for unqualified Clojure keywords</li>
+<li><code>next.jdbc/unqualified-snake-kebab-opts</code> for unqualified Clojure keywords</li>
+</ul>
+<h2 id="refactor-crud-functions-to-automatically-convert-case">Refactor CRUD functions to automatically convert case</h2>
+<p>Refactor the CRUD functions to include the <code>snake-kebab-opts</code> hash-map as an argument.</p>
+<p>Only those functions that take keywords as part of the argument need to be changed, so <code>next.jdbc.sql/query</code> does not need to change and therefore the <code>practicalli.database-access/read-record</code> remains unchanged.</p>
+<p>Refactor the <code>practicalli.database-access/create-record</code> function</p>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">defn</span> create-record
+  <span class="token string">&quot;Insert a single record into the database using a managed connection.
+  Arguments:
+  - table - name of database table to be affected
+  - record-data - Clojure data representing a new record
+  - db-spec - database specification to establish a connection&quot;</span>
+  <span class="token punctuation">[</span><span class="token number">db</span>-spec table record-data<span class="token punctuation">]</span>
+  <span class="token punctuation">(</span><span class="token keyword">with-open</span> <span class="token punctuation">[</span>connection <span class="token punctuation">(</span>jdbc/get-connection <span class="token number">db</span>-spec<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token punctuation">(</span>jdbc-sql/insert! connection table record-data jdbc/snake-kebab-opts<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Refactor the <code>practicalli.database-access/update-record</code> function</p>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">defn</span> update-record
+  <span class="token string">&quot;Insert a single record into the database using a managed connection.
+  Arguments:
+  - table - name of database table to be affected
+  - record-data - Clojure data representing a new record
+  - db-spec - database specification to establish a connection
+  - where-clause - column and value to identify a record to update&quot;</span>
+  <span class="token punctuation">[</span><span class="token number">db</span>-spec table record-data where-clause<span class="token punctuation">]</span>
+  <span class="token punctuation">(</span><span class="token keyword">with-open</span> <span class="token punctuation">[</span>connection <span class="token punctuation">(</span>jdbc/get-connection <span class="token number">db</span>-spec<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token punctuation">(</span>jdbc-sql/update! connection table record-data where-clause jdbc/snake-kebab-opts<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="disparity-between-spec-namespace-and-database-design">Disparity between spec namespace and database design</h2>
+<p>A qualified keyword is where that keyword has a namespace, eg. <code>:practicalli/name</code> rather than <code>:name</code></p>
+<p>Using qualified keywords is recommended so that they can be unique across the application (and ideally multiple applications).</p>
+<p>When using a database, the table name can be used to qualify the results returned from queries to the database.  However, if the table names are different to the clojure.spec specification then it is harder to test</p>
+<p><img src="../../images/clojure-webapps-database-testing-keywords-qualified-database-name.png" alt="keyword disparity"></p>
+<p>To resolve this issue, either the specifications should be refactored or the database names.  I suspect probably both would benefit from some redesign now experience has been gained in using them.</p>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="cyclic-load-dependency.html" class="navigation navigation-prev " aria-label="Previous page: Cyclic Load Dependency">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="unit-testing-the-database.html" class="navigation navigation-next " aria-label="Next page: Unit Testing Database">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Spec: generate database data","level":"2.2.14","depth":2,"next":{"title":"Unit Testing Database","level":"2.2.15","depth":2,"path":"projects/banking-on-clojure/unit-testing-the-database.md","ref":"projects/banking-on-clojure/unit-testing-the-database.md","articles":[]},"previous":{"title":"Cyclic Load Dependency","level":"2.2.13","depth":2,"path":"projects/banking-on-clojure/cyclic-load-dependency.md","ref":"projects/banking-on-clojure/cyclic-load-dependency.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.0.0","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/banking-on-clojure/clojure-spec-generate-mock-data.md","mtime":"2021-08-21T14:00:18.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-21T14:01:44.957Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchor-headings-lambda/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-codeblock-disable-glossary/disable-glossary.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-folding-chapters/folding-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-newtabs/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-newtabs/tabs.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-simpletabs/tabs.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-terminull-light/terminull.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+        
+    </body>
+</html>
+

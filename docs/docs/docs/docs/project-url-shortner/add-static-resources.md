@@ -1,0 +1,2 @@
+# Add static resources
+
