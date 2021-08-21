@@ -1,7 +1,7 @@
 # Practicalli Clojure Web Services
-A repository for the markdown content for the [Practicalli Clojure WebApps](https://practical.li/clojure-web-services) book.
+A repository for the markdown content for the [Practicalli Clojure Web Services](https://practical.li/clojure-web-services) book.
 
-![Practicalli Clojure WebApps book banner](/images/practicalli-clojurewebapps-book-banner.png)
+![Practicalli Clojure Web Services book banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-services-book-banner.png)
 
 ## Introduction
 A guide to developing server-side web services and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts. Libraries are used to provide common features and alternative libraries are discussed.

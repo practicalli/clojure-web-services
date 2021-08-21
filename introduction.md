@@ -1,4 +1,4 @@
-![Practicalli Clojure WebApps book banner](/images/practicalli-clojurewebapps-book-banner.png)
+![Practicalli Clojure Web Services banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-services-book-banner.png)
 
 A guide to developing server-side web services and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts.
 
