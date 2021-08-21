@@ -112,8 +112,6 @@
     <link rel="next" href="requirements.html" />
     
     
-    <link rel="prev" href="./" />
-    
 
     </head>
     <body>
@@ -159,7 +157,7 @@
         
         
     
-        <li class="chapter " data-level="1.1" data-path="./">
+        <li class="chapter active" data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -172,20 +170,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
-            
-                <a href="./">
-            
-                  <!--  -->
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="requirements.html">
+        <li class="chapter " data-level="1.2" data-path="requirements.html">
             
                 <a href="requirements.html">
             
@@ -198,7 +183,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="overview/webapps-in-clojure.html">
+        <li class="chapter " data-level="1.3" data-path="overview/webapps-in-clojure.html">
             
                 <a href="overview/webapps-in-clojure.html">
             
@@ -2325,7 +2310,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <p><img src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-services-book-banner.png" alt="Practicalli Clojure Web Services banner"></p>
+<p>A guide to developing server-side web services and API&apos;s from the ground up using <a href="http://clojure.org" target="_blank">Clojure</a>, aiming for a simple and clean design using functional programming concepts.</p>
+<p>A REPL Driven development workflow provides a fast feedback loop, showing how the code works as its being written.</p>
+<p>Relevant theory and background reading is included whilst keeping the practical focus of this guide on build projects and experimenting with the code.</p>
+<h2 id="clojure-cli-and-depsedn">Clojure CLI and deps.edn</h2>
+<p>Projects are created and configure using Clojure CLI tools, using <code>deps.edn</code> for configuration.  Older content uses Leinigen for project configuration.</p>
+<h2 id="component--library-approach">Component / library approach</h2>
+<p>The Clojure community has a diverse set of libraries which focus on a specific need. These libraries are assembled to rapidly develop a tailored solution.  Using a library approach means those libraries are relatively simple to replace with alternatives or your own libraries.</p>
+<p>Project templates are used to create projects that include commonly used libraries, along with example code, demonstrating how common services can be assembled. Templates have options to configure the project as its created, customising to the specific needs of the problem being solved.</p>
+<p>Clojure does not focus on the classic framework approach like Rails or Spring, for a very good reason. Frameworks are design decisions others have made without knowing the context of the current problem at hand, so there is no guarantee on how many of those decisions are relevant. Frameworks tend to include many features not relevant to the current problem. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution.</p>
+<hr>
+<p><a href="https://practicalli.github.io/spacemacs/" target="_blank"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="Built with Spacemacs"></a></p>
+<h2 id="discussions-and-feedback">Discussions and feedback</h2>
+<p><a href="https://clojurians.slack.com/messages/practicalli" target="_blank"><img src="images/practicalli-slack-channel.png" alt="Join the conversation on Clojurians Slack"></a></p>
+<p>Get a <a href="https://clojurians.net/" target="_blank">free Clojurians slack community account</a></p>
+<h2 id="creative-commons-license">Creative commons license</h2>
+<p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text"><a rel="cc:attributionURL" href="https://practicalli.github.io/clojure-webapps/" target="_blank"><span rel="dct:title">Practicalli Clojure WebApps</span></a> by <a rel="cc:attributionURL" href="https://practicalli.github.io/" target="_blank"><span rel="cc:attributionName">Practicalli</span></a> Creative Commons Attribution Share-Alike 4.0 International<a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank"><img style="height:22px!important;margin-left: 3px;vertical-align:text-bottom;" src="https://search.creativecommons.org/static/img/cc_icon.svg"><img style="height:22px!important;margin-left: 3px;vertical-align:text-bottom;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg"><img style="height:22px!important;margin-left: 3px;vertical-align:text-bottom;" src="https://search.creativecommons.org/static/img/cc-sa_icon.svg"></a></p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
@@ -2353,12 +2354,8 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="requirements.html" class="navigation navigation-next " aria-label="Next page: Requirements">
+                <a href="requirements.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Requirements">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2369,7 +2366,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"Requirements","level":"1.3","depth":1,"path":"requirements.md","ref":"requirements.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"README.md","mtime":"2021-08-21T18:54:41.565Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-21T18:55:30.536Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Requirements","level":"1.2","depth":1,"path":"requirements.md","ref":"requirements.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"README.md","mtime":"2021-08-21T19:10:47.441Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-21T19:12:35.145Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
