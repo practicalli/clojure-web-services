@@ -1,2 +1,0 @@
-# get alias from database
-
