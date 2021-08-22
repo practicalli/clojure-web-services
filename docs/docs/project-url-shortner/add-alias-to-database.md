@@ -1,2 +1,0 @@
-# add alias to database
-
