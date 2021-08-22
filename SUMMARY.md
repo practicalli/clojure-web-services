@@ -10,7 +10,7 @@
 <!-- * [Setup](setup/index.md) -->
 
 ## Clojure CLI Projects
-* [Status Monitor - deps](projects/status-monitor-deps/index.md)
+* [Status Monitor](projects/status-monitor-deps/index.md)
     * [Application server](projects/status-monitor-deps/application-server.md)
     * [Debug requests](projects/status-monitor-deps/debugging-requests.md)
     * [Unit Test & Mocking](projects/status-monitor-deps/unit-test-mocking-handlers.md)
@@ -18,7 +18,7 @@
     * [Continuous integration](projects/status-monitor-deps/continuous-integration.md)
     * [Deployment via CI](projects/status-monitor-deps/deployment-via-ci.md)
 
-* [Banking on Clojure - deps](projects/banking-on-clojure/index.md)
+* [Banking on Clojure](projects/banking-on-clojure/index.md)
     * [App Server Configuration](projects/banking-on-clojure/application-server-configuration.md)
     * [Refactor handlers](projects/banking-on-clojure/refactor-handler.md)
     * [Defining handlers](projects/banking-on-clojure/defining-handlers.md)
