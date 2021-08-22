@@ -34,7 +34,7 @@ The REPL itself is still running, so the application can be started again quickl
 
   (defn app-server-start
     [port]
-    (jetty/run-jetty (site #'app) {:port port :join? false}))
+    (jetty/run-jetty #'app {:port port :join? false}))
 
 
   (defn -main [& [port]]
