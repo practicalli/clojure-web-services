@@ -42,6 +42,7 @@
     * [HoneySQL](projects/banking-on-clojure/honeysql.md)
     * [Namespace design](projects/banking-on-clojure/namespace-design.md)
     * [Production database](projects/banking-on-clojure/production-database.md)
+* [Game Scoreboard API](projects/game-scoreboard-api/index.md)
 
 ## REPL Driven Development
 
@@ -177,10 +178,10 @@
         * [Insomnia](server-side-api/end-to-end-testing/insomnia.md)
         * [Postman Client](server-side-api/end-to-end-testing/postman.md)
     * [Terminology](server-side-api/terminology.md)
-* [Project: Game Scoreboard](server-side-api/projects/game-scoreboard/index.md)
-    * [Defining scoreboard](server-side-api/projects/game-scoreboard/defining-scoreboard.md)
-    * [Defining Players](server-side-api/projects/game-scoreboard/defining-scores.md)
-    * [Game Scoreboard UI](server-side-api/projects/game-scoreboard-ui/index.md)
+<!-- * [Project: Game Scoreboard](server-side-api/projects/game-scoreboard/index.md) -->
+<!--     * [Defining scoreboard](server-side-api/projects/game-scoreboard/defining-scoreboard.md) -->
+<!--     * [Defining Players](server-side-api/projects/game-scoreboard/defining-scores.md) -->
+<!--     * [Game Scoreboard UI](server-side-api/projects/game-scoreboard-ui/index.md) -->
 
 <!-- ## Micro-frameworks (TODO) -->
 
