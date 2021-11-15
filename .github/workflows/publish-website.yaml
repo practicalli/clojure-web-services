@@ -9,7 +9,7 @@ on:
       - .gitignore
       - '_book/**'
     branches:
-      - master
+      - live
 
 jobs:
   build:
