@@ -50,6 +50,12 @@
 * [integrant REPL](repl-driven-development/integrant-repl/index.md)
 <!-- * [Aero Environment Profiles](repl-driven-development/aero-environment-profiles.md) -->
 
+## Libraries
+
+* [Reitit](libraries/reitit/index.md)
+
+
+
 ## Architectural Components
 * [Application servers](app-servers/index.md)
     * [Configuration](app-servers/basic-configuration.md)
