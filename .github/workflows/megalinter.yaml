@@ -36,6 +36,8 @@ jobs:
 
           # Specific linters to run
           ENABLE: CREDENTIALS,MARKDOWN,GIT,SPELL,YAML
+          CREDENTIALS_SECRETLINT_DISABLE_ERRORS: true
+          CREDENTIALS_SECRETLINT_CONFIG_FILE: ".github/config/secretlintrc.json"
           SPELL_CSPELL_DISABLE_ERRORS: true
           SPELL_MISSPELL_DISABLE_ERRORS: true
           MARKDOWN_MARKDOWNLINT_DISABLE_ERRORS: true
