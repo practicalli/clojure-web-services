@@ -23,11 +23,13 @@ To continuously monitor the status of your database, pass pg:info through the un
 [~/srcPLgrado/pegjscalc(master)]$ watch heroku pg:info
 ...
 
-pg:psql
+## pg:psql
+
 psql is the native PostgreSQL interactive terminal and is used to execute queries and issue commands to the connected database.
 
 To establish a psql session with your remote database use heroku pg:psql. You must have PostgreSQL installed on your system to use heroku pg:psql.
 
+```bash
 [~/srcPLgrado/pegjscalc(master)]$ heroku pg:psql
 ---> Connecting to HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)
 psql (9.2.6, server 9.3.3)
@@ -57,16 +59,21 @@ pegjspl0::BROWN=> SELECT * FROM pl0_programs;
  lolwut |                     3-2-1\r+
         |
 (4 rows)
+```
 
 If you have more than one database, specify the database to connect to as the first argument to the command (the database located at DATABASE_URL is used by default).
 
+```bash
 $ heroku pg:psql HEROKU_POSTGRESQL_GRAY
 Connecting to HEROKU_POSTGRESQL_GRAY... done
 ...
+```
 
-pg:reset
+## pg:reset
+
 To drop and recreate your database use pg:reset:
 
+```bash
 [~/srcPLgrado/pegjscalc(master)]$ heroku pg:reset DATABASE
 
  !    WARNING: Destructive Action
@@ -80,6 +87,8 @@ Es necesario a continuación rearrancar el servidor:
 
 [~/srcPLgrado/pegjscalc(master)]$ heroku ps:restart
 Restarting dynos... done
+```
+
 
 ## pg:pull
 
