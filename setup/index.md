@@ -2,14 +2,15 @@
 
   This workshop requires [Leiningen](http://leiningen.org/) to create, manage and run projects.  Any text editor is fine, preferably with Clojure syntax support.  You also need Java runtime environment, preferably version 1.8 or greater.
 
-## Java
-  Check you have a Java runtime on your system path by typing the following in a terminal window:
+## Java OpenJDK
+
+Check you have a Java runtime on your system path by typing the following in a terminal window:
 
 ```bash
 java -version
 ```
 
-If Java is not found, please install it from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or [OpenJDK](http://openjdk.java.net/projects/jdk8/).  Java may also be available via your operating systems package manger, for example on Ubuntu / Debian systems this would be installed via `sudo apt-get install openjdk-8-jre`
+Java should be available via your operating systems package manger, e.g. via `sudo apt install openjdk-17-jdk` on Ubuntu / Debian systems.  Alternatively, [download prebuilt OpenJDK binaries for free via Atoptium.net](https://adoptium.net/)
 
 
 ## Leiningen
@@ -61,7 +62,7 @@ When you create a project with Leiningen, the configuration is created in a file
 
 The web application will also use a database to persist state.  For this project we are using the [Postgres relational database](http://www.postgresql.org/), an open source and well maintained project with all the features of a modern database you would expect.
 
-To save on installation, we will use [Heroku Posgres](http://postgres.heroku.com/), a database on demand service that has a free tier for development.
+To save on installation, we will use [Heroku Posgres](https://www.heroku.com/postgres), a database on demand service that has a free tier for development.
 
 To start with, [create a free account on Heroku](https://heroku.com).  The step to create a database will be covered later on in the workshop.
 

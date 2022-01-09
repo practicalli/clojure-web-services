@@ -1,13 +1,14 @@
 # Performance Analytics
 
 Performance Analytics is the visibility suite for Heroku Postgres. It enables you to monitor the performance of your database and to diagnose potential problems. It consists of several components:
-Expensive Queries
 
-The leading cause of poor database performance is unoptimized queries. Expensive Queries, available through postgres.heroku.com helps to identify and understand the queries that take the most time in your database. Full documentation is available here.
+## Expensive Queries
+
+The leading cause of poor database performance are queries that are not optimised . Expensive Queries reports, available through the Heroku dashboard helps to identify and understand the queries that take the most time in your database.
 
 ## Logging
 
-If your application/framework emits logs on database access, you will be able to retrieve them through Heroku’s log-stream:
+If your service emits logs on database access, you will be able to retrieve them through Heroku’s log-stream:
 
 ```bash
  heroku logs -t

@@ -23,11 +23,13 @@ To continuously monitor the status of your database, pass pg:info through the un
 [~/srcPLgrado/pegjscalc(master)]$ watch heroku pg:info
 ...
 
-pg:psql
+## pg:psql
+
 psql is the native PostgreSQL interactive terminal and is used to execute queries and issue commands to the connected database.
 
 To establish a psql session with your remote database use heroku pg:psql. You must have PostgreSQL installed on your system to use heroku pg:psql.
 
+```bash
 [~/srcPLgrado/pegjscalc(master)]$ heroku pg:psql
 ---> Connecting to HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)
 psql (9.2.6, server 9.3.3)
@@ -57,16 +59,21 @@ pegjspl0::BROWN=> SELECT * FROM pl0_programs;
  lolwut |                     3-2-1\r+
         |
 (4 rows)
+```
 
 If you have more than one database, specify the database to connect to as the first argument to the command (the database located at DATABASE_URL is used by default).
 
+```bash
 $ heroku pg:psql HEROKU_POSTGRESQL_GRAY
 Connecting to HEROKU_POSTGRESQL_GRAY... done
 ...
+```
 
-pg:reset
+## pg:reset
+
 To drop and recreate your database use pg:reset:
 
+```bash
 [~/srcPLgrado/pegjscalc(master)]$ heroku pg:reset DATABASE
 
  !    WARNING: Destructive Action
@@ -80,34 +87,46 @@ Es necesario a continuación rearrancar el servidor:
 
 [~/srcPLgrado/pegjscalc(master)]$ heroku ps:restart
 Restarting dynos... done
+```
 
-pg:pull
-pg:pull can be used to pull remote data from a Heroku Postgres database to a database on your local machine. The command looks like this:
 
+## pg:pull
+
+`pg:pull` can be used to pull remote data from a Heroku Postgres database to a database on your local machine. The command looks like this:
+
+```bash
 [~/srcPLgrado/pegjscalc(master)]$ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 server starting
+```
 
+## Create local database
+
+```bash
 $ heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
+```
 
-This command will create a new local database named mylocaldb and then pull data from database at DATABASE_URL from the app sushi.
+Create a new local database named `mylocaldb`,  then pull data from database at DATABASE_URL from the app sushi.
 
 In order to prevent accidental data overwrites and loss, the local database must not exist. You will be prompted to drop an already existing local database before proceeding.
 
-pg:push
-Like pull but in reverse, pg:push will push data from a local database into a remote Heroku Postgres database. The command looks like this:
+## pg:push
 
+Like pull but in reverse, `pg:push` will push data from a local database into a remote Heroku Postgres database. The command looks like this:
+
+```bash
 $ heroku pg:push mylocaldb HEROKU_POSTGRESQL_MAGENTA --app sushi
+```
 
 This command will take the local database mylocaldb and push it to the database at DATABASE_URL on the app sushi. In order to prevent accidental data overwrites and loss, the remote database must be empty. You will be prompted to pg:reset an already a remote database that is not empty.
 
 
-
 # Backups
 
-You can use Heroku Postgres Backups on the enclosing Heroku app in order to get automated backups on your database. Heroku Postgres Backups takes backups of the database pointed at by DATABASE_URL in the Heroku app, so make sure you promote your database:
+Heroku Postgres Backups service automates backup of the database pointed to by the DATABASE_URL environment variable in the Heroku app. Ensure the database is promoted
 
+```bash
 heroku pg:promote HEROKU_POSTGRESQL_VIOLET --app your-app
-
+```
 
 
 ## Monitoring database provisioning
@@ -135,7 +154,7 @@ Once Heroku Postgres has been added a `HEROKU_POSTGRESQL_COLOR_URL` setting will
 
 ```bash
  heroku config -s | grep HEROKU_POSTGRESQL
-HEROKU_POSTGRESQL_RED_URL=postgres://user3123:passkja83kd8@ec2-117-21-174-214.compute-1.amazonaws.com:6212/db982398
+HEROKU_POSTGRESQL_RED_URL=postgres://username:password@hostname.domain.com:1234/database-name
 ```
 You can choose the alias that the add-on uses on the application using the --as flag. This will affect the name of the variable the add-on adds to the application:
 
@@ -146,5 +165,5 @@ Attached as USERS_DB
 Database has been created and is available
 
  heroku config -s | grep USERS_DB
-USERS_DB_URL=postgres://user3123:passkja83kd8@ec2-117-21-174-214.compute-1.amazonaws.com:6212/db982398
+USERS_DB_URL=postgres://postgres://username:password@hostname.domain.com:1234/database-name
 ```
