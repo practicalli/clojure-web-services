@@ -41,7 +41,7 @@ Require next.jdbc into the project namespace
 ```
 
 
-### Specify the database connection ###
+### Specify the database connection
 
 Define a data source connection using a next.jdbc hash map or a JDBC URL
 
@@ -74,8 +74,8 @@ A Clojure string contains the SQL statement.
 ```
 
 
-####Hint::Datafy results
-> Hash maps returned by `execute!` use Datafy and are therefore navigable using [Clojure data browsers](http://practicalli.github.io/clojure/clojure-tools/data-browsers/)
+> ####Hint::Datafy results
+> Hash maps returned by `execute!` use Datafy and are therefore navigable using [Clojure data browsers](http://practical.li/clojure/clojure-tools/data-browsers/)
 
 
 ## Using connections and queries effectively

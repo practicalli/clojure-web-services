@@ -44,7 +44,7 @@ Aero thingies
 
 ```
 
-# configuration: environment profiles with aero
+## configuration: environment profiles with aero
 
 Aero library provides tag literals to configure values specific to each
 environment, all from one configuration file
@@ -67,7 +67,7 @@ Use aero to prepare the configuration and `start` & `stop` helper functions to e
 - remove environ
 - add aero
 
-# Integrant pitfalls
+## Integrant pitfalls
 
 Avoid using the same name for a key inside a configuration as the name for a referred (top-level) key
 
@@ -83,7 +83,7 @@ In this example the `:persistence` key clashes with the `:practicalli.scoreboard
                         :live     {:url "http://localhost/" :port 57207 :database "customer-entitlements"}}
 ```
 
-# Integrant REPL
+## Integrant REPL
 
 Example
 
@@ -91,11 +91,11 @@ Example
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Development tools namespace
 ;;
-;; Use the commands in the rich comment block to start, restart and halt the system
-;;
+;; Rich comment block contains expressions to start, restart and halt the system
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (ns user
+ "Development tools to manage component lifecycle"
   (:require
    [aero.core            :as aero]
    [clojure.java.io      :as io]
@@ -166,25 +166,17 @@ Example
 ```
 
 
+<!-- > TODO: investigate: setting directories - is this needed? -->
 
 
+Return the integrant configuration from the configuration file
 
-
-
-
-
-
-
-
-> TODO: investigate: setting directories - is this needed?
-
-
-;; Return the integrant configuration from the configuration file
+```clojure
 #_(ig-repl/set-prep! (fn [] (-> "resources/config.edn" slurp ig/read-string)))
+```
 
+System Configuration
 
-
-;;;; System Configuration
 ```clojure
 (defn enviroment-prep!
   "Parse system configuration with aero-reader and apply the given profile values
@@ -195,39 +187,31 @@ Example
 
 ```
 
-
-;; define go as a REPL convenience function
-;; optionally taking a keyword representing the name of environment to run under
+Define `go` as a REPL convenience function, optionally taking a keyword representing the name of environment to run under
 
 ```clojure
 (defn go
   "Prepare configuration and start the system services with Integrant-repl"
   ([] (go :develop))
   ([profile] (enviroment-prep! profile) (ig-repl/go)))
-
 ```
 
-
-;; Rather than using a arity based ploymorphic function
-;; use the & variable arity syntax and use `or` to use the argument or :develop profile
+Rather than using a arity based ploymorphic function, use the `&` variable arity syntax and use `or` to use the argument or `:develop` profile
 
 ```clojure
-#_(defn go-redux
-    "Prepare configuration and start the system services with Integrant-repl"
-    [& profile]
-    (set-prep! (or (first profile) :develop))
-    (ig-repl/go))
-
+(defn go-redux
+  "Prepare configuration and start the system services with Integrant-repl"
+  [& profile]
+  (set-prep! (or (first profile) :develop))
+  (ig-repl/go))
 ```
 
+Set directories monitored for changed files:
 
+```clojure
+(require '[clojure.tools.namespace.repl :refer [set-refresh-dirs]])
+(set-refresh-dirs "src")
+```
 
-
-
-
-  ;; Set directories monitored for changed files:
-  #_(require '[clojure.tools.namespace.repl :refer [set-refresh-dirs]])
-  #_(set-refresh-dirs "src")
-
-
-## Minimal REPL startup time - Lambda Island
+<!-- TODO: Lambda Island minimal startup example -->
+<!-- ## Minimal REPL startup time - Lambda Island -->

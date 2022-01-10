@@ -74,7 +74,7 @@ Create a database specification
 ```
 
 
-# Configure next.jdbc with lifecycle management libraries
+## Configure next.jdbc with lifecycle management libraries
 
 A connection pool has a start/stop lifecycle, so fits easily into lifecycle managment libraries such as mount, component and integrant.
 
