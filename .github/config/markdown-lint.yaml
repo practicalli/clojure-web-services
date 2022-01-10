@@ -25,7 +25,7 @@ MD007:
 MD009: true                   # no trailing spaces
 MD012: false                  # no consecutive blank lines
 MD013:
-  line_length: 400            # Line length 80 is far to short
+  line_length: 999            # Line length 80 is far to short
 MD026:
   punctuation: ".,;:!。，；:"  # List of not allowed
 MD029: false                  # Ordered list item prefix
