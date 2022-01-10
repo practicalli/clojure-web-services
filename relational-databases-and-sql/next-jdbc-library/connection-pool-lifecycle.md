@@ -174,7 +174,7 @@ Start the database server connection pool
 <!-- 01:54 -->
 <!-- That's not going to be as easy as I'd hoped -- the URL-builder only builds the minimal JDBC URL and then assumes everything else can be passed as properties when the connection is requested -- which is fine for the simple call to the DriverManager but not so good for the pooled datasource... -->
 <!-- seancorfield  02:23 -->
-<!-- @gmercer OK, seancorfield/next.jdbc {:mvn/version "1.1.582"} is available on Clojars for you -- it adds next.jdbc.connection/jdbc-url: see its docstring for usage details. -->
+<!-- @gmercer OK, org.seancorfield/next.jdbc {:mvn/version "1.1.582"} is available on Clojars for you -- it adds next.jdbc.connection/jdbc-url: see its docstring for usage details. -->
 <!-- 02:25 -->
 <!-- Not well-tested but should get you going again. I'd probably recommend omitting :user/:password from the db-spec and instead provide them in the hash map along with :jdbcUrl that you pass into the pooling library (and be careful that one expects :user like JDBC and the other lib expects :username instead -- which is mentioned in the docs). -->
 <!-- gmercer  02:36 -->

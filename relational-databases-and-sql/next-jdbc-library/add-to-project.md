@@ -14,7 +14,7 @@ In the `:deps` hash-map, add next.jdbc libraries as a dependency
 
 ```clojure
 {:deps {org.clojure/clojure    {:mvn/version "1.10.1"}
-        seancorfield/next.jdbc {:mvn/version "1.1.569"}
+        org.seancorfield/next.jdbc {:mvn/version "1.1.569"}
         com.h2database/h2      {:mvn/version "1.4.200"}}}
 ```
 
@@ -24,7 +24,7 @@ In the project `deps.edn` a `:dev` alias could include an `:extra-deps` section 
 
 ```clojure
 {:deps {org.clojure/clojure    {:mvn/version "1.10.1"}
-        seancorfield/next.jdbc {:mvn/version "1.1.569"}}}
+        org.seancorfield/next.jdbc {:mvn/version "1.1.569"}}}
 
 {:dev
   {:extra-deps {com.h2database/h2 {:mvn/version "1.4.200"}}}}
@@ -49,7 +49,7 @@ In the `:deps` hash-map, add next.jdbc and the Postgresql database libraries as 
   {org.clojure/clojure {:mvn/version "1.10.1"}
 
   ;; Database
-  seancorfield/next.jdbc    {:mvn/version "1.1.582"}
+  org.seancorfield/next.jdbc    {:mvn/version "1.1.582"}
   org.postgresql/postgresql {:mvn/version "42.2.16"}}}
 ```
 
@@ -60,6 +60,6 @@ clojure -M:dev/h2:repl/rebel
 ```
 
 > #### Hint::Check for latest library versions
-> Check clojars.org for [latest version seancorfield/next.jdbc](https://clojars.org/seancorfield/next.jdbc) and Maven Central for [latest version of H2 database](https://mvnrepository.com/artifact/com.h2database/h2)
+> Check clojars.org for [latest version org.seancorfield/next.jdbc](https://clojars.org/seancorfield/next.jdbc) and Maven Central for [latest version of H2 database](https://mvnrepository.com/artifact/com.h2database/h2)
 >
 > [jdbc.postgres.org](https://jdbc.postgresql.org/) publishes the releases of the database driver, so can be used to find the latest driver available.

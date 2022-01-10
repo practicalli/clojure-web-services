@@ -14,9 +14,9 @@ The Clojure community has a diverse set of libraries which focus on a specific n
 
 Project templates are used to create projects that include commonly used libraries, along with example code, demonstrating how common services can be assembled. Templates have options to configure the project as its created, customising to the specific needs of the problem being solved.
 
-Clojure does not focus on the classic framework approach like Rails or Spring, for a very good reason. Frameworks are design decisions others have made without knowing the context of the current problem at hand, so there is no guarantee on how many of those decisions are relevant. Frameworks tend to include many features not relevant to the current problem. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution.
+Clojure does not focus on the classic framework approach like Rails or Spring, for a very good reason.
 
----
+Frameworks are design decisions others have made without knowing the context of the current problem at hand, so there is no guarantee on how many of those decisions are relevant. Frameworks tend to include many features not relevant to the current problem. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution.
 
 [![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://practicalli.github.io/spacemacs/)
 

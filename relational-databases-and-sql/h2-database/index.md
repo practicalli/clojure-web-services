@@ -27,7 +27,7 @@ To use H2 database as only a development database, add an `:extra-deps` entry to
 ```clojure
 {:deps
  {org.clojure/clojure    {:mvn/version "1.10.1"}
- seancorfield/next.jdbc {:mvn/version "1.1.569"}}}
+ org.seancorfield/next.jdbc {:mvn/version "1.1.569"}}}
 
 {:aliases
   {:dev

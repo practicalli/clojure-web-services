@@ -69,7 +69,11 @@ Index usage is only tracked on the database receiving the query. If you use foll
 
 ## Check: Bloat
 
-Because Postgres uses MVCC old versions of updated or deleted rows are simply made invisible rather than modified in place. Under normal operation an auto vacuum process goes through and asynchronously cleans these up. However sometimes it cannot work fast enough or otherwise cannot prevent some tables from becoming bloated. High bloat can slow down queries, waste space, and even increase load as the database spends more time looking through dead rows.
+Because Postgres uses MVCC, old versions of updated or deleted rows are simply made invisible rather than modified in place.
+
+Under normal operation an auto vacuum process goes through and asynchronously cleans these up. However sometimes it cannot work fast enough or otherwise cannot prevent some tables from becoming bloated.
+
+High bloat can slow down queries, waste space, and even increase load as the database spends more time looking through dead rows.
 
 You can manually vacuum a table with the VACUUM (VERBOSE, ANALYZE); command in psql. If this occurs frequently you may want to make autovacuum more aggressive.
 
