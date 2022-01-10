@@ -6,8 +6,7 @@
 * [Requirements](requirements.md)
     <!-- * [Additional Resources](additional-resources.md) -->
     <!-- * [Theory: Clojure Overview](overview/index.md) -->
-* [Theory: WebApps in Clojure](overview/webapps-in-clojure.md)
-<!-- * [Setup](setup/index.md) -->
+* [Overview](clojure-web-services-overview.md)
 
 ## Clojure CLI Projects
 * [Status Monitor](projects/status-monitor-deps/index.md)
@@ -53,6 +52,7 @@
 ## Libraries
 
 * [Reitit](libraries/reitit/index.md)
+    * [Routing](libraries/reitit/constructing-routes.md)
 
 
 
@@ -198,16 +198,14 @@
 
 
 ## Reference
-* [Theory: Persistent Data Structures](persistent-data-structures/index.md)
-    * [Theory: Lists](persistent-data-structures/lists.md)
-    * [Theory: Maps](persistent-data-structures/maps.md)
-    * [Theory: Vectors](persistent-data-structures/vectors.md)
-    * [Theory: Sets](persistent-data-structures/sets.md)
-<!-- * [Compojure defroutes macro](compojure/defroutes.md) -->
+* [Including Libraries](reference/including-libraries.md)
 * [Ring](reference/ring/index.md)
-    * [request map](reference/ring/request-map.md)
+    * [Request map](reference/ring/request-map.md)
+<!-- * [Compojure defroutes macro](compojure/defroutes.md) -->
+
 
 ## Hacking on content
+* [Setup](setup/index.md)
 <!-- * [Variable tag names](work-in-progress.md) -->
     <!-- * [Using Postgres from Clojure](using-postgres/index.md) -->
 * [Project: URL Shortner as a Service](project-url-shortner/index.md)
@@ -233,21 +231,3 @@
     <!--     * [add alias to database](project-url-shortner/add-alias-to-database.md) -->
     <!--     * [get alias from database](project-url-shortner/get-alias-from-database.md) -->
     <!--     * [delete alias from database](project-url-shortner/delete-alias-from-database.md) -->
-    <!-- * [Building a full database backed app](full-app/index.md) -->
-    <!-- * [Testing](testing/index.md) -->
-    <!--     * [Unit Testing](testing/unit/testing/index.md) -->
-    <!-- * [Reference](reference/index.md) -->
-    <!-- * [Lighttable](lighttable/index.md) -->
-    <!--     * [Configure Keyboard mappings](lighttable/configure-keyboard-mappings.md) -->
-    <!-- * [Projects with Leiningen](leiningen/index.md) -->
-    <!--     * [Create a project](leiningen/create-a-project.md) -->
-    <!--     * [Run the REPL](leiningen/run-the-repl.md) -->
-    <!--     * [Profiles overview](leiningen/profile.md) -->
-    <!--     * [Adding a dev profile](leiningen/adding-a-dev-profile.md) -->
-    <!--     * [Templates](leiningen/templates.md) -->
-    <!--     * [Plugins](leiningen/plugins.md) -->
-    <!-- * [Development Environments](development-environment/index.md) -->
-    <!--     * [Java](development-environment/java.md) -->
-    <!--     * [Leiningen](development-environment/leiningen.md) -->
-    <!--     * [LightTable](development-environment/lighttable.md) -->
-    <!--     * [Other tools](development-environment/other-tools.md) -->

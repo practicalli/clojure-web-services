@@ -1,4 +1,5 @@
 # Atom based restart
+
 A Clojure atom is used to hold a reference to a running server instance.
 
 An atom is a mutable container that holds any type of value.  The value in the atom is immutable.  The atom is mutable, but only with specific functions, avoiding locking issues often arising with mutable values.
@@ -7,10 +8,24 @@ An atom is a mutable container that holds any type of value.  The value in the a
 * `reset!` the current value in the atom with a specific value
 * `deref` or `@` returns the value contained within the atom
 
+
 {% tabs jetty="Jetty", httpkit="Http-kit Server" %}
 
 {% content "jetty" %}
-`(defonce app-server-instance (atom nil))` defines a Clojure atom with the intial value of `nil`.  `defonce` is used instead of `def` to prevent the reference to the app-server being over-written by re-evaluating the namespace.
+
+## Reference to Jetty server process
+
+A reference to the server process will be held in a Clojure atom, a mutable container.  An atom is used as a value for the server reference will be swapped into the atom on server start.  The atom is set to nil when the server stops.  Using an atom allows for this value to change.
+
+Define a Clojure atom with the intial value of `nil`.
+
+`defonce` is used instead of `def` to prevent the reference to the app-server being lost if the expression is re-evaluated.  A restart of the REPL process is required before evaluation the expression has an effect.
+
+```clojure
+(defonce app-server-instance (atom nil))
+```
+
+## Jetty -main function
 
 The `-main` function determines an HTTP port value, from either an argument, an operating system `$PORT` environment variable or using the default 8888 value.
 
@@ -22,7 +37,8 @@ The REPL is still running, so the server can be started by calling `(-main)` or 
 
 `app-server-restart` is a convenience function that stops and starts the application server, meaning the developer only needs to evaluate `(app-server-restart)`
 
-## Code example
+
+## Jetty Code example
 
 ```clojure
 (ns practicalli.example-webapp
@@ -86,11 +102,16 @@ The REPL is still running, so the server can be started by calling `(-main)` or 
 
 
 {% content "httpkit" %}
-An atom holds an instance of the running server, which is populated by the `app-server-start` function.  The `app-server-stop` function send a `:timeout 100` value to the running app server instance to gracefully shut down the server.
+
+## Reference to Jetty server process
+
+An atom holds an instance of the running server, which is populated by the `app-server-start` function.
+
+The `app-server-stop` function send a `:timeout 100` value to the running app server instance to gracefully shut down the server.
 
 During REPL driven development, call `app-server-restart` to stop and start the server.
 
-## Code example
+## HTTPkit example
 
 ```clojure
 (ns practicalli.example-webapp
@@ -152,7 +173,6 @@ During REPL driven development, call `app-server-restart` to stop and start the 
   (app-server-stop)
 
 )
-
 ```
 
 [Http-kit server documentation](http://http-kit.github.io/server.html) contains details of asynchronous websockets and HTTP streaming configurations.
