@@ -1,5 +1,7 @@
 # Setup
 
+<!-- TODO: Review setup - merge any useful content into requirements page -->
+
   This workshop requires [Leiningen](http://leiningen.org/) to create, manage and run projects.  Any text editor is fine, preferably with Clojure syntax support.  You also need Java runtime environment, preferably version 1.8 or greater.
 
 ## Java OpenJDK
