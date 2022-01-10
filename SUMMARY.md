@@ -41,7 +41,8 @@
     * [HoneySQL](projects/banking-on-clojure/honeysql.md)
     * [Namespace design](projects/banking-on-clojure/namespace-design.md)
     * [Production database](projects/banking-on-clojure/production-database.md)
-* [Game Scoreboard API](projects/game-scoreboard-api/index.md)
+<!-- TODO: Write Game Scoreboard API with reitit -->
+<!-- * [Game Scoreboard API](projects/game-scoreboard-api/index.md) -->
 
 ## REPL Driven Development
 
