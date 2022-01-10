@@ -1,10 +1,9 @@
-# Adding the Compojure dependency
+# Add Compojure as a dependency
 
-> ####Note::Add the Compojure library as a dependency
-> Edit your project configuration `project.clj` and add the [current version of Compojure](https://clojars.org/compojure)
->
-> The `project.clj` file should look as follows:
->
+Edit your project configuration `project.clj` and add the [current version of Compojure](https://clojars.org/compojure)
+
+The `project.clj` file should look as follows:
+
 ```clojure
 (defproject todo-list "0.1.0-SNAPSHOT"
   :description "A Todo List server-side webapp using Ring & Compojure"
@@ -19,12 +18,11 @@
   :profiles {:dev
              {:main todo-list.core/-dev-main}})
 ```
->
-> As we are adding a library to the project we need to restart the web server.
->
->  `Ctrl-c` in the terminal to stop the server and `lein run 8000` to restart the webserver
 
----
+As we are adding a library to the project we need to restart the web server.
+
+`Ctrl-c` in the terminal to stop the server and `lein run 8000` to restart the web server
+
 
 > ####Hint::Search clojars.org for dependency versions
 > The [current version of Compojure](https://clojars.org/compojure) or any other Clojure library can be found via [Clojars.org](https://clojars.org/).

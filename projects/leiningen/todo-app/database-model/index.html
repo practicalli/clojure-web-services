@@ -857,6 +857,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1.1" data-path="../../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                <a href="../../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                  <!--  -->
+                    Component lifecycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="6.1.2" data-path="../../../../relational-databases-and-sql/h2-database/">
@@ -2039,20 +2058,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="../../../../reference/including-libraries.html">
-            
-                <a href="../../../../reference/including-libraries.html">
-            
-                  <!--  -->
-                    Including Libraries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.2" data-path="../../../../reference/ring/">
+        <li class="chapter " data-level="9.1" data-path="../../../../reference/ring/">
             
                 <a href="../../../../reference/ring/">
             
@@ -2066,7 +2072,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="../../../../reference/ring/request-map.html">
+        <li class="chapter " data-level="9.1.1" data-path="../../../../reference/ring/request-map.html">
             
                 <a href="../../../../reference/ring/request-map.html">
             
@@ -2260,7 +2266,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="creating-a-database-model">Creating a database model</h1>
-<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="hint"><i class="fa fa-lightbulb-o"></i> Hint</h3></div><div class="panel-body"><p>The examples in Database model section are not finished, although hopefully you have learned enough to be able to continue working on this for homework.</p><p>Please ask questions and share your approaches in the <a href="https://practicalli.github.io/#contact" target="_blank">Practicalli Contact channels</a></p><p>These examples will be updated to use next.jdbc over Winter 2020</p></div></div>
+<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="todo-complete-the-database-model"><i class="fa fa-lightbulb-o"></i> TODO: Complete the database model</h3></div><div class="panel-body"><p>The examples in Database model section are not finished, although hopefully you have learned enough to be able to continue working on this for homework.</p><p>Please ask questions and share your approaches in the <a href="https://practicalli.github.io/#contact" target="_blank">Practicalli Contact channels</a></p><p>These examples will be updated to use next.jdbc over Winter 2020</p></div></div>
 <p>Our tasks are quite simple and so its easy to represent them as a single table</p>
 <ul>
 <li>id (auto-generated)</li>
@@ -2274,8 +2280,9 @@
 <h2 id="namespace-design">Namespace design</h2>
 <p>We need to decide what namespace to put our data model in.  It seems to make sence to create a new namespace, to help keep our code clean and to seperate concerns. So we will create a namespace <code>todo-list.list</code> namespace.</p>
 <p>We will need to decide wheter to add the <code>items</code> namespace to core or to the handlers... or maybe create another handler namespace for handlers that just access the database</p>
-<pre class="language-"><code>(:require [todo-list.items :as items]
-</code></pre> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token symbol">:require</span> <span class="token punctuation">[</span>todo-list.items <span class="token symbol">:as</span> items<span class="token punctuation">]</span>
+</code></pre>
+ <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
                             
@@ -2318,7 +2325,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Creating a database model","level":"7.1.11.6","depth":3,"next":{"title":"Create table","level":"7.1.11.6.1","depth":4,"path":"projects/leiningen/todo-app/database-model/create-table.md","ref":"projects/leiningen/todo-app/database-model/create-table.md","articles":[]},"previous":{"title":"Define Database Connection","level":"7.1.11.5.2","depth":4,"path":"projects/leiningen/todo-app/connect-to-postgres/define-db-connection.md","ref":"projects/leiningen/todo-app/connect-to-postgres/define-db-connection.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/leiningen/todo-app/database-model/index.md","mtime":"2022-01-10T01:21:00.284Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T01:22:18.933Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Creating a database model","level":"7.1.11.6","depth":3,"next":{"title":"Create table","level":"7.1.11.6.1","depth":4,"path":"projects/leiningen/todo-app/database-model/create-table.md","ref":"projects/leiningen/todo-app/database-model/create-table.md","articles":[]},"previous":{"title":"Define Database Connection","level":"7.1.11.5.2","depth":4,"path":"projects/leiningen/todo-app/connect-to-postgres/define-db-connection.md","ref":"projects/leiningen/todo-app/connect-to-postgres/define-db-connection.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/leiningen/todo-app/database-model/index.md","mtime":"2022-01-10T22:31:57.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T22:33:16.458Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

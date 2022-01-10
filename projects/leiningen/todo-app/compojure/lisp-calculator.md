@@ -1,7 +1,9 @@
 # Lisp style Calculator
-  Lets create a very simple lisp based calculator that works with two numbers as another example of using variable path elements.  As its a Lisp calculator, then we will use prefix notation (the 'operator' comes first)
 
-> ####Note::  Create a route for the calculator
+Lets create a very simple lisp based calculator that works with two numbers as another example of using variable path elements.  As its a Lisp calculator, then we will use prefix notation (the 'operator' comes first)
+
+##  Create a route for the calculator
+
 ```clojure
 (defroutes app
   (GET "/" [] greet)
@@ -13,9 +15,9 @@
   (not-found "Sorry, page not found"))
 ```
 
----
 
-> ####Note:: Create a handler function to add, subtract, divide or multiply two numbers
+## Create a handler function to add, subtract, divide or multiply two numbers
+
 ```clojure
 (defn calculator
   "A very simple calculator that can add, divide, subtract and multiply.  This is done through the magic of variable path elements."
@@ -33,24 +35,24 @@
        :headers {}})))
 ```
 
----
+## Create a dictionary to look up Clojure function names
 
-> ####Note::Create a dictionary to look up Clojure function names
-> Define a hash-map called `operands` to look up the names of the mathematical operations (operands) to the actual functions in Clojure
+Define a hash-map called `operands` to look up the names of the mathematical operations (operands) to the actual functions in Clojure
+
 ```clojure
 (def operands {"+" + "-" - "*" * ":" /})
 ```
->
->  Try the calculator out like follows http://localhost:8000/calculator/*/6/7
+
+Try the calculator out like follows http://localhost:8000/calculator/*/6/7
 
 
 ## The namespace with changes made
+
 With all the changes from above, the code should look as follows
 
 ```clojure
 (def operands {"+" + "-" - "*" * ":" /})
-```
-```clojure
+
 (defn calculator
   "A very simple calculator that can add, divide, subtract and multiply.  This is done through the magic of variable path elements."
   [request]
@@ -65,8 +67,7 @@ With all the changes from above, the code should look as follows
       {:status 404
        :body "Sorry, unknown operator.  I only recognise + - * : (: is for division)"
        :headers {}})))
-```
-```clojure
+
 (defroutes app
   (GET "/" [] welcome)
   (GET "/goodbye" [] goodbye)

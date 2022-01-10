@@ -18,7 +18,7 @@ To keep things simple we are going to turn off the anti-forgery settings provide
 ```
 
 
-# Ring middleware defaults
+## Ring middleware defaults
 
 There are a number of ring middleware defaults that define some common middleware functions for your app.
 

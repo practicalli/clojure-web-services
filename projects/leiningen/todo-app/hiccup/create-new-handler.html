@@ -857,6 +857,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1.1" data-path="../../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                <a href="../../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                  <!--  -->
+                    Component lifecycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="6.1.2" data-path="../../../../relational-databases-and-sql/h2-database/">
@@ -2039,20 +2058,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="../../../../reference/including-libraries.html">
-            
-                <a href="../../../../reference/including-libraries.html">
-            
-                  <!--  -->
-                    Including Libraries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.2" data-path="../../../../reference/ring/">
+        <li class="chapter " data-level="9.1" data-path="../../../../reference/ring/">
             
                 <a href="../../../../reference/ring/">
             
@@ -2066,7 +2072,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="../../../../reference/ring/request-map.html">
+        <li class="chapter " data-level="9.1.1" data-path="../../../../reference/ring/request-map.html">
             
                 <a href="../../../../reference/ring/request-map.html">
             
@@ -2260,7 +2266,6 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="create-a-new-handler">Create a new handler</h1>
-<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"></div></div>
 <pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">defn</span> trying-hiccup
   <span class="token punctuation">[</span>request<span class="token punctuation">]</span>
   <span class="token punctuation">(</span><span class="token function">html5</span> <span class="token punctuation">{</span><span class="token symbol">:lang</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">}</span>
@@ -2270,10 +2275,9 @@
            <span class="token punctuation">[</span><span class="token symbol">:div</span> <span class="token punctuation">[</span><span class="token symbol">:p</span> <span class="token string">&quot;Take a look at the HTML generated in this page, compared to the about page&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
            <span class="token punctuation">[</span><span class="token symbol">:div</span> <span class="token punctuation">[</span><span class="token symbol">:p</span> <span class="token string">&quot;Style-wise there is no difference between the pages as we havent added anything in the stylesheet, however the hiccup page generates a more complete page in terms of HTML&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
-<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="-as-your-content-grows-its-typical-to-refactor-it-into-def-expressions-so-you-can-just-include-the-names-in-your-handler-code-that-represent-the-content"><i class="fa fa-lightbulb-o"></i>  As your content grows its typical to refactor it into def expressions, so you can just include the names in your handler code that represent the content.</h3></div><div class="panel-body"><p>As your project gets bigger it common to break out into a view namespace with layouts and specific views defined in their own namespace.</p></div></div>
-<hr>
-<h2 id="the-code-so-far">The code so far</h2>
-<p>The code so far is available in branch <code>06-hiccup</code></p>
+<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="named-content-sections"><i class="fa fa-lightbulb-o"></i> Named content sections</h3></div><div class="panel-body"><p>As content grows, refactor it into <code>def</code> expressions to give content sections names. Pages can use names in the handler code that represent the content, simplifying the handler code.</p><p>As ther project grows, break code into a view namespace with layouts and specific views defined in their own namespace.</p></div></div>
+<!-- ## The code so far -->
+<!-- The code so far is available in branch `06-hiccup` -->
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
@@ -2317,7 +2321,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Create a new handler","level":"7.1.9.2","depth":3,"next":{"title":"Refactor namespace","level":"7.1.10","depth":2,"path":"projects/leiningen/todo-app/refactor-namespace/index.md","ref":"projects/leiningen/todo-app/refactor-namespace/index.md","articles":[{"title":"Base routes","level":"7.1.10.1","depth":3,"path":"projects/leiningen/todo-app/refactor-namespace/base-routes.md","ref":"projects/leiningen/todo-app/refactor-namespace/base-routes.md","articles":[]},{"title":"Refactored Core","level":"7.1.10.2","depth":3,"path":"projects/leiningen/todo-app/refactor-namespace/core.md","ref":"projects/leiningen/todo-app/refactor-namespace/core.md","articles":[]}]},"previous":{"title":"Updating handlers with hiccup","level":"7.1.9.1","depth":3,"path":"projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.md","ref":"projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/leiningen/todo-app/hiccup/create-new-handler.md","mtime":"2022-01-10T01:21:00.284Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T01:22:18.933Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Create a new handler","level":"7.1.9.2","depth":3,"next":{"title":"Refactor namespace","level":"7.1.10","depth":2,"path":"projects/leiningen/todo-app/refactor-namespace/index.md","ref":"projects/leiningen/todo-app/refactor-namespace/index.md","articles":[{"title":"Base routes","level":"7.1.10.1","depth":3,"path":"projects/leiningen/todo-app/refactor-namespace/base-routes.md","ref":"projects/leiningen/todo-app/refactor-namespace/base-routes.md","articles":[]},{"title":"Refactored Core","level":"7.1.10.2","depth":3,"path":"projects/leiningen/todo-app/refactor-namespace/core.md","ref":"projects/leiningen/todo-app/refactor-namespace/core.md","articles":[]}]},"previous":{"title":"Updating handlers with hiccup","level":"7.1.9.1","depth":3,"path":"projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.md","ref":"projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/leiningen/todo-app/hiccup/create-new-handler.md","mtime":"2022-01-10T22:31:57.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T22:33:16.458Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

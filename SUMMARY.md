@@ -80,6 +80,7 @@
 
 * [Relational Database & SQL](relational-databases-and-sql/index.md)
     * [next.jdbc library](relational-databases-and-sql/next-jdbc-library/index.md)
+        * [Component lifecycle](relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.md)
     * [H2 Database](relational-databases-and-sql/h2-database/index.md)
         * [H2 schema design](relational-databases-and-sql/h2-database/schema-design.md)
         * [H2 database tools](relational-databases-and-sql/h2-database/database-tools.md)
@@ -198,7 +199,6 @@
 
 
 ## Reference
-* [Including Libraries](reference/including-libraries.md)
 * [Ring](reference/ring/index.md)
     * [Request map](reference/ring/request-map.md)
 <!-- * [Compojure defroutes macro](compojure/defroutes.md) -->

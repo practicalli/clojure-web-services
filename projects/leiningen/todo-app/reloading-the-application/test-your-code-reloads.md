@@ -1,12 +1,13 @@
 # Test the wrap-reload middleware
 
-  Make a change to the `welcome` function code and check that it automatically reloads.
+Make a change to the `welcome` function code and check that it automatically reloads.
 
-> ####Note::Change the default response text in the `welcome` function
-> Open the webapp in the browser http://localhost:8000.
->
-> Make a change to the code in the `welcome` function, alterning the text of the `:body` in the default request.
->
+Change the default response text in the `welcome` function
+
+Open the webapp in the browser http://localhost:8000.
+
+Make a change to the code in the `welcome` function, alterning the text of the `:body` in the default request.
+
 ```clojure
 (defn welcome
   "A ring handler to process all requests for the web server.
@@ -23,5 +24,5 @@
      :body    "<h1>This is not the page you are looking for</h1>
                <p>Sorry, the page you requested was not found!</p>"}))
 ```
->
->  Save the code change and refresh your browser page, you should now see the updated message.
+
+Save the code change and refresh your browser page, you should now see the updated message.

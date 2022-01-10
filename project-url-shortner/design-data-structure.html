@@ -857,6 +857,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1.1" data-path="../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                <a href="../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                  <!--  -->
+                    Component lifecycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="6.1.2" data-path="../relational-databases-and-sql/h2-database/">
@@ -2039,20 +2058,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="../reference/including-libraries.html">
-            
-                <a href="../reference/including-libraries.html">
-            
-                  <!--  -->
-                    Including Libraries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.2" data-path="../reference/ring/">
+        <li class="chapter " data-level="9.1" data-path="../reference/ring/">
             
                 <a href="../reference/ring/">
             
@@ -2066,7 +2072,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="../reference/ring/request-map.html">
+        <li class="chapter " data-level="9.1.1" data-path="../reference/ring/request-map.html">
             
                 <a href="../reference/ring/request-map.html">
             
@@ -2263,44 +2269,47 @@
 <p>One of the first decisions is how to design the data structure to hold our short url and full url addresses.</p>
 <h2 id="the-simplest-approach">The simplest approach</h2>
 <p>We could create a really simple data structure with a vector</p>
-<pre class="language-"><code class="lang-clojure"><span class="token punctuation">[</span><span class="token string">&quot;goouk&quot;</span> <span class="token string">&quot;https://google.co.uk&quot;</span><span class="token punctuation">]</span>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">[</span><span class="token string">&quot;goouk&quot;</span> <span class="token string">&quot;https://duckduckgo.com/&quot;</span><span class="token punctuation">]</span>
 </code></pre>
 <p>In order to hold multiple short url mappings, we could have a vector of vectors</p>
-<pre class="language-"><code class="lang-clojure"><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;goouk&quot;</span> <span class="token string">&quot;https://google.co.uk&quot;</span><span class="token punctuation">]</span>
- <span class="token punctuation">[</span><span class="token string">&quot;jrock&quot;</span> <span class="token string">&quot;http://jr0cket.co.uk&quot;</span><span class="token punctuation">]</span>
- <span class="token punctuation">[</span><span class="token string">&quot;slash&quot;</span> <span class="token string">&quot;https://slashdot.com&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;duckduckgo&quot;</span> <span class="token string">&quot;https://duckduckgo.com/&quot;</span><span class="token punctuation">]</span>
+ <span class="token punctuation">[</span><span class="token string">&quot;practicalli&quot;</span> <span class="token string">&quot;https://practical.li&quot;</span><span class="token punctuation">]</span>
+ <span class="token punctuation">[</span><span class="token string">&quot;slashdot&quot;</span> <span class="token string">&quot;https://slashdot.com&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
 </code></pre>
 <p>Although the above is nice and simple, it does not provide any context for the data.</p>
 <h2 id="using-a-map-for-context">Using a map for context</h2>
 <p>The keys in a map can add specific meaning and context to the design of the data structure.</p>
 <p>Here are two examples, the first with keys as strings the second as keys as keywords.</p>
-<pre class="language-"><code class="lang-clojure"><span class="token punctuation">{</span><span class="token string">&quot;short-url&quot;</span> <span class="token string">&quot;jrock&quot;</span> <span class="token string">&quot;full-url&quot;</span> <span class="token string">&quot;http://jrocket.co.uk&quot;</span><span class="token punctuation">}</span>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">{</span><span class="token string">&quot;short-url&quot;</span> <span class="token string">&quot;practicalli&quot;</span> <span class="token string">&quot;full-url&quot;</span> <span class="token string">&quot;http://practical.li&quot;</span><span class="token punctuation">}</span>
 
-<span class="token punctuation">{</span><span class="token symbol">:short-url</span> <span class="token string">&quot;jrock&quot;</span> <span class="token symbol">:full-url</span> <span class="token string">&quot;http://jrocket.co.uk&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token symbol">:short-url</span> <span class="token string">&quot;practicalli&quot;</span> <span class="token symbol">:full-url</span> <span class="token string">&quot;http://practical.li&quot;</span><span class="token punctuation">}</span>
 </code></pre>
 <p>As keys need to be unique, then if we have multiple short url mappings to contain, then we need another data structure for each map.</p>
-<pre class="language-"><code class="lang-clojure"><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token symbol">:short-url</span> <span class="token string">&quot;jrock&quot;</span> <span class="token symbol">:full-url</span> <span class="token string">&quot;http://jrocket.co.uk&quot;</span><span class="token punctuation">}</span>
- <span class="token punctuation">{</span><span class="token symbol">:short-url</span> <span class="token string">&quot;slash&quot;</span> <span class="token symbol">:full-url</span> <span class="token string">&quot;https://slashdot.com&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token symbol">:short-url</span> <span class="token string">&quot;practicalli&quot;</span> <span class="token symbol">:full-url</span> <span class="token string">&quot;http://practical.li&quot;</span><span class="token punctuation">}</span>
+ <span class="token punctuation">{</span><span class="token symbol">:short-url</span> <span class="token string">&quot;slashdot&quot;</span> <span class="token symbol">:full-url</span> <span class="token string">&quot;https://slashdot.org&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
 </code></pre>
 <p>In the above design we cannot use a single map as all the keys in a map need to be unique</p>
 <h2 id="simplifying-the-map">Simplifying the map</h2>
 <p>As keys must be unique in a map, we cannot have multiple keys called <code>:short-url</code>, therefore using that design we cant have a single map.</p>
 <p>We could simplify the map and remove the current keys and use the value for the short-url as the key and the full url as the value.  This means we could just have a single map for all our short-url mappings.</p>
-<pre class="language-"><code class="lang-clojure"><span class="token punctuation">{</span><span class="token string">&quot;jrock&quot;</span> <span class="token string">&quot;http://jrocket.co.uk&quot;</span>
- <span class="token string">&quot;slash&quot;</span> <span class="token string">&quot;https://slashdot.org&quot;</span>
- <span class="token string">&quot;goouk&quot;</span> <span class="token string">&quot;https://google.co.uk&quot;</span><span class="token punctuation">}</span>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">{</span><span class="token string">&quot;practicalli&quot;</span> <span class="token string">&quot;http://practical.li&quot;</span>
+ <span class="token string">&quot;slashdot&quot;</span>    <span class="token string">&quot;https://slashdot.org&quot;</span>
+ <span class="token string">&quot;duckduckgo&quot;</span>  <span class="token string">&quot;https://duckduckgo.com/&quot;</span><span class="token punctuation">}</span>
 </code></pre>
 <p>Using Clojure keywords for the keys would also allow us to look up the full url addresses using the feature of maps that make keywords act like functions.  This feature of the keyword in a map is just like calling the <code>get</code> function on the map with a specific key.</p>
-<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">def</span> url-map 
-  <span class="token punctuation">{</span><span class="token symbol">:jrock</span> <span class="token string">&quot;http://jrocket.co.uk&quot;</span>
-   <span class="token symbol">:slash</span> <span class="token string">&quot;https://slashdot.org&quot;</span>
-   <span class="token symbol">:goouk</span> <span class="token string">&quot;https://google.co.uk&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">def</span> url-map
+  <span class="token punctuation">{</span><span class="token symbol">:practicalli</span> <span class="token string">&quot;http://practical.li&quot;</span>
+   <span class="token symbol">:slashdot</span> <span class="token string">&quot;https://slashdot.org&quot;</span>
+   <span class="token symbol">:duck-duck-go</span> <span class="token string">&quot;https://duckduckgo.com/&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-<span class="token punctuation">(</span><span class="token keyword">get</span> url-map <span class="token symbol">:jrock</span><span class="token punctuation">)</span>
-<span class="token comment">;; =&gt; &quot;http://jrocket.co.uk&quot;</span>
+<span class="token punctuation">(</span><span class="token keyword">get</span> url-map <span class="token symbol">:practicalli</span><span class="token punctuation">)</span>
+<span class="token comment">;; =&gt; &quot;http://practicalli.co.uk&quot;</span>
 
-<span class="token punctuation">(</span><span class="token function">url-map</span> <span class="token symbol">:jrock</span><span class="token punctuation">)</span>
-<span class="token comment">;; =&gt; &quot;http://jrocket.co.uk&quot;</span>
+<span class="token punctuation">(</span><span class="token function">url-map</span> <span class="token symbol">:practicalli</span><span class="token punctuation">)</span>
+<span class="token comment">;; =&gt; &quot;http://practicalli.co.uk&quot;</span>
+
+<span class="token punctuation">(</span><span class="token symbol">:practicalli</span> url-map <span class="token punctuation">)</span>
+<span class="token comment">;; =&gt; &quot;http://practicalli.co.uk&quot;</span>
 </code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
@@ -2345,7 +2354,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Design data structure","level":"10.2.5","depth":2,"next":{"title":"Whats in a request","level":"10.2.6","depth":2,"path":"project-url-shortner/whats-in-a-request.md","ref":"project-url-shortner/whats-in-a-request.md","articles":[]},"previous":{"title":"Compojure Template","level":"10.2.4","depth":2,"path":"project-url-shortner/compojure-template.md","ref":"project-url-shortner/compojure-template.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"project-url-shortner/design-data-structure.md","mtime":"2022-01-10T01:21:00.280Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T01:22:18.933Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Design data structure","level":"10.2.5","depth":2,"next":{"title":"Whats in a request","level":"10.2.6","depth":2,"path":"project-url-shortner/whats-in-a-request.md","ref":"project-url-shortner/whats-in-a-request.md","articles":[]},"previous":{"title":"Compojure Template","level":"10.2.4","depth":2,"path":"project-url-shortner/compojure-template.md","ref":"project-url-shortner/compojure-template.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"project-url-shortner/design-data-structure.md","mtime":"2022-01-10T22:31:57.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T22:33:16.458Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

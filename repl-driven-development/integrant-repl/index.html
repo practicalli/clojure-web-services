@@ -857,6 +857,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1.1" data-path="../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                <a href="../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                  <!--  -->
+                    Component lifecycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="6.1.2" data-path="../../relational-databases-and-sql/h2-database/">
@@ -2039,20 +2058,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="../../reference/including-libraries.html">
-            
-                <a href="../../reference/including-libraries.html">
-            
-                  <!--  -->
-                    Including Libraries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.2" data-path="../../reference/ring/">
+        <li class="chapter " data-level="9.1" data-path="../../reference/ring/">
             
                 <a href="../../reference/ring/">
             
@@ -2066,7 +2072,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="../../reference/ring/request-map.html">
+        <li class="chapter " data-level="9.1.1" data-path="../../reference/ring/request-map.html">
             
                 <a href="../../reference/ring/request-map.html">
             
@@ -2260,14 +2266,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="integrant-repl">Integrant REPL</h1>
-<div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" id="work-in-progress--feedback-welcome"><i class="fa fa-bookmark"></i> work in progress.  Feedback welcome.</h3></div><div class="panel-body"></div></div>
+<!-- > #### TODO: Integrant repl Review -->
 <p>Start and restart services quickly and easily from within the REPL with Integrant REPL.</p>
 <p>Integrant REPL is for developing a system using a reloaded REPL workflow and is a separate Library and intent to that of Integrant, which is aimed at the lifecycle of running a system.</p>
 <p>Reloaded REPL provides a simple way to reload changes into the system as it is being developed. Simple <code>(go)</code>, <code>(reset)</code> and <code>(stop)</code> commands are used with the REPL to control the system.</p>
 <p>To assist with debugging, the parsed configuration, <code>(config)</code>, and system configuration, <code>(system)</code>, data can be viewed via the REPl state to understand how the configuration is being resolved.  This is especially useful when using aero and environment variables.</p>
 <div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="integrant-repl-and-integrant"><i class="fa fa-lightbulb-o"></i> Integrant REPL and Integrant</h3></div><div class="panel-body"><p>Although Integrant and Integrant REPL can share the same configuration file, they are otherwise separate ways of working with a system.
-Integrant is used to start a system in a consistent order and gracefully shutdown the system on a termination message, e.g. <code>SIGTERM</code>.  The state of the running system in Integrant is supposed to be a hidden concern.
- fs</p></div></div>
+Integrant is used to start a system in a consistent order and gracefully shutdown the system on a termination message, e.g. <code>SIGTERM</code>.  The state of the running system in Integrant is supposed to be a hidden concern.</p></div></div>
 <h2 id="integrant-configuration">Integrant configuration</h2>
 <p>Define the configuration for each part of the system, such as http server (jetty, httpkit), router application (reitit, compojure, ring) and persistence storage (postgres, crux)</p>
 <p>Create a <code>develop/resources/config.edn</code> file containing the Integrant REPL configuration (or use aero with <code>resources/config.edn</code> file and share the configuration with Integrant)</p>
@@ -2328,7 +2333,7 @@ Integrant is used to start a system in a consistent order and gracefully shutdow
 <p>Run a REPL process including the <code>user</code> namespace on the classpath.  Also include a rich termainal UI with <code>:repl/rebl</code> alias</p>
 <pre class="language-"><code class="lang-bash">clojure -M:env/develop:repl/rebl
 </code></pre>
-<p>TODO: add repl startup screenshot ??</p>
+<!-- TODO: Integrant REPL - add repl startup screenshot ?? -->
 <h2 id="environment-configuration">Environment Configuration</h2>
 <p>Using aero with the Integrant configuration file includes tag literals that need to be resolved.</p>
 <pre class="language-"><code class="lang-clojure"><span class="token comment">;;;; Aero environment management</span>
@@ -2466,7 +2471,7 @@ Integrant is used to start a system in a consistent order and gracefully shutdow
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"integrant REPL","level":"3.2","depth":1,"next":{"title":"Reitit","level":"4.1","depth":1,"path":"libraries/reitit/index.md","ref":"libraries/reitit/index.md","articles":[{"title":"Routing","level":"4.1.1","depth":2,"path":"libraries/reitit/constructing-routes.md","ref":"libraries/reitit/constructing-routes.md","articles":[]}]},"previous":{"title":"Overview","level":"3.1","depth":1,"path":"repl-driven-development/index.md","ref":"repl-driven-development/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"repl-driven-development/integrant-repl/index.md","mtime":"2022-01-10T01:21:00.284Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T01:22:18.933Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"integrant REPL","level":"3.2","depth":1,"next":{"title":"Reitit","level":"4.1","depth":1,"path":"libraries/reitit/index.md","ref":"libraries/reitit/index.md","articles":[{"title":"Routing","level":"4.1.1","depth":2,"path":"libraries/reitit/constructing-routes.md","ref":"libraries/reitit/constructing-routes.md","articles":[]}]},"previous":{"title":"Overview","level":"3.1","depth":1,"path":"repl-driven-development/index.md","ref":"repl-driven-development/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"repl-driven-development/integrant-repl/index.md","mtime":"2022-01-10T22:31:57.270Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T22:33:16.458Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

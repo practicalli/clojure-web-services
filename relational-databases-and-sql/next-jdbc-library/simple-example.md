@@ -1,8 +1,9 @@
 # Simple database example
+
 Create a project called simple database
 
 ```bash
-clojure -A:new app practicalli/simple-database
+clojure -T:project/new :template app :name practicalli/simple-database
 ```
 
 Edit the `deps.edn` file in the root of the project directory.
@@ -10,18 +11,20 @@ Edit the `deps.edn` file in the root of the project directory.
 In the `:deps` hash-map, add next.jdbc library as dependency and add a `:dev` alias could include an `:extra-deps` section for the H2 driver
 
 ```clojure
-{:deps {org.clojure/clojure    {:mvn/version "1.10.1"}
-        seancorfield/next.jdbc {:mvn/version "1.1.569"}}}
+{:deps {org.clojure/clojure        {:mvn/version "1.10.1"}
+        org.seancorfield/next.jdbc {:mvn/version "1.1.569"}}}
 
 {:dev
-  {:extra-deps {com.h2database/h2      {:mvn/version "1.4.200"}}}}
+  {:extra-deps {com.h2database/h2 {:mvn/version "1.4.200"}}}}
 ```
 
 
 {% tabs repl="In the REPL", project="In a Clojure Project" %}
 
 {% content "repl" %}
+
 ## Using next.jdbc in a REPL session
+
 In a terminal window, change to the root directory of the `simple-database` project.
 
 Start a [Rebel REPL](http://practicalli.github.io/clojure/clojure-tools/rebel-repl/) from the root of the new project
@@ -29,7 +32,7 @@ Start a [Rebel REPL](http://practicalli.github.io/clojure/clojure-tools/rebel-re
 ```bash
 cd simple-project
 
-clojure -A:rebel
+clojure -M:repl/rebel
 ```
 The first time libraries are used they are downloaded and cached locally (`~/.m2/repository`)
 
@@ -68,7 +71,7 @@ Create a table in the database using a standard SQL statement
      email varchar(255))"])
 ```
 
-> A `address-book.mv.db` file is created in the root of the project
+> An `address-book.mv.db` file is created in the root of the project
 
 Insert an entry into the database by executing an SQL insert query
 
@@ -102,6 +105,7 @@ To delete all the records in the database, drop the contacts table in the databa
 
 
 {% content "project" %}
+
 Edit the file `src/practicalli/simple-database.clj` from the `simple-database` project.
 
 Update the `practicalli.simple-database` namespace definition with a require statement for next.jdbc
@@ -139,7 +143,7 @@ Create a table in the database using a standard SQL statement
      email varchar(255))"])
 ```
 
-> A `address-book.mv.db` file is created in the root of the project
+> An `address-book.mv.db` file is created in the root of the project
 
 Insert an entry into the database by executing an SQL insert query
 
@@ -165,8 +169,5 @@ To delete all the records in the database, drop the contacts table in the databa
   data-source
   ["drop table contacts"])
 ```
-
-
-
 
 {% endtabs %}

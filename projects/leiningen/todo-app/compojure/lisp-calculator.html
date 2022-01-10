@@ -857,6 +857,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1.1" data-path="../../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                <a href="../../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                  <!--  -->
+                    Component lifecycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="6.1.2" data-path="../../../../relational-databases-and-sql/h2-database/">
@@ -2039,20 +2058,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="../../../../reference/including-libraries.html">
-            
-                <a href="../../../../reference/including-libraries.html">
-            
-                  <!--  -->
-                    Including Libraries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.2" data-path="../../../../reference/ring/">
+        <li class="chapter " data-level="9.1" data-path="../../../../reference/ring/">
             
                 <a href="../../../../reference/ring/">
             
@@ -2066,7 +2072,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="../../../../reference/ring/request-map.html">
+        <li class="chapter " data-level="9.1.1" data-path="../../../../reference/ring/request-map.html">
             
                 <a href="../../../../reference/ring/request-map.html">
             
@@ -2261,7 +2267,8 @@
                                 
                                 <h1 id="lisp-style-calculator">Lisp style Calculator</h1>
 <p>Lets create a very simple lisp based calculator that works with two numbers as another example of using variable path elements.  As its a Lisp calculator, then we will use prefix notation (the &apos;operator&apos; comes first)</p>
-<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="--create-a-route-for-the-calculator"><i class="fa fa-edit"></i>   Create a route for the calculator</h3></div><div class="panel-body"><pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token function">defroutes</span> app
+<h2 id="create-a-route-for-the-calculator">Create a route for the calculator</h2>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token function">defroutes</span> app
   <span class="token punctuation">(</span><span class="token function">GET</span> <span class="token string">&quot;/&quot;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> greet<span class="token punctuation">)</span>
   <span class="token punctuation">(</span><span class="token function">GET</span> <span class="token string">&quot;/goodbye&quot;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> goodbye<span class="token punctuation">)</span>
   <span class="token punctuation">(</span><span class="token function">GET</span> <span class="token string">&quot;/about&quot;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> about<span class="token punctuation">)</span>
@@ -2269,9 +2276,9 @@
   <span class="token punctuation">(</span><span class="token function">GET</span> <span class="token string">&quot;/hello/:name&quot;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> hello<span class="token punctuation">)</span>
   <span class="token punctuation">(</span><span class="token function">GET</span> <span class="token string">&quot;/calculator/:op/:a/:b&quot;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> calculator<span class="token punctuation">)</span>
   <span class="token punctuation">(</span><span class="token function">not-found</span> <span class="token string">&quot;Sorry, page not found&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre></div></div>
-<hr>
-<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="-create-a-handler-function-to-add-subtract-divide-or-multiply-two-numbers"><i class="fa fa-edit"></i>  Create a handler function to add, subtract, divide or multiply two numbers</h3></div><div class="panel-body"><pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">defn</span> calculator
+</code></pre>
+<h2 id="create-a-handler-function-to-add-subtract-divide-or-multiply-two-numbers">Create a handler function to add, subtract, divide or multiply two numbers</h2>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">defn</span> calculator
   <span class="token string">&quot;A very simple calculator that can add, divide, subtract and multiply.  This is done through the magic of variable path elements.&quot;</span>
   <span class="token punctuation">[</span>request<span class="token punctuation">]</span>
   <span class="token punctuation">(</span><span class="token keyword">let</span> <span class="token punctuation">[</span>a  <span class="token punctuation">(</span><span class="token function">Integer.</span> <span class="token punctuation">(</span><span class="token function">get-in</span> request <span class="token punctuation">[</span><span class="token symbol">:route-params</span> <span class="token symbol">:a</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -2285,15 +2292,17 @@
       <span class="token punctuation">{</span><span class="token symbol">:status</span> <span class="token number">404</span>
        <span class="token symbol">:body</span> <span class="token string">&quot;Sorry, unknown operator.  I only recognise + - * : (: is for division)&quot;</span>
        <span class="token symbol">:headers</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre></div></div>
-<hr>
-<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="create-a-dictionary-to-look-up-clojure-function-names"><i class="fa fa-edit"></i> Create a dictionary to look up Clojure function names</h3></div><div class="panel-body"><p>Define a hash-map called <code>operands</code> to look up the names of the mathematical operations (operands) to the actual functions in Clojure</p><pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">def</span> operands <span class="token punctuation">{</span><span class="token string">&quot;+&quot;</span> + <span class="token string">&quot;-&quot;</span> - <span class="token string">&quot;*&quot;</span> * <span class="token string">&quot;:&quot;</span> /<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre><p>Try the calculator out like follows <a href="http://localhost:8000/calculator/*/6/7" target="_blank">http://localhost:8000/calculator/*/6/7</a></p></div></div>
+</code></pre>
+<h2 id="create-a-dictionary-to-look-up-clojure-function-names">Create a dictionary to look up Clojure function names</h2>
+<p>Define a hash-map called <code>operands</code> to look up the names of the mathematical operations (operands) to the actual functions in Clojure</p>
+<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">def</span> operands <span class="token punctuation">{</span><span class="token string">&quot;+&quot;</span> + <span class="token string">&quot;-&quot;</span> - <span class="token string">&quot;*&quot;</span> * <span class="token string">&quot;:&quot;</span> /<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Try the calculator out like follows <a href="http://localhost:8000/calculator/*/6/7" target="_blank">http://localhost:8000/calculator/*/6/7</a></p>
 <h2 id="the-namespace-with-changes-made">The namespace with changes made</h2>
 <p>With all the changes from above, the code should look as follows</p>
 <pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">def</span> operands <span class="token punctuation">{</span><span class="token string">&quot;+&quot;</span> + <span class="token string">&quot;-&quot;</span> - <span class="token string">&quot;*&quot;</span> * <span class="token string">&quot;:&quot;</span> /<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token keyword">defn</span> calculator
+
+<span class="token punctuation">(</span><span class="token keyword">defn</span> calculator
   <span class="token string">&quot;A very simple calculator that can add, divide, subtract and multiply.  This is done through the magic of variable path elements.&quot;</span>
   <span class="token punctuation">[</span>request<span class="token punctuation">]</span>
   <span class="token punctuation">(</span><span class="token keyword">let</span> <span class="token punctuation">[</span>a  <span class="token punctuation">(</span><span class="token function">Integer.</span> <span class="token punctuation">(</span><span class="token function">get-in</span> request <span class="token punctuation">[</span><span class="token symbol">:route-params</span> <span class="token symbol">:a</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -2307,8 +2316,8 @@
       <span class="token punctuation">{</span><span class="token symbol">:status</span> <span class="token number">404</span>
        <span class="token symbol">:body</span> <span class="token string">&quot;Sorry, unknown operator.  I only recognise + - * : (: is for division)&quot;</span>
        <span class="token symbol">:headers</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre>
-<pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token function">defroutes</span> app
+
+<span class="token punctuation">(</span><span class="token function">defroutes</span> app
   <span class="token punctuation">(</span><span class="token function">GET</span> <span class="token string">&quot;/&quot;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> welcome<span class="token punctuation">)</span>
   <span class="token punctuation">(</span><span class="token function">GET</span> <span class="token string">&quot;/goodbye&quot;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> goodbye<span class="token punctuation">)</span>
   <span class="token punctuation">(</span><span class="token function">GET</span> <span class="token string">&quot;/about&quot;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> about<span class="token punctuation">)</span>
@@ -2360,7 +2369,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lisp Calculator","level":"7.1.7.10","depth":3,"next":{"title":"Deploying to Heroku","level":"7.1.8","depth":2,"path":"projects/leiningen/todo-app/heroku/index.md","ref":"projects/leiningen/todo-app/heroku/index.md","articles":[{"title":"Update the project","level":"7.1.8.1","depth":3,"path":"projects/leiningen/todo-app/heroku/update-project.md","ref":"projects/leiningen/todo-app/heroku/update-project.md","articles":[]},{"title":"Add Procfile","level":"7.1.8.2","depth":3,"path":"projects/leiningen/todo-app/heroku/procfile.md","ref":"projects/leiningen/todo-app/heroku/procfile.md","articles":[]},{"title":"Deploy to Heroku","level":"7.1.8.3","depth":3,"path":"projects/leiningen/todo-app/heroku/deploy.md","ref":"projects/leiningen/todo-app/heroku/deploy.md","articles":[]}]},"previous":{"title":"Theory: using Clojure hash-maps","level":"7.1.7.9","depth":3,"path":"projects/leiningen/todo-app/compojure/theory-using-hash-maps.md","ref":"projects/leiningen/todo-app/compojure/theory-using-hash-maps.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/leiningen/todo-app/compojure/lisp-calculator.md","mtime":"2022-01-10T01:21:00.280Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T01:22:18.933Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lisp Calculator","level":"7.1.7.10","depth":3,"next":{"title":"Deploying to Heroku","level":"7.1.8","depth":2,"path":"projects/leiningen/todo-app/heroku/index.md","ref":"projects/leiningen/todo-app/heroku/index.md","articles":[{"title":"Update the project","level":"7.1.8.1","depth":3,"path":"projects/leiningen/todo-app/heroku/update-project.md","ref":"projects/leiningen/todo-app/heroku/update-project.md","articles":[]},{"title":"Add Procfile","level":"7.1.8.2","depth":3,"path":"projects/leiningen/todo-app/heroku/procfile.md","ref":"projects/leiningen/todo-app/heroku/procfile.md","articles":[]},{"title":"Deploy to Heroku","level":"7.1.8.3","depth":3,"path":"projects/leiningen/todo-app/heroku/deploy.md","ref":"projects/leiningen/todo-app/heroku/deploy.md","articles":[]}]},"previous":{"title":"Theory: using Clojure hash-maps","level":"7.1.7.9","depth":3,"path":"projects/leiningen/todo-app/compojure/theory-using-hash-maps.md","ref":"projects/leiningen/todo-app/compojure/theory-using-hash-maps.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/leiningen/todo-app/compojure/lisp-calculator.md","mtime":"2022-01-10T22:31:57.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T22:33:16.458Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

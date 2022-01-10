@@ -9,7 +9,6 @@ lein new compojure-api game-scoreboard +clojure-test
 This command creates a new Clojure project in a directory called **game-scoreboard**.
 
 
-
 ## Update Clojure version
 
-Edit the `project.clj` file and update the `clojure.org/clojure` dependency to `1.10.0`
+Edit the `project.clj` file and update the `org.clojure/clojure` dependency to `1.10.0`

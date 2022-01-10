@@ -1,11 +1,11 @@
 # Update the project
 
-  We need to specify how Leiningen builds our project in a little more detail.  We also need to tell Heroku how we want our application to run.
+Specify how Leiningen builds the project in more detail and tell Heroku how to run the application.
 
 
 ## Configure the Leiningen Build
 
-> ####Note:: Update the Clojure project file with a minimum version number for Leiningen and a name for the jar file that Leiningen will build
+Update the Clojure project file with a minimum version number for Leiningen and a name for the jar file that Leiningen will build
 
 Edit the `project.clj` file and add the following lines, usually after the dependencies declarations
 

@@ -63,11 +63,14 @@ Refactor sql statements into their own vars, so they can be reused.
 ```
 
 Update the database using the name of the SQL statement
+
 ```clojure
 (database-update account-holder-jenny db-specification-dev)
 ```
 
-> The limitation of this approach is that the `def` expression must be evaluated each time a new value for the account_holder_id is required.  The first time the `def` is evaluated, the `java-util.UUID/randomUUID` function is evaluated to a specific value and that value is cached.  Using the `account-holder-jenny` name in other code will use the cache until the `def` expression is forcefully evaluated (by the developer or by restarting the REPL).
+> #### Hint::limitation of def
+> The `def` expression must be evaluated each time a new value for the account_holder_id is required.  The first time the `def` is evaluated, the `java-util.UUID/randomUUID` function is evaluated to a specific value and that value is cached.
+> Using the `account-holder-jenny` name in other code will use the cache until the `def` expression is forcefully evaluated (by the developer or by restarting the REPL).
 
 
 ## Using next.jdbc friendly functions
@@ -131,4 +134,5 @@ The data to pass in looks familiar. Its the table name plus a data structure tha
  :residential_address    "1 Ultimate Question Lane, Altar IV"
  :social_security_number "BB104312D"}
 ```
+
 So the [specifications already defined](spec-generative-testing.md) can be used to generate mock data for the database.

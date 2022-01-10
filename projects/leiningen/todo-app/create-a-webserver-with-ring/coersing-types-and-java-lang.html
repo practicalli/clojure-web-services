@@ -857,6 +857,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1.1" data-path="../../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                <a href="../../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                  <!--  -->
+                    Component lifecycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="6.1.2" data-path="../../../../relational-databases-and-sql/h2-database/">
@@ -2039,20 +2058,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="../../../../reference/including-libraries.html">
-            
-                <a href="../../../../reference/including-libraries.html">
-            
-                  <!--  -->
-                    Including Libraries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.2" data-path="../../../../reference/ring/">
+        <li class="chapter " data-level="9.1" data-path="../../../../reference/ring/">
             
                 <a href="../../../../reference/ring/">
             
@@ -2066,7 +2072,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="../../../../reference/ring/request-map.html">
+        <li class="chapter " data-level="9.1.1" data-path="../../../../reference/ring/request-map.html">
             
                 <a href="../../../../reference/ring/request-map.html">
             
@@ -2260,8 +2266,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="theory-specifying-types--javalang">Theory: Specifying Types &amp; java.lang</h1>
-<p>Clojure has types that are created dynamically when the code is compiled, with everything being represented by Java objects as its compiled to Java bitecode.   However you do not need to specify any specific types as Clojure simply infers the type and handles most type collision gracefully.  The built in collections (list, map, vector &amp; set) also support mixed types too.</p>
-<p>In our project we are using Jetty, a web application server written in Java.  As its Java it needs a specific type of object passed as an argument for the port number, in this case an Integer.  However, when we run the Clojure project, the argument we supply for the port number on the command line is treated as a String object.  Therefore we need to change the port number from a Java String type to an Java Integer type.</p>
+<p>Clojure has types that are created dynamically when the code is compiled, with everything being represented by Java objects as its compiled to Java bitecode.</p>
+<p>Clojure simply infers the type of a value, so types do not need to be specified in code.</p>
+<p>The built in collections (list, map, vector &amp; set) also support mixed types too.</p>
+<h2 id="calling-java-code">Calling Java code</h2>
+<p>The Clojure project uses Jetty, a web application server written in Java.  When calling the <code>run-jetty</code> function an Integer typemust be passed to the Java object for the port number.</p>
+<p>When running the Clojure project, the argument supplied for the port number on the command line is treated as a String object.  Therefore we need to explicitly cast the port number from a Java String type to an Java Integer type.</p>
+<h2 id="javalang-library">java.lang library</h2>
 <p>The <code>java.lang.</code> library is part of all Clojure projects, so as we are going to create a Java Integer it makes sense to simply use the <code>Integer</code> constructor with a String argument which returns a new Integer object.</p>
 <p>The <code>Integer. port-number</code> Clojure code is a short-hand for calling the <code>java.lang.Integer</code> constructor.  The <code>.</code> is actually a macro in Clojure that provides a simple way to work with Java, allowing you to call Java objects as if they were Clojure functions.  In Java you would have to use the form <code>Type instance-name = new Type(argument)</code>.  In our example you would write this in Java as <code>String port = new String(port-number)</code></p>
 <div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="--from-the-java-8-docs-for-integer-class"><i class="fa fa-lightbulb-o"></i>   From the Java 8 docs for Integer class:</h3></div><div class="panel-body"><p><code>Integer(String s)</code> - constructs a newly allocated Integer object that represents the int value indicated by the String parameter.</p></div></div>
@@ -2312,7 +2323,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Theory: Coersing Types & java.lang","level":"7.1.2.6","depth":3,"next":{"title":"Run webserver","level":"7.1.2.7","depth":3,"path":"projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.md","ref":"projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.md","articles":[]},"previous":{"title":"Add a Jetty webserver","level":"7.1.2.5","depth":3,"path":"projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.md","ref":"projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.md","mtime":"2022-01-10T01:21:00.284Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T01:22:18.933Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Theory: Coersing Types & java.lang","level":"7.1.2.6","depth":3,"next":{"title":"Run webserver","level":"7.1.2.7","depth":3,"path":"projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.md","ref":"projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.md","articles":[]},"previous":{"title":"Add a Jetty webserver","level":"7.1.2.5","depth":3,"path":"projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.md","ref":"projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.md","mtime":"2022-01-10T22:31:57.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T22:33:16.458Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

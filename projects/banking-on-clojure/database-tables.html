@@ -857,6 +857,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1.1" data-path="../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                <a href="../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
+            
+                  <!--  -->
+                    Component lifecycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="6.1.2" data-path="../../relational-databases-and-sql/h2-database/">
@@ -2039,20 +2058,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="../../reference/including-libraries.html">
-            
-                <a href="../../reference/including-libraries.html">
-            
-                  <!--  -->
-                    Including Libraries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.2" data-path="../../reference/ring/">
+        <li class="chapter " data-level="9.1" data-path="../../reference/ring/">
             
                 <a href="../../reference/ring/">
             
@@ -2066,7 +2072,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="../../reference/ring/request-map.html">
+        <li class="chapter " data-level="9.1.1" data-path="../../reference/ring/request-map.html">
             
                 <a href="../../reference/ring/request-map.html">
             
@@ -2285,9 +2291,7 @@
      SOCIAL_SECURITY_NUMBER VARCHAR(32),
      CONSTRAINT CONSTRAINT_3 PRIMARY KEY (ACCOUNT_HOLDER_ID))&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<blockquote>
-<p>Using random data, like uuid, for indexes can be inefficient especially for larger data sets.  There may be data types for each specific database that provide more efficient ways of managing unique ids.  For the scope of this project, using a UUID is acceptable.</p>
-</blockquote>
+<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="uuid-inefficient-for-large-data-sets"><i class="fa fa-lightbulb-o"></i> UUID inefficient for large data sets</h3></div><div class="panel-body"><p>Using random data, like uuid, for indexes can be inefficient especially for larger data sets.  There may be data types for each specific database that provide more efficient ways of managing unique ids.  For the scope of this project, using a UUID is acceptable.</p></div></div>
 <h3 id="define-accounts-table">Define <code>ACCOUNTS</code> table</h3>
 <p>Define the SQL statement to create the <code>ACCOUNTS</code></p>
 <p>Each account is associated with an <code>ACCOUNT_HOLDER_ID</code> so that all the accounts belonging to a customer can be easily found.</p>
@@ -2406,9 +2410,7 @@
   <span class="token comment">;; Remove tables from the development database</span>
   <span class="token punctuation">(</span><span class="token function">drop-table</span> data-source-dev <span class="token string">&quot;PUBLIC.ACCOUNT_HOLDERS&quot;</span><span class="token punctuation">)</span>
   <span class="token punctuation">(</span><span class="token function">drop-table</span> data-source-dev <span class="token string">&quot;PUBLIC.ACCOUNTS&quot;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">(</span><span class="token function">drop-table</span> data-source-dev <span class="token string">&quot;PUBLIC.TRANSACTION_HISTORY&quot;</span><span class="token punctuation">)</span>
-
-  <span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token function">drop-table</span> data-source-dev <span class="token string">&quot;PUBLIC.TRANSACTION_HISTORY&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 <div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="-manage-database-schema-with-migratus"><i class="fa fa-lightbulb-o"></i>  Manage database schema with Migratus</h3></div><div class="panel-body"><p>Migratus provides an elegant approach to evolving database schema</p></div></div>
 <hr>
@@ -2456,7 +2458,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Database tables","level":"2.2.11","depth":2,"next":{"title":"Database queries","level":"2.2.12","depth":2,"path":"projects/banking-on-clojure/database-queries.md","ref":"projects/banking-on-clojure/database-queries.md","articles":[{"title":"Create Records","level":"2.2.12.1","depth":3,"path":"projects/banking-on-clojure/create-records.md","ref":"projects/banking-on-clojure/create-records.md","articles":[]},{"title":"Read Records","level":"2.2.12.2","depth":3,"path":"projects/banking-on-clojure/read-records.md","ref":"projects/banking-on-clojure/read-records.md","articles":[]},{"title":"Update Records","level":"2.2.12.3","depth":3,"path":"projects/banking-on-clojure/update-records.md","ref":"projects/banking-on-clojure/update-records.md","articles":[]},{"title":"Delete Records","level":"2.2.12.4","depth":3,"path":"projects/banking-on-clojure/delete-records.md","ref":"projects/banking-on-clojure/delete-records.md","articles":[]}]},"previous":{"title":"Instrument next.jdbc functions","level":"2.2.10","depth":2,"path":"projects/banking-on-clojure/instrument-next-jdbc-functions.md","ref":"projects/banking-on-clojure/instrument-next-jdbc-functions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/banking-on-clojure/database-tables.md","mtime":"2022-01-10T01:21:00.280Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T01:22:18.933Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Database tables","level":"2.2.11","depth":2,"next":{"title":"Database queries","level":"2.2.12","depth":2,"path":"projects/banking-on-clojure/database-queries.md","ref":"projects/banking-on-clojure/database-queries.md","articles":[{"title":"Create Records","level":"2.2.12.1","depth":3,"path":"projects/banking-on-clojure/create-records.md","ref":"projects/banking-on-clojure/create-records.md","articles":[]},{"title":"Read Records","level":"2.2.12.2","depth":3,"path":"projects/banking-on-clojure/read-records.md","ref":"projects/banking-on-clojure/read-records.md","articles":[]},{"title":"Update Records","level":"2.2.12.3","depth":3,"path":"projects/banking-on-clojure/update-records.md","ref":"projects/banking-on-clojure/update-records.md","articles":[]},{"title":"Delete Records","level":"2.2.12.4","depth":3,"path":"projects/banking-on-clojure/delete-records.md","ref":"projects/banking-on-clojure/delete-records.md","articles":[]}]},"previous":{"title":"Instrument next.jdbc functions","level":"2.2.10","depth":2,"path":"projects/banking-on-clojure/instrument-next-jdbc-functions.md","ref":"projects/banking-on-clojure/instrument-next-jdbc-functions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/banking-on-clojure/database-tables.md","mtime":"2022-01-10T22:31:57.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T22:33:16.458Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
