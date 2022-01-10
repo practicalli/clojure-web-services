@@ -1,7 +1,8 @@
 # Create a project
-  Let's create a project called `todo-list` using Leiningen, the build automation tool for Clojure.  This project will run the simplest possible webserver.
 
-  On the command line:
+Create a project called `todo-list` using Leiningen, the build automation tool for Clojure.  This project will run the simplest possible webserver.
+
+On the command line:
 
 ```bash
 lein new todo-list
@@ -9,9 +10,9 @@ lein new todo-list
 
 ![Leiningen - new project called todo-list](../images/lein-new-todo-list.png)
 
-<hr />
 
 ## Take a look at the project structure
+
 Change into the `todo-list` directory created by the Leiningen command and see the project structure that has been created.
 
   * `project.clj` - the project definition, written in Clojure

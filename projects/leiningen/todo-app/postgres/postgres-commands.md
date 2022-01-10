@@ -2,6 +2,7 @@
 
 To see all PostgreSQL databases provisioned by your application and the identifying characteristics of each (db size, status, number of tables, PG version, creation date etc…) use the heroku pg:info command.
 
+```bash
 [~/srcPLgrado/pegjscalc(master)]$ heroku pg:info
 === HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)
 Plan:        Hobby-dev
@@ -22,6 +23,7 @@ To continuously monitor the status of your database, pass pg:info through the un
 [~/srcPLgrado/pegjscalc(master)]$ brew install watch
 [~/srcPLgrado/pegjscalc(master)]$ watch heroku pg:info
 ...
+```
 
 ## pg:psql
 
@@ -153,13 +155,14 @@ Usage: heroku pg:wait [DATABASE]
 Once Heroku Postgres has been added a `HEROKU_POSTGRESQL_COLOR_URL` setting will be available in the app configuration and will contain the URL used to access the newly provisioned Heroku Postgres service. This can be confirmed using the heroku config command.
 
 ```bash
- heroku config -s | grep HEROKU_POSTGRESQL
+heroku config -s | grep HEROKU_POSTGRESQL
 HEROKU_POSTGRESQL_RED_URL=postgres://username:password@hostname.domain.com:1234/database-name
 ```
+
 You can choose the alias that the add-on uses on the application using the --as flag. This will affect the name of the variable the add-on adds to the application:
 
 ```bash
- heroku addons:create heroku-postgresql:hobby-dev --as USERS_DB
+heroku addons:create heroku-postgresql:hobby-dev --as USERS_DB
 Adding heroku-postgresql:hobby-dev to sushi... done, v69 (free)
 Attached as USERS_DB
 Database has been created and is available

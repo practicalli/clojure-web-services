@@ -1,6 +1,7 @@
 # SQL queries in Clojure with next.jdbc library
 
 Using next.jdbc to connect to a database and run queries only a few steps
+
 * add `seancorfield/next.jdbc` as a project dependcy
 * require the `seancorfield/next.jdbc` in the relevant project namespace definitions
 * define a database specification (hash-map of database details or JDBC string)
@@ -11,7 +12,8 @@ Using next.jdbc to connect to a database and run queries only a few steps
 
 
 > #### Hint::next.jdbc supersedes clojure.java.jdbc
-> [seancorfield/next.jdbc](https://github.com/seancorfield/next-jdbc) supersedes `clojure.java.jdbc` which used to be the defacto library for database backed projects.  next.jdbc is faster and exposes a more modern API design (according to the author of clojure.java.jdbc).  [Migration from clojure.java.jdbc is documented](https://cljdoc.org/d/seancorfield/next.jdbc/CURRENT/doc/migration-from-clojure-java-jdbc) on the next.jdbc repository
+> [seancorfield/next.jdbc](https://github.com/seancorfield/next-jdbc) supersedes `clojure.java.jdbc` which used to be the defacto library for database backed projects.  next.jdbc is faster and exposes a more modern API design (according to the author of clojure.java.jdbc).
+> [Migration from clojure.java.jdbc is documented](https://cljdoc.org/d/seancorfield/next.jdbc/CURRENT/doc/migration-from-clojure-java-jdbc) on the next.jdbc repository
 
 
 ## Live Coding example
@@ -22,12 +24,13 @@ Using next.jdbc to connect to a database and run queries only a few steps
 <p></p>
 
 ## Summary of using next.jdbc
-Include ... as a dependency in the project
+
+Include next.jdbc as a dependency in the project
 
 ```clojure
 {:deps
- {org.clojure/clojure    {:mvn/version "1.10.1"}
- seancorfield/next.jdbc {:mvn/version "1.1.569"}}}
+ {org.clojure/clojure        {:mvn/version "1.10.1"}
+  org.seancorfield/next.jdbc {:mvn/version "1.1.569"}}}
 ```
 
 Require next.jdbc into the project namespace
@@ -138,9 +141,10 @@ Call the generic insert function with the database connection, table name and qu
 ```
 
 
-### Transactions for multiple queries ###
-TODO: add example of using transactions for multiple queries
+<!-- ### Transactions for multiple queries ### -->
+
+<!-- TODO: add example of using transactions for multiple queries -->
 
 
-####HINT::next.jdbc getting started guide
+> ####HINT::next.jdbc getting started guide
 > [next.jdbc getting started guide](https://cljdoc.org/d/seancorfield/next.jdbc/1.1.569/doc/getting-started) is very detailed.

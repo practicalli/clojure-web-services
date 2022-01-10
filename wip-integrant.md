@@ -2,7 +2,6 @@
 
 A global configuration to start, restart and halt all the services that make up the system.
 
-
 ```clojure
 {:practicalli.scoreboard.service/app-server
  {:handler #ig/ref :practicalli.scoreboard.service/router
@@ -13,17 +12,11 @@ A global configuration to start, restart and halt all the services that make up 
  {:persistence-connection #ig/ref :practicalli.scoreboard.service/persistence}
 
  :practicalli.scoreboard.service/persistence
- {:connection {:url "http://localhost/" :port 12345 :database "scoreboard"}
-  }
-
+ {:connection {:url "http://localhost/" :port 12345 :database "scoreboard"}}
  #_()}
-
 ```
 
-
-
 ## aero configuration for multiple environments
-
 
 Aero thingies
 * #profile - replace with the value from the given profile name
@@ -47,49 +40,40 @@ Aero thingies
                         :live     {:url "http://localhost/" :port 57207 :database "customer-entitlements"}}
   ;;TODO: dynamodb: provide environment variables / access credentials for all environments
   }
-
  #_()}
 
 ```
 
-
-configuration: environment profiles with aero
+# configuration: environment profiles with aero
 
 Aero library provides tag literals to configure values specific to each
 environment, all from one configuration file
 
 Tag literals include
-- #profile - define a map of environment values
-- #env - get values from environment variables
-- #or - first truthy value from a vector of options
-- #long - cast a value to a Clojure long type
 
-Configuration file - config.edn
-Renamed top-level keys to represent namespace each key is initiated in and use
-autoresolve names for the ig/init-key defmethod expressions
+* #profile - define a map of environment values
+* #env - get values from environment variables
+* #or - first truthy value from a vector of options
+* #long - cast a value to a Clojure long type
 
-Start / Stop service
-Use aero to prepare the configuration and `start` & `stop` helper functions to
-easily manage the application from the REPL
+## Configuration file - config.edn
 
-Dependencies
+Renamed top-level keys to represent namespace each key is initiated in and use autoresolve names for the ig/init-key defmethod expressions
+
+## Start / Stop service
+Use aero to prepare the configuration and `start` & `stop` helper functions to easily manage the application from the REPL
+
+## Dependencies
 - remove environ
 - add aero
 
-
-
-
-
-
 # Integrant pitfalls
-
 
 Avoid using the same name for a key inside a configuration as the name for a referred (top-level) key
 
 In this example the `:persistence` key clashes with the `:practicalli.scoreboard.service/persistence` top-level key
 
 ```clojure
-
  :practicalli.scoreboard.service/router
  {:persistence #ig/ref :practicalli.scoreboard.service/key-value-store}
 
@@ -97,17 +81,11 @@ In this example the `:persistence` key clashes with the `:practicalli.scoreboard
  {:connection #profile {:develop  {:url "http://localhost/" :port 57207 :database "customer-entitlements-develop"}
                         :stage    {:url "http://localhost/" :port 57207 :database "customer-entitlements-stage"}
                         :live     {:url "http://localhost/" :port 57207 :database "customer-entitlements"}}
-
 ```
-
-
-
-
 
 # Integrant REPL
 
 Example
-
 
 ```clojure
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -116,7 +94,6 @@ Example
 ;; Use the commands in the rich comment block to start, restart and halt the system
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 (ns user
   (:require
@@ -186,7 +163,6 @@ Example
   (pprint/pprint ig-state/system)
 
   #_()) ;; End of rich comment block
-
 ```
 
 

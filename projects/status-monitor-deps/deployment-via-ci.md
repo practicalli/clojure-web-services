@@ -1,11 +1,15 @@
 # Deployment Via Continuous Integration
-Building on the CircleCI build pipleine created so far, the application will be deployed on Heroku if all the tests pass.  A [workflow](https://circleci.com/docs/2.0/workflows/) is added to the CircleCI configuration that [deploys the application on Heroku from the source code](https://circleci.com/docs/2.0/deployment-integrations/#heroku).  Heroku packages the application into an uberjar and then runs the application from that uberjar.
+
+Building on the CircleCI build pipleine created so far, the application will be deployed on Heroku if all the tests pass.
+
+A [workflow](https://circleci.com/docs/2.0/workflows/) is added to the CircleCI configuration that [deploys the application on Heroku from the source code](https://circleci.com/docs/2.0/deployment-integrations/#heroku).  Heroku packages the application into an uberjar and then runs the application from that uberjar.
 
 [![CircleCI workflow concept image - stages](/images/circleci-workflow-sequential-git-heroku.png)](https://circleci.com/docs/2.0/workflows/)
 
 When commits in the Clojure project code are pushed to GitHub they are detected by CircleCI and the tests run.  If the tests pass then the Heroku deployment stage starts.
 
 ## Add depstar to buld an uberjar
+
 Use the depstar tool to create a Java archive (jar) package of the application.  The `deps.edn` configuration in the root of the project already contains an `uberjar` alias for this tool.
 
 ```clojure
@@ -25,6 +29,7 @@ This will be the same command used in the build script
 
 
 ## Create a custom build behaviour
+
 Heroku build scripts use Leiningen by default.  Configure Heroku to build with Clojure Tools, create a custom build file which will run instead of Leiningen.
 
 Create a file called `bin/build` script in the root of the project
@@ -38,6 +43,7 @@ Create an empty `project.clj` file so that Heroku recognized the project as Cloj
 
 
 ## Define how to run the application
+
 Create a `Procfile` file in the root of the project directory containing the command to run the application.
 
 Use the `$PORT` as an argument to the command.  Heroku automatically asignes a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will recieve requests.
@@ -48,6 +54,7 @@ web: java -jar status-monitor-service.jar $PORT
 
 
 ## Specifying a Java version
+
 Create a `system.properties` and specify the Java version to use for the application. Java 1.8 is the default version use on Heroku, however, our development environment is Java 11, so add a property to set the Java runtime to version 11.
 
 ```properties
@@ -64,6 +71,7 @@ In the Heroku dashboard, open the application Settings and add a Config Vars usi
 
 
 ## CircleCI configuration with Heroku Orb
+
 Edit the `.circleci/config.yml` file and add the [heroku orb](https://circleci.com/orbs/registry/orb/circleci/heroku) and a workflow to call the orb task.  The workflow has a dependency on the build job, so that will take place first.
 
 The Heroku workflow will build the application from source code using the `heroku/deploy-via-git`.  Only changes pushed to the `live` branch of the GitHub repository will be used in the Heroku deploy workflow.
@@ -110,17 +118,19 @@ jobs:
 
 
 ## CircleCI Environment Variables
+
 Open the CircleCI and select project settings > Environment Variables
 
 Add environment variables to define where the Heroku application can be found and a token to provide access.
 
-| Environment Variable  | Value                                       |
-|-----------------------|---------------------------------------------|
-| HEROKU_API_KEY        | name of the application created on Heroku   |
-| HEROKU_APP_NAME       | API key found in Account Settings > API Key |
+| Environment Variable | Value                                       |
+|----------------------|---------------------------------------------|
+| `HEROKU_API_KEY`     | name of the application created on Heroku   |
+| `HEROKU_APP_NAME`      | API key found in Account Settings > API Key |
 
 
 ## Push changes to trigger build
+
 Commit the changed and push them to the GitHub repository.  This triggers a build by CircleCI.  The build downloads the dependencies and runs the unit tests.  If the tests pass, then the Heroku deploy workflow starts.
 
 The two stages can be seen in the dashboard as the pipeline runs.
@@ -132,6 +142,7 @@ Now visit the deployed Heroku application to see it in action.
 
 
 ## Troubleshooting
+
 If there are issues, then use the Heroku toolbelt to look at the logs.  In a command line terminal, issue the login command which opens a web browser to login to Heroku.  Once logged in, run the heroku logs command to view the latest logs
 
 ```bash
@@ -155,6 +166,7 @@ These logs were generated before adding the `$PORT` to the command in the Procfi
 
 
 ## No forced pushes
+
 Heroku doesnt like force Git pushes coming via CircleCI.
 
 ![CircleCI Heroku orb no forced push](/images/circle-ci-heroku-orb-no-forced-push.png)
@@ -171,6 +183,7 @@ Changes can now be pushed, ideally using `force-with-lease` to Heroku repository
 
 
 ## Stopping the application
+
 An application can be run for free on Heroku with the monthly free credits provided.  However, to make the most out of these free credits then applications not in use should be shut down
 
 Run the following command in the root of the Clojure project.

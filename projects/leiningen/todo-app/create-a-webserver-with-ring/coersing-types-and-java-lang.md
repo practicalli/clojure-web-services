@@ -1,8 +1,18 @@
 # Theory: Specifying Types & java.lang
 
-Clojure has types that are created dynamically when the code is compiled, with everything being represented by Java objects as its compiled to Java bitecode.   However you do not need to specify any specific types as Clojure simply infers the type and handles most type collision gracefully.  The built in collections (list, map, vector & set) also support mixed types too.
+Clojure has types that are created dynamically when the code is compiled, with everything being represented by Java objects as its compiled to Java bitecode.
 
-In our project we are using Jetty, a web application server written in Java.  As its Java it needs a specific type of object passed as an argument for the port number, in this case an Integer.  However, when we run the Clojure project, the argument we supply for the port number on the command line is treated as a String object.  Therefore we need to change the port number from a Java String type to an Java Integer type.
+Clojure simply infers the type of a value, so types do not need to be specified in code.
+
+The built in collections (list, map, vector & set) also support mixed types too.
+
+## Calling Java code
+
+The Clojure project uses Jetty, a web application server written in Java.  When calling the `run-jetty` function an Integer typemust be passed to the Java object for the port number.
+
+When running the Clojure project, the argument supplied for the port number on the command line is treated as a String object.  Therefore we need to explicitly cast the port number from a Java String type to an Java Integer type.
+
+## java.lang library
 
 The `java.lang.` library is part of all Clojure projects, so as we are going to create a Java Integer it makes sense to simply use the `Integer` constructor with a String argument which returns a new Integer object.
 

@@ -103,7 +103,7 @@ The REPL is still running, so the server can be started by calling `(-main)` or 
 
 {% content "httpkit" %}
 
-## Reference to Jetty server process
+## Reference to HTTPkit server process
 
 An atom holds an instance of the running server, which is populated by the `app-server-start` function.
 
@@ -111,7 +111,7 @@ The `app-server-stop` function send a `:timeout 100` value to the running app se
 
 During REPL driven development, call `app-server-restart` to stop and start the server.
 
-## HTTPkit example
+## HTTPkit code example
 
 ```clojure
 (ns practicalli.example-webapp

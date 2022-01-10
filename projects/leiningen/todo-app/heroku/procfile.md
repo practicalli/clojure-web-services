@@ -1,13 +1,20 @@
 # Add Procfile
+
 The `Procfile` is a simple text file that instructs Heroku how to build and run an application.
 
 Using the `web:` directive, we tell Heroku that our application will listen for web traffic (https).  Heroku sets a value for the port our application can listen to using the `PORT` configuration variable (ports are dynamically assigned).
 
-> ####Note:: Create a new file called `Procfile` with the following text
+Create a new file called `Procfile` with the following text
 
-```
+```none
 web: java $JVM_OPTS -cp target/todo-list.jar clojure.main -m todo-list.core $PORT
 ```
+
+> #### Hint::Get webserver PORT from Heroku
+> Heroku dynamically assigns a port number for each `web:` application deployed.  The Heroku port is set in the PORT environment variable within Heroku each time the application is deployed.
+>
+> "$PORT" should be an argument to any service that runs a web server (Jetty, HTTPkit server) or the value should be obtained from the Heroku environment from the Clojure code.
+
 
 ## Theory: Running Clojure as a Java application
 
@@ -33,6 +40,6 @@ Further reading: https://devcenter.heroku.com/articles/clojure-support
 
 If your main namespace doesn’t have a `:gen-class` then you can use `clojure.main` as your entry point and indicate your app’s main namespace using the -m argument in your Procfile:
 
-```
-web: java $JVM_OPTS -cp target/myproject-standalone.jar clojure.main -m myproject.web
+```none
+web: java $JVM_OPTS -cp target/myproject-standalone.jar clojure.main -m myproject.web $PORT
 ```

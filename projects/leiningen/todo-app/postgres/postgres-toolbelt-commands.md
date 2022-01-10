@@ -2,7 +2,9 @@
 
 Heroku Postgres is integrated directly into the Heroku toolbelt and offers several commands that automate many common tasks associated with managing a database-backed application.
 
-> ####Hint:: Some of these commands require a postgres cleint to be installed on your computer to work.
+> ####Hint::psql required for some commands
+> Some of these commands require a postgres cleint to be installed on your computer to work.
+
 
 ## pg:info
 
@@ -101,7 +103,7 @@ pg_restore: [archiver] input file is too short (read 0, expected 5)
 
 are both often a result of this incorrect $PATH problem. This problem is especially common with Postgres.app users, as the post-install step of adding /Applications/Postgres.app/Contents/MacOS/bin to $PATH is easy to forget.
 
-## pg:ps, pg:kill, pg:killall
+## pg:ps pg:kill pg:killall
 
 These commands give you view and control over currently running queries.
 
@@ -132,34 +134,57 @@ The procpid column can then be used to cancel or terminate those queries with pg
  t
 (1 row)
 ```
-pg:killall is similar to pg:kill except it will cancel or terminate every query on your database.
-pg:promote
+
+`pg:killall` is similar to pg:kill except it will cancel or terminate every query on your database.
+
+
+## pg:promote
 
 In setups where more than one database is provisioned (common use-cases include a master/slave high-availability setup or as part of the database upgrade process) it is often necessary to promote an auxiliary database to the primary role. This is accomplished with the heroku pg:promote command.
 
+```bash
  heroku pg:promote HEROKU_POSTGRESQL_GRAY_URL
 Promoting HEROKU_POSTGRESQL_GRAY_URL to DATABASE_URL... done
+```
 
-pg:promote works by setting the value of the DATABASE_URL config var (which your application uses to connect to the primary database) to the newly promoted database’s URL and restarting your app. The old primary database location is still accessible via its HEROKU_POSTGRESQL_COLOR_URL setting.
+`pg:promote` works by setting the value of the `DATABASE_URL` config var (which your application uses to connect to the primary database) to the newly promoted database’s URL and restarting your app. The old primary database location is still accessible via its `HEROKU_POSTGRESQL_COLOR_URL` setting.
 
-After a promotion, the demoted database is still provisioned and incurring charges. If it’s no longer need you can remove it with heroku addons:destroy HEROKU_POSTGRESQL_COLOR.
-pg:credentials
+After a promotion, the demoted database is still provisioned and incurring charges. If it’s no longer need you can remove it with
+
+```bash
+heroku addons:destroy HEROKU_POSTGRESQL_COLOR.
+```
+
+
+## pg:credentials
 
 Heroku Postgres provides convenient access to the credentials and location of your database should you want to use a GUI to access your instance.
 
 The database name argument must be provided with pg:credentials command. Use DATABASE for your primary database.
 
+```bash
  heroku pg:credentials DATABASE
 Connection info string:
    "dbname=dee932clc3mg8h host=ec2-123-73-145-214.compute-1.amazonaws.com port=6212 user=user3121 password=98kd8a9 sslmode=require"
+```
 
 It is a good security practice to rotate the credentials for important services on a regular basis. On Heroku Postgres this can be done with heroku pg:credentials --reset.
 
+```bash
  heroku pg:credentials HEROKU_POSTGRESQL_GRAY_URL --reset
+```
 
-When you issue this command, new credentials are created for your database and the related config vars on your Heroku application are updated. However, on Standard, Premium, and Enterprise tier databases the old credentials are not removed immediately. All of the open connections remain open until the currently running tasks complete, then those credentials are updated. This is to make sure that any background jobs or other workers running on your production environment aren’t abruptly terminated, potentially leaving the system in an inconsistent state.
-pg:reset
+New credentials are created for the database and the related config vars on your Heroku application are updated.
+
+On Standard, Premium, and Enterprise tier databases the old credentials are not removed immediately.
+
+All of the open connections remain open until the currently running tasks complete, then those credentials are updated. This is to make sure that any background jobs or other workers running on your production environment aren’t abruptly terminated, potentially leaving the system in an inconsistent state.
+
+
+## pg:reset
 
 The PostgreSQL user your database is assigned doesn’t have permission to create or drop databases. To drop and recreate your database use pg:reset.
 
+```bash
  heroku pg:reset DATABASE
+```

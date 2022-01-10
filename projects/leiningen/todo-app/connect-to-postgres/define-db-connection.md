@@ -8,6 +8,7 @@
 
 
 ## Outdated - under review
+
 View the Database_URL configuration variable for the Heroku Database and define a name to represent that in Clojure
 
 Use the Heroku Toolbelt to view the configuration variables
@@ -28,13 +29,12 @@ Edit the file `src/todo_list/core.clj` file and add the following definition tow
                :sslfactory "org.postgresql.ssl.NonValidatingFactory"})
 ```
 
-
 Breaking down the Heroku Postgres connection string into a map  allows us to easily add options to the connection string whilst keeping it readable.
 
 Also, a JDBC connection string has a slightly different form to the Heroku string. Heroku Posgres creates a configuration variable in the form of `postgres://[user]:[password]@[host]:[port]/[database]` whereas the JDBC connection string is of the form `jdbc:postgres://[host]:[port]/[database]?user=[user]&password=[pass]
 
 
-JdBC connection string for Heroku Postgres
+## JDBC connection string for Heroku Postgres
 
 `jdbc:postgresql://[host]:[port]/[database]?user=[user]&password=[password]&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory`.
 

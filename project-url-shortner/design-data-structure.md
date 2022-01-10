@@ -2,20 +2,20 @@
 
 One of the first decisions is how to design the data structure to hold our short url and full url addresses.
 
-## The simplest approach 
+## The simplest approach
 
-We could create a really simple data structure with a vector 
+We could create a really simple data structure with a vector
 
 ```clojure
-["goouk" "https://google.co.uk"]
+["goouk" "https://duckduckgo.com/"]
 ```
 
 In order to hold multiple short url mappings, we could have a vector of vectors
 
 ```clojure
-[["goouk" "https://google.co.uk"]
- ["jrock" "http://jr0cket.co.uk"]
- ["slash" "https://slashdot.com"]]
+[["duckduckgo" "https://duckduckgo.com/"]
+ ["practicalli" "https://practical.li"]
+ ["slashdot" "https://slashdot.com"]]
 ```
 Although the above is nice and simple, it does not provide any context for the data.
 
@@ -26,17 +26,17 @@ The keys in a map can add specific meaning and context to the design of the data
 Here are two examples, the first with keys as strings the second as keys as keywords.
 
 ```clojure
-{"short-url" "jrock" "full-url" "http://jrocket.co.uk"}
+{"short-url" "practicalli" "full-url" "http://practical.li"}
 
-{:short-url "jrock" :full-url "http://jrocket.co.uk"}
+{:short-url "practicalli" :full-url "http://practical.li"}
 ```
 
 As keys need to be unique, then if we have multiple short url mappings to contain, then we need another data structure for each map.
 
 
 ```clojure
-[{:short-url "jrock" :full-url "http://jrocket.co.uk"}
- {:short-url "slash" :full-url "https://slashdot.com"}]
+[{:short-url "practicalli" :full-url "http://practical.li"}
+ {:short-url "slashdot" :full-url "https://slashdot.org"}]
 ```
 
 In the above design we cannot use a single map as all the keys in a map need to be unique
@@ -48,22 +48,25 @@ As keys must be unique in a map, we cannot have multiple keys called `:short-url
 We could simplify the map and remove the current keys and use the value for the short-url as the key and the full url as the value.  This means we could just have a single map for all our short-url mappings.
 
 ```clojure
-{"jrock" "http://jrocket.co.uk"
- "slash" "https://slashdot.org"
- "goouk" "https://google.co.uk"}
+{"practicalli" "http://practical.li"
+ "slashdot"    "https://slashdot.org"
+ "duckduckgo"  "https://duckduckgo.com/"}
 ```
 
 Using Clojure keywords for the keys would also allow us to look up the full url addresses using the feature of maps that make keywords act like functions.  This feature of the keyword in a map is just like calling the `get` function on the map with a specific key.
 
 ```clojure
-(def url-map 
-  {:jrock "http://jrocket.co.uk"
-   :slash "https://slashdot.org"
-   :goouk "https://google.co.uk"})
+(def url-map
+  {:practicalli "http://practical.li"
+   :slashdot "https://slashdot.org"
+   :duck-duck-go "https://duckduckgo.com/"})
 
-(get url-map :jrock)
-;; => "http://jrocket.co.uk"
+(get url-map :practicalli)
+;; => "http://practicalli.co.uk"
 
-(url-map :jrock)
-;; => "http://jrocket.co.uk"
+(url-map :practicalli)
+;; => "http://practicalli.co.uk"
+
+(:practicalli url-map )
+;; => "http://practicalli.co.uk"
 ```

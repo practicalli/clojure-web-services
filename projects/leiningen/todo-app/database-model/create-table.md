@@ -1,9 +1,14 @@
 # Create table
 
+> #### Hint::Recommend using next.jdbc
+> next.jdbc is the next generation of clojure.java.jdbc and is recommended instead.  The API is very similar, although with many improvements
+
 We have our database model for tasks, so lets create write some code that will create a database table in Postgres, assuming that table is not there already.
 
 
-> ####Note:: Create a new Clojure file `src/todo_list/items.clj` and add the following code
+## Create items namespace
+
+Create a new Clojure file `src/todo_list/items.clj` and add the following code
 
 First add a dependency for Clojure.java.jdbc
 
@@ -46,7 +51,6 @@ Then add a condition to check if the table exists and if not then create the dat
                           "NOT NULL" "DEFAULT CURRENT_TIMESTAMP"]))))
 ```
 
-<hr />
 
 ## What Heroku does when you create a database
 

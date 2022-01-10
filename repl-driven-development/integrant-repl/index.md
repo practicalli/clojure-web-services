@@ -1,6 +1,6 @@
 # Integrant REPL
 
-> #### TODO::work in progress.  Feedback welcome.
+<!-- > #### TODO: Integrant repl Review -->
 
 Start and restart services quickly and easily from within the REPL with Integrant REPL.
 
@@ -13,14 +13,13 @@ To assist with debugging, the parsed configuration, `(config)`, and system confi
 > #### Hint::Integrant REPL and Integrant
 > Although Integrant and Integrant REPL can share the same configuration file, they are otherwise separate ways of working with a system.
 > Integrant is used to start a system in a consistent order and gracefully shutdown the system on a termination message, e.g. `SIGTERM`.  The state of the running system in Integrant is supposed to be a hidden concern.
- fs
+
 
 ## Integrant configuration
 
 Define the configuration for each part of the system, such as http server (jetty, httpkit), router application (reitit, compojure, ring) and persistence storage (postgres, crux)
 
 Create a `develop/resources/config.edn` file containing the Integrant REPL configuration (or use aero with `resources/config.edn` file and share the configuration with Integrant)
-
 
 ```clojure
 {:practicalli.scoreboard.service/http-server
@@ -40,7 +39,6 @@ Clojure encourages fully qualified keywords, i.e. domain/key, so that keys are u
 The domain used for integrant is the Clojure namespace that contains the defmethod init-key for the key.  The Integrant `load-namespaces` function will automatically load all namespaces that match key names
 
 
-
 ## Aero Tag Literals
 
 The same configuration can be used that starts the system using profiles, or a separate develop profile can be created.
@@ -50,7 +48,6 @@ Aero uses [tag literals](https://github.com/juxt/aero#tag-literals) as placehold
 * `#profile` - replace with the value from the given profile name
 * `#or`  - a vector of possible values, returning the first "truthy" value
 * `#long` - cast a String value to a Clojure Long type (e.g. for PORT values)
-
 
 ```clojure
 {:practicalli.scoreboard.service/http-server
@@ -71,12 +68,12 @@ Aero uses [tag literals](https://github.com/juxt/aero#tag-literals) as placehold
                         :live     {:url "http://localhost/" :port 57207 :database "scoreboard"}}}}
 ```
 
+
 ## User namespace
 
 Common practice is to place the Integrant REPl code in a `user` namespace, which is automatically loaded when the REPL process starts.
 
 The `user` namespace is defined separately from the source code, as it is code to manage the application rather than part of the application itself.  The user namespace is added to the `develop/user.clj` file and added to the classpath when developing.
-
 
 ```clojure
 (ns user
@@ -92,6 +89,7 @@ The `user` namespace is defined separately from the source code, as it is code t
    [clojure.pprint :as pprint]))
 ```
 
+
 ## Managing the classpath
 
 Run a REPL process including the `user` namespace on the classpath.  Also include a rich termainal UI with `:repl/rebl` alias
@@ -100,7 +98,7 @@ Run a REPL process including the `user` namespace on the classpath.  Also includ
 clojure -M:env/develop:repl/rebl
 ```
 
-TODO: add repl startup screenshot ??
+<!-- TODO: Integrant REPL - add repl startup screenshot ?? -->
 
 
 ## Environment Configuration
@@ -134,7 +132,6 @@ Using aero with the Integrant configuration file includes tag literals that need
 
 ## Parse Configuration
 
-
 ```clojure
 (defn integrant-prep!
   "Parse system configuration with aero-reader and apply the given profile values
@@ -151,8 +148,6 @@ Using aero with the Integrant configuration file includes tag literals that need
 
 
 ## REPL convenience functions
-
-
 
 ```clojure
 (defn go

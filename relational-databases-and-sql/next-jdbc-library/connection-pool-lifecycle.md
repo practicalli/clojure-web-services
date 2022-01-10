@@ -1,4 +1,5 @@
 # Using next.jdbc with a Connection pool
+
 As the scale of database use increases it becomes more efficient to continually re-use existing connections to the database, rather than create a new connection to execute each SQL statement.
 
 A connection pool is a set of open connections that are used over and over again, enhancing the performance of the database and allowing the database to scale more efficiently.
@@ -74,6 +75,7 @@ Create a database specification
 
 
 # Configure next.jdbc with lifecycle management libraries
+
 A connection pool has a start/stop lifecycle, so fits easily into lifecycle managment libraries such as mount, component and integrant.
 
 Start the database server connection pool
@@ -126,7 +128,7 @@ Start the database server connection pool
 {% endtabs %}
 
 
-
+<!-- TODO: next.jdbc connection pool with Integrant -->
 
 <!-- using next.jdbc ->pool with integrant? -->
 

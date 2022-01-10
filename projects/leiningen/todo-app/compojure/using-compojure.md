@@ -1,12 +1,14 @@
 # Using Compojure in the project
+
 The Compojure `defroute` function provides a syntax for defining routes and associating handlers.
 
 ![Ring - adding defroutes to manage routes](../images/clojure-ring-adaptor-middleware-route--handler-wrap-reload.png)
 
 
-> ####Note::Add Compojure to the namespace
-> Add the `defroutes` function, `GET` protocol and `notfound` route from Compojure to the namespace
->
+## Add Compojure to the namespace
+
+Add the `defroutes` function, `GET` protocol and `notfound` route from Compojure to the namespace
+
 ```clojure
 (ns todo-list.core
   (:require [ring.adapter.jetty :as jetty]
@@ -15,11 +17,10 @@ The Compojure `defroute` function provides a syntax for defining routes and asso
             [compojure.route :refer [not-found]]))
 ```
 
----
+## Refactor the welcome function to just say Hello
 
-> ####Note::Refactor the welcome function to just say Hello
-> The welcome function should just do one simple thing, return a welcome message.
->
+The welcome function should just do one simple thing, return a welcome message.
+
 ```clojure
 (defn welcome
   "A ring handler to respond with a simple welcome message"
@@ -31,11 +32,11 @@ The Compojure `defroute` function provides a syntax for defining routes and asso
    :headers {}})
 ```
 
----
 
-> ####Note:: Add a defroutes function
-> Add a `defroutes` function called `app` to manage our routes.  Add routes for `/` and send all other requests to the Compojure `not-found` function.
->
+## Add a defroutes function
+
+Add a `defroutes` function called `app` to manage our routes.  Add routes for `/` and send all other requests to the Compojure `not-found` function.
+
 ```clojure
 (defroutes app
   (GET "/" [] welcome)
@@ -43,26 +44,25 @@ The Compojure `defroute` function provides a syntax for defining routes and asso
               <p>Sorry, the page you requested was not found!</p>"))
 ```
 
----
 
-> ####Note:: Update -dev-main and -main functions
-> Change the `-dev-main` and `-main` functions to call the `app` function, instead of the `welcome` function
->
+## Update -dev-main and -main functions
+
+Change the `-dev-main` and `-main` functions to call the `app` function, instead of the `welcome` function
+
 ```clojure
 (defn -main
   "A very simple web server using Ring & Jetty"
   [port-number]
   (webserver/run-jetty app
      {:port (Integer. port-number)}))
-```
-```clojure
+
 (defn -dev-main
   "A very simple web server using Ring & Jetty that reloads code changes via the development profile of Leiningen"
   [port-number]
   (webserver/run-jetty (wrap-reload #'app)
      {:port (Integer. port-number)}))
 ```
->
-> As we have changed the `-dev-main` and `-main` functions, we need to restart the server again - `Ctrl-c` then `lein run 8000`
->
->  Now test out your updated web app by visiting http://localhost:8000 and http://localhost:8000/not-there
+
+As we have changed the `-dev-main` and `-main` functions, we need to restart the server again - `Ctrl-c` then `lein run 8000`
+
+Now test out your updated web app by visiting http://localhost:8000 and http://localhost:8000/not-there

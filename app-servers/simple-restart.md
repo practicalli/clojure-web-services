@@ -15,7 +15,7 @@ When the developer evaluates `(.stop app-server-instance)`, the instance is used
 The REPL itself is still running, so the application can be started again quickly by evaluating `(def app-server-instance (-main 8888))`.
 
 
-## Code Example
+## Jetty Code Example
 
 ```clojure
 (ns practicalli.example-webapp
@@ -61,7 +61,7 @@ The `-main` function identifies a value for a port and calls `app-server-start` 
 
 The `app-server-instance` reference can be used to stop the app-server by calling it with the arguments `:timeout 100` and gracefully shutting down the server, `(app-server-instance :timeout 100)`.
 
-## Code Example
+## Httpkit Code Example
 
 ```clojure
 (ns practicalli.example-webapp
