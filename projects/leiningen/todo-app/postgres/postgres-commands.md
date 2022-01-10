@@ -104,7 +104,7 @@ server starting
 ## Create local database
 
 ```bash
-$ heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
+heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
 ```
 
 Create a new local database named `mylocaldb`,  then pull data from database at DATABASE_URL from the app sushi.

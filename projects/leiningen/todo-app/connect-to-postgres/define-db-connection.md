@@ -6,7 +6,6 @@
 > Heroku provides a way to [generate the connection string](https://practicalli.github.io/clojure-webapps/projects/banking-on-clojure/production-database.html#generate-the-jdbc-connection).  The Heroku build process sets an [environment variable called JDBC_DATABASE_URL which can be used with next.jdbc](https://practicalli.github.io/clojure-webapps/projects/banking-on-clojure/production-database.html#adding-postgresql-driver-to-clojure-project).
 
 
-
 ## Outdated - under review
 
 View the Database_URL configuration variable for the Heroku Database and define a name to represent that in Clojure
@@ -53,10 +52,14 @@ Converting the map back to a JDBC connection string
 
 The `DATABASE_URL` environment variable from the Heroku Postgres add-on follows this naming convention:
 
+```none
 postgres://<username>:<password>@<host>/<dbname>
+```
 
 However the Postgres JDBC driver uses the following convention:
 
+```none
 jdbc:postgresql://<host>:<port>/<dbname>?user=<username>&password=<password>
+```
 
 Notice the additional `ql` at the end of `jdbc:postgresql`.

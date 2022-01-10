@@ -54,7 +54,7 @@ Delete the `request-info` function we defined previously and update the `/reques
   (GET "/request-info" [] handle-dump)
   (not-found "<h1>This is not the page you are looking for</h1> <p>Sorry, the page you requested was not found!</p>"))
 ```
->
->  Now the output is much nicer http://localhost:8000/request-info
+
+Now the output is much nicer http://localhost:8000/request-info
 
 ![Clojure Web Services - compojure request-dump output](/images/clojure-webdev-compojure-request-dump-output.png)

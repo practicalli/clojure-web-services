@@ -4,7 +4,9 @@ A simple way to affect the behaviour of a web app is to add extra text (elements
 
 By adding an element to the route path, we can take that element from the URL as it is part of the request.  We can then get that value from the request map and use it in our body content.
 
-## Create a simple personalised hello message by adding a route for `/hello` with `/:name` as a path element.
+## Hello handler example
+
+Create a simple personalised hello message by adding a route for `/hello` with `/:name` as a path element.
 
 Create a `hello` function as the handler that pulls out the `:name` element from the request and adds it to the response.
 

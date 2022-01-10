@@ -98,7 +98,7 @@ Add the [latest postgresql jdbc driver](https://jdbc.postgresql.org/) to the `de
   hiccup          {:mvn/version "2.0.0-alpha2"}
 
   ;; Database
-  seancorfield/next.jdbc    {:mvn/version "1.1.569"}
+  org.seancorfield/next.jdbc    {:mvn/version "1.1.569"}
   com.h2database/h2         {:mvn/version "1.4.200"}
   org.postgresql/postgresql {:mvn/version "42.2.16"}}
 ```

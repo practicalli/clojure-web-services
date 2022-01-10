@@ -16,10 +16,12 @@ When running the Clojure project, the argument supplied for the port number on t
 
 The `java.lang.` library is part of all Clojure projects, so as we are going to create a Java Integer it makes sense to simply use the `Integer` constructor with a String argument which returns a new Integer object.
 
-The `Integer. port-number` Clojure code is a short-hand for calling the `java.lang.Integer` constructor.  The `.` is actually a macro in Clojure that provides a simple way to work with Java, allowing you to call Java objects as if they were Clojure functions.  In Java you would have to use the form `Type instance-name = new Type(argument)`.  In our example you would write this in Java as `String port = new String(port-number)`
+`(Integer. port-number)` calls the `java.lang.Integer` constructor.
 
-> ####Hint::  From the [Java 8 docs for Integer class](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html):
-`Integer(String s)` - constructs a newly allocated Integer object that represents the int value indicated by the String parameter.
+The `.` is actually a macro in Clojure that provides a simple way to work with Java, allowing you to call Java objects as if they were Clojure functions.  In Java you would have to use the form `Type instance-name = new Type(argument)`.  In our example you would write this in Java as `String port = new String(port-number)`
+
+From the [Java 8 docs for Integer class](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html): `Integer(String s)` - constructs a newly allocated Integer object that represents the int value indicated by the String parameter.
+
 
 ## Theory: Its Java Objects underneath strings & numbers
 

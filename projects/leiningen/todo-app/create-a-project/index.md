@@ -15,9 +15,9 @@ lein new todo-list
 
 Change into the `todo-list` directory created by the Leiningen command and see the project structure that has been created.
 
-  * `project.clj` - the project definition, written in Clojure
-  * `src` for all the source code
-  * `test` for unit test code
+* `project.clj` - the project configuration, written in Clojure
+* `src` for all the source code
+* `test` for unit test code
 
 Using the `tree` command is a simple way to see the project structure (alternatively use `ls -R` or a graphical file browser).
 

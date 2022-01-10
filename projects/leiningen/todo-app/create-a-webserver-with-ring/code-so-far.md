@@ -10,6 +10,6 @@ git clone https://github.com/practicalli/clojure-webapps-example
 
 Checkout the `01-create-a-webserver` branch to see the relevant version of the code
 
-```
+```bash
 git checkout 01-create-a-webserver-with-ring
 ```

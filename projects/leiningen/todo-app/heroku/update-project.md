@@ -9,7 +9,7 @@ Update the Clojure project file with a minimum version number for Leiningen and 
 
 Edit the `project.clj` file and add the following lines, usually after the dependencies declarations
 
-```
+```clojure
 :min-lein-version "2.0.0"
 :uberjar-name "todo-list.jar"
 ```

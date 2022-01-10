@@ -1,4 +1,5 @@
-# Defining Database Queries - different approaches
+# Defining Database Queries
+
 Using the SQL statement for Inserting records as an example, several different approached are covered for defining database queries.  The options are similar for update and delete queries.
 
 All options use the `with-open` function to wrap the connection to the database, to automatically close that connection once the function has completed.
@@ -12,8 +13,8 @@ All options use the `with-open` function to wrap the connection to the database,
 
 
 ## Example SQL queries from DBeaver
-Using the DBeaver tool the basic form of an insert command is generated from ... insert DDL
 
+Using the DBeaver tool the basic form of an insert command is generated from **Generate SQL > DDL**
 
 ```sql
 INSERT INTO PUBLIC.ACCOUNT_HOLDERS
@@ -23,6 +24,7 @@ VALUES(?, '', '', '', '', '');
 
 
 ## Using the general execute! command
+
 Using the general jdbc/execute! is the same form as used previously to create, show and drop database tables.
 
 ```clojure
@@ -45,6 +47,7 @@ Call the function with a randomly generated UUID value for the `account_holder_i
 ```
 
 ## Using a generic function approach
+
 Write a Clojure function that takes in any SQL statement and executes that against a specific database specification.
 
 ```clojure
@@ -74,6 +77,7 @@ Update the database using the name of the SQL statement
 
 
 ## Using next.jdbc friendly functions
+
 Using next.jdbc.sql functions.  For example:
 
 ```clojure
