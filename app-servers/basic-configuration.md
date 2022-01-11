@@ -46,7 +46,7 @@ A common way to get environment variables from the operating system is to use th
 
 `System/getProperty` method will get specific values from Java `.properties` files, usually from a `system.properties` file in the root of the project.  `System/getProperties` will get all properties found in `.properties` files in the project. Settings typically found in the `system.properties` files include version of Java
 
-```properties
+```plain
 java.runtime.version=11
 ```
 
