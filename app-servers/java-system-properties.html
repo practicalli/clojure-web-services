@@ -2255,11 +2255,11 @@
                                 <h1 id="java-system-properties">Java System properties</h1>
 <p>System properties can be set on the Java command line using the <code>-Dpropertyname=value</code> syntax. They can also be added at Clojure runtime using <code>(System/getProperties)</code> will return a Properties object with the system properties for the current REPL.</p>
 <p>Properties are often defined in a <code>*.properties</code> file to configure the environment in containerized deployment processes.  For example, the version of Java used in Heroku containers is set by adding <code>java.runtime.version=11</code> property to a <code>system.properties</code> file.</p>
-<h2 id="commonly-used-java-and-operating-system-properties">Commonly used Java and operating system properties</h2>
+<h2 id="commonly-used-properties">Commonly used properties</h2>
 <table>
 <thead>
 <tr>
-<th>Java Runtime properties</th>
+<th>Java Runtime</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -2293,7 +2293,7 @@
 <table>
 <thead>
 <tr>
-<th>File system properties</th>
+<th>File system</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -2315,7 +2315,7 @@
 <table>
 <thead>
 <tr>
-<th>User system properties</th>
+<th>User system</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -2337,7 +2337,7 @@
 <table>
 <thead>
 <tr>
-<th>Operating System properties</th>
+<th>Operating System</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -2358,60 +2358,60 @@
 </table>
 <h2 id="examining-the-system-properties">Examining the system properties</h2>
 <p>Evaluating  <code>(System/getProperties)</code> on an Ubuntu Linux operating system running Java 11 and Spacemacs with CIDER returned the following properties.</p>
-<pre class="language-"><code class="lang-properties"><span class="token attr-name">&quot;sun.desktop&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;gnome&quot;</span>
-<span class="token attr-name">  &quot;awt.toolkit&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;sun.awt.X11.XToolkit&quot;</span>
-<span class="token attr-name">  &quot;java.specification.version&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;11&quot;</span>
-<span class="token attr-name">  &quot;sun.cpu.isalist&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;&quot;</span>
-<span class="token attr-name">  &quot;sun.jnu.encoding&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;UTF-8&quot;</span>
-<span class="token attr-name">  &quot;java.class.path&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;src:resources:/home/practicalli/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar:/home/practicalli/.m2/repository/joda-time/joda-time/2...</span>
-<span class="token attr-name">  &quot;java.vm.vendor&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;Ubuntu&quot;</span>
-<span class="token attr-name">  &quot;sun.arch.data.model&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;64&quot;</span>
-<span class="token attr-name">  &quot;sun.font.fontmanager&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;sun.awt.X11FontManager&quot;</span>
-<span class="token attr-name">  &quot;java.vendor.url&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;https://ubuntu.com/&quot;</span>
-<span class="token attr-name">  &quot;user.timezone&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;Europe/London&quot;</span>
-<span class="token attr-name">  &quot;os.name&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;Linux&quot;</span>
-<span class="token attr-name">  &quot;java.vm.specification.version&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;11&quot;</span>
-<span class="token attr-name">  &quot;sun.java.launcher&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;SUN_STANDARD&quot;</span>
-<span class="token attr-name">  &quot;user.country&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;US&quot;</span>
-<span class="token attr-name">  &quot;sun.boot.library.path&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;/usr/lib/jvm/java-11-openjdk-amd64/lib&quot;</span>
-<span class="token attr-name">  &quot;sun.java.command&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;clojure.main -m nrepl.cmdline --middleware [\&quot;refactor-nrepl.middleware/wrap-refactor\&quot;, \&quot;cider.nrepl/cider-middleware\&quot;]&quot;</span>
-<span class="token attr-name">  &quot;jdk.debug&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;release&quot;</span>
-<span class="token attr-name">  &quot;sun.cpu.endian&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;little&quot;</span>
-<span class="token attr-name">  &quot;user.home&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;/home/practicalli&quot;</span>
-<span class="token attr-name">  &quot;user.language&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;en&quot;</span>
-<span class="token attr-name">  &quot;java.specification.vendor&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;Oracle Corporation&quot;</span>
-<span class="token attr-name">  &quot;clojure.libfile&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;.cpcache/4064833315.libs&quot;</span>
-<span class="token attr-name">  &quot;java.version.date&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;2020-04-14&quot;</span>
-<span class="token attr-name">  &quot;java.home&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;/usr/lib/jvm/java-11-openjdk-amd64&quot;</span>
-<span class="token attr-name">  &quot;file.separator&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;/&quot;</span>
-<span class="token attr-name">  &quot;java.vm.compressedOopsMode&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;Zero based&quot;</span>
-<span class="token attr-name">  &quot;line.separator&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;\n&quot;</span>
-<span class="token attr-name">  &quot;java.specification.name&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;Java Platform API Specification&quot;</span>
-<span class="token attr-name">  &quot;java.vm.specification.vendor&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;Oracle Corporation&quot;</span>
-<span class="token attr-name">  &quot;java.awt.graphicsenv&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;sun.awt.X11GraphicsEnvironment&quot;</span>
-<span class="token attr-name">  &quot;sun.management.compiler&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;HotSpot 64-Bit Tiered Compilers&quot;</span>
-<span class="token attr-name">  &quot;java.runtime.version&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;11.0.7+10-post-Ubuntu-3ubuntu1&quot;</span>
-<span class="token attr-name">  &quot;user.name&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;practicalli&quot;</span>
-<span class="token attr-name">  &quot;path.separator&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;:&quot;</span>
-<span class="token attr-name">  &quot;os.version&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;5.4.0-40-generic&quot;</span>
-<span class="token attr-name">  &quot;java.runtime.name&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;OpenJDK Runtime Environment&quot;</span>
-<span class="token attr-name">  &quot;file.encoding&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;UTF-8&quot;</span>
-<span class="token attr-name">  &quot;java.vm.name&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;OpenJDK 64-Bit Server VM&quot;</span>
-<span class="token attr-name">  &quot;java.vendor.url.bug&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;https://bugs.launchpad.net/ubuntu/+source/openjdk-lts&quot;</span>
-<span class="token attr-name">  &quot;java.io.tmpdir&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;/tmp&quot;</span>
-<span class="token attr-name">  &quot;java.version&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;11.0.7&quot;</span>
-<span class="token attr-name">  &quot;user.dir&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;/home/practicalli/projects/clojure/database-access/banking-on-clojure-webapp&quot;</span>
-<span class="token attr-name">  &quot;os.arch&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;amd64&quot;</span>
-<span class="token attr-name">  &quot;java.vm.specification.name&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;Java Virtual Machine Specification&quot;</span>
-<span class="token attr-name">  &quot;java.awt.printerjob&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;sun.print.PSPrinterJob&quot;</span>
-<span class="token attr-name">  &quot;sun.os.patch.level&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;unknown&quot;</span>
-<span class="token attr-name">  &quot;java.library.path&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib&quot;</span>
-<span class="token attr-name">  &quot;java.vendor&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;Ubuntu&quot;</span>
-<span class="token attr-name">  &quot;java.vm.info&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;mixed mode, sharing&quot;</span>
-<span class="token attr-name">  &quot;java.vm.version&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;11.0.7+10-post-Ubuntu-3ubuntu1&quot;</span>
-<span class="token attr-name">  &quot;sun.io.unicode.encoding&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;UnicodeLittle&quot;</span>
-<span class="token attr-name">  &quot;apple.awt.UIElement&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;true&quot;</span>
-<span class="token attr-name">  &quot;java.class.version&quot;</span> <span class="token punctuation">=</span> <span class="token attr-value">&quot;55.0&quot;</span>
+<pre class="language-"><code class="lang-none">&quot;sun.desktop&quot; = &quot;gnome&quot;
+  &quot;awt.toolkit&quot; = &quot;sun.awt.X11.XToolkit&quot;
+  &quot;java.specification.version&quot; = &quot;11&quot;
+  &quot;sun.cpu.isalist&quot; = &quot;&quot;
+  &quot;sun.jnu.encoding&quot; = &quot;UTF-8&quot;
+  &quot;java.class.path&quot; = &quot;src:resources:/home/practicalli/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar:/home/practicalli/.m2/repository/joda-time/joda-time/2...
+  &quot;java.vm.vendor&quot; = &quot;Ubuntu&quot;
+  &quot;sun.arch.data.model&quot; = &quot;64&quot;
+  &quot;sun.font.fontmanager&quot; = &quot;sun.awt.X11FontManager&quot;
+  &quot;java.vendor.url&quot; = &quot;https://ubuntu.com/&quot;
+  &quot;user.timezone&quot; = &quot;Europe/London&quot;
+  &quot;os.name&quot; = &quot;Linux&quot;
+  &quot;java.vm.specification.version&quot; = &quot;11&quot;
+  &quot;sun.java.launcher&quot; = &quot;SUN_STANDARD&quot;
+  &quot;user.country&quot; = &quot;US&quot;
+  &quot;sun.boot.library.path&quot; = &quot;/usr/lib/jvm/java-11-openjdk-amd64/lib&quot;
+  &quot;sun.java.command&quot; = &quot;clojure.main -m nrepl.cmdline --middleware [\&quot;refactor-nrepl.middleware/wrap-refactor\&quot;, \&quot;cider.nrepl/cider-middleware\&quot;]&quot;
+  &quot;jdk.debug&quot; = &quot;release&quot;
+  &quot;sun.cpu.endian&quot; = &quot;little&quot;
+  &quot;user.home&quot; = &quot;/home/practicalli&quot;
+  &quot;user.language&quot; = &quot;en&quot;
+  &quot;java.specification.vendor&quot; = &quot;Oracle Corporation&quot;
+  &quot;clojure.libfile&quot; = &quot;.cpcache/4064833315.libs&quot;
+  &quot;java.version.date&quot; = &quot;2020-04-14&quot;
+  &quot;java.home&quot; = &quot;/usr/lib/jvm/java-11-openjdk-amd64&quot;
+  &quot;file.separator&quot; = &quot;/&quot;
+  &quot;java.vm.compressedOopsMode&quot; = &quot;Zero based&quot;
+  &quot;line.separator&quot; = &quot;\n&quot;
+  &quot;java.specification.name&quot; = &quot;Java Platform API Specification&quot;
+  &quot;java.vm.specification.vendor&quot; = &quot;Oracle Corporation&quot;
+  &quot;java.awt.graphicsenv&quot; = &quot;sun.awt.X11GraphicsEnvironment&quot;
+  &quot;sun.management.compiler&quot; = &quot;HotSpot 64-Bit Tiered Compilers&quot;
+  &quot;java.runtime.version&quot; = &quot;11.0.7+10-post-Ubuntu-3ubuntu1&quot;
+  &quot;user.name&quot; = &quot;practicalli&quot;
+  &quot;path.separator&quot; = &quot;:&quot;
+  &quot;os.version&quot; = &quot;5.4.0-40-generic&quot;
+  &quot;java.runtime.name&quot; = &quot;OpenJDK Runtime Environment&quot;
+  &quot;file.encoding&quot; = &quot;UTF-8&quot;
+  &quot;java.vm.name&quot; = &quot;OpenJDK 64-Bit Server VM&quot;
+  &quot;java.vendor.url.bug&quot; = &quot;https://bugs.launchpad.net/ubuntu/+source/openjdk-lts&quot;
+  &quot;java.io.tmpdir&quot; = &quot;/tmp&quot;
+  &quot;java.version&quot; = &quot;11.0.7&quot;
+  &quot;user.dir&quot; = &quot;/home/practicalli/projects/clojure/database-access/banking-on-clojure-webapp&quot;
+  &quot;os.arch&quot; = &quot;amd64&quot;
+  &quot;java.vm.specification.name&quot; = &quot;Java Virtual Machine Specification&quot;
+  &quot;java.awt.printerjob&quot; = &quot;sun.print.PSPrinterJob&quot;
+  &quot;sun.os.patch.level&quot; = &quot;unknown&quot;
+  &quot;java.library.path&quot; = &quot;/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib&quot;
+  &quot;java.vendor&quot; = &quot;Ubuntu&quot;
+  &quot;java.vm.info&quot; = &quot;mixed mode, sharing&quot;
+  &quot;java.vm.version&quot; = &quot;11.0.7+10-post-Ubuntu-3ubuntu1&quot;
+  &quot;sun.io.unicode.encoding&quot; = &quot;UnicodeLittle&quot;
+  &quot;apple.awt.UIElement&quot; = &quot;true&quot;
+  &quot;java.class.version&quot; = &quot;55.0&quot;
 </code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
@@ -2456,7 +2456,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java Properties","level":"5.1.1.1","depth":3,"next":{"title":"Simple restart","level":"5.1.2","depth":2,"path":"app-servers/simple-restart.md","ref":"app-servers/simple-restart.md","articles":[]},"previous":{"title":"Configuration","level":"5.1.1","depth":2,"path":"app-servers/basic-configuration.md","ref":"app-servers/basic-configuration.md","articles":[{"title":"Java Properties","level":"5.1.1.1","depth":3,"path":"app-servers/java-system-properties.md","ref":"app-servers/java-system-properties.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"app-servers/java-system-properties.md","mtime":"2022-01-10T23:10:37.791Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-10T23:11:53.320Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java Properties","level":"5.1.1.1","depth":3,"next":{"title":"Simple restart","level":"5.1.2","depth":2,"path":"app-servers/simple-restart.md","ref":"app-servers/simple-restart.md","articles":[]},"previous":{"title":"Configuration","level":"5.1.1","depth":2,"path":"app-servers/basic-configuration.md","ref":"app-servers/basic-configuration.md","articles":[{"title":"Java Properties","level":"5.1.1.1","depth":3,"path":"app-servers/java-system-properties.md","ref":"app-servers/java-system-properties.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"app-servers/java-system-properties.md","mtime":"2022-01-11T00:11:12.061Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-11T00:12:24.884Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

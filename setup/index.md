@@ -57,7 +57,7 @@ When you create a project with Leiningen, the configuration is created in a file
   :dependencies [[org.clojure/clojure "1.8.0"]])
 ```
 
-> ####Hint:: The Clojure library is very small (~3.6Mb) and Leiningen caches it and all other libraries locally in the same folder structure that Maven uses, eg Clojure version 1.8.0 would be cached in ` ~/.m2/repository/org/clojure/clojure/1.8.0/`
+> ####Hint:: The Clojure library is very small (~3.6Mb) and Leiningen caches it and all other libraries locally in the same folder structure that Maven uses, eg Clojure version 1.10.3 would be cached in `~/.m2/repository/org/clojure/clojure/1.10.3/`
 
 
 ## Heroku Postgres

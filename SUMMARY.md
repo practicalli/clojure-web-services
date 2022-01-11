@@ -179,7 +179,7 @@
     * [JSON files](server-side-api/json-files.md)
     * [Testing an API](server-side-api/testing-api.md)
         * [ring-mock library](server-side-api/ring-mock.md)
-        *   [cheshire library](server-side-api/cheshire.md)
+        * [cheshire library](server-side-api/cheshire.md)
     * [End to End Testing](server-side-api/end-to-end-testing/index.md)
         * [Swagger](server-side-api/end-to-end-testing/swagger.md)
         * [Curl](server-side-api/end-to-end-testing/curl.md)

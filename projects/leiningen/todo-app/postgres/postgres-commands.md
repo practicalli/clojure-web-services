@@ -1,9 +1,9 @@
- pg:info
+# pg:info
 
 To see all PostgreSQL databases provisioned by your application and the identifying characteristics of each (db size, status, number of tables, PG version, creation date etc…) use the heroku pg:info command.
 
 ```bash
-[~/srcPLgrado/pegjscalc(master)]$ heroku pg:info
+heroku pg:info
 === HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)
 Plan:        Hobby-dev
 Status:      available
@@ -18,10 +18,10 @@ Rollback:    Unsupported
 
 To continuously monitor the status of your database, pass pg:info through the unix watch command:
 
-[~/srcPLgrado/pegjscalc(master)]$ watch heroku pg:info
+watch heroku pg:info
 -bash: watch: no se encontró la orden
-[~/srcPLgrado/pegjscalc(master)]$ brew install watch
-[~/srcPLgrado/pegjscalc(master)]$ watch heroku pg:info
+brew install watch
+watch heroku pg:info
 ...
 ```
 
@@ -32,7 +32,7 @@ psql is the native PostgreSQL interactive terminal and is used to execute querie
 To establish a psql session with your remote database use heroku pg:psql. You must have PostgreSQL installed on your system to use heroku pg:psql.
 
 ```bash
-[~/srcPLgrado/pegjscalc(master)]$ heroku pg:psql
+heroku pg:psql
 ---> Connecting to HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)
 psql (9.2.6, server 9.3.3)
 WARNING: psql version 9.2, server version 9.3.
@@ -66,7 +66,7 @@ pegjspl0::BROWN=> SELECT * FROM pl0_programs;
 If you have more than one database, specify the database to connect to as the first argument to the command (the database located at DATABASE_URL is used by default).
 
 ```bash
-$ heroku pg:psql HEROKU_POSTGRESQL_GRAY
+heroku pg:psql HEROKU_POSTGRESQL_GRAY
 Connecting to HEROKU_POSTGRESQL_GRAY... done
 ...
 ```
@@ -76,7 +76,7 @@ Connecting to HEROKU_POSTGRESQL_GRAY... done
 To drop and recreate your database use pg:reset:
 
 ```bash
-[~/srcPLgrado/pegjscalc(master)]$ heroku pg:reset DATABASE
+heroku pg:reset DATABASE
 
  !    WARNING: Destructive Action
  !    This command will affect the app: pegjspl0
@@ -87,7 +87,7 @@ Resetting HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)... done
 
 Es necesario a continuación rearrancar el servidor:
 
-[~/srcPLgrado/pegjscalc(master)]$ heroku ps:restart
+heroku ps:restart
 Restarting dynos... done
 ```
 
@@ -97,7 +97,7 @@ Restarting dynos... done
 `pg:pull` can be used to pull remote data from a Heroku Postgres database to a database on your local machine. The command looks like this:
 
 ```bash
-[~/srcPLgrado/pegjscalc(master)]$ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 server starting
 ```
 
