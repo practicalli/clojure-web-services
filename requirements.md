@@ -1,39 +1,28 @@
 ## Requirements
 
-Java 11, Clojure CLI tools and a Clojure aware editor are the minimal requirements for this guide.
+Practicalli provides an [install guide for Clojure](https://practical.li/clojure/clojure-cli/install/) and a [wide selection of Clojure aware editors](https://practical.li/clojure/clojure-editors/)
 
-Code examples can be used with any Clojure build tool (eg. Leiningen, Boot), although this guide focuses on using Clojure CLI tools.
+Recommended development tools for this guide are:
 
-{% tabs cli="Cloure CLI", lein="Leiningnen" %}
+* [Java OpenJDK version 17](https://practical.li/clojure/clojure-cli/install/java.html) (version 11 onward should work)
+* [Clojure CLI](https://practical.li/clojure/clojure-cli/install/clojure-cli.html) and [practicalli/clojure-deps-edn aliases](https://practical.li/clojure/clojure-cli/install/community-tools.html)
+* A [Clojure aware editor](https://practical.li/clojure/clojure-editors/)
 
-{% content "cli" %}
-
-## Clojure CLI approach
-
-Follow the [Clojure tools install guide](http://practical.li/clojure/clojure-cli/install/) from Practicalli Clojure, ideally installing a [Clojure aware editor](https://practical.li/clojure/clojure-editors/) too.
-
-
-{% content "lein" %}
-
-## Leiningen approach
-
-Install [Leiningen](http://leiningen.org/) for the [Leiningen Todo App project](projects/leiningen/todo-app/) and test the Leinigen install by running the command `lein version` in a terminal application.
-
-
-{% endtabs %}
-
+Code examples can be used with any Clojure build tool, although this guide focuses on using Clojure CLI tools. Some examples use [Leiningen](http://leiningen.org/) and will be updated to Clojure CLI soon.
 
 
 ## Additional Development tools
 
-To complete all the projects in this guide, you will also need additional development tools
+To complete all the steps in this guide, especially around deployment taks, additional development tools and services are required.
 
 | Development Tools                                                                                           | Version | Test (command line) |
 |:------------------------------------------------------------------------------------------------------------|:--------|:--------------------|
-| [A Git client](http://git-scm.com/)                                                                         | latest  | `git`               |
+| [A Git client](http://git-scm.com/)                                                                         | latest  | `git --version`     |
 | [CircleCI account](http://circleci.com) for continuous integration                                          |         |                     |
 | [Heroku account](http://heroku.com) and [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)      | latest  | `heroku --version`  |
 | [Heroku Postgres](https://www.heroku.com/postgres) or local [Postres database](https://www.postgresql.org/) | latest  |                     |
+
+[CircleCI](http://circleci.com) is a developer focused service for Continuous Integration, providing obs that package up common workflows such as deploying to Heroku.
 
 [Heroku](http://heroku.com) is used for uncomplicated deploying of web applications in the cloud as well as provisioning services such as Postgres database on demand.  You can skip Heroku if you only wish to run your applications locally or have some other service to deploy them.  Install [Postres database](https://www.postgresql.org/) locally if not using a service such as Heroku.
 
@@ -50,4 +39,4 @@ Practicalli is considering other persistent storage approaches for this guide an
 * [JUXT XTDB](https://xtdb.com/) - an open source document database with bitemporal graph queries
 * [Datomic](https://www.datomic.com/) - a transactional database with a flexible data model, elastic scaling, and rich queries.
 * [Amazon Aurora](https://aws.amazon.com/rds/aurora/) - MySQL and PostgreSQL compatible cloud native relational database
-* [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) with Clojure [Faraday](https://github.com/Taoensso/faraday) library
+* [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) with Clojure [Faraday](https://github.com/Taoensso/faraday) library - for persisting JSON like data structures
