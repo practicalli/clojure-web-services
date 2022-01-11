@@ -8,7 +8,7 @@ Code examples can be used with any Clojure build tool (eg. Leiningen, Boot), alt
 
 {% content "cli" %}
 
-## Clojure CLI and tools.deps approach
+## Clojure CLI approach
 
 Follow the [Clojure tools install guide](http://practical.li/clojure/clojure-cli/install/) from Practicalli Clojure, ideally installing a [Clojure aware editor](https://practical.li/clojure/clojure-editors/) too.
 
