@@ -7,7 +7,7 @@ Code examples can be used with any Clojure build tool (eg. Leiningen, Boot), alt
 
 ## Clojure CLI and tools.deps approach
 
-Follow the [Clojure tools install guide](http://practicalli.github.io/clojure/clojure-tools/install/) from Practicalli Clojure, ideally installing a [Clojure aware editor](https://practicalli.github.io/clojure/clojure-editors/) too.
+Follow the [Clojure tools install guide](http://practical.li/clojure/clojure-cli/install/) from Practicalli Clojure, ideally installing a [Clojure aware editor](https://practical.li/clojure/clojure-editors/) too.
 
 
 ## Recommended Development tools
@@ -15,7 +15,7 @@ Follow the [Clojure tools install guide](http://practicalli.github.io/clojure/cl
 To complete all the projects in this guide, you will also need additional development tools
 
 | Recommended Development Tools                                                                               | Version | Test (command line) |
-| :--                                                                                                         | :--     | :--                 |
+|:------------------------------------------------------------------------------------------------------------|:--------|:--------------------|
 | [A Git client](http://git-scm.com/)                                                                         | latest  | `git`               |
 | [CircleCI account](http://circleci.com) for continuous integration                                          |         |                     |
 | [Heroku account](http://heroku.com) and [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)      | latest  | `heroku --version`  |
@@ -26,14 +26,14 @@ To complete all the projects in this guide, you will also need additional develo
 > #### Hint::Why not docker?
 > Practicalli tends to decomplect architectural decisions which makes deployment from source a trivial process and allows adherence to the [12 Factor design](https://12factor.net/) approach.
 >
-> Docker (and Docker compose, kubernetes, GitPod, etc) could be useful contributions to this guide, so feel free to contribute.  Practicalli will focus on the many other Clojure specific topics to cover.
+> Docker (and Docker compose, kubernetes, GitPod, etc) could be useful contributions to this guide, so feel free to contribute.  Practicalli may cover these aspects if enough interested is shown.
 
 
 ## PostgreSQL Alternatives
 
 Practicalli is considering other persistent storage approaches for this guide and any contributions in this regard is much appreciated
 
-* [Crux](https://opencrux.com/) - an open source document database with bitemporal graph queries
+* [JUXT XTDB](https://xtdb.com/) - an open source document database with bitemporal graph queries
 * [Datomic](https://www.datomic.com/) - a transactional database with a flexible data model, elastic scaling, and rich queries.
 * [Amazon Aurora](https://aws.amazon.com/rds/aurora/) - MySQL and PostgreSQL compatible cloud native relational database
 * [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) with Clojure [Faraday](https://github.com/Taoensso/faraday) library

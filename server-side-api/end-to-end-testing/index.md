@@ -3,7 +3,7 @@
 There are several tools for testing your API.
 
 | Tools                                   | Description                                                        |
-| :--                                     | :--                                                                |
+|:----------------------------------------|:-------------------------------------------------------------------|
 | OpenAPI (Swagger)                       | Provides live documentation of an API and ability to run API calls |
 | curl                                    | Command line tool for talking to the web (client side)             |
 | [Insomnia.rest](https://insomnia.rest/) | HTTP and GraphQL toolbelt for debugging APIs (client side)         |

@@ -1,9 +1,11 @@
 # Deployment via Continuous Integration
+
 Deployment will be via a workflow to the CircleCI configuration that deploys the application to a staging environment on successful completion of running all tests in the project.  Once the staging application is approved, the application build can be promoted to production.
 
 ![Deployment workflow](/images/circleci-workflow-sequential-git-heroku.png)
 
 ## Add Heroku orb to CircleCI configuration
+
 Edit `.circleci/config.yml` and add the [heroku orb](https://circleci.com/orbs/registry/orb/circleci/heroku) and a workflow to Heroku.  The workflow has a dependency on the build job, so that will take place first.
 
 The Heroku workflow will build the application from source code using the `heroku/deploy-via-git`.  Only changes pushed to the `live` branch of the GitHub repository will be used in the Heroku deploy workflow.
@@ -47,12 +49,13 @@ jobs:    # basic units of work in a run
 ```
 
 ## Add depstar to build an uberjar
+
 The depstar tool creates a Java archive (jar) package of the application.  The `deps.edn` configuration in the root of the project already contains an `uberjar` alias for this tool.
 
 Check the project builds the uberjar locally:
 
 ```bash
-clojure -A:uberjar
+clojure -X:uberjar
 ```
 
 This will be the same command used in the build script
@@ -65,13 +68,14 @@ Create a file called `bin/build` script in the root of the project
 
 ```bash
 #!/usr/bin/env bash
-clojure -A:uberjar
+clojure -X:uberjar
 ```
 
 Create an empty `project.clj` file so that Heroku recognized the project as Clojure.
 
 
 ## Define how to run the application
+
 Create a `Procfile` file in the root of the project directory containing the command to run the application.
 
 Use the `$PORT` as an argument to the command.  Heroku automatically asignes a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will recieve requests.
@@ -82,6 +86,7 @@ web: java -jar banking-on-clojure.jar $PORT
 
 
 ## Specifying a Java version
+
 Create a `system.properties` and specify the Java version to use for the application. Java 1.8 is the default version use on Heroku, however, our development environment is Java 11, so add a property to set the Java runtime to version 11.
 
 ```properties
@@ -94,18 +99,15 @@ Open the CircleCI and select project settings > Environment Variables
 
 Add environment variables to define where the Heroku application can be found and a token to provide access.
 
-| Environment Variable  | Value                                       |
-|-----------------------|---------------------------------------------|
-| HEROKU_API_KEY        | name of the application created on Heroku   |
-| HEROKU_APP_NAME       | API key found in Account Settings > API Key |
-
-
+| Environment Variable | Value                                       |
+|----------------------|---------------------------------------------|
+| `HEROKU_API_KEY`     | name of the application created on Heroku   |
+| `HEROKU_APP_NAME`    | API key found in Account Settings > API Key |
 
 
 ## Heroku Pipeline configuration
+
 Login to the Heroku dashboard and create a new pipeline called `banking-on-clojure-webapp`
-
-
 
 In the Heroku dashboard, open the application Settings and add a Config Vars using the name `CLOJURE_CLI_VERSION` with a value of `1.10.1.727`
 
@@ -121,20 +123,19 @@ The Heroku dashboard can be used to promote the application into production, onc
 ![Heroku Pipeline banking-on-clojure](/images/heroku-pipeline-banking-on-clojure.png)
 
 
-
-
 ## Push changes to trigger build
+
 Commit the changed and push them to the GitHub repository.  This triggers a build by CircleCI.  The build downloads the dependencies and runs the unit tests.  If the tests pass, then the Heroku deploy workflow starts.
 
 The two stages can be seen in the dashboard as the pipeline runs.
 
 ![CircleCI dashboard - status monitor service pipeline - build and deploy to Heroku](/images/circle-ci-status-monitor-pipelines-heroku-orb.png)
 
-
 Now visit the deployed Heroku application to see it in action.
 
 
 ## Troubleshooting
+
 If there are issues, then use the Heroku toolbelt to look at the logs.  In a command line terminal, issue the login command which opens a web browser to login to Heroku.  Once logged in, run the heroku logs command to view the latest logs
 
 ```bash
@@ -149,7 +150,6 @@ The logs can also be viewed live, as the application is being deployed by includ
 heroku logs --app banking-on-clojure --tail
 ```
 
-
 The example Heroku logs show that the banking-on-clojure is using the default port number if non is supplied as an argument, rather than Heroku assigned port.  Heroku therefore considers the application as unresponsive and sets it status to crashed, tearing down the container the application is running in.
 
 These logs were generated before adding the `$PORT` to the command in the Procfile.
@@ -158,6 +158,7 @@ These logs were generated before adding the `$PORT` to the command in the Procfi
 
 
 ## No forced pushes
+
 Heroku doesnt like force Git pushes coming via CircleCI.
 
 ![CircleCI Heroku orb no forced push](/images/circle-ci-heroku-orb-no-forced-push.png)
@@ -171,7 +172,7 @@ Changes can now be pushed, ideally using `force-with-lease` to Heroku repository
 ```bash
 git push heroku live:master
 ```
-
+<!-- TODO: check Heroku now uses main for deployment rather than master -->
 > Heroku only builds from a branch called master, so the above command pushes the local `live` branch to the remote `master` branch on Heroku.
 
 

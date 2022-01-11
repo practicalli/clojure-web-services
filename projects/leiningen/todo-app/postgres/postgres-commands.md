@@ -1,4 +1,4 @@
- pg:info
+# pg:info
 
 To see all PostgreSQL databases provisioned by your application and the identifying characteristics of each (db size, status, number of tables, PG version, creation date etc…) use the heroku pg:info command.
 

@@ -13,16 +13,16 @@ When commits in the Clojure project code are pushed to GitHub they are detected 
 Use the depstar tool to create a Java archive (jar) package of the application.  The `deps.edn` configuration in the root of the project already contains an `uberjar` alias for this tool.
 
 ```clojure
-  :uberjar
-  {:extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}
-   :main-opts  ["-m" "hf.depstar.uberjar" "status-monitor-service.jar"
-                "-C" "-m" "practicalli.status-monitor-service"]}
+:uberjar
+{:extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}
+ :main-opts  ["-m" "hf.depstar.uberjar" "status-monitor-service.jar"
+              "-C" "-m" "practicalli.status-monitor-service"]}
 ```
 
 To try this on the command line:
 
 ```bash
-clojure -A:uberjar
+clojure -X:uberjar
 ```
 
 This will be the same command used in the build script
@@ -36,7 +36,7 @@ Create a file called `bin/build` script in the root of the project
 
 ```bash
 #!/usr/bin/env bash
-clojure -A:uberjar
+clojure -X:uberjar
 ```
 
 Create an empty `project.clj` file so that Heroku recognized the project as Clojure.
@@ -63,6 +63,7 @@ java.runtime.version=11
 
 
 ## Heroku configuration
+
 Login to the Heroku dashboard and create a new application.
 
 In the Heroku dashboard, open the application Settings and add a Config Vars using the name `CLOJURE_CLI_VERSION` with a value of `1.10.1.727`
@@ -126,7 +127,7 @@ Add environment variables to define where the Heroku application can be found an
 | Environment Variable | Value                                       |
 |----------------------|---------------------------------------------|
 | `HEROKU_API_KEY`     | name of the application created on Heroku   |
-| `HEROKU_APP_NAME`      | API key found in Account Settings > API Key |
+| `HEROKU_APP_NAME`    | API key found in Account Settings > API Key |
 
 
 ## Push changes to trigger build
