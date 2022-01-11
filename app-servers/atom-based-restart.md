@@ -17,7 +17,7 @@ An atom is a mutable container that holds any type of value.  The value in the a
 
 A reference to the server process will be held in a Clojure atom, a mutable container.  An atom is used as a value for the server reference will be swapped into the atom on server start.  The atom is set to nil when the server stops.  Using an atom allows for this value to change.
 
-Define a Clojure atom with the intial value of `nil`.
+Define a Clojure atom with the initial value of `nil`.
 
 `defonce` is used instead of `def` to prevent the reference to the app-server being lost if the expression is re-evaluated.  A restart of the REPL process is required before evaluation the expression has an effect.
 

@@ -1,6 +1,6 @@
 # Unit Test handler functions
 
-Handler functions can be tested with unit tests as they are just pure functions.  All handlers take a request hash-map and return a response hash-map.  So its easy to give each hanlder a hash-map as an argument and test that we get the expected response hash-map in return.
+Handler functions can be tested with unit tests as they are just pure functions.  All handlers take a request hash-map and return a response hash-map.  So its easy to give each handler a hash-map as an argument and test that we get the expected response hash-map in return.
 
 There is no need to mock the framework until we do integration level testing, where we are testing the full lifecycle of request-response.
 

@@ -25,7 +25,7 @@ From the [Java 8 docs for Integer class](https://docs.oracle.com/javase/8/docs/a
 
 ## Theory: Its Java Objects underneath strings & numbers
 
-Strings and numbers are represented by Java objects underneath, so its convienient to use Java Classes to manipulate these simple data structures on the rare occasion you need a specific type.
+Strings and numbers are represented by Java objects underneath, so its convenient to use Java Classes to manipulate these simple data structures on the rare occasion you need a specific type.
 
 You can see the underlying Java types in Clojure using the `type` or `class` function.  In the following example you can see the Java types for strings and numbers
 

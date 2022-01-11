@@ -1,5 +1,5 @@
 # Add Ring Dependency
-Add the ring library as a depencency of the todo-list project.
+Add the ring library as a dependency of the todo-list project.
 
 > #### Note::Add ring dependency
 > Edit the `project.clj` file and add **[ring "1.8.0"]** to the `:dependencies` section, after the Clojure library dependency.

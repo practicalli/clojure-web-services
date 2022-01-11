@@ -6,7 +6,7 @@ The ring library converts the HTTP request into a clojure map, making it really 
 
 The wrap-params middleware function adds support for url-encoded parameters.
 
-URL-encoded parameters are the primary way browsers pass values to web applications. These paramters are sent when a user submits a form.
+URL-encoded parameters are the primary way browsers pass values to web applications. These parameters are sent when a user submits a form.
 
 When applied to a handler, the parameter middleware adds three new keys to the request map:
 

@@ -21,7 +21,7 @@ A handler is a functions which accept request maps and return response maps.
   [request]
   {:status 200
    :headers {"Content-Type" "text/html; charset=utf-8}
-   :body "<h1>I am a simple handler funciton</h1>"})
+   :body "<h1>I am a simple handler function</h1>"})
 ```
 
 These handler functions can be called by passing a Clojure hash-map.  The result is another Clojure hash-map that contains values for `:status`, `:headers` and `:body`.
@@ -30,7 +30,7 @@ These handler functions can be called by passing a Clojure hash-map.  The result
 (show-something {:uri "/" :request-method :post})
 ;; => {:status 200
 ;;     :headers {"Content-Type" "text/html; charset=utf-8}
-;;     :body "<h1>I am a simple handler funciton</h1>"}
+;;     :body "<h1>I am a simple handler function</h1>"}
 ```
 
 The body may be a function, which must accept the request as a parameter:

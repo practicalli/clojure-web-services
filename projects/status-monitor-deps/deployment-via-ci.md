@@ -46,7 +46,7 @@ Create an empty `project.clj` file so that Heroku recognized the project as Cloj
 
 Create a `Procfile` file in the root of the project directory containing the command to run the application.
 
-Use the `$PORT` as an argument to the command.  Heroku automatically asignes a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will recieve requests.
+Use the `$PORT` as an argument to the command.  Heroku automatically asignes a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will receive requests.
 
 ```bash
 web: java -jar status-monitor-service.jar $PORT

@@ -107,7 +107,7 @@ Example
 
 ;;;; System Configuration
 
-(defn enviroment-prep!
+(defn environment-prep!
   "Parse system configuration with aero-reader and apply the given profile values
   Return: Integrant configuration to be used to start the system"
   [profile]
@@ -120,12 +120,12 @@ Example
 (defn go
   "Prepare configuration and start the system services with Integrant-repl"
   ([] (go :develop))
-  ([profile] (enviroment-prep! profile) (ig-repl/go)))
+  ([profile] (environment-prep! profile) (ig-repl/go)))
 
 
 (defn reset
   "Read updates from the configuration and restart the system services with Integrant-repl"
-  [profile] (enviroment-prep! profile) (ig-repl/reset))
+  [profile] (environment-prep! profile) (ig-repl/reset))
 
 (defn halt
   "Shutdown all services"
@@ -178,7 +178,7 @@ Return the integrant configuration from the configuration file
 System Configuration
 
 ```clojure
-(defn enviroment-prep!
+(defn environment-prep!
   "Parse system configuration with aero-reader and apply the given profile values
   Return: Integrant configuration to be used to start the system"
   [profile]
@@ -193,7 +193,7 @@ Define `go` as a REPL convenience function, optionally taking a keyword represen
 (defn go
   "Prepare configuration and start the system services with Integrant-repl"
   ([] (go :develop))
-  ([profile] (enviroment-prep! profile) (ig-repl/go)))
+  ([profile] (environment-prep! profile) (ig-repl/go)))
 ```
 
 Rather than using a arity based ploymorphic function, use the `&` variable arity syntax and use `or` to use the argument or `:develop` profile

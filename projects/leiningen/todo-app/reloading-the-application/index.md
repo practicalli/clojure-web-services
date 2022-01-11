@@ -20,7 +20,7 @@
 
 
 > ####Note:: Create a `-dev-main` function
-> The `-dev-main` funciton is the same as `-main`, except we use the `wrap-reload` middleware around the `welcome` function.  Each time you change the `welcome` function definition it will be reloaded.
+> The `-dev-main` function is the same as `-main`, except we use the `wrap-reload` middleware around the `welcome` function.  Each time you change the `welcome` function definition it will be reloaded.
 >
 > Using the quote reader macro, **#'** in front of the `welcome` function name tells Clojure to skip evaluation of the function and reference the name of the function instead.  This allows the `wrap-reload` middleware to decide when to evaluate the `welcome` function.
 >

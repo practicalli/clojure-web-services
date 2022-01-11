@@ -48,7 +48,7 @@ Edit the `project.clj` configuration file and add the H2 library to the :dev-dep
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [seancorfield/next.jdbc "1.1.582"]]
 
-  :dev-depencencies [[com.h2database/h2 "1.4.200"]])
+  :dev-dependencies [[com.h2database/h2 "1.4.200"]])
 ```
 
 {% endtabs %}
@@ -75,7 +75,6 @@ VALUES ( ? , ? , ? , ? );
 ```
 
 
-
 <!-- Old style auto-increment -->
 
 <!-- ```sql -->
@@ -84,14 +83,6 @@ VALUES ( ? , ? , ? , ? );
 <!-- insert into test(name) values('world'); -->
 <!-- select * from test; -->
 <!-- ``` -->
-
-
-## References
-* [H2 Database website](http://www.h2database.com/)
-
-
-
-
 
 
 ## Resources
