@@ -122,9 +122,6 @@ Define a data source for the H2 database
 (def db-specification {:dbtype "h2" :dbname "address-book"})
 ```
 
-> #### Hint::Database driver lookup
-> The `:dbtype` (:classname) is used to [find the correct database driver](https://github.com/seancorfield/next-jdbc/blob/develop/src/next/jdbc/connection.clj#L52-L123)
-
 
 Define a data source that is a connection to the database
 

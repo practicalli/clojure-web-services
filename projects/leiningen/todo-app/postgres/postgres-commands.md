@@ -116,13 +116,13 @@ In order to prevent accidental data overwrites and loss, the local database must
 Like pull but in reverse, `pg:push` will push data from a local database into a remote Heroku Postgres database. The command looks like this:
 
 ```bash
-$ heroku pg:push mylocaldb HEROKU_POSTGRESQL_MAGENTA --app sushi
+heroku pg:push mylocaldb HEROKU_POSTGRESQL_MAGENTA --app sushi
 ```
 
 This command will take the local database mylocaldb and push it to the database at DATABASE_URL on the app sushi. In order to prevent accidental data overwrites and loss, the remote database must be empty. You will be prompted to pg:reset an already a remote database that is not empty.
 
 
-# Backups
+## Backups
 
 Heroku Postgres Backups service automates backup of the database pointed to by the DATABASE_URL environment variable in the Heroku app. Ensure the database is promoted
 

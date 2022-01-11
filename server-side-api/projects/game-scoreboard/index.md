@@ -1,6 +1,6 @@
 # Create a new project with compojure-api template
 
-You can quickly create the basics of a server-side webapp with the [compojure-api]() template for Leiningen.
+You can quickly create the basics of a server-side webapp with the [compojure-api](https://github.com/metosin/compojure-api-template) template for Leiningen.
 
 ```bash
 lein new compojure-api game-scoreboard +clojure-test
