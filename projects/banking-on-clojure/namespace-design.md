@@ -24,7 +24,7 @@ The main application namespace is typically used for code that manages the syste
 
 Routing is usually a part of the  main application namespace, especially when there are a modest number of routes and a routing library such as compojure is used.  If routing becomes more extensive, then a separtate routing namespace is warranted.
 
-## Hanlders and custom middleware
+## Handlers and custom middleware
 Handlers define the business logic, data and presentation that turns requests into responses.  Start with a single namespace for handlers and segregate if the complexity grows sufficiently.
 
 Middleware used directly with handlers is required in the handler namespace.

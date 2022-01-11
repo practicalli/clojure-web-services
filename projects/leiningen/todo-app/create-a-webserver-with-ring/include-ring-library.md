@@ -19,6 +19,6 @@ In `ring.adapter.jetty` namespace is bound to the `webserver` alias, providing a
 For example, the `run-jetty` function is called using `webserver/run-jetty` rather than the fully qualified namespace of `ring.adaptor.jetty/run-jetty`
 
 > ####Hint::Using aliases for namespaces
-> Using `:require` we can use the `:as` keyword to specify an alias for a namespace, a short-hand way of refering to a library.  You can specify any valid Clojure name for a namespace alias, however please consider the readability of your code and choose a meaningful alias name.
+> Using `:require` we can use the `:as` keyword to specify an alias for a namespace, a short-hand way of referring to a library.  You can specify any valid Clojure name for a namespace alias, however please consider the readability of your code and choose a meaningful alias name.
 >
 > Later in the workshop we will show other options for including functions from other namespaces.

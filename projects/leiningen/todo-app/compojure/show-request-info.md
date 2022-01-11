@@ -29,7 +29,7 @@ Visit http://localhost:8000/request-info to see the results.
 
 ## Using Compojure's request dump function
 
-Compojure has a request dump function that gives a much nicer output than our initial `request-info` function.  The `dump` funtion also seperates the default response keys with any additional keys provided by the URL.
+Compojure has a request dump function that gives a much nicer output than our initial `request-info` function.  The `dump` function also separates the default response keys with any additional keys provided by the URL.
 
 ## Include `handle-dump` in the namespace
 

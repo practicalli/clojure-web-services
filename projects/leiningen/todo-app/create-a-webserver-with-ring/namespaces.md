@@ -34,7 +34,7 @@
 (string/reverse "RedRum")
 ```
 
-  If a funciton will be used many times in the namespace, you can `:refer` a function so you can call it just by name, as if it had been defined in the current namespace.
+  If a function will be used many times in the namespace, you can `:refer` a function so you can call it just by name, as if it had been defined in the current namespace.
 
 ```clojure
 (ns todo-list.core

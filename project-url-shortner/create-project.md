@@ -2,7 +2,7 @@
 
 To create a web service we can use two commonly used libraries in Clojure, [ring](/introducing-ring/) and [compojure](/compojure/).
 
-Ring provides many low-level functions to manage web requests and responses as well as providing an embeded web server (ie. Jetty).  Most importantly it abstracts away all the complicated details of HTTP communication. So as a developer of the web app you mostly focus on processing a **request map** and returning a **response map**.
+Ring provides many low-level functions to manage web requests and responses as well as providing an embedded web server (ie. Jetty).  Most importantly it abstracts away all the complicated details of HTTP communication. So as a developer of the web app you mostly focus on processing a **request map** and returning a **response map**.
 
 Compojure provides a simple way to define routes for your application, eg what function is called when a browser requests a specific url.
 

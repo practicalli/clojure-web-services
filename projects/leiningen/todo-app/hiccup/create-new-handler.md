@@ -15,7 +15,7 @@
 > ####Hint::Named content sections
 > As content grows, refactor it into `def` expressions to give content sections names. Pages can use names in the handler code that represent the content, simplifying the handler code.
 >
-> As ther project grows, break code into a view namespace with layouts and specific views defined in their own namespace.
+> As the project grows, break code into a view namespace with layouts and specific views defined in their own namespace.
 
 
 <!-- ## The code so far -->

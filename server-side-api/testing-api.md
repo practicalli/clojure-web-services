@@ -23,7 +23,7 @@ Writing tests is just the same as other Clojure applications.
 It is good practice to create helper functions to extract out common code into its onw function.  This saves on duplication, reduces maintenance and should improve the readability of your tests.
 
 
-Here is an example of a helper funciton that reads data in the form of JSON and creates a Clojure map for us to work with.
+Here is an example of a helper function that reads data in the form of JSON and creates a Clojure map for us to work with.
 
 ```clojure
 (defn parse-body [body]
@@ -53,4 +53,4 @@ A library to help you mock parts of your server-side application.  This works ju
 
 
 > ####HINT::Writing files in Clojure with spit
-> [`spit`](https://clojuredocs.org/clojure.core/spit) is a simple funciton that will write files.
+> [`spit`](https://clojuredocs.org/clojure.core/spit) is a simple function that will write files.

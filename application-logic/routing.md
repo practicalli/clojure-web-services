@@ -15,7 +15,7 @@
 * [Serving static content](app-servers/static-content.md)
 
 
-  <!-- * **routing** - running different code depending on the URL path recieved -->
+  <!-- * **routing** - running different code depending on the URL path received -->
   <!-- * **http method switching** - running different code based on the HTTP method (GET, POST, PUT, DELETE) -->
 
 

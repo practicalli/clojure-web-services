@@ -135,7 +135,7 @@ heroku pg:promote HEROKU_POSTGRESQL_VIOLET --app your-app
 
 When provisioning larger databases, they may take several minutes to become available.  Using the `heroku pg:wait` command you can see when the database provisioning is complete.
 
-You may also want to use heroku pg:wait when putting your applicaiton into maintenenace mod [TODO: expand on this]
+You may also want to use heroku pg:wait when putting your application into maintenenace mod [TODO: expand on this]
 
 ```bash
 heroku help pg:wait

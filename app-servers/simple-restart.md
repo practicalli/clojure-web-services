@@ -91,7 +91,7 @@ The `app-server-instance` reference can be used to stop the app-server by callin
     (app-server-start port)))
 
 
-;; REPL driven develpment
+;; REPL driven development
 
 (comment
 
