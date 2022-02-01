@@ -9,20 +9,25 @@ For all other handler functions you can pass a request object or just specific p
 
 
 ## Ring mock library
+
 [ring-mock](https://github.com/ring-clojure/ring-mock) is a small library creating Ring request maps (Clojure hash-maps) to support unit testing. Generated hash-maps are examples of a ring request and used as arguments when calling the handler functions in tests.
+
+
+## Add as dev dependency
 
 As ring-mock is a development only library, it should be added to an alias not included in the packaging of the project for production.
 
-Edit the project `deps.edn` file in the project and add ring-mock to an alias called `:dev`, creating the alias if required.
+Edit the project `deps.edn` file in the project and add ring-mock to an alias called `:env/dev`, creating the alias if required.
 
 
 ```clojure
-  :dev
+  :env/dev
   {:extra-deps {ring/ring-mock {:mvn/version "0.4.0"}}}
 ```
 
-> Add the ring-mock.request namespace to any of the test namespaces mocking of requests will be useful.
+## Add ring-mock to test namesapces
 
+Add the ring-mock.request namespace to any of the test namespaces mocking of requests will be useful.
 
 Edit the `test/practicalli/status-monitor-service.clj` and add ring-mock as a required namespace in files `ns` form.
 
@@ -30,20 +35,19 @@ Edit the `test/practicalli/status-monitor-service.clj` and add ring-mock as a re
 (ns practicalli.status-monitor-service-test
   (:require [clojure.test :refer [deftest is testing]]
             [ring.mock.request :as  mock]
-            [practicalli.status-monitor-service :as SUT]))
+            [practicalli.status-monitor-service :as status-monitor]))
 ```
-
 
 Add unit tests to check the handlers (which are going to be added next - TDD style)
 
 ```clojure
 (deftest test-app
   (testing "main route"
-    (let [response ((app) (request :get "/"))]
+    (let [response ((status-monitor/app) (request :get "/"))]
       (is (= 200 (:status response)))))
 
   (testing "not-found route"
-    (let [response ((app) (request :get "/invalid"))]
+    (let [response ((status-monitor/app) (request :get "/invalid"))]
       (is (= 404 (:status response))))))
 ```
 

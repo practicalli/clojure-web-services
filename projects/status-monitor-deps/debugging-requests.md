@@ -5,22 +5,37 @@ If getting unexpected results, checking the details received in the request is a
 
 
 ## Add ring development library
-Add the `ring/ring-devel` library as a dependency which included functions for developing and debugging ring applications.
+Add the `:env/dev` alias to include the `ring/ring-devel` library as a dependency.  The ring-devel library includes functions for developing and debugging ring applications.
 
 
 ```clojure
  :deps
- {org.clojure/clojure {:mvn/version "1.10.1"}
+ {org.clojure/clojure {:mvn/version "1.10.3"}
+  http-kit/http-kit   {:mvn/version "2.5.3"}
+  ring/ring-core      {:mvn/version "1.9.5"}
+  compojure/compojure {:mvn/version "1.6.2"}}
 
-  http-kit  {:mvn/version "2.4.0-alpha6"}
-  compojure {:mvn/version "1.6.1"}
-
-  ring/ring-core  {:mvn/version "1.8.1"}
-  ring/ring-devel {:mvn/version "1.8.1"}
-  }
+ :aliases
+ {:env/dev
+  {:extra-deps {ring/ring-devel {:mvn/version "1.8.1"}}}}
 ```
 
-> Ideally the `ring/ring-devel` library would be added as an alias in the projects `deps.edn` configuration file as these functions are useful for development time rather than runtime.
+
+
+## Restart REPL after adding dependencies
+
+Dependencies are only added to the classpath when the REPL process starts, unless using the [unofficial dependency hotload approach](https://practical.li/clojure/alternative-tools/clojure-cli/hotload-libraries.html)
+
+Quit the REPL if it is already running
+
+Start the REPL including the alias `:env/dev`.  For example, run a rich terminal UI using rebel readline which also starts an nREPL sever:
+
+```bash
+clojure -M:env/dev:repl/rebel
+```
+
+> `:repl/rebel` is defined in the user level configuration [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn)
+
 
 ## Require the `ring.handler.dump` namespace
 Require the `ring.handler.dump` namespace in the `ns` form of `practicalli.status-monitor-server` namespace and refer the specific `handle-dump` function.

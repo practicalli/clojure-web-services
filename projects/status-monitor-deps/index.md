@@ -1,8 +1,6 @@
 # Status Monitor project with Clojure tools
 A status monitor dashboard to show operational status of a range of services.
 
-> #### INFO::Project actively being developed as part of Practicalli Study Group
-
 A server-side web application using
 - ring and compojure for webapp request management
 - bulma CSS library for styling
@@ -15,7 +13,7 @@ A server-side web application using
 Use `clj-new` to create the project (alias defined in [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdnInstall }}))
 
 ```bash
-clojure -M:project/new app practicalli/status-monitor-service
+clojure -T:project/new :template app :name practicalli/status-monitor-service :output status-monitor-service
 ```
 
 > #### Hint::Use practicalli/clojure-deps-edn to add common tools
