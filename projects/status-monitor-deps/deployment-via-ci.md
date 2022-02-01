@@ -8,21 +8,25 @@ A [workflow](https://circleci.com/docs/2.0/workflows/) is added to the CircleCI 
 
 When commits in the Clojure project code are pushed to GitHub they are detected by CircleCI and the tests run.  If the tests pass then the Heroku deployment stage starts.
 
+> #### Hint::TODO: Convert to tools.build approach
+> The depstar project has been retired (although still works) in favour of the [official tools.build approach](https://clojure.org/guides/tools_build) and [build-clj](https://github.com/seancorfield/build-clj)
+
 ## Add depstar to buld an uberjar
 
 Use the depstar tool to create a Java archive (jar) package of the application.  The `deps.edn` configuration in the root of the project already contains an `uberjar` alias for this tool.
 
 ```clojure
-:uberjar
-{:extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}
- :main-opts  ["-m" "hf.depstar.uberjar" "status-monitor-service.jar"
-              "-C" "-m" "practicalli.status-monitor-service"]}
+:project/uberjar
+{:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.303"}}
+ :exec-fn      hf.depstar/uberjar
+ :exec-args    {:jar "status-monitor-service.jar"
+                :aot true}}
 ```
 
 To try this on the command line:
 
 ```bash
-clojure -X:uberjar
+clojure -X:package/uberjar
 ```
 
 This will be the same command used in the build script
@@ -36,7 +40,7 @@ Create a file called `bin/build` script in the root of the project
 
 ```bash
 #!/usr/bin/env bash
-clojure -X:uberjar
+clojure -X:package/uberjar
 ```
 
 Create an empty `project.clj` file so that Heroku recognized the project as Clojure.
@@ -55,10 +59,10 @@ web: java -jar status-monitor-service.jar $PORT
 
 ## Specifying a Java version
 
-Create a `system.properties` and specify the Java version to use for the application. Java 1.8 is the default version use on Heroku, however, our development environment is Java 11, so add a property to set the Java runtime to version 11.
+Create a `system.properties` and specify the Java version to use for the application. Java 1.8 is the default version use on Heroku, however, our development environment is Java 17, so add a property to set the Java runtime to version 17.
 
 ```properties
-java.runtime.version=11
+java.runtime.version=17
 ```
 
 
@@ -107,15 +111,14 @@ jobs:
       - checkout
       - restore_cache:
           key: status-monitor-service-{{ checksum "deps.edn" }}
-      - run: clojure -R:dev:test:runner -Spath
+      - run: clojure -P
       - save_cache:
           paths:
             - ~/.m2
             - ~/.gitlibs
           key: status-monitor-service-{{ checksum "deps.edn" }}
-      - run: clojure -A:dev:test:runner
+      - run: clojure -X:test/run
 ```
-
 
 
 ## CircleCI Environment Variables

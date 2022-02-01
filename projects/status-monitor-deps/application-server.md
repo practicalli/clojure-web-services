@@ -4,7 +4,6 @@ The status monitor service runs on top of an application server which handles th
 There are several libraries to provide this, ring and http-kit being the most common.
 
 
-
 ## Add dependencies for application server and routing
 Edit the `deps.edn` file for the project.
 
@@ -18,10 +17,6 @@ Add the compojure library for routing of requests
   http-kit            {:mvn/version "2.3.0"}
   compojure           {:mvn/version "1.6.1"}}
 ```
-
-> ####HINT::Restart REPL after adding dependencies
-> If the REPL is already running when adding new dependencies, restart the REPL after adding new dependencies to ensure they are added to the REPL class path.
-> Or use the [unofficial dependency hotload approach](http://practicalli.github.io/clojure/alternative-tools/clojure-tools/hotload-libraries.html)
 
 
 ## Add code to start the application server
@@ -66,7 +61,7 @@ Using the compojure `defroutes` function, define the default route and response 
 The route returns a hash-map that is the form of a response map. http-kit server transforms all response maps into https responses that are sent back to the requesting web browser.
 
 
-## Stop and restart
+## Stop and restart server from REPL
 Add functions to stop and restart the server, so change to the application code can be loaded in without having to stop the Clojure REPL.
 
 Use the value in the app-server-instance atom to determine if the app-server is already running.  If so, then send the instance the `:timeout` key with a value of time to shut itself down.
@@ -82,7 +77,7 @@ Use the value in the app-server-instance atom to determine if the app-server is 
 ```
 
 
-Starting a REPL for this project, the application is started calling `(-main)` and stopped by calling `(stop-app-server)`.  A restart function is simply calling the stop and start functions.
+With a REPL running the project, the server is started calling `(-main)` and stopped by calling `(stop-app-server)`.  A restart function is simply calling the stop and start functions.
 
 ```clojure
 (defn restart-app-server
