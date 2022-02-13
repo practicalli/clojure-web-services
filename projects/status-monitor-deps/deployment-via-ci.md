@@ -11,8 +11,9 @@ When commits in the Clojure project code are pushed to GitHub they are detected 
 > #### Hint::TODO: Convert to tools.build approach
 > The depstar project has been retired (although still works) in favour of the [official tools.build approach](https://clojure.org/guides/tools_build) and [build-clj](https://github.com/seancorfield/build-clj)
 
-## Add depstar to buld an uberjar
 
+## Add depstar to buld an uberjar
+<!-- TODO: update CI approach to use Clojure build.clj -->
 Use the depstar tool to create a Java archive (jar) package of the application.  The `deps.edn` configuration in the root of the project already contains an `uberjar` alias for this tool.
 
 ```clojure
@@ -26,7 +27,7 @@ Use the depstar tool to create a Java archive (jar) package of the application. 
 To try this on the command line:
 
 ```bash
-clojure -X:package/uberjar
+clojure -X:project/uberjar
 ```
 
 This will be the same command used in the build script
@@ -40,7 +41,7 @@ Create a file called `bin/build` script in the root of the project
 
 ```bash
 #!/usr/bin/env bash
-clojure -X:package/uberjar
+clojure -X:project/uberjar
 ```
 
 Create an empty `project.clj` file so that Heroku recognized the project as Clojure.
@@ -81,13 +82,13 @@ Edit the `.circleci/config.yml` file and add the [heroku orb](https://circleci.c
 
 The Heroku workflow will build the application from source code using the `heroku/deploy-via-git`.  Only changes pushed to the `live` branch of the GitHub repository will be used in the Heroku deploy workflow.
 
-> If feature branches are useful to deploy on Heroku, additional Heroku applications can be created and pushed to directly from the local Git repository
+> Feature branches can be deployed on Heroku by creating an additional Heroku application and push the branch to it.  Or use [Heroku pipelines](https://devcenter.heroku.com/articles/pipelines).
 
 ```yaml
 version: 2.1
 
 orbs:
-  heroku: circleci/heroku@0.0.10. # Invoke the Heroku orb
+  heroku: circleci/heroku@1.2.6 # Invoke the Heroku orb
 
 workflows:
   heroku_deploy:
@@ -104,7 +105,7 @@ jobs:
   build:
     working_directory: ~/build
     docker:
-      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.727
+      - image: cimg/clojure:1.10
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
