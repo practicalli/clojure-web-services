@@ -206,7 +206,6 @@
 
 
 ## Hacking on content
-* [Setup](setup/index.md)
 <!-- * [Variable tag names](work-in-progress.md) -->
     <!-- * [Using Postgres from Clojure](using-postgres/index.md) -->
 * [Project: URL Shortner as a Service](project-url-shortner/index.md)
