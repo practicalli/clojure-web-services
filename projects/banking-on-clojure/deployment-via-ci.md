@@ -15,7 +15,7 @@ version: 2.1  # circleci configuration version
 
 orbs:
   kaocha: lambdaisland/kaocha@0.0.1 # Org settings > Security > uncertified orbs
-  heroku: circleci/heroku@1.1.1 # Invoke the Heroku orb
+  heroku: circleci/heroku@1.2.6 # Invoke the Heroku orb
 
 workflows:
   heroku_deploy:
@@ -55,7 +55,7 @@ The depstar tool creates a Java archive (jar) package of the application.  The `
 Check the project builds the uberjar locally:
 
 ```bash
-clojure -X:uberjar
+clojure -X:project/uberjar
 ```
 
 This will be the same command used in the build script
@@ -68,7 +68,7 @@ Create a file called `bin/build` script in the root of the project
 
 ```bash
 #!/usr/bin/env bash
-clojure -X:uberjar
+clojure -X:project/uberjar
 ```
 
 Create an empty `project.clj` file so that Heroku recognized the project as Clojure.
@@ -90,7 +90,7 @@ web: java -jar banking-on-clojure.jar $PORT
 Create a `system.properties` and specify the Java version to use for the application. Java 1.8 is the default version use on Heroku, however, our development environment is Java 11, so add a property to set the Java runtime to version 11.
 
 ```properties
-java.runtime.version=11
+java.runtime.version=17
 ```
 
 
@@ -125,7 +125,15 @@ The Heroku dashboard can be used to promote the application into production, onc
 
 ## Push changes to trigger build
 
-Commit the changed and push them to the GitHub repository.  This triggers a build by CircleCI.  The build downloads the dependencies and runs the unit tests.  If the tests pass, then the Heroku deploy workflow starts.
+Commit the changes and push them to the GitHub repository.
+
+```bash
+git push heroku live:main
+```
+
+> Heroku only deploys code pushed to the main (or master) branch of the remote. Pushing code to another branch of the heroku remote has no effect. Using the `live:local` form will push the local `live` branch to the remote `main` branch on Heroku.
+
+This triggers a build by CircleCI.  The build downloads the dependencies and runs the unit tests.  If the tests pass, then the Heroku deploy workflow starts.
 
 The two stages can be seen in the dashboard as the pipeline runs.
 
@@ -152,7 +160,7 @@ heroku logs --app banking-on-clojure --tail
 
 The example Heroku logs show that the banking-on-clojure is using the default port number if non is supplied as an argument, rather than Heroku assigned port.  Heroku therefore considers the application as unresponsive and sets it status to crashed, tearing down the container the application is running in.
 
-These logs were generated before adding the `$PORT` to the command in the Procfile.
+These logs were generated before adding the `$PORT` to the command in the `Procfile`.
 
 ![Heroku logs - status-monitor-service using incorrect port rather than Heroku assigned port so the application was considered unresponsive and crashed](/images/heroku-logs-status-monitor-process-crashed-wrong-port-number.png)
 
@@ -163,20 +171,15 @@ Heroku doesnt like force Git pushes coming via CircleCI.
 
 ![CircleCI Heroku orb no forced push](/images/circle-ci-heroku-orb-no-forced-push.png)
 
-To get around this, either dont do force pushes to GitHub, or add the Heroku repositor for the project as a remote to local git repository.
+To get around this, either don't do force pushes to GitHub, or add the Heroku repository for the project as a remote to local git repository.
 
 Heroku repository details in heroku dashboard **Settings** under **App Information**
 
 Changes can now be pushed, ideally using `force-with-lease` to Heroku repository.
 
-```bash
-git push heroku live:master
-```
-<!-- TODO: check Heroku now uses main for deployment rather than master -->
-> Heroku only builds from a branch called master, so the above command pushes the local `live` branch to the remote `master` branch on Heroku.
-
 
 ## Stopping the application
+
 An application can be run for free on Heroku with the monthly free credits provided.  However, to make the most out of these free credits then applications not in use should be shut down
 
 Run the following command in the root of the Clojure project.

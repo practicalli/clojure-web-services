@@ -2262,7 +2262,7 @@
 
 <span class="token key atrule">orbs</span><span class="token punctuation">:</span>
   <span class="token key atrule">kaocha</span><span class="token punctuation">:</span> lambdaisland/kaocha@0.0.1 <span class="token comment"># Org settings &gt; Security &gt; uncertified orbs</span>
-  <span class="token key atrule">heroku</span><span class="token punctuation">:</span> circleci/heroku@1.1.1 <span class="token comment"># Invoke the Heroku orb</span>
+  <span class="token key atrule">heroku</span><span class="token punctuation">:</span> circleci/heroku@1.2.6 <span class="token comment"># Invoke the Heroku orb</span>
 
 <span class="token key atrule">workflows</span><span class="token punctuation">:</span>
   <span class="token key atrule">heroku_deploy</span><span class="token punctuation">:</span>
@@ -2297,14 +2297,14 @@
 <h2 id="add-depstar-to-build-an-uberjar">Add depstar to build an uberjar</h2>
 <p>The depstar tool creates a Java archive (jar) package of the application.  The <code>deps.edn</code> configuration in the root of the project already contains an <code>uberjar</code> alias for this tool.</p>
 <p>Check the project builds the uberjar locally:</p>
-<pre class="language-"><code class="lang-bash">clojure -X:uberjar
+<pre class="language-"><code class="lang-bash">clojure -X:project/uberjar
 </code></pre>
 <p>This will be the same command used in the build script</p>
 <h2 id="create-a-custom-build-behaviour">Create a custom build behaviour</h2>
 <p>Heroku build scripts use Leiningen by default.  Configure Heroku to build with Clojure Tools, create a custom build file which will run instead of Leiningen.</p>
 <p>Create a file called <code>bin/build</code> script in the root of the project</p>
 <pre class="language-"><code class="lang-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
-clojure -X:uberjar
+clojure -X:project/uberjar
 </code></pre>
 <p>Create an empty <code>project.clj</code> file so that Heroku recognized the project as Clojure.</p>
 <h2 id="define-how-to-run-the-application">Define how to run the application</h2>
@@ -2314,7 +2314,7 @@ clojure -X:uberjar
 </code></pre>
 <h2 id="specifying-a-java-version">Specifying a Java version</h2>
 <p>Create a <code>system.properties</code> and specify the Java version to use for the application. Java 1.8 is the default version use on Heroku, however, our development environment is Java 11, so add a property to set the Java runtime to version 11.</p>
-<pre class="language-"><code class="lang-properties"><span class="token attr-name">java.runtime.version</span><span class="token punctuation">=</span><span class="token attr-value">11</span>
+<pre class="language-"><code class="lang-properties"><span class="token attr-name">java.runtime.version</span><span class="token punctuation">=</span><span class="token attr-value">17</span>
 </code></pre>
 <h2 id="circleci-environment-variables">CircleCI Environment Variables</h2>
 <p>Open the CircleCI and select project settings &gt; Environment Variables</p>
@@ -2346,7 +2346,13 @@ clojure -X:uberjar
 <p>The Heroku dashboard can be used to promote the application into production, once the staging application is signed off.</p>
 <p><img src="../../images/heroku-pipeline-banking-on-clojure.png" alt="Heroku Pipeline banking-on-clojure"></p>
 <h2 id="push-changes-to-trigger-build">Push changes to trigger build</h2>
-<p>Commit the changed and push them to the GitHub repository.  This triggers a build by CircleCI.  The build downloads the dependencies and runs the unit tests.  If the tests pass, then the Heroku deploy workflow starts.</p>
+<p>Commit the changes and push them to the GitHub repository.</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">git</span> push heroku live:main
+</code></pre>
+<blockquote>
+<p>Heroku only deploys code pushed to the main (or master) branch of the remote. Pushing code to another branch of the heroku remote has no effect. Using the <code>live:local</code> form will push the local <code>live</code> branch to the remote <code>main</code> branch on Heroku.</p>
+</blockquote>
+<p>This triggers a build by CircleCI.  The build downloads the dependencies and runs the unit tests.  If the tests pass, then the Heroku deploy workflow starts.</p>
 <p>The two stages can be seen in the dashboard as the pipeline runs.</p>
 <p><img src="../../images/circle-ci-status-monitor-pipelines-heroku-orb.png" alt="CircleCI dashboard - status monitor service pipeline - build and deploy to Heroku"></p>
 <p>Now visit the deployed Heroku application to see it in action.</p>
@@ -2360,20 +2366,14 @@ heroku logs --app banking-on-clojure
 <pre class="language-"><code class="lang-bash">heroku logs --app banking-on-clojure --tail
 </code></pre>
 <p>The example Heroku logs show that the banking-on-clojure is using the default port number if non is supplied as an argument, rather than Heroku assigned port.  Heroku therefore considers the application as unresponsive and sets it status to crashed, tearing down the container the application is running in.</p>
-<p>These logs were generated before adding the <code>$PORT</code> to the command in the Procfile.</p>
+<p>These logs were generated before adding the <code>$PORT</code> to the command in the <code>Procfile</code>.</p>
 <p><img src="../../images/heroku-logs-status-monitor-process-crashed-wrong-port-number.png" alt="Heroku logs - status-monitor-service using incorrect port rather than Heroku assigned port so the application was considered unresponsive and crashed"></p>
 <h2 id="no-forced-pushes">No forced pushes</h2>
 <p>Heroku doesnt like force Git pushes coming via CircleCI.</p>
 <p><img src="../../images/circle-ci-heroku-orb-no-forced-push.png" alt="CircleCI Heroku orb no forced push"></p>
-<p>To get around this, either dont do force pushes to GitHub, or add the Heroku repositor for the project as a remote to local git repository.</p>
+<p>To get around this, either don&apos;t do force pushes to GitHub, or add the Heroku repository for the project as a remote to local git repository.</p>
 <p>Heroku repository details in heroku dashboard <strong>Settings</strong> under <strong>App Information</strong></p>
 <p>Changes can now be pushed, ideally using <code>force-with-lease</code> to Heroku repository.</p>
-<pre class="language-"><code class="lang-bash"><span class="token function">git</span> push heroku live:master
-</code></pre>
-<!-- TODO: check Heroku now uses main for deployment rather than master -->
-<blockquote>
-<p>Heroku only builds from a branch called master, so the above command pushes the local <code>live</code> branch to the remote <code>master</code> branch on Heroku.</p>
-</blockquote>
 <h2 id="stopping-the-application">Stopping the application</h2>
 <p>An application can be run for free on Heroku with the monthly free credits provided.  However, to make the most out of these free credits then applications not in use should be shut down</p>
 <p>Run the following command in the root of the Clojure project.</p>
@@ -2422,7 +2422,7 @@ heroku logs --app banking-on-clojure
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Deployment via CI to Heroku","level":"2.2.6","depth":2,"next":{"title":"Unit Tests","level":"2.2.7","depth":2,"path":"projects/banking-on-clojure/unit-tests.md","ref":"projects/banking-on-clojure/unit-tests.md","articles":[]},"previous":{"title":"Deployment Pipeline","level":"2.2.5","depth":2,"path":"projects/banking-on-clojure/deployment-pipeline.md","ref":"projects/banking-on-clojure/deployment-pipeline.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/banking-on-clojure/deployment-via-ci.md","mtime":"2022-02-01T18:31:29.871Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-01T18:32:48.288Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Deployment via CI to Heroku","level":"2.2.6","depth":2,"next":{"title":"Unit Tests","level":"2.2.7","depth":2,"path":"projects/banking-on-clojure/unit-tests.md","ref":"projects/banking-on-clojure/unit-tests.md","articles":[]},"previous":{"title":"Deployment Pipeline","level":"2.2.5","depth":2,"path":"projects/banking-on-clojure/deployment-pipeline.md","ref":"projects/banking-on-clojure/deployment-pipeline.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","disqus","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"disqus":{"useIdentifier":false,"shortName":"clojure-webapps-practicalli"},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{"tag":"b"},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-webapps-content/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-webapps-content/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IIssuesUrl":"https://github.com/practicalli/clojure-webapps-content/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.github.io/clojure","P9IFourClojure":"https://practical.github.io/clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practical.li":"https://practicalli.github.io"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"projects/banking-on-clojure/deployment-via-ci.md","mtime":"2022-02-13T01:22:07.102Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-13T01:23:22.073Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
