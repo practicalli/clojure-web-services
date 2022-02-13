@@ -52,13 +52,13 @@ Converting the map back to a JDBC connection string
 
 The `DATABASE_URL` environment variable from the Heroku Postgres add-on follows this naming convention:
 
-```plain
+```none
 postgres://<username>:<password>@<host>/<dbname>
 ```
 
 However the Postgres JDBC driver uses the following convention:
 
-```plain
+```none
 jdbc:postgresql://<host>:<port>/<dbname>?user=<username>&password=<password>
 ```
 

@@ -6,7 +6,7 @@ Using the `web:` directive, we tell Heroku that our application will listen for 
 
 Create a new file called `Procfile` with the following text
 
-```plain
+```none
 web: java $JVM_OPTS -cp target/todo-list.jar clojure.main -m todo-list.core $PORT
 ```
 
@@ -40,6 +40,6 @@ Further reading: https://devcenter.heroku.com/articles/clojure-support
 
 If your main namespace doesn’t have a `:gen-class` then you can use `clojure.main` as your entry point and indicate your app’s main namespace using the -m argument in your Procfile:
 
-```plain
+```none
 web: java $JVM_OPTS -cp target/myproject-standalone.jar clojure.main -m myproject.web $PORT
 ```

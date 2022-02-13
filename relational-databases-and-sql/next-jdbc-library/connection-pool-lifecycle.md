@@ -150,11 +150,11 @@ Start the database server connection pool
 <!-- ``` -->
 
 <!-- but I am getting this -->
-<!-- ``` -->
+<!-- ```none -->
 <!-- Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value 'AEST' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the 'serverTimezone' configuration property) to use a more specifc time zone value if you want to utilize time zone support. -->
 <!-- ``` -->
 <!-- given -->
-<!-- ``` -->
+<!-- ```none -->
 <!-- (def db-spec -->
 <!--   {:port 3306 :host "localhost" :dbtype "mysql" -->
 <!--    :dbname "test" :user "tester" -->
