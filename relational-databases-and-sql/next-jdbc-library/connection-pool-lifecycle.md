@@ -150,11 +150,11 @@ Start the database server connection pool
 <!-- ``` -->
 
 <!-- but I am getting this -->
-<!-- ``` -->
-<!-- Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value 'AEST' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the 'serverTimezone' configuration property) to use a more specifc time zone value if you want to utilize time zone support. -->
+<!-- ```none -->
+<!-- Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value 'AEST' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the 'serverTimezone' configuration property) to use a more specific time zone value if you want to utilize time zone support. -->
 <!-- ``` -->
 <!-- given -->
-<!-- ``` -->
+<!-- ```none -->
 <!-- (def db-spec -->
 <!--   {:port 3306 :host "localhost" :dbtype "mysql" -->
 <!--    :dbname "test" :user "tester" -->
@@ -169,12 +169,12 @@ Start the database server connection pool
 <!-- https://github.com/seancorfield/next-jdbc/issues/138 -->
 <!-- c3p0/HikariCP do not support serverTimezone so there is no way to pass this through -->
 
-<!-- Need to expose next.jdbc's JDBC URL string builder I think, in such a way that you can construct the string in one call and pass :jdbcUrl and any pool parameters into the connection pooling library. Affects ->pool and component. -->
+<!-- Need to expose next.jdbc JDBC URL string builder I think, in such a way that you can construct the string in one call and pass :jdbcUrl and any pool parameters into the connection pooling library. Affects ->pool and component. -->
 <!-- <https://github.com/seancorfield/next-jdbc|seancorfield/next-jdbc>seancorfield/next-jdbc | 6 Aug | Added by GitHub -->
 <!-- 01:54 -->
 <!-- That's not going to be as easy as I'd hoped -- the URL-builder only builds the minimal JDBC URL and then assumes everything else can be passed as properties when the connection is requested -- which is fine for the simple call to the DriverManager but not so good for the pooled datasource... -->
 <!-- seancorfield  02:23 -->
-<!-- @gmercer OK, org.seancorfield/next.jdbc {:mvn/version "1.1.582"} is available on Clojars for you -- it adds next.jdbc.connection/jdbc-url: see its docstring for usage details. -->
+<!--  OK, org.seancorfield/next.jdbc {:mvn/version "1.1.582"} is available on Clojars for you -- it adds next.jdbc.connection/jdbc-url: see its docstring for usage details. -->
 <!-- 02:25 -->
 <!-- Not well-tested but should get you going again. I'd probably recommend omitting :user/:password from the db-spec and instead provide them in the hash map along with :jdbcUrl that you pass into the pooling library (and be careful that one expects :user like JDBC and the other lib expects :username instead -- which is mentioned in the docs). -->
 <!-- gmercer  02:36 -->

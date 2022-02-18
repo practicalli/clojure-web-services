@@ -2,7 +2,7 @@
 
 Refactor the core namespace to contain the code that starts up our server and join up all the route handlers.
 
-Edit the `src/todo_list/core.clj` file and update the namespace defition to include the new `handlers` namespace, including the whole namespace in `core`.
+Edit the `src/todo_list/core.clj` file and update the namespace definition to include the new `handlers` namespace, including the whole namespace in `core`.
 
 ```clojure
 (ns todo-list.core

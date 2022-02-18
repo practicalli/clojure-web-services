@@ -12,7 +12,7 @@ Here are some resources outside of this workshop that can help you learn more ab
 **Clojure**
 * [Clojure.org](http://clojure.org), [features](http://clojure.org/features) and [rational](http://clojure.org/rationale)
 * [Clojure documentation](http://clojure.org/documentation)
-* [Clojure cheetsheet](http://clojure.org/cheatsheet)
+* [Clojure cheat-sheet](http://clojure.org/cheatsheet)
 * [Official Google group](https://groups.google.com/forum/#!forum/clojure)
 * [CrossClj](http://crossclj.info/) - cross-referencing the Clojure ecosystem
 
@@ -33,7 +33,7 @@ Here are some resources outside of this workshop that can help you learn more ab
 * [Brave Clojure](http://www.braveclojure.com/) - a Clojure tutorial using Emacs
 
 **Web Frameworks (templates)**
-* [luminus](http://www.luminusweb.net/) - a leingingen template based on Ring & Compojure, with many options
+* [luminus](http://www.luminusweb.net/) - a leiningen template based on Ring & Compojure, with many options
 * [duct](https://github.com/weavejester/duct) - simple, minimal production-grade framework
 * [pedestal-service](https://github.com/pedestal/pedestal) - an opinionated, extensible & scalable framework
 * [JUXT Edge](https://juxt.pro/edge/) - a tool for creating and updating projects.

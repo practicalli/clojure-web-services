@@ -66,14 +66,14 @@ The `status` function converts an existing response to use a given status code (
 ;;=> {:status 555, :headers {}, :body "Time for Cake!"}
 ```
 
-Ring utilites has functions for setting the header data for responses, `content-type`, `header` or `set-cookie`.
+Ring utilities has functions for setting the header data for responses, `content-type`, `header` or `set-cookie`.
 
 ```clojure
 (ring.util.response/content-type (ring.util.response/response "Hello") "text/plain")
 ;;=>  {:status 200, :headers {"Content-Type" "text/plain"}, :body "Hello"}
 
-(ring.util.response/header (ring.util.response/response "Hello") "X-Tutorial-For" "Baeldung")
-;;=>  {:status 200, :headers {"X-Tutorial-For" "Baeldung"}, :body "Hello"}
+(ring.util.response/header (ring.util.response/response "Hello") "X-Tutorial-For" "Practicalli")
+;;=>  {:status 200, :headers {"X-Tutorial-For" "Practicalli"}, :body "Hello"}
 
 (ring.util.response/set-cookie (ring.util.response/response "Hello") "User" "123")
 ;;=>  {:status 200, :headers {}, :body "Hello", :cookies {"User" {:value "123"}}}

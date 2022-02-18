@@ -4,7 +4,7 @@
 > Pull requests are welcome
 
 
-[Luminus](https://luminusweb.com/) is a clojure micro-framework based on a set of lightweight libraries.  It ams to provide a robust and scalalble platform for your own application development.
+[Luminus](https://luminusweb.com/) is a clojure micro-framework based on a set of lightweight libraries.  It ams to provide a robust and configurable template to generate web services and applications.
 
 Luminus also supports ClojureScript for browser based and Mobile UI's.
 

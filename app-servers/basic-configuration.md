@@ -12,7 +12,7 @@ A value is bound to the local name `port` using either the argument to the `-mai
 
 ```clojure
 (defn -main
-  "Start the application server on a speicific port"
+  "Start the application server on a specific port"
   [& [port]]
   (let [port (Integer. (or port
                            (System/getenv "PORT")
@@ -46,7 +46,7 @@ A common way to get environment variables from the operating system is to use th
 
 `System/getProperty` method will get specific values from Java `.properties` files, usually from a `system.properties` file in the root of the project.  `System/getProperties` will get all properties found in `.properties` files in the project. Settings typically found in the `system.properties` files include version of Java
 
-```plain
+```none
 java.runtime.version=11
 ```
 

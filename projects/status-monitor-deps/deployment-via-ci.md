@@ -1,6 +1,6 @@
 # Deployment Via Continuous Integration
 
-Building on the CircleCI build pipleine created so far, the application will be deployed on Heroku if all the tests pass.
+Building on the CircleCI build pipeline created so far, the application will be deployed on Heroku if all the tests pass.
 
 A [workflow](https://circleci.com/docs/2.0/workflows/) is added to the CircleCI configuration that [deploys the application on Heroku from the source code](https://circleci.com/docs/2.0/deployment-integrations/#heroku).  Heroku packages the application into an uberjar and then runs the application from that uberjar.
 
@@ -12,7 +12,7 @@ When commits in the Clojure project code are pushed to GitHub they are detected 
 > The depstar project has been retired (although still works) in favour of the [official tools.build approach](https://clojure.org/guides/tools_build) and [build-clj](https://github.com/seancorfield/build-clj)
 
 
-## Add depstar to buld an uberjar
+## Add depstar to build an uberjar
 <!-- TODO: update CI approach to use Clojure build.clj -->
 Use the depstar tool to create a Java archive (jar) package of the application.  The `deps.edn` configuration in the root of the project already contains an `uberjar` alias for this tool.
 
@@ -51,7 +51,7 @@ Create an empty `project.clj` file so that Heroku recognized the project as Cloj
 
 Create a `Procfile` file in the root of the project directory containing the command to run the application.
 
-Use the `$PORT` as an argument to the command.  Heroku automatically asignes a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will receive requests.
+Use the `$PORT` as an argument to the command.  Heroku automatically assigns a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will receive requests.
 
 ```bash
 web: java -jar status-monitor-service.jar $PORT
@@ -172,11 +172,11 @@ These logs were generated before adding the `$PORT` to the command in the Procfi
 
 ## No forced pushes
 
-Heroku doesnt like force Git pushes coming via CircleCI.
+Heroku doesn't like force Git pushes coming via CircleCI.
 
 ![CircleCI Heroku orb no forced push](/images/circle-ci-heroku-orb-no-forced-push.png)
 
-To get around this, either dont do force pushes to GitHub, or add the Heroku repositor for the project as a remote to local git repository.
+To get around this, either don't do force pushes to GitHub, or add the Heroku repository for the project as a remote to local git repository.
 
 Heroku repository details in heroku dashboard **Settings** under **App Information**
 

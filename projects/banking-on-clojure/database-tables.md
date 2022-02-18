@@ -176,7 +176,7 @@ Refactor the `show-schema` function to take the data source as an argument as we
   (jdbc/execute! data-source [(str "show columns from " table-name)]))
 ```
 
-The connection is not manged though, so refactor again and add the `with-open` command to ensure the connection is closed once the funcition has finished.
+The connection is not manged though, so refactor again and add the `with-open` command to ensure the connection is closed once the function has finished.
 
 ```clojure
 (defn show-schema
@@ -237,4 +237,4 @@ When designing the database schema it can be useful to iterate quickly around th
 > #### Hint::Common errors
 > `Syntax error in SQL statement` can occur if the SQL statement is not correct, the most common cause is a missing comma.
 >
-> Databases do not always support exactly the same SQL syntax, especially around types and more advanced features.  SQL statements may not work exactly the same for each databse.  Using tools like [DBever](https://dbeaver.io/) will generated SQL expressions for specific databases.
+> Databases do not always support exactly the same SQL syntax, especially around types and more advanced features.  SQL statements may not work exactly the same for each database.  Using tools like [DBever](https://dbeaver.io/) will generated SQL expressions for specific databases.

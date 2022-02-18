@@ -29,7 +29,7 @@ Integrant REPL is used to manage services actively being developed and provides 
 
 ## Aero - defining environment profiles
 
-[Aero](https://github.com/juxt/aero) provides a way to define multiple environment profiles, so the same `resources/config.edn` file can support `develo`, `test`, `stage` and `live` environments.
+[Aero](https://github.com/juxt/aero) provides a way to define multiple environment profiles, so the same `resources/config.edn` file can support `develop`, `test`, `stage` and `live` environments.
 
 A specific profile value is given to `aero/read-config` which parses the Integrant configuration, returning an updated Integrant configuration containing that profiles specific values for each key.
 

@@ -7,7 +7,7 @@ A REPL Driven development workflow provides a fast feedback loop, showing how th
 Relevant theory and background reading is included whilst keeping the practical focus of this guide on build projects and experimenting with the code.
 
 ## Clojure CLI and deps.edn
-Projects are created and configure using Clojure CLI tools, using `deps.edn` for configuration.  Older content uses Leinigen for project configuration.
+Projects are created and configure using Clojure CLI tools, using `deps.edn` for configuration.  Older content uses Leiningen for project configuration.
 
 ## Component / library approach
 The Clojure community has a diverse set of libraries which focus on a specific need. These libraries are assembled to rapidly develop a tailored solution.  Using a library approach means those libraries are relatively simple to replace with alternatives or your own libraries.

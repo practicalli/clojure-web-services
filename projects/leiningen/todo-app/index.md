@@ -1,4 +1,4 @@
-# TODO web application - Leinginen project
+# TODO web application - Leiningen project
 
 > #### TODO::Content update through Winter 2020
 >This is the original project example developed several years ago, so some of the library versions may be out of date.
@@ -16,4 +16,4 @@ The TODO work for the todo project includes:
 * hiccup - HTML content written using Clojure (review)
 * Postgresql - relational database for todo items (add next.jdbc library)
 * CircleCI - continuous testing and integration
-* Herokup - deployment to staging and production (pipeline)
+* Heroku - deployment to staging and production (pipeline)

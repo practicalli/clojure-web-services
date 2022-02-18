@@ -6,7 +6,7 @@ Change the default response text in the `welcome` function
 
 Open the webapp in the browser http://localhost:8000.
 
-Make a change to the code in the `welcome` function, alterning the text of the `:body` in the default request.
+Make a change to the code in the `welcome` function, altering the text of the `:body` in the default request.
 
 ```clojure
 (defn welcome

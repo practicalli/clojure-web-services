@@ -18,4 +18,4 @@ You should see a output after the leiningen command showing you that the server 
 Started server on port 3000
 ```
 
-Your default browswer should also open at http://localhost:3000 with a message saying "Hello World".  If your browser does not open then check for errors in the terminal where you ran the leiningen command.
+Your default browser should also open at http://localhost:3000 with a message saying "Hello World".  If your browser does not open then check for errors in the terminal where you ran the leiningen command.

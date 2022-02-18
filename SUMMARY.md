@@ -107,7 +107,7 @@
         * [Theory: namespaces](projects/leiningen/todo-app/create-a-webserver-with-ring/namespaces.md)
         * [Include Ring Library](projects/leiningen/todo-app/create-a-webserver-with-ring/include-ring-library.md)
         * [Add a Jetty webserver](projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.md)
-        * [Theory: Coersing Types & java.lang](projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.md)
+        * [Theory: Coercing Types & java.lang](projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.md)
         * [Run webserver](projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.md)
         <!-- * [Code so far](projects/leiningen/todo-app/create-a-webserver-with-ring/code-so-far.md) -->
     * [Theory: Introducing Ring](projects/leiningen/todo-app/introducing-ring/index.md)
@@ -206,7 +206,6 @@
 
 
 ## Hacking on content
-* [Setup](setup/index.md)
 <!-- * [Variable tag names](work-in-progress.md) -->
     <!-- * [Using Postgres from Clojure](using-postgres/index.md) -->
 * [Project: URL Shortner as a Service](project-url-shortner/index.md)

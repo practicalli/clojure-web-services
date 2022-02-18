@@ -85,7 +85,7 @@ The `app-server-instance` reference can be used to stop the app-server by callin
   (app-server/run-server #'app {:port port}))
 
 (defn -main
-  "Start the application server on a speicific port"
+  "Start the application server on a specific port"
   [& [port]]
   (let [port (Integer. (or port (System/getenv "PORT") 8888))]
     (app-server-start port)))

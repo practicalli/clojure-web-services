@@ -1,5 +1,5 @@
 # Update Records in the database
-Several options were explored when designing database query functions.  Using next.jdbc.sql functions provides a Clojure data structures approach, where as `next.jdcbc/execute!` uses specific SQL statement code.
+Several options were explored when designing database query functions.  Using next.jdbc.sql functions provides a Clojure data structures approach, where as `next.jdbc/execute!` uses specific SQL statement code.
 
 Take the SQL approach if generating SQL statements directly.
 

@@ -7,7 +7,7 @@ To make our webapp more useful we will add more functionality, which will requir
 * **routing** - running different code depending on the URL path received
 * **http method switching** - running different code based on the HTTP method (GET, POST, PUT, DELETE)
 
-Compojure also has convienience functions that make ring responses easier to generate.
+Compojure also has convenience functions that make ring responses easier to generate.
 
 In this section we will update our project to use Compojure.
 

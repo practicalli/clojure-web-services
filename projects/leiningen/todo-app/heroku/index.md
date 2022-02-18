@@ -7,7 +7,7 @@ Heroku is a developer-focused Platform as a Service, using the tools developers 
 
 ## Identify your laptop to Heroku
 
-To be able to deploy your app to Heroku, you first need extablish a trusted connection between your laptop and Heroku.  Run the following command (from the Heroku Toolbelt)
+To be able to deploy your app to Heroku, you first need establish a trusted connection between your laptop and Heroku.  Run the following command (from the Heroku Toolbelt)
 
 ```bash
 heroku login

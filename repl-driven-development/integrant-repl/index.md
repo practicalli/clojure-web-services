@@ -92,7 +92,7 @@ The `user` namespace is defined separately from the source code, as it is code t
 
 ## Managing the classpath
 
-Run a REPL process including the `user` namespace on the classpath.  Also include a rich termainal UI with `:repl/rebl` alias
+Run a REPL process including the `user` namespace on the classpath.  Also include a rich terminal UI with `:repl/rebl` alias
 
 ```bash
 clojure -M:env/develop:repl/rebl

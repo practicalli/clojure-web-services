@@ -13,18 +13,18 @@ Code examples can be used with any Clojure build tool, although this guide focus
 
 ## Additional Development tools
 
-To complete all the steps in this guide, especially around deployment taks, additional development tools and services are required.
+To complete all the steps in this guide, especially around deployment tasks, additional development tools and services are required.
 
 | Development Tools                                                                                           | Version | Test (command line) |
 |:------------------------------------------------------------------------------------------------------------|:--------|:--------------------|
 | [A Git client](http://git-scm.com/)                                                                         | latest  | `git --version`     |
 | [CircleCI account](http://circleci.com) for continuous integration                                          |         |                     |
 | [Heroku account](http://heroku.com) and [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)      | latest  | `heroku --version`  |
-| [Heroku Postgres](https://www.heroku.com/postgres) or local [Postres database](https://www.postgresql.org/) | latest  |                     |
+| [Heroku Postgres](https://www.heroku.com/postgres) or local [Postgres database](https://www.postgresql.org/) | latest  |                     |
 
 [CircleCI](http://circleci.com) is a developer focused service for Continuous Integration, providing obs that package up common workflows such as deploying to Heroku.
 
-[Heroku](http://heroku.com) is used for uncomplicated deploying of web applications in the cloud as well as provisioning services such as Postgres database on demand.  You can skip Heroku if you only wish to run your applications locally or have some other service to deploy them.  Install [Postres database](https://www.postgresql.org/) locally if not using a service such as Heroku.
+[Heroku](http://heroku.com) is used for uncomplicated deploying of web applications in the cloud as well as provisioning services such as Postgres database on demand.  You can skip Heroku if you only wish to run your applications locally or have some other service to deploy them.  Install [Postgres database](https://www.postgresql.org/) locally if not using a service such as Heroku.
 
 > #### Hint::Why not docker?
 > Practicalli tends toward the simplest and developer oriented architectural decisions, making deployment from source a trivial process with adherence to the [12 Factor design](https://12factor.net/) approach.
@@ -36,7 +36,7 @@ To complete all the steps in this guide, especially around deployment taks, addi
 
 Practicalli is considering other persistent storage approaches for this guide and any contributions in this regard is much appreciated
 
-* [JUXT XTDB](https://xtdb.com/) - an open source document database with bitemporal graph queries
+* [JUXT XTDB](https://xtdb.com/) - an open source document database with bi-temporal graph queries
 * [Datomic](https://www.datomic.com/) - a transactional database with a flexible data model, elastic scaling, and rich queries.
 * [Amazon Aurora](https://aws.amazon.com/rds/aurora/) - MySQL and PostgreSQL compatible cloud native relational database
 * [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) with Clojure [Faraday](https://github.com/Taoensso/faraday) library - for persisting JSON like data structures

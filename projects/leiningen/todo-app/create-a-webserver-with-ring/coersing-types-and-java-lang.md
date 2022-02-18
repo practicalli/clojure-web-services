@@ -1,6 +1,6 @@
 # Theory: Specifying Types & java.lang
 
-Clojure has types that are created dynamically when the code is compiled, with everything being represented by Java objects as its compiled to Java bitecode.
+Clojure has types that are created dynamically when the code is compiled, with everything being represented by Java objects as its compiled to Java byte code.
 
 Clojure simply infers the type of a value, so types do not need to be specified in code.
 
@@ -8,7 +8,7 @@ The built in collections (list, map, vector & set) also support mixed types too.
 
 ## Calling Java code
 
-The Clojure project uses Jetty, a web application server written in Java.  When calling the `run-jetty` function an Integer typemust be passed to the Java object for the port number.
+The Clojure project uses Jetty, a web application server written in Java.  When calling the `run-jetty` function an Integer type must be passed to the Java object for the port number.
 
 When running the Clojure project, the argument supplied for the port number on the command line is treated as a String object.  Therefore we need to explicitly cast the port number from a Java String type to an Java Integer type.
 

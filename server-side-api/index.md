@@ -28,7 +28,7 @@ This template contains Swagger that documents the API's you are creating and rin
 
 ## References
 
-* [Getting started with Compoure API](https://www.anthony-galea.com/blog/post/getting-started-with-compojure-api/)
+* [Getting started with Compojure API](https://www.anthony-galea.com/blog/post/getting-started-with-compojure-api/)
 * [`ring-swagger`](https://github.com/metosin/ring-swagger)
 * [RESTful CRUD APIs Using Compojure-API and Toucan - part1](https://www.demystifyfp.com/clojure/blog/restful-crud-apis-using-compojure-api-and-toucan-part-1/)
 * [RESTful CRUD APIs Using Compojure-API and Toucan - part2](https://www.demystifyfp.com/clojure/blog/restful-crud-apis-using-compojure-api-and-toucan-part-2/)

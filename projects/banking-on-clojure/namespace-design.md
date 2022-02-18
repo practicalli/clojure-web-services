@@ -7,7 +7,7 @@ Basic principles of namespace design include
 
 * focus namespaces on specific logical areas of the application
 * avoid circular references between namespaces (i.e. two namespaces require each other)
-* abstract code into namespaces to avoid the _ubernamespace_  (unless the application fits into ~100 lines of code)
+* abstract code into namespaces to avoid the _uber-namespace_  (unless the application fits into ~100 lines of code)
 * require the minimum number of namespaces
 * use meaningful names for namespace aliases (if naming is hard, think again about splitting a namespace)
 * use comment sections to separate code into logical groupings as its developed, highlighting potential sections of code that could split into its own namespace.
@@ -22,7 +22,7 @@ A general design that forms the basis of many web application projects
 ## Main application namespace
 The main application namespace is typically used for code that manages the system, for example starting the application server, database, etc.  These services are often managed by component lifecycle services (mount, integrant, component).
 
-Routing is usually a part of the  main application namespace, especially when there are a modest number of routes and a routing library such as compojure is used.  If routing becomes more extensive, then a separtate routing namespace is warranted.
+Routing is usually a part of the  main application namespace, especially when there are a modest number of routes and a routing library such as compojure is used.  If routing becomes more extensive, then a separate routing namespace is warranted.
 
 ## Handlers and custom middleware
 Handlers define the business logic, data and presentation that turns requests into responses.  Start with a single namespace for handlers and segregate if the complexity grows sufficiently.

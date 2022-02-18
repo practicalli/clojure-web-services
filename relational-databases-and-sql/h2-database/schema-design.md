@@ -38,6 +38,6 @@ VALUES ( ? , ? , ? , ? );
 * [next.jdbc](https://cljdoc.org/d/seancorfield/next.jdbc/) documentation and [next.jdbc db-types list](https://github.com/seancorfield/next-jdbc/blob/develop/src/next/jdbc/connection.clj#L52-L123)
 * [H2 Database website](http://www.h2database.com/)
 * [SQL Constraints - W3Schools.com](https://www.w3schools.com/sql/sql_constraints.asp)
-* [Purpose of contraint naming - Stack Overflow](https://stackoverflow.com/questions/1397440/what-is-the-purpose-of-constraint-naming)
+* [Purpose of constraint naming - Stack Overflow](https://stackoverflow.com/questions/1397440/what-is-the-purpose-of-constraint-naming)
 * [seancorfield/honeysql](https://github.com/seancorfield/honeysql) - SQL as data structures
 * [stack overflow - auto increment id in h2 database](https://stackoverflow.com/questions/9353167/auto-increment-id-in-h2-database)

@@ -33,7 +33,7 @@ Functions and function specifications using `clojure.spec.alpha`
 
 Functions with specifications are instrumented to check arguments passed during function calls.
 
-Generative testing is carried out via the [kaoch test runner](https://cljdoc.org/d/lambdaisland/kaocha/1.0.641/doc/1-introduction).
+Generative testing is carried out via the [kaocha test runner](https://cljdoc.org/d/lambdaisland/kaocha/1.0.641/doc/1-introduction).
 
 
 ## Development Workflow

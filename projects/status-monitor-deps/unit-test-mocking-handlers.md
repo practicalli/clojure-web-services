@@ -1,4 +1,5 @@
 # Unit Testing and Mocking for handler functions
+
 The main focus of unit tests in a web application are the handler functions, passing requests to those functions and checking the responses.
 
 All handler functions are passed a request object by default when using compojure `defroutes` function for routing.

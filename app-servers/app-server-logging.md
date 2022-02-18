@@ -12,7 +12,7 @@
 ## Simplistic logging
 `println` function sends information to the standard out and so is a very simple mechanism to create logs from specific parts of the application. This should be used sparingly and is no substitute for a specific logging framework.
 
-`printlin` can be useful in the REPL the standard out message as well as the evaluation result (`nil`) are shown.  `printlin` can provide additional feeback for non-terminating processes that run in the REPL, such as an application server.
+`println` can be useful in the REPL the standard out message as well as the evaluation result (`nil`) are shown.  `println` can provide additional feedback for non-terminating processes that run in the REPL, such as an application server.
 
 ![Clojure WebApps application server startup via the REPL](/images/clojure-webapps-app-server-start-via-repl.png)
 

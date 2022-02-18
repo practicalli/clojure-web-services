@@ -20,9 +20,9 @@ Edit the file `src/todo_list/core.clj` file and add the following definition tow
 
 ```clojure
 (def postgres {:subprotocol "postgresql"
-               :subname "//ec2-54-225-134-223.compute-1.amazonaws.com:5432/d9mtan2ol8uhik"
-               :user "trhrcgefmyolkw"
-               :password "hiFKxwqt9xT7MJ97hjri_c98Nm"
+               :subname "//node.domain.com:5432/database-name"
+               :user "username"
+               :password "password"
                :ssl true
                :sslmode true
                :sslfactory "org.postgresql.ssl.NonValidatingFactory"})
@@ -52,13 +52,13 @@ Converting the map back to a JDBC connection string
 
 The `DATABASE_URL` environment variable from the Heroku Postgres add-on follows this naming convention:
 
-```plain
+```none
 postgres://<username>:<password>@<host>/<dbname>
 ```
 
 However the Postgres JDBC driver uses the following convention:
 
-```plain
+```none
 jdbc:postgresql://<host>:<port>/<dbname>?user=<username>&password=<password>
 ```
 

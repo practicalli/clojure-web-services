@@ -1,5 +1,5 @@
 # Delete Records in the database
-Using `next.jdbc.sql` functions provides a Clojure data structures approach, where as `next.jdcbc/execute!` uses specific SQL statement code.
+Using `next.jdbc.sql` functions provides a Clojure data structures approach, where as `next.jdbc/execute!` uses specific SQL statement code.
 
 {% tabs clojure="next.jdbc.sql functions", sql="next.jdbc/execute!"  %}
 
