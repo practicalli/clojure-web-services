@@ -1,5 +1,5 @@
 # Cyclic Load Dependency
-   A cyclic load depenency is where one namespace requires one or more other namespaces that then require the original namespace, forming a loop when resolve all the required namespaces.  When there are cyclic namespace dependencies a warning is returned when evaluating any of the namespaces involved.
+   A cyclic load dependency is where one namespace requires one or more other namespaces that then require the original namespace, forming a loop when resolve all the required namespaces.  When there are cyclic namespace dependencies a warning is returned when evaluating any of the namespaces involved.
 
 A good way to spot cyclic load dependencies it to regularly run a test runner on the code, or even set up a test runner to watch for changes to the file system which then triggers an automatic test run.  For example, `kaocha --watch`.
 
@@ -66,13 +66,13 @@ This set of require expressions lead to a cyclic load dependency error.
 
 `->` indicate that a namespace requires the namespace it is pointing too.
 
-![cyclic load dependency - banking on clojure](/images/clojure-webapps-error-cyclic-load-depencency.png)
+![cyclic load dependency - banking on clojure](/images/clojure-webapps-error-cyclic-load-dependency.png)
 
 
 Removing the require of `practicalli.request-handler` from the `practicalli.specifications-banking` namespace breaks the cyclic dependency.
 
 
-;; Testing the database on CI
+## Testing the database on CI
 
 Need to create the tables before the tests can run.
 - update the schema so the create tables can run without failure, check if table exist and if not create it.

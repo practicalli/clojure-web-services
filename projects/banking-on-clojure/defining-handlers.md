@@ -2,7 +2,7 @@
 Taking an outside-in approach, the main parts of the website user interface will be created using Hiccup and Bulma CSS library.  Mock data will be used then wired up to the database as that is designed.
 
 > #### INFO::Inside-out development
-> If writing a webapp for an existing database design, taking an inside-out approach my be more effective.  In that approach database access functions would be created and then handlers to expose that data.  Then UI elements would be added to the handlers to make a functioning and responsive appliation.`
+> If writing a webapp for an existing database design, taking an inside-out approach my be more effective.  In that approach database access functions would be created and then handlers to expose that data.  Then UI elements would be added to the handlers to make a functioning and responsive application.`
 
 ## Request Handlers
 The following request handlers will be created for the banking-on-clojure application

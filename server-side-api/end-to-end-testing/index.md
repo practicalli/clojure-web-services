@@ -12,7 +12,7 @@ There are several tools for testing your API.
 
 Open API should be built into any API you build as it provides living documentation of your API as you develop, as well as a way for developers to test queries against your API.
 
-curl is the classic command line tooks for testing anything on the web.  Its an excellent tool for one off tests or for writing a batch of tests in a script.
+curl is the classic command line tool for testing anything on the web.  Its an excellent tool for one off tests or for writing a batch of tests in a script.
 
 Insomnia is a great tool to help you debug your API and generate code for API calls in over 30 different programming languages.
 

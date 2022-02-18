@@ -1,5 +1,5 @@
 # Crux - bi-temporal schema-less document database
-[Crux](https://opencrux.com/) is a general purpose database with graph-oriented bitemporal indexes. Datalog, SQL & EQL queries are supported along with Java, HTTP & Clojure APIs.  The Datalog query interface that can be used to express complex joins and recursive graph traversals.
+[Crux](https://opencrux.com/) is a general purpose database with graph-oriented bi-temporal indexes. Datalog, SQL & EQL queries are supported along with Java, HTTP & Clojure APIs.  The Datalog query interface that can be used to express complex joins and recursive graph traversals.
 
 ## Getting Started
 Follow the [Crux Earth Assignment Tutorial](https://juxt.pro/blog/crux-tutorial-setup), in either the self-contained [Next-Journal environment](https://nextjournal.com/crux-tutorial/) or as your own Clojure project.
@@ -22,7 +22,7 @@ lein new app practicalli/crux-demo
 
 {% endtabs %}
 
-[Install Crux](https://opencrux.com/reference/installation.html) as a library in a Clojure project or use the pre-built dockker image.
+[Install Crux](https://opencrux.com/reference/installation.html) as a library in a Clojure project or use the pre-built docker image.
 
 > Note: to have more than one set of tabs in a page, simply create unique id's for the tabs, e.g. practicalli2
 

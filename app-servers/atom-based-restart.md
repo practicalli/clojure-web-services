@@ -156,7 +156,7 @@ During REPL driven development, call `app-server-restart` to stop and start the 
   (-main))
 
 (defn -main
-  "Start the application server on a speicific port"
+  "Start the application server on a specific port"
   [& [port]]
   (let [port (Integer. (or port (System/getenv "PORT") 8888))]
     (app-server-start port)))

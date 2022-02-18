@@ -9,8 +9,8 @@ A "database spec" is a Clojure map that specifies how to access the data source.
 ```clojure
 (def db-spec
   {:dbtype "mysql"
-   :dbname "mydb"
-   :user "myaccount"
+   :dbname "db-name"
+   :user "user-account"
    :password "secret"})
 ```
 

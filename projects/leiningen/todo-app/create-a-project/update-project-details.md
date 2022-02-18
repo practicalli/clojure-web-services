@@ -24,5 +24,7 @@ Adding project details to the `project.clj` file helps every developer that work
 ```
 
 ## Licence change
+
 All code by Practicalli is under the Creative Commons Attribution Share-alike.
+
 As well as changing the `project.clj` file `:licence` declaration, the `LICENCE` file created by the Leiningen template has been deleted as it refers to another licence.

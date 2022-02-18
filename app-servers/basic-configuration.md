@@ -12,7 +12,7 @@ A value is bound to the local name `port` using either the argument to the `-mai
 
 ```clojure
 (defn -main
-  "Start the application server on a speicific port"
+  "Start the application server on a specific port"
   [& [port]]
   (let [port (Integer. (or port
                            (System/getenv "PORT")

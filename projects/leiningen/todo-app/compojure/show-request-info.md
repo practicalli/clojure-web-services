@@ -27,7 +27,7 @@ Visit http://localhost:8000/request-info to see the results.
 ![Output of the request](/images/clojure-webdev-request-info-pr-str-output.png)
 
 
-## Using Compojure's request dump function
+## Using Compojure request dump function
 
 Compojure has a request dump function that gives a much nicer output than our initial `request-info` function.  The `dump` function also separates the default response keys with any additional keys provided by the URL.
 

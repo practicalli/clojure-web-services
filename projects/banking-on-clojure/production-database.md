@@ -17,24 +17,24 @@ Two Heroku apps have already been created for the banking on Clojure project pip
 
 Select the staging app from the pipeline dashboard.
 
-![Clojure WebApps - Deployment - Heroku Pipline for Banking on Clojure - details](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-details.png)
+![Clojure WebApps - Deployment - Heroku Pipeline for Banking on Clojure - details](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-details.png)
 
 In the Overview section, click **Configure Add-ons**
 
-![Clojure WebApps - Deployment - Heroku Pipline for Banking on Clojure - staging app overview](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-overview.png)
+![Clojure WebApps - Deployment - Heroku Pipeline for Banking on Clojure - staging app overview](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-overview.png)
 
 Start typing Postgres in the Add-ons text box to see the matching add-ons available.  Select Heroku Postgres.
 
 
-![Clojure WebApps - Deployment - Heroku Pipline for Banking on Clojure - staging app addon Heroku Postgres](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-addon-heroku-postgres.png)
+![Clojure WebApps - Deployment - Heroku Pipeline for Banking on Clojure - staging app addon Heroku Postgres](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-addon-heroku-postgres.png)
 
 Select the Hobby plan in the pop-up window.  The Hobby plan is free and limited to 10,000 rows.  The plan can be upgraded ones the app starts making money (or funding is raised).
 
-![Clojure WebApps - Deployment - Heroku Pipline for Banking on Clojure - staging app addon Heroku Postgres plan](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-addon-heroku-postgres-plan.png)
+![Clojure WebApps - Deployment - Heroku Pipeline for Banking on Clojure - staging app addon Heroku Postgres plan](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-addon-heroku-postgres-plan.png)
 
 The Postgres database is immediately provisioned and available for use.
 
-![Clojure WebApps - Deployment - Heroku Pipline for Banking on Clojure - staging app addon Heroku Postgres provisioned](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-addon-heroku-postgres-provisioned.png)
+![Clojure WebApps - Deployment - Heroku Pipeline for Banking on Clojure - staging app addon Heroku Postgres provisioned](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-addon-heroku-postgres-provisioned.png)
 
 
 ## Database Configuration on Heroku
@@ -42,7 +42,7 @@ Provisioning an Heroku postgres database adds a `DATABASE_URL` Config Var (Herok
 
 In the Heroku dashboard, view the **Settings** and  select **Show Config Vars**
 
-![Clojure WebApps - Deployment - Heroku Pipline for Banking on Clojure - staging app addon Heroku Postgres Config Vars](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-addon-heroku-postgres-config-vars.png)
+![Clojure WebApps - Deployment - Heroku Pipeline for Banking on Clojure - staging app addon Heroku Postgres Config Vars](/images/clojure-webapps-deployment-heroku-banking-on-clojure-pipeline-staging-app-addon-heroku-postgres-config-vars.png)
 
 Click on the pencil icon to see the full connection string, which takes the following form:
 
@@ -84,7 +84,7 @@ This jdbc connection string is generated from the `DATABASE_URL` config var that
 
 
 ## Adding Postgresql driver to Clojure project
-Add the [latest postgresql jdbc driver](https://jdbc.postgresql.org/) to the `deps.edn` file in the bankking on clojure project
+Add the [latest postgresql jdbc driver](https://jdbc.postgresql.org/) to the `deps.edn` file in the banking on clojure project
 
 ```clojure
  :deps
@@ -138,9 +138,9 @@ The PostgreSQL syntax for creating tables is:
 
 ```sql
   CREATE TABLE [IF NOT EXISTS] table_name (
-  column1 datatype(length) column_contraint,
-  column2 datatype(length) column_contraint,
-  column3 datatype(length) column_contraint,
+  column1 datatype(length) column_constraint,
+  column2 datatype(length) column_constraint,
+  column3 datatype(length) column_constraint,
   table_constraints);
 ```
 

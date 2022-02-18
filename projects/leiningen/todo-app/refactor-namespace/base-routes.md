@@ -1,7 +1,7 @@
 # Base routes
 
 
-> ####Note:: Create a new file called `src/todo_list/handlers/base-routess.clj` and move all the handler code into this file from `src/todo_list/core`.  Make sure you also move the `hiccup` libraries into the new `handlers` namespace.
+> ####Note:: Create a new file called `src/todo_list/handlers/base-routes.clj` and move all the handler code into this file from `src/todo_list/core`.  Make sure you also move the `hiccup` libraries into the new `handlers` namespace.
 
 
 
@@ -40,7 +40,7 @@
         [:p "I am an awesome Clojure developer, well getting there... trying some Hiccup now"]))
 
 (defn hello
-  "A simple personalised greeting showing the use of variable parth elements"
+  "A simple personalised greeting showing the use of variable path elements"
   [request]
   (let [name (get-in request [:route-params :name])]
     {:status 200
@@ -71,5 +71,5 @@
          [:body
            [:div [:h1 {:class "info"} "This is Hiccup"]]
            [:div [:p "Take a look at the HTML generated in this page, compared to the about page"]]
-           [:div [:p "Style-wise there is no difference between the pages as we havent added anything in the stylesheet, however the hiccup page generates a more complete page in terms of HTML"]]]))
+           [:div [:p "Style-wise there is no difference between the pages as we haven't added anything in the stylesheet, however the hiccup page generates a more complete page in terms of HTML"]]]))
 ```

@@ -25,7 +25,7 @@ Ring is the defacto library for server-side web applications.  Even if not using
 
 ## Compojure
   [Compojure](https://github.com/weavejester/compojure) is a library that works with Ring to manage
-  Compojure also has convienience functions that make ring responses easier to generate.
+  Compojure also has convenience functions that make ring responses easier to generate.
 
   In this section we will update our project to use Compojure.
 

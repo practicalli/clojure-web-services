@@ -9,7 +9,7 @@
          [:body
            [:div [:h1 {:class "info"} "This is Hiccup"]]
            [:div [:p "Take a look at the HTML generated in this page, compared to the about page"]]
-           [:div [:p "Style-wise there is no difference between the pages as we havent added anything in the stylesheet, however the hiccup page generates a more complete page in terms of HTML"]]]))
+           [:div [:p "Style-wise there is no difference between the pages as we haven't added anything in the stylesheet, however the hiccup page generates a more complete page in terms of HTML"]]]))
 ```
 
 > ####Hint::Named content sections

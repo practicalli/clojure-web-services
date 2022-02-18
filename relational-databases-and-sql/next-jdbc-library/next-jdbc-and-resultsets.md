@@ -1,6 +1,6 @@
-# next.jdbc and resultsets
+# next.jdbc and result sets
 
-We are using the db-query-with-resultset  to apply a result-set-fn on the result-set lazily (in the db sense) but the fetch-size doesnt seem to be respected. If I do a (count result-set) it returns the size of the all the rows expected from the query instead of the fetch size, this is how our function looks like. clojure.java.jdbc version is "0.3.5"
+We are using the db-query-with-resultset  to apply a result-set-fn on the result-set lazily (in the db sense) but the fetch-size doesn't seem to be respected. If I do a (count result-set) it returns the size of the all the rows expected from the query instead of the fetch size, this is how our function looks like. clojure.java.jdbc version is "0.3.5"
 ```clojure
 (defn do-lazy-read [db-spec sql-params size result-set-fn]
   (jdbc/db-query-with-resultset

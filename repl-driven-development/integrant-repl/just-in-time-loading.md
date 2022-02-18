@@ -1,4 +1,4 @@
-# Just In Time Loading of depenencies
+# Just In Time Loading of dependencies
 
 In the [LambdaIsland article - Integrant in practice](https://lambdaisland.com/blog/2019-12-11-advent-of-parens-11-integrant-in-practice), a technique is used to load only the namespaces required to make Integrant REPL and Aero work.
 

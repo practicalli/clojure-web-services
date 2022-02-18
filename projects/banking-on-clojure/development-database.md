@@ -14,7 +14,7 @@ As the H2 database is only used for development create a `:dev` alias include an
  {org.clojure/clojure        {:mvn/version "1.10.1"}
   org.seancorfield/next.jdbc {:mvn/version "1.1.569"}}}
 
-{:alases
+{:aliases
   {:dev
    {:extra-deps {com.h2database/h2 {:mvn/version "1.4.200"}}}}}
 ```
@@ -37,7 +37,7 @@ Require the next.jdbc namespace using the `jdbc` alias.
 
 H2 in-memory database is used as a self-contained database, providing a simple way to start evaluating the schema and queries as they are designed.
 
-Use next.jdbc library to define a database specification, represented as a map.  For the H2 database only the database type and database name are required. No rolesor credentials are used to access the database as it is only running locally.
+Use next.jdbc library to define a database specification, represented as a map.  For the H2 database only the database type and database name are required. No roles or credentials are used to access the database as it is only running locally.
 
 Use the database specification to create a connection
 

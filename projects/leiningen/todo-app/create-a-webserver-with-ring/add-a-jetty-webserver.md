@@ -35,6 +35,6 @@ Using a `-` at the start of the `-main` function is a naming convention, helping
 
 The `webserver/run-jetty` function takes two arguments.  In our example, the first argument is an anonymous function that returns a map (the response to the browser request);  the second argument is a port number to run the jetty server on expressed as a Java Integer object.
 
-The `Integer.` function is a call to `java.lang.Integer`.  The `.` is a special form that tells Clojure to treat this name as a call to Java.  See [coersing types and java.lang](coersing-types-and-java-lang.html)
+The `Integer.` function is a call to `java.lang.Integer`.  The `.` is a special form that tells Clojure to treat this name as a call to Java.  See [coercing types and java.lang](coersing-types-and-java-lang.html)
 
 The `:join? false` setting enables the REPL prompt to run after the web server starts.  By default the join setting is true and the running server would block access to the REPL prompt.

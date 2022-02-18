@@ -64,7 +64,7 @@ ring just uses function composition for middleware you can simply wrap your own 
 
 ```clojure
 (def app
-  (my-additional-mieddleware
+  (my-additional-middleware
     (wrap-defaults app-routes site-defaults)
   arguments to my additional middleware))
 ```

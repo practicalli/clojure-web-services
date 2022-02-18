@@ -48,8 +48,9 @@ GREEN: Load
 
 ## Check: Connection Count
 
-Each Postgres connection requires memory. And database plans have a limit on the number of connections they can accept. If you are using too many connections you may want to consider using a connection pooler such as PgBouncer or migrating to a larger plan with more RAM.
-Checks: Long Running Queries, Idle in Transaction
+Each Postgres connection requires memory. And database plans have a limit on the number of connections they can accept. If you are using too many connections you may want to consider using a connection pool such as PgBouncer or migrating to a larger plan with more RAM.
+
+## Long Running Queries, Idle in Transaction
 
 Long-running queries and transactions can cause problems with bloat that prevents auto vacuuming and causes followers to lag behind. They also create locks on your data which can prevent other transactions from running. You may want to consider killing the long running query with pg:kill.
 
@@ -75,7 +76,7 @@ Under normal operation an auto vacuum process goes through and asynchronously cl
 
 High bloat can slow down queries, waste space, and even increase load as the database spends more time looking through dead rows.
 
-You can manually vacuum a table with the VACUUM (VERBOSE, ANALYZE); command in psql. If this occurs frequently you may want to make autovacuum more aggressive.
+You can manually vacuum a table with the VACUUM (VERBOSE, ANALYZE); command in psql. If this occurs frequently you may want to make auto-vacuum more aggressive.
 
 
 ## Check: Hit Rate

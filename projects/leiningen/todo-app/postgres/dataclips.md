@@ -10,6 +10,5 @@ You can give people the ability to create their own query based on yours and sha
 
 
 ```sql
-SELECT * FROM pg_catalog.pg_tables WHERE schemaname != 'pg_catalog' AND schemaname != 'information_schema'
+SELECT * FROM pg_catalog.pg_tables WHERE schema-name != 'pg_catalog' AND schema-name != 'information_schema'
 ```
-

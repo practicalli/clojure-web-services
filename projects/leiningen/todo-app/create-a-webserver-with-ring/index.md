@@ -15,7 +15,7 @@ In the section you will discover how to:
 
 ## Related Theory
 
-We will cover some related theory on [Coersing types](coersing-types-and-java-lang.md) (also known as casting types) to help us deal with Java interoperability.
+We will cover some related theory on [Coercing types](coersing-types-and-java-lang.md) (also known as casting types) to help us deal with Java interoperability.
 
 We will also cover how to manage the scope of your Clojure code with [Namespaces](namespaces.html).
 

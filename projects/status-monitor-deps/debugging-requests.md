@@ -80,7 +80,7 @@ The request map details are also printed to the REPL buffer
   "accept-language" "en-US,en;q=0.5",
   "connection" "keep-alive",
   "cookie"
-  "_ga=GA1.1.1141619352.1582159249; ring-session=0b3dc210-278e-4011-bc03-d8c2292b2c17; JSESSIONID=5RNNitzOTyNL6KRnC6umjfPcQCmFmZVviUfCLybB; _gid=GA1.1.671770139.1594216837",
+  "_ga=GA1.1.1141619352.1582159249; ring-session=0b3dc210-278e-4011-bc03-d8c2292b2c17; JSESSIONID=5RNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxB; _gid=GA1.1.111111111.3333333333",
   "host" "localhost:8080",
   "upgrade-insecure-requests" "1",
   "user-agent"

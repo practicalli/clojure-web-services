@@ -17,4 +17,4 @@ heroku config
 
 
 ## Using PostgreSQL client applications
-The Heroku Postres database is available via an secure connection from anywhere on the Internet, so you can use these details with your favourite postgres client.  The postgres client must connect over SSL, or the connection will be rejected by Heroku postgres.
+The Heroku Postgres database is available via an secure connection from anywhere on the Internet, so you can use these details with your favourite postgres client.  The postgres client must connect over SSL, or the connection will be rejected by Heroku postgres.

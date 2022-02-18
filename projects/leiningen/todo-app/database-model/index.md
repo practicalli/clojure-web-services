@@ -15,7 +15,7 @@ Our tasks are quite simple and so its easy to represent them as a single table
 * description of task
 * type of task
 
-Each task will have a unqiue ID, automatically generated when a new record is created.
+Each task will have a unique ID, automatically generated when a new record is created.
 
 The name, description and type of task are all strings.
 

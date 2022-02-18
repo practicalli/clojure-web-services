@@ -2,7 +2,7 @@
 
 Using next.jdbc to connect to a database and run queries only a few steps
 
-* add `seancorfield/next.jdbc` as a project dependcy
+* add `seancorfield/next.jdbc` as a project dependency
 * require the `seancorfield/next.jdbc` in the relevant project namespace definitions
 * define a database specification (hash-map of database details or JDBC string)
 * create a connection  (optionally using a connection pool)

@@ -78,7 +78,7 @@ Create an empty `project.clj` file so that Heroku recognized the project as Cloj
 
 Create a `Procfile` file in the root of the project directory containing the command to run the application.
 
-Use the `$PORT` as an argument to the command.  Heroku automatically asignes a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will receive requests.
+Use the `$PORT` as an argument to the command.  Heroku automatically assigns a port number for an application to listen upon when creating a contain in which the application will run.  This port number is set using the `PORT` environment variable and is available to the application on startup.  Using the PORT environment variable ensures the Clojure application will receive requests.
 
 ```bash
 web: java -jar banking-on-clojure.jar $PORT
@@ -167,7 +167,7 @@ These logs were generated before adding the `$PORT` to the command in the `Procf
 
 ## No forced pushes
 
-Heroku doesnt like force Git pushes coming via CircleCI.
+Heroku doesn't like force Git pushes coming via CircleCI.
 
 ![CircleCI Heroku orb no forced push](/images/circle-ci-heroku-orb-no-forced-push.png)
 

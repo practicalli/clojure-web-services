@@ -58,7 +58,7 @@ Tag literals include
 
 ## Configuration file - config.edn
 
-Renamed top-level keys to represent namespace each key is initiated in and use autoresolve names for the ig/init-key defmethod expressions
+Renamed top-level keys to represent namespace each key is initiated in and use auto-resolve names for the ig/init-key defmethod expressions
 
 ## Start / Stop service
 Use aero to prepare the configuration and `start` & `stop` helper functions to easily manage the application from the REPL
@@ -112,7 +112,7 @@ Example
   Return: Integrant configuration to be used to start the system"
   [profile]
   (aero/read-config (io/resource "config.edn") {:profile profile})
-  #_(ig-repl/set-prep! (statsbomb.entitlements.service/aero-prep :develop)))
+  #_(ig-repl/set-prep! (practicalli.entitlements.service/aero-prep :develop)))
 
 
 ;;;; REPL convenience functions
@@ -183,7 +183,7 @@ System Configuration
   Return: Integrant configuration to be used to start the system"
   [profile]
   (aero/read-config (io/resource "config.edn") {:profile profile})
-  #_(ig-repl/set-prep! (statsbomb.entitlements.service/aero-prep :develop)))
+  #_(ig-repl/set-prep! (practicalli.entitlements.service/aero-prep :develop)))
 
 ```
 
@@ -196,7 +196,7 @@ Define `go` as a REPL convenience function, optionally taking a keyword represen
   ([profile] (environment-prep! profile) (ig-repl/go)))
 ```
 
-Rather than using a arity based ploymorphic function, use the `&` variable arity syntax and use `or` to use the argument or `:develop` profile
+Rather than using a arity based polymorphic function, use the `&` variable arity syntax and use `or` to use the argument or `:develop` profile
 
 ```clojure
 (defn go-redux

@@ -41,5 +41,5 @@ Further reading: https://devcenter.heroku.com/articles/clojure-support
 If your main namespace doesn’t have a `:gen-class` then you can use `clojure.main` as your entry point and indicate your app’s main namespace using the -m argument in your Procfile:
 
 ```none
-web: java $JVM_OPTS -cp target/myproject-standalone.jar clojure.main -m myproject.web $PORT
+web: java $JVM_OPTS -cp target/project-standalone.jar clojure.main -m myproject.web $PORT
 ```

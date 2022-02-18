@@ -85,8 +85,6 @@ heroku pg:reset DATABASE
 > pegjspl0
 Resetting HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)... done
 
-Es necesario a continuación rearrancar el servidor:
-
 heroku ps:restart
 Restarting dynos... done
 ```
