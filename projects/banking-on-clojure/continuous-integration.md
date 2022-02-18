@@ -8,10 +8,10 @@ The application infrastructure has been established and now the main body of the
 
 [LambdaIsland kaocha test runner](https://github.com/lambdaisland/kaocha) is used as the unit test runner as it will also run generative tests where functions have specifications defined.
 
-Add a `:test/kaocha` alias to the `deps.edn` file in the root of the project
+Add a `:test/run` alias to the `deps.edn` file in the root of the project
 
 ```clojure
-:test/kaocha
+:test/run
 {:extra-paths ["test"]
  :extra-deps {lambdaisland/kaocha {:mvn/version "1.60.977"}}
  :exec-fn kaocha.runner/exec-fn
@@ -26,7 +26,7 @@ Create the file `bin/kaocha` in the root of the project and make it executable (
 ## Script to run the kaocha test runner
 ## for unit tests and clojure spec generative tests
 
-clojure -X:test:runner-kaocha "$@"
+clojure -X:test/run "$@"
 ```
 
 ## Configure CircleCI pipeline
