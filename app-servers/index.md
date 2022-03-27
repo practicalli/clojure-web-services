@@ -13,20 +13,23 @@ App servers are started within the Clojure REPL process, so during development a
 
 
 ## Which Application Server to use
+
 The most commonly used application servers are in the table below, with Jetty being the most common as it is wrapped by the ring-clojure/ring library.
 
-| Application Server                                                                                      | Description                                                                               |
-|---------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------|
-| [Eclipse Jetty](https://www.eclipse.org/jetty/)                                                         | The original embedded Java application server **most commonly used for Clojure web apps** |
-| [Http-kit](http://http-kit.github.io/)                                                                  | High performance Clojure/Java application server                                          |
-| [Apache Tomcat](http://tomcat.apache.org/)                                                              | Classic Java application server, very common in JVM environments                          |
-| [Netty](https://netty.io/)                                                                              | Java NIO asynchronous event-driven network application framework                          |
-| [Manifold](https://aleph.io/manifold/rationale.html) and [Aleph HTTP](https://aleph.io/aleph/http.html) | Ring and [Manifold](https://aleph.io/manifold/rationale.html) based application server    |
+| Application Server                              | Description                                                                                                                        |
+|-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| [Eclipse Jetty](https://www.eclipse.org/jetty/) | The original embedded Java application server **most commonly used for Clojure web apps**                                          |
+| [Http-kit](http://http-kit.github.io/)          | High performance Clojure/Java application server                                                                                   |
+| [Apache Tomcat](http://tomcat.apache.org/)      | Classic Java application server, very common in JVM environments                                                                   |
+| [Netty](https://netty.io/)                      | Java NIO asynchronous event-driven network application framework                                                                   |
+| [Aleph HTTP](https://aleph.io/aleph/http.html)  | Clojure (Netty) Ring-compliant server with support for returning [Manifold](https://aleph.io/manifold/rationale.html) for asynchronous programming |
 
 
 ## Eclipse Jetty
 
 ![Jetty logo](https://www.eclipse.org/jetty/documentation/current/images/jetty-header-logo.png)
+
+Jetty is the most commonly used application server on the Java Virtual machine.
 
 [Eclipse Jetty](https://www.eclipse.org/jetty/) provides a Web server and javax.servlet container, plus support for HTTP/2, WebSocket, OSGi, JMX, JNDI, JAAS and many other integrations. These components are open source and available for commercial use and distribution.
 
