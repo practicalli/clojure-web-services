@@ -59,6 +59,7 @@
 
 ## Architectural Components
 * [Application servers](app-servers/index.md)
+    * [Clojure project](app-servers/clojure-project.md)
     * [Configuration](app-servers/basic-configuration.md)
         * [Java Properties](app-servers/java-system-properties.md)
     * [Simple restart](app-servers/simple-restart.md)
