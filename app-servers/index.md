@@ -43,6 +43,8 @@ The current recommended version for use is Jetty 9
 
 HTTP Kit uses a event-driven architecture to support highly concurrent a/synchronous web applications. Feature a unified API for WebSocket and HTTP long polling/streaming
 
+The underlying server is [implemented in Java](https://github.com/http-kit/http-kit/blob/master/src/java/org/httpkit/server/HttpServer.java) with a [Clojure wrapper](https://github.com/http-kit/http-kit/blob/master/src/org/httpkit/server.clj).
+
 
 ## Apache Tomcat
 

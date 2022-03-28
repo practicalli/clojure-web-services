@@ -1,4 +1,5 @@
 # Simple restart approach
+
 Use a `def` expression to create a named reference to the running server, providing a simple way to stop the application server.
 
 {% tabs jetty="Jetty", httpkit="Http-kit Server", httpkit="Http-kit Server" %}
