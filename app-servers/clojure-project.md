@@ -38,9 +38,9 @@ Add a ring library which includes an embedded Jetty server.
 Use either the [`ring/ring` library](https://clojars.org/ring) which includes all the various ring libraries, or only the specific [ring/jetty-adapter library](https://clojars.org/ring/ring-jetty-adapter) (keeping the project smaller overall).
 
 
-{% tabs cli2="Cloure CLI", lein2="Leiningnen" %}
+{% tabs clijetty="Cloure CLI", leinjetty="Leiningnen" %}
 
-{% content "cli2" %}
+{% content "clijetty" %}
 
 Edit the project `deps.edn` file and add the `ring/ring {:mvn/version "1.9.5"}` dependency to the top-level `:deps` key, which defines the libraries used to make the project.
 
@@ -51,7 +51,7 @@ Edit the project `deps.edn` file and add the `ring/ring {:mvn/version "1.9.5"}` 
 ```
 
 
-{% content "lein2" %}
+{% content "leinjetty" %}
 
 Edit the `project.clj` file and add the `[ring/ring "1.9.5"]` dependency to the top-level `:dependencies` key, which defines the libraries used to make the project.
 
@@ -78,9 +78,9 @@ Edit the `project.clj` file and add the `[ring/ring "1.9.5"]` dependency to the 
 
 Add the Httpkit Server library which includes the client and server namespaces, although only the Server namespace will be used.
 
-{% tabs cli2="Cloure CLI", lein2="Leiningnen" %}
+{% tabs clihttpkit="Cloure CLI", leinhttpkit="Leiningnen" %}
 
-{% content "cli2" %}
+{% content "clihttpkit" %}
 
 Edit the project `deps.edn` file and add the `http-kit/http-kit   {:mvn/version "2.3.0"}` dependency to the top-level `:deps` key, which defines the libraries used to make the project.
 
@@ -91,7 +91,7 @@ Edit the project `deps.edn` file and add the `http-kit/http-kit   {:mvn/version 
 ```
 
 
-{% content "lein2" %}
+{% content "leinhttpkit" %}
 
 Edit the `project.clj` file and add the `[http-kit "2.3.0"]` dependency to the top-level `:dependencies` key, which defines the libraries used to make the project.
 
