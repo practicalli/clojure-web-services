@@ -61,6 +61,7 @@
 * [Application servers](app-servers/index.md)
     * [Clojure project](app-servers/clojure-project.md)
     * [Configuration](app-servers/basic-configuration.md)
+    * [Create server](app-servers/create-server.md)
         * [Java Properties](app-servers/java-system-properties.md)
     * [Simple restart](app-servers/simple-restart.md)
     * [Atom based restart](app-servers/atom-based-restart.md)
