@@ -14,8 +14,6 @@ clojure -T:project/new :template app :name practicalli/web-service
 
 {% content "lein" %}
 
-## Create new project from template
-
 Create a new project using [Leiningen](https://leiningen.org/) and the app template.
 
 ```bash
