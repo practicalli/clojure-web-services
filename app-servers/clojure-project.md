@@ -25,7 +25,13 @@ lein new app practicalli/web-service
 {% endtabs %}
 
 
-## Add library dependencies
+## Add web server library to main namespace
+
+Add either Ring (Jetty) or Httpkit namespace to be able to call their respective functions to start a web server
+
+
+
+### Add Ring Jetty dependency
 
 Add a ring library which includes an embedded Jetty server.
 
@@ -40,7 +46,7 @@ Edit the project `deps.edn` file and add the `ring/ring {:mvn/version "1.9.5"}` 
 
 ```clojure
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+ :deps {org.clojure/clojure {:mvn/version "1.11.0"}
         ring/ring           {:mvn/version "1.9.5"}}}
 ```
 
@@ -55,7 +61,7 @@ Edit the `project.clj` file and add the `[ring/ring "1.9.5"]` dependency to the 
   :url "http://example.com/FIXME"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}
-  :dependencies [[org.clojure/clojure "1.10.1"]
+  :dependencies [[org.clojure/clojure "1.11.0"]
                  [ring/ring "1.9.5"]]
   :main ^:skip-aot practicalli.web-server
   :target-path "target/%s"
@@ -66,6 +72,45 @@ Edit the `project.clj` file and add the `[ring/ring "1.9.5"]` dependency to the 
 
 {% endtabs %}
 
+
+
+### Add Httpkit dependency
+
+Add the Httpkit Server library which includes the client and server namespaces, although only the Server namespace will be used.
+
+{% tabs cli2="Cloure CLI", lein2="Leiningnen" %}
+
+{% content "cli2" %}
+
+Edit the project `deps.edn` file and add the `http-kit/http-kit   {:mvn/version "2.3.0"}` dependency to the top-level `:deps` key, which defines the libraries used to make the project.
+
+```clojure
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.0"}
+        http-kit/http-kit   {:mvn/version "2.3.0"}}}
+```
+
+
+{% content "lein2" %}
+
+Edit the `project.clj` file and add the `[http-kit "2.3.0"]` dependency to the top-level `:dependencies` key, which defines the libraries used to make the project.
+
+```clojure
+(defproject practicalli/web-server "0.1.0-SNAPSHOT"
+  :description "FIXME: write description"
+  :url "http://example.com/FIXME"
+  :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
+            :url "https://www.eclipse.org/legal/epl-2.0/"}
+  :dependencies [[org.clojure/clojure "1.11.0"]
+                 [http-kit "2.3.0"]]
+  :main ^:skip-aot practicalli.web-server
+  :target-path "target/%s"
+  :profiles {:uberjar {:aot :all
+                       :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})
+
+```
+
+{% endtabs %}
 
 
 
