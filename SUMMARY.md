@@ -76,8 +76,8 @@
     <!--     * [integrant](app-servers/component-lifecycle/integrant.md) -->
     * [Logging](app-servers/app-server-logging.md)
 
-* [Application logic](application-logic/index.md)
-    * [Routing](application-logic/routing.md)
+<!-- * [Application logic](application-logic/index.md) -->
+<!--     * [Routing](application-logic/routing.md) -->
     <!-- * [Requests](application-logic/requests/index.md) -->
     <!-- * [Responses](application-logic/responses/index.md) -->
     <!-- * [handlers](application-logic/handlers/index.md) -->
@@ -93,6 +93,14 @@
         * [H2 database tools](relational-databases-and-sql/h2-database/database-tools.md)
     * [PostgreSQL Database](relational-databases-and-sql/postgresql-database.md)
         * [Managing Connections](relational-databases-and-sql/managing-connections.md)
+
+
+<!-- * [Specifications](specifications/index.md) -->
+<!--     * [clojure.spec](specifications/clojure-spec/index.md) -->
+<!--     * [Malli](specifications/malli/index.md) -->
+    * [Function Specifications](specifications/functions.md)
+    * [Relational Specifications](specifications/relational-specifications.md)
+    * [Generative Testing](specifications/generative-testing.md)
 
 <!-- * [Clojure databases](clojure-databases/index.md) -->
 <!--     * [crux](clojure-databases/crux/index.md) -->
