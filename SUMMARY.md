@@ -64,6 +64,7 @@
     * [Create server](app-servers/create-server.md)
         * [Jetty server options](app-servers/jetty-server-options.md)
         * [Httpkit server options](app-servers/http-kit-server-options.md)
+    * [Route requests](app-servers/route-requests.md)
     * [Start Server](app-servers/start-server.md)
         * [Java Properties](app-servers/java-system-properties.md)
     * [Simple restart](app-servers/simple-restart.md)
