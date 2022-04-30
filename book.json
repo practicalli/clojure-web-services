@@ -45,7 +45,8 @@
         },
         "prism": {
             "ignore": [
-                "eval-clojure"
+                "eval-clojure",
+                "none"
             ]
         },
         "ga": {

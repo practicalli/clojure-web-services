@@ -59,10 +59,12 @@
 
 ## Architectural Components
 * [Application servers](app-servers/index.md)
+    * [Overview](app-servers/overview.md)
     * [Clojure project](app-servers/clojure-project.md)
     * [Create server](app-servers/create-server.md)
         * [Jetty server options](app-servers/jetty-server-options.md)
         * [Httpkit server options](app-servers/http-kit-server-options.md)
+    * [Route requests](app-servers/route-requests.md)
     * [Start Server](app-servers/start-server.md)
         * [Java Properties](app-servers/java-system-properties.md)
     * [Simple restart](app-servers/simple-restart.md)
@@ -74,8 +76,8 @@
     <!--     * [integrant](app-servers/component-lifecycle/integrant.md) -->
     * [Logging](app-servers/app-server-logging.md)
 
-* [Application logic](application-logic/index.md)
-    * [Routing](application-logic/routing.md)
+<!-- * [Application logic](application-logic/index.md) -->
+<!--     * [Routing](application-logic/routing.md) -->
     <!-- * [Requests](application-logic/requests/index.md) -->
     <!-- * [Responses](application-logic/responses/index.md) -->
     <!-- * [handlers](application-logic/handlers/index.md) -->
@@ -91,6 +93,14 @@
         * [H2 database tools](relational-databases-and-sql/h2-database/database-tools.md)
     * [PostgreSQL Database](relational-databases-and-sql/postgresql-database.md)
         * [Managing Connections](relational-databases-and-sql/managing-connections.md)
+
+
+<!-- * [Specifications](specifications/index.md) -->
+<!--     * [clojure.spec](specifications/clojure-spec/index.md) -->
+<!--     * [Malli](specifications/malli/index.md) -->
+    * [Function Specifications](specifications/functions.md)
+    * [Relational Specifications](specifications/relational-specifications.md)
+    * [Generative Testing](specifications/generative-testing.md)
 
 <!-- * [Clojure databases](clojure-databases/index.md) -->
 <!--     * [crux](clojure-databases/crux/index.md) -->
