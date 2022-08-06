@@ -43,9 +43,6 @@
                 "picto": "fa-star"
             }
         },
-        "sectionx": {
-            "tag": "b"
-        },
         "prism": {
             "ignore": [
                 "eval-clojure",
