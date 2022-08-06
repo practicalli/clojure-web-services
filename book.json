@@ -3,6 +3,9 @@
     "title": "Practicalli Clojure WebApps",
     "author": "Practicalli",
     "description": "Server-side applications and APIs in Clojure",
+    "structure": {
+        "readme": "introduction.md"
+    },
     "styles": {
         "website": "styles/website.css",
         "ebook": "styles/ebook.css",
