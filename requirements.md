@@ -36,7 +36,7 @@ To complete all the steps in this guide, especially around deployment tasks, add
 
 Practicalli is considering other persistent storage approaches for this guide and any contributions in this regard is much appreciated
 
-* [JUXT XTDB](https://xtdb.com/) - an open source document database with bi-temporal graph queries
+* [Crux](https://opencrux.com/) - an open source document database with bitemporal graph queries
 * [Datomic](https://www.datomic.com/) - a transactional database with a flexible data model, elastic scaling, and rich queries.
 * [Amazon Aurora](https://aws.amazon.com/rds/aurora/) - MySQL and PostgreSQL compatible cloud native relational database
 * [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) with Clojure [Faraday](https://github.com/Taoensso/faraday) library - for persisting JSON like data structures
