@@ -2291,34 +2291,35 @@
 <p>Information to complement the <a href="https://github.com/ring-clojure" target="_blank">ring projects</a></p>
 <p>Ring provides a defacto web standard that the majority of server-side web appliications use</p>
 <ul>
-<li>request</li>
-<li>response</li>
-<li>handler</li>
-<li>middleware</li>
-<li>adaptor</li>
+<li>request (Clojure hash-map)</li>
+<li>response (Clojure hash-map)</li>
+<li>handler  (Clojure function)</li>
+<li>middleware (Clojure function)</li>
+<li>adaptor (Clojure function / wrapper)</li>
 </ul>
-<p>Routing requests to handlers is typically managed by functions or libraries used in conjunction with ring, e.g reitit or compojure</p>
+<p>Routing requests to handlers is typially managed by functions or libraries used in conjunction with ring, e.g reitit or compojure</p>
 <h2 id="ring-request-map">Ring request map</h2>
-<p>Ring represents HTTP requests as simple Clojure maps,
-whose keys are drawn from the Java Servlet API 
-and the official documentation RFC2616
+<p>Ring represents HTTP requests as simple Clojure maps, whose keys are drawn from the Java Servlet API and the official documentation RFC2616
 &#x2013; Hypertext Transfer Protocol</p>
 <ul>
 <li>HTTP/ 1.1 ( http:// www.w3. org/ Protocols/ rfc2616/ rfc2616. html ).</li>
 </ul>
 <p>A request map contains the following keys:</p>
 <ul>
-<li>:server-port: This is the port on which the request is being handled.</li>
-<li>:server-name: This is the resolved name or IP address of the server handling the request.</li>
-<li>:remote-addr: This is the IP address of the client, which is making the request.</li>
-<li>:uri: This is the part of the address after the domain name. For example, for the address http:// ryans.io/ some/ beautiful/ uri, the request map&apos;s :uri would be /some/ beautiful/uri.</li>
-<li>:query-string: This is the HTTP query string of the request, if one exists. For example, for the address http:// ryans.io/ some/ beautiful/ uri? color = blue&amp; favPrime =7, the request map&apos;s :query-string would be color = blue&amp; favPrime =7.</li>
-<li>:scheme: This is the protocol used to make the request as a keyword; :http for HTTP request, and :https for Secure HTTP.</li>
-<li>:request-method: This is the HTTP method used to make the request as keyword, so it will be one of :get, :post, :put, :delete, :head, or :options keys.</li>
-<li>:headers: map of the header names (lowercase string) to header values (also string). e.g: <code>{: headers {&quot; content-type&quot; &quot;text/ html&quot; &quot;content-length&quot; &quot;500&quot; &quot;pragma&quot; &quot;no-cache&quot;}}</code></li>
-<li>:body: a string of any contents in the request body itself (such as the contents of an HTTP POST request).</li>
+<li><code>:server-port</code> the port the HTTP server was listening for the request</li>
+<li><code>:server-name</code> the resolved name or IP address of the server handling the request</li>
+<li><code>:remote-addr</code>  IP address of the client that made the request</li>
+<li><code>:uri</code> the path to the requested resource (the part of the URL address after the domain name)</li>
+<li><code>:query-string</code> the HTTP query string if included in the request. e.g. <a href="http://practical.li/blog?topic=clojure" target="_blank">http://practical.li/blog?topic=clojure</a> has a request map that includes <code>:query-string &quot;topic=clojure&quot;</code>.</li>
+<li><code>:scheme</code> protocol used to make the request as a keyword, i.e. <code>:http</code> for HTTP request and <code>:https</code> for Secure HTTP</li>
+<li><code>:request-method</code> HTTP method used to make the request as keyword, one of <code>:get</code>, <code>:post</code>, <code>:put</code>, <code>:delete</code>, <code>:head</code> or <code>:options</code></li>
+<li><code>:headers</code> hash-map of header names and values,  e.g: <code>{:headers {&quot;content-type&quot; &quot;text/html&quot; &quot;content-length&quot; &quot;500&quot; &quot;pragma&quot; &quot;no-cache&quot;}}</code></li>
+<li><code>:body</code> a string of the request body (e.g. contents of an HTTP POST request)</li>
 </ul>
 <p>Request maps are not restricted to these top level keys.  Middleware is commonly used to mutate the request map by adding keys.</p>
+<blockquote>
+<p>See the <a href="request-map.html">reference page for a Clojure request map</a></p>
+</blockquote>
 <h2 id="response-maps">Response maps</h2>
 <p>Ring represents an HTTP response as a simple Clojure map.</p>
 <p>The response map contains only three keys:</p>
@@ -2391,13 +2392,15 @@ and the official documentation RFC2616
 <pre class="language-"><code class="lang-clojure"><span class="token punctuation">(</span><span class="token function">GET</span> <span class="token string">&quot;/ about&quot;</span> request <span class="token punctuation">(</span><span class="token function">hello-world</span> request<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 <p>Refresh the browser page at <a href="http://localhost:3000/about" target="_blank">http://localhost:3000/about</a> and see the middleware in action!</p>
-<p>More information about middleware and how it&apos;s natively used in Ring at <a href="https://github.com/ring-clojure/ring/wiki/Concepts#middleware" target="_blank">https://github.com/ring-clojure/ring/wiki/Concepts#middleware</a>.</p>
+<blockquote>
+<p><a href="https://github.com/ring-clojure/ring/wiki/Concepts#middleware" target="_blank">Ring Wiki: Middleware concepts</a> has further details on middleware and it&apos;s use in Ring</p>
+</blockquote>
 <h2 id="adapters">Adapters</h2>
 <p>Adapters translate between the HTTP protocol and Clojure data, greatly simplifying all Clojure web applications.</p>
 <p>An adapter converts an incoming HTTP request into a Clojure request hash-map and passes the request to the Clojure web application.  The adaptor converts the Clojure response hash-map into the appropriate servlet HTTP response, sending that HTTP respose back to the client.</p>
 <p>The Ring library comes with a Jetty adapter ([ring/ring-jetty-adapter &quot;1.3.0&quot;]) which sits between a Jetty servlet container and the rest of the application stack.</p>
 <p>Http-kit also provides a ring compatible adaptor for its HTTP server.</p>
-<p>TODO: Add references for all the Clojure adaptors available for server-side applications, i.e jetty, http-kit, aleph, tomcat?, glassfish?, etc.</p>
+<p>/<em> &gt; TODO: Add references for all the Clojure adaptors available for server-side applications, i.e jetty, http-kit, aleph, tomcat?, glassfish?, etc. </em>/</p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
                                 
                                 </section>
@@ -2441,7 +2444,7 @@ and the official documentation RFC2616
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ring","level":"9.1","depth":1,"next":{"title":"Request map","level":"9.1.1","depth":2,"path":"reference/ring/request-map.md","ref":"reference/ring/request-map.md","articles":[]},"previous":{"title":"Terminology","level":"8.1.8","depth":2,"path":"server-side-api/terminology.md","ref":"server-side-api/terminology.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure","none"]},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-web-services/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IGraphicDesign":"https://github.com/practicalli/graphic-design","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-web-services/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IClojureDepsEdnInstall":"/clojure-tools/install/community-tools.md","P9IIssuesUrl":"https://github.com/practicalli/clojure-web-services/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.li/clojure","P9IWebsite":"https://practical.li/clojure","P9IFourClojure":"https://github.com/practicalli/four-clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practicalli":"https://practical.li/"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"reference/ring/index.md","mtime":"2022-08-06T23:16:31.076Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-08-06T23:17:52.009Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ring","level":"9.1","depth":1,"next":{"title":"Request map","level":"9.1.1","depth":2,"path":"reference/ring/request-map.md","ref":"reference/ring/request-map.md","articles":[]},"previous":{"title":"Terminology","level":"8.1.8","depth":2,"path":"server-side-api/terminology.md","ref":"server-side-api/terminology.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure","none"]},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-web-services/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IGraphicDesign":"https://github.com/practicalli/graphic-design","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-web-services/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IClojureDepsEdnInstall":"/clojure-tools/install/community-tools.md","P9IIssuesUrl":"https://github.com/practicalli/clojure-web-services/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.li/clojure","P9IWebsite":"https://practical.li/clojure","P9IFourClojure":"https://github.com/practicalli/four-clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practicalli":"https://practical.li/"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"reference/ring/index.md","mtime":"2022-08-06T23:44:00.069Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-08-06T23:45:18.135Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

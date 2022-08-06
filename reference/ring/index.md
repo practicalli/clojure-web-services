@@ -4,38 +4,37 @@ Information to complement the [ring projects](https://github.com/ring-clojure)
 
 Ring provides a defacto web standard that the majority of server-side web appliications use 
 
-* request
-* response
-* handler
-* middleware
-* adaptor
+* request (Clojure hash-map)
+* response (Clojure hash-map)
+* handler  (Clojure function)
+* middleware (Clojure function)
+* adaptor (Clojure function / wrapper)
 
-Routing requests to handlers is typically managed by functions or libraries used in conjunction with ring, e.g reitit or compojure
+Routing requests to handlers is typially managed by functions or libraries used in conjunction with ring, e.g reitit or compojure
 
 
 ## Ring request map
 
-Ring represents HTTP requests as simple Clojure maps,
-whose keys are drawn from the Java Servlet API 
-and the official documentation RFC2616
+Ring represents HTTP requests as simple Clojure maps, whose keys are drawn from the Java Servlet API and the official documentation RFC2616
 – Hypertext Transfer Protocol
 - HTTP/ 1.1 ( http:// www.w3. org/ Protocols/ rfc2616/ rfc2616. html ). 
 
 A request map contains the following keys:
 
-* :server-port: This is the port on which the request is being handled. 
-
-* :server-name: This is the resolved name or IP address of the server handling the request. 
-* :remote-addr: This is the IP address of the client, which is making the request. 
-* :uri: This is the part of the address after the domain name. For example, for the address http:// ryans.io/ some/ beautiful/ uri, the request map's :uri would be /some/ beautiful/uri. 
-* :query-string: This is the HTTP query string of the request, if one exists. For example, for the address http:// ryans.io/ some/ beautiful/ uri? color = blue& favPrime =7, the request map's :query-string would be color = blue& favPrime =7. 
-* :scheme: This is the protocol used to make the request as a keyword; :http for HTTP request, and :https for Secure HTTP. 
-* :request-method: This is the HTTP method used to make the request as keyword, so it will be one of :get, :post, :put, :delete, :head, or :options keys. 
-* :headers: map of the header names (lowercase string) to header values (also string). e.g: `{: headers {" content-type" "text/ html" "content-length" "500" "pragma" "no-cache"}}` 
-* :body: a string of any contents in the request body itself (such as the contents of an HTTP POST request). 
-
+* `:server-port` the port the HTTP server was listening for the request 
+* `:server-name` the resolved name or IP address of the server handling the request 
+* `:remote-addr`  IP address of the client that made the request 
+* `:uri` the path to the requested resource (the part of the URL address after the domain name)
+* `:query-string` the HTTP query string if included in the request. e.g. http://practical.li/blog?topic=clojure has a request map that includes `:query-string "topic=clojure"`. 
+* `:scheme` protocol used to make the request as a keyword, i.e. `:http` for HTTP request and `:https` for Secure HTTP 
+* `:request-method` HTTP method used to make the request as keyword, one of `:get`, `:post`, `:put`, `:delete`, `:head` or `:options`
+* `:headers` hash-map of header names and values,  e.g: `{:headers {"content-type" "text/html" "content-length" "500" "pragma" "no-cache"}}` 
+* `:body` a string of the request body (e.g. contents of an HTTP POST request) 
 
 Request maps are not restricted to these top level keys.  Middleware is commonly used to mutate the request map by adding keys. 
+
+> See the [reference page for a Clojure request map](request-map.md)
+
 
 ## Response maps 
 
@@ -152,7 +151,7 @@ Change the `/about` route to make use of the request map:
 
 Refresh the browser page at http://localhost:3000/about and see the middleware in action! 
 
-More information about middleware and how it's natively used in Ring at https://github.com/ring-clojure/ring/wiki/Concepts#middleware. 
+> [Ring Wiki: Middleware concepts](https://github.com/ring-clojure/ring/wiki/Concepts#middleware) has further details on middleware and it's use in Ring 
 
 
 ## Adapters 
@@ -165,5 +164,5 @@ The Ring library comes with a Jetty adapter ([ring/ring-jetty-adapter "1.3.0"]) 
 
 Http-kit also provides a ring compatible adaptor for its HTTP server.
 
-TODO: Add references for all the Clojure adaptors available for server-side applications, i.e jetty, http-kit, aleph, tomcat?, glassfish?, etc.
+/* > TODO: Add references for all the Clojure adaptors available for server-side applications, i.e jetty, http-kit, aleph, tomcat?, glassfish?, etc. */
 
