@@ -18,10 +18,7 @@ A global configuration to start, restart and halt all the services that make up 
 
 ## aero configuration for multiple environments
 
-Aero thingies
-* #profile - replace with the value from the given profile name
-* #or  - a vector of possible values, returning the first "truthy" value
-* #long - cast the value to a Clojure Long type
+
 
 ```clojure
 {:practicalli.scoreboard.service/app-server
@@ -175,7 +172,7 @@ Return the integrant configuration from the configuration file
 #_(ig-repl/set-prep! (fn [] (-> "resources/config.edn" slurp ig/read-string)))
 ```
 
-System Configuration
+## System Configuration
 
 ```clojure
 (defn environment-prep!
@@ -196,7 +193,7 @@ Define `go` as a REPL convenience function, optionally taking a keyword represen
   ([profile] (environment-prep! profile) (ig-repl/go)))
 ```
 
-Rather than using a arity based polymorphic function, use the `&` variable arity syntax and use `or` to use the argument or `:develop` profile
+Rather than using a arity based polymorphic function, use the `&` variable arity syntax and use `or` to use the argument or `:dev` profile
 
 ```clojure
 (defn go-redux
