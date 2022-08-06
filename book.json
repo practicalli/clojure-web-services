@@ -63,32 +63,33 @@
                {
                    "label": "GitHub",
                    "icon": "fa fa-github",
-                   "url": "https://github.com/practicalli/clojure-webapps-content/issues"
+                   "url": "https://github.com/practicalli/clojure-web-services/issues"
                }
            ]
        }
     },
     "links": {
         "sidebar": {
-            "Practical.li": "https://practicalli.github.io"
+            "Practicalli": "https://practical.li/"
         }
     },
     "variables": {
         "host": "practical.li",
-        "website": "https://practical.github.io/clojure",
+        "website": "https://practical.li/clojure",
+        "P9IWebsite": "https://practical.li/clojure",
         "P9IDeveloperGuides": "https://github.com/jr0cket/developer-guides/raw/master/",
         "P9IClojureDepsEdn": "https://github.com/practicalli/clojure-deps-edn",
-        "P9IFourClojure": "https://practical.github.io/clojure",
+        "P9IClojureDepsEdnInstall": "/clojure-tools/install/community-tools.md",
+        "P9IGraphicDesign": "https://github.com/practicalli/graphic-design",
+        "P9IFourClojure": "https://github.com/practicalli/four-clojure",
         "P9IClojureThroughCode": "https://github.com/practicalli/clojure-through-code",
-        "P9IIssuesUrl": "https://github.com/practicalli/clojure-webapps-content/issues",
-        "P9IPullRequestsUrl": "https://github.com/practicalli/clojure-webapps-content/pulls",
+        "P9IIssuesUrl": "https://github.com/practicalli/clojure-web-services/issues",
+        "P9IPullRequestsUrl": "https://github.com/practicalli/clojure-web-services/pulls",
         "Leiningen": "https://leiningen.org/",
         "KeyCtrl": "<kbd>Ctrl</kbd>",
         "KeyEnter": "<kbd>Enter</kbd>",
         "KeyEsc": "<kbd>Esc</kbd>",
         "KeyUpArrow": "<kbd>↑</kbd>",
         "KeyDownArrow": "<kbd>↓</kbd>"
-
-
     }
 }
