@@ -115,7 +115,6 @@ Edit the `src/practicalli/middleware.clj` file.
 
 Add the following middleware function, which takes a handler and returns a new handler function (which in turn adds a new key to the request map and calls the next handler in the chain): 
 
-
 ```clojure
 (defn friday? 
   [handler] 
@@ -164,5 +163,13 @@ The Ring library comes with a Jetty adapter ([ring/ring-jetty-adapter "1.3.0"]) 
 
 Http-kit also provides a ring compatible adaptor for its HTTP server.
 
-/* > TODO: Add references for all the Clojure adaptors available for server-side applications, i.e jetty, http-kit, aleph, tomcat?, glassfish?, etc. */
+<!-- 
+> TODO: Add references for all the Clojure adaptors available for server-side applications, i.e jetty, http-kit, aleph, tomcat?, glassfish?, etc. */
+* https://vertx.io/
+* https://www.eclipse.org/jetty/
+* https://netty.io/
+* https://undertow.io/
+* tomcat 
+* glassfish
+--> 
 
