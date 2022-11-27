@@ -2,29 +2,46 @@
 
 A guide to developing server-side web services and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts.
 
-A REPL Driven development workflow provides a fast feedback loop, showing how the code works as its being written.
+A REPL Driven development workflow provides an instant feedback loop that shows how the code works as it is being written.
 
 Relevant theory and background reading is included whilst keeping the practical focus of this guide on build projects and experimenting with the code.
 
-## Clojure CLI and deps.edn
-Projects are created and configure using Clojure CLI tools, using `deps.edn` for configuration.  Older content uses Leiningen for project configuration.
 
-## Component / library approach
-The Clojure community has a diverse set of libraries which focus on a specific need. These libraries are assembled to rapidly develop a tailored solution.  Using a library approach means those libraries are relatively simple to replace with alternatives or your own libraries.
+## General approach
 
-Project templates are used to create projects that include commonly used libraries, along with example code, demonstrating how common services can be assembled. Templates have options to configure the project as its created, customising to the specific needs of the problem being solved.
+Projects are created and configure using Clojure CLI configuration.  Older content uses Leiningen for project configuration.
 
-Clojure does not focus on the classic framework approach like Rails or Spring, for a very good reason.
+Larger projects use Integrant & Integrant REPL to manage components and state, using a reloaded REPL workflow to manage changes in addtion to evaluating functions in the REPL.
 
-Frameworks are design decisions others have made without knowing the context of the current problem at hand, so there is no guarantee on how many of those decisions are relevant. Frameworks tend to include many features not relevant to the current problem. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution.
+Persistence is provides via Postgresql (and eventually JUXT Crux)
 
-[![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://practicalli.github.io/spacemacs/)
+tools.build will be used to create Clojure deployments, with GitHub actions and Docker used for Continuous Integration and orchestrating systems.
+
+> ####WARNING::Heroku deployment to be archived
+> Heroku Cloud service deployment approach is being archived as the service no longer provides a developer environment (November 2022)
+
+
+## Library Composition approach
+
+The Clojure community has a diverse set of libraries, each of which focuses on a specific need. These libraries are assembled to rapidly develop a tailored solution, avoiding bloat and unrequired complexity that comes with large frameworks.  
+
+Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.
+
+Templates create projects showing commonly used libraries along with example code. Templates demonstrate how common services can be assembled and how to use libraries together. Templates have options to configure the project as its created, customising to the specific needs of the problem being solved.
+provide examples of libraries working together  
+
+Frameworks are design decisions others have made and generalised to solve a range of problem, so there is no guarantee on how many of those decisions are relevant for the current project. Frameworks tend to include many features not relevant to the current problem, which can be challenging to remove or replace. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution. Clojure does not focus on the classic framework approach like Rails or Spring, for a very good reason.
 
 
 ## Discussions and feedback
-[![Join the conversation on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
+
+[![Practicalli channel on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
 
 Get a [free Clojurians slack community account](https://clojurians.net/)
+
+
+> #### NOTE::Book updated regularly
+> Last published: {{ gitbook.time }}
 
 
 ## License
