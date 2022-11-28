@@ -15,29 +15,32 @@ Code examples can be used with any Clojure build tool, although this guide focus
 
 To complete all the steps in this guide, especially around deployment tasks, additional development tools and services are required.
 
-| Development Tools                                                                                           | Version | Test (command line) |
-|:------------------------------------------------------------------------------------------------------------|:--------|:--------------------|
-| [A Git client](http://git-scm.com/)                                                                         | latest  | `git --version`     |
-| [CircleCI account](http://circleci.com) for continuous integration                                          |         |                     |
-| [Heroku account](http://heroku.com) and [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)      | latest  | `heroku --version`  |
-| [Heroku Postgres](https://www.heroku.com/postgres) or local [Postgres database](https://www.postgresql.org/) | latest  |                     |
-
-[CircleCI](http://circleci.com) is a developer focused service for Continuous Integration, providing obs that package up common workflows such as deploying to Heroku.
-
-[Heroku](http://heroku.com) is used for uncomplicated deploying of web applications in the cloud as well as provisioning services such as Postgres database on demand.  You can skip Heroku if you only wish to run your applications locally or have some other service to deploy them.  Install [Postgres database](https://www.postgresql.org/) locally if not using a service such as Heroku.
-
-> #### Hint::Why not docker?
-> Practicalli tends toward the simplest and developer oriented architectural decisions, making deployment from source a trivial process with adherence to the [12 Factor design](https://12factor.net/) approach.
->
-> Docker does add a layer of indirection and more configuration is required to deploy Clojure Services in this manor.  Practicalli does welcome Docker (and Docker compose, kubernetes, GitPod, etc) contributions to this guide, allowing Practicalli more time to focus on Clojure specific content.  Practicalli may cover these aspects if enough interested is shown.
+| Development Tools                                                  | Version | Test (command line) |
+|:-------------------------------------------------------------------|:--------|:--------------------|
+| [Git client](http://git-scm.com/)                                  | latest  | `git --version`     |
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/)  | latest  | `docker --version`  |
+| [Postgres database](https://www.postgresql.org/)                   | latest  |                     |
 
 
-## PostgreSQL Alternatives
+GitHub and GitHub actions will be predominantly used in this guide, although more use of CircleCI and GitLab will also be introduced. [CircleCI](http://circleci.com) is a developer focused service for Continuous Integration, developed with Clojure, providing obs that package up common workflows such as deploying to specific Cloud services.
+
+| Continuous Integration Services       |
+|:--------------------------------------|
+| [GitHub Actions](http://circleci.com) |
+| [GitLab CI](http://circleci.com)      |
+| [CircleCI](http://circleci.com)       |
+
+
+####WARNING::Heroku deployment deprecated
+[Heroku](https://heroku.com) has been used to simplify deployment directly from source code using existing build packs.  Heroku now requires a commercial license for deployment so this content is to be deprecated.
+
+
+## Persistence Alternatives
 
 Practicalli is considering other persistent storage approaches for this guide and any contributions in this regard is much appreciated
 
 * [Crux](https://opencrux.com/) - an open source document database with bitemporal graph queries
-* [Datomic](https://www.datomic.com/) - a transactional database with a flexible data model, elastic scaling, and rich queries.
+* [Datomic](https://www.datomic.com/) - a commercial transactional database with a flexible data model, elastic scaling, and rich queries.
 * [Amazon Aurora](https://aws.amazon.com/rds/aurora/) - MySQL and PostgreSQL compatible cloud native relational database
 * [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) with Clojure [Faraday](https://github.com/Taoensso/faraday) library - for persisting JSON like data structures
 
