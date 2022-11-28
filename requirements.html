@@ -2308,34 +2308,47 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="http://git-scm.com/" target="_blank">A Git client</a></td>
+<td><a href="http://git-scm.com/" target="_blank">Git client</a></td>
 <td>latest</td>
 <td><code>git --version</code></td>
 </tr>
 <tr>
-<td><a href="http://circleci.com" target="_blank">CircleCI account</a> for continuous integration</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://heroku.com" target="_blank">Heroku account</a> and <a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank">Heroku CLI</a></td>
+<td><a href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker Desktop</a></td>
 <td>latest</td>
-<td><code>heroku --version</code></td>
+<td><code>docker --version</code></td>
 </tr>
 <tr>
-<td><a href="https://www.heroku.com/postgres" target="_blank">Heroku Postgres</a> or local <a href="https://www.postgresql.org/" target="_blank">Postgres database</a></td>
+<td><a href="https://www.postgresql.org/" target="_blank">Postgres database</a></td>
 <td>latest</td>
 </tr>
 </tbody>
 </table>
-<p><a href="http://circleci.com" target="_blank">CircleCI</a> is a developer focused service for Continuous Integration, providing obs that package up common workflows such as deploying to Heroku.</p>
-<p><a href="http://heroku.com" target="_blank">Heroku</a> is used for uncomplicated deploying of web applications in the cloud as well as provisioning services such as Postgres database on demand.  You can skip Heroku if you only wish to run your applications locally or have some other service to deploy them.  Install <a href="https://www.postgresql.org/" target="_blank">Postgres database</a> locally if not using a service such as Heroku.</p>
-<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="why-not-docker"><i class="fa fa-lightbulb-o"></i> Why not docker?</h3></div><div class="panel-body"><p>Practicalli tends toward the simplest and developer oriented architectural decisions, making deployment from source a trivial process with adherence to the <a href="https://12factor.net/" target="_blank">12 Factor design</a> approach.</p><p>Docker does add a layer of indirection and more configuration is required to deploy Clojure Services in this manor.  Practicalli does welcome Docker (and Docker compose, kubernetes, GitPod, etc) contributions to this guide, allowing Practicalli more time to focus on Clojure specific content.  Practicalli may cover these aspects if enough interested is shown.</p></div></div>
-<h2 id="postgresql-alternatives">PostgreSQL Alternatives</h2>
+<p>GitHub and GitHub actions will be predominantly used in this guide, although more use of CircleCI and GitLab will also be introduced. <a href="http://circleci.com" target="_blank">CircleCI</a> is a developer focused service for Continuous Integration, developed with Clojure, providing obs that package up common workflows such as deploying to specific Cloud services.</p>
+<table>
+<thead>
+<tr>
+<th>Continuous Integration Services</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://circleci.com" target="_blank">GitHub Actions</a></td>
+</tr>
+<tr>
+<td><a href="http://circleci.com" target="_blank">GitLab CI</a></td>
+</tr>
+<tr>
+<td><a href="http://circleci.com" target="_blank">CircleCI</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="warningheroku-deployment-deprecated">WARNING::Heroku deployment deprecated</h4>
+<p><a href="https://heroku.com" target="_blank">Heroku</a> has been used to simplify deployment directly from source code using existing build packs.  Heroku now requires a commercial license for deployment so this content is to be deprecated.</p>
+<h2 id="persistence-alternatives">Persistence Alternatives</h2>
 <p>Practicalli is considering other persistent storage approaches for this guide and any contributions in this regard is much appreciated</p>
 <ul>
 <li><a href="https://opencrux.com/" target="_blank">Crux</a> - an open source document database with bitemporal graph queries</li>
-<li><a href="https://www.datomic.com/" target="_blank">Datomic</a> - a transactional database with a flexible data model, elastic scaling, and rich queries.</li>
+<li><a href="https://www.datomic.com/" target="_blank">Datomic</a> - a commercial transactional database with a flexible data model, elastic scaling, and rich queries.</li>
 <li><a href="https://aws.amazon.com/rds/aurora/" target="_blank">Amazon Aurora</a> - MySQL and PostgreSQL compatible cloud native relational database</li>
 <li><a href="https://aws.amazon.com/dynamodb/" target="_blank">Amazon DynamoDB</a> with Clojure <a href="https://github.com/Taoensso/faraday" target="_blank">Faraday</a> library - for persisting JSON like data structures</li>
 </ul>
@@ -2384,7 +2397,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Requirements","level":"1.2","depth":1,"next":{"title":"Overview","level":"1.3","depth":1,"path":"clojure-web-services-overview.md","ref":"clojure-web-services-overview.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure","none"]},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-web-services/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IGraphicDesign":"https://github.com/practicalli/graphic-design","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-web-services/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IClojureDepsEdnInstall":"/clojure-tools/install/community-tools.md","P9IIssuesUrl":"https://github.com/practicalli/clojure-web-services/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.li/clojure","P9IWebsite":"https://practical.li/clojure","P9IFourClojure":"https://github.com/practicalli/four-clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practicalli":"https://practical.li/"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"requirements.md","mtime":"2022-11-27T14:14:39.568Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-27T14:16:02.516Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Requirements","level":"1.2","depth":1,"next":{"title":"Overview","level":"1.3","depth":1,"path":"clojure-web-services-overview.md","ref":"clojure-web-services-overview.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure","none"]},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-web-services/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IGraphicDesign":"https://github.com/practicalli/graphic-design","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-web-services/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IClojureDepsEdnInstall":"/clojure-tools/install/community-tools.md","P9IIssuesUrl":"https://github.com/practicalli/clojure-web-services/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.li/clojure","P9IWebsite":"https://practical.li/clojure","P9IFourClojure":"https://github.com/practicalli/four-clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practicalli":"https://practical.li/"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"requirements.md","mtime":"2022-11-28T16:27:23.756Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-28T16:28:43.952Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
