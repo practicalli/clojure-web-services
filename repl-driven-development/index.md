@@ -1,8 +1,8 @@
-# REPL Driven Development for Clojure Web Apps and Services
+# REPL workflow for Clojure web services
 
 [Practicalli Clojure provides an overview of REPL driven development](https://practical.li/clojure/repl-driven-devlopment.html)
 
-With Clojure Web applications and services there are also long running processes to manage, dependencies between services in the system and it may be valuable to retain state of your application when loading changes.
+Clojure web services includeds an HTTP server long running processes to manage as well.
 
 Integrant REPL extends the REPL driven development workflow to Clojure web applications and services, following the ideas discussed in the [Clojure Reloaded workflow](https://cognitect.com/blog/2013/06/04/clojure-workflow-reloaded).
 
@@ -12,11 +12,13 @@ By defining relationships between services, such as an HTTP server and a Persist
 
 
 ## Reloaded REPL workflow
+
 Reloaded REPL workflow provides a simple way to reload changes into the system as it is being developed.
 
 A Reloaded REPL workflow manages the start and stop of these services, as well as the system configuration.  It is also possible to view the live system configuration and interact with the configuration.
 
 ![Reloaded REPL with Integrant REPL](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-webapps/clojure-repl-driven-development-reloaded-repl-concept.png)
+
 
 ## Integrant and Integrant REPL
 
@@ -24,7 +26,6 @@ Integrant is used for managing the life-cycle of services when running the appli
 
 Integrant REPL is used to manage services actively being developed and provides access to the configuration to start services (`integrant.repl.state/config`) and the configuration of the running system state (`integrant.repl.state/system`)
 
-> TODO: add link to page in book that covers integrant
 
 
 ## Aero - defining environment profiles
