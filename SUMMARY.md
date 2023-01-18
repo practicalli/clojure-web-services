@@ -93,8 +93,7 @@
         * [H2 database tools](relational-databases-and-sql/h2-database/database-tools.md)
     * [PostgreSQL Database](relational-databases-and-sql/postgresql-database.md)
         * [Managing Connections](relational-databases-and-sql/managing-connections.md)
-
-
+        * [Lobo Table Creation](projects/leiningen/todo-app/postgres/lobo-table-creation.md)
 <!-- * [Specifications](specifications/index.md) -->
 <!--     * [clojure.spec](specifications/clojure-spec/index.md) -->
 <!--     * [Malli](specifications/malli/index.md) -->
