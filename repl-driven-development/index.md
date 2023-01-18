@@ -36,13 +36,9 @@ A specific profile value is given to `aero/read-config` which parses the Integra
 As each part of the system can be defined using profiles, the same `resources/config.edn` configuration can be used for both Integrant and Integrant REPL
 
 
-## Introduction to Integrant
+## References
 
-An introduction to Integrant by the author of the library, James Reeves. A brief discussion of Integrant REPL is at 18:45. The video also introduces Duct, the authors web framework built on the similar principles of Integrant.
-
-{% youtube %}
-https://youtu.be/Y8mI2OZR3Fg?t=1124
-{% endyoutube %}
+* [Enter Integrant: a micro-framework for data-driven architecture with James Reeves - SkillsMatter](https://skillsmatter.com/skillscasts/9820-enter-integrant-a-micro-framework-for-data-driven-architecture-with-james-reeves)
 
 
 ## Alternative tools
