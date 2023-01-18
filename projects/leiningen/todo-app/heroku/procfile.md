@@ -9,6 +9,7 @@ Create a new file called `Procfile` with the following text
 ```none
 web: java $JVM_OPTS -cp target/todo-list.jar clojure.main -m todo-list.core $PORT
 ```
+<!-- TODO: use JDK_JAVA_OPTIONS instead of JVM_OPTS -->
 
 > #### Hint::Get webserver PORT from Heroku
 > Heroku dynamically assigns a port number for each `web:` application deployed.  The Heroku port is set in the PORT environment variable within Heroku each time the application is deployed.
