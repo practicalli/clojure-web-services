@@ -75,6 +75,8 @@ In the Heroku dashboard, open the application Settings and add a Config Vars usi
 
 ![Heroku dashboard - Settings - Config Vars - Clojure CLI version](/images/heroku-dashboard-status-monitor-config-vars-clojure-cli-version.png)
 
+<!-- TODO: Investiage alternative to Heroku deployment from CircleCI -->
+
 
 ## CircleCI configuration with Heroku Orb
 
@@ -120,6 +122,8 @@ jobs:
           key: status-monitor-service-{{ checksum "deps.edn" }}
       - run: clojure -X:test/run
 ```
+
+<!-- TODO: Update CircleCI config to use JDK_JAVA_OPTIONS environment variable -->
 
 
 ## CircleCI Environment Variables
