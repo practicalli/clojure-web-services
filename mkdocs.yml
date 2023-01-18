@@ -1,0 +1,358 @@
+---
+# Practicalli Clojure
+site_name: Practicalli Clojure Web Services
+site_url: https://practical.li/clojure-web-services
+site_description: Practical guide to Clojure Web Services and APIs
+site_author: Practicalli
+copyright: Copyright &copy 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+repo_url: https://github.com/practicalli/clojure-web-services/
+edit_uri: https://github.com/practicalli/clojure-web-services/edit/main/docs/
+
+# Deployment
+# remote_name: origin
+remote_branch: gh-pages # deployment branch
+
+# Theme and styling
+theme:
+  name: material
+  logo: assets/images/practicalli-logo.png
+  favicon: assets/favicon.svg
+  extra_css:
+    - stylesheets/extra.css
+  features:
+    - navigation.top
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.instant # Avoid page reloading for internal links
+    - navigation.tracking # Update URL with anchor
+    - navigation.indexes # Nav sections can have files
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: deep purple
+      extra_css:
+        - stylesheets/extra.css
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  # Override theme
+  # custom_dir: overrides
+
+# extra_css:
+#   - stylesheets/extra.css
+
+## Additional styling
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html # Grids
+  - footnotes # footnotes and abbreviations
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys # keyboard keys
+  - pymdownx.magiclink
+  - def_list # lists
+  - pymdownx.tasklist:
+      custom_checkbox: true # checkboxes
+  - toc:
+      permalink: λ︎
+
+## Plugins
+plugins:
+  # Explicitly add search plugin when defining plugins in this configuration file
+  - search
+  - callouts
+  - glightbox # Image aligning
+  - git-revision-date-localized: # Update and Creation date of each page
+      # enable_creation_date: true
+      fallback_to_build_date: true
+
+  # Generate Social Cards via CI only
+  # in assets/images/social
+  - social:
+      cards: !ENV [MKDOCS_SOCIAL_CARDS_GENERATE, true]
+
+  # Redirect pages when moved or changed
+  - redirects:
+      redirect_maps:
+        repl-driven-development.md: introduction/repl-workflow.md
+
+# Footer / Social Media
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jr0cket/
+    - icon: fontawesome/brands/slack
+      link: https://clojurians.slack.com/messages/practicalli
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/practical_li
+    - icon: fontawesome/brands/github
+      link: https://github.com/practicalli
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/practicalli
+
+# Navigation
+nav:
+  - Overview:
+      - index.md
+      - REPL Workflow: introduction/repl-workflow.md
+      - Contributing: introduction/contributing.md
+      - Writing Tips: introduction/writing-tips.md
+  - Services REPL Workflow:
+      - repl-driven-development/index.md
+      - repl-driven-development/aero-environment-profiles.md
+      - repl-driven-development/integrant-repl/index.md
+      - repl-driven-development/integrant-repl/just-in-time-loading.md
+  - Application Server:
+      - app-servers/index.md
+      - app-servers/app-server-logging.md
+      - app-servers/atom-based-restart.md
+      - app-servers/clojure-project.md
+      - app-servers/create-server.md
+      - app-servers/debugging.md
+      - app-servers/http-kit-server-options.md
+      - app-servers/java-system-properties.md
+      - app-servers/jetty-server-options.md
+      - app-servers/overview.md
+      - app-servers/route-requests.md
+      - app-servers/routing.md
+      - app-servers/set-listen-port.md
+      - app-servers/simple-restart.md
+      - app-servers/start-server.md
+      - app-servers/static-content.md
+      - application-logic/index.md
+      - application-logic/routing.md
+      - application-logic/middleware/index.md
+  - API:
+      - server-side-api/index.md
+      - server-side-api/cheshire.md
+      - server-side-api/compojure-api-template.md
+      - server-side-api/create-compojure-api-project.md
+      - server-side-api/json-files.md
+      - server-side-api/plumatic-schema.md
+      - server-side-api/ring-mock.md
+      - server-side-api/ring-swagger.md
+      - server-side-api/swagger.md
+      - server-side-api/terminology.md
+      - server-side-api/testing-api.md
+      - server-side-api/end-to-end-testing/index.md
+      - server-side-api/end-to-end-testing/curl.md
+      - server-side-api/end-to-end-testing/insommnia.md
+      - server-side-api/end-to-end-testing/postman.md
+      - server-side-api/end-to-end-testing/swagger.md
+  - Persistence:
+      - persistence/index.md
+      - clojure-databases/index.md
+      - Relational:
+          - relational-databases-and-sql/index.md
+          - relational-databases-and-sql/h2-database.md
+          - relational-databases-and-sql/managing-connections.md
+          - relational-databases-and-sql/postgresql-database.md
+          - relational-databases-and-sql/h2-database/index.md
+          - relational-databases-and-sql/h2-database/database-tools.md
+          - relational-databases-and-sql/h2-database/schema-design.md
+          - relational-databases-and-sql/next-jdbc-library/index.md
+          - relational-databases-and-sql/next-jdbc-library/add-to-project.md
+          - relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.md
+          - relational-databases-and-sql/next-jdbc-library/database-specifications.md
+          - relational-databases-and-sql/next-jdbc-library/next-jdbc-and-resultsets.md
+          - relational-databases-and-sql/next-jdbc-library/simple-example.md
+      - XTDB:
+          - clojure-databases/crux/index.md
+  - Libraries:
+      - libraries/index.md
+      - Reitit:
+          - libraries/reitit/index.md
+          - libraries/reitit/constructing-routes.md
+  # - Micro-frameworks:
+  #     - micro-framework/index.md
+  #     - micro-framework/edge/index.md
+  #     - micro-framework/luminus/index.md
+  #     - micro-framework/pedestal/index.md
+  - Projects:
+      - projects/index.md
+      - full-app/index.md
+      - Game Scoreboard:
+          - projects/game-scoreboard-api/index.md
+          - server-side-api/projects/game-scoreboard/index.md
+          - server-side-api/projects/game-scoreboard/defining-scoreboard.md
+          - server-side-api/projects/game-scoreboard/defining-scores.md
+          - server-side-api/projects/game-scoreboard-ui/index.md
+          - server-side-api/projects/game-scoreboard-ui/create-project.md
+      - Banking On Clojure:
+          - projects/banking-on-clojure/index.md
+          - projects/banking-on-clojure/account-overview-page.md
+          - projects/banking-on-clojure/application-server-configuration.md
+          - projects/banking-on-clojure/application-server.md
+          - projects/banking-on-clojure/clojure-spec-generate-mock-data.md
+          - projects/banking-on-clojure/continuous-integration.md
+          - projects/banking-on-clojure/create-records.md
+          - projects/banking-on-clojure/cyclic-load-dependency.md
+          - projects/banking-on-clojure/database-queries.md
+          - projects/banking-on-clojure/database-tables.md
+          - projects/banking-on-clojure/defining-handlers.md
+          - projects/banking-on-clojure/delete-records.md
+          - projects/banking-on-clojure/deployment-pipeline.md
+          - projects/banking-on-clojure/deployment-via-ci.md
+          - projects/banking-on-clojure/development-database.md
+          - projects/banking-on-clojure/generate-data-from-specs.md
+          - projects/banking-on-clojure/honeysql.md
+          - projects/banking-on-clojure/instrument-next-jdbc-functions.md
+          - projects/banking-on-clojure/namespace-design.md
+          - projects/banking-on-clojure/production-database.md
+          - projects/banking-on-clojure/read-records.md
+          - projects/banking-on-clojure/refactor-handler.md
+          - projects/banking-on-clojure/spec-generative-testing.md
+          - projects/banking-on-clojure/unit-testing-the-database.md
+          - projects/banking-on-clojure/unit-tests.md
+          - projects/banking-on-clojure/update-records.md
+      - Status Monitor:
+          - projects/status-monitor-deps/index.md
+          - projects/status-monitor-deps/application-server.md
+          - projects/status-monitor-deps/continuous-integration.md
+          - projects/status-monitor-deps/debugging-requests.md
+          - projects/status-monitor-deps/deployment-via-ci.md
+          - projects/status-monitor-deps/jetty-and-http-kit.md
+          - projects/status-monitor-deps/refactor-handlers-and-tests.md
+          - projects/status-monitor-deps/unit-test-mocking-handlers.md
+      - URL Shortner:
+          - project-url-shortner/index.md
+          - project-url-shortner/add-alias-to-database.md
+          - project-url-shortner/add-static-resources.md
+          - project-url-shortner/alias-generator.md
+          - project-url-shortner/compojure-template.md
+          - project-url-shortner/create-database.md
+          - project-url-shortner/create-html-form.md
+          - project-url-shortner/create-project.md
+          - project-url-shortner/delete-alias-from-database.md
+          - project-url-shortner/design-data-structure.md
+          - project-url-shortner/disable-anti-forgery-check.md
+          - project-url-shortner/get-alias-from-database.md
+          - project-url-shortner/html-form.md
+          - project-url-shortner/if-let-function.md
+          - project-url-shortner/named-alias-handler.md
+          - project-url-shortner/persist-aliases.md
+          - project-url-shortner/postgres-setup.md
+          - project-url-shortner/redirect-to-full-url.md
+          - project-url-shortner/redis-setup.md
+          - project-url-shortner/refacor-hiccup-form.md
+          - project-url-shortner/return-short-url.md
+          - project-url-shortner/return-url-aliases.md
+          - project-url-shortner/run-project.md
+          - project-url-shortner/test-app-reloading.md
+          - project-url-shortner/using-ring-redirect.md
+          - project-url-shortner/whats-in-a-request.md
+      - TODO App:
+          - projects/leiningen/todo-app/index.md
+          - projects/leiningen/todo-app/compojure/index.md
+          - projects/leiningen/todo-app/compojure/about.md
+          - projects/leiningen/todo-app/compojure/adding-dependency.md
+          - projects/leiningen/todo-app/compojure/adding-goodbye-route.md
+          - projects/leiningen/todo-app/compojure/code-so-far.md
+          - projects/leiningen/todo-app/compojure/defroutes.md
+          - projects/leiningen/todo-app/compojure/lisp-calculator.md
+          - projects/leiningen/todo-app/compojure/show-request-info.md
+          - projects/leiningen/todo-app/compojure/theory-local-name-bindings.md
+          - projects/leiningen/todo-app/compojure/theory-routing.md
+          - projects/leiningen/todo-app/compojure/theory-using-hash-maps.md
+          - projects/leiningen/todo-app/compojure/using-compojure.md
+          - projects/leiningen/todo-app/compojure/variable-path-elements.md
+          - projects/leiningen/todo-app/connect-to-postgres/index.md
+          - projects/leiningen/todo-app/connect-to-postgres/add-database-dependencies.md
+          - projects/leiningen/todo-app/connect-to-postgres/define-db-connection.md
+          - projects/leiningen/todo-app/create-a-handler-function/index.md
+          - projects/leiningen/todo-app/create-a-handler-function/add-not-found.md
+          - projects/leiningen/todo-app/create-a-handler-function/code-so-far.md
+          - projects/leiningen/todo-app/create-a-handler-function/if-function.md
+          - projects/leiningen/todo-app/create-a-handler-function/maps-and-keywords.md
+          - projects/leiningen/todo-app/create-a-project/index.md
+          - projects/leiningen/todo-app/create-a-project/code-so-far.md
+          - projects/leiningen/todo-app/create-a-project/update-project-details.md
+          - projects/leiningen/todo-app/create-a-webserver-with-ring/index.md
+          - projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.md
+          - projects/leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency.md
+          - projects/leiningen/todo-app/create-a-webserver-with-ring/code-so-far.md
+          - projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.md
+          - projects/leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace.md
+          - projects/leiningen/todo-app/create-a-webserver-with-ring/include-ring-library.md
+          - projects/leiningen/todo-app/create-a-webserver-with-ring/namespaces.md
+          - projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.md
+          - projects/leiningen/todo-app/database-model/index.md
+          - projects/leiningen/todo-app/database-model/alternative-approaches.md
+          - projects/leiningen/todo-app/database-model/create-table.md
+          - projects/leiningen/todo-app/database-model/create-task.md
+          - projects/leiningen/todo-app/database-model/delete-task.md
+          - projects/leiningen/todo-app/database-model/show-all-task.md
+          - projects/leiningen/todo-app/heroku/index.md
+          - projects/leiningen/todo-app/heroku/code-so-far.md
+          - projects/leiningen/todo-app/heroku/deploy.md
+          - projects/leiningen/todo-app/heroku/procfile.md
+          - projects/leiningen/todo-app/heroku/update-project.md
+          - projects/leiningen/todo-app/hiccup/index.md
+          - projects/leiningen/todo-app/hiccup/code-so-far.md
+          - projects/leiningen/todo-app/hiccup/create-new-handler.md
+          - projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.md
+          - projects/leiningen/todo-app/introducing-ring/index.md
+          - projects/leiningen/todo-app/postgres/index.md
+          - projects/leiningen/todo-app/postgres/connect-to-heroku-postgres-from-clients.md
+          - projects/leiningen/todo-app/postgres/dataclips.md
+          - projects/leiningen/todo-app/postgres/environment-variables.md
+          - projects/leiningen/todo-app/postgres/install.md
+          - projects/leiningen/todo-app/postgres/jira-ticket.md
+          - projects/leiningen/todo-app/postgres/lobo-table-creation.md
+          - projects/leiningen/todo-app/postgres/pg-admin.md
+          - projects/leiningen/todo-app/postgres/postgres-cli.md
+          - projects/leiningen/todo-app/postgres/postgres-commands.md
+          - projects/leiningen/todo-app/postgres/postgres-performance-analytics.md
+          - projects/leiningen/todo-app/postgres/postgres-toolbelt-commands.md
+          - projects/leiningen/todo-app/refactor-namespace/index.md
+          - projects/leiningen/todo-app/refactor-namespace/base-routes.md
+          - projects/leiningen/todo-app/refactor-namespace/code-so-far.md
+          - projects/leiningen/todo-app/refactor-namespace/core.md
+          - projects/leiningen/todo-app/refactor-namespace/play-routes.md
+          - projects/leiningen/todo-app/refactor-namespace/task-routes.md
+          - projects/leiningen/todo-app/reloading-the-application/index.md
+          - projects/leiningen/todo-app/reloading-the-application/code-so-far.md
+          - projects/leiningen/todo-app/reloading-the-application/middleware.md
+          - projects/leiningen/todo-app/reloading-the-application/test-your-code-reloads.md
+          - projects/leiningen/todo-app/task-handlers/index.md
+          - projects/leiningen/todo-app/task-handlers/add-a-task.md
+          - projects/leiningen/todo-app/task-handlers/delete-a-task.md
+          - projects/leiningen/todo-app/task-handlers/show-task.md
+          - projects/leiningen/todo-app/unit-test-handler-function/index.md
+          - projects/leiningen/working-example/index.md
+  - Reference:
+      - reference/index.md
+      - reference/ring/index.md
+      - reference/ring/request-map.md
+      - using-postgres/index.md
+      - yet-more-routes/index.md
+      - yet-more-routes/about.md
+      - yet-more-routes/show-request-info.md
+      - adding-more-route/index.md
+      - adding-more-route/using-cond-function.md
