@@ -1,10 +1,12 @@
-# REPL workflow for Clojure web services
+# Clojure Service REPL workflow
 
-[Practicalli Clojure provides an overview of REPL driven development](https://practical.li/clojure/repl-driven-devlopment.html)
+[General Clojure REPL workflow - Practicalli Guide](/clojure-web-services/repl-workflow.md){target=_blank .md-button}
 
-Clojure web services includeds an HTTP server long running processes to manage as well.
+Services are composed of components such as HTTP server, database connection, log publisher, message queue, etc.  long running processes to manage as well.
 
-Integrant REPL extends the REPL driven development workflow to Clojure web applications and services, following the ideas discussed in the [Clojure Reloaded workflow](https://cognitect.com/blog/2013/06/04/clojure-workflow-reloaded).
+Clojure web services typically included a long running process such as an
+
+Integrant REPL extends the REPL driven development workflow to Clojure web applications and services, following the ideas discussed in the [Clojure Reloaded workflow](https://cognitect.com/blog/2013/06/04/clojure-workflow-reloaded){target=_blank}.
 
 Integrant REPL is a library to manage services using a data structure that defines the configuration of each service and dependencies between services in the system or external to the system.
 
@@ -17,7 +19,7 @@ Reloaded REPL workflow provides a simple way to reload changes into the system a
 
 A Reloaded REPL workflow manages the start and stop of these services, as well as the system configuration.  It is also possible to view the live system configuration and interact with the configuration.
 
-![Reloaded REPL with Integrant REPL](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-webapps/clojure-repl-driven-development-reloaded-repl-concept.png)
+![Reloaded REPL with Integrant REPL](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/clojure-repl-driven-development-reloaded-repl-concept.png)
 
 
 ## Integrant and Integrant REPL
@@ -30,7 +32,7 @@ Integrant REPL is used to manage services actively being developed and provides 
 
 ## Aero - defining environment profiles
 
-[Aero](https://github.com/juxt/aero) provides a way to define multiple environment profiles, so the same `resources/config.edn` file can support `develop`, `test`, `stage` and `live` environments.
+[Aero](https://github.com/juxt/aero){target=_blank} provides a way to define multiple environment profiles, so the same `resources/config.edn` file can support `develop`, `test`, `stage` and `live` environments.
 
 A specific profile value is given to `aero/read-config` which parses the Integrant configuration, returning an updated Integrant configuration containing that profiles specific values for each key.
 
@@ -39,7 +41,7 @@ As each part of the system can be defined using profiles, the same `resources/co
 
 ## References
 
-* [Enter Integrant: a micro-framework for data-driven architecture with James Reeves - SkillsMatter](https://skillsmatter.com/skillscasts/9820-enter-integrant-a-micro-framework-for-data-driven-architecture-with-james-reeves)
+* [Enter Integrant: a micro-framework for data-driven architecture with James Reeves - SkillsMatter](https://skillsmatter.com/skillscasts/9820-enter-integrant-a-micro-framework-for-data-driven-architecture-with-james-reeves){target=_blank}
 
 
 ## Alternative tools
@@ -47,4 +49,4 @@ As each part of the system can be defined using profiles, the same `resources/co
 * Mount
 * Component
 * Component.repl
-* [JUXT/clip](https://github.com/juxt/clip)
+* [JUXT/clip](https://github.com/juxt/clip){target=_blank}
