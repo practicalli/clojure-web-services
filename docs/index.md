@@ -1,54 +1,60 @@
-![Practicalli Clojure Web Services banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-services-book-banner.png)
+![Practicalli Clojure Web Services banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-light.png#only-light)
+![Practicalli Clojure Web Services banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-dark.png#only-dark)
 
-A guide to developing server-side web services and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts.
+Develop server-side web services and API's from the ground up using [Clojure](http://clojure.org) following a simple and data-centric design and applying functional programming concepts.
 
-A REPL Driven development workflow provides an instant feedback loop that shows how the code works as it is being written.
+Use a [REPL Workflow approach](introduction/repl-workflow.md) to provide instant feedback on the code behaviour as it is written, validating design decisions as they are made.
 
-Relevant theory and background reading is included whilst keeping the practical focus of this guide on build projects and experimenting with the code.
+![Clojure REPL workflow](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png)
 
 
-## General approach
+## Tools
 
-Projects are created and configure using Clojure CLI configuration.  Older content uses Leiningen for project configuration.
+Clojure CLI is used to configure and run projects, enhance with [aliases from Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/).
 
 Larger projects use Integrant & Integrant REPL to manage components and state, using a reloaded REPL workflow to manage changes in addtion to evaluating functions in the REPL.
 
 Persistence is provides via Postgresql (and eventually JUXT Crux)
 
-tools.build will be used to create Clojure deployments, with GitHub actions and Docker used for Continuous Integration and orchestrating systems.
+tools.build will be used to create Clojure artefacts for deployment, with GitHub actions and Docker used for Continuous Integration and orchestrating systems.
 
-> ####WARNING::Heroku deployment to be archived
-> Heroku Cloud service deployment approach is being archived as the service no longer provides a developer environment (November 2022)
+make is a general build tool used to support project development and support automation of wokflow tasks.
+
+??? WARNING "Heroku deployment to be archived"
+    Heroku Cloud service deployment approach is being archived as the service no longer provides a developer environment (November 2022)
+
+??? WARNING "Older content using Leiningen"
+    Older content uses Leiningen for project configuration.  This content can be converted to a Clojure CLI project by creating a `deps.edn` file containing the relevant dependencies.  Add a `build.clj` configuration to build deployable assets.
 
 
 ## Library Composition approach
 
-The Clojure community has a diverse set of libraries, each of which focuses on a specific need. These libraries are assembled to rapidly develop a tailored solution, avoiding bloat and unrequired complexity that comes with large frameworks.  
+The Clojure community provides a diverse set of libraries, each focused on a specific need. Libraries are assembled to rapidly develop a tailored solution, avoiding bloat and the unnecessary complexity that comes with large frameworks. Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.
 
-Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.
+Templates can be used to create example projects with common libraries, with code to show showing how libraries can be wired together.
+provide examples of libraries working together.
 
-Templates create projects showing commonly used libraries along with example code. Templates demonstrate how common services can be assembled and how to use libraries together. Templates have options to configure the project as its created, customising to the specific needs of the problem being solved.
-provide examples of libraries working together  
+??? INFO "Avoiding large frameworks"
+    Frameworks are design decisions others have made and generalised to solve a range of problem, so there is no guarantee on how many of those decisions are relevant for the current project.
 
-Frameworks are design decisions others have made and generalised to solve a range of problem, so there is no guarantee on how many of those decisions are relevant for the current project. Frameworks tend to include many features not relevant to the current problem, which can be challenging to remove or replace. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution. Clojure does not focus on the classic framework approach like Rails or Spring, for a very good reason.
+    Frameworks tend to include many features not relevant to the current problem, which can be challenging to remove or replace. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution.
 
-
-## Discussions and feedback
-
-[![Practicalli channel on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
-
-Get a [free Clojurians slack community account](https://clojurians.net/)
+    Clojure does not focus on the classic framework approach like Rails or Spring, for this reason.
 
 
-> #### NOTE::Book updated regularly
-> Last published: {{ gitbook.time }}
+
+## Sponsor my work
+
+[![Sponsor practicalli-john](https://raw.githubusercontent.com/practicalli/graphic-design/live/buttons/practicalli-github-sponsors-button.png){ align=left loading=lazy }](https://github.com/sponsors/practicalli-john/)
+
+The majority of my work is now focused on the [Practicalli series of books and videos](https://practical.li/){target=_blank} and an advisory role with several communities
+
+Thank you to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](https://nubank.com.br/){target=_blank} and a wide range of other [sponsors](https://github.com/sponsors/practicalli-john#sponsors){target=_blank} from the Clojure community for your continued support
 
 
-## License
+## Creative commons license
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-<a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1">
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a>
- <a property="dct:title" rel="cc:attributionURL" href="https://github.com/practicalli/clojure-web-services">Practicalli Clojure Web Services</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://practical.li">Practicalli</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0 </a></p>
+<div style="width:95%; margin:auto;">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+This work is licensed under a Creative Commons Attribution 4.0 ShareAlike License (including images & stylesheets).
+</div>
