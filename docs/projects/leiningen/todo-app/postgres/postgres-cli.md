@@ -2,10 +2,11 @@
 
 Heroku toolbelt has many commands for viewing information and querying the Heroku Postgres database.  Here is a breakdown of the most commonly used commands.
 
-> ####Hint::Postgres Command Line Client required
-> Heroku Toolbelt `pg` commands require a working postgres command line client to be installed and available on your operating system path.
->
-> [Ubuntu documentation: PostgreSQL](https://help.ubuntu.com/community/PostgreSQL) has details on installing postgresql clients.
+!!! HINT "Postgres Command Line Client required"
+    Heroku Toolbelt `pg` commands require a working postgres command line client to be installed and available on your operating system path.
+
+    [Ubuntu documentation: PostgreSQL](https://help.ubuntu.com/community/PostgreSQL) has details on installing postgresql clients.
+
 
 ## Postgres Information
 
