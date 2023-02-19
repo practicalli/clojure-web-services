@@ -6,7 +6,7 @@ These servers are often referred to more generically as web servers as they most
 
 Clojure uses embedded servers to support REPL Driven Development, so both new function definitions and server restarts can be managed within the context of a running REPL (avoiding the need to restart the REPL).
 
-![Clojure WebApps simplified stack]({{ book.P9IDeveloperGuides }}clojure/clojure-webapps/clojure-web-apps-stack.png)
+![Clojure WebApps simplified stack](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/clojure-web-apps-stack.png)
 
 
 ## Practicalli defacto library choices
