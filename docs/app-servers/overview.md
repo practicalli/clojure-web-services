@@ -4,7 +4,7 @@ Application servers  for Clojure run an embedded JVM application, such as Jetty 
 
 App servers are started within the Clojure REPL process, as an embedded server. This approach means that during development a server can be restarted to load in new code and immediately update the running application, without having to restart the REPL.
 
-![Clojure WebApps simplified stack]({{ book.P9IDeveloperGuides }}clojure/clojure-webapps/clojure-web-apps-stack.png)
+![Clojure WebApps simplified stack](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/clojure-web-apps-stack.svg)
 
 > #### Hint::Embedded servers in Clojure
 > Clojure takes a more distributed approach to deployment, starting an embedded application server within the application itself.  This approach is more conducive to the container and cloud compute infrastructure.  Scaling is achieved by running multiple instances of the application, each on its own embedded application server.
