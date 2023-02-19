@@ -10,9 +10,12 @@ Reloaded REPL provides a simple way to reload changes into the system as it is b
 
 To assist with debugging, the parsed configuration, `(config)`, and system configuration, `(system)`, data can be viewed via the REPl state to understand how the configuration is being resolved.  This is especially useful when using aero and environment variables.
 
-> #### Hint::Integrant REPL and Integrant
-> Although Integrant and Integrant REPL can share the same configuration file, they are otherwise separate ways of working with a system.
-> Integrant is used to start a system in a consistent order and gracefully shutdown the system on a termination message, e.g. `SIGTERM`.  The state of the running system in Integrant is supposed to be a hidden concern.
+??? HINT "Integrant REPL and Integrant"
+    Integrant and Integrant REPL can share the same system configuration file, although they are otherwise separate ways of working with a system.
+
+    Integrant is used to start a system in a consistent order and gracefully shutdown the system on a termination message, e.g. `SIGTERM`.
+
+    Integrant REPL is additionally used to restart the services during development, loading all code changes into the REPL (especially useful after ranaming functions and namespaces)
 
 
 ## Integrant configuration
@@ -36,37 +39,8 @@ Create a `develop/resources/config.edn` file containing the Integrant REPL confi
 
 Clojure encourages fully qualified keywords, i.e. domain/key, so that keys are unique throughout the system.
 
-The domain used for integrant is the Clojure namespace that contains the defmethod init-key for the key.  The Integrant `load-namespaces` function will automatically load all namespaces that match key names
+The domain used for integrant is the Clojure namespace that contains the `defmethod init-key` for the key.  The Integrant `load-namespaces` function will automatically load all namespaces that match key names
 
-
-## Aero Tag Literals
-
-The same configuration can be used that starts the system using profiles, or a separate develop profile can be created.
-
-Aero uses [tag literals](https://github.com/juxt/aero#tag-literals) as placeholders for environment specific values
-
-* `#profile` - replace with the value from the given profile name
-* `#or`  - a vector of possible values, returning the first "truthy" value
-* `#long` - cast a String value to a Clojure Long type (e.g. for PORT values)
-
-```clojure
-{:practicalli.scoreboard.service/http-server
- {:handler #ig/ref :practicalli.scoreboard.service/router
-  :port #profile {:develop #long #or [#env APP_SERVER_PORT 8888]
-                  :test    #long #or [#env APP_SERVER_PORT 8080]
-                  :stage   #long #or [#env APP_SERVER_PORT 8080]
-                  :live    #long #or [#env APP_SERVER_PORT 8000]}
-  :join? false}
-
- :practicalli.scoreboard.service/router
- {:persistence #ig/ref :practicalli.scoreboard.service/relational-store}
-
- :practicalli.scoreboard.service/relational-store
- {:connection #profile {:develop  {:url "http://localhost/" :port 57207 :database "scoreboard-develop"}
-                        :test     {:url "http://localhost/" :port 57207 :database "scoreboard-test"}
-                        :stage    {:url "http://localhost/" :port 57207 :database "scoreboard-stage"}
-                        :live     {:url "http://localhost/" :port 57207 :database "scoreboard"}}}}
-```
 
 
 ## User namespace
@@ -92,11 +66,26 @@ The `user` namespace is defined separately from the source code, as it is code t
 
 ## Managing the classpath
 
-Run a REPL process including the `user` namespace on the classpath.  Also include a rich terminal UI with `:repl/rebl` alias
+[Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/){target=_blank} aliases defines aliases that include the `dev` directory that contains the `user` namespace on the class path
 
-```bash
-clojure -M:env/develop:repl/rebl
-```
+=== "REPL Reloaded"
+    `:dev/reloaded` alias starts a rich terminal REPL prompt, with the `dev` path and several tools to [enhance the REPL workflow](https://practical.li/clojure/clojure-cli/repl-reloaded/)
+    ```bash
+    clojure -M:repl/reloaded
+    ```
+
+=== "Dev Tools"
+    `:dev/reloaded` alias adds the `dev` path and several tools to [enhance the REPL workflow](https://practical.li/clojure/clojure-cli/repl-reloaded/)
+    ```bash
+    clojure -M:dev/reloaded:repl/rebl
+    ```
+
+=== "Path"
+    `:env/dev` alias adds the `dev` path on REPL start up, include the `dev/user.clj` file
+    ```bash
+    clojure -M:env/dev:repl/rebl
+    ```
+
 
 <!-- TODO: Integrant REPL - add repl startup screenshot ?? -->
 
@@ -208,3 +197,37 @@ Using aero with the Integrant configuration file includes tag literals that need
 
   #_()) ;; End of rich comment block
 ```
+
+
+??? EXAMPLE "requiring-resolve for Just In Time requires"
+    [Integrant in practice](https://lambdaisland.com/blog/2019-12-11-advent-of-parens-11-integrant-in-practice){target=_blank} provides an example of using `requiring-resolve` to avoid including all requires in the `ns` form, potentially reducing REPL startup time by not adding library
+
+    When calling an Integrant function, `requiring-resolve` returns the name of the symbol if already available in the REPL, or requires the functions namespace if the function is not available.
+
+    The library containing the namespace must be part of the class path when the REPL starts (or library has been hotloaded into the REPL)
+    ```clojure
+    (ns user
+      "Reduce REPL startup time by not including requires")
+
+    (defmacro jit
+      "Resolve a symbol name and require its namespace if not currently available in the REPL"
+      [qualified-symbol]
+      `(requiring-resolve '~qualified-symbol))
+
+    (defn set-prep! []
+      ((jit integrant.repl/set-prep!) #((jit feralberry.system/prep) :dev)))
+
+    (defn go []
+      (set-prep!)
+      ((jit integrant.repl/go)))
+
+    (defn reset []
+      (set-prep!)
+      ((jit integrant.repl/reset)))
+
+    (defn system []
+      @(jit integrant.repl.state/system))
+
+    (defn config []
+      @(jit integrant.repl.state/config))
+    ```
