@@ -18,12 +18,12 @@ The most commonly used application servers are in the table below, with Jetty be
 
 Jetty will be used as the defacto server in Practicalli guides, with occasional examples using other libraries.
 
-| Application Server                              | Description                                                                                                                        |
-|-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| [Eclipse Jetty](https://www.eclipse.org/jetty/) | The original embedded Java application server **most commonly used for Clojure web apps**                                          |
-| [Http-kit](http://http-kit.github.io/)          | High performance Clojure/Java application server                                                                                   |
-| [Apache Tomcat](http://tomcat.apache.org/)      | Classic Java application server, very common in JVM environments                                                                   |
-| [Netty](https://netty.io/)                      | Java NIO asynchronous event-driven network application framework                                                                   |
+| Application Server                              | Description                                                                                                                                        |
+|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Eclipse Jetty](https://www.eclipse.org/jetty/) | The original embedded Java application server **most commonly used for Clojure web apps**                                                          |
+| [Http-kit](http://http-kit.github.io/)          | High performance Clojure/Java application server                                                                                                   |
+| [Apache Tomcat](http://tomcat.apache.org/)      | Classic Java application server, very common in JVM environments                                                                                   |
+| [Netty](https://netty.io/)                      | Java NIO asynchronous event-driven network application framework                                                                                   |
 | [Aleph HTTP](https://aleph.io/aleph/http.html)  | Clojure (Netty) Ring-compliant server with support for returning [Manifold](https://aleph.io/manifold/rationale.html) for asynchronous programming |
 
 

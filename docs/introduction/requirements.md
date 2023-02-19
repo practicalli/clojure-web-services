@@ -15,11 +15,11 @@ Code examples can be used with any Clojure build tool, although this guide focus
 
 To complete all the steps in this guide, especially around deployment tasks, additional development tools and services are required.
 
-| Development Tools                                                  | Version | Test (command line) |
-|:-------------------------------------------------------------------|:--------|:--------------------|
-| [Git client](http://git-scm.com/)                                  | latest  | `git --version`     |
-| [Docker Desktop](https://www.docker.com/products/docker-desktop/)  | latest  | `docker --version`  |
-| [Postgres database](https://www.postgresql.org/)                   | latest  |                     |
+| Development Tools                                                 | Version | Test (command line) |
+|:------------------------------------------------------------------|:--------|:--------------------|
+| [Git client](http://git-scm.com/)                                 | latest  | `git --version`     |
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/) | latest  | `docker --version`  |
+| [Postgres database](https://www.postgresql.org/)                  | latest  |                     |
 
 
 GitHub and GitHub actions will be predominantly used in this guide, although more use of CircleCI and GitLab will also be introduced. [CircleCI](http://circleci.com){target=_blank} is a developer focused service for Continuous Integration, developed with Clojure, providing obs that package up common workflows such as deploying to specific Cloud services.
