@@ -37,25 +37,29 @@ Large frameworks constrain the design of a service, forcing development to live 
 
 Projects can be created from templates to avoid starting from scratch each time.
 
-Project templates
+=== "deps-new"
+    deps-new creates Clojure CLI projects from templates and is very simple to create your own templates
+    ```bash
+    clojure -T:project/create :template app :name practicalli/gameboard
+    ```
 
-Using Leiningen
-```bash
-lein new template-name project-name
-```
-Using Clojure CLI
 
-```bash
-clojure -T:project/new :template figwheel :name practicalli/landing-page
-```
+=== "clj-new"
+    clj-new supports a very wide range of templates although has a more involved design when it comes to creating your own templates.  Maintained templates used by clj-new should support both Clojure CLI and Leiningen
+    ```bash
+    clojure -T:project/new :template luminus :name practicalli/gameboard
+    ```
 
-There are many great templates to try that provide insight into building webapps in Clojure.
+    ??? HINT "Convert Leiningen project to Clojure CLI"
+        Add a `deps.edn` file that contains a `{}` hash-map with a `:deps` key that is associated with a hash-map of library dependencies, the same dependencies from the project.clj configuration file updated to the Clojure CLI format, e.g. `{org.clojure/clojure {:mvn/version "1.11.3"}}`
 
-* [compojure](https://github.com/weavejester/compojure-template) - a common web application approach with ring and compojure
-* [compojure-api](https://github.com/metosin/compojure-api) - quickly build API's with ring, compojure and openapi (swagger) for self-documentation
-* [luminus](http://www.luminusweb.net/) - a flexible template to create server-side and full stack web applications
-* [pedestal-service](https://github.com/pedestal/pedestal) - an opinionated, extensible & scalable framework
-* [duct](https://github.com/weavejester/duct) - data-oriented production-grade server-side web applications
-* [JUXT Edge](https://github.com/juxt/edge) - a curated base project to build your own applications and services
+    There are many great templates to try that provide insight into building webapps in Clojure.
 
-You can find a range of project templates by [searching for lein-template on Clojars.org](https://clojars.org/search?q=lein-template).  There is also a [guide to writing templates on Leiningen.org](https://github.com/technomancy/leiningen/blob/master/doc/TEMPLATES.md)
+    * [compojure](https://github.com/weavejester/compojure-template) - a common web application approach with ring and compojure
+    * [compojure-api](https://github.com/metosin/compojure-api) - quickly build API's with ring, compojure and openapi (swagger) for self-documentation
+    * [luminus](http://www.luminusweb.net/) - a flexible template to create server-side and full stack web applications
+    * [pedestal-service](https://github.com/pedestal/pedestal) - an opinionated, extensible & scalable framework
+    * [duct](https://github.com/weavejester/duct) - data-oriented production-grade server-side web applications
+    * [JUXT Edge](https://github.com/juxt/edge) - a curated base project to build your own applications and services
+
+    You can find a range of project templates by [searching for lein-template on Clojars.org](https://clojars.org/search?q=lein-template).  There is also a [guide to writing templates on Leiningen.org](https://github.com/technomancy/leiningen/blob/master/doc/TEMPLATES.md)
