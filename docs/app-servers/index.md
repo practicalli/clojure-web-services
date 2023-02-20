@@ -9,6 +9,14 @@ Clojure uses embedded servers to support REPL Driven Development, so both new fu
 ![Clojure WebApps simplified stack](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/clojure-web-apps-stack.png)
 
 
+# Application components
+
+* Routing
+* Requests
+* Responses
+* Middleware
+
+
 ## Practicalli defacto library choices
 
 Practicalli defacto choices for building web services:
@@ -20,11 +28,7 @@ Practicalli defacto choices for building web services:
 | metosin/reitit | Routing of request and responses, support for ring handlers and middleware (and interceptors) |
 
 
-
-
 ## Example Projects
-
-
 
 | Project            | Description                                                                                                                                                                                   |
 |:-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -6,17 +6,17 @@ App servers are started within the Clojure REPL process, as an embedded server. 
 
 ![Clojure WebApps simplified stack](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/clojure-web-apps-stack.svg)
 
-> #### Hint::Embedded servers in Clojure
-> Clojure takes a more distributed approach to deployment, starting an embedded application server within the application itself.  This approach is more conducive to the container and cloud compute infrastructure.  Scaling is achieved by running multiple instances of the application, each on its own embedded application server.
->
-> In Java was common to have a single application server with all applications deployed as Jar or War archives.  This fitted with the classic architecture of deploying on a single resource rich physical hardware server.  Clojure applications can also be deployed in this classic approach if required.
+??? HINT "Embedded servers in Clojure"
+    Clojure takes a more distributed approach to deployment, starting an embedded application server within the application itself.  This approach is more conducive to the container and cloud compute infrastructure.  Scaling is achieved by running multiple instances of the application, each on its own embedded application server.
+
+    In Java was common to have a single application server with all applications deployed as Jar or War archives.  This fitted with the classic architecture of deploying on a single resource rich physical hardware server.  Clojure applications can also be deployed in this classic approach if required.
 
 
 ## Which Application Server to use
 
 The most commonly used application servers are in the table below, with Jetty being the most common as it is wrapped by the ring library.
 
-Jetty will be used as the defacto server in Practicalli guides, with occasional examples using other libraries.
+Jetty is the the defacto server in Practicalli guides, with occasional examples using other libraries.
 
 | Application Server                              | Description                                                                                                                                        |
 |-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -80,11 +80,11 @@ Netty is a NIO client server framework which enables quick and easy development 
 
 Manifold provides streams focused libraries, such as Aleph HTTP for web applications and TCP/UDP for more general networking.
 
-{% youtube %}
-https://www.youtube.com/watch?v=1bNOO3xxMc0
-{% endyoutube %}
 
 
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1bNOO3xxMc0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 
 <!-- ## Networks application layer -->
