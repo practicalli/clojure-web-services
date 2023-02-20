@@ -1,7 +1,5 @@
 ## Application Logic
 
-> #### TODO::work in progress, sorry
-> Just notes at the moment
 
 
 ![Ring - Compojure routes](../images/clojure-ring-adaptor-middleware-route--handler-overview.png)

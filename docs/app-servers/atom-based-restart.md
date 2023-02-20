@@ -9,11 +9,8 @@ An atom is a mutable container that holds any type of value.  The value in the a
 * `deref` or `@` returns the value contained within the atom
 
 
-{% tabs jetty="Jetty", httpkit="Http-kit Server" %}
 
-{% content "jetty" %}
-
-## Reference to Jetty server process
+## Reference to server process
 
 A reference to the server process will be held in a Clojure atom, a mutable container.  An atom is used as a value for the server reference will be swapped into the atom on server start.  The atom is set to nil when the server stops.  Using an atom allows for this value to change.
 
@@ -25,7 +22,7 @@ Define a Clojure atom with the initial value of `nil`.
 (defonce app-server-instance (atom nil))
 ```
 
-## Jetty -main function
+## -main function
 
 The `-main` function determines an HTTP port value, from either an argument, an operating system `$PORT` environment variable or using the default 8888 value.
 
@@ -33,148 +30,131 @@ The `-main` function determines an HTTP port value, from either an argument, an 
 
 `(.stop @app-server-instance)` uses the instance reference to stop the server.  `app-server-stop` function check to see if a running instance exists and if so, stops the server.
 
+!!! HINT "HTTP Kit timeout"
+    HTTP Kit can be sent a timeout value to gracefully shut down the server.  The `app-server-stop` function sends a `:timeout 100` value to the running app server instance.
+
 The REPL is still running, so the server can be started by calling `(-main)` or `(app-server-start 8888)`.
 
 `app-server-restart` is a convenience function that stops and starts the application server, meaning the developer only needs to evaluate `(app-server-restart)`
 
+=== "jetty"
+    ```clojure
+    (ns practicalli.example-webapp
+      (:gen-class)
+      (:require [ring.adapter.jetty :as jetty]
+                [compojure.core :refer [defroutes GET]]))
 
-## Jetty Code example
-
-```clojure
-(ns practicalli.example-webapp
-  (:gen-class)
-  (:require [ring.adapter.jetty :as jetty]
-            [compojure.core :refer [defroutes GET]]))
-
-;; Routing
-
-(defroutes app
-  (GET "/" [] {:status 200 :body "App Server Running"}))
+    ;; Routing
+    (defroutes app
+      (GET "/" [] {:status 200 :body "App Server Running"}))
 
 
-;; System
-
-;; Reference to server instance
-(defonce app-server-instance (atom nil))
-
-
-(defn app-server-start
-"Start Jetty Application server, adding instance to global state"
-  [port]
-  (reset! app-server-instance
-          (jetty/run-jetty #'app {:port port :join? false})))
+    ;; System
+    ;; Reference to server instance
+    (defonce app-server-instance (atom nil))
 
 
-(defn app-server-stop
-  "Check for a running app-server instance, shutdown if present"
-  []
-  (when @app-server-instance
-    (.stop @app-server-instance))
-  (reset! app-server-instance nil))
+    (defn app-server-start
+    "Start Jetty Application server, adding instance to global state"
+      [port]
+      (reset! app-server-instance
+              (jetty/run-jetty #'app {:port port :join? false})))
 
 
-(defn app-server-restart
-  "Stop and then start the application server, loading in the new code"
-  []
-  (app-server-stop)
-  (app-server-start (Integer. (or (System/getenv "PORT") 8888))))
+    (defn app-server-stop
+      "Check for a running app-server instance, shutdown if present"
+      []
+      (when @app-server-instance
+        (.stop @app-server-instance))
+      (reset! app-server-instance nil))
 
 
-(defn -main
-  "Determine an HTTP port number and start application server on that port.
-  A value for port can be passed as the first argument to the command to start the application via the CLI"
-  [& [port]]
-  (let [port (Integer. (or port
-                           (System/getenv "PORT")
-                           8888))]
-    (app-server-start port)))
+    (defn app-server-restart
+      "Stop and then start the application server, loading in the new code"
+      []
+      (app-server-stop)
+      (app-server-start (Integer. (or (System/getenv "PORT") 8888))))
 
 
-;; REPL driven development
-
-(comment
-
- (app-server-restart)
- (-main)
-
-)
-```
-
-
-{% content "httpkit" %}
-
-## Reference to HTTPkit server process
-
-An atom holds an instance of the running server, which is populated by the `app-server-start` function.
-
-The `app-server-stop` function send a `:timeout 100` value to the running app server instance to gracefully shut down the server.
-
-During REPL driven development, call `app-server-restart` to stop and start the server.
-
-## HTTPkit code example
-
-```clojure
-(ns practicalli.example-webapp
-  (:gen-class)
-  (:require [org.httpkit.server :as app-server]
-            [compojure.core :refer [defroutes GET]]))
+    (defn -main
+      "Determine an HTTP port number and start application server on that port.
+      A value for port can be passed as the first argument to the command to start the application via the CLI"
+      [& [port]]
+      (let [port (Integer. (or port
+                               (System/getenv "PORT")
+                               8888))]
+        (app-server-start port)))
 
 
-;; Routing
+    ;; REPL driven development
+    (comment
+     (app-server-restart)
+     (-main)
+    )
+    ```
 
-(defroutes app
-  (GET "/" [] {:status 200 :body "App Server Running"}))
+=== "httpkit"
 
-
-;; System
-
-(defonce app-server-instance (atom nil))
-
-
-(defn app-server-stop
-  "Gracefully shutdown the server, waiting 100ms"
-  []
-  (when-not (nil? @app-server-instance)
-    (@app-server-instance :timeout 100)
-    (reset! app-server-instance nil)
-    (println "INFO: Application server shutting down...")))
+    ```clojure
+    (ns practicalli.example-webapp
+      (:gen-class)
+      (:require [org.httpkit.server :as app-server]
+                [compojure.core :refer [defroutes GET]]))
 
 
-(defn app-server-start
-  "Start the application server and run the application"
-  [port]
-  (println "INFO: Starting server on port: " port)
+    ;; Routing
 
-  (reset! app-server-instance
-          (app-server/run-server #'app {:port (Integer/parseInt port)})))
+    (defroutes app
+      (GET "/" [] {:status 200 :body "App Server Running"}))
 
 
-(defn app-server-restart
-  "Convenience function to stop and start the application server"
-  []
-  (app-server-stop)
-  (-main))
+    ;; System
 
-(defn -main
-  "Start the application server on a specific port"
-  [& [port]]
-  (let [port (Integer. (or port (System/getenv "PORT") 8888))]
-    (app-server-start port)))
+    (defonce app-server-instance (atom nil))
 
 
-;; REPL driven development
+    (defn app-server-stop
+      "Gracefully shutdown the server, waiting 100ms"
+      []
+      (when-not (nil? @app-server-instance)
+        (@app-server-instance :timeout 100)
+        (reset! app-server-instance nil)
+        (println "INFO: Application server shutting down...")))
 
-(comment
 
-  ;; Re/Start application server
-  (app-server-restart)
+    (defn app-server-start
+      "Start the application server and run the application"
+      [port]
+      (println "INFO: Starting server on port: " port)
 
-  ;; Shutdown server
-  (app-server-stop)
+      (reset! app-server-instance
+              (app-server/run-server #'app {:port (Integer/parseInt port)})))
 
-)
-```
 
-[Http-kit server documentation](http://http-kit.github.io/server.html) contains details of asynchronous websockets and HTTP streaming configurations.
+    (defn app-server-restart
+      "Convenience function to stop and start the application server"
+      []
+      (app-server-stop)
+      (-main))
 
-{% endtabs %}
+    (defn -main
+      "Start the application server on a specific port"
+      [& [port]]
+      (let [port (Integer. (or port (System/getenv "PORT") 8888))]
+        (app-server-start port)))
+
+
+    ;; REPL driven development
+
+    (comment
+
+      ;; Re/Start application server
+      (app-server-restart)
+
+      ;; Shutdown server
+      (app-server-stop)
+
+    )
+    ```
+
+    [Http-kit server documentation](http://http-kit.github.io/server.html) contains details of asynchronous websockets and HTTP streaming configurations.

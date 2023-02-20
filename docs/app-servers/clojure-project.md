@@ -1,120 +1,69 @@
 # New Clojure Project
 
-Create a new Clojure project using Clojure CLI or Leiningen (the application code will be the same)
+Create a new Clojure project using Clojure CLI
 
-{% tabs cli="Cloure CLI", lein="Leiningnen" %}
+=== "deps-new"
+    Create a new project using the `:project/create` alias from [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/) and the `app` template using [deps-new](https://github.com/seancorfield/deps-new)
+    ```bash
+    clojure -T:project/create :template app :name practicalli/web-service
+    ```
 
-{% content "cli" %}
-
-Create a new project using the `:project/new` alias from [practicalli/clojure-deps-edn]({{book.P9IClojureDepsEdn}}) and the app template (uses [clj-new project](https://github.com/seancorfield/clj-new))
-
-```bash
-clojure -T:project/new :template app :name practicalli/web-service
-```
-
-{% content "lein" %}
-
-Create a new project using [Leiningen](https://leiningen.org/) and the app template.
-
-```bash
-lein new app practicalli/web-service
-```
-
-{% endtabs %}
+=== "clj-new"
+    Create a new project using the `:project/new` alias from [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/) and the app template using [clj-new](https://github.com/seancorfield/clj-new)
+    ```bash
+    clojure -T:project/new :template app :name practicalli/web-service
+    ```
 
 
-## Add web server library to main namespace
+## Add web server library
 
-Add either Ring (Jetty) or Httpkit namespace to be able to call their respective functions to start a web server
+Add either Ring (Jetty) or Httpkit library as a project dependency to run an embedded server that listens to HTTP requests and passes those requests to the Clojure service.
 
+=== "Jetty"
+    Add a ring library that includes an embedded Jetty server.
 
+    The [`ring/ring` library](https://clojars.org/ring){target=_blank} includes all ring libraries including the embedded Jetty server
 
-### Add Ring Jetty dependency
+    Edit the project `deps.edn` file and add the `ring/ring {:mvn/version "1.9.5"}` dependency to the top-level `:deps` key, which defines the libraries used to make the project.
 
-Add a ring library which includes an embedded Jetty server.
+    ```clojure
+    {:paths ["src" "resources"]
+     :deps {org.clojure/clojure {:mvn/version "1.11.3"}
+            ring/ring           {:mvn/version "1.9.6"}}}
+    ```
 
-Use either the [`ring/ring` library](https://clojars.org/ring) which includes all the various ring libraries, or only the specific [ring/jetty-adapter library](https://clojars.org/ring/ring-jetty-adapter) (keeping the project smaller overall).
-
-
-{% tabs clijetty="Cloure CLI", leinjetty="Leiningnen" %}
-
-{% content "clijetty" %}
-
-Edit the project `deps.edn` file and add the `ring/ring {:mvn/version "1.9.5"}` dependency to the top-level `:deps` key, which defines the libraries used to make the project.
-
-```clojure
-{:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.11.0"}
-        ring/ring           {:mvn/version "1.9.5"}}}
-```
-
-
-{% content "leinjetty" %}
-
-Edit the `project.clj` file and add the `[ring/ring "1.9.5"]` dependency to the top-level `:dependencies` key, which defines the libraries used to make the project.
-
-```clojure
-(defproject practicalli/web-server "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
-            :url "https://www.eclipse.org/legal/epl-2.0/"}
-  :dependencies [[org.clojure/clojure "1.11.0"]
-                 [ring/ring "1.9.5"]]
-  :main ^:skip-aot practicalli.web-server
-  :target-path "target/%s"
-  :profiles {:uberjar {:aot :all
-                       :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})
-
-```
-
-{% endtabs %}
+    Or add the `ring/ring-core` and `ring/ring-jetty-adapter` libraries, saving a few millisecond when starting the project.
+    ```clojure
+    {:paths ["src" "resources"]
+     :deps {org.clojure/clojure     {:mvn/version "1.11.3"}
+            ring/ring-core          {:mvn/version "1.9.6"}
+            ring/ring-jetty-adapter {:mvn/version "1.9.6"}}}
+    ```
 
 
+=== "HTTP Kit"
+    Add the HTTP Kit Server library which includes the client and server namespaces, although only the Server namespace will be used.
 
-### Add Httpkit dependency
+    Edit the project `deps.edn` file and add the `http-kit/http-kit {:mvn/version "2.3.0"}` dependency to the top-level `:deps` key, which defines the libraries used to make the project.
 
-Add the Httpkit Server library which includes the client and server namespaces, although only the Server namespace will be used.
+    ```clojure
+    {:paths ["src" "resources"]
+     :deps {org.clojure/clojure {:mvn/version "1.11.3"}
+            http-kit/http-kit   {:mvn/version "2.3.0"}}}
+    ```
 
-{% tabs clihttpkit="Cloure CLI", leinhttpkit="Leiningnen" %}
+## Ring library
 
-{% content "clihttpkit" %}
+Ring is a Clojure web applications library inspired by Python's WSGI and Ruby's Rack. By abstracting the details of HTTP into a simple, unified API, Ring allows web applications to be constructed of modular components that can be shared among a variety of applications, web servers, and web frameworks.
 
-Edit the project `deps.edn` file and add the `http-kit/http-kit   {:mvn/version "2.3.0"}` dependency to the top-level `:deps` key, which defines the libraries used to make the project.
+[Ring interface specification](https://github.com/ring-clojure/ring/blob/master/SPEC){target=_blank .md-button}
 
-```clojure
-{:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.11.0"}
-        http-kit/http-kit   {:mvn/version "2.3.0"}}}
-```
+Ring is composed of several libraries which can be included specifically, rather than requiring all of them with ring/ring
 
+* `ring/ring-core` - essential functions for handling parameters, cookies and more
+* `ring/ring-devel` - functions for developing and debugging Ring applications
+* `ring/ring-servlet` - construct Java servlets from Ring handlers
+* `ring/ring-jetty-adapter` - a Ring adapter that uses the Jetty webserver
 
-{% content "leinhttpkit" %}
-
-Edit the `project.clj` file and add the `[http-kit "2.3.0"]` dependency to the top-level `:dependencies` key, which defines the libraries used to make the project.
-
-```clojure
-(defproject practicalli/web-server "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
-            :url "https://www.eclipse.org/legal/epl-2.0/"}
-  :dependencies [[org.clojure/clojure "1.11.0"]
-                 [http-kit "2.3.0"]]
-  :main ^:skip-aot practicalli.web-server
-  :target-path "target/%s"
-  :profiles {:uberjar {:aot :all
-                       :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})
-
-```
-
-{% endtabs %}
-
-
-
-
-<!-- ## Creating project with component lifecycle -->
-
-<!-- TODO: create project with mount -->
-<!-- TODO: create project with Integrant REPL and Integrant -->
-<!-- TODO: create project with Stuart Siera Component and Component REPL -->
+[Ring documentation](https://github.com/ring-clojure/ring/wiki){target=_blank .md-button}
+[Ring API docs](https://ring-clojure.github.io/ring/){target=_blank .md-button}
