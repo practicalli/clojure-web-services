@@ -71,9 +71,10 @@ Update the database using the name of the SQL statement
 (database-update account-holder-jenny db-specification-dev)
 ```
 
-> #### Hint::limitation of def
-> The `def` expression must be evaluated each time a new value for the account_holder_id is required.  The first time the `def` is evaluated, the `java-util.UUID/randomUUID` function is evaluated to a specific value and that value is cached.
-> Using the `account-holder-jenny` name in other code will use the cache until the `def` expression is forcefully evaluated (by the developer or by restarting the REPL).
+!!! HINT "Limitation of def"
+    The `def` expression must be evaluated each time a new value for the account_holder_id is required.  The first time the `def` is evaluated, the `java-util.UUID/randomUUID` function is evaluated to a specific value and that value is cached.
+
+    Using the `account-holder-jenny` name in other code will use the cache until the `def` expression is forcefully evaluated (by the developer or by restarting the REPL).
 
 
 ## Using next.jdbc friendly functions

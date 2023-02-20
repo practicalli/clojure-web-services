@@ -67,5 +67,5 @@ jobs:    # basic units of work in a run
       - run: bin/kaocha --reporter kaocha.report/documentation --no-randomize --no-color --plugin kaocha.plugin.alpha/spec-test-check
 ```
 
-
-> #### Hint::Enable 3rd Party Orbs in Organisation > Security settings
+!!! HINT "Enable 3rd Party Orbs"
+    Enable 3rd Party Orbs in **Organisation** > **Security settings**
