@@ -1,2484 +1,1557 @@
-
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Project: URL Shortner as a Service · Practicalli Clojure WebApps</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="Practicalli">
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-folding-chapters/folding-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-newtabs/bootstrap.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-newtabs/tabs.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
-                
-            
-                
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
-                
-            
-                
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-simpletabs/tabs.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminull-light/terminull.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-wide-page/wide.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
-
-    
-
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="create-project.html" />
-    
-    
-    <link rel="prev" href="../reference/ring/request-map.html" />
-    
-
-    </head>
-    <body>
-        
-
-
-<div class="book">
-    <div class="book-summary">
-        
-      <!-- <div class="theme-code-header">
-           <a href="" class="link">
-           <h1 class="title">Practicalli Clojure WebApps</h1>
-           </a>
-           </div> -->
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
-
-            
-                <nav role="navigation">
-                
-
-
-<ul class="summary">
-    
-    
-    
-        
-        <li>
-            <a href="https://practical.li/" target="_blank" class="custom-link">Practicalli</a>
-        </li>
-    
-    
-
-    
-    <li class="divider"></li>
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                  <!--  -->
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="../requirements.html">
-            
-                <a href="../requirements.html">
-            
-                  <!--  -->
-                    Requirements
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="../clojure-web-services-overview.html">
-            
-                <a href="../clojure-web-services-overview.html">
-            
-                  <!--  -->
-                    Overview
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Clojure CLI Projects</li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="../projects/status-monitor-deps/">
-            
-                <a href="../projects/status-monitor-deps/">
-            
-                  <!--  -->
-                    Status Monitor
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="../projects/status-monitor-deps/application-server.html">
-            
-                <a href="../projects/status-monitor-deps/application-server.html">
-            
-                  <!--  -->
-                    Application server
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="../projects/status-monitor-deps/debugging-requests.html">
-            
-                <a href="../projects/status-monitor-deps/debugging-requests.html">
-            
-                  <!--  -->
-                    Debug requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="../projects/status-monitor-deps/unit-test-mocking-handlers.html">
-            
-                <a href="../projects/status-monitor-deps/unit-test-mocking-handlers.html">
-            
-                  <!--  -->
-                    Unit Test & Mocking
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="../projects/status-monitor-deps/refactor-handlers-and-tests.html">
-            
-                <a href="../projects/status-monitor-deps/refactor-handlers-and-tests.html">
-            
-                  <!--  -->
-                    Defining handlers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="../projects/status-monitor-deps/continuous-integration.html">
-            
-                <a href="../projects/status-monitor-deps/continuous-integration.html">
-            
-                  <!--  -->
-                    Continuous integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="../projects/status-monitor-deps/deployment-via-ci.html">
-            
-                <a href="../projects/status-monitor-deps/deployment-via-ci.html">
-            
-                  <!--  -->
-                    Deployment via CI
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" data-path="../projects/banking-on-clojure/">
-            
-                <a href="../projects/banking-on-clojure/">
-            
-                  <!--  -->
-                    Banking on Clojure
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.2.1" data-path="../projects/banking-on-clojure/application-server-configuration.html">
-            
-                <a href="../projects/banking-on-clojure/application-server-configuration.html">
-            
-                  <!--  -->
-                    App Server Configuration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.2" data-path="../projects/banking-on-clojure/refactor-handler.html">
-            
-                <a href="../projects/banking-on-clojure/refactor-handler.html">
-            
-                  <!--  -->
-                    Refactor handlers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.3" data-path="../projects/banking-on-clojure/defining-handlers.html">
-            
-                <a href="../projects/banking-on-clojure/defining-handlers.html">
-            
-                  <!--  -->
-                    Defining handlers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.4" data-path="../projects/banking-on-clojure/continuous-integration.html">
-            
-                <a href="../projects/banking-on-clojure/continuous-integration.html">
-            
-                  <!--  -->
-                    Continuous Integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.5" data-path="../projects/banking-on-clojure/deployment-pipeline.html">
-            
-                <a href="../projects/banking-on-clojure/deployment-pipeline.html">
-            
-                  <!--  -->
-                    Deployment Pipeline
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.6" data-path="../projects/banking-on-clojure/deployment-via-ci.html">
-            
-                <a href="../projects/banking-on-clojure/deployment-via-ci.html">
-            
-                  <!--  -->
-                    Deployment via CI to Heroku
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.7" data-path="../projects/banking-on-clojure/unit-tests.html">
-            
-                <a href="../projects/banking-on-clojure/unit-tests.html">
-            
-                  <!--  -->
-                    Unit Tests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.8" data-path="../projects/banking-on-clojure/spec-generative-testing.html">
-            
-                <a href="../projects/banking-on-clojure/spec-generative-testing.html">
-            
-                  <!--  -->
-                    Clojure Specs
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.9" data-path="../projects/banking-on-clojure/development-database.html">
-            
-                <a href="../projects/banking-on-clojure/development-database.html">
-            
-                  <!--  -->
-                    Development database
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.10" data-path="../projects/banking-on-clojure/instrument-next-jdbc-functions.html">
-            
-                <a href="../projects/banking-on-clojure/instrument-next-jdbc-functions.html">
-            
-                  <!--  -->
-                    Instrument next.jdbc functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.11" data-path="../projects/banking-on-clojure/database-tables.html">
-            
-                <a href="../projects/banking-on-clojure/database-tables.html">
-            
-                  <!--  -->
-                    Database tables
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.12" data-path="../projects/banking-on-clojure/database-queries.html">
-            
-                <a href="../projects/banking-on-clojure/database-queries.html">
-            
-                  <!--  -->
-                    Database queries
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.2.12.1" data-path="../projects/banking-on-clojure/create-records.html">
-            
-                <a href="../projects/banking-on-clojure/create-records.html">
-            
-                  <!--  -->
-                    Create Records
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.12.2" data-path="../projects/banking-on-clojure/read-records.html">
-            
-                <a href="../projects/banking-on-clojure/read-records.html">
-            
-                  <!--  -->
-                    Read Records
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.12.3" data-path="../projects/banking-on-clojure/update-records.html">
-            
-                <a href="../projects/banking-on-clojure/update-records.html">
-            
-                  <!--  -->
-                    Update Records
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.12.4" data-path="../projects/banking-on-clojure/delete-records.html">
-            
-                <a href="../projects/banking-on-clojure/delete-records.html">
-            
-                  <!--  -->
-                    Delete Records
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.13" data-path="../projects/banking-on-clojure/cyclic-load-dependency.html">
-            
-                <a href="../projects/banking-on-clojure/cyclic-load-dependency.html">
-            
-                  <!--  -->
-                    Cyclic Load Dependency
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.14" data-path="../projects/banking-on-clojure/clojure-spec-generate-mock-data.html">
-            
-                <a href="../projects/banking-on-clojure/clojure-spec-generate-mock-data.html">
-            
-                  <!--  -->
-                    Spec: generate database data
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.15" data-path="../projects/banking-on-clojure/unit-testing-the-database.html">
-            
-                <a href="../projects/banking-on-clojure/unit-testing-the-database.html">
-            
-                  <!--  -->
-                    Unit Testing Database
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.16" data-path="../projects/banking-on-clojure/honeysql.html">
-            
-                <a href="../projects/banking-on-clojure/honeysql.html">
-            
-                  <!--  -->
-                    HoneySQL
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.17" data-path="../projects/banking-on-clojure/namespace-design.html">
-            
-                <a href="../projects/banking-on-clojure/namespace-design.html">
-            
-                  <!--  -->
-                    Namespace design
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.18" data-path="../projects/banking-on-clojure/production-database.html">
-            
-                <a href="../projects/banking-on-clojure/production-database.html">
-            
-                  <!--  -->
-                    Production database
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">REPL Driven Development</li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="../repl-driven-development/">
-            
-                <a href="../repl-driven-development/">
-            
-                  <!--  -->
-                    Overview
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2" data-path="../repl-driven-development/integrant-repl/">
-            
-                <a href="../repl-driven-development/integrant-repl/">
-            
-                  <!--  -->
-                    integrant REPL
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Libraries</li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../libraries/reitit/">
-            
-                <a href="../libraries/reitit/">
-            
-                  <!--  -->
-                    Reitit
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="../libraries/reitit/constructing-routes.html">
-            
-                <a href="../libraries/reitit/constructing-routes.html">
-            
-                  <!--  -->
-                    Routing
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Architectural Components</li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../app-servers/">
-            
-                <a href="../app-servers/">
-            
-                  <!--  -->
-                    Application servers
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="../app-servers/overview.html">
-            
-                <a href="../app-servers/overview.html">
-            
-                  <!--  -->
-                    Overview
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="../app-servers/clojure-project.html">
-            
-                <a href="../app-servers/clojure-project.html">
-            
-                  <!--  -->
-                    Clojure project
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="../app-servers/create-server.html">
-            
-                <a href="../app-servers/create-server.html">
-            
-                  <!--  -->
-                    Create server
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.3.1" data-path="../app-servers/jetty-server-options.html">
-            
-                <a href="../app-servers/jetty-server-options.html">
-            
-                  <!--  -->
-                    Jetty server options
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3.2" data-path="../app-servers/http-kit-server-options.html">
-            
-                <a href="../app-servers/http-kit-server-options.html">
-            
-                  <!--  -->
-                    Httpkit server options
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.4" data-path="../app-servers/route-requests.html">
-            
-                <a href="../app-servers/route-requests.html">
-            
-                  <!--  -->
-                    Route requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="../app-servers/start-server.html">
-            
-                <a href="../app-servers/start-server.html">
-            
-                  <!--  -->
-                    Start Server
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.5.1" data-path="../app-servers/java-system-properties.html">
-            
-                <a href="../app-servers/java-system-properties.html">
-            
-                  <!--  -->
-                    Java Properties
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.6" data-path="../app-servers/simple-restart.html">
-            
-                <a href="../app-servers/simple-restart.html">
-            
-                  <!--  -->
-                    Simple restart
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.7" data-path="../app-servers/atom-based-restart.html">
-            
-                <a href="../app-servers/atom-based-restart.html">
-            
-                  <!--  -->
-                    Atom based restart
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.8" data-path="../app-servers/app-server-logging.html">
-            
-                <a href="../app-servers/app-server-logging.html">
-            
-                  <!--  -->
-                    Logging
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" data-path="../relational-databases-and-sql/">
-            
-                <a href="../relational-databases-and-sql/">
-            
-                  <!--  -->
-                    Relational Database & SQL
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.1.1" data-path="../relational-databases-and-sql/next-jdbc-library/">
-            
-                <a href="../relational-databases-and-sql/next-jdbc-library/">
-            
-                  <!--  -->
-                    next.jdbc library
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.1.1.1" data-path="../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
-            
-                <a href="../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.html">
-            
-                  <!--  -->
-                    Component lifecycle
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="6.1.2" data-path="../relational-databases-and-sql/h2-database/">
-            
-                <a href="../relational-databases-and-sql/h2-database/">
-            
-                  <!--  -->
-                    H2 Database
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.1.2.1" data-path="../relational-databases-and-sql/h2-database/schema-design.html">
-            
-                <a href="../relational-databases-and-sql/h2-database/schema-design.html">
-            
-                  <!--  -->
-                    H2 schema design
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.1.2.2" data-path="../relational-databases-and-sql/h2-database/database-tools.html">
-            
-                <a href="../relational-databases-and-sql/h2-database/database-tools.html">
-            
-                  <!--  -->
-                    H2 database tools
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="6.1.3" data-path="../relational-databases-and-sql/postgresql-database.html">
-            
-                <a href="../relational-databases-and-sql/postgresql-database.html">
-            
-                  <!--  -->
-                    PostgreSQL Database
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.1.3.1" data-path="../relational-databases-and-sql/managing-connections.html">
-            
-                <a href="../relational-databases-and-sql/managing-connections.html">
-            
-                  <!--  -->
-                    Managing Connections
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.1.3.2" data-path="../projects/leiningen/todo-app/postgres/lobo-table-creation.html">
-            
-                <a href="../projects/leiningen/todo-app/postgres/lobo-table-creation.html">
-            
-                  <!--  -->
-                    Lobo Table Creation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="6.1.4" data-path="../specifications/functions.md">
-            
-                <span>
-            
-                  <!--  -->
-                    Function Specifications
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.1.5" data-path="../specifications/relational-specifications.md">
-            
-                <span>
-            
-                  <!--  -->
-                    Relational Specifications
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.1.6" data-path="../specifications/generative-testing.md">
-            
-                <span>
-            
-                  <!--  -->
-                    Generative Testing
-            
-                </span>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Leiningen Projects</li>
-        
-        
-    
-        <li class="chapter " data-level="7.1" data-path="../projects/leiningen/todo-app/">
-            
-                <a href="../projects/leiningen/todo-app/">
-            
-                  <!--  -->
-                    TODO WebApp
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.1" data-path="../projects/leiningen/todo-app/create-a-project/">
-            
-                <a href="../projects/leiningen/todo-app/create-a-project/">
-            
-                  <!--  -->
-                    Create a Project
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.1.1" data-path="../projects/leiningen/todo-app/create-a-project/update-project-details.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-project/update-project-details.html">
-            
-                  <!--  -->
-                    Update Project details
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.2" data-path="../projects/leiningen/todo-app/create-a-webserver-with-ring/">
-            
-                <a href="../projects/leiningen/todo-app/create-a-webserver-with-ring/">
-            
-                  <!--  -->
-                    Create a webserver with Ring
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.2.1" data-path="../projects/leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency.html">
-            
-                  <!--  -->
-                    Add Ring Dependency
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.2.2" data-path="../projects/leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace.html">
-            
-                  <!--  -->
-                    Configure main namespace
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.2.3" data-path="../projects/leiningen/todo-app/create-a-webserver-with-ring/namespaces.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-webserver-with-ring/namespaces.html">
-            
-                  <!--  -->
-                    Theory: namespaces
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.2.4" data-path="../projects/leiningen/todo-app/create-a-webserver-with-ring/include-ring-library.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-webserver-with-ring/include-ring-library.html">
-            
-                  <!--  -->
-                    Include Ring Library
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.2.5" data-path="../projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.html">
-            
-                  <!--  -->
-                    Add a Jetty webserver
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.2.6" data-path="../projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.html">
-            
-                  <!--  -->
-                    Theory: Coercing Types & java.lang
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.2.7" data-path="../projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.html">
-            
-                  <!--  -->
-                    Run webserver
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.3" data-path="../projects/leiningen/todo-app/introducing-ring/">
-            
-                <a href="../projects/leiningen/todo-app/introducing-ring/">
-            
-                  <!--  -->
-                    Theory: Introducing Ring
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.4" data-path="../projects/leiningen/todo-app/create-a-handler-function/">
-            
-                <a href="../projects/leiningen/todo-app/create-a-handler-function/">
-            
-                  <!--  -->
-                    Create a handler function
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.4.1" data-path="../projects/leiningen/todo-app/create-a-handler-function/add-not-found.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-handler-function/add-not-found.html">
-            
-                  <!--  -->
-                    Add error for bad routes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.4.2" data-path="../projects/leiningen/todo-app/create-a-handler-function/if-function.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-handler-function/if-function.html">
-            
-                  <!--  -->
-                    Theory: if function
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.4.3" data-path="../projects/leiningen/todo-app/create-a-handler-function/maps-and-keywords.html">
-            
-                <a href="../projects/leiningen/todo-app/create-a-handler-function/maps-and-keywords.html">
-            
-                  <!--  -->
-                    Theory: maps and keywords
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.5" data-path="../projects/leiningen/todo-app/unit-test-handler-function/">
-            
-                <a href="../projects/leiningen/todo-app/unit-test-handler-function/">
-            
-                  <!--  -->
-                    Unit test handler function
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.6" data-path="../projects/leiningen/todo-app/reloading-the-application/">
-            
-                <a href="../projects/leiningen/todo-app/reloading-the-application/">
-            
-                  <!--  -->
-                    Reloading the application
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.6.1" data-path="../projects/leiningen/todo-app/reloading-the-application/test-your-code-reloads.html">
-            
-                <a href="../projects/leiningen/todo-app/reloading-the-application/test-your-code-reloads.html">
-            
-                  <!--  -->
-                    Test your code reloads
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.6.2" data-path="../projects/leiningen/todo-app/reloading-the-application/middleware.html">
-            
-                <a href="../projects/leiningen/todo-app/reloading-the-application/middleware.html">
-            
-                  <!--  -->
-                    Middleware in Ring
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7" data-path="../projects/leiningen/todo-app/compojure/">
-            
-                <a href="../projects/leiningen/todo-app/compojure/">
-            
-                  <!--  -->
-                    Compojure
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.7.1" data-path="../projects/leiningen/todo-app/compojure/theory-routing.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/theory-routing.html">
-            
-                  <!--  -->
-                    Theory: routing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7.2" data-path="../projects/leiningen/todo-app/compojure/adding-dependency.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/adding-dependency.html">
-            
-                  <!--  -->
-                    Adding dependency
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7.3" data-path="../projects/leiningen/todo-app/compojure/using-compojure.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/using-compojure.html">
-            
-                  <!--  -->
-                    Using Compojure
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7.4" data-path="../projects/leiningen/todo-app/compojure/adding-goodbye-route.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/adding-goodbye-route.html">
-            
-                  <!--  -->
-                    Adding goodbye route
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7.5" data-path="../projects/leiningen/todo-app/compojure/about.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/about.html">
-            
-                  <!--  -->
-                    About route
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7.6" data-path="../projects/leiningen/todo-app/compojure/show-request-info.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/show-request-info.html">
-            
-                  <!--  -->
-                    Show request info
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7.7" data-path="../projects/leiningen/todo-app/compojure/variable-path-elements.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/variable-path-elements.html">
-            
-                  <!--  -->
-                    Variable Path Elements
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7.8" data-path="../projects/leiningen/todo-app/compojure/theory-local-name-bindings.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/theory-local-name-bindings.html">
-            
-                  <!--  -->
-                    Theory: local name bindings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7.9" data-path="../projects/leiningen/todo-app/compojure/theory-using-hash-maps.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/theory-using-hash-maps.html">
-            
-                  <!--  -->
-                    Theory: using Clojure hash-maps
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7.10" data-path="../projects/leiningen/todo-app/compojure/lisp-calculator.html">
-            
-                <a href="../projects/leiningen/todo-app/compojure/lisp-calculator.html">
-            
-                  <!--  -->
-                    Lisp Calculator
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.8" data-path="../projects/leiningen/todo-app/heroku/">
-            
-                <a href="../projects/leiningen/todo-app/heroku/">
-            
-                  <!--  -->
-                    Deploying to Heroku
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.8.1" data-path="../projects/leiningen/todo-app/heroku/update-project.html">
-            
-                <a href="../projects/leiningen/todo-app/heroku/update-project.html">
-            
-                  <!--  -->
-                    Update the project
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.8.2" data-path="../projects/leiningen/todo-app/heroku/procfile.html">
-            
-                <a href="../projects/leiningen/todo-app/heroku/procfile.html">
-            
-                  <!--  -->
-                    Add Procfile
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.8.3" data-path="../projects/leiningen/todo-app/heroku/deploy.html">
-            
-                <a href="../projects/leiningen/todo-app/heroku/deploy.html">
-            
-                  <!--  -->
-                    Deploy to Heroku
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.9" data-path="../projects/leiningen/todo-app/hiccup/">
-            
-                <a href="../projects/leiningen/todo-app/hiccup/">
-            
-                  <!--  -->
-                    Hiccup HTML library
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.9.1" data-path="../projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.html">
-            
-                <a href="../projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.html">
-            
-                  <!--  -->
-                    Updating handlers with hiccup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.9.2" data-path="../projects/leiningen/todo-app/hiccup/create-new-handler.html">
-            
-                <a href="../projects/leiningen/todo-app/hiccup/create-new-handler.html">
-            
-                  <!--  -->
-                    Create a new handler
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.10" data-path="../projects/leiningen/todo-app/refactor-namespace/">
-            
-                <a href="../projects/leiningen/todo-app/refactor-namespace/">
-            
-                  <!--  -->
-                    Refactor namespace
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.10.1" data-path="../projects/leiningen/todo-app/refactor-namespace/base-routes.html">
-            
-                <a href="../projects/leiningen/todo-app/refactor-namespace/base-routes.html">
-            
-                  <!--  -->
-                    Base routes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.10.2" data-path="../projects/leiningen/todo-app/refactor-namespace/core.html">
-            
-                <a href="../projects/leiningen/todo-app/refactor-namespace/core.html">
-            
-                  <!--  -->
-                    Refactored Core
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11" data-path="../projects/leiningen/todo-app/postgres/">
-            
-                <a href="../projects/leiningen/todo-app/postgres/">
-            
-                  <!--  -->
-                    Postgres Database
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.11.1" data-path="../projects/leiningen/todo-app/postgres/install.html">
-            
-                <a href="../projects/leiningen/todo-app/postgres/install.html">
-            
-                  <!--  -->
-                    Postgres install
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.2" data-path="../projects/leiningen/todo-app/postgres/environment-variables.html">
-            
-                <a href="../projects/leiningen/todo-app/postgres/environment-variables.html">
-            
-                  <!--  -->
-                    Environment Variables
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.3" data-path="../projects/leiningen/todo-app/postgres/postgres-cli.html">
-            
-                <a href="../projects/leiningen/todo-app/postgres/postgres-cli.html">
-            
-                  <!--  -->
-                    Postgres CLI
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.4" data-path="../projects/leiningen/todo-app/postgres/dataclips.html">
-            
-                <a href="../projects/leiningen/todo-app/postgres/dataclips.html">
-            
-                  <!--  -->
-                    Dataclips
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.5" data-path="../projects/leiningen/todo-app/connect-to-postgres/">
-            
-                <a href="../projects/leiningen/todo-app/connect-to-postgres/">
-            
-                  <!--  -->
-                    Connect to Postgres
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.11.5.1" data-path="../projects/leiningen/todo-app/connect-to-postgres/add-database-dependencies.html">
-            
-                <a href="../projects/leiningen/todo-app/connect-to-postgres/add-database-dependencies.html">
-            
-                  <!--  -->
-                    Add Database Dependencies
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.5.2" data-path="../projects/leiningen/todo-app/connect-to-postgres/define-db-connection.html">
-            
-                <a href="../projects/leiningen/todo-app/connect-to-postgres/define-db-connection.html">
-            
-                  <!--  -->
-                    Define Database Connection
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.6" data-path="../projects/leiningen/todo-app/database-model/">
-            
-                <a href="../projects/leiningen/todo-app/database-model/">
-            
-                  <!--  -->
-                    Creating a database model
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.11.6.1" data-path="../projects/leiningen/todo-app/database-model/create-table.html">
-            
-                <a href="../projects/leiningen/todo-app/database-model/create-table.html">
-            
-                  <!--  -->
-                    Create table
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.6.2" data-path="../projects/leiningen/todo-app/database-model/create-task.html">
-            
-                <a href="../projects/leiningen/todo-app/database-model/create-task.html">
-            
-                  <!--  -->
-                    Create task
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.6.3" data-path="../projects/leiningen/todo-app/database-model/show-all-task.html">
-            
-                <a href="../projects/leiningen/todo-app/database-model/show-all-task.html">
-            
-                  <!--  -->
-                    List tasks
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.6.4" data-path="../projects/leiningen/todo-app/database-model/delete-task.html">
-            
-                <a href="../projects/leiningen/todo-app/database-model/delete-task.html">
-            
-                  <!--  -->
-                    Delete task
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.6.5" data-path="../projects/leiningen/todo-app/database-model/alternative-approaches.html">
-            
-                <a href="../projects/leiningen/todo-app/database-model/alternative-approaches.html">
-            
-                  <!--  -->
-                    Alternative approaches
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.7" data-path="../projects/leiningen/todo-app/task-handlers/">
-            
-                <a href="../projects/leiningen/todo-app/task-handlers/">
-            
-                  <!--  -->
-                    Task handlers
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.11.7.1" data-path="../projects/leiningen/todo-app/task-handlers/add-a-task.html">
-            
-                <a href="../projects/leiningen/todo-app/task-handlers/add-a-task.html">
-            
-                  <!--  -->
-                    Add a task
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.7.2" data-path="../projects/leiningen/todo-app/task-handlers/show-task.html">
-            
-                <a href="../projects/leiningen/todo-app/task-handlers/show-task.html">
-            
-                  <!--  -->
-                    Show tasks
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11.7.3" data-path="../projects/leiningen/todo-app/task-handlers/delete-a-task.html">
-            
-                <a href="../projects/leiningen/todo-app/task-handlers/delete-a-task.html">
-            
-                  <!--  -->
-                    Delete a task
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Building API's</li>
-        
-        
-    
-        <li class="chapter " data-level="8.1" data-path="../server-side-api/">
-            
-                <a href="../server-side-api/">
-            
-                  <!--  -->
-                    Server-side API
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="8.1.1" data-path="../server-side-api/compojure-api-template.html">
-            
-                <a href="../server-side-api/compojure-api-template.html">
-            
-                  <!--  -->
-                    Compojure-API template
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.2" data-path="../server-side-api/create-compojure-api-project.html">
-            
-                <a href="../server-side-api/create-compojure-api-project.html">
-            
-                  <!--  -->
-                    Create API project
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.3" data-path="../server-side-api/swagger.html">
-            
-                <a href="../server-side-api/swagger.html">
-            
-                  <!--  -->
-                    Swagger
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="8.1.3.1" data-path="../server-side-api/ring-swagger.html">
-            
-                <a href="../server-side-api/ring-swagger.html">
-            
-                  <!--  -->
-                    ring-swagger
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.4" data-path="../server-side-api/plumatic-schema.html">
-            
-                <a href="../server-side-api/plumatic-schema.html">
-            
-                  <!--  -->
-                    Plumatic Schema
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.5" data-path="../server-side-api/json-files.html">
-            
-                <a href="../server-side-api/json-files.html">
-            
-                  <!--  -->
-                    JSON files
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.6" data-path="../server-side-api/testing-api.html">
-            
-                <a href="../server-side-api/testing-api.html">
-            
-                  <!--  -->
-                    Testing an API
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="8.1.6.1" data-path="../server-side-api/ring-mock.html">
-            
-                <a href="../server-side-api/ring-mock.html">
-            
-                  <!--  -->
-                    ring-mock library
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.6.2" data-path="../server-side-api/cheshire.html">
-            
-                <a href="../server-side-api/cheshire.html">
-            
-                  <!--  -->
-                    cheshire library
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.7" data-path="../server-side-api/end-to-end-testing/">
-            
-                <a href="../server-side-api/end-to-end-testing/">
-            
-                  <!--  -->
-                    End to End Testing
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="8.1.7.1" data-path="../server-side-api/end-to-end-testing/swagger.html">
-            
-                <a href="../server-side-api/end-to-end-testing/swagger.html">
-            
-                  <!--  -->
-                    Swagger
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.7.2" data-path="../server-side-api/end-to-end-testing/curl.html">
-            
-                <a href="../server-side-api/end-to-end-testing/curl.html">
-            
-                  <!--  -->
-                    Curl
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.7.3" data-path="../server-side-api/end-to-end-testing/insomnia.md">
-            
-                <span>
-            
-                  <!--  -->
-                    Insomnia
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.7.4" data-path="../server-side-api/end-to-end-testing/postman.html">
-            
-                <a href="../server-side-api/end-to-end-testing/postman.html">
-            
-                  <!--  -->
-                    Postman Client
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="8.1.8" data-path="../server-side-api/terminology.html">
-            
-                <a href="../server-side-api/terminology.html">
-            
-                  <!--  -->
-                    Terminology
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Reference</li>
-        
-        
-    
-        <li class="chapter " data-level="9.1" data-path="../reference/ring/">
-            
-                <a href="../reference/ring/">
-            
-                  <!--  -->
-                    Ring
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="9.1.1" data-path="../reference/ring/request-map.html">
-            
-                <a href="../reference/ring/request-map.html">
-            
-                  <!--  -->
-                    Request map
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Hacking on content</li>
-        
-        
-    
-        <li class="chapter active" data-level="10.1" data-path="./">
-            
-                <a href="./">
-            
-                  <!--  -->
-                    Project: URL Shortner as a Service
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="10.1.1" data-path="create-project.html">
-            
-                <a href="create-project.html">
-            
-                  <!--  -->
-                    Create project
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.2" data-path="run-project.html">
-            
-                <a href="run-project.html">
-            
-                  <!--  -->
-                    Run project
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.3" data-path="test-app-reloading.html">
-            
-                <a href="test-app-reloading.html">
-            
-                  <!--  -->
-                    Test app reloading
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.4" data-path="compojure-template.html">
-            
-                <a href="compojure-template.html">
-            
-                  <!--  -->
-                    Compojure Template
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.5" data-path="design-data-structure.html">
-            
-                <a href="design-data-structure.html">
-            
-                  <!--  -->
-                    Design data structure
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.6" data-path="whats-in-a-request.html">
-            
-                <a href="whats-in-a-request.html">
-            
-                  <!--  -->
-                    Whats in a request
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.7" data-path="redirect-to-full-url.html">
-            
-                <a href="redirect-to-full-url.html">
-            
-                  <!--  -->
-                    Redirect to full URL
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="" target="_blank" class="gitbook-link">
-            Author: Practicalli
+<!--
+  Practicalli Custom blocks 
+
+  Overrides
+     - announce
+-->
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Practical guide to Clojure Web Services and APIs" name="description"/>
+<meta content="Practicalli" name="author"/>
+<link href="https://practical.li/clojure-web-services/project-url-shortner/" rel="canonical"/>
+<link href="../projects/banking-on-clojure/production-database/" rel="prev"/>
+<link href="create-project/" rel="next"/>
+<link href="../assets/favicon.svg" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
+<title>Project: URL Shortner as a Service - Practicalli Clojure Web Services</title>
+<link href="../assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<meta content="website" property="og:type"/>
+<meta content="Project: URL Shortner as a Service - Practicalli Clojure Web Services" property="og:title"/>
+<meta content="Practical guide to Clojure Web Services and APIs" property="og:description"/>
+<meta content="https://practical.li/clojure-web-services/assets/images/social/project-url-shortner/index.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="https://practical.li/clojure-web-services/project-url-shortner/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Project: URL Shortner as a Service - Practicalli Clojure Web Services" name="twitter:title"/>
+<meta content="Practical guide to Clojure Web Services and APIs" name="twitter:description"/>
+<meta content="https://practical.li/clojure-web-services/assets/images/social/project-url-shortner/index.png" name="twitter:image"/>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="deep-purple" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#project-url-shortner-as-a-service">
+          Skip to content
         </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Project: URL Shortner as a Service</a>
-    </h1>
 </div>
+<div data-md-component="announce">
+<aside class="md-banner">
+<div class="md-banner__inner md-grid md-typeset">
+            
+            
+
+⚠ <a href="https://practical.li/clojure-web-services">Practicalli Clojure Web Services</a> is converting to
+MkDocs and a content refactor
+so PR's are of limited value at present. Some page links &amp; images may be broken.
 
 
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="project-url-shortner-as-a-service">Project: URL Shortner as a Service</h1>
-<p>In this section we will build a webservice to create short url&apos;s for web addresses, as with services such as <a href="https://bit.ly" target="_blank">bit.ly</a>.</p>
-<p><img src="http://www.strategic-planet.com/wp-content/uploads/2013/03/url-shortener.png" alt="Short URL services"></p>
+          </div>
+</aside>
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Practicalli Clojure Web Services" class="md-header__button md-logo" data-md-component="logo" href=".." title="Practicalli Clojure Web Services">
+<img alt="logo" src="../assets/images/practicalli-logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Practicalli Clojure Web Services
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Project: URL Shortner as a Service
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-web-services/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Practicalli Clojure Web Services" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Practicalli Clojure Web Services">
+<img alt="logo" src="../assets/images/practicalli-logo.png"/>
+</a>
+    Practicalli Clojure Web Services
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-web-services/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="..">Introduction</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/overview/">
+        Overview
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/requirements/">
+        Requirements
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/repl-workflow/">
+        REPL Workflow
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/writing-tips/">
+        Writing Tips
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../service-repl-workflow/">Service REPL Workflow</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Service REPL Workflow
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../service-repl-workflow/aero-environment-profiles/">
+        Aero System configuration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../service-repl-workflow/integrant-repl/">
+        Integrant REPL
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/">Projects</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/status-monitor-deps/">Status Monitor</a>
+<label for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Status Monitor
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/status-monitor-deps/application-server/">
+        Application Server
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/status-monitor-deps/debugging-requests/">
+        Debug Requests
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/status-monitor-deps/unit-test-mocking-handlers/">
+        Unit Test Mock
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/status-monitor-deps/refactor-handlers-and-tests/">
+        Refactor
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/status-monitor-deps/continuous-integration/">
+        CI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/status-monitor-deps/deployment-via-ci/">
+        Deployment
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/banking-on-clojure/">Banking On Clojure</a>
+<label for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          Banking On Clojure
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/clojure-server-project/">
+        Clojure Server Project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/refactor-handler/">
+        Refactor Handlers
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/ui-handler-functions/">
+        UI Handler Functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/account-overview-page/">
+        Add More Handlers
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/continuous-integration/">
+        CI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/deployment-pipeline/">
+        Deployment Pipeline
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/deployment-via-ci/">
+        Deployment via CI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/unit-tests/">
+        Unit Tests
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/spec-generative-testing/">
+        Generative testing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/development-database/">
+        Dev Database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/instrument-next-jdbc-functions/">
+        Instrument functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/database-tables/">
+        DB Tables
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/database-queries/">
+        Database Queries
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/create-records/">
+        Create Records
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/read-records/">
+        Read Records
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/update-records/">
+        Update Records
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/delete-records/">
+        Delete Records
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/cyclic-load-dependency/">
+        Cyclic Load Dependency
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/clojure-spec-generate-mock-data/">
+        Clojure spec generate mock data
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/generate-data-from-specs/">
+        Generate Data Using Clojure Spec
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/unit-testing-the-database/">
+        Unit Testing with the Database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/honeysql/">
+        HoneySQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/namespace-design/">
+        Namespace design
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/banking-on-clojure/production-database/">
+        Production Database - Heroku Postgres
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index md-nav__link--active">
+<a href="./">URL Shortner</a>
+<label for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+          URL Shortner
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="create-project/">
+        Create project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="run-project/">
+        Run project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="test-app-reloading/">
+        Test app reloading
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="compojure-template/">
+        Compojure Template
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="design-data-structure/">
+        Design data structure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="whats-in-a-request/">
+        What is in a Request
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="redirect-to-full-url/">
+        Redirect short URL to full web address
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="add-static-resources/">
+        Add static resources
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="disable-anti-forgery-check/">
+        Disable anti-forgery check
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="html-form/">
+        HTML Form
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="create-html-form/">
+        Create HTML Form
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="using-ring-redirect/">
+        Using Ring Redirect
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="named-alias-handler/">
+        Named alias handler
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="if-let-function/">
+        if-let function
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="refacor-hiccup-form/">
+        Refactor: Hiccup form
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="alias-generator/">
+        Alias generator
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="persist-aliases/">
+        Persist aliases
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="postgres-setup/">
+        Postgres setup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="redis-setup/">
+        Redis setup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="create-database/">
+        create database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="add-alias-to-database/">
+        add alias to database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="get-alias-from-database/">
+        get alias from database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="delete-alias-from-database/">
+        delete alias from database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="return-short-url/">
+        Return short URL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="return-url-aliases/">
+        Return URL aliases
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/">TODO App</a>
+<label for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+          TODO App
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/create-a-project/">Create Project</a>
+<label for="__nav_3_5_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_2">
+<span class="md-nav__icon md-icon"></span>
+          Create Project
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-project/update-project-details/">
+        Update project details
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-project/code-so-far/">
+        The code so far
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/create-a-webserver-with-ring/">Webserver with Ring</a>
+<label for="__nav_3_5_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_3">
+<span class="md-nav__icon md-icon"></span>
+          Webserver with Ring
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency/">
+        Add Ring Dependency
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace/">
+        Configure main namespace
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-webserver-with-ring/namespaces/">
+        Theory: Namespaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-webserver-with-ring/include-ring-library/">
+        Including Ring in the Namespace
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver/">
+        Run Jetty web server
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang/">
+        Theory: Specifying Types &amp; java.lang
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver/">
+        Run webserver
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-webserver-with-ring/code-so-far/">
+        The code so far
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/introducing-ring/">
+        Ring
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/create-a-handler-function/">Create Handler</a>
+<label for="__nav_3_5_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_5">
+<span class="md-nav__icon md-icon"></span>
+          Create Handler
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-handler-function/add-not-found/">
+        Add Error message when request not found
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-handler-function/if-function/">
+        Theory: if function
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-handler-function/maps-and-keywords/">
+        Maps and keywords
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/create-a-handler-function/code-so-far/">
+        Code so far
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/unit-test-handler-function/">
+        Unit test handler
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/reloading-the-application/">Reloading App</a>
+<label for="__nav_3_5_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_7_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_7">
+<span class="md-nav__icon md-icon"></span>
+          Reloading App
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/reloading-the-application/test-your-code-reloads/">
+        Test the wrap-reload middleware
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/reloading-the-application/middleware/">
+        Middleware in Ring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/reloading-the-application/code-so-far/">
+        The code so far
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/compojure/">Compojure</a>
+<label for="__nav_3_5_8">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_8">
+<span class="md-nav__icon md-icon"></span>
+          Compojure
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/defroutes/">
+        Theory: defroutes is a Clojure macro
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/theory-routing/">
+        Theory: routing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/adding-dependency/">
+        Add Compojure as a dependency
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/using-compojure/">
+        Using Compojure in the project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/adding-goodbye-route/">
+        Adding a goodbye route
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/about/">
+        About route
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/show-request-info/">
+        Show request info
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/variable-path-elements/">
+        Variable Path Elements
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/theory-local-name-bindings/">
+        Theory local name bindings
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/theory-using-hash-maps/">
+        Theory: Accessing hash-maps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/lisp-calculator/">
+        Lisp style Calculator
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/compojure/code-so-far/">
+        Code so far
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_9" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/heroku/">Heroku Deploy</a>
+<label for="__nav_3_5_9">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_9_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_9">
+<span class="md-nav__icon md-icon"></span>
+          Heroku Deploy
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/heroku/update-project/">
+        Update the project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/heroku/procfile/">
+        Add Procfile
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/heroku/deploy/">
+        Deploy to Heroku
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/heroku/code-so-far/">
+        Code so far
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_10" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/hiccup/">Hiccup</a>
+<label for="__nav_3_5_10">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_10_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_10">
+<span class="md-nav__icon md-icon"></span>
+          Hiccup
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup/">
+        Updating handlers with hiccup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/hiccup/create-new-handler/">
+        Create a new handler
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/hiccup/code-so-far/">
+        Code so far
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_11" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/refactor-namespace/">Refactor Namespace</a>
+<label for="__nav_3_5_11">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_11">
+<span class="md-nav__icon md-icon"></span>
+          Refactor Namespace
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/refactor-namespace/base-routes/">
+        Base routes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/refactor-namespace/play-routes/">
+        Play routes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/refactor-namespace/task-routes/">
+        Task routes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/refactor-namespace/core/">
+        Refactored Core
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/refactor-namespace/code-so-far/">
+        Code so far
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_12" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/postgres/">Postgres</a>
+<label for="__nav_3_5_12">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_12_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_12">
+<span class="md-nav__icon md-icon"></span>
+          Postgres
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/install/">
+        Postgres install
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/environment-variables/">
+        Environment Variables
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/postgres-cli/">
+        Postgres CLI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/pg-admin/">
+        pgAdmin
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/dataclips/">
+        Heroku Dataclips
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/connect-to-heroku-postgres-from-clients/">
+        Connecting to Heroku Postgres from Postgres Clients
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/jira-ticket/">
+        Jira ticket
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/lobo-table-creation/">
+        How to use Lobos with Heroku
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/postgres-commands/">
+        pg:info
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/postgres-performance-analytics/">
+        Performance Analytics
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/postgres/postgres-toolbelt-commands/">
+        Postgres toolbelt commands
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_12_13" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/connect-to-postgres/">Connect to Postgres</a>
+<label for="__nav_3_5_12_13">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_12_13_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_3_5_12_13">
+<span class="md-nav__icon md-icon"></span>
+          Connect to Postgres
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/connect-to-postgres/add-database-dependencies/">
+        Add Dependency
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/connect-to-postgres/define-db-connection/">
+        Define a Database Connection
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_12_14" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/database-model/">Database Model</a>
+<label for="__nav_3_5_12_14">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_12_14_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_3_5_12_14">
+<span class="md-nav__icon md-icon"></span>
+          Database Model
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/database-model/create-table/">
+        Create table
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/database-model/create-task/">
+        Create a task
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/database-model/show-all-task/">
+        Show all tasks
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/database-model/delete-task/">
+        Delete task
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/database-model/alternative-approaches/">
+        Alternative approaches
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_13" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/leiningen/todo-app/task-handlers/">Task handlers</a>
+<label for="__nav_3_5_13">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_13_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_13">
+<span class="md-nav__icon md-icon"></span>
+          Task handlers
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/task-handlers/add-a-task/">
+        Add a task
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/task-handlers/show-task/">
+        Show tasks
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/todo-app/task-handlers/delete-a-task/">
+        Delete a task
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/leiningen/working-example/">
+        A working example
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../app-servers/">Application Servers</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Application Servers
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/overview/">
+        Overview of Application servers
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/middleware/">
+        Middleware
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/routing-libraries/">
+        Routing libraries
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/clojure-project/">
+        New Clojure Project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/create-server/">
+        Create a server
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/jetty-server-options/">
+        Jetty Server Options
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/http-kit-server-options/">
+        Http-kit Server Options
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/route-requests/">
+        Route Requests
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/start-server/">
+        Start a server
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/java-system-properties/">
+        Java System properties
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/simple-restart/">
+        Simple restart approach
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/atom-based-restart/">
+        Atom based restart
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/app-server-logging/">
+        Application Server Logging
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/debugging/">
+        Debugging application servers
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/routing/">
+        Routing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/set-listen-port/">
+        Set listen port
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../app-servers/static-content/">
+        Static Content
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../server-side-api/">Building API</a>
+<label for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Building API
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/compojure-api-template/">
+        compojure-api template
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/create-compojure-api-project/">
+        Create a compojure-api project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/swagger/">
+        Swagger - self describing APIs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/ring-swagger/">
+        ring-swagger
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/plumatic-schema/">
+        Plumatic schema - defining the shape of data
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/json-files/">
+        Working with JSON files
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/testing-api/">
+        Testing our API
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/ring-mock/">
+        ring-mock
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/cheshire/">
+        Cheshire - fast JSON encoding
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_11" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../server-side-api/end-to-end-testing/">End to end testing</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_11">
+<span class="md-nav__icon md-icon"></span>
+          End to end testing
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-side-api/terminology/">
+        Terminology
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../clojure-databases/">Persistence</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Persistence
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../relational-databases-and-sql/">Relational</a>
+<label for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+          Relational
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/h2-database/">
+        H2 Lightweight Relational Database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/managing-connections/">
+        Managing database connections
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/postgresql-database/">
+        Postgresql database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/h2-database/">
+        H2 Relational Database
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/h2-database/database-tools/">
+        Database tools
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/h2-database/schema-design/">
+        H2 Schema design
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../relational-databases-and-sql/next-jdbc-library/">next-jdbc</a>
+<label for="__nav_6_2_8">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_2_8">
+<span class="md-nav__icon md-icon"></span>
+          next-jdbc
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle/">
+        Using next.jdbc with a Connection pool
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/next-jdbc-library/add-to-project/">
+        Add next.jdbc to a project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/next-jdbc-library/database-specifications/">
+        Database Specifications
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/next-jdbc-library/next-jdbc-and-resultsets/">
+        next.jdbc and result sets
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../relational-databases-and-sql/next-jdbc-library/simple-example/">
+        Simple database example
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../reference/">Reference</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../reference/ring/">
+        Ring specification
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../reference/ring/request-map/">
+        Ring - request map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../using-postgres/">
+        Using Postgres from Clojure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../yet-more-routes/">
+        Yet more routes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../yet-more-routes/about/">
+        About route
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../yet-more-routes/show-request-info/">
+        Show request info
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adding-more-route/">
+        Adding more routes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adding-more-route/using-cond-function/">
+        Using cond function
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="project-url-shortner-as-a-service">Project: URL Shortner as a Service<a class="headerlink" href="#project-url-shortner-as-a-service" title="Permanent link">λ︎</a></h1>
+<p>In this section we will build a webservice to create short url's for web addresses, as with services such as <a href="https://bit.ly">bit.ly</a>.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="http://www.strategic-planet.com/wp-content/uploads/2013/03/url-shortener.png"><img alt="Short URL services" src="http://www.strategic-planet.com/wp-content/uploads/2013/03/url-shortener.png"/></a></p>
 <p>The web service will also manage the redirection of your browser from the short url to the real web address.</p>
 <p>This project will take the simplest approach and is therefore not attempting to build a production ready service.</p>
- <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2023</span>
+</small>
 </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="../reference/ring/request-map.html" class="navigation navigation-prev " aria-label="Previous page: Request map">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="create-project.html" class="navigation navigation-next " aria-label="Next page: Create project">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Project: URL Shortner as a Service","level":"10.1","depth":1,"next":{"title":"Create project","level":"10.1.1","depth":2,"path":"project-url-shortner/create-project.md","ref":"project-url-shortner/create-project.md","articles":[]},"previous":{"title":"Request map","level":"9.1.1","depth":2,"path":"reference/ring/request-map.md","ref":"reference/ring/request-map.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure","none"]},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{},"ga":{"configuration":"auto","token":"UA-28030709-8"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure-web-services/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/jr0cket/developer-guides/raw/master/","P9IGraphicDesign":"https://github.com/practicalli/graphic-design","P9IPullRequestsUrl":"https://github.com/practicalli/clojure-web-services/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","host":"practical.li","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IClojureDepsEdnInstall":"/clojure-tools/install/community-tools.md","P9IIssuesUrl":"https://github.com/practicalli/clojure-web-services/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","website":"https://practical.li/clojure","P9IWebsite":"https://practical.li/clojure","P9IFourClojure":"https://github.com/practicalli/four-clojure"},"title":"Practicalli Clojure WebApps","links":{"sidebar":{"Practicalli":"https://practical.li/"}},"gitbook":">=3.2.3","description":"Server-side applications and APIs in Clojure"},"file":{"path":"project-url-shortner/index.md","mtime":"2023-01-18T22:00:36.994Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-18T22:01:55.408Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
+</article>
 </div>
-
-
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-anchor-headings-lambda/anchor-style.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-codeblock-disable-glossary/disable-glossary.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-folding-chapters/folding-chapters.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-newtabs/bootstrap.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-newtabs/tabs.js"></script>
-        
-    
-        
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
-        
-    
-        
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-simpletabs/tabs.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-terminull-light/terminull.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-
-        
-    </body>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/jr0cket/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://clojurians.slack.com/messages/practicalli" rel="noopener" target="_blank" title="clojurians.slack.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/practical_li" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/practicalli" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://hub.docker.com/u/practicalli" rel="noopener" target="_blank" title="hub.docker.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
-
