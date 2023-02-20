@@ -367,9 +367,3 @@ nav:
       - reference/index.md
       - reference/ring/index.md
       - reference/ring/request-map.md
-      - using-postgres/index.md
-      - yet-more-routes/index.md
-      - yet-more-routes/about.md
-      - yet-more-routes/show-request-info.md
-      - adding-more-route/index.md
-      - adding-more-route/using-cond-function.md
