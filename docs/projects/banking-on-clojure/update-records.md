@@ -1,15 +1,14 @@
 # Update Records in the database
+
 Several options were explored when designing database query functions.  Using next.jdbc.sql functions provides a Clojure data structures approach, where as `next.jdbc/execute!` uses specific SQL statement code.
 
 Take the SQL approach if generating SQL statements directly.
 
 Take the Clojure approach if to generate SQL statements from Clojure data structures.
 
-{% tabs clojure="next.jdbc.sql functions", sql="next.jdbc/execute!"  %}
-
-{% content "clojure" %}
 
 ## Generic update record function
+
 Use the generic create function from the database schema design section
 
 ```clojure
@@ -28,6 +27,7 @@ Use the generic create function from the database schema design section
 
 
 ## Update an existing account_holder record
+
 Call the `update-record` function with the development database specification, the account holder table name and a Clojure hash-map of the record data.
 
 Each key in the map represents a column name and the value associated with the key is the value to be inserted in the record for its column.
@@ -46,6 +46,7 @@ If the update is successful then `:update-count 1` value is returned
 ```
 
 ## Update an existing account record
+
 Update an existing record in the `public.accounts` table, providing new values for `current_balance` and `last_updated` columns.
 
 ```clojure
@@ -57,6 +58,7 @@ Update an existing record in the `public.accounts` table, providing new values f
 ```
 
 ## Update an existing transaction record
+
 Update an existing record in the `public.transaction_history` table.
 
 ```clojure
@@ -68,21 +70,5 @@ Update an existing record in the `public.transaction_history` table.
 ```
 
 
-{% content "sql" %}
-
-
-## Insert account_holders
-
-
-## Insert accounts
-
-
-## Insert transactions
-
-
-
-{% endtabs %}
-
-
-> #### Hint::Generating example data from Clojure Spec
-> [Clojure Spec: generate mock database data](clojure-spec-generate-mock-data.md)
+!!! HINT "Generating example data from Clojure Spec"
+    [Clojure Spec: generate mock database data](clojure-spec-generate-mock-data.md){target=_blank}

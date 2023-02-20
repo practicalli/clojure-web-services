@@ -1,10 +1,17 @@
-# Defining additional request handlers
+# UI Handler Functions
+
 Taking an outside-in approach, the main parts of the website user interface will be created using Hiccup and Bulma CSS library.  Mock data will be used then wired up to the database as that is designed.
 
-> #### INFO::Inside-out development
-> If writing a webapp for an existing database design, taking an inside-out approach my be more effective.  In that approach database access functions would be created and then handlers to expose that data.  Then UI elements would be added to the handlers to make a functioning and responsive application.`
+!!! INFO "Inside-out development"
+    When writing a web service for an existing database design, taking an inside-out approach may be more effective.
 
-## Request Handlers
+    An inside-out approach would include
+    * generating Clojure Specifications for values from the database schema
+    * define database access functions
+    * defin handlers to expose values from the database, validated via specifications
+    * define routes to interact with the values along business functions
+    * create UI elements for use with the handlers to make a functioning and responsive application
+
 The following request handlers will be created for the banking-on-clojure application
 
 * welcome-page
@@ -20,9 +27,10 @@ The accounts-overview-page is the main page for the application, so will be desi
 
 
 ## account-overview-page handler
+
 This is the page customers will view by default when logging in.
 
-```clojure
+```clojure title="src/practicalli/banking_on_clojure/handlers.clj"
 (defn accounts-overview-page
   "Overview of each bank account owned by the current customer.
 
@@ -63,7 +71,7 @@ This is the page customers will view by default when logging in.
 
 This handler uses a helper function to reduce the amount of hiccup code.
 
-```clojure
+```clojure title="src/practicalli/banking_on_clojure/handlers.clj"
 (defn bank-account-media-object
   [account-details]
   [:article {:class "media"}

@@ -2,11 +2,8 @@
 Using `next.jdbc.sql` functions provides a Clojure data structures approach, where as `next.jdbc/execute!` uses specific SQL statement code.
 
 
-{% tabs clojure="next.jdbc.sql functions", sql="next.jdbc/execute!"  %}
-
-{% content "clojure" %}
-
 ## Generic read record function
+
 Use the generic create function from the database schema design section
 
 ```clojure
@@ -23,6 +20,7 @@ Use the generic create function from the database schema design section
 
 
 ## Read account_holder records
+
 Call the `read-record` function with the development database specification and a Clojure vector containing a string of the SQL select statement.
 
 Return all the records from a specific table
@@ -38,6 +36,7 @@ Return records that match a specific where clause
 ```
 
 ## Read account records
+
 Create a new record in the `public.accounts` table.
 
 Return all the records from a specific table
@@ -53,6 +52,7 @@ Return records that match a specific where clause
 ```
 
 ## Read transaction history records
+
 Create a record in the `public.transaction_history` table.
 
 ```clojure
@@ -65,22 +65,5 @@ Return records that match a specific where clause
   (read-record db-specification-dev ["select * from public.transaction_history where transaction_date = ?" "2020-09-11"])
 ```
 
-
-{% content "sql" %}
-
-
-## Insert account_holders
-
-
-## Insert accounts
-
-
-## Insert transactions
-
-
-
-{% endtabs %}
-
-
-> #### Hint::Generating example data from Clojure Spec
-> [Clojure Spec: generate mock database data](clojure-spec-generate-mock-data.md)
+!!! HINT "Generating example data from Clojure Spec"
+    [Clojure Spec: generate mock database data](clojure-spec-generate-mock-data.md){target=_blank}

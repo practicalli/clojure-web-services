@@ -42,8 +42,8 @@ The design includes all the customer details plus from the [Banking on Clojure s
      CONSTRAINT CONSTRAINT_3 PRIMARY KEY (ACCOUNT_HOLDER_ID))"])
 ```
 
-> #### Hint::UUID inefficient for large data sets
-> Using random data, like uuid, for indexes can be inefficient especially for larger data sets.  There may be data types for each specific database that provide more efficient ways of managing unique ids.  For the scope of this project, using a UUID is acceptable.
+!!! HINT "UUID inefficient for large data sets"
+    Using random data, like uuid, for indexes can be inefficient especially for larger data sets.  There may be data types for each specific database that provide more efficient ways of managing unique ids.  For the scope of this project, using a UUID is acceptable.
 
 
 ### Define `ACCOUNTS` table
@@ -86,11 +86,12 @@ All transactions include a value of the transaction, a reference to explain the 
      CONSTRAINT TRANSACTION_HISTORY_PK PRIMARY KEY (TRANSACTION_ID))"])
 ```
 
-> #### Hint::Constraint Naming
-> Constraints are used to add Primary Keys to database tables.  Each constraint needs an identifier which is included in error reporting when there are issues.  It is recommended to use meaningful names for identifiers to trace the source of errors and also support maintenance of the overall database design.
+!!! HINT "Constraint Naming"
+    Constraints are used to add Primary Keys to database tables.  Each constraint needs an identifier which is included in error reporting when there are issues.  It is recommended to use meaningful names for identifiers to trace the source of errors and also support maintenance of the overall database design.
 
 
 ## Execute Table schema in the development database
+
 Define a function to use the table creation SQL statements and execute them on the given database.
 
 The function uses `with-open` to create and manage a connection, closing that connection when the function has completed.
@@ -107,10 +108,10 @@ The function uses `with-open` to create and manage a connection, closing that co
     (jdbc/execute! connection  table-schemas)))
 ```
 
-> #### Hint::`with-open` - managing resources
-> `with-open` ensures that resources get closed and clearly defines the scope of the using the resource.
->
-> This helps the developer avoid using Clojure’s lazy sequences in a with-open block.  Within the scope of the `with-open` expression it is important to make sure that the result is eagerly evaluated to avoid accessing the resource after it’s closed, or fall foul of the "ResultSet closed" or "transaction closed" errors.
+!!! HINT "`with-open` - managing resources"
+    `with-open` ensures that resources get closed and clearly defines the scope of the using the resource.
+
+    This helps the developer avoid using Clojure’s lazy sequences in a with-open block.  Within the scope of the `with-open` expression it is important to make sure that the result is eagerly evaluated to avoid accessing the resource after it’s closed, or fall foul of the "ResultSet closed" or "transaction closed" errors.
 
 
 Refactor the function to execute all the SQL statements in a transaction, so either all the databases are created or none are.
@@ -131,14 +132,13 @@ Using transactions can help prevent databases becoming in an inconsistent state 
         (jdbc/execute! transaction sql-statement) ))))
 ```
 
-> #### Hint::Refactor for connection pools
->`with-open` function can be removed from the `create-tables` function when using a connection pool, passing the existing connection from the pool to the `jdbc/with-transaction` function.
+!!! HINT "Refactor for connection pools"
+    `with-open` function can be removed from the `create-tables` function when using a connection pool, passing the existing connection from the pool to the `jdbc/with-transaction` function.
 
 
 Calling the `create-tables` function will create the database tables in the development database.
 
 The H2 database writes the tables to disk in the `banking-on-clojure.mv.db` file.  Unless the table is dropped, there is no need to evaluate this function again.
-
 
 
 ## Viewing tables in the database
@@ -228,13 +228,11 @@ When designing the database schema it can be useful to iterate quickly around th
 ```
 
 
-> #### Hint:: Manage database schema with Migratus
-> Migratus provides an elegant approach to evolving database schema
+!!! HINT "Manage database schema with Migratus"
+    Migratus provides an elegant approach to evolving database schema
 
 
----
+!!! HINT "Common errors"
+    `Syntax error in SQL statement` can occur if the SQL statement is not correct, the most common cause is a missing comma.
 
-> #### Hint::Common errors
-> `Syntax error in SQL statement` can occur if the SQL statement is not correct, the most common cause is a missing comma.
->
-> Databases do not always support exactly the same SQL syntax, especially around types and more advanced features.  SQL statements may not work exactly the same for each database.  Using tools like [DBever](https://dbeaver.io/) will generated SQL expressions for specific databases.
+    Databases do not always support exactly the same SQL syntax, especially around types and more advanced features.  SQL statements may not work exactly the same for each database.  Using tools like [DBever](https://dbeaver.io/) will generated SQL expressions for specific databases.

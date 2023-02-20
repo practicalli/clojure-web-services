@@ -54,10 +54,10 @@ Use the database specification to create a connection
 
 The database specification is used to create a database connection.  A general name can be used here as only one database will be used for one environment.
 
-> #### Hint::Aero for multiple environment configuration
-> [juxt/aero](https://github.com/juxt/aero) is a library for managing configurations across multiple environments in a single EDN file.  aero can be used to hold the details of each database specification for every environment (dev, staging, live).
->
-> `(read-config (clojure.java.io/resource "config.edn"))` with the configuration file in the resources directory of the classpath.  This is accessible from the Jar and the REPL.
+!!! HINT "Aero for multiple environment configuration"
+    [juxt/aero](https://github.com/juxt/aero) is a library for managing configurations across multiple environments in a single EDN file.  aero can be used to hold the details of each database specification for every environment (dev, staging, live).
+
+    `(read-config (clojure.java.io/resource "config.edn"))` with the configuration file in the resources directory of the classpath.  This is accessible from the Jar and the REPL.
 
 
 ## Using connections effectively
@@ -78,5 +78,5 @@ When multiple SQL queries should be run together, the [`with-open`](https://cloj
   (jdbc/execute! connection ["SQL statement"]))
 ```
 
-> #### Hint::Close JDBC Connections
-> `next.jdbc` uses raw Java JDBC types so it is important to close connections to avoid issues.
+!!! HINT "Close JDBC Connections"
+    `next.jdbc` uses raw Java JDBC types so it is important to close connections to avoid issues.

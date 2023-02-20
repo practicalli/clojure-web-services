@@ -1,7 +1,9 @@
 # Cyclic Load Dependency
-   A cyclic load dependency is where one namespace requires one or more other namespaces that then require the original namespace, forming a loop when resolve all the required namespaces.  When there are cyclic namespace dependencies a warning is returned when evaluating any of the namespaces involved.
+
+A cyclic load dependency is where one namespace requires one or more other namespaces that then require the original namespace, forming a loop when resolve all the required namespaces.  When there are cyclic namespace dependencies a warning is returned when evaluating any of the namespaces involved.
 
 A good way to spot cyclic load dependencies it to regularly run a test runner on the code, or even set up a test runner to watch for changes to the file system which then triggers an automatic test run.  For example, `kaocha --watch`.
+
 
 ## Tips on avoiding  cyclic load dependencies
 
@@ -18,10 +20,10 @@ A good way to spot cyclic load dependencies it to regularly run a test runner on
 
 ## Example - Banking on Clojure
 
-The `practicalli.request-handler` namespace contains functions that need to access data in the database, so the `practicalli.database-access` namespace is required.
+The `practicalli.banking-on-clojure.handler` namespace contains functions that need to access data in the database, so the `practicalli.database-access` namespace is required.
 
 ```clojure
-(ns practicalli.request-handler
+(ns practicalli.banking-on-clojure.handler
   (:require
    ;; Web Application
    [ring.util.response :refer [response]]
@@ -33,7 +35,7 @@ The `practicalli.request-handler` namespace contains functions that need to acce
    [practicalli.database-access :as data-access]))
 ```
 
-The `practicalli.database-access` namespace required the `practicalli.specifications-banking` namespace to use the specifications for generating data
+The `practicalli.database-access` namespace required the `practicalli.banking-on-clojure.specification` namespace to use the specifications for generating data
 
 ```clojure
 (ns practicalli.database-access
@@ -41,24 +43,23 @@ The `practicalli.database-access` namespace required the `practicalli.specificat
             [next.jdbc.sql :as jdbc-sql]
             [next.jdbc.specs :as jdbc-spec]
 
-            [practicalli.specifications-banking]))
+            [practicalli.banking-on-clojure.specification]))
 ```
 
-In the `practicalli.specifications-banking` namespace, a functional specification had been defined for the `register-account-holder` function, which required the `practicalli.request-handler` to be required.  Even though the specifications testing had logically moved to the database-access namespace, this functional specification remained.
+In the `practicalli.banking-on-clojure.specification` namespace, a functional specification had been defined for the `register-account-holder` function, which required the `practicalli.banking-on-clojure.handler` to be required.  Even though the specifications testing had logically moved to the database-access namespace, this functional specification remained.
 
 ```clojure
-(ns practicalli.specifications-banking
+(ns practicalli.banking-on-clojure.specification
   (:require
    ;; Clojure Specifications
    [clojure.spec.alpha :as spec]
    [clojure.spec.gen.alpha :as spec-gen]
    [clojure.spec.test.alpha :as spec-test]
-   [practicalli.specifications]
 
    ;; Helper namespaces
    [clojure.string]
 
-   [practicalli.request-handler :as SUT]))
+   [practicalli.banking-on-clojure.handler :as handler]))
 ```
 
 
@@ -69,7 +70,7 @@ This set of require expressions lead to a cyclic load dependency error.
 ![cyclic load dependency - banking on clojure](/images/clojure-webapps-error-cyclic-load-dependency.png)
 
 
-Removing the require of `practicalli.request-handler` from the `practicalli.specifications-banking` namespace breaks the cyclic dependency.
+Removing the require of `practicalli.banking-on-clojure.handler` from the `practicalli.banking-on-clojure.specification` namespace breaks the cyclic dependency.
 
 
 ## Testing the database on CI
