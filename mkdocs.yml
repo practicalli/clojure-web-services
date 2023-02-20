@@ -332,10 +332,10 @@ nav:
       - server-side-api/cheshire.md
       - End to end testing:
           - server-side-api/end-to-end-testing/index.md
-          - server-side-api/end-to-end-testing/swagger.md
-          - server-side-api/end-to-end-testing/curl.md
-          - server-side-api/end-to-end-testing/httpie.md
-          - server-side-api/end-to-end-testing/postman.md
+          # - server-side-api/end-to-end-testing/swagger.md
+          # - server-side-api/end-to-end-testing/curl.md
+          # - server-side-api/end-to-end-testing/httpie.md
+          # - server-side-api/end-to-end-testing/postman.md
       - server-side-api/terminology.md
   - Persistence:
       - persistence/index.md
