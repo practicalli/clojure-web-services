@@ -6,11 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure-web-services/adding-more-route/</loc>
-         <lastmod>2023-02-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure-web-services/adding-more-route/using-cond-function/</loc>
          <lastmod>2023-02-20</lastmod>
          <changefreq>daily</changefreq>
@@ -1067,26 +1062,6 @@
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/</loc>
-         <lastmod>2023-02-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure-web-services/using-postgres/</loc>
-         <lastmod>2023-02-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure-web-services/yet-more-routes/</loc>
-         <lastmod>2023-02-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure-web-services/yet-more-routes/about/</loc>
-         <lastmod>2023-02-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure-web-services/yet-more-routes/show-request-info/</loc>
          <lastmod>2023-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
