@@ -141,13 +141,11 @@ nav:
           - Refactor: projects/status-monitor-deps/refactor-handlers-and-tests.md
           - CI: projects/status-monitor-deps/continuous-integration.md
           - Deployment: projects/status-monitor-deps/deployment-via-ci.md
-          - projects/status-monitor-deps/jetty-and-http-kit.md
       - Banking On Clojure:
           - projects/banking-on-clojure/index.md
-          - App Server Config: projects/banking-on-clojure/application-server-configuration.md
-          - projects/banking-on-clojure/application-server.md
-          - projects/banking-on-clojure/defining-handlers.md
-          - Define Handlers: projects/banking-on-clojure/refactor-handler.md
+          - Clojure Server Project: projects/banking-on-clojure/clojure-server-project.md
+          - Refactor Handlers: projects/banking-on-clojure/refactor-handler.md
+          - UI Handler Functions: projects/banking-on-clojure/ui-handler-functions.md
           - Add More Handlers: projects/banking-on-clojure/account-overview-page.md
           - CI: projects/banking-on-clojure/continuous-integration.md
           - Deployment Pipeline: projects/banking-on-clojure/deployment-pipeline.md
@@ -171,13 +169,13 @@ nav:
           - projects/banking-on-clojure/namespace-design.md
           - projects/banking-on-clojure/production-database.md
 
-      - Game Scoreboard:
-          - projects/game-scoreboard-api/index.md
-          - server-side-api/projects/game-scoreboard/index.md
-          - server-side-api/projects/game-scoreboard/defining-scoreboard.md
-          - server-side-api/projects/game-scoreboard/defining-scores.md
-          - server-side-api/projects/game-scoreboard-ui/index.md
-          - server-side-api/projects/game-scoreboard-ui/create-project.md
+      # - Game Scoreboard:
+      #     - projects/game-scoreboard-api/index.md
+      #     - server-side-api/projects/game-scoreboard/index.md
+      #     - server-side-api/projects/game-scoreboard/defining-scoreboard.md
+      #     - server-side-api/projects/game-scoreboard/defining-scores.md
+      #     - server-side-api/projects/game-scoreboard-ui/index.md
+      #     - server-side-api/projects/game-scoreboard-ui/create-project.md
       - URL Shortner:
           - project-url-shortner/index.md
           - project-url-shortner/create-project.md
@@ -302,6 +300,8 @@ nav:
   - Application Servers:
       - app-servers/index.md
       - app-servers/overview.md
+      - app-servers/middleware.md
+      - app-servers/routing-libraries.md
       - app-servers/clojure-project.md
       - app-servers/create-server.md
       - app-servers/jetty-server-options.md
@@ -316,9 +316,6 @@ nav:
       - app-servers/routing.md
       - app-servers/set-listen-port.md
       - app-servers/static-content.md
-      - application-logic/index.md
-      - application-logic/routing.md
-      - application-logic/middleware/index.md
   - Building API:
       - server-side-api/index.md
       - server-side-api/compojure-api-template.md
@@ -338,7 +335,6 @@ nav:
           # - server-side-api/end-to-end-testing/postman.md
       - server-side-api/terminology.md
   - Persistence:
-      - persistence/index.md
       - clojure-databases/index.md
       - Relational:
           - relational-databases-and-sql/index.md
@@ -355,13 +351,13 @@ nav:
               - relational-databases-and-sql/next-jdbc-library/database-specifications.md
               - relational-databases-and-sql/next-jdbc-library/next-jdbc-and-resultsets.md
               - relational-databases-and-sql/next-jdbc-library/simple-example.md
-      - XTDB:
-          - clojure-databases/crux/index.md
-  - Libraries:
-      - libraries/index.md
-      - Reitit:
-          - libraries/reitit/index.md
-          - libraries/reitit/constructing-routes.md
+  #     - XTDB:
+  #         - clojure-databases/crux/index.md
+  # - Libraries:
+  #     - libraries/index.md
+  #     - Reitit:
+  #         - libraries/reitit/index.md
+  #         - libraries/reitit/constructing-routes.md
   # - Micro-frameworks:
   #     - micro-framework/index.md
   #     - micro-framework/edge/index.md
