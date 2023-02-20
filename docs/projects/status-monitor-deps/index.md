@@ -10,23 +10,35 @@ A server-side web application using
 
 
 ## Creating a project
-Use `clj-new` to create the project (alias defined in [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdnInstall }}))
 
-```bash
-clojure -T:project/new :template app :name practicalli/status-monitor-service :output status-monitor-service
-```
+=== "deps-new"
+    Create a project using the app template and called practicalli/status-monitor.  The `:project/create` alias from [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/) uses the deps-new project to create Clojure projects
+    ```bash
+    clojure -T:project/create :template app :name practicalli/status-monitor
+    ```
+    Some minor tweaks are made to the project before starting the application development
 
-> #### Hint::Use practicalli/clojure-deps-edn to add common tools
-> fork and clone the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) GitHub repository to instantly have access to dozens of tools for Clojure software development
-
-
-## Tweaking the project
-Some minor tweaks are made to the project before starting the application development
-
-- describe the project and how it can be used in the README
-- delete the LICENSE file and use a Creative Commons in the README
-- format the deps.edn file for readability
+    - describe the project and how it can be used in the README
+    - delete the LICENSE file and use a Creative Commons in the README
+    - format the deps.edn file for readability
 
 
-## Code repository
-The code for this section can be found on [practicalli/status-monitor-service](https://github.com/practicalli/status-monitor-service)
+=== "Manual"
+    Create a project in a directory called status-monitor, with a `deps.end` file in the root of that directory
+    ```clojure title="deps.edn"
+    {:paths ["src"]
+     :deps {org.clojure/clojure {:mvn/version "1.11.3"}}}
+    ```
+    Create a `src/practicalli/status_monitor.clj` file
+    ```clojure title="src/practicalli/status_monitor.clj"
+    (ns practicalli.status-monitor)
+    ```
+    Create a `test/practicalli/status_monitor_test.clj` file
+    ```clojure title="src/practicalli/status_monitor.clj"
+    (ns practicalli.status-monitor-test
+      (:require [clojure.test :refer [deftest is testing]]))
+    ```
+
+
+!!! EXAMPLE "practicalli/status-monitor"
+    The code for this project can be found at [practicalli/status-monitor](https://github.com/practicalli/status-monitor)

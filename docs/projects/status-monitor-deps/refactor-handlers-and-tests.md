@@ -1,4 +1,5 @@
-## Refactor handlers and unit tests
+# Refactor handlers and unit tests
+
 Refactor the unit tests to use the ring-mock library to test handler functions.  Create separate handler functions for the routes in `defroute` (there is only one custom handler at present).
 
 ```clojure
@@ -41,11 +42,12 @@ Update the `defroutes` definition to call this handler rather than hard coding t
 Run the Cognitect test runner to check the unit tests are still passing after the code refactor.
 
 ```clojure
-clojure -A:dev:test:runner
+clojure -M:env/dev:test:runner
 ```
 
 
-## Reference: Additional helper functions
+## Helper functions
+
 The ring util library contains several other helper functions, `bad-request`, `not-found` and `redirect`:
 
 ```clojure
@@ -80,11 +82,11 @@ Ring utilities has functions for setting the header data for responses, `content
 
 ```
 
-> #### Hint::`wrap-cookies` middleware required
-> The `set-cookie` function adds a new entry to the response map and requires the `wrap-cookies` middleware to process correctly.
+!!! HINT "`wrap-cookies` middleware required"
+    The `set-cookie` function adds a new entry to the response map and requires the `wrap-cookies` middleware to process correctly.
 
 
-## Reference: handler functions
+## Handler functions
 
 A handler to return the incoming IP Address
 

@@ -1,12 +1,13 @@
-## Debugging ring requests
+# Debug ring requests
+
 Requests are Clojure hash-maps so are easy to extract data from in a meaningful way.
 
 If getting unexpected results, checking the details received in the request is a fast way to diagnose issues by seeing the data. The ring/ring-devel library contains a `handle-dump` function which displays the request parameters in a web page.
 
 
 ## Add ring development library
-Add the `:env/dev` alias to include the `ring/ring-devel` library as a dependency.  The ring-devel library includes functions for developing and debugging ring applications.
 
+Add the `:env/dev` alias to include the `ring/ring-devel` library as a dependency.  The ring-devel library includes functions for developing and debugging ring applications.
 
 ```clojure
  :deps
@@ -20,9 +21,7 @@ Add the `:env/dev` alias to include the `ring/ring-devel` library as a dependenc
   {:extra-deps {ring/ring-devel {:mvn/version "1.8.1"}}}}
 ```
 
-
-
-## Restart REPL after adding dependencies
+## Restart REPL
 
 Dependencies are only added to the classpath when the REPL process starts, unless using the [unofficial dependency hotload approach](https://practical.li/clojure/alternative-tools/clojure-cli/hotload-libraries.html)
 
@@ -36,8 +35,12 @@ clojure -M:env/dev:repl/rebel
 
 > `:repl/rebel` is defined in the user level configuration [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn)
 
+!!! HINT "Hotload libraries into a running REPL"
+    [Clojure CLI Hotload Libraries](https://practical.li/clojure/clojure-cli/repl-reloaded/#hotload-libraries) can add libraries to the class path without having to restart the REPL
+
 
 ## Require the `ring.handler.dump` namespace
+
 Require the `ring.handler.dump` namespace in the `ns` form of `practicalli.status-monitor-server` namespace and refer the specific `handle-dump` function.
 
 ```clojure
@@ -54,6 +57,7 @@ Require the `ring.handler.dump` namespace in the `ns` form of `practicalli.statu
 
 
 ## Add a route to show the request map
+
 Add a route that shows the request information using the `handle-dump` function.
 
 ```clojure
@@ -64,7 +68,7 @@ Add a route that shows the request information using the `handle-dump` function.
 
 (re)start the application server and visit the URL http://localhost:8080/request-dump
 
-![Clojure Webapps - ring devel handle dump request map web page](/images/clojure-webapps-ring-develop-handle-dump-request-map-webpage.png)
+![Clojure Webapps - ring devel handle dump request map web page](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/clojure-webapps-ring-develop-handle-dump-request-map-webpage-light.png)
 
 
 The request map details are also printed to the REPL buffer

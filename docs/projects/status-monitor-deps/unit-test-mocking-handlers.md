@@ -1,4 +1,4 @@
-# Unit Testing and Mocking for handler functions
+# Mocking in Unit Tests
 
 The main focus of unit tests in a web application are the handler functions, passing requests to those functions and checking the responses.
 
@@ -14,7 +14,7 @@ For all other handler functions you can pass a request object or just specific p
 [ring-mock](https://github.com/ring-clojure/ring-mock) is a small library creating Ring request maps (Clojure hash-maps) to support unit testing. Generated hash-maps are examples of a ring request and used as arguments when calling the handler functions in tests.
 
 
-## Add as dev dependency
+## Add dev dependency
 
 As ring-mock is a development only library, it should be added to an alias not included in the packaging of the project for production.
 
@@ -26,7 +26,7 @@ Edit the project `deps.edn` file in the project and add ring-mock to an alias ca
   {:extra-deps {ring/ring-mock {:mvn/version "0.4.0"}}}
 ```
 
-## Add ring-mock to test namesapces
+## Add namespace
 
 Add the ring-mock.request namespace to any of the test namespaces mocking of requests will be useful.
 
@@ -53,7 +53,7 @@ Add unit tests to check the handlers (which are going to be added next - TDD sty
 ```
 
 
-## Examples from ring-mock
+## Examples
 
 * [API: ring-mock](https://ring-clojure.github.io/ring-mock/ring.mock.request.html)
 

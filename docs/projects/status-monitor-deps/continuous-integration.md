@@ -9,13 +9,15 @@ Initially this will run all the unit tests for the application and report on the
 
 Edit `deps.edn` file and add an alias called `:test/run` that calls kaocha test runner on the code
 
+```clojure
   :test/run
   {:extra-paths ["test"]
-   :extra-deps {lambdaisland/kaocha {:mvn/version "1.60.977"}}
+   :extra-deps {lambdaisland/kaocha {:mvn/version "1.71.1119"}}
    :main-opts   ["-m" "kaocha.runner"]
    :exec-fn kaocha.runner/exec-fn
    :exec-args {:randomize? false
                :fail-fast? true}}
+```
 
 Check the test runner is working by running the `clojure` command with the `:test/run` alias in a terminal at the root of the Clojure project
 
@@ -30,6 +32,7 @@ Edit `.circleci/config.yml` and add a configuration to build and test the Clojur
 
 > Run the `clojure` commands in the root of the project before adding the configuration, to ensure the commands work locally first.
 
+<!-- TODO: service-monitor update CircleCI image used? -->
 
 ```yaml
 version: 2.0
@@ -62,4 +65,4 @@ Visit the CircleCI dashboard and select **Add Projects**.  Find the `status-moni
 
 Choose the **Add Manual** install and **Start Building**
 
-![CircleCI dashboard - status-monitor-service pipelines successful build](/images/circle-ci-status-monitor-pipelines-success.png)
+![CircleCI dashboard - status-monitor-service pipelines successful build](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/circle-ci-status-monitor-pipelines-success-light.png)
