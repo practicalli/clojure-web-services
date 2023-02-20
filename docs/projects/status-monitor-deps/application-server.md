@@ -1,10 +1,12 @@
 ## Add an embedded web application server
+
 The status monitor service runs on top of an application server which handles the infrastructure of messaging over https and other Internet protocols.
 
 There are several libraries to provide this, ring and http-kit being the most common.
 
 
 ## Add dependencies for application server and routing
+
 Edit the `deps.edn` file for the project.
 
 Add the [http-kit library](http://http-kit.github.io/) library for the application server
@@ -20,6 +22,7 @@ Add the compojure library for routing of requests
 
 
 ## Add code to start the application server
+
 Edit the `src/practicalli/status_monitor_service.clj` file
 
 Include the http-kit server namespace and the compojure core namespace as requires in the `ns` definition.
@@ -50,6 +53,7 @@ Update the `-main` function to start the application server using http-kit `run-
 ```
 
 ## Define a default route and handler
+
 Using the compojure `defroutes` function, define the default route and response when the status-monitor app received a request on the main URL, (eg. http://localhost:8888/)
 
 
@@ -62,6 +66,7 @@ The route returns a hash-map that is the form of a response map. http-kit server
 
 
 ## Stop and restart server from REPL
+
 Add functions to stop and restart the server, so change to the application code can be loaded in without having to stop the Clojure REPL.
 
 Use the value in the app-server-instance atom to determine if the app-server is already running.  If so, then send the instance the `:timeout` key with a value of time to shut itself down.
@@ -88,13 +93,14 @@ With a REPL running the project, the server is started calling `(-main)` and sto
 ```
 
 
-> #### Hint::Component lifecycle service
-> This approach is the essence of component lifecycle services such as [mount](https://github.com/tolitius/mount), component and [integrant](https://github.com/weavejester/integrant).
->
-> Use the [mount](https://github.com/tolitius/mount) library if you are starting with component lifecycle services or require a clean and simple approach.  Try [integrant](https://github.com/weavejester/integrant) to take a data centric approach to such a service.
+!!! HINT "Component lifecycle service"
+    This approach is the essence of component lifecycle services such as [mount](https://github.com/tolitius/mount), component and [integrant](https://github.com/weavejester/integrant).
+
+    Use the [mount](https://github.com/tolitius/mount) library if you are starting with component lifecycle services or require a clean and simple approach.  Try [integrant](https://github.com/weavejester/integrant) to take a data centric approach to such a service.
 
 
 ## REPL experiment section
+
 To help use the code during development a comment body has been included with calls to start, stop and restart the application.
 
 ```clojure
