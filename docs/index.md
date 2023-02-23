@@ -10,7 +10,7 @@ Use a [REPL Workflow approach](introduction/repl-workflow.md) to provide instant
 
 ## Tools
 
-Clojure CLI is used to configure and run projects, enhance with [aliases from Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/).
+Clojure CLI is used to manage library dependencies and run Clojure code, enhanced with [aliases from Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/).
 
 Larger projects use Integrant & Integrant REPL to manage components and state, using a reloaded REPL workflow to manage changes in addtion to evaluating functions in the REPL.
 
@@ -24,7 +24,7 @@ make is a general build tool used to support project development and support aut
     Heroku Cloud service deployment approach is being archived as the service no longer provides a developer environment (November 2022)
 
 ??? WARNING "Older content using Leiningen"
-    Older content uses Leiningen for project configuration.  This content can be converted to a Clojure CLI project by creating a `deps.edn` file containing the relevant dependencies.  Add a `build.clj` configuration to build deployable assets.
+    Older content uses Leiningen for project configuration.  This content can be converted to a Clojure CLI project by creating a `deps.edn` file containing the relevant dependencies.  Add a `build.clj` configuration to create assets to deploy, e.g. jar & uberjar.
 
 
 ## Library Composition approach
