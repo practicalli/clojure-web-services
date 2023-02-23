@@ -15,9 +15,9 @@
 <link href="https://practical.li/clojure-web-services/" rel="canonical"/>
 <link href="introduction/overview/" rel="next"/>
 <link href="assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.14" name="generator"/>
 <title>Index - Practicalli Clojure Web Services</title>
-<link href="assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
 <link href="assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1493,7 +1493,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <p>Use a <a href="introduction/repl-workflow/">REPL Workflow approach</a> to provide instant feedback on the code behaviour as it is written, validating design decisions as they are made.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png"><img alt="Clojure REPL workflow" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png"/></a></p>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">λ︎</a></h2>
-<p>Clojure CLI is used to configure and run projects, enhance with <a href="https://practical.li/clojure/clojure-cli/practicalli-config/">aliases from Practicalli Clojure CLI Config</a>.</p>
+<p>Clojure CLI is used to manage library dependencies and run Clojure code, enhanced with <a href="https://practical.li/clojure/clojure-cli/practicalli-config/">aliases from Practicalli Clojure CLI Config</a>.</p>
 <p>Larger projects use Integrant &amp; Integrant REPL to manage components and state, using a reloaded REPL workflow to manage changes in addtion to evaluating functions in the REPL.</p>
 <p>Persistence is provides via Postgresql (and eventually JUXT Crux)</p>
 <p>tools.build will be used to create Clojure artefacts for deployment, with GitHub actions and Docker used for Continuous Integration and orchestrating systems.</p>
@@ -1504,7 +1504,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </details>
 <details class="warning">
 <summary>Older content using Leiningen</summary>
-<p>Older content uses Leiningen for project configuration.  This content can be converted to a Clojure CLI project by creating a <code>deps.edn</code> file containing the relevant dependencies.  Add a <code>build.clj</code> configuration to build deployable assets.</p>
+<p>Older content uses Leiningen for project configuration.  This content can be converted to a Clojure CLI project by creating a <code>deps.edn</code> file containing the relevant dependencies.  Add a <code>build.clj</code> configuration to create assets to deploy, e.g. jar &amp; uberjar.</p>
 </details>
 <h2 id="library-composition-approach">Library Composition approach<a class="headerlink" href="#library-composition-approach" title="Permanent link">λ︎</a></h2>
 <p>The Clojure community provides a diverse set of libraries, each focused on a specific need. Libraries are assembled to rapidly develop a tailored solution, avoiding bloat and the unnecessary complexity that comes with large frameworks. Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.</p>
@@ -1530,7 +1530,7 @@ This work is licensed under a Creative Commons Attribution 4.0 ShareAlike Licens
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
 </small>
 </div>
 </article>
