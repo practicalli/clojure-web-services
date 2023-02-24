@@ -128,7 +128,7 @@ nav:
   - Service REPL Workflow:
       - service-repl-workflow/index.md
       - service-repl-workflow/aero-environment-profiles.md
-      - service-repl-workflow/integrant-repl/index.md
+      - service-repl-workflow/integrant-repl.md
 
   - Projects:
       - projects/index.md

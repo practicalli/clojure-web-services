@@ -1,14 +1,10 @@
 # Integrant REPL
 
-<!-- > #### TODO: Integrant repl Review -->
+Integrant REPL includes functions to start, stop and restart services during development, enabling changes to the system without restarting the REPL process.
 
-Start and restart services quickly and easily from within the REPL with Integrant REPL.
+`(go)`, `(reset)` and `(stop)` functions are evaluated in the REPL to control the system.
 
-Integrant REPL is for developing a system using a reloaded REPL workflow and is a separate Library and intent to that of Integrant, which is aimed at the lifecycle of running a system.
-
-Reloaded REPL provides a simple way to reload changes into the system as it is being developed. Simple `(go)`, `(reset)` and `(stop)` commands are used with the REPL to control the system.
-
-To assist with debugging, the parsed configuration, `(config)`, and system configuration, `(system)`, data can be viewed via the REPl state to understand how the configuration is being resolved.  This is especially useful when using aero and environment variables.
+To assist debugging, `(config)` displays the parsed system configuration, `(system)` shows how the configuration has being resolved (service references, profiles, etc.).  This is especially useful when using aero and environment variables.
 
 ??? HINT "Integrant REPL and Integrant"
     Integrant and Integrant REPL can share the same system configuration file, although they are otherwise separate ways of working with a system.
@@ -22,34 +18,33 @@ To assist with debugging, the parsed configuration, `(config)`, and system confi
 
 Define the configuration for each part of the system, such as http server (jetty, httpkit), router application (reitit, compojure, ring) and persistence storage (postgres, crux)
 
-Create a `develop/resources/config.edn` file containing the Integrant REPL configuration (or use aero with `resources/config.edn` file and share the configuration with Integrant)
+Use a shared `resources/config.edn` file with Integrant for consistency.  Or if there is significant experimentation to be done, create a `dev/resources/config.edn` file
 
-```clojure
-{:practicalli.scoreboard.service/http-server
- {:handler #ig/ref :practicalli.scoreboard.service/router
+```clojure title="resources/config.edn"
+{:practicalli.gameboard.service/http-server
+ {:handler #ig/ref :practicalli.gameboard.service/router
   :port  8888
   :join? false}
 
- :practicalli.scoreboard.service/router
- {:persistence #ig/ref :practicalli.scoreboard.service/relational-store}
+ :practicalli.gameboard.service/router
+ {:persistence #ig/ref :practicalli.gameboard.service/relational-store}
 
- :practicalli.scoreboard.service/relational-store
- {:connection  {:url "http://localhost/" :port 57207 :database "scoreboard"}}}
+ :practicalli.gameboard.service/relational-store
+ {:connection  {:url "http://localhost/" :port 57207 :database "gameboard"}}}
 ```
 
-Clojure encourages fully qualified keywords, i.e. domain/key, so that keys are unique throughout the system.
+Fully qualified keywords, e.g. domain.service.name/component, are used so that keys are unique throughout the system.
 
-The domain used for integrant is the Clojure namespace that contains the `defmethod init-key` for the key.  The Integrant `load-namespaces` function will automatically load all namespaces that match key names
-
+The fully qualified name is the namespace that contains the `defmethod init-key` for the key.  The Integrant `load-namespaces` function will automatically load all namespaces that match key names
 
 
 ## User namespace
 
 Common practice is to place the Integrant REPl code in a `user` namespace, which is automatically loaded when the REPL process starts.
 
-The `user` namespace is defined separately from the source code, as it is code to manage the application rather than part of the application itself.  The user namespace is added to the `develop/user.clj` file and added to the classpath when developing.
+The `user` namespace is defined separately from the source code, as it is code to develop the service rather than part of the service itself.  The user namespace is added to the `dev/user.clj` file and added to the classpath via an alias, e.g. `:env/dev` or `:repl/reloaded` aliases from [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/)
 
-```clojure
+```clojure title="dev/user.clj"
 (ns user
   (:require
    ;; REPL workflow
@@ -63,8 +58,7 @@ The `user` namespace is defined separately from the source code, as it is code t
    [clojure.pprint :as pprint]))
 ```
 
-
-## Managing the classpath
+[Practicalli REPL Startup - detailed examples](https://practical.li/clojure/clojure-cli/repl-startup/){target=_blank .md-button}
 
 [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/){target=_blank} aliases defines aliases that include the `dev` directory that contains the `user` namespace on the class path
 
@@ -85,9 +79,6 @@ The `user` namespace is defined separately from the source code, as it is code t
     ```bash
     clojure -M:env/dev:repl/rebl
     ```
-
-
-<!-- TODO: Integrant REPL - add repl startup screenshot ?? -->
 
 
 ## Environment Configuration
