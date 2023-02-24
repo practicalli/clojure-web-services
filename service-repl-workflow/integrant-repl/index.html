@@ -27,7 +27,7 @@
 <meta content="website" property="og:type"/>
 <meta content="Integrant REPL - Practicalli Clojure Web Services" property="og:title"/>
 <meta content="Practical guide to Clojure Web Services and APIs" property="og:description"/>
-<meta content="https://practical.li/clojure-web-services/assets/images/social/service-repl-workflow/integrant-repl/index.png" property="og:image"/>
+<meta content="https://practical.li/clojure-web-services/assets/images/social/service-repl-workflow/integrant-repl.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
@@ -35,7 +35,7 @@
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Integrant REPL - Practicalli Clojure Web Services" name="twitter:title"/>
 <meta content="Practical guide to Clojure Web Services and APIs" name="twitter:description"/>
-<meta content="https://practical.li/clojure-web-services/assets/images/social/service-repl-workflow/integrant-repl/index.png" name="twitter:image"/>
+<meta content="https://practical.li/clojure-web-services/assets/images/social/service-repl-workflow/integrant-repl.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -256,11 +256,6 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <li class="md-nav__item">
 <a class="md-nav__link" href="#user-namespace">
     User namespace
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#managing-the-classpath">
-    Managing the classpath
   </a>
 </li>
 <li class="md-nav__item">
@@ -1519,11 +1514,6 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#managing-the-classpath">
-    Managing the classpath
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#environment-configuration">
     Environment Configuration
   </a>
@@ -1551,11 +1541,9 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="integrant-repl">Integrant REPL<a class="headerlink" href="#integrant-repl" title="Permanent link">λ︎</a></h1>
-<!-- > #### TODO: Integrant repl Review -->
-<p>Start and restart services quickly and easily from within the REPL with Integrant REPL.</p>
-<p>Integrant REPL is for developing a system using a reloaded REPL workflow and is a separate Library and intent to that of Integrant, which is aimed at the lifecycle of running a system.</p>
-<p>Reloaded REPL provides a simple way to reload changes into the system as it is being developed. Simple <code>(go)</code>, <code>(reset)</code> and <code>(stop)</code> commands are used with the REPL to control the system.</p>
-<p>To assist with debugging, the parsed configuration, <code>(config)</code>, and system configuration, <code>(system)</code>, data can be viewed via the REPl state to understand how the configuration is being resolved.  This is especially useful when using aero and environment variables.</p>
+<p>Integrant REPL includes functions to start, stop and restart services during development, enabling changes to the system without restarting the REPL process.</p>
+<p><code>(go)</code>, <code>(reset)</code> and <code>(stop)</code> functions are evaluated in the REPL to control the system.</p>
+<p>To assist debugging, <code>(config)</code> displays the parsed system configuration, <code>(system)</code> shows how the configuration has being resolved (service references, profiles, etc.).  This is especially useful when using aero and environment variables.</p>
 <details class="hint">
 <summary>Integrant REPL and Integrant</summary>
 <p>Integrant and Integrant REPL can share the same system configuration file, although they are otherwise separate ways of working with a system.</p>
@@ -1564,24 +1552,24 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </details>
 <h2 id="integrant-configuration">Integrant configuration<a class="headerlink" href="#integrant-configuration" title="Permanent link">λ︎</a></h2>
 <p>Define the configuration for each part of the system, such as http server (jetty, httpkit), router application (reitit, compojure, ring) and persistence storage (postgres, crux)</p>
-<p>Create a <code>develop/resources/config.edn</code> file containing the Integrant REPL configuration (or use aero with <code>resources/config.edn</code> file and share the configuration with Integrant)</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span><span class="ss">:practicalli.scoreboard.service/http-server</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:handler</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/router</span>
+<p>Use a shared <code>resources/config.edn</code> file with Integrant for consistency.  Or if there is significant experimentation to be done, create a <code>dev/resources/config.edn</code> file</p>
+<div class="highlight"><span class="filename">resources/config.edn</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span><span class="ss">:practicalli.gameboard.service/http-server</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:handler</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/router</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="ss">:port</span><span class="w">  </span><span class="mi">8888</span>
 <a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="ss">:join?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
 <a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/router</span>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w"> </span><span class="p">{</span><span class="ss">:persistence</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/relational-store</span><span class="p">}</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/router</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w"> </span><span class="p">{</span><span class="ss">:persistence</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/relational-store</span><span class="p">}</span>
 <a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/relational-store</span>
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w"> </span><span class="p">{</span><span class="ss">:connection</span><span class="w">  </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"scoreboard"</span><span class="p">}}}</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/relational-store</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w"> </span><span class="p">{</span><span class="ss">:connection</span><span class="w">  </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"gameboard"</span><span class="p">}}}</span>
 </code></pre></div>
-<p>Clojure encourages fully qualified keywords, i.e. domain/key, so that keys are unique throughout the system.</p>
-<p>The domain used for integrant is the Clojure namespace that contains the <code>defmethod init-key</code> for the key.  The Integrant <code>load-namespaces</code> function will automatically load all namespaces that match key names</p>
+<p>Fully qualified keywords, e.g. domain.service.name/component, are used so that keys are unique throughout the system.</p>
+<p>The fully qualified name is the namespace that contains the <code>defmethod init-key</code> for the key.  The Integrant <code>load-namespaces</code> function will automatically load all namespaces that match key names</p>
 <h2 id="user-namespace">User namespace<a class="headerlink" href="#user-namespace" title="Permanent link">λ︎</a></h2>
 <p>Common practice is to place the Integrant REPl code in a <code>user</code> namespace, which is automatically loaded when the REPL process starts.</p>
-<p>The <code>user</code> namespace is defined separately from the source code, as it is code to manage the application rather than part of the application itself.  The user namespace is added to the <code>develop/user.clj</code> file and added to the classpath when developing.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<p>The <code>user</code> namespace is defined separately from the source code, as it is code to develop the service rather than part of the service itself.  The user namespace is added to the <code>dev/user.clj</code> file and added to the classpath via an alias, e.g. <code>:env/dev</code> or <code>:repl/reloaded</code> aliases from <a href="https://practical.li/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a></p>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">   </span><span class="c1">;; REPL workflow</span>
 <a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">   </span><span class="p">[</span><span class="nv">integrant.repl</span><span class="w">       </span><span class="ss">:as</span><span class="w"> </span><span class="nv">ig-repl</span><span class="p">]</span>
@@ -1593,7 +1581,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">   </span><span class="c1">;; Utilities</span>
 <a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">   </span><span class="p">[</span><span class="nv">clojure.pprint</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">pprint</span><span class="p">]))</span>
 </code></pre></div>
-<h2 id="managing-the-classpath">Managing the classpath<a class="headerlink" href="#managing-the-classpath" title="Permanent link">λ︎</a></h2>
+<p><a class="md-button" href="https://practical.li/clojure/clojure-cli/repl-startup/" target="_blank">Practicalli REPL Startup - detailed examples</a></p>
 <p><a href="https://practical.li/clojure/clojure-cli/practicalli-config/" target="_blank">Practicalli Clojure CLI Config</a> aliases defines aliases that include the <code>dev</code> directory that contains the <code>user</code> namespace on the class path</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">REPL Reloaded</label><label for="__tabbed_1_2">Dev Tools</label><label for="__tabbed_1_3">Path</label></div>
 <div class="tabbed-content">
@@ -1614,7 +1602,6 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </div>
 </div>
 </input></input></input></div>
-<!-- TODO: Integrant REPL - add repl startup screenshot ?? -->
 <h2 id="environment-configuration">Environment Configuration<a class="headerlink" href="#environment-configuration" title="Permanent link">λ︎</a></h2>
 <p>Using aero with the Integrant configuration file includes tag literals that need to be resolved.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">;;;; Aero environment management</span>
@@ -1745,7 +1732,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 24, 2023</span>
 </small>
 </div>
 </article>
