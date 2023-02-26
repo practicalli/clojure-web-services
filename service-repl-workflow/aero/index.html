@@ -12,12 +12,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Practical guide to Clojure Web Services and APIs" name="description"/>
 <meta content="Practicalli" name="author"/>
-<link href="https://practical.li/clojure-web-services/service-repl-workflow/aero-environment-profiles/" rel="canonical"/>
+<link href="https://practical.li/clojure-web-services/service-repl-workflow/aero/" rel="canonical"/>
 <link href="../" rel="prev"/>
 <link href="../integrant-repl/" rel="next"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.14" name="generator"/>
-<title>Aero System configuration - Practicalli Clojure Web Services</title>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
+<title>Aero - Practicalli Clojure Web Services</title>
 <link href="../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -25,17 +25,17 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Aero System configuration - Practicalli Clojure Web Services" property="og:title"/>
+<meta content="Aero - Practicalli Clojure Web Services" property="og:title"/>
 <meta content="Practical guide to Clojure Web Services and APIs" property="og:description"/>
-<meta content="https://practical.li/clojure-web-services/assets/images/social/service-repl-workflow/aero-environment-profiles.png" property="og:image"/>
+<meta content="https://practical.li/clojure-web-services/assets/images/social/service-repl-workflow/aero.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://practical.li/clojure-web-services/service-repl-workflow/aero-environment-profiles/" property="og:url"/>
+<meta content="https://practical.li/clojure-web-services/service-repl-workflow/aero/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Aero System configuration - Practicalli Clojure Web Services" name="twitter:title"/>
+<meta content="Aero - Practicalli Clojure Web Services" name="twitter:title"/>
 <meta content="Practical guide to Clojure Web Services and APIs" name="twitter:description"/>
-<meta content="https://practical.li/clojure-web-services/assets/images/social/service-repl-workflow/aero-environment-profiles.png" name="twitter:image"/>
+<meta content="https://practical.li/clojure-web-services/assets/images/social/service-repl-workflow/aero.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -90,7 +90,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Aero System configuration
+              Aero
             
           </span>
 </div>
@@ -231,11 +231,11 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Aero System configuration
+          Aero
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Aero System configuration
+        Aero
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -244,8 +244,8 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#configuration-as-data">
-    Configuration as data
+<a class="md-nav__link" href="#aero-reader">
+    Aero reader
   </a>
 </li>
 <li class="md-nav__item">
@@ -254,18 +254,23 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#component-relationships">
-    Component Relationships
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#profiles">
-    profiles
+    Profiles
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#gameboard-example">
-    Gameboard example
+<a class="md-nav__link" href="#set-default-values">
+    Set default values
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#environment-variables">
+    Environment variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gameboard-configuration">
+    Gameboard Configuration
   </a>
 </li>
 </ul>
@@ -274,6 +279,11 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <li class="md-nav__item">
 <a class="md-nav__link" href="../integrant-repl/">
         Integrant REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../integrant/">
+        Integrant
       </a>
 </li>
 </ul>
@@ -1499,8 +1509,8 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#configuration-as-data">
-    Configuration as data
+<a class="md-nav__link" href="#aero-reader">
+    Aero reader
   </a>
 </li>
 <li class="md-nav__item">
@@ -1509,18 +1519,23 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#component-relationships">
-    Component Relationships
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#profiles">
-    profiles
+    Profiles
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#gameboard-example">
-    Gameboard example
+<a class="md-nav__link" href="#set-default-values">
+    Set default values
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#environment-variables">
+    Environment variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gameboard-configuration">
+    Gameboard Configuration
   </a>
 </li>
 </ul>
@@ -1531,154 +1546,181 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="aero-system-configuration">Aero System configuration<a class="headerlink" href="#aero-system-configuration" title="Permanent link">λ︎</a></h1>
-<p>Aero enables a declarative definition of system components using Clojure hash-maps.</p>
-<p>Expressing a configuration purely as data helps</p>
-<p>Each component is a top-level key associated with hash-map containeing the component configuration, optionally using a profile to support multiple environments in which the components will run (e.g. development, testing, staging, production)</p>
-<h2 id="configuration-as-data">Configuration as data<a class="headerlink" href="#configuration-as-data" title="Permanent link">λ︎</a></h2>
-<p>Configuration should be explicit  obvious, but not clever. It should be easy to understand what the config is, and where it is declared.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(require '[aero.core :as aero])
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>(aero/read-config "config.edn")
+<p>Aero library is an EDN reader that provides reader tags (tag literals) to support the declarative definition of system components, especially across different deployment environments (e.g. dev, stage, production).</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>Configuration should be explicit  obvious, but not clever. It should be easy to understand what the config is, and where it is declared. - JUXT.</p>
+</div>
+<h2 id="aero-reader">Aero reader<a class="headerlink" href="#aero-reader" title="Permanent link">λ︎</a></h2>
+<p>Require the <code>aero.core</code> library and use the <code>read-config</code> function to process an EDN configuration file.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">aero.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">aero</span><span class="p">])</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">(</span><span class="nf">aero/read-config</span><span class="w"> </span><span class="s">"config.edn"</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="aero-tag-literals">Aero Tag Literals<a class="headerlink" href="#aero-tag-literals" title="Permanent link">λ︎</a></h2>
-<p>Aero uses <a href="https://github.com/juxt/aero#tag-literals">tag literals</a> as placeholders for specific values and custom tag litterals can be added</p>
+<p>Aero uses <a href="https://github.com/juxt/aero#tag-literals">tag literals</a> as placeholders for specific values</p>
 <ul>
 <li><code>#profile</code> - replace with the value from the given profile name</li>
+<li><code>#env</code> - replace with the value of the matching operating system environment variable</li>
 <li><code>#hostname</code> - replace with the value from the given computer hostname</li>
 <li><code>#or</code>  - a vector of possible values, returning the first "truthy" value</li>
 <li><code>#long</code> - cast a String value to a Clojure Long type (e.g. for PORT values)</li>
 <li><code>#ref</code> - refer to another part of the system configuration rather than duplicate it</li>
 <li><code>#ig/ref</code> - integrant version of #ref to reference another part of the system</li>
 </ul>
-<h2 id="component-relationships">Component Relationships<a class="headerlink" href="#component-relationships" title="Permanent link">λ︎</a></h2>
-<p><code>#ig/ref</code> defines a reference (relationship) to another component</p>
-<p>In the following example,</p>
-<ul>
-<li>relational-store defines a database connection</li>
-<li>an request router includes a reference to the database connection, so handlers can be passed connection details</li>
-<li>http-server includes a reference to the router that will assign all requests to the relevant handler functions</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>{:practicalli.scoreboard.service/relational-store
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a> {:connection {:url "http://localhost/" :port 57207 :database "scoreboard"}}
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a> :practicalli.scoreboard.service/router
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a> {:persistence #ig/ref :practicalli.scoreboard.service/relational-store}}
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a> :practicalli.scoreboard.service/http-server
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a> {:handler #ig/ref :practicalli.scoreboard.service/router
-<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>  :join? false}
+<blockquote>
+<p>Custom tag literals can be added to extend Aero, e.g. <a href="integrant-repl#aero-and-integrant">adding Integrant Reference tag literal</a></p>
+</blockquote>
+<h2 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">λ︎</a></h2>
+<p>Aero #profile tag literal supports multiple environment within one EDN configuration</p>
+<p>Pass a profile and configuration to the aero reader and only the matching profile values in the configuration are returned each key.  So a profile is a type of filter on the system configuration.</p>
+<div class="highlight"><span class="filename">Aero reader with profile</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">aero-config</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="s">"Apply profile to service configuration: :dev :stage :prod"</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="p">[</span><span class="nv">profile</span><span class="p">]</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="p">(</span><span class="nf">aero/read-config</span><span class="w"> </span><span class="p">(</span><span class="nf">io/resource</span><span class="w"> </span><span class="s">"config.edn"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="ss">:profile</span><span class="w"> </span><span class="nv">profile</span><span class="p">}))</span>
 </code></pre></div>
-<h2 id="profiles">profiles<a class="headerlink" href="#profiles" title="Permanent link">λ︎</a></h2>
-<p>The same configuration can be used that starts the system using profiles, or a separate develop profile can be created.</p>
-<p><code>#profile</code> is a tag literal used to express values for different deployment configurations.</p>
-<p>When a specific profile is used to parse the configuration only the matching profile values are returned each key.  So a profile is a type of filter on each part of the system configuration.</p>
 <p>As each part of the system can be defined using profiles, the same <code>resources/config.edn</code> configuration can be used for both Integrant and Integrant REPL</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">{</span><span class="ss">:practicalli.scoreboard.service/http-server</span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:handler</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/router</span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="ss">:port</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:develop</span><span class="w"> </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">APP_SERVER_PORT</span><span class="w"> </span><span class="mi">8888</span><span class="p">]</span>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">                  </span><span class="ss">:test</span><span class="w">    </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">APP_SERVER_PORT</span><span class="w"> </span><span class="mi">8080</span><span class="p">]</span>
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">                  </span><span class="ss">:stage</span><span class="w">   </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">APP_SERVER_PORT</span><span class="w"> </span><span class="mi">8080</span><span class="p">]</span>
-<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">                  </span><span class="ss">:live</span><span class="w">    </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">APP_SERVER_PORT</span><span class="w"> </span><span class="mi">8000</span><span class="p">]}</span>
-<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">  </span><span class="ss">:join?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
-<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>
-<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/router</span>
-<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w"> </span><span class="p">{</span><span class="ss">:persistence</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/relational-store</span><span class="p">}</span>
+<details class="example">
+<summary>Mulog Event Publish Configuration with aero</summary>
+<p>The areo profiles (<code>:dev</code> <code>:docker</code> <code>:prod</code>) determine which type of publisher is use for mulog events
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w"> </span><span class="c1">;; Event logging service - mulog</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/log-publish</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="ss">:mulog</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:dev</span><span class="w">  </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">true</span><span class="p">}</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">                   </span><span class="c1">;; Multiple publishers using Open Zipkin service (started via docker-compose)</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">                   </span><span class="ss">:docker</span><span class="w">  </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:multi</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">                             </span><span class="ss">:publishers</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">                             </span><span class="p">[{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">                              </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:zipkin</span><span class="w"> </span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost:9411/"</span><span class="p">}]}</span>
 <a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a>
-<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/relational-store</span>
-<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w"> </span><span class="p">{</span><span class="ss">:connection</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:develop</span><span class="w">  </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"scoreboard-develop"</span><span class="p">}</span>
-<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">                        </span><span class="ss">:test</span><span class="w">     </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"scoreboard-test"</span><span class="p">}</span>
-<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">                        </span><span class="ss">:stage</span><span class="w">    </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"scoreboard-stage"</span><span class="p">}</span>
-<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">                        </span><span class="ss">:live</span><span class="w">     </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"scoreboard"</span><span class="p">}}}}</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">                   </span><span class="ss">:prod</span><span class="w"> </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}}}</span>
+</code></pre></div></p>
+</details>
+<blockquote>
+<p>As an alternative, a separate <code>dev/resources/config.edn</code> file could be defined if the development environment significantly deviates from stage and production.  Using separate files does require additional maintenance to ensure the deployed environments are consistent.</p>
+</blockquote>
+<h2 id="set-default-values">Set default values<a class="headerlink" href="#set-default-values" title="Permanent link">λ︎</a></h2>
+<p><code>#or</code> defines a vector of possible values, returning the first "truthy" value.</p>
+<p>Use <code>#or</code> to define a default value to avoid <code>nil</code> appearing in the configuration, especially where <code>#env</code> is used to get operating system environment variables.</p>
+<div class="admonition example">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">{</span><span class="ss">:practicalli.gameboard.service/http-server</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:port</span><span class="w"> </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">APP_SERVER_PORT</span><span class="w"> </span><span class="mi">8888</span><span class="p">]}}</span>
 </code></pre></div>
-<h2 id="gameboard-example">Gameboard example<a class="headerlink" href="#gameboard-example" title="Permanent link">λ︎</a></h2>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">;; --------------------------------------------------</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1">;; Application Component configuration - Integrant &amp; Integrant REPL</span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">;;</span>
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1">;; - Event logging (mulog)</span>
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">;; - HTTP Server  (embedded jetty or http-kit)</span>
-<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">;; - Request routing (reitit)</span>
-<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1">;; - Persistence (relational) connection</span>
-<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1">;;</span>
-<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1">;; #profile used by aero to select the configuration to use for a given profile (dev, test, prod)</span>
-<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="c1">;; #long defines Long Integer type (required for Java HTTP server port)</span>
-<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">;; #env reads the environment variable of the given name</span>
-<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="c1">;; #or uses first non nil value in sequence</span>
-<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="c1">;;</span>
-<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="c1">;; Environment variables should be defined locally and in deployment provisioner</span>
-<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="c1">;; --------------------------------------------------</span>
-<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>
-<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>
-<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="p">{</span><span class="c1">;; --------------------------------------------------</span>
-<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w"> </span><span class="c1">;; Event logging service - mulog</span>
-<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>
-<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w"> </span><span class="c1">;; https://github.com/BrunoBonacci/mulog#publishers</span>
-<a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w"> </span><span class="c1">;; https://github.com/openzipkin/zipkin</span>
-<a href="#__codelineno-3-23" id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/log-publish</span>
-<a href="#__codelineno-3-24" id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w"> </span><span class="p">{</span><span class="c1">;; Type of publisher to use for mulog events</span>
-<a href="#__codelineno-3-25" id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">  </span><span class="c1">;; Publish json format logs, captured by fluentd and exposed via OpenDirectory</span>
-<a href="#__codelineno-3-26" id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">  </span><span class="ss">:mulog</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:dev</span><span class="w">  </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">true</span><span class="p">}</span>
-<a href="#__codelineno-3-27" id="__codelineno-3-27" name="__codelineno-3-27"></a>
-<a href="#__codelineno-3-28" id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">                   </span><span class="c1">;; Multiple publishers using Open Zipkin service (started via docker-compose)</span>
-<a href="#__codelineno-3-29" id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">                   </span><span class="ss">:docker</span><span class="w">  </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:multi</span>
-<a href="#__codelineno-3-30" id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">                             </span><span class="ss">:publishers</span>
-<a href="#__codelineno-3-31" id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="w">                             </span><span class="p">[{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
-<a href="#__codelineno-3-32" id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">                              </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:zipkin</span><span class="w"> </span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost:9411/"</span><span class="p">}]}</span>
-<a href="#__codelineno-3-33" id="__codelineno-3-33" name="__codelineno-3-33"></a>
-<a href="#__codelineno-3-34" id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">                   </span><span class="ss">:prod</span><span class="w"> </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}}}</span>
-<a href="#__codelineno-3-35" id="__codelineno-3-35" name="__codelineno-3-35"></a>
-<a href="#__codelineno-3-36" id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w"> </span><span class="c1">;; --------------------------------------------------</span>
-<a href="#__codelineno-3-37" id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="w"> </span><span class="c1">;; HTTP Server - embedded service</span>
-<a href="#__codelineno-3-38" id="__codelineno-3-38" name="__codelineno-3-38"></a>
-<a href="#__codelineno-3-39" id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/http-server</span>
-<a href="#__codelineno-3-40" id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="w"> </span><span class="p">{</span><span class="c1">;; Router function passed into the HTTP server form managing requests/responses</span>
-<a href="#__codelineno-3-41" id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="w">  </span><span class="ss">:handler</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/router</span>
-<a href="#__codelineno-3-42" id="__codelineno-3-42" name="__codelineno-3-42"></a>
-<a href="#__codelineno-3-43" id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="w">  </span><span class="c1">;; Port number (Java Long type) - environment variable or default number</span>
-<a href="#__codelineno-3-44" id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="w">  </span><span class="ss">:port</span><span class="w">  </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">HTTP_SERVER_PORT</span><span class="w"> </span><span class="mi">8080</span><span class="p">]</span>
-<a href="#__codelineno-3-45" id="__codelineno-3-45" name="__codelineno-3-45"></a>
-<a href="#__codelineno-3-46" id="__codelineno-3-46" name="__codelineno-3-46"></a><span class="w">  </span><span class="c1">;; Join REPL to HTTP server thread</span>
-<a href="#__codelineno-3-47" id="__codelineno-3-47" name="__codelineno-3-47"></a><span class="w">  </span><span class="ss">:join?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
-<a href="#__codelineno-3-48" id="__codelineno-3-48" name="__codelineno-3-48"></a>
-<a href="#__codelineno-3-49" id="__codelineno-3-49" name="__codelineno-3-49"></a><span class="w"> </span><span class="c1">;; --------------------------------------------------</span>
-<a href="#__codelineno-3-50" id="__codelineno-3-50" name="__codelineno-3-50"></a><span class="w"> </span><span class="c1">;; persistence - connection to Billie shared relational storage</span>
-<a href="#__codelineno-3-51" id="__codelineno-3-51" name="__codelineno-3-51"></a>
-<a href="#__codelineno-3-52" id="__codelineno-3-52" name="__codelineno-3-52"></a><span class="w"> </span><span class="c1">;; TODO: add database connection pool ?</span>
-<a href="#__codelineno-3-53" id="__codelineno-3-53" name="__codelineno-3-53"></a>
-<a href="#__codelineno-3-54" id="__codelineno-3-54" name="__codelineno-3-54"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/relational-store</span>
-<a href="#__codelineno-3-55" id="__codelineno-3-55" name="__codelineno-3-55"></a><span class="w"> </span><span class="p">{</span><span class="ss">:host</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">DATABASE_HOST</span><span class="w"> </span><span class="s">"localhost"</span><span class="p">]</span>
-<a href="#__codelineno-3-56" id="__codelineno-3-56" name="__codelineno-3-56"></a><span class="w">  </span><span class="ss">:port</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">DATABASE_PORT</span><span class="w"> </span><span class="mi">3306</span><span class="p">]</span>
-<a href="#__codelineno-3-57" id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="w">  </span><span class="ss">:username</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">DATABASE_USERNAME</span><span class="w"> </span><span class="s">"gameboard"</span><span class="p">]</span>
-<a href="#__codelineno-3-58" id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="w">  </span><span class="ss">:password</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">DATABASE_PASSWORD</span><span class="w"> </span><span class="s">"trustnoone"</span><span class="p">]}</span>
-<a href="#__codelineno-3-59" id="__codelineno-3-59" name="__codelineno-3-59"></a>
-<a href="#__codelineno-3-60" id="__codelineno-3-60" name="__codelineno-3-60"></a><span class="w"> </span><span class="c1">;; --------------------------------------------------</span>
-<a href="#__codelineno-3-61" id="__codelineno-3-61" name="__codelineno-3-61"></a><span class="w"> </span><span class="c1">;; Data provider services</span>
-<a href="#__codelineno-3-62" id="__codelineno-3-62" name="__codelineno-3-62"></a><span class="w"> </span><span class="c1">;; - connection to services that provide eSports data</span>
-<a href="#__codelineno-3-63" id="__codelineno-3-63" name="__codelineno-3-63"></a>
-<a href="#__codelineno-3-64" id="__codelineno-3-64" name="__codelineno-3-64"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/data-provider</span>
-<a href="#__codelineno-3-65" id="__codelineno-3-65" name="__codelineno-3-65"></a><span class="w"> </span><span class="p">{</span><span class="c1">;; external data providers via Risky</span>
-<a href="#__codelineno-3-66" id="__codelineno-3-66" name="__codelineno-3-66"></a><span class="w">  </span><span class="ss">:llamasoft-api-url</span><span class="w">  </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">LAMASOFT_API_URL</span><span class="w"> </span><span class="s">"http://localhost"</span><span class="p">]</span>
-<a href="#__codelineno-3-67" id="__codelineno-3-67" name="__codelineno-3-67"></a><span class="w">  </span><span class="ss">:polybus-report-uri</span><span class="w"> </span><span class="s">"/report/polybus"</span>
-<a href="#__codelineno-3-68" id="__codelineno-3-68" name="__codelineno-3-68"></a><span class="w">  </span><span class="ss">:moose-life-report-uri</span><span class="w"> </span><span class="s">"/api/v1/report/moose-life"</span>
-<a href="#__codelineno-3-69" id="__codelineno-3-69" name="__codelineno-3-69"></a><span class="w">  </span><span class="ss">:minotaur-arcade-report-uri</span><span class="w"> </span><span class="s">"/api/v2/minotar-arcade"</span>
-<a href="#__codelineno-3-70" id="__codelineno-3-70" name="__codelineno-3-70"></a><span class="w">  </span><span class="ss">:gridrunner-revolution-report-uri</span><span class="w"> </span><span class="s">"/api/v1.1/gridrunner"</span>
-<a href="#__codelineno-3-71" id="__codelineno-3-71" name="__codelineno-3-71"></a><span class="w">  </span><span class="ss">:space-giraffe-report-uri</span><span class="w"> </span><span class="s">"/api/v1/games/space-giraffe"</span><span class="p">}</span>
-<a href="#__codelineno-3-72" id="__codelineno-3-72" name="__codelineno-3-72"></a>
-<a href="#__codelineno-3-73" id="__codelineno-3-73" name="__codelineno-3-73"></a><span class="c1">;; --------------------------------------------------</span>
-<a href="#__codelineno-3-74" id="__codelineno-3-74" name="__codelineno-3-74"></a><span class="w"> </span><span class="c1">;; routing</span>
-<a href="#__codelineno-3-75" id="__codelineno-3-75" name="__codelineno-3-75"></a>
-<a href="#__codelineno-3-76" id="__codelineno-3-76" name="__codelineno-3-76"></a><span class="w"> </span><span class="c1">;; Configure web routing application with application environment</span>
-<a href="#__codelineno-3-77" id="__codelineno-3-77" name="__codelineno-3-77"></a><span class="w"> </span><span class="c1">;; define top-level keys to access via the environment hash-map</span>
-<a href="#__codelineno-3-78" id="__codelineno-3-78" name="__codelineno-3-78"></a><span class="w"> </span><span class="c1">;; - :persistence - database connection information</span>
-<a href="#__codelineno-3-79" id="__codelineno-3-79" name="__codelineno-3-79"></a><span class="w"> </span><span class="c1">;; - :services - url, endpoint, tokens for services used by the Fraud API (e.g. risky)</span>
-<a href="#__codelineno-3-80" id="__codelineno-3-80" name="__codelineno-3-80"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/router</span>
-<a href="#__codelineno-3-81" id="__codelineno-3-81" name="__codelineno-3-81"></a><span class="w"> </span><span class="p">{</span><span class="ss">:persistence</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/relational-store</span>
-<a href="#__codelineno-3-82" id="__codelineno-3-82" name="__codelineno-3-82"></a><span class="w">  </span><span class="ss">:data-provider</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/data-provider</span><span class="p">}}</span>
+</div>
+<h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">λ︎</a></h2>
+<p><code>#env</code> tag will use Environment Variables from the Operating system as values in the configuration</p>
+<p>Environment Variables must be defined in the Operating System before the Clojure REPL process is started.  Adding Environment Variables after the REPL starup requires a restart of the REPL to pick up the values.</p>
+<div class="admonition example">
+<p class="admonition-title">HTTP Server component with Profile and Environment Variables</p>
+</div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">{</span><span class="ss">:practicalli.gameboard.service/http-server</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:handler</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/router</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">  </span><span class="ss">:port</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:develop</span><span class="w"> </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">APP_SERVER_PORT</span><span class="w"> </span><span class="mi">8888</span><span class="p">]</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">                  </span><span class="ss">:test</span><span class="w">    </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">APP_SERVER_PORT</span><span class="w"> </span><span class="mi">8080</span><span class="p">]</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">                  </span><span class="ss">:stage</span><span class="w">   </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">APP_SERVER_PORT</span><span class="w"> </span><span class="mi">8080</span><span class="p">]</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">                  </span><span class="ss">:live</span><span class="w">    </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">APP_SERVER_PORT</span><span class="w"> </span><span class="mi">8000</span><span class="p">]}</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">  </span><span class="ss">:join?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/router</span>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w"> </span><span class="p">{</span><span class="ss">:persistence</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/relational-store</span><span class="p">}</span>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w"> </span><span class="ss">:practicalli.scoreboard.service/relational-store</span>
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w"> </span><span class="p">{</span><span class="ss">:connection</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:develop</span><span class="w">  </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"scoreboard-develop"</span><span class="p">}</span>
+<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">                        </span><span class="ss">:test</span><span class="w">     </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"scoreboard-test"</span><span class="p">}</span>
+<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">                        </span><span class="ss">:stage</span><span class="w">    </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"scoreboard-stage"</span><span class="p">}</span>
+<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">                        </span><span class="ss">:live</span><span class="w">     </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost/"</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="mi">57207</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"scoreboard"</span><span class="p">}}}}</span>
+</code></pre></div>
+<h2 id="gameboard-configuration">Gameboard Configuration<a class="headerlink" href="#gameboard-configuration" title="Permanent link">λ︎</a></h2>
+<p>An example configuration for the Practicalli Gameboard Web Service</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1">;; Application Component configuration - Integrant &amp; Integrant REPL</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1">;;</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1">;; - Event logging (mulog)</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="c1">;; - HTTP Server  (embedded jetty or http-kit)</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1">;; - Request routing (reitit)</span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="c1">;; - Persistence (relational) connection</span>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="c1">;;</span>
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c1">;; #profile used by aero to select the configuration to use for a given profile (dev, test, prod)</span>
+<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="c1">;; #long defines Long Integer type (required for Java HTTP server port)</span>
+<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="c1">;; #env reads the environment variable of the given name</span>
+<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="c1">;; #or uses first non nil value in sequence</span>
+<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="c1">;;</span>
+<a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="c1">;; Environment variables should be defined locally and in deployment provisioner</span>
+<a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a>
+<a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a>
+<a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="p">{</span><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-5-19" id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w"> </span><span class="c1">;; Event logging service - mulog</span>
+<a href="#__codelineno-5-20" id="__codelineno-5-20" name="__codelineno-5-20"></a>
+<a href="#__codelineno-5-21" id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w"> </span><span class="c1">;; https://github.com/BrunoBonacci/mulog#publishers</span>
+<a href="#__codelineno-5-22" id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w"> </span><span class="c1">;; https://github.com/openzipkin/zipkin</span>
+<a href="#__codelineno-5-23" id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/log-publish</span>
+<a href="#__codelineno-5-24" id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w"> </span><span class="p">{</span><span class="c1">;; Type of publisher to use for mulog events</span>
+<a href="#__codelineno-5-25" id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">  </span><span class="c1">;; Publish json format logs, captured by fluentd and exposed via OpenDirectory</span>
+<a href="#__codelineno-5-26" id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="w">  </span><span class="ss">:mulog</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:dev</span><span class="w">  </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">true</span><span class="p">}</span>
+<a href="#__codelineno-5-27" id="__codelineno-5-27" name="__codelineno-5-27"></a>
+<a href="#__codelineno-5-28" id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">                   </span><span class="c1">;; Multiple publishers using Open Zipkin service (started via docker-compose)</span>
+<a href="#__codelineno-5-29" id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="w">                   </span><span class="ss">:docker</span><span class="w">  </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:multi</span>
+<a href="#__codelineno-5-30" id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="w">                             </span><span class="ss">:publishers</span>
+<a href="#__codelineno-5-31" id="__codelineno-5-31" name="__codelineno-5-31"></a><span class="w">                             </span><span class="p">[{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
+<a href="#__codelineno-5-32" id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="w">                              </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:zipkin</span><span class="w"> </span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost:9411/"</span><span class="p">}]}</span>
+<a href="#__codelineno-5-33" id="__codelineno-5-33" name="__codelineno-5-33"></a>
+<a href="#__codelineno-5-34" id="__codelineno-5-34" name="__codelineno-5-34"></a><span class="w">                   </span><span class="ss">:prod</span><span class="w"> </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}}}</span>
+<a href="#__codelineno-5-35" id="__codelineno-5-35" name="__codelineno-5-35"></a>
+<a href="#__codelineno-5-36" id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="w"> </span><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-5-37" id="__codelineno-5-37" name="__codelineno-5-37"></a><span class="w"> </span><span class="c1">;; HTTP Server - embedded service</span>
+<a href="#__codelineno-5-38" id="__codelineno-5-38" name="__codelineno-5-38"></a>
+<a href="#__codelineno-5-39" id="__codelineno-5-39" name="__codelineno-5-39"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/http-server</span>
+<a href="#__codelineno-5-40" id="__codelineno-5-40" name="__codelineno-5-40"></a><span class="w"> </span><span class="p">{</span><span class="c1">;; Router function passed into the HTTP server form managing requests/responses</span>
+<a href="#__codelineno-5-41" id="__codelineno-5-41" name="__codelineno-5-41"></a><span class="w">  </span><span class="ss">:handler</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/router</span>
+<a href="#__codelineno-5-42" id="__codelineno-5-42" name="__codelineno-5-42"></a>
+<a href="#__codelineno-5-43" id="__codelineno-5-43" name="__codelineno-5-43"></a><span class="w">  </span><span class="c1">;; Port number (Java Long type) - environment variable or default number</span>
+<a href="#__codelineno-5-44" id="__codelineno-5-44" name="__codelineno-5-44"></a><span class="w">  </span><span class="ss">:port</span><span class="w">  </span><span class="o">#</span><span class="nb">long </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">HTTP_SERVER_PORT</span><span class="w"> </span><span class="mi">8080</span><span class="p">]</span>
+<a href="#__codelineno-5-45" id="__codelineno-5-45" name="__codelineno-5-45"></a>
+<a href="#__codelineno-5-46" id="__codelineno-5-46" name="__codelineno-5-46"></a><span class="w">  </span><span class="c1">;; Join REPL to HTTP server thread</span>
+<a href="#__codelineno-5-47" id="__codelineno-5-47" name="__codelineno-5-47"></a><span class="w">  </span><span class="ss">:join?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
+<a href="#__codelineno-5-48" id="__codelineno-5-48" name="__codelineno-5-48"></a>
+<a href="#__codelineno-5-49" id="__codelineno-5-49" name="__codelineno-5-49"></a><span class="w"> </span><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-5-50" id="__codelineno-5-50" name="__codelineno-5-50"></a><span class="w"> </span><span class="c1">;; persistence - connection to Practicall relational storage</span>
+<a href="#__codelineno-5-51" id="__codelineno-5-51" name="__codelineno-5-51"></a>
+<a href="#__codelineno-5-52" id="__codelineno-5-52" name="__codelineno-5-52"></a><span class="w"> </span><span class="c1">;; TODO: add database connection pool ?</span>
+<a href="#__codelineno-5-53" id="__codelineno-5-53" name="__codelineno-5-53"></a>
+<a href="#__codelineno-5-54" id="__codelineno-5-54" name="__codelineno-5-54"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/relational-store</span>
+<a href="#__codelineno-5-55" id="__codelineno-5-55" name="__codelineno-5-55"></a><span class="w"> </span><span class="p">{</span><span class="ss">:host</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">DATABASE_HOST</span><span class="w"> </span><span class="s">"localhost"</span><span class="p">]</span>
+<a href="#__codelineno-5-56" id="__codelineno-5-56" name="__codelineno-5-56"></a><span class="w">  </span><span class="ss">:port</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">DATABASE_PORT</span><span class="w"> </span><span class="mi">3306</span><span class="p">]</span>
+<a href="#__codelineno-5-57" id="__codelineno-5-57" name="__codelineno-5-57"></a><span class="w">  </span><span class="ss">:username</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">DATABASE_USERNAME</span><span class="w"> </span><span class="s">"gameboard"</span><span class="p">]</span>
+<a href="#__codelineno-5-58" id="__codelineno-5-58" name="__codelineno-5-58"></a><span class="w">  </span><span class="ss">:password</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">DATABASE_PASSWORD</span><span class="w"> </span><span class="s">"trustnoone"</span><span class="p">]}</span>
+<a href="#__codelineno-5-59" id="__codelineno-5-59" name="__codelineno-5-59"></a>
+<a href="#__codelineno-5-60" id="__codelineno-5-60" name="__codelineno-5-60"></a><span class="w"> </span><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-5-61" id="__codelineno-5-61" name="__codelineno-5-61"></a><span class="w"> </span><span class="c1">;; Data provider services</span>
+<a href="#__codelineno-5-62" id="__codelineno-5-62" name="__codelineno-5-62"></a><span class="w"> </span><span class="c1">;; - connection to services that provide eSports data</span>
+<a href="#__codelineno-5-63" id="__codelineno-5-63" name="__codelineno-5-63"></a>
+<a href="#__codelineno-5-64" id="__codelineno-5-64" name="__codelineno-5-64"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/data-provider</span>
+<a href="#__codelineno-5-65" id="__codelineno-5-65" name="__codelineno-5-65"></a><span class="w"> </span><span class="p">{</span><span class="c1">;; external data providers via Risky</span>
+<a href="#__codelineno-5-66" id="__codelineno-5-66" name="__codelineno-5-66"></a><span class="w">  </span><span class="ss">:llamasoft-api-url</span><span class="w">  </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">LAMASOFT_API_URL</span><span class="w"> </span><span class="s">"http://localhost"</span><span class="p">]</span>
+<a href="#__codelineno-5-67" id="__codelineno-5-67" name="__codelineno-5-67"></a><span class="w">  </span><span class="ss">:polybus-report-uri</span><span class="w"> </span><span class="s">"/report/polybus"</span>
+<a href="#__codelineno-5-68" id="__codelineno-5-68" name="__codelineno-5-68"></a><span class="w">  </span><span class="ss">:moose-life-report-uri</span><span class="w"> </span><span class="s">"/api/v1/report/moose-life"</span>
+<a href="#__codelineno-5-69" id="__codelineno-5-69" name="__codelineno-5-69"></a><span class="w">  </span><span class="ss">:minotaur-arcade-report-uri</span><span class="w"> </span><span class="s">"/api/v2/minotar-arcade"</span>
+<a href="#__codelineno-5-70" id="__codelineno-5-70" name="__codelineno-5-70"></a><span class="w">  </span><span class="ss">:gridrunner-revolution-report-uri</span><span class="w"> </span><span class="s">"/api/v1.1/gridrunner"</span>
+<a href="#__codelineno-5-71" id="__codelineno-5-71" name="__codelineno-5-71"></a><span class="w">  </span><span class="ss">:space-giraffe-report-uri</span><span class="w"> </span><span class="s">"/api/v1/games/space-giraffe"</span><span class="p">}</span>
+<a href="#__codelineno-5-72" id="__codelineno-5-72" name="__codelineno-5-72"></a>
+<a href="#__codelineno-5-73" id="__codelineno-5-73" name="__codelineno-5-73"></a><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-5-74" id="__codelineno-5-74" name="__codelineno-5-74"></a><span class="w"> </span><span class="c1">;; routing</span>
+<a href="#__codelineno-5-75" id="__codelineno-5-75" name="__codelineno-5-75"></a>
+<a href="#__codelineno-5-76" id="__codelineno-5-76" name="__codelineno-5-76"></a><span class="w"> </span><span class="c1">;; Configure web routing application with application environment</span>
+<a href="#__codelineno-5-77" id="__codelineno-5-77" name="__codelineno-5-77"></a><span class="w"> </span><span class="c1">;; define top-level keys to access via the environment hash-map</span>
+<a href="#__codelineno-5-78" id="__codelineno-5-78" name="__codelineno-5-78"></a><span class="w"> </span><span class="c1">;; - :persistence - database connection information</span>
+<a href="#__codelineno-5-79" id="__codelineno-5-79" name="__codelineno-5-79"></a><span class="w"> </span><span class="c1">;; - :services - url, endpoint, tokens for services used by the Fraud API (e.g. risky)</span>
+<a href="#__codelineno-5-80" id="__codelineno-5-80" name="__codelineno-5-80"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/router</span>
+<a href="#__codelineno-5-81" id="__codelineno-5-81" name="__codelineno-5-81"></a><span class="w"> </span><span class="p">{</span><span class="ss">:persistence</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/relational-store</span>
+<a href="#__codelineno-5-82" id="__codelineno-5-82" name="__codelineno-5-82"></a><span class="w">  </span><span class="ss">:data-provider</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/data-provider</span><span class="p">}}</span>
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 </small>
 </div>
 </article>

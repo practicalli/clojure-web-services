@@ -2,1067 +2,1072 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://practical.li/clojure-web-services/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/adding-more-route/using-cond-function/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/app-server-logging/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/atom-based-restart/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/clojure-project/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/create-server/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/debugging/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/http-kit-server-options/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/java-system-properties/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/jetty-server-options/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/middleware/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/overview/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/route-requests/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/routing-libraries/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/routing/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/set-listen-port/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/simple-restart/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/start-server/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/app-servers/static-content/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/assets/images/social/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/clojure-databases/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/clojure-databases/crux/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/full-app/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/introduction/contributing/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/introduction/overview/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/introduction/repl-workflow/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/introduction/requirements/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/introduction/writing-tips/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/libraries/reitit/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/libraries/reitit/constructing-routes/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/micro-framework/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/micro-framework/edge/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/micro-framework/luminus/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/micro-framework/pedestal/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/add-alias-to-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/add-static-resources/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/alias-generator/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/compojure-template/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/create-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/create-html-form/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/create-project/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/delete-alias-from-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/design-data-structure/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/disable-anti-forgery-check/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/get-alias-from-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/html-form/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/if-let-function/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/named-alias-handler/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/persist-aliases/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/postgres-setup/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/redirect-to-full-url/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/redis-setup/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/refacor-hiccup-form/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/return-short-url/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/return-url-aliases/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/run-project/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/test-app-reloading/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/using-ring-redirect/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/project-url-shortner/whats-in-a-request/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/account-overview-page/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/clojure-server-project/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/clojure-spec-generate-mock-data/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/continuous-integration/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/create-records/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/cyclic-load-dependency/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/database-queries/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/database-tables/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/delete-records/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/deployment-pipeline/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/deployment-via-ci/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/development-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/generate-data-from-specs/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/honeysql/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/instrument-next-jdbc-functions/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/namespace-design/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/production-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/read-records/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/refactor-handler/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/spec-generative-testing/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/ui-handler-functions/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/unit-testing-the-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/unit-tests/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/banking-on-clojure/update-records/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/game-scoreboard-api/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/about/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/adding-dependency/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/adding-goodbye-route/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/code-so-far/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/defroutes/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/lisp-calculator/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/show-request-info/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/theory-local-name-bindings/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/theory-routing/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/theory-using-hash-maps/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/using-compojure/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/compojure/variable-path-elements/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/connect-to-postgres/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/connect-to-postgres/add-database-dependencies/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/connect-to-postgres/define-db-connection/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-handler-function/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-handler-function/add-not-found/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-handler-function/code-so-far/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-handler-function/if-function/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-handler-function/maps-and-keywords/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-project/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-project/code-so-far/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-project/update-project-details/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-webserver-with-ring/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-webserver-with-ring/code-so-far/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-webserver-with-ring/include-ring-library/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-webserver-with-ring/namespaces/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/database-model/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/database-model/alternative-approaches/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/database-model/create-table/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/database-model/create-task/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/database-model/delete-task/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/database-model/show-all-task/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/heroku/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/heroku/code-so-far/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/heroku/deploy/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/heroku/procfile/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/heroku/update-project/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/hiccup/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/hiccup/code-so-far/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/hiccup/create-new-handler/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/introducing-ring/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/connect-to-heroku-postgres-from-clients/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/dataclips/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/environment-variables/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/install/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/jira-ticket/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/lobo-table-creation/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/pg-admin/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/postgres-cli/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/postgres-commands/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/postgres-performance-analytics/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/postgres/postgres-toolbelt-commands/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/refactor-namespace/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/refactor-namespace/base-routes/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/refactor-namespace/code-so-far/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/refactor-namespace/core/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/refactor-namespace/play-routes/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/refactor-namespace/task-routes/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/reloading-the-application/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/reloading-the-application/code-so-far/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/reloading-the-application/middleware/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/reloading-the-application/test-your-code-reloads/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/task-handlers/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/task-handlers/add-a-task/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/task-handlers/delete-a-task/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/task-handlers/show-task/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/todo-app/unit-test-handler-function/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/leiningen/working-example/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/status-monitor-deps/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/status-monitor-deps/application-server/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/status-monitor-deps/continuous-integration/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/status-monitor-deps/debugging-requests/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/status-monitor-deps/deployment-via-ci/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/status-monitor-deps/refactor-handlers-and-tests/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/projects/status-monitor-deps/unit-test-mocking-handlers/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/reference/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/reference/ring/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/reference/ring/request-map/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/h2-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/managing-connections/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/postgresql-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/h2-database/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/h2-database/database-tools/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/h2-database/schema-design/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/next-jdbc-library/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/next-jdbc-library/add-to-project/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/next-jdbc-library/database-specifications/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/next-jdbc-library/next-jdbc-and-resultsets/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/relational-databases-and-sql/next-jdbc-library/simple-example/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/cheshire/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/compojure-api-template/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/create-compojure-api-project/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/json-files/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/plumatic-schema/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/ring-mock/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/ring-swagger/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/swagger/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/terminology/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/testing-api/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/end-to-end-testing/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/end-to-end-testing/curl/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/end-to-end-testing/httpie/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/end-to-end-testing/postman/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/end-to-end-testing/swagger/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/projects/game-scoreboard/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/projects/game-scoreboard/defining-scoreboard/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/projects/game-scoreboard/defining-scores/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/projects/game-scoreboard-ui/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/server-side-api/projects/game-scoreboard-ui/create-project/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/service-repl-workflow/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure-web-services/service-repl-workflow/aero-environment-profiles/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <loc>https://practical.li/clojure-web-services/service-repl-workflow/aero/</loc>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/</loc>
-         <lastmod>2023-02-25</lastmod>
+         <lastmod>2023-02-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure-web-services/service-repl-workflow/integrant/</loc>
+         <lastmod>2023-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

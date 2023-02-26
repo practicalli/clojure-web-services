@@ -14,9 +14,9 @@
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure-web-services/service-repl-workflow/" rel="canonical"/>
 <link href="../introduction/writing-tips/" rel="prev"/>
-<link href="aero-environment-profiles/" rel="next"/>
+<link href="aero/" rel="next"/>
 <link href="../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.14" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
 <title>Clojure Service REPL workflow - Practicalli Clojure Web Services</title>
 <link href="../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
@@ -229,13 +229,18 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="aero-environment-profiles/">
-        Aero System configuration
+<a class="md-nav__link" href="aero/">
+        Aero
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="integrant-repl/">
         Integrant REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="integrant/">
+        Integrant
       </a>
 </li>
 </ul>
@@ -1492,24 +1497,32 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="clojure-service-repl-workflow">Clojure Service REPL workflow<a class="headerlink" href="#clojure-service-repl-workflow" title="Permanent link">λ︎</a></h1>
-<p>Services are composed of components such as HTTP server, database connection, log publisher, message queue, request router, etc.</p>
+<p>The Service REPL workflow extends the reloading concept used in <a href="https://practical.li/clojure/clojure-cli/repl-reloaded/" target="_blank">Practicalli REPL Reloaded workflow</a> to Clojure Services.</p>
+<p>Services are composed of components such as HTTP server, database connection, log publisher, message queue, request router, etc.  These components can be updated by evaluating code changes as they are made, although some changes require the component or whole system to be restarted.</p>
+<p>Using lifecycle tools (Integrant, Mount, etc.) restarting all the components in a system can be done via one function.</p>
 <p>Some components are dependent on other components, so must be started and stopped in the correct order, e.g.:</p>
 <ul>
 <li>a request router component is dependent on an http server component</li>
 <li>a database connection is dependant on a database pool</li>
 <li>a request router is dependant on a database connection and external data source</li>
 </ul>
+<div class="admonition hint">
+<p class="admonition-title">System Configuration as Data</p>
+<p>Practicalli recommends expressing a configuration as data to provide a very clearly understandable system.</p>
+</div>
+<p>Using a data configuration, each component is a top-level key associated with hash-map containing the component configuration, optionally using an aero profile to support multiple environments in which the components run (e.g. development, testing, staging, production)</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/clojure-repl-driven-development-reloaded-repl-concept.png"><img alt="Reloaded REPL with Integrant REPL" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/clojure-repl-driven-development-reloaded-repl-concept.png"/></a></p>
 <blockquote>
 <p>Integrant REPL extends the REPL driven development workflow to Clojure web applications and services, following the ideas discussed in the <a href="https://cognitect.com/blog/2013/06/04/clojure-workflow-reloaded" target="_blank">Clojure Reloaded workflow</a>.</p>
 </blockquote>
 <h2 id="integrant-repl">Integrant REPL<a class="headerlink" href="#integrant-repl" title="Permanent link">λ︎</a></h2>
-<p>Integrant REPL is a library to define and manage components that are composed together to create the overall service.</p>
+<p><a href="integrant-repl/">Integrant REPL</a> is a library to define and manage components that are composed together to create the overall service.</p>
 <p>The service configuration is a hash-map with each component defined as a top-level key and its associated values (usually a hash-map of key-value pairs). Component dependencies are defined by including a component key within the definition of another component.</p>
 <p>Defining relationships between services, such as an HTTP server and a Persistent store, a simple Inversion of control or Dependency injection approach can be achieved by passing the relevant parts of the configuration to each service.  As this is information is managed at the top level of a Clojure system, it avoids unnecessary coupling between system services.</p>
 <details class="example">
-<summary>Define dependant components</summary>
-<p>The request router is dependant on a database connection and an external data provider connection.  These dependant components provide information to the handlers that satisfy the requests
+<summary>Define composite components</summary>
+<p>The request router is dependant on a database connection and an external data provider connection to provide information to the handlers that satisfy the requests.</p>
+<p>Define the request router as a composite component including these dependant components via an Integrant reference, <code>#ig/ref</code>
 <div class="highlight"><span class="filename">resources/clojure.edn</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w"> </span><span class="p">{</span><span class="ss">:practicalli.gameboard.service/router</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:persistence</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/relational-store</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">   </span><span class="ss">:data-provider</span><span class="w"> </span><span class="o">#</span><span class="nv">ig/ref</span><span class="w"> </span><span class="ss">:practicalli.gameboard.service/data-provider</span><span class="p">}}</span>
@@ -1517,30 +1530,13 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </details>
 <div class="admonition info">
 <p class="admonition-title">Integrant and Integrant REPL</p>
-<p>Integrant is used for managing the life-cycle of services when running the application, either locally or deployed in an environment (e.g. test, stage, live).</p>
-<p>Integrant REPL is used to manage services actively being developed and provides access to the configuration to start services (<code>integrant.repl.state/config</code>) and the configuration of the running system state (<code>integrant.repl.state/system</code>)</p>
+<p><a href="integrant/">Integrant</a> is used for managing the life-cycle of services when running the application, either locally or deployed in an environment (e.g. test, stage, live).</p>
+<p><a href="integrant-repl/">Integrant REPL</a> is used to manage services actively being developed and provides access to the configuration to start services (<code>integrant.repl.state/config</code>) and the configuration of the running system state (<code>integrant.repl.state/system</code>)</p>
 </div>
 <h2 id="aero-profiles">Aero profiles<a class="headerlink" href="#aero-profiles" title="Permanent link">λ︎</a></h2>
-<p><a href="https://github.com/juxt/aero" target="_blank">Aero</a> provides a way to define multiple configuration profiles within the same configuration file, i.e. <code>resources/config.edn</code> file can support <code>develop</code>, <code>test</code>, <code>stage</code> and <code>live</code> environments.</p>
+<p><a href="aero/">Aero</a> provides a parser for EDN configuration files which can inject values, enabling the use of environment variables and  to define multiple configuration profiles within the same configuration file, i.e. <code>resources/config.edn</code> file can support <code>develop</code>, <code>test</code>, <code>stage</code> and <code>live</code> environments.</p>
 <p>A specific profile value (e.g. <code>:dev</code> <code>:stage</code> <code>:prod</code>) is given to <code>aero/read-config</code> which parses the Integrant configuration, returning an updated Integrant configuration containing values specific to the given profile.</p>
 <p>As each part of the system can be defined using profiles, the same <code>resources/config.edn</code> configuration can be used for both Integrant and Integrant REPL</p>
-<details class="example">
-<summary>Mulog Event Publish Configuration with aero</summary>
-<p>The areo profiles (<code>:dev</code> <code>:docker</code> <code>:prod</code>) determine which type of publisher is use for mulog events
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w"> </span><span class="c1">;; Event logging service - mulog</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w"> </span><span class="ss">:practicalli.gameboard.service/log-publish</span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w"> </span><span class="p">{</span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="ss">:mulog</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:dev</span><span class="w">  </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">true</span><span class="p">}</span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">                   </span><span class="c1">;; Multiple publishers using Open Zipkin service (started via docker-compose)</span>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">                   </span><span class="ss">:docker</span><span class="w">  </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:multi</span>
-<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">                             </span><span class="ss">:publishers</span>
-<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">                             </span><span class="p">[{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
-<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">                              </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:zipkin</span><span class="w"> </span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://localhost:9411/"</span><span class="p">}]}</span>
-<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>
-<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">                   </span><span class="ss">:prod</span><span class="w"> </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}}}</span>
-</code></pre></div></p>
-</details>
 <h3 id="alternative-tools">Alternative tools<a class="headerlink" href="#alternative-tools" title="Permanent link">λ︎</a></h3>
 <ul>
 <li><a href="https://github.com/tolitius/mount">Mount</a> - simple shared data approach using custom defstate</li>
@@ -1557,7 +1553,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 </small>
 </div>
 </article>
