@@ -127,8 +127,8 @@ nav:
       - Writing Tips: introduction/writing-tips.md
   - Service REPL Workflow:
       - service-repl-workflow/index.md
-      - service-repl-workflow/integrant-repl.md
       - Aero: service-repl-workflow/aero.md
+      - Integrant REPL: service-repl-workflow/integrant-repl.md
 
   - Projects:
       - projects/index.md

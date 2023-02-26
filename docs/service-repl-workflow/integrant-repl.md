@@ -38,6 +38,49 @@ Fully qualified keywords, e.g. domain.service.name/component, are used so that k
 The fully qualified name is the namespace that contains the `defmethod init-key` for the key.  The Integrant `load-namespaces` function will automatically load all namespaces that match key names
 
 
+## Composite components
+
+Components can be composed of configuration and references to other components, creating a composite component.
+
+For example an HTTP component may reference a request handler component and in turn the request handler may include a database connection component.
+
+Integrant uses the `#ig/ref` tag literal to define a references to anther component.
+
+!!! EXAMPLE "Request router contains database connection"
+
+??? EXAMPLE "Component relationships in a Clojure web service"
+    * relational-store defines a database connection
+    * an request router includes a reference to the database connection, so handlers can be passed connection details
+    * http-server includes a reference to the router that will assign all requests to the relevant handler functions
+    ```
+    {:practicalli.gameboard.service/relational-store
+     {:connection {:url "http://localhost/" :port 57207 :database "scoreboard"}}
+
+     :practicalli.gameboard.service/router
+     {:persistence #ig/ref :practicalli.gameboard.service/relational-store}}
+
+     :practicalli.gameboard.service/http-server
+     {:handler #ig/ref :practicalli.gameboard.service/router
+      :join? false}
+    ```
+
+
+## Aero and Integrant
+
+[Aero](aero.md) defines a range of tag literals that can be used in a system configuration.
+
+Aero does not include the `#ig/ref` reference so needs to be taught how to handle this tag using a `defmethod`.
+
+```clojure title="Define ig/ref tag for Aero reader"
+(defmethod aero/reader 'ig/ref
+  [_ tag value]
+  (ig/ref value))
+```
+
+Now aero can parse a system configuration EDN file that contains Integrant references
+
+
+
 ## User namespace
 
 Common practice is to place the Integrant REPl code in a `user` namespace, which is automatically loaded when the REPL process starts.
@@ -63,7 +106,7 @@ The `user` namespace is defined separately from the source code, as it is code t
 [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/){target=_blank} aliases defines aliases that include the `dev` directory that contains the `user` namespace on the class path
 
 === "REPL Reloaded"
-    `:dev/reloaded` alias starts a rich terminal REPL prompt, with the `dev` path and several tools to [enhance the REPL workflow](https://practical.li/clojure/clojure-cli/repl-reloaded/)
+    `:repl/reloaded` alias starts a rich terminal REPL prompt, with the `dev` path and several tools to [enhance the REPL workflow](https://practical.li/clojure/clojure-cli/repl-reloaded/)
     ```bash
     clojure -M:repl/reloaded
     ```
