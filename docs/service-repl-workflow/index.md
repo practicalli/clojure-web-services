@@ -47,8 +47,7 @@ Defining relationships between services, such as an HTTP server and a Persistent
     [Integrant REPL](integrant-repl.md) is used to manage services actively being developed and provides access to the configuration to start services (`integrant.repl.state/config`) and the configuration of the running system state (`integrant.repl.state/system`)
 
 
-## Aero profiles
-
+## Aero Configuration
 
 [Aero](aero.md) provides a parser for EDN configuration files which can inject values, enabling the use of environment variables and  to define multiple configuration profiles within the same configuration file, i.e. `resources/config.edn` file can support `develop`, `test`, `stage` and `live` environments.
 
