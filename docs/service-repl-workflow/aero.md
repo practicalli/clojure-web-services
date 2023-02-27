@@ -28,7 +28,11 @@ Aero uses [tag literals](https://github.com/juxt/aero#tag-literals) as placehold
 * `#ref` - refer to another part of the system configuration rather than duplicate it
 * `#ig/ref` - integrant version of #ref to reference another part of the system
 
-> Custom tag literals can be added to extend Aero, e.g. [adding Integrant Reference tag literal](integrant-repl#aero-and-integrant)
+??? INFO "Aero tag literal definitions"
+    [aero/core.cljc](https://github.com/juxt/aero/blob/master/src/aero/core.cljc) contains the definitions for the Aero tag literals
+
+??? HINT "Define Custom Tags"
+    Custom tag literals can be added to extend Aero, e.g. [adding Integrant Reference tag literal](integrant-repl#aero-and-integrant)
 
 
 ## Profiles
