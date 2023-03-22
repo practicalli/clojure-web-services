@@ -20,12 +20,17 @@ theme:
   extra_css:
     - stylesheets/extra.css
   features:
-    - navigation.top
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
     - content.code.annotate
+    - content.code.copy
     - content.tabs.link
-    - navigation.instant # Avoid page reloading for internal links
-    - navigation.tracking # Update URL with anchor
+    - navigation.footer
     - navigation.indexes # Nav sections can have files
+    - navigation.instant # Avoid page reloading for internal links
+    - navigation.top
+    - navigation.tracking # Update URL with anchor
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -364,7 +369,11 @@ nav:
   #     - micro-framework/edge/index.md
   #     - micro-framework/luminus/index.md
   #     - micro-framework/pedestal/index.md
+  - Micro-services:
+      - micro-services/index.md
+
   - Reference:
       - reference/index.md
       - reference/ring/index.md
       - reference/ring/request-map.md
+      - reference/continuous-integration/heroku/index.md
