@@ -4,1694 +4,4737 @@
   Overrides
      - announce
 -->
-<!DOCTYPE html>
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="Practical guide to Clojure Web Services and APIs" name="description"/>
-<meta content="Practicalli" name="author"/>
-<link href="https://practical.li/clojure-web-services/projects/banking-on-clojure/update-records/" rel="canonical"/>
-<link href="../read-records/" rel="prev"/>
-<link href="../delete-records/" rel="next"/>
-<link href="../../../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.4" name="generator"/>
-<title>Update Records - Practicalli Clojure Web Services</title>
-<link href="../../../assets/stylesheets/main.240905d7.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<meta content="website" property="og:type"/>
-<meta content="Update Records - Practicalli Clojure Web Services" property="og:title"/>
-<meta content="Practical guide to Clojure Web Services and APIs" property="og:description"/>
-<meta content="https://practical.li/clojure-web-services/assets/images/social/projects/banking-on-clojure/update-records.png" property="og:image"/>
-<meta content="image/png" property="og:image:type"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
-<meta content="https://practical.li/clojure-web-services/projects/banking-on-clojure/update-records/" property="og:url"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Update Records - Practicalli Clojure Web Services" name="twitter:title"/>
-<meta content="Practical guide to Clojure Web Services and APIs" name="twitter:description"/>
-<meta content="https://practical.li/clojure-web-services/assets/images/social/projects/banking-on-clojure/update-records.png" name="twitter:image"/>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-            html.glightbox-open { overflow: initial; height: 100%; }
-            .gslide-title { margin-top: 0px; user-select: text; }
-            .gslide-desc { color: #666; user-select: text; }
-            .gslide-image img { background: white; }
-            
-                .gscrollbar-fixer { padding-right: 15px; }
-                .gdesc-inner { font-size: 0.75rem; }
-                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
-<body data-md-color-accent="deep-purple" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
-<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#update-records-in-the-database">
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Practical guide to Clojure Web Services and APIs">
+      
+      
+        <meta name="author" content="Practicalli">
+      
+      
+        <link rel="canonical" href="https://practical.li/clojure-web-services/projects/banking-on-clojure/update-records/">
+      
+      
+        <link rel="prev" href="../read-records/">
+      
+      
+        <link rel="next" href="../delete-records/">
+      
+      <link rel="icon" href="../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Update Records - Practicalli Clojure Web Services</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Update Records - Practicalli Clojure Web Services" >
+      
+        <meta  property="og:description"  content="Practical guide to Clojure Web Services and APIs" >
+      
+        <meta  property="og:image"  content="https://practical.li/clojure-web-services/assets/images/social/projects/banking-on-clojure/update-records.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://practical.li/clojure-web-services/projects/banking-on-clojure/update-records/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Update Records - Practicalli Clojure Web Services" >
+      
+        <meta  name="twitter:description"  content="Practical guide to Clojure Web Services and APIs" >
+      
+        <meta  name="twitter:image"  content="https://practical.li/clojure-web-services/assets/images/social/projects/banking-on-clojure/update-records.png" >
+      
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#update-records-in-the-database" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-<aside class="md-banner">
-<div class="md-banner__inner md-grid md-typeset">
-<button aria-label="Don't show this again" class="md-banner__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
-</button>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+              </button>
             
             
 
-⚠ <a href="https://practical.li/clojure-web-services">Practicalli Clojure Web Services</a> is converting to
+&#x26A0; <a href="https://practical.li/clojure-web-services">Practicalli Clojure Web Services</a> is converting to
 MkDocs and a content refactor
-so PR's are of limited value at present. Some page links &amp; images may be broken.
+so PR's are of limited value at present. Some page links & images may be broken.
 
 
           </div>
-<script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
-</aside>
-</div>
+          
+            <script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
 <header class="md-header md-header--shadow" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Practicalli Clojure Web Services" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure Web Services">
-<img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Practicalli Clojure Web Services" class="md-header__button md-logo" aria-label="Practicalli Clojure Web Services" data-md-component="logo">
+      
+  <img src="../../../assets/images/practicalli-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Practicalli Clojure Web Services
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Update Records
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
-</label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
-</label>
-</form>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="md-header__source">
-<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-web-services/" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/practicalli/clojure-web-services/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     GitHub
   </div>
 </a>
-</div>
-</nav>
+      </div>
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Practicalli Clojure Web Services" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure Web Services">
-<img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
-</a>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Practicalli Clojure Web Services" class="md-nav__button md-logo" aria-label="Practicalli Clojure Web Services" data-md-component="logo">
+      
+  <img src="../../../assets/images/practicalli-logo.png" alt="logo">
+
+    </a>
     Practicalli Clojure Web Services
   </label>
-<div class="md-nav__source">
-<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-web-services/" title="Go to repository">
-<div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
-</div>
-<div class="md-source__repository">
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/practicalli/clojure-web-services/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
     GitHub
   </div>
 </a>
-</div>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../..">Introduction</a>
-<label for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../..">Introduction</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
           Introduction
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/overview/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/overview/" class="md-nav__link">
         Overview
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/requirements/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/requirements/" class="md-nav__link">
         Requirements
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/repl-workflow/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/repl-workflow/" class="md-nav__link">
         REPL Workflow
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/contributing/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/contributing/" class="md-nav__link">
         Contributing
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/writing-tips/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/writing-tips/" class="md-nav__link">
         Writing Tips
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../service-repl-workflow/">Service REPL Workflow</a>
-<label for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../service-repl-workflow/">Service REPL Workflow</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
           Service REPL Workflow
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../service-repl-workflow/aero/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service-repl-workflow/aero/" class="md-nav__link">
         Aero
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../service-repl-workflow/integrant-repl/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service-repl-workflow/integrant-repl/" class="md-nav__link">
         Integrant REPL
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../service-repl-workflow/integrant/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service-repl-workflow/integrant/" class="md-nav__link">
         Integrant
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../">Projects</a>
-<label for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service-repl-workflow/donut-system/" class="md-nav__link">
+        Donut System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Projects</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
           Projects
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../status-monitor-deps/">Status Monitor</a>
-<label for="__nav_3_2">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_2">
-<span class="md-nav__icon md-icon"></span>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../status-monitor-deps/">Status Monitor</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
           Status Monitor
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../status-monitor-deps/application-server/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../status-monitor-deps/application-server/" class="md-nav__link">
         Application Server
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../status-monitor-deps/debugging-requests/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../status-monitor-deps/debugging-requests/" class="md-nav__link">
         Debug Requests
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../status-monitor-deps/unit-test-mocking-handlers/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../status-monitor-deps/unit-test-mocking-handlers/" class="md-nav__link">
         Unit Test Mock
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../status-monitor-deps/refactor-handlers-and-tests/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../status-monitor-deps/refactor-handlers-and-tests/" class="md-nav__link">
         Refactor
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../status-monitor-deps/continuous-integration/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../status-monitor-deps/continuous-integration/" class="md-nav__link">
         CI
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../status-monitor-deps/deployment-via-ci/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../status-monitor-deps/deployment-via-ci/" class="md-nav__link">
         Deployment
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../">Banking On Clojure</a>
-<label for="__nav_3_3">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_3">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Banking On Clojure</a>
+          
+            <label for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
           Banking On Clojure
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-server-project/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clojure-server-project/" class="md-nav__link">
         Clojure Server Project
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../refactor-handler/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../refactor-handler/" class="md-nav__link">
         Refactor Handlers
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../ui-handler-functions/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-handler-functions/" class="md-nav__link">
         UI Handler Functions
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../account-overview-page/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../account-overview-page/" class="md-nav__link">
         Add More Handlers
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../continuous-integration/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../continuous-integration/" class="md-nav__link">
         CI
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../deployment-pipeline/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-pipeline/" class="md-nav__link">
         Deployment Pipeline
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../deployment-via-ci/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-via-ci/" class="md-nav__link">
         Deployment via CI
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../unit-tests/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-tests/" class="md-nav__link">
         Unit Tests
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../spec-generative-testing/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec-generative-testing/" class="md-nav__link">
         Generative testing
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../development-database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development-database/" class="md-nav__link">
         Dev Database
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../instrument-next-jdbc-functions/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instrument-next-jdbc-functions/" class="md-nav__link">
         Instrument functions
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../database-tables/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database-tables/" class="md-nav__link">
         DB Tables
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../database-queries/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database-queries/" class="md-nav__link">
         Database Queries
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../create-records/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-records/" class="md-nav__link">
         Create Records
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../read-records/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../read-records/" class="md-nav__link">
         Read Records
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           Update Records
           <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Update Records
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#generic-update-record-function">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generic-update-record-function" class="md-nav__link">
     Generic update record function
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#update-an-existing-account_holder-record">
+      
+        <li class="md-nav__item">
+  <a href="#update-an-existing-account_holder-record" class="md-nav__link">
     Update an existing account_holder record
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#update-an-existing-account-record">
+      
+        <li class="md-nav__item">
+  <a href="#update-an-existing-account-record" class="md-nav__link">
     Update an existing account record
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#update-an-existing-transaction-record">
+      
+        <li class="md-nav__item">
+  <a href="#update-an-existing-transaction-record" class="md-nav__link">
     Update an existing transaction record
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../delete-records/">
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delete-records/" class="md-nav__link">
         Delete Records
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../cyclic-load-dependency/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cyclic-load-dependency/" class="md-nav__link">
         Cyclic Load Dependency
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec-generate-mock-data/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clojure-spec-generate-mock-data/" class="md-nav__link">
         Clojure spec generate mock data
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../generate-data-from-specs/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generate-data-from-specs/" class="md-nav__link">
         Generate Data Using Clojure Spec
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../unit-testing-the-database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-testing-the-database/" class="md-nav__link">
         Unit Testing with the Database
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../honeysql/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../honeysql/" class="md-nav__link">
         HoneySQL
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../namespace-design/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namespace-design/" class="md-nav__link">
         Namespace design
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../production-database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../production-database/" class="md-nav__link">
         Production Database - Heroku Postgres
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../project-url-shortner/">URL Shortner</a>
-<label for="__nav_3_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_4">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../project-url-shortner/">URL Shortner</a>
+          
+            <label for="__nav_3_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
           URL Shortner
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/create-project/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/create-project/" class="md-nav__link">
         Create project
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/run-project/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/run-project/" class="md-nav__link">
         Run project
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/test-app-reloading/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/test-app-reloading/" class="md-nav__link">
         Test app reloading
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/compojure-template/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/compojure-template/" class="md-nav__link">
         Compojure Template
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/design-data-structure/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/design-data-structure/" class="md-nav__link">
         Design data structure
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/whats-in-a-request/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/whats-in-a-request/" class="md-nav__link">
         What is in a Request
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/redirect-to-full-url/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/redirect-to-full-url/" class="md-nav__link">
         Redirect short URL to full web address
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/add-static-resources/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/add-static-resources/" class="md-nav__link">
         Add static resources
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/disable-anti-forgery-check/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/disable-anti-forgery-check/" class="md-nav__link">
         Disable anti-forgery check
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/html-form/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/html-form/" class="md-nav__link">
         HTML Form
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/create-html-form/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/create-html-form/" class="md-nav__link">
         Create HTML Form
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/using-ring-redirect/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/using-ring-redirect/" class="md-nav__link">
         Using Ring Redirect
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/named-alias-handler/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/named-alias-handler/" class="md-nav__link">
         Named alias handler
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/if-let-function/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/if-let-function/" class="md-nav__link">
         if-let function
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/refacor-hiccup-form/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/refacor-hiccup-form/" class="md-nav__link">
         Refactor: Hiccup form
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/alias-generator/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/alias-generator/" class="md-nav__link">
         Alias generator
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/persist-aliases/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/persist-aliases/" class="md-nav__link">
         Persist aliases
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/postgres-setup/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/postgres-setup/" class="md-nav__link">
         Postgres setup
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/redis-setup/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/redis-setup/" class="md-nav__link">
         Redis setup
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/create-database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/create-database/" class="md-nav__link">
         create database
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/add-alias-to-database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/add-alias-to-database/" class="md-nav__link">
         add alias to database
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/get-alias-from-database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/get-alias-from-database/" class="md-nav__link">
         get alias from database
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/delete-alias-from-database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/delete-alias-from-database/" class="md-nav__link">
         delete alias from database
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/return-short-url/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/return-short-url/" class="md-nav__link">
         Return short URL
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../project-url-shortner/return-url-aliases/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project-url-shortner/return-url-aliases/" class="md-nav__link">
         Return URL aliases
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/">TODO App</a>
-<label for="__nav_3_5">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_5">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/">TODO App</a>
+          
+            <label for="__nav_3_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
           TODO App
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_2" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/create-a-project/">Create Project</a>
-<label for="__nav_3_5_2">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_2">
-<span class="md-nav__icon md-icon"></span>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/create-a-project/">Create Project</a>
+          
+            <label for="__nav_3_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_2">
+          <span class="md-nav__icon md-icon"></span>
           Create Project
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-project/update-project-details/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-project/update-project-details/" class="md-nav__link">
         Update project details
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-project/code-so-far/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-project/code-so-far/" class="md-nav__link">
         The code so far
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/create-a-webserver-with-ring/">Webserver with Ring</a>
-<label for="__nav_3_5_3">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_3">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/create-a-webserver-with-ring/">Webserver with Ring</a>
+          
+            <label for="__nav_3_5_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_3">
+          <span class="md-nav__icon md-icon"></span>
           Webserver with Ring
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency/" class="md-nav__link">
         Add Ring Dependency
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace/" class="md-nav__link">
         Configure main namespace
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-webserver-with-ring/namespaces/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-webserver-with-ring/namespaces/" class="md-nav__link">
         Theory: Namespaces
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-webserver-with-ring/include-ring-library/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-webserver-with-ring/include-ring-library/" class="md-nav__link">
         Including Ring in the Namespace
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver/" class="md-nav__link">
         Run Jetty web server
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang/">
-        Theory: Specifying Types &amp; java.lang
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang/" class="md-nav__link">
+        Theory: Specifying Types & java.lang
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-webserver-with-ring/run-webserver/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-webserver-with-ring/run-webserver/" class="md-nav__link">
         Run webserver
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-webserver-with-ring/code-so-far/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-webserver-with-ring/code-so-far/" class="md-nav__link">
         The code so far
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/introducing-ring/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/introducing-ring/" class="md-nav__link">
         Ring
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/create-a-handler-function/">Create Handler</a>
-<label for="__nav_3_5_5">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_5">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_5" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/create-a-handler-function/">Create Handler</a>
+          
+            <label for="__nav_3_5_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_5">
+          <span class="md-nav__icon md-icon"></span>
           Create Handler
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-handler-function/add-not-found/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-handler-function/add-not-found/" class="md-nav__link">
         Add Error message when request not found
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-handler-function/if-function/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-handler-function/if-function/" class="md-nav__link">
         Theory: if function
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-handler-function/maps-and-keywords/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-handler-function/maps-and-keywords/" class="md-nav__link">
         Maps and keywords
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/create-a-handler-function/code-so-far/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/create-a-handler-function/code-so-far/" class="md-nav__link">
         Code so far
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/unit-test-handler-function/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/unit-test-handler-function/" class="md-nav__link">
         Unit test handler
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_7" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/reloading-the-application/">Reloading App</a>
-<label for="__nav_3_5_7">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_7_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_7">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_7" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/reloading-the-application/">Reloading App</a>
+          
+            <label for="__nav_3_5_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_7">
+          <span class="md-nav__icon md-icon"></span>
           Reloading App
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/reloading-the-application/test-your-code-reloads/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/reloading-the-application/test-your-code-reloads/" class="md-nav__link">
         Test the wrap-reload middleware
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/reloading-the-application/middleware/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/reloading-the-application/middleware/" class="md-nav__link">
         Middleware in Ring
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/reloading-the-application/code-so-far/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/reloading-the-application/code-so-far/" class="md-nav__link">
         The code so far
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_8" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/compojure/">Compojure</a>
-<label for="__nav_3_5_8">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_8_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_8">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_8" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/compojure/">Compojure</a>
+          
+            <label for="__nav_3_5_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_8">
+          <span class="md-nav__icon md-icon"></span>
           Compojure
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/defroutes/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/defroutes/" class="md-nav__link">
         Theory: defroutes is a Clojure macro
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/theory-routing/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/theory-routing/" class="md-nav__link">
         Theory: routing
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/adding-dependency/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/adding-dependency/" class="md-nav__link">
         Add Compojure as a dependency
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/using-compojure/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/using-compojure/" class="md-nav__link">
         Using Compojure in the project
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/adding-goodbye-route/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/adding-goodbye-route/" class="md-nav__link">
         Adding a goodbye route
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/about/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/about/" class="md-nav__link">
         About route
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/show-request-info/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/show-request-info/" class="md-nav__link">
         Show request info
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/variable-path-elements/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/variable-path-elements/" class="md-nav__link">
         Variable Path Elements
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/theory-local-name-bindings/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/theory-local-name-bindings/" class="md-nav__link">
         Theory local name bindings
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/theory-using-hash-maps/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/theory-using-hash-maps/" class="md-nav__link">
         Theory: Accessing hash-maps
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/lisp-calculator/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/lisp-calculator/" class="md-nav__link">
         Lisp style Calculator
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/compojure/code-so-far/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/compojure/code-so-far/" class="md-nav__link">
         Code so far
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_9" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/heroku/">Heroku Deploy</a>
-<label for="__nav_3_5_9">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_9_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_9">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_9" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/heroku/">Heroku Deploy</a>
+          
+            <label for="__nav_3_5_9">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_9">
+          <span class="md-nav__icon md-icon"></span>
           Heroku Deploy
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/heroku/update-project/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/heroku/update-project/" class="md-nav__link">
         Update the project
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/heroku/procfile/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/heroku/procfile/" class="md-nav__link">
         Add Procfile
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/heroku/deploy/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/heroku/deploy/" class="md-nav__link">
         Deploy to Heroku
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/heroku/code-so-far/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/heroku/code-so-far/" class="md-nav__link">
         Code so far
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_10" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/hiccup/">Hiccup</a>
-<label for="__nav_3_5_10">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_10_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_10">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_10" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/hiccup/">Hiccup</a>
+          
+            <label for="__nav_3_5_10">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_10">
+          <span class="md-nav__icon md-icon"></span>
           Hiccup
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/hiccup/updating-handlers-with-hiccup/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/hiccup/updating-handlers-with-hiccup/" class="md-nav__link">
         Updating handlers with hiccup
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/hiccup/create-new-handler/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/hiccup/create-new-handler/" class="md-nav__link">
         Create a new handler
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/hiccup/code-so-far/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/hiccup/code-so-far/" class="md-nav__link">
         Code so far
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_11" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/refactor-namespace/">Refactor Namespace</a>
-<label for="__nav_3_5_11">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_11_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_11">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_11" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/refactor-namespace/">Refactor Namespace</a>
+          
+            <label for="__nav_3_5_11">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_11">
+          <span class="md-nav__icon md-icon"></span>
           Refactor Namespace
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/refactor-namespace/base-routes/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/refactor-namespace/base-routes/" class="md-nav__link">
         Base routes
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/refactor-namespace/play-routes/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/refactor-namespace/play-routes/" class="md-nav__link">
         Play routes
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/refactor-namespace/task-routes/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/refactor-namespace/task-routes/" class="md-nav__link">
         Task routes
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/refactor-namespace/core/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/refactor-namespace/core/" class="md-nav__link">
         Refactored Core
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/refactor-namespace/code-so-far/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/refactor-namespace/code-so-far/" class="md-nav__link">
         Code so far
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_12" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/postgres/">Postgres</a>
-<label for="__nav_3_5_12">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_12_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_12">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_12" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/postgres/">Postgres</a>
+          
+            <label for="__nav_3_5_12">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_12">
+          <span class="md-nav__icon md-icon"></span>
           Postgres
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/install/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/install/" class="md-nav__link">
         Postgres install
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/environment-variables/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/environment-variables/" class="md-nav__link">
         Environment Variables
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/postgres-cli/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/postgres-cli/" class="md-nav__link">
         Postgres CLI
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/pg-admin/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/pg-admin/" class="md-nav__link">
         pgAdmin
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/dataclips/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/dataclips/" class="md-nav__link">
         Heroku Dataclips
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/connect-to-heroku-postgres-from-clients/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/connect-to-heroku-postgres-from-clients/" class="md-nav__link">
         Connecting to Heroku Postgres from Postgres Clients
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/jira-ticket/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/jira-ticket/" class="md-nav__link">
         Jira ticket
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/lobo-table-creation/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/lobo-table-creation/" class="md-nav__link">
         How to use Lobos with Heroku
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/postgres-commands/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/postgres-commands/" class="md-nav__link">
         pg:info
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/postgres-performance-analytics/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/postgres-performance-analytics/" class="md-nav__link">
         Performance Analytics
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/postgres/postgres-toolbelt-commands/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/postgres/postgres-toolbelt-commands/" class="md-nav__link">
         Postgres toolbelt commands
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_12_13" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/connect-to-postgres/">Connect to Postgres</a>
-<label for="__nav_3_5_12_13">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_12_13_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_3_5_12_13">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_12_13" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/connect-to-postgres/">Connect to Postgres</a>
+          
+            <label for="__nav_3_5_12_13">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_5_12_13_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_12_13">
+          <span class="md-nav__icon md-icon"></span>
           Connect to Postgres
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/connect-to-postgres/add-database-dependencies/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/connect-to-postgres/add-database-dependencies/" class="md-nav__link">
         Add Dependency
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/connect-to-postgres/define-db-connection/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/connect-to-postgres/define-db-connection/" class="md-nav__link">
         Define a Database Connection
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_12_14" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/database-model/">Database Model</a>
-<label for="__nav_3_5_12_14">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_12_14_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_3_5_12_14">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_12_14" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/database-model/">Database Model</a>
+          
+            <label for="__nav_3_5_12_14">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_5_12_14_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_12_14">
+          <span class="md-nav__icon md-icon"></span>
           Database Model
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/database-model/create-table/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/database-model/create-table/" class="md-nav__link">
         Create table
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/database-model/create-task/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/database-model/create-task/" class="md-nav__link">
         Create a task
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/database-model/show-all-task/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/database-model/show-all-task/" class="md-nav__link">
         Show all tasks
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/database-model/delete-task/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/database-model/delete-task/" class="md-nav__link">
         Delete task
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/database-model/alternative-approaches/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/database-model/alternative-approaches/" class="md-nav__link">
         Alternative approaches
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5_13" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../leiningen/todo-app/task-handlers/">Task handlers</a>
-<label for="__nav_3_5_13">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_13_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_5_13">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_13" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../leiningen/todo-app/task-handlers/">Task handlers</a>
+          
+            <label for="__nav_3_5_13">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_13_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_13">
+          <span class="md-nav__icon md-icon"></span>
           Task handlers
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/task-handlers/add-a-task/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/task-handlers/add-a-task/" class="md-nav__link">
         Add a task
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/task-handlers/show-task/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/task-handlers/show-task/" class="md-nav__link">
         Show tasks
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/todo-app/task-handlers/delete-a-task/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/todo-app/task-handlers/delete-a-task/" class="md-nav__link">
         Delete a task
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../leiningen/working-example/">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leiningen/working-example/" class="md-nav__link">
         A working example
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../app-servers/">Application Servers</a>
-<label for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../app-servers/">Application Servers</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
           Application Servers
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/overview/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/overview/" class="md-nav__link">
         Overview of Application servers
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/middleware/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/middleware/" class="md-nav__link">
         Middleware
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/routing-libraries/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/routing-libraries/" class="md-nav__link">
         Routing libraries
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/clojure-project/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/clojure-project/" class="md-nav__link">
         New Clojure Project
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/create-server/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/create-server/" class="md-nav__link">
         Create a server
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/jetty-server-options/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/jetty-server-options/" class="md-nav__link">
         Jetty Server Options
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/http-kit-server-options/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/http-kit-server-options/" class="md-nav__link">
         Http-kit Server Options
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/route-requests/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/route-requests/" class="md-nav__link">
         Route Requests
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/start-server/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/start-server/" class="md-nav__link">
         Start a server
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/java-system-properties/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/java-system-properties/" class="md-nav__link">
         Java System properties
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/simple-restart/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/simple-restart/" class="md-nav__link">
         Simple restart approach
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/atom-based-restart/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/atom-based-restart/" class="md-nav__link">
         Atom based restart
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/app-server-logging/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/app-server-logging/" class="md-nav__link">
         Application Server Logging
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/debugging/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/debugging/" class="md-nav__link">
         Debugging application servers
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/routing/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/routing/" class="md-nav__link">
         Routing
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/set-listen-port/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/set-listen-port/" class="md-nav__link">
         Set listen port
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../app-servers/static-content/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app-servers/static-content/" class="md-nav__link">
         Static Content
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../server-side-api/">Building API</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../server-side-api/">Building API</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
           Building API
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/compojure-api-template/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/compojure-api-template/" class="md-nav__link">
         compojure-api template
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/create-compojure-api-project/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/create-compojure-api-project/" class="md-nav__link">
         Create a compojure-api project
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/swagger/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/swagger/" class="md-nav__link">
         Swagger - self describing APIs
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/ring-swagger/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/ring-swagger/" class="md-nav__link">
         ring-swagger
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/plumatic-schema/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/plumatic-schema/" class="md-nav__link">
         Plumatic schema - defining the shape of data
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/json-files/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/json-files/" class="md-nav__link">
         Working with JSON files
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/testing-api/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/testing-api/" class="md-nav__link">
         Testing our API
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/ring-mock/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/ring-mock/" class="md-nav__link">
         ring-mock
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/cheshire/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/cheshire/" class="md-nav__link">
         Cheshire - fast JSON encoding
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5_11" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../server-side-api/end-to-end-testing/">End to end testing</a>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_5_11_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_5_11">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../server-side-api/end-to-end-testing/">End to end testing</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_11">
+          <span class="md-nav__icon md-icon"></span>
           End to end testing
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../server-side-api/terminology/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../server-side-api/terminology/" class="md-nav__link">
         Terminology
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-databases/">Persistence</a>
-<label for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../clojure-databases/">Persistence</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
           Persistence
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../relational-databases-and-sql/">Relational</a>
-<label for="__nav_6_2">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_2">
-<span class="md-nav__icon md-icon"></span>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../relational-databases-and-sql/">Relational</a>
+          
+            <label for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
           Relational
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/h2-database/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/h2-database/" class="md-nav__link">
         H2 Lightweight Relational Database
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/managing-connections/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/managing-connections/" class="md-nav__link">
         Managing database connections
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/postgresql-database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/postgresql-database/" class="md-nav__link">
         Postgresql database
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/h2-database/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/h2-database/" class="md-nav__link">
         H2 Relational Database
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/h2-database/database-tools/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/h2-database/database-tools/" class="md-nav__link">
         Database tools
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/h2-database/schema-design/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/h2-database/schema-design/" class="md-nav__link">
         H2 Schema design
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6_2_8" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../relational-databases-and-sql/next-jdbc-library/">next-jdbc</a>
-<label for="__nav_6_2_8">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_6_2_8_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_6_2_8">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_8" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../relational-databases-and-sql/next-jdbc-library/">next-jdbc</a>
+          
+            <label for="__nav_6_2_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_2_8">
+          <span class="md-nav__icon md-icon"></span>
           next-jdbc
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle/" class="md-nav__link">
         Using next.jdbc with a Connection pool
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/next-jdbc-library/add-to-project/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/next-jdbc-library/add-to-project/" class="md-nav__link">
         Add next.jdbc to a project
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/next-jdbc-library/database-specifications/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/next-jdbc-library/database-specifications/" class="md-nav__link">
         Database Specifications
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/next-jdbc-library/next-jdbc-and-resultsets/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/next-jdbc-library/next-jdbc-and-resultsets/" class="md-nav__link">
         next.jdbc and result sets
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../relational-databases-and-sql/next-jdbc-library/simple-example/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../relational-databases-and-sql/next-jdbc-library/simple-example/" class="md-nav__link">
         Simple database example
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           Micro-services
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
           Micro-services
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../micro-services/index.md">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../micro-services/index.md" class="md-nav__link">
         None
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../reference/">Reference</a>
-<label for="__nav_8">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_8">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../reference/">Reference</a>
+          
+            <label for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
           Reference
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/ring/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/ring/" class="md-nav__link">
         Ring specification
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/ring/request-map/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/ring/request-map/" class="md-nav__link">
         Ring - request map
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/continuous-integration/heroku/index.md">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/continuous-integration/heroku/index.md" class="md-nav__link">
         None
       </a>
-</li>
-</ul>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#generic-update-record-function">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generic-update-record-function" class="md-nav__link">
     Generic update record function
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#update-an-existing-account_holder-record">
+      
+        <li class="md-nav__item">
+  <a href="#update-an-existing-account_holder-record" class="md-nav__link">
     Update an existing account_holder record
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#update-an-existing-account-record">
+      
+        <li class="md-nav__item">
+  <a href="#update-an-existing-account-record" class="md-nav__link">
     Update an existing account record
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#update-an-existing-transaction-record">
+      
+        <li class="md-nav__item">
+  <a href="#update-an-existing-transaction-record" class="md-nav__link">
     Update an existing transaction record
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure-web-services/edit/main/docs/projects/banking-on-clojure/update-records.md" title="Edit this page">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
-</a>
-<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure-web-services/raw/main/docs/projects/banking-on-clojure/update-records.md" title="View source of this page">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
-</a>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/practicalli/clojure-web-services/edit/main/docs/projects/banking-on-clojure/update-records.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/practicalli/clojure-web-services/raw/main/docs/projects/banking-on-clojure/update-records.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
 <h1 id="update-records-in-the-database">Update Records in the database<a class="headerlink" href="#update-records-in-the-database" title="Permanent link">λ︎</a></h1>
 <p>Several options were explored when designing database query functions.  Using next.jdbc.sql functions provides a Clojure data structures approach, where as <code>next.jdbc/execute!</code> uses specific SQL statement code.</p>
 <p>Take the SQL approach if generating SQL statements directly.</p>
 <p>Take the Clojure approach if to generate SQL statements from Clojure data structures.</p>
 <h2 id="generic-update-record-function">Generic update record function<a class="headerlink" href="#generic-update-record-function" title="Permanent link">λ︎</a></h2>
 <p>Use the generic create function from the database schema design section</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">update-record</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="s">"Insert a single record into the database using a managed connection.</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="s">  Arguments:</span>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="s">  - table - name of database table to be affected</span>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="s">  - record-data - Clojure data representing a new record</span>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="s">  - db-spec - database specification to establish a connection</span>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="s">  - where-clause - column and value to identify a record to update"</span>
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="p">[</span><span class="nv">db-spec</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="nv">record-data</span><span class="w"> </span><span class="nv">where-clause</span><span class="p">]</span>
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="p">(</span><span class="nb">with-open </span><span class="p">[</span><span class="nv">connection</span><span class="w"> </span><span class="p">(</span><span class="nf">jdbc/get-connection</span><span class="w"> </span><span class="nv">db-spec</span><span class="p">)]</span>
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="p">(</span><span class="nf">jdbc-sql/update!</span><span class="w"> </span><span class="nv">connection</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="nv">record-data</span><span class="w"> </span><span class="nv">where-clause</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">update-record</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="s">&quot;Insert a single record into the database using a managed connection.</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="s">  Arguments:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s">  - table - name of database table to be affected</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s">  - record-data - Clojure data representing a new record</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s">  - db-spec - database specification to establish a connection</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s">  - where-clause - column and value to identify a record to update&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">[</span><span class="nv">db-spec</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="nv">record-data</span><span class="w"> </span><span class="nv">where-clause</span><span class="p">]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">(</span><span class="nb">with-open </span><span class="p">[</span><span class="nv">connection</span><span class="w"> </span><span class="p">(</span><span class="nf">jdbc/get-connection</span><span class="w"> </span><span class="nv">db-spec</span><span class="p">)]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">(</span><span class="nf">jdbc-sql/update!</span><span class="w"> </span><span class="nv">connection</span><span class="w"> </span><span class="nv">table</span><span class="w"> </span><span class="nv">record-data</span><span class="w"> </span><span class="nv">where-clause</span><span class="p">)))</span>
 </code></pre></div>
 <h2 id="update-an-existing-account_holder-record">Update an existing account_holder record<a class="headerlink" href="#update-an-existing-account_holder-record" title="Permanent link">λ︎</a></h2>
 <p>Call the <code>update-record</code> function with the development database specification, the account holder table name and a Clojure hash-map of the record data.</p>
 <p>Each key in the map represents a column name and the value associated with the key is the value to be inserted in the record for its column.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">  </span><span class="p">(</span><span class="nf">update-record</span><span class="w"> </span><span class="nv">db-specification-dev</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">                 </span><span class="ss">:public.account_holders</span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">                 </span><span class="p">{</span><span class="ss">:EMAIL_ADDRESS</span><span class="w"> </span><span class="s">"rachel+update@rockketpack.org"</span><span class="p">}</span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">                 </span><span class="p">{</span><span class="ss">:account_holder_id</span><span class="w"> </span><span class="s">"f6d6c3ba-c5cc-49de-8c85-21904f8c5b4d"</span><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="p">(</span><span class="nf">update-record</span><span class="w"> </span><span class="nv">db-specification-dev</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">                 </span><span class="ss">:public.account_holders</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">                 </span><span class="p">{</span><span class="ss">:EMAIL_ADDRESS</span><span class="w"> </span><span class="s">&quot;rachel+update@rockketpack.org&quot;</span><span class="p">}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">                 </span><span class="p">{</span><span class="ss">:account_holder_id</span><span class="w"> </span><span class="s">&quot;f6d6c3ba-c5cc-49de-8c85-21904f8c5b4d&quot;</span><span class="p">})</span>
 </code></pre></div>
 <p>If the update is successful then <code>:update-count 1</code> value is returned</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w">  </span><span class="c1">;; =&gt; #:next.jdbc{:update-count 1}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">  </span><span class="c1">;; =&gt; #:next.jdbc{:update-count 1}</span>
 </code></pre></div>
 <h2 id="update-an-existing-account-record">Update an existing account record<a class="headerlink" href="#update-an-existing-account-record" title="Permanent link">λ︎</a></h2>
 <p>Update an existing record in the <code>public.accounts</code> table, providing new values for <code>current_balance</code> and <code>last_updated</code> columns.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">update-record</span><span class="w"> </span><span class="nv">db-specification-dev</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">               </span><span class="s">"public.accounts"</span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:current_balance</span><span class="w">   </span><span class="mi">242</span>
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">                </span><span class="ss">:last_updated</span><span class="w">      </span><span class="s">"2020-09-12"</span><span class="p">}</span>
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">               </span><span class="p">{</span><span class="ss">:account_number</span><span class="w"> </span><span class="s">"1234567890"</span><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">update-record</span><span class="w"> </span><span class="nv">db-specification-dev</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">               </span><span class="s">&quot;public.accounts&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:current_balance</span><span class="w">   </span><span class="mi">242</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">                </span><span class="ss">:last_updated</span><span class="w">      </span><span class="s">&quot;2020-09-12&quot;</span><span class="p">}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">               </span><span class="p">{</span><span class="ss">:account_number</span><span class="w"> </span><span class="s">&quot;1234567890&quot;</span><span class="p">})</span>
 </code></pre></div>
 <h2 id="update-an-existing-transaction-record">Update an existing transaction record<a class="headerlink" href="#update-an-existing-transaction-record" title="Permanent link">λ︎</a></h2>
 <p>Update an existing record in the <code>public.transaction_history</code> table.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">update-record</span><span class="w"> </span><span class="nv">db-specification-dev</span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">               </span><span class="s">"public.transaction_history"</span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:transaction_reference</span><span class="w"> </span><span class="s">"Salary bonus"</span>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">                </span><span class="ss">:transaction_date</span><span class="w">      </span><span class="s">"2020-09-12"</span><span class="p">}</span>
-<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">               </span><span class="p">{</span><span class="ss">:transaction_id</span><span class="w">  </span><span class="s">"8ac89cfc-6874-4ebe-9ee4-59b8c5e971ff"</span><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">update-record</span><span class="w"> </span><span class="nv">db-specification-dev</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">               </span><span class="s">&quot;public.transaction_history&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:transaction_reference</span><span class="w"> </span><span class="s">&quot;Salary bonus&quot;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">                </span><span class="ss">:transaction_date</span><span class="w">      </span><span class="s">&quot;2020-09-12&quot;</span><span class="p">}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">               </span><span class="p">{</span><span class="ss">:transaction_id</span><span class="w">  </span><span class="s">&quot;8ac89cfc-6874-4ebe-9ee4-59b8c5e971ff&quot;</span><span class="p">})</span>
 </code></pre></div>
 <div class="admonition hint">
 <p class="admonition-title">Generating example data from Clojure Spec</p>
 <p><a href="../clojure-spec-generate-mock-data/" target="_blank">Clojure Spec: generate mock database data</a></p>
 </div>
-<hr/>
+
+  <hr>
 <div class="md-source-file">
-<small>
+  <small>
     
       Last update:
       <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2023</span>
-</small>
+      
+    
+  </small>
 </div>
-</article>
-</div>
-<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
-</div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
           </button>
-</main>
-<footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Read Records" class="md-footer__link md-footer__link--prev" href="../read-records/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                  Previous
-                </span>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../read-records/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Read Records" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
                 Read Records
               </div>
-</div>
-</a>
-<a aria-label="Next: Delete Records" class="md-footer__link md-footer__link--next" href="../delete-records/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                  Next
-                </span>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../delete-records/" class="md-footer__link md-footer__link--next" aria-label="Next: Delete Records" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
                 Delete Records
               </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-copyright">
-<div class="md-copyright__highlight">
-      Copyright © 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
-</div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    </div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
     </a>
+  
 </div>
-<div class="md-social">
-<a class="md-social__link" href="https://www.linkedin.com/in/jr0cket/" rel="noopener" target="_blank" title="www.linkedin.com">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-</a>
-<a class="md-social__link" href="https://clojurians.slack.com/messages/practicalli" rel="noopener" target="_blank" title="clojurians.slack.com">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"></path></svg>
-</a>
-<a class="md-social__link" href="https://twitter.com/practical_li" rel="noopener" target="_blank" title="twitter.com">
-<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
-</a>
-<a class="md-social__link" href="https://github.com/practicalli" rel="noopener" target="_blank" title="github.com">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
-</a>
-<a class="md-social__link" href="https://hub.docker.com/u/practicalli" rel="noopener" target="_blank" title="hub.docker.com">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
-</a>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/jr0cket/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://clojurians.slack.com/messages/practicalli" target="_blank" rel="noopener" title="clojurians.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/practical_li" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/practicalli" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/u/practicalli" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
 </div>
-</div>
-</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.19047be9.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
