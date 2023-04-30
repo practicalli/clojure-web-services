@@ -14,6 +14,7 @@ Component definitions are also a hash-map with `:start`, `:stop`, `:config` keys
     Practicalli recommends meaningful alias names or not using an alias at all, instead requiring specific functions.  This makes code easier to read and searching  considerably easier (fewer false matches)
 
 
+
 > Donut system configuration is a similar approach to that used by reitit for http request routing.
 
 
@@ -44,6 +45,12 @@ Donut library includes a REPL workflow namespace, so there is only one library d
 
 
 ## Define a System
+
+Donut defines a system using a Clojure hash-map with the following top level keys
+
+- `::donut/defs` to define components of a system or component group
+- `::donut/signals` customise the startup/shutdown approach (optional)
+
 
 Create a `system` namespace to define the donut system
 
@@ -142,3 +149,40 @@ The system reference is used to shutdown the system, typically wrapped in code t
              (Thread. ^Runnable #(donut/signal running-system ::donut/stop)))))
     ```
     Mulog event logging is included and the system should start a mulog publisher via the system configuration
+
+
+## Service REPL Workflow
+
+`donut.system.repl` namespace provides functions to start, stop and restart system components.
+
+The main system configuration used when starting the service can also be used for the REPL, or other named systems can be defined allowing for a customised system during development.
+
+
+!!! EXAMPLE "Service REPL workflow"
+    ```clojure
+    (ns system-repl
+      "Tools for REPL Driven Development"
+      (:require
+       [donut.system :as donut]
+       [donut.system.repl :as donut-repl]
+       [practicalli.donoughty.system :as donoughty]
+       [com.brunobonacci.mulog :as mulog]))
+
+    (defmethod donut/named-system :donut.system/repl
+      [_] donoughty/main)
+
+    (defn start
+      "Start system with donut, optionally passing a named system"
+      ([] (donut-repl/start))
+      ([system-config] (donut-repl/start system-config)))
+
+    (defn stop
+      "Stop the currently running system"
+      []  (donut-repl/stop))
+
+    (defn restart
+      "Restart the system with donut repl,
+      Uses clojure.tools.namespace.repl to reload namespaces
+      `(clojure.tools.namespace.repl/refresh :after 'donut.system.repl/start)`"
+      [] (donut-repl/restart))
+    ```
