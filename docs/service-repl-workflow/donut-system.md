@@ -118,7 +118,7 @@ The event log publisher and http service have no intrinsic relationship, so orde
 
 Use `donut/signal` with the `::donut/start` key to start all the components in the system.
 
-> `::ds/signals` key is associated with a signal configuration to modify the start and stop process, although the default process should work in most cases.
+> `::donut/signals` key is associated with a signal configuration to modify the start and stop process, although the default process should work in most cases.
 
 Define a `-main` function in the main namespace of the service, e.g `practicalli.gameboard.service`
 
