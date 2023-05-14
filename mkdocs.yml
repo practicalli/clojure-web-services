@@ -17,8 +17,6 @@ theme:
   name: material
   logo: assets/images/practicalli-logo.png
   favicon: assets/favicon.svg
-  extra_css:
-    - stylesheets/extra.css
   features:
     - announce.dismiss
     - content.action.edit
@@ -37,8 +35,6 @@ theme:
       scheme: default
       primary: blue
       accent: deep purple
-      extra_css:
-        - stylesheets/extra.css
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -54,8 +50,8 @@ theme:
   # Override theme
   custom_dir: overrides
 
-# extra_css:
-#   - stylesheets/extra.css
+extra_css:
+  - assets/stylesheets/extra.css
 
 ## Additional styling
 markdown_extensions:
