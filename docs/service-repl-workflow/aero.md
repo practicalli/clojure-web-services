@@ -2,6 +2,8 @@
 
 Aero library is an EDN reader that provides reader tags (tag literals) to support the declarative definition of system components, especially across different deployment environments (e.g. dev, stage, production).
 
+A specific profile value (e.g. `:dev` `:stage` `:prod`) is given to `aero/read-config` which parses the Integrant configuration, returning an updated Integrant configuration containing values specific to the given profile.
+
 !!! QUOTE
     Configuration should be explicit  obvious, but not clever. It should be easy to understand what the config is, and where it is declared. - JUXT.
 
