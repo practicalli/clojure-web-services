@@ -10,14 +10,34 @@ A specific profile value (e.g. `:dev` `:stage` `:prod`) is given to `aero/read-c
 
 ## Aero reader
 
-Require the `aero.core` library and use the `read-config` function to process an EDN configuration file.
+Require the `aero.core` library and use the `read-config` function to process an EDN configuration file saved in `resources/config.end`.
 
-```clojure
-(require '[aero.core :as aero])
-(aero/read-config "config.edn")
-```
+=== "Project"
 
-??? HINT "resources/config.edn commonly used with aero"
+    !!! EXAMPLE "Project with aero and supporting requires"
+        ```clojure
+        (ns practicalli.gameboard.environment
+          (:require
+           [aero.core       :as aero]
+           [clojure.java.io :as io]))
+
+        (defn aero-config
+          "Profile specific configuration for all services"
+          [profile]
+          ;; (mulog/log ::aero-parse-config :profile profile :local-time (java.time.LocalDateTime/now)
+          (aero/read-config (io/resource "config.edn") {:profile profile}))
+        ```
+
+=== "REPL"
+
+    !!! EXAMPLE "Project with aero and supporting requires"
+        ```clojure
+        (require '[aero.core :as aero])
+        (require '[clojure.java.io :as io])
+        (aero/read-config (io/resource "config.edn"))
+        ```
+
+!!! HINT "resources/config.edn commonly used with aero"
     System EDN configuration loaded at runtime are created within the `resources` directory which is typically defined as part of the class path and therefore available even when the service is packaged in a jar file.
 
     `clojure.java.io/resource` reads a file from the `resources` directory, the resulting file can be passed to the aero.core/reader fuction with an optional profile value.
@@ -44,20 +64,21 @@ Aero uses [tag literals](https://github.com/juxt/aero#tag-literals) as placehold
 
 ## Profiles
 
-Aero #profile tag literal supports multiple environment within one EDN configuration
+Aero `#profile` tag literal supports multiple environment within one EDN configuration
 
 Pass a profile and configuration to the aero reader and only the matching profile values in the configuration are returned each key.  So a profile is a type of filter on the system configuration.
 
-```clojure title="Aero reader with profile"
-(defn aero-config
-  "Apply profile to service configuration: :dev :stage :prod"
-  [profile]
-  (aero/read-config (io/resource "config.edn") {:profile profile}))
-```
+!!! EXAMPLE "Aero reader with profile"
+    ```clojure title="Aero reader with profile"
+    (defn aero-config
+      "Apply profile to service configuration: :dev :stage :prod"
+      [profile]
+      (aero/read-config (io/resource "config.edn") {:profile profile}))
+    ```
 
 As each part of the system can be defined using profiles, the same `resources/config.edn` configuration can be used for both Integrant and Integrant REPL
 
-??? EXAMPLE "Mulog Event Publish Configuration with aero"
+!!! EXAMPLE "Mulog Event Publish Configuration with aero"
     The areo profiles (`:dev` `:docker` `:prod`) determine which type of publisher is use for mulog events
     ```clojure
      ;; Event logging service - mulog
@@ -97,111 +118,112 @@ Use `#or` to define a default value to avoid `nil` appearing in the configuratio
 Environment Variables must be defined in the Operating System before the Clojure REPL process is started.  Adding Environment Variables after the REPL starup requires a restart of the REPL to pick up the values.
 
 !!! EXAMPLE "HTTP Server component with Profile and Environment Variables"
-```clojure
-{:practicalli.gameboard.service/http-server
- {:handler #ig/ref :practicalli.scoreboard.service/router
-  :port #profile {:develop #long #or [#env APP_SERVER_PORT 8888]
-                  :test    #long #or [#env APP_SERVER_PORT 8080]
-                  :stage   #long #or [#env APP_SERVER_PORT 8080]
-                  :live    #long #or [#env APP_SERVER_PORT 8000]}
-  :join? false}
+    ```clojure
+    {:practicalli.gameboard.service/http-server
+     {:handler #ig/ref :practicalli.scoreboard.service/router
+      :port #profile {:develop #long #or [#env APP_SERVER_PORT 8888]
+                      :test    #long #or [#env APP_SERVER_PORT 8080]
+                      :stage   #long #or [#env APP_SERVER_PORT 8080]
+                      :live    #long #or [#env APP_SERVER_PORT 8000]}
+      :join? false}
 
- :practicalli.scoreboard.service/router
- {:persistence #ig/ref :practicalli.scoreboard.service/relational-store}
+     :practicalli.scoreboard.service/router
+     {:persistence #ig/ref :practicalli.scoreboard.service/relational-store}
 
- :practicalli.scoreboard.service/relational-store
- {:connection #profile {:develop  {:url "http://localhost/" :port 57207 :database "scoreboard-develop"}
-                        :test     {:url "http://localhost/" :port 57207 :database "scoreboard-test"}
-                        :stage    {:url "http://localhost/" :port 57207 :database "scoreboard-stage"}
-                        :live     {:url "http://localhost/" :port 57207 :database "scoreboard"}}}}
-```
+     :practicalli.scoreboard.service/relational-store
+     {:connection #profile {:develop  {:url "http://localhost/" :port 57207 :database "scoreboard-develop"}
+                            :test     {:url "http://localhost/" :port 57207 :database "scoreboard-test"}
+                            :stage    {:url "http://localhost/" :port 57207 :database "scoreboard-stage"}
+                            :live     {:url "http://localhost/" :port 57207 :database "scoreboard"}}}}
+    ```
 
 
 ## Gameboard Configuration
 
 An example configuration for the Practicalli Gameboard Web Service
 
-```clojure
-;; --------------------------------------------------
-;; Application Component configuration - Integrant & Integrant REPL
-;;
-;; - Event logging (mulog)
-;; - HTTP Server  (embedded jetty or http-kit)
-;; - Request routing (reitit)
-;; - Persistence (relational) connection
-;;
-;; #profile used by aero to select the configuration to use for a given profile (dev, test, prod)
-;; #long defines Long Integer type (required for Java HTTP server port)
-;; #env reads the environment variable of the given name
-;; #or uses first non nil value in sequence
-;;
-;; Environment variables should be defined locally and in deployment provisioner
-;; --------------------------------------------------
+!!! EXAMPLE "Example configuration for Integrant and Aero"
+    ```clojure
+    ;; --------------------------------------------------
+    ;; Application Component configuration - Integrant & Integrant REPL
+    ;;
+    ;; - Event logging (mulog)
+    ;; - HTTP Server  (embedded jetty or http-kit)
+    ;; - Request routing (reitit)
+    ;; - Persistence (relational) connection
+    ;;
+    ;; #profile used by aero to select the configuration to use for a given profile (dev, test, prod)
+    ;; #long defines Long Integer type (required for Java HTTP server port)
+    ;; #env reads the environment variable of the given name
+    ;; #or uses first non nil value in sequence
+    ;;
+    ;; Environment variables should be defined locally and in deployment provisioner
+    ;; --------------------------------------------------
 
 
-{;; --------------------------------------------------
- ;; Event logging service - mulog
+    {;; --------------------------------------------------
+     ;; Event logging service - mulog
 
- ;; https://github.com/BrunoBonacci/mulog#publishers
- ;; https://github.com/openzipkin/zipkin
- :practicalli.gameboard.service/log-publish
- {;; Type of publisher to use for mulog events
-  ;; Publish json format logs, captured by fluentd and exposed via OpenDirectory
-  :mulog #profile {:dev  {:type :console-json :pretty? true}
+     ;; https://github.com/BrunoBonacci/mulog#publishers
+     ;; https://github.com/openzipkin/zipkin
+     :practicalli.gameboard.service/log-publish
+     {;; Type of publisher to use for mulog events
+      ;; Publish json format logs, captured by fluentd and exposed via OpenDirectory
+      :mulog #profile {:dev  {:type :console-json :pretty? true}
 
-                   ;; Multiple publishers using Open Zipkin service (started via docker-compose)
-                   :docker  {:type :multi
-                             :publishers
-                             [{:type :console-json :pretty? false}
-                              {:type :zipkin :url "http://localhost:9411/"}]}
+                       ;; Multiple publishers using Open Zipkin service (started via docker-compose)
+                       :docker  {:type :multi
+                                 :publishers
+                                 [{:type :console-json :pretty? false}
+                                  {:type :zipkin :url "http://localhost:9411/"}]}
 
-                   :prod {:type :console-json :pretty? false}}}
+                       :prod {:type :console-json :pretty? false}}}
 
- ;; --------------------------------------------------
- ;; HTTP Server - embedded service
+     ;; --------------------------------------------------
+     ;; HTTP Server - embedded service
 
- :practicalli.gameboard.service/http-server
- {;; Router function passed into the HTTP server form managing requests/responses
-  :handler #ig/ref :practicalli.gameboard.service/router
+     :practicalli.gameboard.service/http-server
+     {;; Router function passed into the HTTP server form managing requests/responses
+      :handler #ig/ref :practicalli.gameboard.service/router
 
-  ;; Port number (Java Long type) - environment variable or default number
-  :port  #long #or [#env HTTP_SERVER_PORT 8080]
+      ;; Port number (Java Long type) - environment variable or default number
+      :port  #long #or [#env HTTP_SERVER_PORT 8080]
 
-  ;; Join REPL to HTTP server thread
-  :join? false}
+      ;; Join REPL to HTTP server thread
+      :join? false}
 
- ;; --------------------------------------------------
- ;; persistence - connection to Practicall relational storage
+     ;; --------------------------------------------------
+     ;; persistence - connection to Practicall relational storage
 
- ;; TODO: add database connection pool ?
+     ;; TODO: add database connection pool ?
 
- :practicalli.gameboard.service/relational-store
- {:host #or [#env DATABASE_HOST "localhost"]
-  :port #or [#env DATABASE_PORT 3306]
-  :username #or [#env DATABASE_USERNAME "gameboard"]
-  :password #or [#env DATABASE_PASSWORD "trustnoone"]}
+     :practicalli.gameboard.service/relational-store
+     {:host #or [#env DATABASE_HOST "localhost"]
+      :port #or [#env DATABASE_PORT 3306]
+      :username #or [#env DATABASE_USERNAME "gameboard"]
+      :password #or [#env DATABASE_PASSWORD "trustnoone"]}
 
- ;; --------------------------------------------------
- ;; Data provider services
- ;; - connection to services that provide eSports data
+     ;; --------------------------------------------------
+     ;; Data provider services
+     ;; - connection to services that provide eSports data
 
- :practicalli.gameboard.service/data-provider
- {;; external data providers via Risky
-  :llamasoft-api-url  #or [#env LAMASOFT_API_URL "http://localhost"]
-  :polybus-report-uri "/report/polybus"
-  :moose-life-report-uri "/api/v1/report/moose-life"
-  :minotaur-arcade-report-uri "/api/v2/minotar-arcade"
-  :gridrunner-revolution-report-uri "/api/v1.1/gridrunner"
-  :space-giraffe-report-uri "/api/v1/games/space-giraffe"}
+     :practicalli.gameboard.service/data-provider
+     {;; external data providers via Risky
+      :llamasoft-api-url  #or [#env LAMASOFT_API_URL "http://localhost"]
+      :polybus-report-uri "/report/polybus"
+      :moose-life-report-uri "/api/v1/report/moose-life"
+      :minotaur-arcade-report-uri "/api/v2/minotar-arcade"
+      :gridrunner-revolution-report-uri "/api/v1.1/gridrunner"
+      :space-giraffe-report-uri "/api/v1/games/space-giraffe"}
 
-;; --------------------------------------------------
- ;; routing
+    ;; --------------------------------------------------
+     ;; routing
 
- ;; Configure web routing application with application environment
- ;; define top-level keys to access via the environment hash-map
- ;; - :persistence - database connection information
- ;; - :services - url, endpoint, tokens for services used by the Fraud API (e.g. risky)
- :practicalli.gameboard.service/router
- {:persistence #ig/ref :practicalli.gameboard.service/relational-store
-  :data-provider #ig/ref :practicalli.gameboard.service/data-provider}}
-```
+     ;; Configure web routing application with application environment
+     ;; define top-level keys to access via the environment hash-map
+     ;; - :persistence - database connection information
+     ;; - :services - url, endpoint, tokens for services used by the Fraud API (e.g. risky)
+     :practicalli.gameboard.service/router
+     {:persistence #ig/ref :practicalli.gameboard.service/relational-store
+      :data-provider #ig/ref :practicalli.gameboard.service/data-provider}}
+    ```
