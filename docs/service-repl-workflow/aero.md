@@ -59,7 +59,7 @@ Aero uses [tag literals](https://github.com/juxt/aero#tag-literals) as placehold
     [aero/core.cljc](https://github.com/juxt/aero/blob/master/src/aero/core.cljc) contains the definitions for the Aero tag literals
 
 ??? HINT "Define Custom Tags"
-    Custom tag literals can be added to extend Aero, e.g. [adding Integrant Reference tag literal](integrant-repl#aero-and-integrant)
+    Custom tag literals can be added to extend Aero, e.g. [adding Integrant Reference tag literal](/clojure-web-services/service-repl-workflow/integrant/#aero-and-integrant)
 
 
 ## Profiles
