@@ -17,6 +17,11 @@ Require the `aero.core` library and use the `read-config` function to process an
 (aero/read-config "config.edn")
 ```
 
+??? HINT "resources/config.edn commonly used with aero"
+    System EDN configuration loaded at runtime are created within the `resources` directory which is typically defined as part of the class path and therefore available even when the service is packaged in a jar file.
+
+    `clojure.java.io/resource` reads a file from the `resources` directory, the resulting file can be passed to the aero.core/reader fuction with an optional profile value.
+
 
 ## Aero Tag Literals
 
