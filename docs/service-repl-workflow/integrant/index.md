@@ -1,16 +1,16 @@
 # Integrant Overview
 
-[Integrant](integrant.md) manages the life-cycle of components that are composed to create the Clojure service, i.e. start, stop, restart.
+[:fontawesome-solid-book-open: Integrant](integrant-system.md) manages the life-cycle of components that are composed to create the Clojure service, i.e. start, stop, restart.
 
 Integrant uses a declarative configuration (`resources/config.edn`) to define a system configuration.
 
-Components are managed using runtime polymorphism, i.e. `defmethod`, to define how each component is managed. 
+Components are managed using runtime polymorphism, i.e. `defmethod`, to define how each component is managed.
 
-- `init-key` start a component 
+- `init-key` start a component
 - `halt-key!` stop a component
 
 
-[Integrant REPL](integrant-repl.md) manages components during development to restart the services, loading all code changes into the REPL (especially useful after ranaming functions and namespaces)
+[:fontawesome-solid-book-open: Integrant REPL](integrant-repl.md) manages components during development to restart the services, loading all code changes into the REPL (especially useful after ranaming functions and namespaces)
 
 `integrant.repl.state/config` shows the configuration used to start the service.  `integrant.repl.state/system` to inspect the configuration state of the running system.
 
@@ -30,10 +30,10 @@ Use a shared `resources/config.edn` file with Integrant for consistency.  Or if 
      {:handler #ig/ref :practicalli.gameboard.service/router
       :port  8888
       :join? false}
-    
+
      :practicalli.gameboard.service/router
      {:persistence #ig/ref :practicalli.gameboard.service/relational-store}
-    
+
      :practicalli.gameboard.service/relational-store
      {:connection  {:url "http://localhost/" :port 57207 :database "gameboard"}}}
     ```
@@ -71,19 +71,18 @@ Integrant uses the `#ig/ref` tag literal to define a references to anther compon
 
 ## Aero and Integrant
 
-[Aero](aero.md) defines a range of tag literals that can be used in a system configuration.
+[:fontawesome-solid-book-open: Aero](/clojure-web-services/service-repl-workflow/aero/) defines a range of tag literals that can be used in a system configuration.
 
 Aero does not include the `#ig/ref` reference so needs to be taught how to handle this tag using a `defmethod`.
 
-```clojure title="Define ig/ref tag for Aero reader"
-(defmethod aero/reader 'ig/ref
-  [_ tag value]
-  (ig/ref value))
-```
+!!! EXAMPLE "Define integrant ref tag for Aero reader"
+    ```clojure title="Define ig/ref tag for Aero reader"
+    (defmethod aero/reader 'ig/ref
+      [_ tag value]
+      (ig/ref value))
+    ```
 
 Now aero can parse a system configuration EDN file that contains Integrant references
-
-
 
 
 ## Integrant System Configuration
@@ -102,6 +101,3 @@ Define the request router as a composite component including these dependant com
       {:persistence #ig/ref :practicalli.gameboard.service/relational-store
        :data-provider #ig/ref :practicalli.gameboard.service/data-provider}}
     ```
-
-
-
