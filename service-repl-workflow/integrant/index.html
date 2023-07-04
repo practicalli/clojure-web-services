@@ -4526,14 +4526,14 @@
 
 
 <h1 id="integrant-overview">Integrant Overview<a class="headerlink" href="#integrant-overview" title="Permanent link">λ︎</a></h1>
-<p><a href="integrant.md">Integrant</a> manages the life-cycle of components that are composed to create the Clojure service, i.e. start, stop, restart.</p>
+<p><a href="integrant-system/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Integrant</a> manages the life-cycle of components that are composed to create the Clojure service, i.e. start, stop, restart.</p>
 <p>Integrant uses a declarative configuration (<code>resources/config.edn</code>) to define a system configuration.</p>
-<p>Components are managed using runtime polymorphism, i.e. <code>defmethod</code>, to define how each component is managed. </p>
+<p>Components are managed using runtime polymorphism, i.e. <code>defmethod</code>, to define how each component is managed.</p>
 <ul>
-<li><code>init-key</code> start a component </li>
+<li><code>init-key</code> start a component</li>
 <li><code>halt-key!</code> stop a component</li>
 </ul>
-<p><a href="integrant-repl.md">Integrant REPL</a> manages components during development to restart the services, loading all code changes into the REPL (especially useful after ranaming functions and namespaces)</p>
+<p><a href="integrant-repl.md"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Integrant REPL</a> manages components during development to restart the services, loading all code changes into the REPL (especially useful after ranaming functions and namespaces)</p>
 <p><code>integrant.repl.state/config</code> shows the configuration used to start the service.  <code>integrant.repl.state/system</code> to inspect the configuration state of the running system.</p>
 <p>Integrant and Integrant REPL can share the same system configuration file, although are otherwise separate ways of working with a system.</p>
 <h2 id="integrant-configuration">Integrant configuration<a class="headerlink" href="#integrant-configuration" title="Permanent link">λ︎</a></h2>
@@ -4578,12 +4578,15 @@
 </ul>
 </details>
 <h2 id="aero-and-integrant">Aero and Integrant<a class="headerlink" href="#aero-and-integrant" title="Permanent link">λ︎</a></h2>
-<p><a href="aero.md">Aero</a> defines a range of tag literals that can be used in a system configuration.</p>
+<p><a href="/clojure-web-services/service-repl-workflow/aero/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Aero</a> defines a range of tag literals that can be used in a system configuration.</p>
 <p>Aero does not include the <code>#ig/ref</code> reference so needs to be taught how to handle this tag using a <code>defmethod</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Define integrant ref tag for Aero reader</p>
 <div class="highlight"><span class="filename">Define ig/ref tag for Aero reader</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="kd">defmethod </span><span class="nv">aero/reader</span><span class="w"> </span><span class="ss">&#39;ig/ref</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">_</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="nv">value</span><span class="p">]</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">ig/ref</span><span class="w"> </span><span class="nv">value</span><span class="p">))</span>
 </code></pre></div>
+</div>
 <p>Now aero can parse a system configuration EDN file that contains Integrant references</p>
 <h2 id="integrant-system-configuration">Integrant System Configuration<a class="headerlink" href="#integrant-system-configuration" title="Permanent link">λ︎</a></h2>
 <p>The system configuration is a hash-map with each component defined as a top-level key and its associated values (a hash-map of key-value pairs). Component dependencies are defined by including a component key within the definition of another component.</p>
@@ -4603,7 +4606,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 3, 2023</span>
       
     
   </small>
