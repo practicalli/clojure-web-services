@@ -42,6 +42,20 @@ provide examples of libraries working together.
     Clojure does not focus on the classic framework approach like Rails or Spring, for this reason.
 
 
+## Navigate the book
+
+Use the mouse or built-in key bindings to navigate the pages of the book
+
+- ++p++ , ++comma++ : go to previous page
+- ++n++ , ++period++ : go to next page
+
+Use the search box to quickly find a specific topic
+
+- ++f++ , ++s++ , ++slash++ : open search dialog
+- ++arrow-down++ , ++arrow-up++ : select next / previous result
+- ++esc++ , ++tab++ : close search dialog
+- ++enter++ : follow selected result
+
 
 ## Sponsor my work
 
