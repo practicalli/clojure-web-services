@@ -13,15 +13,15 @@ Include the bundled distribution containing all modules
 
 === "Clojure CLI"
 
-```clojure title="deps.edn"
-metosin/reitit {:mvn/version "0.7.0-alpha5"}
-```
+    ```clojure title="deps.edn"
+    metosin/reitit {:mvn/version "0.7.0-alpha5"}
+    ```
 
 === "Leiningen"
 
-```clojure
-[metosin/reitit "0.7.0-alpha5"]
-```
+    ```clojure
+    [metosin/reitit "0.7.0-alpha5"]
+    ```
 
 
 ## Require namespace
@@ -30,16 +30,16 @@ Require the reitit.ring namespace to provide routing and ring specification supp
 
 === "Project"
 
-```clojure
-(:require 
- [reitit.ring :as ring])
-```
+    ```clojure
+    (:require 
+     [reitit.ring :as ring])
+    ```
 
 === "REPL"
 
-```clojure
-(require '[reitit.ring :as ring])
-```
+    ```clojure
+    (require '[reitit.ring :as ring])
+    ```
 
 ## Router function
 
@@ -48,7 +48,6 @@ Takes all requests and delegates them to handler functions
 Routes are defined as a vector of vectors structure, with each nested vector containing a string key defining unique paths that match a specific request.
 
 Each key has a configuration map to define a handler for a specific HTTP method (`:get` `:ost` etc.)
-
 
 ```clojure
 (def router
