@@ -180,11 +180,11 @@ nav:
 
       # - Game Scoreboard:
       #     - projects/game-scoreboard-api/index.md
-      #     - server-side-api/projects/game-scoreboard/index.md
-      #     - server-side-api/projects/game-scoreboard/defining-scoreboard.md
-      #     - server-side-api/projects/game-scoreboard/defining-scores.md
-      #     - server-side-api/projects/game-scoreboard-ui/index.md
-      #     - server-side-api/projects/game-scoreboard-ui/create-project.md
+      #     - building-api/projects/game-scoreboard/index.md
+      #     - building-api/projects/game-scoreboard/defining-scoreboard.md
+      #     - building-api/projects/game-scoreboard/defining-scores.md
+      #     - building-api/projects/game-scoreboard-ui/index.md
+      #     - building-api/projects/game-scoreboard-ui/create-project.md
       - URL Shortner:
           - project-url-shortner/index.md
           - project-url-shortner/create-project.md
@@ -326,23 +326,25 @@ nav:
       - app-servers/set-listen-port.md
       - app-servers/static-content.md
   - Building API:
-      - server-side-api/index.md
-      - server-side-api/compojure-api-template.md
-      - server-side-api/create-compojure-api-project.md
-      - server-side-api/swagger.md
-      - server-side-api/ring-swagger.md
-      - server-side-api/plumatic-schema.md
-      - server-side-api/json-files.md
-      - server-side-api/testing-api.md
-      - server-side-api/ring-mock.md
-      - server-side-api/cheshire.md
+      - building-api/index.md
+      - Reitit:
+          - building-api/index.md
+      - building-api/compojure-api-template.md
+      - building-api/create-compojure-api-project.md
+      - building-api/swagger.md
+      - building-api/ring-swagger.md
+      - building-api/plumatic-schema.md
+      - building-api/json-files.md
+      - building-api/testing-api.md
+      - building-api/ring-mock.md
+      - building-api/cheshire.md
       - End to end testing:
-          - server-side-api/end-to-end-testing/index.md
-          # - server-side-api/end-to-end-testing/swagger.md
-          # - server-side-api/end-to-end-testing/curl.md
-          # - server-side-api/end-to-end-testing/httpie.md
-          # - server-side-api/end-to-end-testing/postman.md
-      - server-side-api/terminology.md
+          - building-api/end-to-end-testing/index.md
+          # - building-api/end-to-end-testing/swagger.md
+          # - building-api/end-to-end-testing/curl.md
+          # - building-api/end-to-end-testing/httpie.md
+          # - building-api/end-to-end-testing/postman.md
+      - building-api/terminology.md
   - Persistence:
       - clojure-databases/index.md
       - Relational:
