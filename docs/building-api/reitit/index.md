@@ -86,7 +86,7 @@ Handler functions are Clojure functions that take a request map.
   {:status 200 :body "Awesome Reitit Ring"})
 ```
 
-`constantly` function is commonly used for handlers, returning an anonymous function that takes the ring request hash-map.
+`constantly` function is commonly used for handlers that do not use the request data initially. `constantly` returns an anonymous function that takes the ring request hash-map.
 
 ```clojure
 (def status
