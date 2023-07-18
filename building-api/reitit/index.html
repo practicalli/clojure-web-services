@@ -4569,37 +4569,33 @@
 <p>Provides content negotiation and data validation.</p>
 <h2 id="library-dependency">Library Dependency<a class="headerlink" href="#library-dependency" title="Permanent link">λ︎</a></h2>
 <p>Include the bundled distribution containing all modules</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Clojure CLI</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Clojure CLI</label><label for="__tabbed_1_2">Leiningen</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">deps.edn</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">metosin/reitit</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.7.0-alpha5&quot;</span><span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Leiningen</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[</span><span class="nv">metosin/reitit</span><span class="w"> </span><span class="s">&quot;0.7.0-alpha5&quot;</span><span class="p">]</span>
 </code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="require-namespace">Require namespace<a class="headerlink" href="#require-namespace" title="Permanent link">λ︎</a></h2>
 <p>Require the reitit.ring namespace to provide routing and ring specification support.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Project</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Project</label><label for="__tabbed_2_2">REPL</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="ss">:require</span><span class="w"> </span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span><span class="p">[</span><span class="nv">reitit.ring</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">ring</span><span class="p">])</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">REPL</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">reitit.ring</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">ring</span><span class="p">])</span>
 </code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="router-function">Router function<a class="headerlink" href="#router-function" title="Permanent link">λ︎</a></h2>
 <p>Takes all requests and delegates them to handler functions</p>
 <p>Routes are defined as a vector of vectors structure, with each nested vector containing a string key defining unique paths that match a specific request.</p>
@@ -4631,7 +4627,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">welcome</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:status</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="ss">:body</span><span class="w"> </span><span class="s">&quot;Awesome Reitit Ring&quot;</span><span class="p">})</span>
 </code></pre></div>
-<p><code>constantly</code> function is commonly used for handlers, returning an anonymous function that takes the ring request hash-map.</p>
+<p><code>constantly</code> function is commonly used for handlers that do not use the request data initially. <code>constantly</code> returns an anonymous function that takes the ring request hash-map.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">status</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">constantly </span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">ring.util.response/response</span><span class="w"> </span>
