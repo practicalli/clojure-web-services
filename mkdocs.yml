@@ -328,7 +328,7 @@ nav:
   - Building API:
       - building-api/index.md
       - Reitit:
-          - building-api/index.md
+          - building-api/reitit/index.md
       - building-api/compojure-api-template.md
       - building-api/create-compojure-api-project.md
       - building-api/swagger.md
