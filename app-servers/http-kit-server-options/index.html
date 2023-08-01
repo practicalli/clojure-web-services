@@ -28,7 +28,7 @@
         <link rel="next" href="../route-requests/">
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
@@ -4540,74 +4540,74 @@
 <table>
 <thead>
 <tr>
-<th align="left">Options</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Options</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>:ip</code></td>
-<td align="left">Which ip (if has many ips) to bind</td>
+<td style="text-align: left;"><code>:ip</code></td>
+<td style="text-align: left;">Which ip (if has many ips) to bind</td>
 </tr>
 <tr>
-<td align="left"><code>:port</code></td>
-<td align="left">Which port listen incomming request</td>
+<td style="text-align: left;"><code>:port</code></td>
+<td style="text-align: left;">Which port listen incomming request</td>
 </tr>
 <tr>
-<td align="left"><code>:thread</code></td>
-<td align="left">Http worker thread count</td>
+<td style="text-align: left;"><code>:thread</code></td>
+<td style="text-align: left;">Http worker thread count</td>
 </tr>
 <tr>
-<td align="left"><code>:queue-size</code></td>
-<td align="left">Max job queued before reject to project self</td>
+<td style="text-align: left;"><code>:queue-size</code></td>
+<td style="text-align: left;">Max job queued before reject to project self</td>
 </tr>
 <tr>
-<td align="left"><code>:max-body</code></td>
-<td align="left">Max http body: 8m</td>
+<td style="text-align: left;"><code>:max-body</code></td>
+<td style="text-align: left;">Max http body: 8m</td>
 </tr>
 <tr>
-<td align="left"><code>:max-ws</code></td>
-<td align="left">Max websocket message size</td>
+<td style="text-align: left;"><code>:max-ws</code></td>
+<td style="text-align: left;">Max websocket message size</td>
 </tr>
 <tr>
-<td align="left"><code>:max-line</code></td>
-<td align="left">Max http inital line length</td>
+<td style="text-align: left;"><code>:max-line</code></td>
+<td style="text-align: left;">Max http inital line length</td>
 </tr>
 <tr>
-<td align="left"><code>:proxy-protocol</code></td>
-<td align="left">Proxy protocol e/o #{:disable :enable :optional}</td>
+<td style="text-align: left;"><code>:proxy-protocol</code></td>
+<td style="text-align: left;">Proxy protocol e/o #{:disable :enable :optional}</td>
 </tr>
 <tr>
-<td align="left"><code>:worker-name-prefix</code></td>
-<td align="left">Worker thread name prefix</td>
+<td style="text-align: left;"><code>:worker-name-prefix</code></td>
+<td style="text-align: left;">Worker thread name prefix</td>
 </tr>
 <tr>
-<td align="left"><code>:worker-pool</code></td>
-<td align="left">ExecutorService to use for request-handling (:thread, :worker-name-prefix, :queue-size are ignored if set)</td>
+<td style="text-align: left;"><code>:worker-pool</code></td>
+<td style="text-align: left;">ExecutorService to use for request-handling (:thread, :worker-name-prefix, :queue-size are ignored if set)</td>
 </tr>
 <tr>
-<td align="left"><code>:error-logger</code></td>
-<td align="left">Arity-2 fn (args: string text, exception) to log errors</td>
+<td style="text-align: left;"><code>:error-logger</code></td>
+<td style="text-align: left;">Arity-2 fn (args: string text, exception) to log errors</td>
 </tr>
 <tr>
-<td align="left"><code>:warn-logger</code></td>
-<td align="left">Arity-2 fn (args: string text, exception) to log warnings</td>
+<td style="text-align: left;"><code>:warn-logger</code></td>
+<td style="text-align: left;">Arity-2 fn (args: string text, exception) to log warnings</td>
 </tr>
 <tr>
-<td align="left"><code>:event-logger</code></td>
-<td align="left">Arity-1 fn (arg: string event name)</td>
+<td style="text-align: left;"><code>:event-logger</code></td>
+<td style="text-align: left;">Arity-1 fn (arg: string event name)</td>
 </tr>
 <tr>
-<td align="left"><code>:event-names</code></td>
-<td align="left">map of HTTP-Kit event names to respective loggable event names</td>
+<td style="text-align: left;"><code>:event-names</code></td>
+<td style="text-align: left;">map of HTTP-Kit event names to respective loggable event names</td>
 </tr>
 <tr>
-<td align="left"><code>:server-header</code></td>
-<td align="left">The "Server" header. If missing, defaults to "http-kit", disabled if nil.</td>
+<td style="text-align: left;"><code>:server-header</code></td>
+<td style="text-align: left;">The "Server" header. If missing, defaults to "http-kit", disabled if nil.</td>
 </tr>
 <tr>
-<td align="left"><code>:legacy-return-value?</code></td>
-<td align="left">true  (default) returns a (fn stop-server [&amp; {:keys [timeout] :or {timeout 100}}]) ; false (recommended) Returns the HttpServer which can be used with <code>server-port</code>, ; <code>server-status</code>, <code>server-stop!</code>, etc.</td>
+<td style="text-align: left;"><code>:legacy-return-value?</code></td>
+<td style="text-align: left;">true  (default) returns a (fn stop-server [&amp; {:keys [timeout] :or {timeout 100}}]) ; false (recommended) Returns the HttpServer which can be used with <code>server-port</code>, ; <code>server-status</code>, <code>server-stop!</code>, etc.</td>
 </tr>
 </tbody>
 </table>
