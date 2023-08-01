@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- ci: spell lychee & repository trufflehog linters warn only (false positives) 
 
 ### Added
 - building-api: add reitit overview and quick intro
