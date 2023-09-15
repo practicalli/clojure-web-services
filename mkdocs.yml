@@ -144,6 +144,11 @@ nav:
   - Projects:
       - projects/index.md
       # - full-app/index.md
+      - Slack App:
+          - projects/slack-app/index.md
+          - Create Slack App: projects/slack-app/create-slack-app.md
+          - projects/slack-app/slack-scopes.md
+          - projects/slack-app/slack-api-methods.md
       - Status Monitor:
           - projects/status-monitor-deps/index.md
           - Application Server: projects/status-monitor-deps/application-server.md
