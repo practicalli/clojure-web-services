@@ -946,6 +946,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/clojure-web-services/projects/slack-app/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure-web-services/projects/slack-app/create-slack-app/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure-web-services/projects/slack-app/slack-api-methods/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure-web-services/projects/slack-app/slack-scopes/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/clojure-web-services/projects/status-monitor-deps/</loc>
          <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
