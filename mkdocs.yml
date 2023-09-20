@@ -138,11 +138,11 @@ nav:
       - Mulog Events: service-repl-workflow/mulog-events.md
       - System REPL: service-repl-workflow/system-repl.md
       - Aero: service-repl-workflow/aero.md
+      - Donut System: service-repl-workflow/donut-system.md
       - Integrant:
           - service-repl-workflow/integrant/index.md
           - Integrant System: service-repl-workflow/integrant/integrant-system.md
           - Integrant REPL: service-repl-workflow/integrant/repl.md
-      - Donut System: service-repl-workflow/donut-system.md
 
   - Projects:
       - projects/index.md
