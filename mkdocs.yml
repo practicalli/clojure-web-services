@@ -126,7 +126,7 @@ extra:
 # Navigation
 nav:
   - Introduction:
-      - index.md
+      - Practicalli Clojure Web Services: index.md
       - Overview: introduction/overview.md
       - Requirements: introduction/requirements.md
       - REPL Workflow: introduction/repl-workflow.md
