@@ -1,22 +1,29 @@
 # Donut System
 
-!!! WARNING "Draft page"
-    This is an early draft of using Donut to manage system components, although all the code does work when added to a project created with [Practicalli Project Templates](https://github.com/practicalli/project-templates/) - `practicalli/service` template.  Some of the writing and examples may be improved as more is learned about Donut
-
-
 [Donut system](https://github.com/donut-party/system) takes a system as data approach, using a hash-map to define the overall system with keys to define each component (or component group) in that system.
 
 Component definitions are also a hash-map with `:start`, `:stop`, `:config` keys to express how to manage that component
 
+> Donut system configuration is a similar data-centric approach to that used by reitit for http request routing.
+
 ??? WARNING "Practicalli uses ::donut alias instead of ::ds"
-    Practicalli requires the donut qualified keywords using `donut` rather than the more cryptic `ds`
+    The `donut.system` library is required using the `:as donut` alias.
 
-    Practicalli recommends meaningful alias names or not using an alias at all, instead requiring specific functions.  This makes code easier to read and searching  considerably easier (fewer false matches)
+    `::donut` is used as the keyword qualifier
+
+    Practicalli recommends meaningful names to make code easier to read and searching  considerably simpler (fewer false matches)
 
 
+## Create project with Donut
 
-> Donut system configuration is a similar approach to that used by reitit for http request routing.
+`practicalli/service` template from [:fontawesome-solid-book-open: Practicalli Project Templates](https://github.com/practicalli/project-templates/){target=_blank} can be given a `:component` option to include the Donut System library and example code.
 
+`:project/create` alias from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/){target=_blank}
+
+!!! EXAMPLE "Create Clojure Web Service project with Donut"
+    ```shell
+    clojure -T:project/create :template practicalli/service :component :donut :name practicalli/web-service-name
+    ```
 
 ## Including Donut
 
