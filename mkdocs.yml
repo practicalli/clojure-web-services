@@ -135,6 +135,7 @@ nav:
   - Service REPL Workflow:
       - service-repl-workflow/index.md
       - Portal: service-repl-workflow/portal.md
+      - Mulog Events: service-repl-workflow/mulog-events.md
       - Aero: service-repl-workflow/aero.md
       - Integrant:
           - service-repl-workflow/integrant/index.md
