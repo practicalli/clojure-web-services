@@ -1,6 +1,21 @@
 # Mulog
 
-Mulog is an fast and flexible event log library with a wide range of log publisher (Cloudwatch, ..., etc.)
+[:fontawesome-brands-github: Mulog](https://github.com/BrunoBonacci/mulog) is library that defines log events as data, with a wide range of publisher for [:globe_with_meridians: popular log aggregation services](https://github.com/BrunoBonacci/mulog#publishers), e.g. Elastic Search, Cloudwatch, Kinesis, Prometheus, etc.)
+
+Creating a custom publisher, all mulog events can be sent to portal data inspector.
+
+![Portal - mulog event messages tap>](https://github.com/practicalli/graphic-design/blob/live/portal/portal-mulog-tap-publisher-repl-startup-dark.png?raw=true){loading=lazy}
+
+
+## Mulog configuration
+
+`mulog/set-global-context!` defines key/value pairs included in every mulog event allowing a separate context to be used for logs, e.g. `:env :dev` indicating development time events.
+
+`TapPublisher` defines a custom Mulog publisher which wraps `tap>` around every mulog event created, sending each mulog event to Portal.
+
+`tap-publisher` is a var that starts the custom mulog publisher, providing a reference to the publisher so it can be shut down.
+
+`stop` function is provided as a convienient way to stop the publisher via the REPL.
 
 !!! EXAMPLE "Mulog events publisher"
     ```clojure title="dev/mulog_events.clj"
@@ -20,7 +35,7 @@ Mulog is an fast and flexible event log library with a wide range of log publish
     ;; ---------------------------------------------------------
     ;; Set event global context
     ;; - information added to every event for REPL workflow
-    (mulog/set-global-context! {:app-name "todo-tracker Service",
+    (mulog/set-global-context! {:service-name "todo-tracker Service",
                                 :version "0.1.0", :env "dev"})
     ;; ---------------------------------------------------------
 
