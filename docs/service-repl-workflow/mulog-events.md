@@ -6,6 +6,15 @@ Creating a custom publisher, all mulog events can be sent to portal data inspect
 
 ![Portal - mulog event messages tap>](https://github.com/practicalli/graphic-design/blob/live/portal/portal-mulog-tap-publisher-repl-startup-dark.png?raw=true){loading=lazy}
 
+## Mulog event
+
+`mulog/log` function is used to define an event message.  The first argument is a unique event name, followed by key/value pairs that define the contents of the message.
+
+!!! EXAMPLE "Simple Mulog Event"
+    ```clojure
+    mulog/log ::dev-user-ns :message "Example event message" :ns (ns-publics *ns*))
+    ```
+
 
 ## Mulog configuration
 
@@ -71,8 +80,6 @@ Creating a custom publisher, all mulog events can be sent to portal data inspect
       []
       tap-publisher)
 
-    ;; Example mulog event message
-    ;; (mulog/log ::dev-user-ns :message "Example event message" :ns (ns-publics *ns*))
     ;; ---------------------------------------------------------
     ```
 
