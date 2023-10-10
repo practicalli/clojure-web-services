@@ -29,7 +29,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.5">
     
     
       
@@ -37,10 +37,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6a10b989.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.649f08f9.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -166,47 +166,84 @@
     </div>
     
     
-      
+      <!-- Determine classes -->
+   
 
-  
-
+<!-- Header -->
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Practicalli Clojure Web Services" class="md-header__button md-logo" aria-label="Practicalli Clojure Web Services" data-md-component="logo">
+    <!-- Link to home -->
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+
+    <!-- Custom: Link to Practical.li -->
+    <a
+      href="https://practical.li"
+      title="https://practical.li"
+      class="md-header__button md-logo"
+      aria-label="https://practical.li"
+      data-md-component="logo"
+      target="_blank"
+    >
       
   <img src="../../assets/images/practicalli-logo.png" alt="logo">
 
     </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
+
+    <!-- Header title -->
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
-          <span class="md-ellipsis">
-            Practicalli Clojure Web Services
-          </span>
+          <a
+            href="https://practical.li/clojure-web-services/"
+            title="Practicalli Clojure Web Services"
+            aria-label="Practicalli Clojure Web Services"
+          >
+            <span class="md-ellipsis"> Practicalli Clojure Web Services </span>
+          </a>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-            
-              Mulog Events
-            
+             Mulog Events 
           </span>
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
+
+    <!-- Color palette toggle -->
+     
+    <!-- Added to support header.html partial -->
+<!-- - no changes applied -->
+
+<!-- Color palette toggle -->
+<form class="md-header__option" data-md-component="palette">
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input
+      class="md-option"
+      data-md-color-media="(prefers-color-scheme: light)"
+      data-md-color-scheme="default"
+      data-md-color-primary="blue"
+      data-md-color-accent="deep-purple"
+      
+        aria-label="Switch to dark mode"
+      
+      type="radio"
+      name="__palette"
+      id="__palette_1"
+    />
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+      <label
+        class="md-header__button md-icon"
+        title="Switch to dark mode"
+        for="__palette_2"
+        hidden
+      >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
       </label>
     
@@ -214,23 +251,43 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    <input
+      class="md-option"
+      data-md-color-media="(prefers-color-scheme: dark)"
+      data-md-color-scheme="slate"
+      data-md-color-primary="blue"
+      data-md-color-accent="indigo"
+      
+        aria-label="Switch to light mode"
+      
+      type="radio"
+      name="__palette"
+      id="__palette_2"
+    />
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+      <label
+        class="md-header__button md-icon"
+        title="Switch to light mode"
+        for="__palette_1"
+        hidden
+      >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
       </label>
     
   
-</form>
-      
+</form>  
+
+    <!-- Site language selector -->
     
+
+    <!-- Button to open search modal -->
     
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    <label class="md-header__button md-icon" for="__search">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+
+    <!-- Search interface -->
+    <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -261,11 +318,11 @@
       </div>
     </div>
   </div>
-</div>
+</div> 
+
+    <!-- Repository information -->
     
-    
-      <div class="md-header__source">
-        <a href="https://github.com/practicalli/clojure-web-services/" title="Go to repository" class="md-source" data-md-component="source" target="_blank">
+    <div class="md-header__source"><a href="https://github.com/practicalli/clojure-web-services/" title="Go to repository" class="md-source" data-md-component="source" target="_blank">
     <div class="md-source__icon md-icon">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -273,10 +330,11 @@
     <div class="md-source__repository">
         GitHub
     </div>
-</a>
-      </div>
+</a></div>
     
   </nav>
+
+  <!-- Navigation tabs (sticky) -->
   
 </header>
     
@@ -347,9 +405,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -368,7 +427,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_1">
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -518,9 +578,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-        
         
         
         
@@ -539,7 +600,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_2">
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -624,6 +686,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mulog-event" class="md-nav__link">
+    Mulog event
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#mulog-configuration" class="md-nav__link">
@@ -719,9 +788,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -740,7 +810,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_2_7">
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -834,9 +905,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -855,7 +927,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3">
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -890,9 +963,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -911,7 +985,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_2">
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1020,9 +1095,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -1041,7 +1117,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_3">
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1246,9 +1323,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -1267,7 +1345,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_4">
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1834,9 +1913,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -1855,7 +1935,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_5">
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2424,9 +2505,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -2445,7 +2527,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6">
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2478,9 +2561,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -2499,7 +2583,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_2">
+              
+              <label class="md-nav__link " for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2592,9 +2677,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -2613,7 +2699,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_3">
+              
+              <label class="md-nav__link " for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2838,9 +2925,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -2859,7 +2947,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_5">
+              
+              <label class="md-nav__link " for="__nav_3_6_5" id="__nav_3_6_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -3002,9 +3091,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -3023,7 +3113,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_7">
+              
+              <label class="md-nav__link " for="__nav_3_6_7" id="__nav_3_6_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -3144,9 +3235,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -3165,7 +3257,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_8">
+              
+              <label class="md-nav__link " for="__nav_3_6_8" id="__nav_3_6_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -3450,9 +3543,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -3471,7 +3565,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_9">
+              
+              <label class="md-nav__link " for="__nav_3_6_9" id="__nav_3_6_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -3594,9 +3689,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -3615,7 +3711,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_10">
+              
+              <label class="md-nav__link " for="__nav_3_6_10" id="__nav_3_6_10_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -3722,9 +3819,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -3743,7 +3841,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_11">
+              
+              <label class="md-nav__link " for="__nav_3_6_11" id="__nav_3_6_11_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -3906,9 +4005,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -3927,7 +4027,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_12">
+              
+              <label class="md-nav__link " for="__nav_3_6_12" id="__nav_3_6_12_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -4180,9 +4281,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -4201,7 +4303,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_12_13">
+              
+              <label class="md-nav__link " for="__nav_3_6_12_13" id="__nav_3_6_12_13_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -4288,9 +4391,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -4309,7 +4413,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_12_14">
+              
+              <label class="md-nav__link " for="__nav_3_6_12_14" id="__nav_3_6_12_14_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -4460,9 +4565,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -4481,7 +4587,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_3_6_13">
+              
+              <label class="md-nav__link " for="__nav_3_6_13" id="__nav_3_6_13_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -4647,9 +4754,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -4668,7 +4776,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_4">
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -5068,9 +5177,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -5089,7 +5199,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_5">
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -5118,9 +5229,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -5352,9 +5464,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -5435,9 +5548,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -5456,7 +5570,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_6">
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -5501,9 +5616,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -5522,7 +5638,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_6_2">
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -5681,9 +5798,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -5702,7 +5820,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_6_2_8">
+              
+              <label class="md-nav__link " for="__nav_6_2_8" id="__nav_6_2_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -5854,9 +5973,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -5917,9 +6037,10 @@
       
     
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         
@@ -5938,7 +6059,8 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_8">
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -6047,6 +6169,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#mulog-event" class="md-nav__link">
+    Mulog event
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mulog-configuration" class="md-nav__link">
     Mulog configuration
   </a>
@@ -6088,6 +6217,13 @@
 <p><a href="https://github.com/BrunoBonacci/mulog"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> Mulog</a> is library that defines log events as data, with a wide range of publisher for <a href="https://github.com/BrunoBonacci/mulog#publishers"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> popular log aggregation services</a>, e.g. Elastic Search, Cloudwatch, Kinesis, Prometheus, etc.)</p>
 <p>Creating a custom publisher, all mulog events can be sent to portal data inspector.</p>
 <p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/portal/portal-mulog-tap-publisher-repl-startup-dark.png?raw=true" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Portal - mulog event messages tap&gt;" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/portal/portal-mulog-tap-publisher-repl-startup-dark.png?raw=true" /></a></p>
+<h2 id="mulog-event">Mulog event<a class="headerlink" href="#mulog-event" title="Permanent link">λ︎</a></h2>
+<p><code>mulog/log</code> function is used to define an event message.  The first argument is a unique event name, followed by key/value pairs that define the contents of the message.</p>
+<div class="admonition example">
+<p class="admonition-title">Simple Mulog Event</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">mulog/log</span><span class="w"> </span><span class="ss">::dev-user-ns</span><span class="w"> </span><span class="ss">:message</span><span class="w"> </span><span class="s">&quot;Example event message&quot;</span><span class="w"> </span><span class="ss">:ns</span><span class="w"> </span><span class="p">(</span><span class="nb">ns-publics </span><span class="nv">*ns*</span><span class="p">))</span>
+</code></pre></div>
+</div>
 <h2 id="mulog-configuration">Mulog configuration<a class="headerlink" href="#mulog-configuration" title="Permanent link">λ︎</a></h2>
 <p><code>mulog/set-global-context!</code> defines key/value pairs included in every mulog event allowing a separate context to be used for logs, e.g. <code>:env :dev</code> indicating development time events.</p>
 <p><code>TapPublisher</code> defines a custom Mulog publisher which wraps <code>tap&gt;</code> around every mulog event created, sending each mulog event to Portal.</p>
@@ -6095,61 +6231,59 @@
 <p><code>stop</code> function is provided as a convienient way to stop the publisher via the REPL.</p>
 <div class="admonition example">
 <p class="admonition-title">Mulog events publisher</p>
-<div class="highlight"><span class="filename">dev/mulog_events.clj</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">;; ---------------------------------------------------------</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">;; Mulog Global Context and Custom Publisher</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">;;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">;; - set event log global context</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">;; - tap publisher for use with Portal and other tap sources</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">;; - publish all mulog events to Portal tap source</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">;; ---------------------------------------------------------</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">mulog-events</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">   </span><span class="p">[</span><span class="nv">com.brunobonacci.mulog</span><span class="w">        </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog</span><span class="p">]</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">   </span><span class="p">[</span><span class="nv">com.brunobonacci.mulog.buffer</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog-buffer</span><span class="p">]))</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1">;; ---------------------------------------------------------</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1">;; Set event global context</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">;; - information added to every event for REPL workflow</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">(</span><span class="nf">mulog/set-global-context!</span><span class="w"> </span><span class="p">{</span><span class="ss">:service-name</span><span class="w"> </span><span class="s">&quot;todo-tracker Service&quot;</span>,
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">                            </span><span class="ss">:version</span><span class="w"> </span><span class="s">&quot;0.1.0&quot;</span>,<span class="w"> </span><span class="ss">:env</span><span class="w"> </span><span class="s">&quot;dev&quot;</span><span class="p">})</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1">;; ---------------------------------------------------------</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1">;; ---------------------------------------------------------</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1">;; Mulog event publishing</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="p">(</span><span class="kd">deftype </span><span class="nv">TapPublisher</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">         </span><span class="p">[</span><span class="nv">buffer</span><span class="w"> </span><span class="nv">transform</span><span class="p">]</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="nv">com.brunobonacci.mulog.publisher.PPublisher</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span><span class="p">(</span><span class="nf">agent-buffer</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span><span class="w"> </span><span class="nv">buffer</span><span class="p">)</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">  </span><span class="p">(</span><span class="nf">publish-delay</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">  </span><span class="p">(</span><span class="nf">publish</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="w"> </span><span class="nv">buffer</span><span class="p">]</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">item</span><span class="w"> </span><span class="p">(</span><span class="nf">transform</span><span class="w"> </span><span class="p">(</span><span class="nb">map second </span><span class="p">(</span><span class="nf">mulog-buffer/items</span><span class="w"> </span><span class="nv">buffer</span><span class="p">)))]</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">      </span><span class="p">(</span><span class="nf">tap&gt;</span><span class="w"> </span><span class="nv">item</span><span class="p">))</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="p">(</span><span class="nf">mulog-buffer/clear</span><span class="w"> </span><span class="nv">buffer</span><span class="p">)))</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="o">#</span><span class="nv">_</span><span class="p">{</span><span class="ss">:clj-kondo/ignore</span><span class="w"> </span><span class="p">[</span><span class="ss">:unused-private-var</span><span class="p">]}</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="p">(</span><span class="kd">defn </span><span class="o">^</span><span class="ss">:private</span><span class="w"> </span><span class="nv">tap-events</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">transform</span><span class="p">]</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">_config</span><span class="p">}]</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="p">(</span><span class="nf">TapPublisher.</span><span class="w"> </span><span class="p">(</span><span class="nf">mulog-buffer/agent-buffer</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="nv">transform</span><span class="w"> </span><span class="nv">identity</span><span class="p">)))</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p">(</span><span class="k">def </span><span class="nv">tap-publisher</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">  </span><span class="s">&quot;Start mulog custom tap publisher to send all events to Portal</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="s">  and other tap sources</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="s">  `mulog-tap-publisher` to stop publisher&quot;</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">  </span><span class="p">(</span><span class="nf">mulog/start-publisher!</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">   </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:custom</span>,<span class="w"> </span><span class="ss">:fqn-function</span><span class="w"> </span><span class="s">&quot;mulog-events/tap-events&quot;</span><span class="p">}))</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="o">#</span><span class="nv">_</span><span class="p">{</span><span class="ss">:clj-kondo/ignore</span><span class="w"> </span><span class="p">[</span><span class="ss">:unused-public-var</span><span class="p">]}</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">  </span><span class="s">&quot;Stop mulog tap publisher to ensure multiple publishers are not started</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="s"> Recommended before using `(restart)` or evaluating the `user` namespace&quot;</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">  </span><span class="p">[]</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">  </span><span class="nv">tap-publisher</span><span class="p">)</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="c1">;; Example mulog event message</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="c1">;; (mulog/log ::dev-user-ns :message &quot;Example event message&quot; :ns (ns-publics *ns*))</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="c1">;; ---------------------------------------------------------</span>
+<div class="highlight"><span class="filename">dev/mulog_events.clj</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">;; Mulog Global Context and Custom Publisher</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">;;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">;; - set event log global context</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">;; - tap publisher for use with Portal and other tap sources</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">;; - publish all mulog events to Portal tap source</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">mulog-events</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">   </span><span class="p">[</span><span class="nv">com.brunobonacci.mulog</span><span class="w">        </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog</span><span class="p">]</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">   </span><span class="p">[</span><span class="nv">com.brunobonacci.mulog.buffer</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog-buffer</span><span class="p">]))</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1">;; Set event global context</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1">;; - information added to every event for REPL workflow</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">(</span><span class="nf">mulog/set-global-context!</span><span class="w"> </span><span class="p">{</span><span class="ss">:service-name</span><span class="w"> </span><span class="s">&quot;todo-tracker Service&quot;</span>,
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">                            </span><span class="ss">:version</span><span class="w"> </span><span class="s">&quot;0.1.0&quot;</span>,<span class="w"> </span><span class="ss">:env</span><span class="w"> </span><span class="s">&quot;dev&quot;</span><span class="p">})</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="c1">;; Mulog event publishing</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="p">(</span><span class="kd">deftype </span><span class="nv">TapPublisher</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">         </span><span class="p">[</span><span class="nv">buffer</span><span class="w"> </span><span class="nv">transform</span><span class="p">]</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">  </span><span class="nv">com.brunobonacci.mulog.publisher.PPublisher</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">  </span><span class="p">(</span><span class="nf">agent-buffer</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span><span class="w"> </span><span class="nv">buffer</span><span class="p">)</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">  </span><span class="p">(</span><span class="nf">publish-delay</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">  </span><span class="p">(</span><span class="nf">publish</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="w"> </span><span class="nv">buffer</span><span class="p">]</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">item</span><span class="w"> </span><span class="p">(</span><span class="nf">transform</span><span class="w"> </span><span class="p">(</span><span class="nb">map second </span><span class="p">(</span><span class="nf">mulog-buffer/items</span><span class="w"> </span><span class="nv">buffer</span><span class="p">)))]</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">      </span><span class="p">(</span><span class="nf">tap&gt;</span><span class="w"> </span><span class="nv">item</span><span class="p">))</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">    </span><span class="p">(</span><span class="nf">mulog-buffer/clear</span><span class="w"> </span><span class="nv">buffer</span><span class="p">)))</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="o">#</span><span class="nv">_</span><span class="p">{</span><span class="ss">:clj-kondo/ignore</span><span class="w"> </span><span class="p">[</span><span class="ss">:unused-private-var</span><span class="p">]}</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="p">(</span><span class="kd">defn </span><span class="o">^</span><span class="ss">:private</span><span class="w"> </span><span class="nv">tap-events</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">  </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">transform</span><span class="p">]</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">_config</span><span class="p">}]</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">  </span><span class="p">(</span><span class="nf">TapPublisher.</span><span class="w"> </span><span class="p">(</span><span class="nf">mulog-buffer/agent-buffer</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="nv">transform</span><span class="w"> </span><span class="nv">identity</span><span class="p">)))</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="p">(</span><span class="k">def </span><span class="nv">tap-publisher</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">  </span><span class="s">&quot;Start mulog custom tap publisher to send all events to Portal</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="s">  and other tap sources</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="s">  `mulog-tap-publisher` to stop publisher&quot;</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">  </span><span class="p">(</span><span class="nf">mulog/start-publisher!</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">   </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:custom</span>,<span class="w"> </span><span class="ss">:fqn-function</span><span class="w"> </span><span class="s">&quot;mulog-events/tap-events&quot;</span><span class="p">}))</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="o">#</span><span class="nv">_</span><span class="p">{</span><span class="ss">:clj-kondo/ignore</span><span class="w"> </span><span class="p">[</span><span class="ss">:unused-public-var</span><span class="p">]}</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">  </span><span class="s">&quot;Stop mulog tap publisher to ensure multiple publishers are not started</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="s"> Recommended before using `(restart)` or evaluating the `user` namespace&quot;</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">  </span><span class="p">[]</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">  </span><span class="nv">tap-publisher</span><span class="p">)</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="c1">;; ---------------------------------------------------------</span>
 </code></pre></div>
 </div>
 
@@ -6158,7 +6292,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2023</span>
       
     
   </small>
@@ -6180,10 +6314,10 @@
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            Back to top
-          </button>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -6194,7 +6328,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../portal/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Portal" rel="prev">
+          <a href="../portal/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Portal">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -6211,7 +6345,7 @@
         
         
           
-          <a href="../system-repl/" class="md-footer__link md-footer__link--next" aria-label="Next: System REPL" rel="next">
+          <a href="../system-repl/" class="md-footer__link md-footer__link--next" aria-label="Next: System REPL">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
@@ -6324,10 +6458,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
