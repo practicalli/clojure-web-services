@@ -3,6 +3,7 @@
 ## Unreleased
 - dev: spell lychee & repository trufflehog linters warn only (false positives) 
 - dev: action/checkout v4 with sparse-checkout for megalinter
+- dev: sparse-checkout for publish-book workflow
 
 ### Added
 - building-api: add reitit overview and quick intro
