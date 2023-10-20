@@ -17,35 +17,36 @@ Relevant theory and background reading is included whilst keeping the practical 
 
 
 ## Book status
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-web-services?style=for-the-badge)
-[![Content ideas and other issues](https://img.shields.io/github/issues/practicalli/clojure-web-services?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-web-services/issues)
-[![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-web-services?style=for-the-badge)](https://github.com/practicalli/clojure-web-services/pulls)
+
 [![MegaLinter](https://github.com/practicalli/clojure-web-services/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/clojure-web-services/actions/workflows/megalinter.yaml)
 [![Publish Book](https://github.com/practicalli/clojure-web-services/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/clojure-web-services/actions/workflows/publish-book.yaml)
-[![MegaLinter](https://github.com/practicalli/clojure-web-services/actions/workflows/megalinter.yml/badge.svg)](https://github.com/practicalli/clojure-web-services/actions/workflows/megalinter.yml)
+[![pages-build-deployment](https://github.com/practicalli/clojure-web-services/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/practicalli/clojure-web-services/actions/workflows/pages/pages-build-deployment)
 
+[![Ideas and other issues](https://img.shields.io/github/issues/practicalli/clojure-web-services?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-web-services/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-web-services?style=for-the-badge)](https://github.com/practicalli/clojure-web-services/pulls)
 
-## License
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-web-services?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/practicalli/clojure-web-services?style=for-the-badge&label=github%20contributors)
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-<a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a>
- <a property="dct:title" rel="cc:attributionURL" href="https://github.com/practicalli/clojure">Practicalli Clojure </a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://practical.li">Practicalli</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0 </a></p>
+### Creative commons license
 
+<div style="width:95%; margin:auto;">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+  This work is licensed under a Creative Commons Attribution 4.0 ShareAlike License (including images & stylesheets).
+</div>
 
 ## Contributing
 
-Issues and pull requests are most welcome.  Please detail issues as much as you can.  Pull requests are simpler to work with when they are specific to a page or at most a section.  The smaller the change the quicker it is to review and merge.
+Issues and pull requests are most welcome although it is the maintainers discression as to if they are applicable.  Please detail issues as much as you can.  Pull requests are simpler to work with when they are specific to a page or at most a section.  The smaller the change the quicker it is to review and merge.
 
 Please [see the detailed contributing section of the book](contributing.html) before raising an issue or pull request
 
-* [Kanban board of issues](https://github.com/practicalli/clojure-web-services/projects/1)
 * [Current Issues](https://github.com/practicalli/clojure-web-services/issues)
 * [Current pull requests](https://github.com/practicalli/clojure-web-services/pulls)
 
-[practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) GitHub repository contains the Clojure CLI user level configuration used in this guide and issues and pull requests can also be made there.
+[Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) provides a user level configuration providing aliases for community tools used throughout this guide.  Issues and pull requests can also be made via its GitHub repository.
 
-By submitting content ideas and corrections you are agreeing they can be used in this workshop under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure-web-services/graphs/contributors).
+By submitting content ideas and corrections you are agreeing they can be used in any work by Practicalli under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure-web-services/graphs/contributors).
 
 
 ## Sponsor Practicalli
@@ -94,7 +95,7 @@ git clone https://github.com/<your-github-account>/<repository>.git
 Run a local server from the root of the cloned project
 
 ```bash
-mkdocs serve
+make docs
 ```
 
 The website will open at <http://localhost:8000>
