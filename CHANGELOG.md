@@ -1,7 +1,8 @@
 # Changelog
 
 ## Unreleased
-- ci: spell lychee & repository trufflehog linters warn only (false positives) 
+- dev: spell lychee & repository trufflehog linters warn only (false positives) 
+- dev: action/checkout v4 with sparse-checkout for megalinter
 
 ### Added
 - building-api: add reitit overview and quick intro
