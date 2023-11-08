@@ -74,7 +74,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:pymdownx.superfences.fence_code_format ""
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.keys # keyboard keys
@@ -87,11 +87,12 @@ markdown_extensions:
 
 ## Plugins
 plugins:
-  # Explicitly add search plugin when defining plugins in this configuration file
+  # Explicitly add search plugin when defining plugins to this configuration file
   - search
   - callouts
   - glightbox # Image aligning
-  - git-revision-date-localized: # Update and Creation date of each page
+  - git-revision-date-localized:
+      # Update and Creation date of each page
       # enable_creation_date: true
       fallback_to_build_date: true
 
@@ -99,13 +100,12 @@ plugins:
   # in assets/images/social
   - social:
       cards: !ENV [MKDOCS_SOCIAL_CARDS_GENERATE, true]
-
   # Redirect pages when moved or changed
   # - redirects:
   #     redirect_maps:
   #       repl-driven-development.md: introduction/repl-workflow.md
 
-# Footer / Social Media
+  # Footer / Social Media
 extra:
   analytics:
     provider: google
