@@ -14,9 +14,9 @@ Clojure CLI is used to manage library dependencies and run Clojure code, enhance
 
 Larger projects use Integrant & Integrant REPL to manage components and state, using a reloaded REPL workflow to manage changes in addtion to evaluating functions in the REPL.
 
-Persistence is provides via Postgresql (and eventually JUXT Crux)
+Persistence is provided via Postgresql (and eventually JUXT Crux)
 
-tools.build will be used to create Clojure artefacts for deployment, with GitHub actions and Docker used for Continuous Integration and orchestrating systems.
+tools.build will be used to create Clojure artefacts for deployment, with GitHub actions and Docker used for Continuous Integration and orchestration systems.
 
 make is a general build tool used to support project development and support automation of wokflow tasks.
 
@@ -31,8 +31,7 @@ make is a general build tool used to support project development and support aut
 
 The Clojure community provides a diverse set of libraries, each focused on a specific need. Libraries are assembled to rapidly develop a tailored solution, avoiding bloat and the unnecessary complexity that comes with large frameworks. Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.
 
-Templates can be used to create example projects with common libraries, with code to show showing how libraries can be wired together.
-provide examples of libraries working together.
+Templates can be used to create example projects with common libraries, with code to show how libraries can be wired together, and provide examples of libraries working together.
 
 ??? INFO "Avoiding large frameworks"
     Frameworks are design decisions others have made and generalised to solve a range of problem, so there is no guarantee on how many of those decisions are relevant for the current project.
