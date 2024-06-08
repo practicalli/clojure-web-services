@@ -31,7 +31,7 @@ make is a general build tool used to support project development and support aut
 
 The Clojure community provides a diverse set of libraries, each focused on a specific need. Libraries are assembled to rapidly develop a tailored solution, avoiding bloat and the unnecessary complexity that comes with large frameworks. Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.
 
-Templates can be used to create example projects with common libraries, with code to show how libraries can be wired together, and provide examples of libraries working together.
+Templates can be used to create example projects with common libraries, with code to show how libraries can be wired together, and provide examples of libraries working together
 
 ??? INFO "Avoiding large frameworks"
     Frameworks are design decisions others have made and generalised to solve a range of problem, so there is no guarantee on how many of those decisions are relevant for the current project.
