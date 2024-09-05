@@ -6508,7 +6508,7 @@
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="ss">:http</span><span class="w"> </span><span class="p">{</span><span class="ss">:server</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">           </span><span class="o">#</span><span class="ss">::donut</span><span class="p">{</span><span class="ss">:start</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="nv">http-kit-run-server</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">                             </span><span class="p">[{{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">handler</span><span class="w"> </span><span class="nv">options</span><span class="p">]}</span><span class="w"> </span><span class="ss">::donut/config</span><span class="p">}]</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                             </span><span class="p">(</span><span class="nf">http-server/run-server</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;handler</span><span class="w"> </span><span class="nv">options</span><span class="p">))</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                             </span><span class="p">(</span><span class="nf">http-server/run-server</span><span class="w"> </span><span class="nv">handler</span><span class="w"> </span><span class="nv">options</span><span class="p">))</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">                    </span><span class="ss">:stop</span><span class="w">  </span><span class="p">(</span><span class="k">fn </span><span class="nv">http-kit-stop-server</span>
 <a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">                             </span><span class="p">[{</span><span class="ss">::donut/keys</span><span class="w"> </span><span class="p">[</span><span class="nv">instance</span><span class="p">]}]</span>
 <a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">                             </span><span class="p">(</span><span class="nf">instance</span><span class="p">))</span>
@@ -6517,10 +6517,6 @@
 <a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">                                       </span><span class="ss">:join?</span><span class="w"> </span><span class="nv">false</span><span class="p">}}}</span>
 <a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">           </span><span class="ss">:handler</span><span class="w"> </span><span class="p">(</span><span class="nf">router/app</span><span class="w"> </span><span class="p">(</span><span class="nf">donut/ref</span><span class="w"> </span><span class="p">[</span><span class="ss">:env</span><span class="w"> </span><span class="ss">:persistence</span><span class="p">]))}}})</span>
 </code></pre></div>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">Quote handler function to evaluate changes</p>
-<p>Use <code>#'</code> reader quote when passing the <code>handler</code> function to the server so that changes to the code called by the handler function can be updated by evaluating those changes in the REPL.</p>
 </div>
 <h2 id="start-the-system">Start the system<a class="headerlink" href="#start-the-system" title="Permanent link">λ︎</a></h2>
 <p>Use <code>donut/signal</code> with the <code>::donut/start</code> key to start all the components in the system.</p>
@@ -6604,7 +6600,7 @@ Mulog event logging is included and the system should start a mulog publisher vi
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 5, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2023</span>
   </span>
 
     
