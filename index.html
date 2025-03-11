@@ -6543,9 +6543,9 @@
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL workflow" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png" /></a></p>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">λ︎</a></h2>
 <p>Clojure CLI is used to manage library dependencies and run Clojure code, enhanced with <a href="https://practical.li/clojure/clojure-cli/practicalli-config/">aliases from Practicalli Clojure CLI Config</a>.</p>
-<p>Larger projects use Integrant &amp; Integrant REPL to manage components and state, using a reloaded REPL workflow to manage changes in addtion to evaluating functions in the REPL.</p>
-<p>Persistence is provides via Postgresql (and eventually JUXT Crux)</p>
-<p>tools.build will be used to create Clojure artefacts for deployment, with GitHub actions and Docker used for Continuous Integration and orchestrating systems.</p>
+<p>Larger projects use party-sytem/donut (or Integrant &amp; Integrant REPL) to manage components and state, using a reloaded REPL workflow to manage changes in addition to evaluating functions in the REPL.</p>
+<p>Postgresql (and other databases in the future) is used for persistent storage, with next.jdbc and honeysql for database access (SQL).</p>
+<p>tools.build is used to create Clojure artefacts for deployment, with GitHub actions and Docker used for Continuous Integration and orchestrating systems.</p>
 <p>make is a general build tool used to support project development and support automation of wokflow tasks.</p>
 <details class="warning">
 <summary>Heroku deployment to be archived</summary>
@@ -6555,12 +6555,15 @@
 <summary>Older content using Leiningen</summary>
 <p>Older content uses Leiningen for project configuration.  This content can be converted to a Clojure CLI project by creating a <code>deps.edn</code> file containing the relevant dependencies.  Add a <code>build.clj</code> configuration to create assets to deploy, e.g. jar &amp; uberjar.</p>
 </details>
+<div class="admonition info">
+<p class="admonition-title">Project Templates</p>
+<p>Practicalli Project templates can be used with the deps-new tool to create a new project with common libraries and code to show how those libraries can be wired together.
+Practicalli Clojure Web Services guides will include a template for each of the projects in this book (WIP).</p>
+</div>
 <h2 id="library-composition-approach">Library Composition approach<a class="headerlink" href="#library-composition-approach" title="Permanent link">λ︎</a></h2>
 <p>The Clojure community provides a diverse set of libraries, each focused on a specific need. Libraries are assembled to rapidly develop a tailored solution, avoiding bloat and the unnecessary complexity that comes with large frameworks. Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.</p>
-<p>Templates can be used to create example projects with common libraries, with code to show showing how libraries can be wired together.
-provide examples of libraries working together.</p>
 <details class="info">
-<summary>Avoiding large frameworks</summary>
+<summary>Avoid the complexity and inflexibility of large frameworks</summary>
 <p>Frameworks are design decisions others have made and generalised to solve a range of problem, so there is no guarantee on how many of those decisions are relevant for the current project.</p>
 <p>Frameworks tend to include many features not relevant to the current problem, which can be challenging to remove or replace. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution.</p>
 <p>Clojure does not focus on the classic framework approach like Rails or Spring, for this reason.</p>
@@ -6607,7 +6610,7 @@ This work is licensed under a Creative Commons Attribution 4.0 ShareAlike Licens
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 21, 2024 23:00:58">January 21, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 11, 2025 12:34:57">March 11, 2025</span>
   </span>
 
     
