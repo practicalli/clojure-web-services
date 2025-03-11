@@ -1,7 +1,7 @@
 # Changelog
 
 ## Unreleased
-- dev: spell lychee & repository trufflehog linters warn only (false positives) 
+- dev: spell lychee & repository trufflehog linters warn only (false positives)
 - dev: action/checkout v4 with sparse-checkout for megalinter
 - dev: sparse-checkout for publish-book workflow
 - dev: action/checkout v4 with sparse-checkout for changelog checker workflow
@@ -9,6 +9,7 @@
 
 ### Added
 - building-api: add reitit overview and quick intro
+- dev: Makefile using Practicalli task definitions for books
 
 ### Changed
 - nav: refactor server-side-api to building-api
