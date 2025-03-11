@@ -1,11 +1,11 @@
 # Integrant implementation
 
-Define 
+Define
 
 * an integrant system configuration in `resources/config.edn`
 * Integrant `init-key` used to start each component
 * Integrant `halt-key!` to stop each component
-* Define `-main` function to load the system configuration, optionally parse with aero, start all components and hold a reference to the running system that listens to SIGTERM events 
+* Define `-main` function to load the system configuration, optionally parse with aero, start all components and hold a reference to the running system that listens to SIGTERM events
 
 
 ## Prepare system
@@ -72,8 +72,12 @@ HTTP server start - returns function to stop the server
     (defmethod ig/init-key ::http-server
       [_ {:keys [handler port join?]}]
       (mulog/log ::http-server-component :handler handler :port port :local-time (java.time.LocalDateTime/now))
-      (http-server/run-server handler {:port port :join? join?}))
+      (http-server/run-server #'handler {:port port :join? join?}))
     ```
+
+!!! HINT "Quote handler function to evaluate changes"
+    Use `#'` reader quote when passing the `handler` function to the server so that changes to the code called by the handler function can be updated by evaluating those changes in the REPL.
+
 
 ## Shutdown Components
 
@@ -181,11 +185,11 @@ Shutdown the mulog event publisher process, including a `(Thread/sleep 250)` to 
       (:require
        ;; Component system
        [{{top/ns}}.{{main/ns}}.parse-system :as parse-system]
-    
+
        ;; System dependencies
        [integrant.core         :as ig]
        [com.brunobonacci.mulog :as mulog]))
-    
+
     ;; --------------------------------------------------
     ;; Configure and start application components
 
@@ -247,4 +251,3 @@ Shutdown the mulog event publisher process, including a `(Thread/sleep 250)` to 
       (ig/halt! system))
     ;; --------------------------------------------------
     ```
-

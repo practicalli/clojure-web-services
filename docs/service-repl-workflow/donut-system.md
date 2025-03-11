@@ -110,7 +110,7 @@ The event log publisher and http service have no intrinsic relationship, so orde
         :http {:server
                #::donut{:start (fn http-kit-run-server
                                  [{{:keys [handler options]} ::donut/config}]
-                                 (http-server/run-server handler options))
+                                 (http-server/run-server #'handler options))
                         :stop  (fn http-kit-stop-server
                                  [{::donut/keys [instance]}]
                                  (instance))
@@ -119,6 +119,9 @@ The event log publisher and http service have no intrinsic relationship, so orde
                                            :join? false}}}
                :handler (router/app (donut/ref [:env :persistence]))}}})
     ```
+
+!!! HINT "Quote handler function to evaluate changes"
+    Use `#'` reader quote when passing the `handler` function to the server so that changes to the code called by the handler function can be updated by evaluating those changes in the REPL.
 
 
 ## Start the system
