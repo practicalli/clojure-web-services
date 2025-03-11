@@ -9,9 +9,11 @@
 
 ## Book overview
 
-A guide to developing server-side web services and API's from the ground up using [Clojure](http://clojure.org), aiming for a simple and clean design using functional programming concepts.
+A Practical guide to building server-side web services and API's using [the Clojure programming language](http://clojure.org), a pragmatic functional programming language.
 
-A REPL Driven development workflow provides a fast feedback loop, showing how the code works as its being written.
+The guide provides simple and clean designs and code examples, encouraging effective use of the Clojure language.
+
+A [REPL Driven Development workflow](https://practical.li/clojure-web-services/introduction/repl-workflow/) provides fast feedback, so you can see exactly what the code does as its being written.
 
 Relevant theory and background reading is included whilst keeping the practical focus of this guide on build projects and experimenting with the code.
 
