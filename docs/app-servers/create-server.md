@@ -66,6 +66,11 @@ To create  a web (http) server using a common library, e.g. Jetty or Http-kit
 
     [Http-kit server documentation](http://http-kit.github.io/server.html) contains details of asynchronous websockets and HTTP streaming configurations.
 
+<!--
+    !!! HINT "Server uses a promise to create reference"
+        [Starting a http-kit server creates a promise as a reference](https://github.com/http-kit/http-kit/blob/master/src/org/httpkit/server.clj){target=_blank} to the server instance.  This promise is used to stop and send timeout values to the running server.  Note that if the server process inside the promise fails, the server error message may only be seen if it is defreferenced (to confirm)
+-->
+
 
 ## Request handler function
 
