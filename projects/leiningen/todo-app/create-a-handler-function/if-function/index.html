@@ -3,12 +3,7 @@
 
   Overrides
      - announce
--->
-
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+--><!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -29,7 +24,7 @@
       
       
       <link rel="icon" href="../../../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
@@ -37,7 +32,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.e53b48f4.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -54,7 +49,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -78,42 +73,43 @@
     
     
       
-        <meta  property="og:type"  content="website" >
+        <meta property="og:type" content="website">
       
-        <meta  property="og:title"  content="Theory: if function - Practicalli Clojure Web Services" >
+        <meta property="og:title" content="Theory: if function - Practicalli Clojure Web Services">
       
-        <meta  property="og:description"  content="Practical guide to Clojure Web Services and APIs" >
+        <meta property="og:description" content="Practical guide to Clojure Web Services and APIs">
       
-        <meta  property="og:image"  content="https://practical.li/clojure-web-services/assets/images/social/projects/leiningen/todo-app/create-a-handler-function/if-function.png" >
+        <meta property="og:image" content="https://practical.li/clojure-web-services/assets/images/social/projects/leiningen/todo-app/create-a-handler-function/if-function.png">
       
-        <meta  property="og:image:type"  content="image/png" >
+        <meta property="og:image:type" content="image/png">
       
-        <meta  property="og:image:width"  content="1200" >
+        <meta property="og:image:width" content="1200">
       
-        <meta  property="og:image:height"  content="630" >
+        <meta property="og:image:height" content="630">
       
-        <meta  property="og:url"  content="https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-handler-function/if-function/" >
+        <meta property="og:url" content="https://practical.li/clojure-web-services/projects/leiningen/todo-app/create-a-handler-function/if-function/">
       
-        <meta  name="twitter:card"  content="summary_large_image" >
+        <meta name="twitter:card" content="summary_large_image">
       
-        <meta  name="twitter:title"  content="Theory: if function - Practicalli Clojure Web Services" >
+        <meta name="twitter:title" content="Theory: if function - Practicalli Clojure Web Services">
       
-        <meta  name="twitter:description"  content="Practical guide to Clojure Web Services and APIs" >
+        <meta name="twitter:description" content="Practical guide to Clojure Web Services and APIs">
       
-        <meta  name="twitter:image"  content="https://practical.li/clojure-web-services/assets/images/social/projects/leiningen/todo-app/create-a-handler-function/if-function.png" >
+        <meta name="twitter:image" content="https://practical.li/clojure-web-services/assets/images/social/projects/leiningen/todo-app/create-a-handler-function/if-function.png">
       
     
     
-   <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -144,7 +140,7 @@
             
               <button class="md-banner__button md-icon" aria-label="Don't show this again">
                 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
               </button>
             
             
@@ -171,18 +167,11 @@
 
     <!-- Button to open drawer -->
     <label class="md-header__button md-icon" for="__drawer">
-       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
 
     <!-- Custom: Link to Practical.li -->
-    <a
-      href="https://practical.li"
-      title="https://practical.li"
-      class="md-header__button md-logo"
-      aria-label="https://practical.li"
-      data-md-component="logo"
-      target="_blank"
-    >
+    <a href="https://practical.li" title="https://practical.li" class="md-header__button md-logo" aria-label="https://practical.li" data-md-component="logo" target="_blank">
       
   <img src="../../../../../assets/images/practicalli-logo.png" alt="logo">
 
@@ -192,11 +181,7 @@
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
-          <a
-            href="https://practical.li/clojure-web-services/"
-            title="Practicalli Clojure Web Services"
-            aria-label="Practicalli Clojure Web Services"
-          >
+          <a href="https://practical.li/clojure-web-services/" title="Practicalli Clojure Web Services" aria-label="Practicalli Clojure Web Services">
             <span class="md-ellipsis"> Practicalli Clojure Web Services </span>
           </a>
         </div>
@@ -219,54 +204,20 @@
     
     
     
-    <input
-      class="md-option"
-      data-md-color-media="(prefers-color-scheme: light)"
-      data-md-color-scheme="default"
-      data-md-color-primary="blue"
-      data-md-color-accent="deep-purple"
-      
-        aria-label="Switch to dark mode"
-      
-      type="radio"
-      name="__palette"
-      id="__palette_1"
-    />
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-purple" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
     
-      <label
-        class="md-header__button md-icon"
-        title="Switch to dark mode"
-        for="__palette_2"
-        hidden
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
     
     
     
-    <input
-      class="md-option"
-      data-md-color-media="(prefers-color-scheme: dark)"
-      data-md-color-scheme="slate"
-      data-md-color-primary="blue"
-      data-md-color-accent="indigo"
-      
-        aria-label="Switch to light mode"
-      
-      type="radio"
-      name="__palette"
-      id="__palette_2"
-    />
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_2">
     
-      <label
-        class="md-header__button md-icon"
-        title="Switch to light mode"
-        for="__palette_1"
-        hidden
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
@@ -278,7 +229,7 @@
     <!-- Button to open search modal -->
     
     <label class="md-header__button md-icon" for="__search">
-       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
     </label>
 
     <!-- Search interface -->
@@ -289,15 +240,15 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -320,7 +271,7 @@
     <div class="md-header__source"><a href="https://github.com/practicalli/clojure-web-services/" title="Go to repository" class="md-source" data-md-component="source" target="_blank">
     <div class="md-source__icon md-icon">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
     </div>
     <div class="md-source__repository">
         GitHub
@@ -345,7 +296,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -366,7 +317,7 @@
       <a href="https://github.com/practicalli/clojure-web-services/" title="Go to repository" class="md-source" data-md-component="source" target="_blank">
     <div class="md-source__icon md-icon">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
     </div>
     <div class="md-source__repository">
         GitHub
@@ -402,17 +353,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../.." class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Introduction
@@ -448,6 +400,7 @@
       <a href="../../../../../introduction/overview/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Overview
     
@@ -469,6 +422,7 @@
     <li class="md-nav__item">
       <a href="../../../../../introduction/requirements/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Requirements
@@ -492,6 +446,7 @@
       <a href="../../../../../introduction/repl-workflow/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     REPL Workflow
     
@@ -514,6 +469,7 @@
       <a href="../../../../../introduction/contributing/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Contributing
     
@@ -535,6 +491,7 @@
     <li class="md-nav__item">
       <a href="../../../../../introduction/writing-tips/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Writing Tips
@@ -583,17 +540,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../service-repl-workflow/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Service REPL Workflow
@@ -629,6 +587,7 @@
       <a href="../../../../../service-repl-workflow/portal/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Portal
     
@@ -650,6 +609,7 @@
     <li class="md-nav__item">
       <a href="../../../../../service-repl-workflow/mulog-events/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Mulog Events
@@ -673,6 +633,7 @@
       <a href="../../../../../service-repl-workflow/system-repl/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     System REPL
     
@@ -695,6 +656,7 @@
       <a href="../../../../../service-repl-workflow/aero/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Aero
     
@@ -716,6 +678,7 @@
     <li class="md-nav__item">
       <a href="../../../../../service-repl-workflow/donut-system/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Donut System
@@ -749,17 +712,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../service-repl-workflow/integrant/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Integrant
@@ -795,6 +759,7 @@
       <a href="../../../../../service-repl-workflow/integrant/integrant-system/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Integrant System
     
@@ -816,6 +781,7 @@
     <li class="md-nav__item">
       <a href="../../../../../service-repl-workflow/integrant/repl/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Integrant REPL
@@ -872,6 +838,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
@@ -879,10 +846,10 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../../../../" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Projects
@@ -930,17 +897,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../slack-app/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Slack App
@@ -976,6 +944,7 @@
       <a href="../../../../slack-app/create-slack-app/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Create Slack App
     
@@ -998,6 +967,7 @@
       <a href="../../../../slack-app/slack-scopes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Slack Scopes Overview
     
@@ -1019,6 +989,7 @@
     <li class="md-nav__item">
       <a href="../../../../slack-app/slack-api-methods/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Slack API Methods
@@ -1068,17 +1039,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../status-monitor-deps/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Status Monitor
@@ -1114,6 +1086,7 @@
       <a href="../../../../status-monitor-deps/application-server/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Application Server
     
@@ -1135,6 +1108,7 @@
     <li class="md-nav__item">
       <a href="../../../../status-monitor-deps/debugging-requests/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Debug Requests
@@ -1158,6 +1132,7 @@
       <a href="../../../../status-monitor-deps/unit-test-mocking-handlers/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Unit Test Mock
     
@@ -1179,6 +1154,7 @@
     <li class="md-nav__item">
       <a href="../../../../status-monitor-deps/refactor-handlers-and-tests/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Refactor
@@ -1202,6 +1178,7 @@
       <a href="../../../../status-monitor-deps/continuous-integration/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     CI
     
@@ -1223,6 +1200,7 @@
     <li class="md-nav__item">
       <a href="../../../../status-monitor-deps/deployment-via-ci/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Deployment
@@ -1308,17 +1286,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../banking-on-clojure/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Banking On Clojure
@@ -1354,6 +1333,7 @@
       <a href="../../../../banking-on-clojure/clojure-server-project/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Clojure Server Project
     
@@ -1375,6 +1355,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/refactor-handler/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Refactor Handlers
@@ -1398,6 +1379,7 @@
       <a href="../../../../banking-on-clojure/ui-handler-functions/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     UI Handler Functions
     
@@ -1419,6 +1401,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/account-overview-page/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Add More Handlers
@@ -1442,6 +1425,7 @@
       <a href="../../../../banking-on-clojure/continuous-integration/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     CI
     
@@ -1463,6 +1447,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/deployment-pipeline/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Deployment Pipeline
@@ -1486,6 +1471,7 @@
       <a href="../../../../banking-on-clojure/deployment-via-ci/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Deployment via CI
     
@@ -1507,6 +1493,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/unit-tests/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Unit Tests
@@ -1530,6 +1517,7 @@
       <a href="../../../../banking-on-clojure/spec-generative-testing/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Generative testing
     
@@ -1551,6 +1539,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/development-database/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Dev Database
@@ -1574,6 +1563,7 @@
       <a href="../../../../banking-on-clojure/instrument-next-jdbc-functions/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Instrument functions
     
@@ -1595,6 +1585,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/database-tables/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     DB Tables
@@ -1618,6 +1609,7 @@
       <a href="../../../../banking-on-clojure/database-queries/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Database Queries
     
@@ -1639,6 +1631,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/create-records/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Create Records
@@ -1662,6 +1655,7 @@
       <a href="../../../../banking-on-clojure/read-records/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Read Records
     
@@ -1683,6 +1677,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/update-records/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Update Records
@@ -1706,6 +1701,7 @@
       <a href="../../../../banking-on-clojure/delete-records/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Delete Records
     
@@ -1727,6 +1723,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/cyclic-load-dependency/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Cyclic Load Dependency
@@ -1750,6 +1747,7 @@
       <a href="../../../../banking-on-clojure/clojure-spec-generate-mock-data/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Clojure spec generate mock data
     
@@ -1771,6 +1769,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/generate-data-from-specs/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Generate Data Using Clojure Spec
@@ -1794,6 +1793,7 @@
       <a href="../../../../banking-on-clojure/unit-testing-the-database/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Unit Testing with the Database
     
@@ -1815,6 +1815,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/honeysql/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     HoneySQL
@@ -1838,6 +1839,7 @@
       <a href="../../../../banking-on-clojure/namespace-design/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Namespace design
     
@@ -1859,6 +1861,7 @@
     <li class="md-nav__item">
       <a href="../../../../banking-on-clojure/production-database/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Production Database - Heroku Postgres
@@ -1946,17 +1949,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../project-url-shortner/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     URL Shortner
@@ -1992,6 +1996,7 @@
       <a href="../../../../../project-url-shortner/create-project/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Create project
     
@@ -2013,6 +2018,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/run-project/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Run project
@@ -2036,6 +2042,7 @@
       <a href="../../../../../project-url-shortner/test-app-reloading/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Test app reloading
     
@@ -2057,6 +2064,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/compojure-template/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Compojure Template
@@ -2080,6 +2088,7 @@
       <a href="../../../../../project-url-shortner/design-data-structure/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Design data structure
     
@@ -2101,6 +2110,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/whats-in-a-request/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     What is in a Request
@@ -2124,6 +2134,7 @@
       <a href="../../../../../project-url-shortner/redirect-to-full-url/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Redirect short URL to full web address
     
@@ -2145,6 +2156,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/add-static-resources/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Add static resources
@@ -2168,6 +2180,7 @@
       <a href="../../../../../project-url-shortner/disable-anti-forgery-check/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Disable anti-forgery check
     
@@ -2189,6 +2202,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/html-form/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     HTML Form
@@ -2212,6 +2226,7 @@
       <a href="../../../../../project-url-shortner/create-html-form/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Create HTML Form
     
@@ -2233,6 +2248,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/using-ring-redirect/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Using Ring Redirect
@@ -2256,6 +2272,7 @@
       <a href="../../../../../project-url-shortner/named-alias-handler/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Named alias handler
     
@@ -2277,6 +2294,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/if-let-function/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     if-let function
@@ -2300,6 +2318,7 @@
       <a href="../../../../../project-url-shortner/refacor-hiccup-form/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Refactor: Hiccup form
     
@@ -2321,6 +2340,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/alias-generator/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Alias generator
@@ -2344,6 +2364,7 @@
       <a href="../../../../../project-url-shortner/persist-aliases/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Persist aliases
     
@@ -2365,6 +2386,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/postgres-setup/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Postgres setup
@@ -2388,6 +2410,7 @@
       <a href="../../../../../project-url-shortner/redis-setup/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Redis setup
     
@@ -2409,6 +2432,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/create-database/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     create database
@@ -2432,6 +2456,7 @@
       <a href="../../../../../project-url-shortner/add-alias-to-database/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     add alias to database
     
@@ -2453,6 +2478,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/get-alias-from-database/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     get alias from database
@@ -2476,6 +2502,7 @@
       <a href="../../../../../project-url-shortner/delete-alias-from-database/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     delete alias from database
     
@@ -2498,6 +2525,7 @@
       <a href="../../../../../project-url-shortner/return-short-url/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Return short URL
     
@@ -2519,6 +2547,7 @@
     <li class="md-nav__item">
       <a href="../../../../../project-url-shortner/return-url-aliases/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Return URL aliases
@@ -2560,13 +2589,7 @@
         
       
         
-          
-        
       
-        
-      
-        
-          
         
       
         
@@ -2584,9 +2607,10 @@
         
       
         
-          
+      
         
       
+    
     
     
     
@@ -2597,10 +2621,10 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../../" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     TODO App
@@ -2646,17 +2670,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../create-a-project/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Create Project
@@ -2692,6 +2717,7 @@
       <a href="../../create-a-project/update-project-details/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Update project details
     
@@ -2713,6 +2739,7 @@
     <li class="md-nav__item">
       <a href="../../create-a-project/code-so-far/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     The code so far
@@ -2766,17 +2793,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../create-a-webserver-with-ring/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Webserver with Ring
@@ -2812,6 +2840,7 @@
       <a href="../../create-a-webserver-with-ring/add-ring-dependency/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Add Ring Dependency
     
@@ -2833,6 +2862,7 @@
     <li class="md-nav__item">
       <a href="../../create-a-webserver-with-ring/configure-main-namespace/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Configure main namespace
@@ -2856,6 +2886,7 @@
       <a href="../../create-a-webserver-with-ring/namespaces/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Theory: Namespaces
     
@@ -2877,6 +2908,7 @@
     <li class="md-nav__item">
       <a href="../../create-a-webserver-with-ring/include-ring-library/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Including Ring in the Namespace
@@ -2900,6 +2932,7 @@
       <a href="../../create-a-webserver-with-ring/add-a-jetty-webserver/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Run Jetty web server
     
@@ -2921,6 +2954,7 @@
     <li class="md-nav__item">
       <a href="../../create-a-webserver-with-ring/coersing-types-and-java-lang/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Theory: Specifying Types &amp; java.lang
@@ -2944,6 +2978,7 @@
       <a href="../../create-a-webserver-with-ring/run-webserver/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Run webserver
     
@@ -2965,6 +3000,7 @@
     <li class="md-nav__item">
       <a href="../../create-a-webserver-with-ring/code-so-far/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     The code so far
@@ -2995,6 +3031,7 @@
     <li class="md-nav__item">
       <a href="../../introducing-ring/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Ring
@@ -3034,6 +3071,7 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
@@ -3041,10 +3079,10 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_5" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Create Handler
@@ -3080,6 +3118,7 @@
       <a href="../add-not-found/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Add Error message when request not found
     
@@ -3111,6 +3150,7 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
     Theory: if function
     
@@ -3122,6 +3162,7 @@
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
+  
   
   <span class="md-ellipsis">
     Theory: if function
@@ -3198,6 +3239,7 @@
       <a href="../maps-and-keywords/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Maps and keywords
     
@@ -3219,6 +3261,7 @@
     <li class="md-nav__item">
       <a href="../code-so-far/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Code so far
@@ -3249,6 +3292,7 @@
     <li class="md-nav__item">
       <a href="../../unit-test-handler-function/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Unit test handler
@@ -3284,17 +3328,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_7">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../reloading-the-application/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Reloading App
@@ -3330,6 +3375,7 @@
       <a href="../../reloading-the-application/test-your-code-reloads/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Test the wrap-reload middleware
     
@@ -3352,6 +3398,7 @@
       <a href="../../reloading-the-application/middleware/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Middleware in Ring
     
@@ -3373,6 +3420,7 @@
     <li class="md-nav__item">
       <a href="../../reloading-the-application/code-so-far/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     The code so far
@@ -3434,17 +3482,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_8">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../compojure/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Compojure
@@ -3480,6 +3529,7 @@
       <a href="../../compojure/defroutes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Theory: defroutes is a Clojure macro
     
@@ -3501,6 +3551,7 @@
     <li class="md-nav__item">
       <a href="../../compojure/theory-routing/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Theory: routing
@@ -3524,6 +3575,7 @@
       <a href="../../compojure/adding-dependency/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Add Compojure as a dependency
     
@@ -3545,6 +3597,7 @@
     <li class="md-nav__item">
       <a href="../../compojure/using-compojure/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Using Compojure in the project
@@ -3568,6 +3621,7 @@
       <a href="../../compojure/adding-goodbye-route/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Adding a goodbye route
     
@@ -3589,6 +3643,7 @@
     <li class="md-nav__item">
       <a href="../../compojure/about/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     About route
@@ -3612,6 +3667,7 @@
       <a href="../../compojure/show-request-info/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Show request info
     
@@ -3633,6 +3689,7 @@
     <li class="md-nav__item">
       <a href="../../compojure/variable-path-elements/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Variable Path Elements
@@ -3656,6 +3713,7 @@
       <a href="../../compojure/theory-local-name-bindings/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Theory local name bindings
     
@@ -3677,6 +3735,7 @@
     <li class="md-nav__item">
       <a href="../../compojure/theory-using-hash-maps/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Theory: Accessing hash-maps
@@ -3700,6 +3759,7 @@
       <a href="../../compojure/lisp-calculator/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Lisp style Calculator
     
@@ -3721,6 +3781,7 @@
     <li class="md-nav__item">
       <a href="../../compojure/code-so-far/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Code so far
@@ -3766,17 +3827,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_9">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../heroku/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Heroku Deploy
@@ -3812,6 +3874,7 @@
       <a href="../../heroku/update-project/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Update the project
     
@@ -3833,6 +3896,7 @@
     <li class="md-nav__item">
       <a href="../../heroku/procfile/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Add Procfile
@@ -3856,6 +3920,7 @@
       <a href="../../heroku/deploy/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Deploy to Heroku
     
@@ -3877,6 +3942,7 @@
     <li class="md-nav__item">
       <a href="../../heroku/code-so-far/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Code so far
@@ -3920,17 +3986,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_10">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../hiccup/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Hiccup
@@ -3966,6 +4033,7 @@
       <a href="../../hiccup/updating-handlers-with-hiccup/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Updating handlers with hiccup
     
@@ -3988,6 +4056,7 @@
       <a href="../../hiccup/create-new-handler/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Create a new handler
     
@@ -4009,6 +4078,7 @@
     <li class="md-nav__item">
       <a href="../../hiccup/code-so-far/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Code so far
@@ -4056,17 +4126,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_11">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../refactor-namespace/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Refactor Namespace
@@ -4102,6 +4173,7 @@
       <a href="../../refactor-namespace/base-routes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Base routes
     
@@ -4123,6 +4195,7 @@
     <li class="md-nav__item">
       <a href="../../refactor-namespace/play-routes/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Play routes
@@ -4146,6 +4219,7 @@
       <a href="../../refactor-namespace/task-routes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Task routes
     
@@ -4168,6 +4242,7 @@
       <a href="../../refactor-namespace/core/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Refactored Core
     
@@ -4189,6 +4264,7 @@
     <li class="md-nav__item">
       <a href="../../refactor-namespace/code-so-far/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Code so far
@@ -4252,17 +4328,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_12">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../postgres/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Postgres
@@ -4298,6 +4375,7 @@
       <a href="../../postgres/install/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Postgres install
     
@@ -4319,6 +4397,7 @@
     <li class="md-nav__item">
       <a href="../../postgres/environment-variables/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Environment Variables
@@ -4342,6 +4421,7 @@
       <a href="../../postgres/postgres-cli/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Postgres CLI
     
@@ -4363,6 +4443,7 @@
     <li class="md-nav__item">
       <a href="../../postgres/pg-admin/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     pgAdmin
@@ -4386,6 +4467,7 @@
       <a href="../../postgres/dataclips/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Heroku Dataclips
     
@@ -4407,6 +4489,7 @@
     <li class="md-nav__item">
       <a href="../../postgres/connect-to-heroku-postgres-from-clients/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Connecting to Heroku Postgres from Postgres Clients
@@ -4430,6 +4513,7 @@
       <a href="../../postgres/jira-ticket/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Jira ticket
     
@@ -4451,6 +4535,7 @@
     <li class="md-nav__item">
       <a href="../../postgres/lobo-table-creation/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     How to use Lobos with Heroku
@@ -4474,6 +4559,7 @@
       <a href="../../postgres/postgres-commands/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     pg:info
     
@@ -4496,6 +4582,7 @@
       <a href="../../postgres/postgres-performance-analytics/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Performance Analytics
     
@@ -4517,6 +4604,7 @@
     <li class="md-nav__item">
       <a href="../../postgres/postgres-toolbelt-commands/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Postgres toolbelt commands
@@ -4550,17 +4638,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_12_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_12_13">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../connect-to-postgres/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Connect to Postgres
@@ -4596,6 +4685,7 @@
       <a href="../../connect-to-postgres/add-database-dependencies/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Add Dependency
     
@@ -4617,6 +4707,7 @@
     <li class="md-nav__item">
       <a href="../../connect-to-postgres/define-db-connection/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Define a Database Connection
@@ -4664,17 +4755,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_12_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_12_14">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../database-model/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Database Model
@@ -4710,6 +4802,7 @@
       <a href="../../database-model/create-table/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Create table
     
@@ -4731,6 +4824,7 @@
     <li class="md-nav__item">
       <a href="../../database-model/create-task/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Create a task
@@ -4754,6 +4848,7 @@
       <a href="../../database-model/show-all-task/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Show all tasks
     
@@ -4776,6 +4871,7 @@
       <a href="../../database-model/delete-task/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Delete task
     
@@ -4797,6 +4893,7 @@
     <li class="md-nav__item">
       <a href="../../database-model/alternative-approaches/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Alternative approaches
@@ -4848,17 +4945,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_13">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../task-handlers/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Task handlers
@@ -4894,6 +4992,7 @@
       <a href="../../task-handlers/add-a-task/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Add a task
     
@@ -4916,6 +5015,7 @@
       <a href="../../task-handlers/show-task/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Show tasks
     
@@ -4937,6 +5037,7 @@
     <li class="md-nav__item">
       <a href="../../task-handlers/delete-a-task/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Delete a task
@@ -4967,6 +5068,7 @@
     <li class="md-nav__item">
       <a href="../../../working-example/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     A working example
@@ -5045,17 +5147,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../app-servers/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Application Servers
@@ -5091,6 +5194,7 @@
       <a href="../../../../../app-servers/overview/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Overview of Application servers
     
@@ -5112,6 +5216,7 @@
     <li class="md-nav__item">
       <a href="../../../../../app-servers/middleware/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Middleware
@@ -5135,6 +5240,7 @@
       <a href="../../../../../app-servers/routing-libraries/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Routing libraries
     
@@ -5156,6 +5262,7 @@
     <li class="md-nav__item">
       <a href="../../../../../app-servers/clojure-project/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     New Clojure Project
@@ -5179,6 +5286,7 @@
       <a href="../../../../../app-servers/create-server/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Create a server
     
@@ -5200,6 +5308,7 @@
     <li class="md-nav__item">
       <a href="../../../../../app-servers/jetty-server-options/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Jetty Server Options
@@ -5223,6 +5332,7 @@
       <a href="../../../../../app-servers/http-kit-server-options/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Http-kit Server Options
     
@@ -5244,6 +5354,7 @@
     <li class="md-nav__item">
       <a href="../../../../../app-servers/route-requests/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Route Requests
@@ -5267,6 +5378,7 @@
       <a href="../../../../../app-servers/start-server/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Start a server
     
@@ -5288,6 +5400,7 @@
     <li class="md-nav__item">
       <a href="../../../../../app-servers/java-system-properties/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Java System properties
@@ -5311,6 +5424,7 @@
       <a href="../../../../../app-servers/simple-restart/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Simple restart approach
     
@@ -5332,6 +5446,7 @@
     <li class="md-nav__item">
       <a href="../../../../../app-servers/atom-based-restart/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Atom based restart
@@ -5355,6 +5470,7 @@
       <a href="../../../../../app-servers/app-server-logging/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Application Server Logging
     
@@ -5376,6 +5492,7 @@
     <li class="md-nav__item">
       <a href="../../../../../app-servers/debugging/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Debugging application servers
@@ -5399,6 +5516,7 @@
       <a href="../../../../../app-servers/routing/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Routing
     
@@ -5421,6 +5539,7 @@
       <a href="../../../../../app-servers/set-listen-port/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Set listen port
     
@@ -5442,6 +5561,7 @@
     <li class="md-nav__item">
       <a href="../../../../../app-servers/static-content/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Static Content
@@ -5502,17 +5622,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../building-api/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Building API
@@ -5554,17 +5675,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../building-api/reitit/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Reitit
@@ -5603,6 +5725,7 @@
       <a href="../../../../../building-api/compojure-api-template/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     compojure-api template
     
@@ -5624,6 +5747,7 @@
     <li class="md-nav__item">
       <a href="../../../../../building-api/create-compojure-api-project/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Create a compojure-api project
@@ -5647,6 +5771,7 @@
       <a href="../../../../../building-api/swagger/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Swagger - self describing APIs
     
@@ -5668,6 +5793,7 @@
     <li class="md-nav__item">
       <a href="../../../../../building-api/ring-swagger/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     ring-swagger
@@ -5691,6 +5817,7 @@
       <a href="../../../../../building-api/plumatic-schema/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Plumatic schema - defining the shape of data
     
@@ -5712,6 +5839,7 @@
     <li class="md-nav__item">
       <a href="../../../../../building-api/json-files/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Working with JSON files
@@ -5735,6 +5863,7 @@
       <a href="../../../../../building-api/testing-api/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Testing our API
     
@@ -5757,6 +5886,7 @@
       <a href="../../../../../building-api/ring-mock/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     ring-mock
     
@@ -5778,6 +5908,7 @@
     <li class="md-nav__item">
       <a href="../../../../../building-api/cheshire/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Cheshire - fast JSON encoding
@@ -5807,17 +5938,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../building-api/end-to-end-testing/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     End to end testing
@@ -5856,6 +5988,7 @@
       <a href="../../../../../building-api/terminology/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Terminology
     
@@ -5893,17 +6026,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../clojure-databases/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Persistence
@@ -5949,8 +6083,6 @@
         
       
         
-          
-        
       
         
       
@@ -5958,6 +6090,7 @@
       
         
       
+    
     
     
     
@@ -5965,13 +6098,13 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../relational-databases-and-sql/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Relational
@@ -6007,6 +6140,7 @@
       <a href="../../../../../relational-databases-and-sql/h2-database/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     H2 Lightweight Relational Database
     
@@ -6028,6 +6162,7 @@
     <li class="md-nav__item">
       <a href="../../../../../relational-databases-and-sql/managing-connections/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Managing database connections
@@ -6051,6 +6186,7 @@
       <a href="../../../../../relational-databases-and-sql/postgresql-database/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Postgresql database
     
@@ -6072,6 +6208,7 @@
     <li class="md-nav__item">
       <a href="../../../../../relational-databases-and-sql/h2-database/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     H2 Relational Database
@@ -6095,6 +6232,7 @@
       <a href="../../../../../relational-databases-and-sql/h2-database/database-tools/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Database tools
     
@@ -6116,6 +6254,7 @@
     <li class="md-nav__item">
       <a href="../../../../../relational-databases-and-sql/h2-database/schema-design/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     H2 Schema design
@@ -6155,17 +6294,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_8">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../relational-databases-and-sql/next-jdbc-library/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     next-jdbc
@@ -6201,6 +6341,7 @@
       <a href="../../../../../relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Using next.jdbc with a Connection pool
     
@@ -6222,6 +6363,7 @@
     <li class="md-nav__item">
       <a href="../../../../../relational-databases-and-sql/next-jdbc-library/add-to-project/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Add next.jdbc to a project
@@ -6245,6 +6387,7 @@
       <a href="../../../../../relational-databases-and-sql/next-jdbc-library/database-specifications/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Database Specifications
     
@@ -6267,6 +6410,7 @@
       <a href="../../../../../relational-databases-and-sql/next-jdbc-library/next-jdbc-and-resultsets/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     next.jdbc and result sets
     
@@ -6288,6 +6432,7 @@
     <li class="md-nav__item">
       <a href="../../../../../relational-databases-and-sql/next-jdbc-library/simple-example/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Simple database example
@@ -6340,17 +6485,18 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../micro-services/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Micro-services
@@ -6392,15 +6538,12 @@
         
       
         
-          
-        
       
         
       
         
-          
-        
       
+    
     
     
     
@@ -6408,13 +6551,13 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8">
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../../../../../reference/" class="md-nav__link ">
               
+  
   
   <span class="md-ellipsis">
     Reference
@@ -6450,6 +6593,7 @@
       <a href="../../../../../reference/ring/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Ring specification
     
@@ -6472,6 +6616,7 @@
       <a href="../../../../../reference/ring/request-map/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Ring - request map
     
@@ -6493,6 +6638,7 @@
     <li class="md-nav__item">
       <a href="../../../../../reference/continuous-integration/heroku/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     CI: Heroku
@@ -6521,7 +6667,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -6588,9 +6734,9 @@
 
 
   
-    <a href="https://github.com/practicalli/clojure-web-services/edit/main/docs/projects/leiningen/todo-app/create-a-handler-function/if-function.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/clojure-web-services/edit/main/docs/projects/leiningen/todo-app/create-a-handler-function/if-function.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
@@ -6599,7 +6745,7 @@
     
     <a href="https://github.com/practicalli/clojure-web-services/raw/main/docs/projects/leiningen/todo-app/create-a-handler-function/if-function.md" title="View source of this page" class="md-content__button md-icon">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
     </a>
   
 
@@ -6614,14 +6760,14 @@
 <p>In the project code an <code>if</code> function checks the web address by returning the value associated with <code>:uri</code> in the request map.</p>
 <p>If the <code>:url</code> value is equal to <code>/</code> then the first response map with the hello message is returned.</p>
 <p>If the <code>:uri</code> value is not equal to <code>/</code> then the second resource map with an error message is returned.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="p">(</span><span class="ss">:uri</span><span class="w"> </span><span class="nv">request</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="s">"/"</span><span class="w"> </span><span class="p">(</span><span class="ss">:uri</span><span class="w"> </span><span class="nv">request</span><span class="p">))</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p">{</span><span class="ss">:status</span><span class="w"> </span><span class="mi">200</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">     </span><span class="ss">:body</span><span class="w"> </span><span class="s">&quot;&lt;h1&gt;Hello, Clojure World&lt;/h1&gt;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">            &lt;p&gt;Welcome to your first Clojure app.&lt;/p&gt;&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">     </span><span class="ss">:body</span><span class="w"> </span><span class="s">"&lt;h1&gt;Hello, Clojure World&lt;/h1&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">            &lt;p&gt;Welcome to your first Clojure app.&lt;/p&gt;"</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">     </span><span class="ss">:headers</span><span class="w"> </span><span class="p">{}}</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">{</span><span class="ss">:status</span><span class="w"> </span><span class="mi">404</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">     </span><span class="ss">:body</span><span class="w"> </span><span class="s">&quot;&lt;h1&gt;This is not the page you are looking for&lt;/h1&gt;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s">            &lt;p&gt;Sorry, the page you requested was not found!&gt;&lt;/p&gt;&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">     </span><span class="ss">:body</span><span class="w"> </span><span class="s">"&lt;h1&gt;This is not the page you are looking for&lt;/h1&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s">            &lt;p&gt;Sorry, the page you requested was not found!&gt;&lt;/p&gt;"</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">     </span><span class="ss">:headers</span><span class="w"> </span><span class="p">{}}))</span>
 </code></pre></div>
 <blockquote>
@@ -6631,8 +6777,8 @@
 <h2 id="multiple-expression-if-function-with-do">Multiple expression if function with do<a class="headerlink" href="#multiple-expression-if-function-with-do" title="Permanent link">λ︎</a></h2>
 <p>Each of the two possible values the <code>if</code> function returns can come from only evaluating one expression.  For example</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">true</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;I am the truth&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;I am the path to darkness&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">"I am the truth"</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">"I am the path to darkness"</span><span class="p">)</span>
 </code></pre></div>
 <p>If you need multiple expressions they can be wrapped in the <code>do</code> function</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">true</span><span class="p">)</span>
@@ -6663,9 +6809,9 @@
       
   <span class="md-source-file__fact">
     <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 18, 2023 22:08:23">January 18, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 18, 2023 22:08:23 UTC">January 18, 2023</span>
   </span>
 
     
@@ -6692,7 +6838,7 @@
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -6702,13 +6848,13 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
           <a href="../add-not-found/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Add Error message when request not found">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
@@ -6733,7 +6879,7 @@
             </div>
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
             </div>
           </a>
         
@@ -6745,7 +6891,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy 2023 Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+      Copyright © 2023 Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
     </div>
   
   
@@ -6756,7 +6902,8 @@
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
@@ -6766,7 +6913,7 @@
       
     
     <a href="https://practical.li/" target="_blank" rel="noopener" title="practical.li" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg>
     </a>
   
     
@@ -6777,7 +6924,7 @@
       
     
     <a href="https://www.linkedin.com/in/jr0cket/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
     </a>
   
     
@@ -6788,7 +6935,7 @@
       
     
     <a href="https://clojurians.slack.com/messages/practicalli" target="_blank" rel="noopener" title="clojurians.slack.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1s21.16-47.06 47.06-47.06h47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06S448 171 448 196.9s-21.16 47.06-47.06 47.06h-47.06zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06S309 480 283.1 480s-47.06-21.16-47.06-47.06v-47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06s21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M94.1 315.1c0 25.9-21.2 47.1-47.1 47.1S0 341 0 315.1 21.2 268 47.1 268h47.1v47.1zm23.7 0c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1v117.8c0 25.9-21.2 47.1-47.1 47.1s-47.1-21.2-47.1-47.1zm47.1-189c-25.9 0-47.1-21.2-47.1-47.1s21.2-47 47.1-47S212 53.2 212 79.1v47.1h-47.1zm0 23.7c25.9 0 47.1 21.2 47.1 47.1S190.8 244 164.9 244H47.1C21.2 244 0 222.8 0 196.9s21.2-47.1 47.1-47.1zm189 47.1c0-25.9 21.2-47.1 47.1-47.1s47 21.2 47 47.1-21.2 47.1-47.1 47.1h-47.1v-47.1zm-23.7 0c0 25.9-21.2 47.1-47.1 47.1S236 222.8 236 196.9V79.1c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1zm-47.1 189c25.9 0 47.1 21.2 47.1 47.1s-21.2 47-47.1 47-47.1-21.2-47.1-47.1v-47.1h47.1zm0-23.7c-25.9 0-47.1-21.2-47.1-47.1s21.2-47.1 47.1-47.1h117.8c25.9 0 47.1 21.2 47.1 47.1s-21.2 47.1-47.1 47.1z"></path></svg>
     </a>
   
     
@@ -6799,7 +6946,7 @@
       
     
     <a href="https://twitter.com/practical_li" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"></path></svg>
     </a>
   
     
@@ -6810,7 +6957,7 @@
       
     
     <a href="https://github.com/practicalli" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
     </a>
   
     
@@ -6821,7 +6968,7 @@
       
     
     <a href="https://hub.docker.com/u/practicalli" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"></path></svg>
     </a>
   
 </div>
@@ -6836,13 +6983,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
-  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
