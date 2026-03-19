@@ -2,9 +2,11 @@
 
 Reitit routing for client and server-side routing
 
-Supports use of ring specification and middleware
+Supports use of ring specification for the request and response bodies as a Clojure hash-map.  Ring middleware is also supported, allowing transformation of requests and responses.
 
-Provides content negotiation and data validation.
+Reitit provides content negotiation and data validation (clojure.spec or malli).
+
+Open API (Swagger) version 2 and 3 provide a common way to generate API documentation, which can also be tested via a swagger-ui web interface.
 
 
 ## Library Dependency
@@ -14,13 +16,13 @@ Include the bundled distribution containing all modules
 === "Clojure CLI"
 
     ```clojure title="deps.edn"
-    metosin/reitit {:mvn/version "0.7.0-alpha5"}
+    metosin/reitit {:mvn/version "0.10.1"}
     ```
 
 === "Leiningen"
 
     ```clojure
-    [metosin/reitit "0.7.0-alpha5"]
+    [metosin/reitit "0.10.1"]
     ```
 
 
@@ -31,7 +33,7 @@ Require the reitit.ring namespace to provide routing and ring specification supp
 === "Project"
 
     ```clojure
-    (:require 
+    (:require
      [reitit.ring :as ring])
     ```
 
@@ -90,14 +92,14 @@ Handler functions are Clojure functions that take a request map.
 
 ```clojure
 (def status
-  (constantly 
-    (ring.util.response/response 
+  (constantly
+    (ring.util.response/response
      {:application "practicalli awesome-api Service" :status "Alive"})))
 ```
 
 
-!!! HINT "Use _ argument name when request not used"
-    Handlers might not use the data in a request to return a response.  By convention the `_` character is used for the argument name when the request data is not used.
+!!! HINT "Use `_` as argument name when request not used"
+    Handlers might not use the data in a request to return a response.  By convention the `_` underscore character is used for the argument name when the request data is not used.
 
 
 !!! EXAMPLE "System Status handler"
