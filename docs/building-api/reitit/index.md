@@ -132,7 +132,6 @@ Using `reitit.dev.pretty/exception` provides human readable and development frie
       metosin/reitit    {:mvn/version "0.7.0"}
       metosin/reitit-dev {:mvn/version "0.7.0"} ; human readable exceptions
      }
-     ;; ---------------------------------------------------------
     ```
 
 Update the Reitit router configuration to provide an exception that will process errors using `pretty/exception`
