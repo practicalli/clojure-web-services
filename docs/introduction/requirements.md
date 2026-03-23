@@ -4,7 +4,7 @@ Practicalli provides an [install guide for Clojure](https://practical.li/clojure
 
 Recommended development tools for this guide are:
 
-* [Java OpenJDK version 17](https://practical.li/clojure/install/java/){target=_blank}
+* [Java OpenJDK](https://practical.li/clojure/install/java/){target=_blank} - Long Term Support version recommended
 * [Clojure CLI](https://practical.li/clojure/install/clojure-cli/){target=_blank} and [Practicalli Clojure CLI Config](https://practical.li/clojure/install/clojure-cli/#practicalli-clojure-cli-config){target=_blank}
 * A [Clojure aware editor](https://practical.li/clojure/clojure-editors/){target=_blank}
 
