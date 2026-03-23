@@ -12,19 +12,14 @@ Use a [REPL Workflow approach](introduction/repl-workflow.md) to provide instant
 
 Clojure CLI is used to manage library dependencies and run Clojure code, enhanced with [aliases from Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/).
 
-Larger projects use [donut.system](service-repl-workflow/donut-system.md) (or Integrant & Integrant REPL) to manage components and state, using a reloaded REPL workflow to manage changes in addition to evaluating functions in the REPL.
+Larger projects use a system library (Donut System, Integrant) to manage the life cycle of components. Component state is managed via a reloaded REPL workflow to load changes on top of evaluating functions in the REPL.
 
-Postgresql is used for persistent storage, with next.jdbc and honeysql for database access (SQL). Additional persistence tools and services will be added in future.
+
+Persistent storage , with next.jdbc and honeysql for database access (SQL). Additional persistence tools and services will be added in future.
 
 tools.build is used to create Clojure artefacts for deployment, with GitHub actions and Docker used for Continuous Integration and orchestrating systems.
 
 make is a general build tool used to support project development and support automation of wokflow tasks.
-
-??? WARNING "Heroku deployment to be archived"
-    Heroku Cloud service deployment approach is being archived as the service no longer provides a developer environment (November 2022)
-
-??? WARNING "Older content using Leiningen"
-    Older content uses Leiningen for project configuration.  This content can be converted to a Clojure CLI project by creating a `deps.edn` file containing the relevant dependencies.  Add a `build.clj` configuration to create assets to deploy, e.g. jar & uberjar.
 
 !!! INFO "Project Templates"
     Practicalli Project templates can be used with the deps-new tool to create a new project with common libraries and code to show how those libraries can be wired together.
@@ -35,14 +30,15 @@ make is a general build tool used to support project development and support aut
 
 The Clojure community provides a diverse set of libraries, each focused on a specific need. Libraries are assembled to rapidly develop a tailored solution, avoiding bloat and the unnecessary complexity that comes with large frameworks. Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.
 
+??? INFO "Avoid the complexity of large frameworks"
+    Clojure project uses targeted libraries that solve specific design challenges, avoiding generic and monolithic frameworks.
 
+    Frameworks codify a large number of design decisions and then generalised to solve a range of problems.  When the same design decisions are needed, then frameworks can save time.  However, there is no guarantee on how many of those decisions are relevant for the current project.
 
-??? INFO "Avoid the complexity and inflexibility of large frameworks"
-    Frameworks are design decisions others have made and generalised to solve a range of problem, so there is no guarantee on how many of those decisions are relevant for the current project.
+    Frameworks tend to include many features not relevant to the current problem, which can be challenging to remove or replace. Frameworks can become heavily relied upon, taking away an opportunity to think about the most relevant solution.
 
-    Frameworks tend to include many features not relevant to the current problem, which can be challenging to remove or replace. Frameworks can be over relied upon, taking away an opportunity to think about the most relevant solution.
+    Clojure does not focus on the classic framework approach, like Rails or Spring, for this reason.
 
-    Clojure does not focus on the classic framework approach like Rails or Spring, for this reason.
 
 
 ## Navigate the book
