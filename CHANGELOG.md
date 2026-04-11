@@ -1,5 +1,8 @@
 # Changelog
 
+
+# 2026-04-11
+
 ## Unreleased
 - dev: spell lychee & repository trufflehog linters warn only (false positives)
 - dev: action/checkout v4 with sparse-checkout for megalinter
