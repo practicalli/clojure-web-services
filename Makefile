@@ -2,13 +2,15 @@
 # Practicalli Makefile
 #
 # Consistent set of targets to support local book development
+#
 # `-` before a command ignores any errors returned
+# ------------------------------------------------ #
 
 # Requirements
 # - python
 # - uv
 # - clojure & practicalli cli config (dependency check)
-# - docker
+# - docker (run megalinter locally)
 # - mega-linter-runner
 # ------------------------------------------------ #
 
@@ -24,17 +26,16 @@
 # Column the target description is printed from
 HELP-DESCRIPTION-SPACING := 24
 
-SHELL := /usr/bin/zsh
+# SHELL := /usr/bin/zsh
 
 # Tool variables
-MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'"  --remove-container
+MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'" --remove-container
 DOCS_SERVER := zensical serve --dev-addr localhost:7777
-# MKDOCS_SERVER := mkdocs serve --dev-addr localhost:7777
 OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).md
 # ------------------------------------------------ #
 
 # -- Code Quality -------------------------------- #
-pre-commit-check: lint  ## Run lint task
+pre-commit-check: lint ## Format and lint with Megalinter
 
 lint:  ## Run MegaLinter with custom configuration (node.js required)
 	$(info -- MegaLinter Runner ---------------------)
