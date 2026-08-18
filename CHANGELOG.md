@@ -5,6 +5,7 @@
 - build(dev): 📦 update GitHub actions via `make dependencies-update`
 - ci(github): 🔧 practicalli workflows for zensical static site generator
 - build(make): 🔧 practicalli task definitions for zensical project
+- feat(zensical): 💄 update overrides to zensical
 
 # 2026-04-11
 
