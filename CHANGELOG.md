@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 2026-08-22
+
+### Changed
+
 - build(dev): 📦 update GitHub actions via `make dependencies-update`
 - ci(github): 🔧 practicalli workflows for zensical static site generator
 - build(make): 🔧 practicalli task definitions for zensical project
