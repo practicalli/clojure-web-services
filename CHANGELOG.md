@@ -4,6 +4,10 @@
 
 ## 2026-08-22
 
+### Added
+
+- build(marksman): 🔧 set docs as root directory for all links
+
 ### Changed
 
 - build(dev): 📦 update GitHub actions via `make dependencies-update`
