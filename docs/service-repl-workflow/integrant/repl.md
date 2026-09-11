@@ -1,6 +1,6 @@
 # Integrant REPL
 
-[Integrant REPL](integrant-repl.md) is a library to manage components as part of a REPL workflow, to extend features provided by Integrant.
+[Integrant REPL](https://github.com/weavejester/integrant-repl) is a library to manage components as part of a REPL workflow, to extend features provided by Integrant.
 
 Integrant REPL includes functions to start, stop and restart services during development, enabling changes to the system without restarting the REPL process.
 

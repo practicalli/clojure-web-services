@@ -7,6 +7,7 @@
 ### Added
 
 - build(marksman): 🔧 set docs as root directory for all links
+- docs(links): ✏️ update links reported as missing pages
 
 ### Changed
 

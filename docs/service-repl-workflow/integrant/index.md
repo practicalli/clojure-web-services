@@ -10,7 +10,7 @@ Components are managed using runtime polymorphism, i.e. `defmethod`, to define h
 - `halt-key!` stop a component
 
 
-[:fontawesome-solid-book-open: Integrant REPL](integrant-repl.md) manages components during development to restart the services, loading all code changes into the REPL (especially useful after ranaming functions and namespaces)
+[:fontawesome-solid-book-open: Integrant REPL](repl.md) manages components during development to restart the services, loading all code changes into the REPL (especially useful after ranaming functions and namespaces)
 
 `integrant.repl.state/config` shows the configuration used to start the service.  `integrant.repl.state/system` to inspect the configuration state of the running system.
 

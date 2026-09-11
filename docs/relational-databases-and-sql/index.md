@@ -8,8 +8,8 @@ next.jdbc supports a wide range of databases and automatically pulls in the rele
 ## Relational Databases
 This guide will use the following relational databases
 
-* [H2 database](h2-database.md) - lightweight in-process database that writes to disk, easily added for a fast and simple dev environment.
-* [Postgresql](postgres-database.md) - open source, feature rich and production grade database (defacto production choice)
+* [H2 database](./h2-database/index.md) - lightweight in-process database that writes to disk, easily added for a fast and simple dev environment.
+* [Postgresql](./postgresql-database.md) - open source, feature rich and production grade database (defacto production choice)
 
 Other persistent storage approach include
 

@@ -1,44 +1,46 @@
 ## Application Logic
 
-
-
 ![Ring - Compojure routes](../images/clojure-ring-adaptor-middleware-route--handler-overview.png)
 
 
-* [Routing](application-logic/routing.md)
-* [Requests](application-logic/requests/index.md)
-* [Responses](application-logic/responses/index.md)
-* [handlers](application-logic/handlers/index.md)
-* [middleware](application-logic/middleware/index.md)
-* [Serving static content](app-servers/static-content.md)
-
-
-  <!-- * **routing** - running different code depending on the URL path received -->
-  <!-- * **http method switching** - running different code based on the HTTP method (GET, POST, PUT, DELETE) -->
-
-
 ## Ring
-Ring is the defacto library for server-side web applications.  Even if not using the Ring library, the contents that Ring established are used by other libraries.
+
+Ring is the defacto library for HTTP messaging.
+
+The Ring specification became the defacto standard in Clojure, converting requests and responses between Clojure Hashmaps and the HTTP format.
+
+
+## Reitit
+
+A data approach to routing for Clojure and ClojureScript.
+
+[Reitit-ring](https://cljdoc.org/d/metosin/reitit/0.11.0-rc1/doc/ring){target=_blank} uses the Ring standard.
 
 
 ## Compojure
-  [Compojure](https://github.com/weavejester/compojure) is a library that works with Ring to manage
-  Compojure also has convenience functions that make ring responses easier to generate.
 
-  In this section we will update our project to use Compojure.
+[Compojure](https://github.com/weavejester/compojure) is a library that works with Ring to manage
 
+Compojure also has convenience functions that make ring responses easier to generate.
 
-## Bidi - Bi-directional URI dispatch
-https://github.com/juxt/bidi
-Clojure and ClojureScript
-
-bidi is written to do 'one thing well' (URI dispatch and formation) and is intended for use with Ring middleware, HTTP servers (including Jetty, http-kit and aleph) and is fully compatible with Liberator.
+In this section we will update our project to use Compojure.
 
 
-## yada - resources as data
+
+## Juxt Bidi
+
+Bi-directional URI dispatch for Clojure and ClojureScript
+
+[Bidi](https://github.com/juxt/bidi) is written to do 'one thing well' (URI dispatch and formation) and is intended for use with Ring middleware, HTTP servers (including Jetty, http-kit and aleph) and is fully compatible with Liberator.
+
+
+## yada
+
+Resources as data
+
 [yada](https://github.com/juxt/yada) is a web library for Clojure, designed to support the creation of production services via HTTP.
 
-It has the following features:
+Yada has the following features:
 
 * Standards-based, comprehensive HTTP coverage (content negotiation, conditional requests, etc.)
 * Parameter validation and coercion, automatic Swagger support
@@ -47,7 +49,3 @@ It has the following features:
 * Excellent performance, suitable for heavy production workloads
 
 yada is a sibling library to bidi - whereas bidi is based on routes as data, yada is based on resources as data.
-
-
-## Reitit
-A data approach to routing
