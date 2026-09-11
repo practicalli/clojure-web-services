@@ -7,11 +7,12 @@
 ### Changed
 
 - build(dev): 📦 update GitHub actions via `make dependencies-update`
-- ci(github): 🔧 practicalli workflows for zensical static site generator
 - build(make): 🔧 practicalli task definitions for zensical project
 - build(make): 🔧 task to install zensical with UV
 - build(zensical): 💄 update overrides to zensical
 - build(zensical): 💄 automatic light dark color scheme
+- ci(zensical): 🔧 practicalli workflows for zensical static site generator
+- ci(zensical): run zensical build via uvx
 
 # 2026-04-11
 
