@@ -11,7 +11,7 @@
 # - uv
 # - clojure & practicalli cli config (dependency check)
 # - docker (run megalinter locally)
-# - mega-linter-runner
+# - node.js (mega-linter-runner via npx)
 # ------------------------------------------------ #
 
 # -- Makefile task config ------------------------ #
@@ -62,9 +62,9 @@ dependencies-update: ## Update all library dependencies and GitHub action
 	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
 # ------------------------------------------------ #
 
-# --- Documentation Generation  ------------------ #
-docs-install:  ## Install or upgrade Zensical in Python virtual environment
-	uv tool install zensical --upgrade
+# -- Documentation Generation  ------------------- #
+docs-install:  ## Install or upgrade Zensical with Catppuccin theme plugin
+	uv tool install zensical --with catppuccin-zensical --upgrade
 
 docs:  ## Build and run docs in local server
 	$(info -- Local Server --------------------------)
@@ -82,10 +82,10 @@ docs-debug:  ## Run local server in debug mode
 	$(info -- Local Server Debug --------------------)
 	$(DOCS_SERVER) -v
 
-dist: docs-build ## Build mkdocs website
+dist: docs-build ## Build Zensical website
 # ------------------------------------------------ #
 
-# ------- Version Control ------------------------ #
+# -- Version Control ----------------------------- #
 git-sr:  ## status list of git repos under current directory
 	$(info -- Multiple Git Repo Status --------------)
 	mgitstatus -e --flatten

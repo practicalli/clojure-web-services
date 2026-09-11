@@ -10,6 +10,7 @@
 - ci(github): 🔧 practicalli workflows for zensical static site generator
 - build(make): 🔧 practicalli task definitions for zensical project
 - feat(zensical): 💄 update overrides to zensical
+- build(make): 🔧 task to install zensical with UV
 
 # 2026-04-11
 
