@@ -18,6 +18,8 @@
 - build(zensical): 💄 automatic light dark color scheme
 - ci(zensical): 🔧 practicalli workflows for zensical static site generator
 - ci(zensical): run zensical build via uvx
+- refactor(projects): 🔥 remove leiningen based projects
+
 
 # 2026-04-11
 

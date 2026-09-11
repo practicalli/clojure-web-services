@@ -5,7 +5,7 @@ site_url: https://practical.li/clojure-web-services
 site_description: Practical guide to Clojure Web Services and APIs
 site_author: Practicalli
 site_org: https://practical.li
-copyright: Copyright &copy 2023 Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+copyright: Copyright &copy 2026 Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
 repo_url: https://github.com/practicalli/clojure-web-services/
 edit_uri: https://github.com/practicalli/clojure-web-services/edit/main/docs/
 
@@ -135,8 +135,8 @@ nav:
       - Overview: introduction/overview.md
       - Requirements: introduction/requirements.md
       - REPL Workflow: introduction/repl-workflow.md
-      - Contributing: introduction/contributing.md
-      - Writing Tips: introduction/writing-tips.md
+      - Contributing: https://practical.li/contributing
+      - Writing Tips: https://practical.li/zensical-tips
   - Service REPL Workflow:
       - service-repl-workflow/index.md
       - Portal: service-repl-workflow/portal.md
@@ -228,98 +228,98 @@ nav:
           - project-url-shortner/return-short-url.md
           - project-url-shortner/return-url-aliases.md
 
-      - TODO App:
-          - projects/leiningen/todo-app/index.md
-          - Create Project:
-              - projects/leiningen/todo-app/create-a-project/index.md
-              - projects/leiningen/todo-app/create-a-project/update-project-details.md
-              - projects/leiningen/todo-app/create-a-project/code-so-far.md
-          - Webserver with Ring:
-              - projects/leiningen/todo-app/create-a-webserver-with-ring/index.md
-              - projects/leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency.md
-              - projects/leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace.md
-              - projects/leiningen/todo-app/create-a-webserver-with-ring/namespaces.md
-              - projects/leiningen/todo-app/create-a-webserver-with-ring/include-ring-library.md
-              - projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.md
-              - projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.md
-              - projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.md
-              - projects/leiningen/todo-app/create-a-webserver-with-ring/code-so-far.md
-          - Ring: projects/leiningen/todo-app/introducing-ring/index.md
-          - Create Handler:
-              - projects/leiningen/todo-app/create-a-handler-function/index.md
-              - projects/leiningen/todo-app/create-a-handler-function/add-not-found.md
-              - projects/leiningen/todo-app/create-a-handler-function/if-function.md
-              - projects/leiningen/todo-app/create-a-handler-function/maps-and-keywords.md
-              - projects/leiningen/todo-app/create-a-handler-function/code-so-far.md
-          - Unit test handler: projects/leiningen/todo-app/unit-test-handler-function/index.md
-          - Reloading App:
-              - projects/leiningen/todo-app/reloading-the-application/index.md
-              - projects/leiningen/todo-app/reloading-the-application/test-your-code-reloads.md
-              - projects/leiningen/todo-app/reloading-the-application/middleware.md
-              - projects/leiningen/todo-app/reloading-the-application/code-so-far.md
-          - Compojure:
-              - projects/leiningen/todo-app/compojure/index.md
-              - projects/leiningen/todo-app/compojure/defroutes.md
-              - projects/leiningen/todo-app/compojure/theory-routing.md
-              - projects/leiningen/todo-app/compojure/adding-dependency.md
-              - projects/leiningen/todo-app/compojure/using-compojure.md
-              - projects/leiningen/todo-app/compojure/adding-goodbye-route.md
-              - projects/leiningen/todo-app/compojure/about.md
-              - projects/leiningen/todo-app/compojure/show-request-info.md
-              - projects/leiningen/todo-app/compojure/variable-path-elements.md
-              - projects/leiningen/todo-app/compojure/theory-local-name-bindings.md
-              - projects/leiningen/todo-app/compojure/theory-using-hash-maps.md
-              - projects/leiningen/todo-app/compojure/lisp-calculator.md
-              - projects/leiningen/todo-app/compojure/code-so-far.md
-          - Heroku Deploy:
-              - projects/leiningen/todo-app/heroku/index.md
-              - projects/leiningen/todo-app/heroku/update-project.md
-              - projects/leiningen/todo-app/heroku/procfile.md
-              - projects/leiningen/todo-app/heroku/deploy.md
-              - projects/leiningen/todo-app/heroku/code-so-far.md
-          - Hiccup:
-              - projects/leiningen/todo-app/hiccup/index.md
-              - projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.md
-              - projects/leiningen/todo-app/hiccup/create-new-handler.md
-              - projects/leiningen/todo-app/hiccup/code-so-far.md
-          - Refactor Namespace:
-              - projects/leiningen/todo-app/refactor-namespace/index.md
-              - projects/leiningen/todo-app/refactor-namespace/base-routes.md
-              - projects/leiningen/todo-app/refactor-namespace/play-routes.md
-              - projects/leiningen/todo-app/refactor-namespace/task-routes.md
-              - projects/leiningen/todo-app/refactor-namespace/core.md
-              - projects/leiningen/todo-app/refactor-namespace/code-so-far.md
-
-          - Postgres:
-              - projects/leiningen/todo-app/postgres/index.md
-              - projects/leiningen/todo-app/postgres/install.md
-              - projects/leiningen/todo-app/postgres/environment-variables.md
-              - projects/leiningen/todo-app/postgres/postgres-cli.md
-              - projects/leiningen/todo-app/postgres/pg-admin.md
-              - projects/leiningen/todo-app/postgres/dataclips.md
-              - projects/leiningen/todo-app/postgres/connect-to-heroku-postgres-from-clients.md
-              - projects/leiningen/todo-app/postgres/jira-ticket.md
-              - projects/leiningen/todo-app/postgres/lobo-table-creation.md
-              - projects/leiningen/todo-app/postgres/postgres-commands.md
-              - projects/leiningen/todo-app/postgres/postgres-performance-analytics.md
-              - projects/leiningen/todo-app/postgres/postgres-toolbelt-commands.md
-              - Connect to Postgres:
-                  - projects/leiningen/todo-app/connect-to-postgres/index.md
-                  - projects/leiningen/todo-app/connect-to-postgres/add-database-dependencies.md
-                  - projects/leiningen/todo-app/connect-to-postgres/define-db-connection.md
-              - Database Model:
-                  - projects/leiningen/todo-app/database-model/index.md
-                  - projects/leiningen/todo-app/database-model/create-table.md
-                  - projects/leiningen/todo-app/database-model/create-task.md
-                  - projects/leiningen/todo-app/database-model/show-all-task.md
-                  - projects/leiningen/todo-app/database-model/delete-task.md
-                  - projects/leiningen/todo-app/database-model/alternative-approaches.md
-          - Task handlers:
-              - projects/leiningen/todo-app/task-handlers/index.md
-              - projects/leiningen/todo-app/task-handlers/add-a-task.md
-              - projects/leiningen/todo-app/task-handlers/show-task.md
-              - projects/leiningen/todo-app/task-handlers/delete-a-task.md
-          - projects/leiningen/working-example/index.md
+      # - TODO App:
+      #     - projects/leiningen/todo-app/index.md
+      #     - Create Project:
+      #         - projects/leiningen/todo-app/create-a-project/index.md
+      #         - projects/leiningen/todo-app/create-a-project/update-project-details.md
+      #         - projects/leiningen/todo-app/create-a-project/code-so-far.md
+      #     - Webserver with Ring:
+      #         - projects/leiningen/todo-app/create-a-webserver-with-ring/index.md
+      #         - projects/leiningen/todo-app/create-a-webserver-with-ring/add-ring-dependency.md
+      #         - projects/leiningen/todo-app/create-a-webserver-with-ring/configure-main-namespace.md
+      #         - projects/leiningen/todo-app/create-a-webserver-with-ring/namespaces.md
+      #         - projects/leiningen/todo-app/create-a-webserver-with-ring/include-ring-library.md
+      #         - projects/leiningen/todo-app/create-a-webserver-with-ring/add-a-jetty-webserver.md
+      #         - projects/leiningen/todo-app/create-a-webserver-with-ring/coersing-types-and-java-lang.md
+      #         - projects/leiningen/todo-app/create-a-webserver-with-ring/run-webserver.md
+      #         - projects/leiningen/todo-app/create-a-webserver-with-ring/code-so-far.md
+      #     - Ring: projects/leiningen/todo-app/introducing-ring/index.md
+      #     - Create Handler:
+      #         - projects/leiningen/todo-app/create-a-handler-function/index.md
+      #         - projects/leiningen/todo-app/create-a-handler-function/add-not-found.md
+      #         - projects/leiningen/todo-app/create-a-handler-function/if-function.md
+      #         - projects/leiningen/todo-app/create-a-handler-function/maps-and-keywords.md
+      #         - projects/leiningen/todo-app/create-a-handler-function/code-so-far.md
+      #     - Unit test handler: projects/leiningen/todo-app/unit-test-handler-function/index.md
+      #     - Reloading App:
+      #         - projects/leiningen/todo-app/reloading-the-application/index.md
+      #         - projects/leiningen/todo-app/reloading-the-application/test-your-code-reloads.md
+      #         - projects/leiningen/todo-app/reloading-the-application/middleware.md
+      #         - projects/leiningen/todo-app/reloading-the-application/code-so-far.md
+      #     - Compojure:
+      #         - projects/leiningen/todo-app/compojure/index.md
+      #         - projects/leiningen/todo-app/compojure/defroutes.md
+      #         - projects/leiningen/todo-app/compojure/theory-routing.md
+      #         - projects/leiningen/todo-app/compojure/adding-dependency.md
+      #         - projects/leiningen/todo-app/compojure/using-compojure.md
+      #         - projects/leiningen/todo-app/compojure/adding-goodbye-route.md
+      #         - projects/leiningen/todo-app/compojure/about.md
+      #         - projects/leiningen/todo-app/compojure/show-request-info.md
+      #         - projects/leiningen/todo-app/compojure/variable-path-elements.md
+      #         - projects/leiningen/todo-app/compojure/theory-local-name-bindings.md
+      #         - projects/leiningen/todo-app/compojure/theory-using-hash-maps.md
+      #         - projects/leiningen/todo-app/compojure/lisp-calculator.md
+      #         - projects/leiningen/todo-app/compojure/code-so-far.md
+      #     - Heroku Deploy:
+      #         - projects/leiningen/todo-app/heroku/index.md
+      #         - projects/leiningen/todo-app/heroku/update-project.md
+      #         - projects/leiningen/todo-app/heroku/procfile.md
+      #         - projects/leiningen/todo-app/heroku/deploy.md
+      #         - projects/leiningen/todo-app/heroku/code-so-far.md
+      #     - Hiccup:
+      #         - projects/leiningen/todo-app/hiccup/index.md
+      #         - projects/leiningen/todo-app/hiccup/updating-handlers-with-hiccup.md
+      #         - projects/leiningen/todo-app/hiccup/create-new-handler.md
+      #         - projects/leiningen/todo-app/hiccup/code-so-far.md
+      #     - Refactor Namespace:
+      #         - projects/leiningen/todo-app/refactor-namespace/index.md
+      #         - projects/leiningen/todo-app/refactor-namespace/base-routes.md
+      #         - projects/leiningen/todo-app/refactor-namespace/play-routes.md
+      #         - projects/leiningen/todo-app/refactor-namespace/task-routes.md
+      #         - projects/leiningen/todo-app/refactor-namespace/core.md
+      #         - projects/leiningen/todo-app/refactor-namespace/code-so-far.md
+      #
+      #     - Postgres:
+      #         - projects/leiningen/todo-app/postgres/index.md
+      #         - projects/leiningen/todo-app/postgres/install.md
+      #         - projects/leiningen/todo-app/postgres/environment-variables.md
+      #         - projects/leiningen/todo-app/postgres/postgres-cli.md
+      #         - projects/leiningen/todo-app/postgres/pg-admin.md
+      #         - projects/leiningen/todo-app/postgres/dataclips.md
+      #         - projects/leiningen/todo-app/postgres/connect-to-heroku-postgres-from-clients.md
+      #         - projects/leiningen/todo-app/postgres/jira-ticket.md
+      #         - projects/leiningen/todo-app/postgres/lobo-table-creation.md
+      #         - projects/leiningen/todo-app/postgres/postgres-commands.md
+      #         - projects/leiningen/todo-app/postgres/postgres-performance-analytics.md
+      #         - projects/leiningen/todo-app/postgres/postgres-toolbelt-commands.md
+      #         - Connect to Postgres:
+      #             - projects/leiningen/todo-app/connect-to-postgres/index.md
+      #             - projects/leiningen/todo-app/connect-to-postgres/add-database-dependencies.md
+      #             - projects/leiningen/todo-app/connect-to-postgres/define-db-connection.md
+      #         - Database Model:
+      #             - projects/leiningen/todo-app/database-model/index.md
+      #             - projects/leiningen/todo-app/database-model/create-table.md
+      #             - projects/leiningen/todo-app/database-model/create-task.md
+      #             - projects/leiningen/todo-app/database-model/show-all-task.md
+      #             - projects/leiningen/todo-app/database-model/delete-task.md
+      #             - projects/leiningen/todo-app/database-model/alternative-approaches.md
+      #     - Task handlers:
+      #         - projects/leiningen/todo-app/task-handlers/index.md
+      #         - projects/leiningen/todo-app/task-handlers/add-a-task.md
+      #         - projects/leiningen/todo-app/task-handlers/show-task.md
+      #         - projects/leiningen/todo-app/task-handlers/delete-a-task.md
+      #     - projects/leiningen/working-example/index.md
 
   - Application Servers:
       - app-servers/index.md
