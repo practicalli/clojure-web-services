@@ -1,34 +1,45 @@
+# Create Web Services in Clojure
+
 ![Practicalli Clojure Web Services banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-light.png#only-light)
 ![Practicalli Clojure Web Services banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-dark.png#only-dark)
 
-Develop server-side web services and API's from the ground up using [Clojure](http://clojure.org) following a simple and data-centric design and applying functional programming concepts.
+Create server-side web services and API's from the ground up using Clojure, following a data-centric design.
 
-Use a [REPL Workflow approach](introduction/repl-workflow.md) to provide instant feedback on the code behaviour as it is written, validating design decisions as they are made.
+A [REPL Workflow approach](introduction/repl-workflow.md) to provide instant feedback on the code behaviour as it is written, validating design decisions as they are made.
 
 ![Clojure REPL workflow](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png)
 
 
 ## Tools
 
-Clojure CLI is used to manage library dependencies and run Clojure code, enhanced with [aliases from Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/).
+Clojure CLI is used to manage library dependencies and run Clojure code, enhanced with [aliases from Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/){target=_blank}.
 
-Larger projects use a system library (Donut System, Integrant) to manage the life cycle of components. Component state is managed via a reloaded REPL workflow to load changes on top of evaluating functions in the REPL.
+A [Service REPL Workflow](./service-repl-workflow/index.md) allows components to be reloaded without ending the REPL session. Library such as Donut System & Integrant manage the life cycle of components.
+
+Component state is managed via a reloaded REPL workflow to load changes on top of evaluating functions in the REPL.
 
 
-Persistent storage , with next.jdbc and honeysql for database access (SQL). Additional persistence tools and services will be added in future.
+Persistent storage examples use H2 and Postgresql relational databases with next.jdbc and honeysql for database access (SQL).
 
-tools.build is used to create Clojure artefacts for deployment, with GitHub actions and Docker used for Continuous Integration and orchestrating systems.
+Additional persistence tools and services will be added in future.
 
-make is a general build tool used to support project development and support automation of wokflow tasks.
+tools.build is used to create Clojure artefacts for deployment (Uberjar), with GitHub actions and Docker used for Continuous Integration and orchestrating systems.
+
+make is the build tool used to support project development and support automation of wokflow tasks.
 
 !!! INFO "Project Templates"
-    Practicalli Project templates can be used with the deps-new tool to create a new project with common libraries and code to show how those libraries can be wired together.
-    Practicalli Clojure Web Services guides will include a template for each of the projects in this book (WIP).
+    Practicalli Project templates create a new project with common libraries and code to show how those libraries can be wired together.
+
+    Practicalli Clojure Web Services guides include a template for each of the projects in this book (WIP).
 
 
 ## Library Composition approach
 
-The Clojure community provides a diverse set of libraries, each focused on a specific need. Libraries are assembled to rapidly develop a tailored solution, avoiding bloat and the unnecessary complexity that comes with large frameworks. Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.
+The Clojure community provides a diverse set of libraries, each focused on a specific need.
+
+Libraries are assembled to rapidly develop a tailored solution, avoiding bloat and the unnecessary complexity that comes with large frameworks.
+
+Libraries are relatively simple to replace with alternatives or used as inspiration for your own custom functions.
 
 ??? INFO "Avoid the complexity of large frameworks"
     Clojure project uses targeted libraries that solve specific design challenges, avoiding generic and monolithic frameworks.
