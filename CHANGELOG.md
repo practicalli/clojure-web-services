@@ -10,6 +10,7 @@
 - build(mkdocs): ♻️ refactor navigation for migration to zensical
 - build(zensical): ♻️ refactor overrides for zensical migration
 - build(zensical): 🔧 migrate to zensical configuration
+- build(make): 🔧 add `docs-clean` task to delete build artifacts
 
 
 ## 2026-08-22

@@ -81,6 +81,10 @@ docs-debug:  ## Run local server in debug mode
 	$(info -- Local Server Debug --------------------)
 	$(DOCS_SERVER) -v
 
+docs-clean:  ## Delete build artifacts, site and .cache
+	$(info -- Clean Docs Build Artifacts ------------)
+	- rm -rf site .cache
+
 dist: docs-build ## Build Zensical website
 # ------------------------------------------------ #
 
