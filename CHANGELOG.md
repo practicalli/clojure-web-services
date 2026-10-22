@@ -6,6 +6,7 @@
 
 - build(make): 🔧 `deps-update` & `deps-upgrade` tasks
 - ci(zensical): 📦 update setup-uv action to v10.2.0
+- build(make): `git-rebase`, `git-sr` tasks for mgitstatus
 
 
 ## 2026-08-22
