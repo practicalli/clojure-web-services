@@ -8,6 +8,7 @@
 - ci(zensical): 📦 update setup-uv action to v10.2.0
 - build(make): `git-rebase`, `git-sr` tasks for mgitstatus
 - build(mkdocs): ♻️ refactor navigation for migration to zensical
+- build(zensical): ♻️ refactor overrides for zensical migration
 
 
 ## 2026-08-22
