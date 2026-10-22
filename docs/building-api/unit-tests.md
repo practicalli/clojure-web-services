@@ -1,4 +1,4 @@
-# Testing our API
+# Unit Testing
 
 We used the `clojure-test` option when we created the project, so we will use this built in library.
 
