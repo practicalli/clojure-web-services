@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Changed
+
+- build(make): 🔧 `deps-update` & `deps-upgrade` tasks
+- ci(zensical): 📦 update setup-uv action to v10.2.0
+
+
 ## 2026-08-22
 
 ### Added
@@ -11,7 +17,7 @@
 
 ### Changed
 
-- ci(dev): 📦 update GitHub actions via `make dependencies-update`
+- ci(github): 📦 update GitHub actions via `make dependencies-update`
 - build(make): 🔧 practicalli task definitions for zensical project
 - build(make): 🔧 task to install zensical with UV
 - build(zensical): 💄 update overrides to zensical
@@ -19,7 +25,6 @@
 - ci(zensical): 🔧 practicalli workflows for zensical static site generator
 - ci(zensical): run zensical build via uvx
 - refactor(projects): 🔥 remove leiningen based projects
-- ci(zensical): 📦 update setup-uv action to v10.2.0
 
 # 2026-04-11
 
