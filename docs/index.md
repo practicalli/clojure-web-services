@@ -1,5 +1,8 @@
 # Create Web Services in Clojure
 
+!!! WARNING "Significant rewrite planned"
+    Project guides are being migrating to Clojure CLI and Reitit routing, from the original content which used Leiningen and Compojure.
+
 ![Practicalli Clojure Web Services banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-light.png#only-light)
 ![Practicalli Clojure Web Services banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-dark.png#only-dark)
 

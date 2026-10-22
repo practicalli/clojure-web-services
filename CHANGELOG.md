@@ -11,6 +11,7 @@
 - build(zensical): ♻️ refactor overrides for zensical migration
 - build(zensical): 🔧 migrate to zensical configuration
 - build(make): 🔧 add `docs-clean` task to delete build artifacts
+- docs(intro): ✏️ add warning about rewrite of project guides
 
 
 ## 2026-08-22
