@@ -9,6 +9,7 @@
 - build(make): `git-rebase`, `git-sr` tasks for mgitstatus
 - build(mkdocs): ♻️ refactor navigation for migration to zensical
 - build(zensical): ♻️ refactor overrides for zensical migration
+- build(zensical): 🔧 migrate to zensical configuration
 
 
 ## 2026-08-22

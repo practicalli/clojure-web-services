@@ -1,0 +1,477 @@
+# ----------------------------------------------------------------------------
+# Practicalli Configuration for Zensical Static Site Generator
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+[project]
+
+# The site_name is shown in the page header and the browser window title
+site_name = "Practicalli Clojure Web Services"
+
+# The site_description is included in the HTML head and should contain a
+# meaningful description of the site content for use by search engines.
+site_description = "Practical guide to building web applications and apis with the Clojure programming language. Using a Clojure REPL driven development workflow for code development and a Clojure reloaded workflow to manage components of a back-end service"
+
+# The site_author attribute is used in the HTML head element.
+site_author = "Practicalli Johnny"
+
+# The site_url is the canonical URL for your site
+site_url = "https://practical.li/clojure-web-services"
+
+# The copyright notice appears in the page footer and can contain an HTML fragment.
+copyright = """
+Copyright &copy; 2026 Practicalli
+"""
+
+# Explicitly defined navigation (comment for Implicit navigation)
+nav = [
+  { "Introduction" = [
+    { "Practicalli Clojure Web Services" = "index.md" },
+    { "Overview" = "introduction/overview.md" },
+    { "Requirements" = "introduction/requirements.md" },
+    { "REPL Workflow" = "introduction/repl-workflow.md" },
+    { "Service REPL Workflow" = [
+      "service-repl-workflow/index.md",
+      { "Portal" = "service-repl-workflow/portal.md" },
+      { "Mulog Events" = "service-repl-workflow/mulog-events.md" },
+      { "System REPL" = "service-repl-workflow/system-repl.md" },
+      { "Aero" = "service-repl-workflow/aero.md" },
+      { "Donut System" = "service-repl-workflow/donut-system.md" },
+      { "Integrant" = [
+        "service-repl-workflow/integrant/index.md",
+        { "Integrant System" = "service-repl-workflow/integrant/integrant-system.md" },
+        { "Integrant REPL" = "service-repl-workflow/integrant/repl.md" },
+      ] },
+    ] },
+  ] },
+  { "Application Servers" = [
+    "app-servers/index.md",
+    "app-servers/overview.md",
+    "app-servers/middleware.md",
+    "app-servers/routing-libraries.md",
+    "app-servers/clojure-project.md",
+    "app-servers/create-server.md",
+    "app-servers/jetty-server-options.md",
+    "app-servers/http-kit-server-options.md",
+    "app-servers/route-requests.md",
+    "app-servers/start-server.md",
+    "app-servers/java-system-properties.md",
+    "app-servers/simple-restart.md",
+    "app-servers/atom-based-restart.md",
+    "app-servers/app-server-logging.md",
+    "app-servers/debugging.md",
+    "app-servers/routing.md",
+    "app-servers/set-listen-port.md",
+    "app-servers/static-content.md",
+  ] },
+  { "Building API" = [
+    "building-api/index.md",
+    { "Reitit" = [
+      "building-api/reitit/index.md",
+    ] },
+    "building-api/compojure-api-template.md",
+    "building-api/create-compojure-api-project.md",
+    "building-api/swagger.md",
+    "building-api/ring-swagger.md",
+    "building-api/plumatic-schema.md",
+    "building-api/json-files.md",
+    "building-api/testing-api.md",
+    "building-api/ring-mock.md",
+    "building-api/cheshire.md",
+    { "End to end testing" = [
+      "building-api/end-to-end-testing/index.md",
+      "building-api/testing/swagger.md",
+      "building-api/testing/curl.md",
+      "building-api/testing/httpie.md",
+      "building-api/testing/postman.md",
+    ] },
+    "building-api/terminology.md",
+  ] },
+  { "Persistence" = [
+    "persistence/index.md",
+    { "Clojure DB" = [
+      "persistence/clojure-databases/index.md",
+      { "XTDB" = [
+        "persistence/clojure-databases/xtdb/index.md",
+      ] },
+    ] },
+    { "Relational" = [
+      "persistence/rdbms/index.md",
+      "persistence/rdbms/managing-connections.md",
+      "persistence/rdbms/postgresql-database.md",
+      {"H2" = [
+        "persistence/rdbms/h2-database/index.md",
+        "persistence/rdbms/h2-database/database-tools.md",
+        "persistence/rdbms/h2-database/schema-design.md",
+      ] },
+      { "next-jdbc" = [
+        "persistence/rdbms/next-jdbc-library/index.md",
+        "persistence/rdbms/next-jdbc-library/connection-pool-lifecycle.md",
+        "persistence/rdbms/next-jdbc-library/add-to-project.md",
+        "persistence/rdbms/next-jdbc-library/database-specifications.md",
+        "persistence/rdbms/next-jdbc-library/next-jdbc-and-resultsets.md",
+        "persistence/rdbms/next-jdbc-library/simple-example.md",
+      ] },
+    ] },
+  ] },
+
+
+  { "Projects" = [
+    "projects/index.md",
+    { "Slack App" = [
+      "projects/slack-app/index.md",
+      { "Create Slack App" = "projects/slack-app/create-slack-app.md" },
+      "projects/slack-app/slack-scopes.md",
+      "projects/slack-app/slack-api-methods.md",
+    ] },
+    { "Status Monitor" = [
+      "projects/status-monitor-deps/index.md",
+      { "Application Server" = "projects/status-monitor-deps/application-server.md" },
+      { "Debug Requests" = "projects/status-monitor-deps/debugging-requests.md" },
+      { "Unit Test Mock" = "projects/status-monitor-deps/unit-test-mocking-handlers.md" },
+      { "Refactor" = "projects/status-monitor-deps/refactor-handlers-and-tests.md" },
+      { "CI" = "projects/status-monitor-deps/continuous-integration.md" },
+      { "Deployment" = "projects/status-monitor-deps/deployment-via-ci.md" },
+    ] },
+    { "Banking On Clojure" = [
+      "projects/banking-on-clojure/index.md",
+      { "Clojure Server Project" = "projects/banking-on-clojure/clojure-server-project.md" },
+      { "Refactor Handlers" = "projects/banking-on-clojure/refactor-handler.md" },
+      { "UI Handler Functions" = "projects/banking-on-clojure/ui-handler-functions.md" },
+      { "Add More Handlers" = "projects/banking-on-clojure/account-overview-page.md" },
+      { "CI" = "projects/banking-on-clojure/continuous-integration.md" },
+      { "Deployment Pipeline" = "projects/banking-on-clojure/deployment-pipeline.md" },
+      { "Deployment via CI" = "projects/banking-on-clojure/deployment-via-ci.md" },
+      { "Unit Tests" = "projects/banking-on-clojure/unit-tests.md" },
+      { "Generative testing" = "projects/banking-on-clojure/spec-generative-testing.md" },
+      { "Dev Database" = "projects/banking-on-clojure/development-database.md" },
+      { "Instrument functions" = "projects/banking-on-clojure/instrument-next-jdbc-functions.md" },
+      { "DB Tables" = "projects/banking-on-clojure/database-tables.md" },
+      { "Database Queries" = "projects/banking-on-clojure/database-queries.md" },
+      { "Create Records" = "projects/banking-on-clojure/create-records.md" },
+      { "Read Records" = "projects/banking-on-clojure/read-records.md" },
+      { "Update Records" = "projects/banking-on-clojure/update-records.md" },
+      { "Delete Records" = "projects/banking-on-clojure/delete-records.md" },
+      "projects/banking-on-clojure/cyclic-load-dependency.md",
+      "projects/banking-on-clojure/clojure-spec-generate-mock-data.md",
+      "projects/banking-on-clojure/generate-data-from-specs.md",
+      "projects/banking-on-clojure/unit-testing-the-database.md",
+      "projects/banking-on-clojure/honeysql.md",
+      "projects/banking-on-clojure/namespace-design.md",
+      "projects/banking-on-clojure/production-database.md",
+    ] },
+    { "Game Scoreboard Reitit" = [
+      "projects/game-scoreboard-api/index.md",
+    ] },
+    { "Game Scoreboard Compojure" = [
+      "projects/game-scoreboard-api-compojure/index.md",
+      "building-api/projects/game-scoreboard-compojure/index.md",
+      "building-api/projects/game-scoreboard-compojure/defining-scoreboard.md",
+      "building-api/projects/game-scoreboard-compojure/defining-scores.md",
+      "building-api/projects/game-scoreboard-ui/index.md",
+      "building-api/projects/game-scoreboard-ui/create-project.md",
+    ] },
+    { "URL Shortner" = [
+      "project-url-shortner/index.md",
+      "project-url-shortner/create-project.md",
+      "project-url-shortner/run-project.md",
+      "project-url-shortner/test-app-reloading.md",
+      "project-url-shortner/compojure-template.md",
+      "project-url-shortner/design-data-structure.md",
+      "project-url-shortner/whats-in-a-request.md",
+      "project-url-shortner/redirect-to-full-url.md",
+      "project-url-shortner/add-static-resources.md",
+      "project-url-shortner/disable-anti-forgery-check.md",
+      "project-url-shortner/html-form.md",
+      "project-url-shortner/create-html-form.md",
+      "project-url-shortner/using-ring-redirect.md",
+      "project-url-shortner/named-alias-handler.md",
+      "project-url-shortner/if-let-function.md",
+      "project-url-shortner/refacor-hiccup-form.md",
+      "project-url-shortner/alias-generator.md",
+      "project-url-shortner/persist-aliases.md",
+      "project-url-shortner/postgres-setup.md",
+      "project-url-shortner/redis-setup.md",
+      "project-url-shortner/create-database.md",
+      "project-url-shortner/add-alias-to-database.md",
+      "project-url-shortner/get-alias-from-database.md",
+      "project-url-shortner/delete-alias-from-database.md",
+      "project-url-shortner/return-short-url.md",
+      "project-url-shortner/return-url-aliases.md",
+    ] },
+  ] },
+  { "Reference" = [
+    "reference/index.md",
+    "reference/ring/index.md",
+    "reference/ring/request-map.md",
+    "reference/continuous-integration/heroku/index.md",
+    { "Micro-services" = [
+      "micro-services/index.md",
+    ] },
+  { "Libraries" = [
+    "libraries/index.md",
+    { "Reitit" = [
+      "libraries/reitit/index.md",
+      "libraries/reitit/constructing-routes.md",
+    ] },
+    { "Micro-frameworks" = [
+      "micro-framework/index.md",
+      "micro-framework/edge/index.md",
+      "micro-framework/luminus/index.md",
+      "micro-framework/pedestal/index.md",
+    ] },
+  ] },
+  ] },
+]
+
+
+# Add custom CSS styling to customize the Zensical theme
+# The path is relative to the "docs_dir".
+#extra_css = ["assets/stylesheets/extra.css"]
+
+# Add custom JavaScript to customize site behavior
+# The path is relative to the "docs_dir".
+#extra_javascript = ["assets/javascript/extra.js"]
+
+# ----------------------------------------------------------------------------
+# Theme options
+# ----------------------------------------------------------------------------
+[project.theme]
+# https://jonathan343.github.io/catppuccin-zensical/
+name = "catppuccin"
+
+# Use the traditional Material for MkDocs look.
+# variant = "classic"
+
+# Override specific blocks, partials, or whole templates.
+# - https://zensical.org/docs/customization/#extending-the-theme
+#custom_dir = "overrides"
+
+# Set image to use as the icon browsers use in their title bar or tab bar.
+# The path is relative to the "docs_dir".
+# - https://zensical.org/docs/setup/logo-and-icons/#favicon
+# - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
+favicon = "assets/images/practicalli-logo.png"
+
+# The default language is "en" (English). It is possible to create
+# sites with multiple languages and configure a language selector. See
+# the documentation for details.
+# - https://zensical.org/docs/setup/language/
+language = "en"
+
+# Zensical feature toggles to change the behavior of the documentation site.
+features = [
+    # Allow user to dismiss the Zensical announcement bar.
+    "announce.dismiss",
+
+    # If you have a repository configured and turn on this feature, Zensical
+    # will generate an edit button for the page. This works for common
+    # repository hosting services.
+    # https://zensical.org/docs/setup/repository/#content-actions
+    #"content.action.edit",
+
+    # If you have a repository configured and turn on this feature, Zensical
+    # will generate a button that allows the user to view the Markdown
+    # code for the current page.
+    # https://zensical.org/docs/setup/repository/#content-actions
+    #"content.action.view",
+
+    # Code annotations adds an icon with a tooltip to your
+    # code blocks to provide explanations at crucial points.
+    # https://zensical.org/docs/authoring/code-blocks/#code-annotations
+    "content.code.annotate",
+
+    # Add a button in code blocks that allow users to copy the content
+    # to their clipboard without first selecting it.
+    # https://zensical.org/docs/authoring/code-blocks/#code-copy-button
+    "content.code.copy",
+
+    # Code blocks can include a button to allow for the selection of line
+    # ranges by the user.
+    # https://zensical.org/docs/authoring/code-blocks/#code-selection-button
+    "content.code.select",
+
+    # Zensical can render footnotes as inline tooltips, so the user can read
+    # the footnote without leaving the context of the document.
+    # https://zensical.org/docs/authoring/footnotes/#footnote-tooltips
+    "content.footnote.tooltips",
+
+    # If you have many content tabs that have the same titles (e.g., "Python",
+    # "JavaScript", "Cobol"), this feature causes all of them to switch to
+    # at the same time when the user chooses their language in one.
+    # https://zensical.org/docs/authoring/content-tabs/#linked-content-tabs
+    "content.tabs.link",
+
+    # With this feature enabled users can add tooltips to links that will be
+    # displayed when the mouse pointer hovers the link.
+    # https://zensical.org/docs/authoring/tooltips/#improved-tooltips
+    "content.tooltips",
+
+    # With this feature enabled, Zensical will automatically hide parts
+    # of the header when the user scrolls past a certain point.
+    # https://zensical.org/docs/setup/header/#automatic-hiding
+    # "header.autohide",
+
+    # Turn on this feature to expand all collapsible sections in the
+    # navigation sidebar by default.
+    # https://zensical.org/docs/setup/navigation/#navigation-expansion
+    # "navigation.expand",
+
+    # This feature turns on navigation elements in the footer that allow the
+    # user to navigate to a next or previous page.
+    # https://zensical.org/docs/setup/footer/#navigation
+    "navigation.footer",
+
+    # When section index pages are enabled, documents can be directly attached
+    # to sections, which is particularly useful for providing overview pages.
+    # https://zensical.org/docs/setup/navigation/#section-index-pages
+    "navigation.indexes",
+
+    # When instant navigation is enabled, clicks on all internal links will be
+    # intercepted and dispatched via XHR without fully reloading the page.
+    # https://zensical.org/docs/setup/navigation/#instant-navigation
+    "navigation.instant",
+
+    # With instant prefetching, your site will start to fetch a page once the
+    # user hovers over a link. This will reduce the perceived loading time
+    # for the user.
+    # https://zensical.org/docs/setup/navigation/#instant-prefetching
+    "navigation.instant.prefetch",
+
+    # In order to provide a better user experience on slow connections when
+    # using instant navigation, a progress indicator can be enabled.
+    # https://zensical.org/docs/setup/navigation/#progress-indicator
+    #"navigation.instant.progress",
+
+    # When navigation paths are activated, a breadcrumb navigation is rendered
+    # above the title of each page
+    # https://zensical.org/docs/setup/navigation/#navigation-path
+    "navigation.path",
+
+    # When pruning is enabled, only the visible navigation items are included
+    # in the rendered HTML, reducing the size of the built site by 33% or more.
+    # https://zensical.org/docs/setup/navigation/#navigation-pruning
+    #"navigation.prune",
+
+    # When sections are enabled, top-level sections are rendered as groups in
+    # the sidebar for viewports above 1220px, but remain as-is on mobile.
+    # https://zensical.org/docs/setup/navigation/#navigation-sections
+    # "navigation.sections",
+
+    # When tabs are enabled, top-level sections are rendered in a menu layer
+    # below the header for viewports above 1220px, but remain as-is on mobile.
+    # https://zensical.org/docs/setup/navigation/#navigation-tabs
+    "navigation.tabs",
+
+    # When sticky tabs are enabled, navigation tabs will lock below the header
+    # and always remain visible when scrolling down.
+    # https://zensical.org/docs/setup/navigation/#sticky-navigation-tabs
+    "navigation.tabs.sticky",
+
+    # A back-to-top button can be shown when the user, after scrolling down,
+    # starts to scroll up again.
+    # https://zensical.org/docs/setup/navigation/#back-to-top-button
+    "navigation.top",
+
+    # When anchor tracking is enabled, the URL in the address bar is
+    # automatically updated with the active anchor as highlighted in the table
+    # of contents.
+    # https://zensical.org/docs/setup/navigation/#anchor-tracking
+    "navigation.tracking",
+
+    # When search highlighting is enabled and a user clicks on a search result,
+    # Zensical will highlight all occurrences after following the link.
+    # https://zensical.org/docs/setup/search/#search-highlighting
+    "search.highlight",
+
+    # When anchor following for the table of contents is enabled, the sidebar
+    # is automatically scrolled so that the active anchor is always visible.
+    # https://zensical.org/docs/setup/navigation/#anchor-following
+    # "toc.follow",
+
+    # When navigation integration for the table of contents is enabled, it is
+    # always rendered as part of the navigation sidebar on the left.
+    # https://zensical.org/docs/setup/navigation/#navigation-integration
+    #"toc.integrate",
+]
+
+# ----------------------------------------------------------------------------
+# Light and dark palette from the Catppuccin theme
+[[project.theme.palette]]
+scheme = "catppuccin-mocha"
+primary = "blue"
+accent = "indigo"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to Latte"
+
+[[project.theme.palette]]
+scheme = "catppuccin-latte"
+primary = "blue"
+accent = "deep purple"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to Mocha"
+
+[project.theme.icon]
+logo = "lucide/book-open-text"
+repo = "lucide/book-open-text"
+
+# ----------------------------------------------------------------------------
+# Font Family to use when generating the website
+# Fonts are loaded from Google Fonts by default
+[project.theme.font]
+text = "Ubuntu"
+code = "Ubuntu Mono"
+
+# Custom Admonition icons
+[project.theme.icon.admonition]
+note = "fontawesome/solid/pencil"
+abstract = "fontawesome/solid/book"
+info = "fontawesome/solid/circle-info"
+tip = "fontawesome/solid/bullhorn"
+success = "fontawesome/solid/check"
+question = "fontawesome/solid/circle-question"
+warning = "fontawesome/solid/triangle-exclamation"
+failure = "fontawesome/solid/bomb"
+danger = "fontawesome/solid/skull"
+bug = "fontawesome/solid/robot"
+example = "fontawesome/solid/flask"
+quote = "fontawesome/solid/quote-left"
+# exercise = "fontawesome/solid/pencil"
+
+# ----------------------------------------------------------------------------
+# Social Icons and links in footer of website
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/practicalli/clojure-web-services"
+[[project.extra.social]]
+icon = "material/web"
+link = "https://practical.li/"
+[[project.extra.social]]
+icon = "fontawesome/brands/linkedin"
+link = "https://www.linkedin.com/in/jr0cket/"
+[[project.extra.social]]
+icon = "fontawesome/brands/slack"
+link = "https://clojurians.slack.com/messages/practicalli"
+[[project.extra.social]]
+icon = "fontawesome/brands/mastodon"
+link = "https://mastodon.social/@practicalli_johnny"
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/practicalli"
+[[project.extra.social]]
+icon = "fontawesome/brands/docker"
+link = "https://hub.docker.com/u/practicalli"
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Social Cards
+[project.plugins.social]
+# cards_layout_options = { font_family = "Ubuntu" } # uses site font by default
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Website Analytics Tracking
+[project.extra.analytics]
+provider = "google"
+property = "G-RJGG2L0QEQ"
+# ----------------------------------------------------------------------------
