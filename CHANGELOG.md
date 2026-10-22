@@ -13,6 +13,7 @@
 - build(make): 🔧 add `docs-clean` task to delete build artifacts
 - docs(intro): ✏️ add warning about rewrite of project guides
 - build(zensical): ♻️ refactor building-api testing page and section
+- docs(building-api): ✏️ rework section introduction page
 
 
 ## 2026-08-22
