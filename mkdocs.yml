@@ -135,8 +135,6 @@ nav:
       - Overview: introduction/overview.md
       - Requirements: introduction/requirements.md
       - REPL Workflow: introduction/repl-workflow.md
-      - Contributing: https://practical.li/contributing
-      - Writing Tips: https://practical.li/zensical-tips
   - Service REPL Workflow:
       - service-repl-workflow/index.md
       - Portal: service-repl-workflow/portal.md
@@ -151,7 +149,6 @@ nav:
 
   - Projects:
       - projects/index.md
-      # - full-app/index.md
       - Slack App:
           - projects/slack-app/index.md
           - Create Slack App: projects/slack-app/create-slack-app.md
@@ -193,13 +190,16 @@ nav:
           - projects/banking-on-clojure/namespace-design.md
           - projects/banking-on-clojure/production-database.md
 
-      # - Game Scoreboard:
-      #     - projects/game-scoreboard-api/index.md
-      #     - building-api/projects/game-scoreboard/index.md
-      #     - building-api/projects/game-scoreboard/defining-scoreboard.md
-      #     - building-api/projects/game-scoreboard/defining-scores.md
-      #     - building-api/projects/game-scoreboard-ui/index.md
-      #     - building-api/projects/game-scoreboard-ui/create-project.md
+      - Game Scoreboard Reitit:
+          - projects/game-scoreboard-api/index.md
+
+      - Game Scoreboard Compojure:
+          - projects/game-scoreboard-api-compojure/index.md
+          - building-api/projects/game-scoreboard-compojure/index.md
+          - building-api/projects/game-scoreboard-compojure/defining-scoreboard.md
+          - building-api/projects/game-scoreboard-compojure/defining-scores.md
+          - building-api/projects/game-scoreboard-ui/index.md
+          - building-api/projects/game-scoreboard-ui/create-project.md
       - URL Shortner:
           - project-url-shortner/index.md
           - project-url-shortner/create-project.md
@@ -355,40 +355,42 @@ nav:
       - building-api/cheshire.md
       - End to end testing:
           - building-api/end-to-end-testing/index.md
-          # - building-api/end-to-end-testing/swagger.md
-          # - building-api/end-to-end-testing/curl.md
-          # - building-api/end-to-end-testing/httpie.md
-          # - building-api/end-to-end-testing/postman.md
+          - building-api/testing/swagger.md
+          - building-api/testing/curl.md
+          - building-api/testing/httpie.md
+          - building-api/testing/postman.md
       - building-api/terminology.md
   - Persistence:
-      - clojure-databases/index.md
+      - persistence/index.md
+      - Clojure DB:
+          - persistence/clojure-databases/index.md
+          - XTDB:
+              - persistence/clojure-databases/xtdb/index.md
       - Relational:
-          - relational-databases-and-sql/index.md
-          - relational-databases-and-sql/h2-database.md
-          - relational-databases-and-sql/managing-connections.md
-          - relational-databases-and-sql/postgresql-database.md
-          - relational-databases-and-sql/h2-database/index.md
-          - relational-databases-and-sql/h2-database/database-tools.md
-          - relational-databases-and-sql/h2-database/schema-design.md
+          - persistence/rdbms/index.md
+          - persistence/rdbms/h2-database/index.md
+          - persistence/rdbms/managing-connections.md
+          - persistence/rdbms/postgresql-database.md
+          - persistence/rdbms/h2-database/index.md
+          - persistence/rdbms/h2-database/database-tools.md
+          - persistence/rdbms/h2-database/schema-design.md
           - next-jdbc:
-              - relational-databases-and-sql/next-jdbc-library/index.md
-              - relational-databases-and-sql/next-jdbc-library/connection-pool-lifecycle.md
-              - relational-databases-and-sql/next-jdbc-library/add-to-project.md
-              - relational-databases-and-sql/next-jdbc-library/database-specifications.md
-              - relational-databases-and-sql/next-jdbc-library/next-jdbc-and-resultsets.md
-              - relational-databases-and-sql/next-jdbc-library/simple-example.md
-  #     - XTDB:
-  #         - clojure-databases/crux/index.md
-  # - Libraries:
-  #     - libraries/index.md
-  #     - Reitit:
-  #         - libraries/reitit/index.md
-  #         - libraries/reitit/constructing-routes.md
-  # - Micro-frameworks:
-  #     - micro-framework/index.md
-  #     - micro-framework/edge/index.md
-  #     - micro-framework/luminus/index.md
-  #     - micro-framework/pedestal/index.md
+              - persistence/rdbms/next-jdbc-library/index.md
+              - persistence/rdbms/next-jdbc-library/connection-pool-lifecycle.md
+              - persistence/rdbms/next-jdbc-library/add-to-project.md
+              - persistence/rdbms/next-jdbc-library/database-specifications.md
+              - persistence/rdbms/next-jdbc-library/next-jdbc-and-resultsets.md
+              - persistence/rdbms/next-jdbc-library/simple-example.md
+  - Libraries:
+      - libraries/index.md
+      - Reitit:
+          - libraries/reitit/index.md
+          - libraries/reitit/constructing-routes.md
+  - Micro-frameworks:
+      - micro-framework/index.md
+      - micro-framework/edge/index.md
+      - micro-framework/luminus/index.md
+      - micro-framework/pedestal/index.md
   - Micro-services:
       - micro-services/index.md
 
