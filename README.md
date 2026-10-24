@@ -20,9 +20,8 @@ Relevant theory and background reading is included whilst keeping the practical 
 
 ## Book status
 
-[![MegaLinter](https://github.com/practicalli/clojure-web-services/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/clojure-web-services/actions/workflows/megalinter.yaml)
-[![Publish Book](https://github.com/practicalli/clojure-web-services/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/clojure-web-services/actions/workflows/publish-book.yaml)
-[![pages-build-deployment](https://github.com/practicalli/clojure-web-services/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/practicalli/clojure-web-services/actions/workflows/pages/pages-build-deployment)
+[![MegaLinter](https://github.com/practicalli/clojure-web-services/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/practicalli/clojure-web-services/actions/workflows/mega-linter.yml)
+[![Publish Zensical Docs](https://github.com/practicalli/clojure-web-services/actions/workflows/docs.yml/badge.svg)](https://github.com/practicalli/clojure-web-services/actions/workflows/docs.yml)
 
 [![Ideas and other issues](https://img.shields.io/github/issues/practicalli/clojure-web-services?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-web-services/issues)
 [![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-web-services?style=for-the-badge)](https://github.com/practicalli/clojure-web-services/pulls)

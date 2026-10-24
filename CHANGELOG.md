@@ -15,6 +15,7 @@
 - build(zensical): ♻️ refactor building-api testing page and section
 - docs(building-api): ✏️ rework section introduction page
 - build(zensical): ♻️ move compojure api pages to reference section
+- docs(readme): ✏️ update megalinter and publish book status badges
 
 
 ## 2026-08-22
