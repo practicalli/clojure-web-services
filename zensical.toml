@@ -69,15 +69,9 @@ nav = [
     { "Reitit" = [
       "building-api/reitit/index.md",
     ] },
-    "building-api/compojure-api-template.md",
-    "building-api/create-compojure-api-project.md",
-    "building-api/swagger.md",
-    "building-api/ring-swagger.md",
-    "building-api/plumatic-schema.md",
     "building-api/json-files.md",
     "building-api/unit-tests.md",
     "building-api/ring-mock.md",
-    "building-api/cheshire.md",
     { "API testing" = [
       "building-api/testing-api/index.md",
       "building-api/testing-api/swagger.md",
@@ -208,19 +202,26 @@ nav = [
     { "Micro-services" = [
       "micro-services/index.md",
     ] },
-  { "Libraries" = [
-    "libraries/index.md",
-    { "Reitit" = [
-      "libraries/reitit/index.md",
-      "libraries/reitit/constructing-routes.md",
+    { "Compojure" = [
+      "reference/compojure/index.md",
+      "reference/compojure/compojure-api-template.md",
+      "reference/compojure/cheshire.md",
+      "reference/compojure/plumatic-schema.md",
+      "reference/compojure/ring-swagger.md",
     ] },
-    { "Micro-frameworks" = [
-      "micro-framework/index.md",
-      "micro-framework/edge/index.md",
-      "micro-framework/luminus/index.md",
-      "micro-framework/pedestal/index.md",
+    { "Libraries" = [
+      "libraries/index.md",
+      { "Reitit" = [
+        "libraries/reitit/index.md",
+        "libraries/reitit/constructing-routes.md",
+      ] },
+      { "Micro-frameworks" = [
+        "micro-framework/index.md",
+        "micro-framework/edge/index.md",
+        "micro-framework/luminus/index.md",
+        "micro-framework/pedestal/index.md",
+      ] },
     ] },
-  ] },
   ] },
 ]
 

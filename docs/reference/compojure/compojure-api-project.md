@@ -1,9 +1,13 @@
-# Create a compojure-api project
+# Compojure-api project
 
-> ####NOTE::Create a project with tests
-```bash
-lein new compojure-api my-api +clojure-test
-```
+<!-- TODO: create reitit-api template for Clojure CLI -->
+
+
+
+!!! NOTE "Create a project with tests"
+    ```bash
+    lein new compojure-api my-api +clojure-test
+    ```
 
 ## Deconstruct the project
 
@@ -30,3 +34,20 @@ When we want to deploy the application then we should use the `lein ring uberjar
 In the `:dev` profile, dependencies include [`ring/ring-mock`](https://github.com/ring-clojure/ring-mock) library to help us test our server-side web application.
 
 There is also the [`cheshire`](https://github.com/dakrone/cheshire) library to help us work with JSON data in an efficient way.
+
+Quickly create the basics of a server-side webapp with the [compojure-api](https://github.com/metosin/compojure-api-template) template for Leiningen.
+
+```bash
+lein new compojure-api project-name
+```
+
+This command creates a new Clojure project in a directory called **scoreboard-service**.
+
+
+## Adding tests
+
+Using either of the `+clojure-test` or `+midge` will add the specific test library to the project created.
+
+```bash
+lein new compojure-api project-name +clojure-test
+```

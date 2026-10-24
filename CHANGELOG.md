@@ -14,6 +14,7 @@
 - docs(intro): ✏️ add warning about rewrite of project guides
 - build(zensical): ♻️ refactor building-api testing page and section
 - docs(building-api): ✏️ rework section introduction page
+- build(zensical): ♻️ move compojure api pages to reference section
 
 
 ## 2026-08-22
