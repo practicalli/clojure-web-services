@@ -17,6 +17,7 @@
 - build(zensical): ♻️ move compojure api pages to reference section
 - docs(readme): ✏️ update megalinter and publish book status badges
 - docs(projects): ✏️ add refactor warning for section
+- docs(api): ♻️ reword and update reitit overview
 
 
 ## 2026-08-22

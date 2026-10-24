@@ -1,12 +1,12 @@
 # Reitit routing library
 
-Reitit routing for client and server-side routing
+Reitit routing for client-side (ClojureScript) and server-side (Clojure) routing.
 
-Supports use of ring specification for the request and response bodies as a Clojure hash-map.  Ring middleware is also supported, allowing transformation of requests and responses.
+Reitit.ring library provides support for the [:fontawesome-solid-book-open: Ring specification](../../reference/ring/index.md) for the request and response data as a Clojure hash-map. Using Ring middleware allows transformation of all incoming requests and outgoing responses.
 
 Reitit provides content negotiation and data validation (clojure.spec or malli).
 
-Open API (Swagger) version 2 and 3 provide a common way to generate API documentation, which can also be tested via a swagger-ui web interface.
+Swagger-UI (OpenAPI) provides a common way to generate an interactive web UI with all the API documentation, enabling greater discoverability and testing of that API.
 
 
 ## Library Dependency
@@ -14,16 +14,16 @@ Open API (Swagger) version 2 and 3 provide a common way to generate API document
 Include the bundled distribution containing all modules
 
 === "Clojure CLI"
-
-    ```clojure title="deps.edn"
-    metosin/reitit {:mvn/version "0.10.1"}
-    ```
+    !!! EXAMPLE
+        ```clojure title="deps.edn"
+        metosin/reitit {:mvn/version "0.11.0"}
+        ```
 
 === "Leiningen"
-
-    ```clojure
-    [metosin/reitit "0.10.1"]
-    ```
+    !!! EXAMPLE
+        ```clojure title="project.clj"
+        [metosin/reitit "0.11.0"]
+        ```
 
 
 ## Require namespace
@@ -31,17 +31,17 @@ Include the bundled distribution containing all modules
 Require the reitit.ring namespace to provide routing and ring specification support.
 
 === "Project"
-
-    ```clojure
-    (:require
-     [reitit.ring :as ring])
-    ```
+    !!! EXAMPLE "Add require to `ns` namespace definition"
+        ```clojure
+        (:require
+         [reitit.ring :as ring])
+        ```
 
 === "REPL"
-
-    ```clojure
-    (require '[reitit.ring :as ring])
-    ```
+    !!! EXAMPLE "Add require to `ns` namespace definition"
+        ```clojure
+        (require '[reitit.ring :as ring])
+        ```
 
 ## Router function
 
@@ -60,7 +60,7 @@ Each key has a configuration map to define a handler for a specific HTTP method 
 ```
 
 !!! HINT "Passing system configuration argument"
-    Component systems (donut, integrant) use a system configuration (hash-map) which is passed to the router component during start up.
+    Component systems (e.g. Donut/System, Integrant) use a system configuration (hash-map) which is passed to the router component during start up.
 
     Define the router as a function to recieve the system configuration as an argument and make it available in part or full to the handler functions.
 
@@ -80,32 +80,38 @@ Each key has a configuration map to define a handler for a specific HTTP method 
 
 ## Handler functions
 
-Handler functions are Clojure functions that take a request map.
+A Handler function is a standard Clojure function definition that take a request hash-map.
 
+A handler for a request that has no arguments can be defined as a `def` or use `_` as the argument name.
 
-```clojure
-(defn welcome [_]
-  {:status 200 :body "Awesome Reitit Ring"})
-```
+!!! EXAMPLE "Handler: Welcome Message"
+    Return the HTTP status of the request, with a custom string as the body of the response.
+    ```clojure
+    (defn welcome [_]
+      {:status 200 :body "Awesome Reitit Ring"})
+    ```
 
-`constantly` function is commonly used for handlers that do not use the request data initially. `constantly` returns an anonymous function that takes the ring request hash-map.
+??? HINT "Use `_` as argument name when request data not used"
+    By convention the `_` underscore character is used instead of an argument name when a pieced of data is not used in the current scope.
 
-```clojure
-(def status
-  (constantly
-    (ring.util.response/response
-     {:application "practicalli awesome-api Service" :status "Alive"})))
-```
+!!! EXAMPLE "Status handler"
+    A handler that responds with the current status of the service.
+    ```clojure
+    (def status
+      (constantly
+        (ring.util.response/response
+         {:application "practicalli awesome-api Service" :status "Alive"})))
+    ```
 
+`constantly` returns an anonymous function which is used to define handlers that have the same behaviour regardless of the request data provided.
 
-!!! HINT "Use `_` as argument name when request not used"
-    Handlers might not use the data in a request to return a response.  By convention the `_` underscore character is used for the argument name when the request data is not used.
+`ring.util.response/response` creates a default ring response. Key/value pairs arguments replace or merge into the default response hash-map.
 
 
 !!! EXAMPLE "System Status handler"
     An example status report handler namespace
     ```clojure
-    (ns practicalli.awesome-api.api.system-admin
+    (ns practicalli.gameboard.api.system-admin
       "Gameboard API system administration handlers"
       (:require [ring.util.response :refer [response]]))
 
