@@ -18,6 +18,7 @@
 - docs(readme): ✏️ update megalinter and publish book status badges
 - docs(projects): ✏️ add refactor warning for section
 - docs(api): ♻️ reword and update reitit overview
+- docs(intro): ✏️ update navigation keys information
 
 
 ## 2026-08-22
