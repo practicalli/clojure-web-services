@@ -5,7 +5,7 @@
 ### Changed
 
 - build(make): 🔧 `deps-update` & `deps-upgrade` tasks
-- ci(zensical): 📦 update setup-uv action to v10.2.0
+- ci(docs): ⬆️ update uv to 10.3.3 release
 - build(make): `git-rebase`, `git-sr` tasks for mgitstatus
 - build(mkdocs): ♻️ refactor navigation for migration to zensical
 - build(zensical): ♻️ refactor overrides for zensical migration
